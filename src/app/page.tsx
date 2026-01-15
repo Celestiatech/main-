@@ -83,21 +83,21 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <Link href="#industries" className={styles.navLink}>
+          <Link href="/industries" className={styles.navLink}>
             Industries We Serve
           </Link>
-          <Link href="#work" className={styles.navLink}>
+          <Link href="/work" className={styles.navLink}>
             Our Work
           </Link>
-          <Link href="#testimonials" className={styles.navLink}>
+          <Link href="/testimonials" className={styles.navLink}>
             Testimonials
           </Link>
-          <Link href="#contact" className={styles.navLink}>
+          <Link href="/contact" className={styles.navLink}>
             Contact
           </Link>
         </nav>
-        <Link href="#contact" className={styles.headerCta}>
-          Get Proposal
+        <Link href="/clients" className={styles.headerCta}>
+          For Clients
         </Link>
       </header>
 
@@ -111,10 +111,10 @@ export default function Home() {
               business stand out online.
             </p>
             <div className={styles.heroActions}>
-              <Link href="#contact" className={styles.primaryButton}>
+              <Link href="/proposal" className={styles.primaryButton}>
                 Get free proposal
               </Link>
-              <Link href="#work" className={styles.secondaryButton}>
+              <Link href="/work" className={styles.secondaryButton}>
                 View work
               </Link>
             </div>
@@ -352,16 +352,16 @@ export default function Home() {
               <h3>Services</h3>
               <ul>
                 <li>
-                  <Link href="#services">Web Development Services</Link>
+                  <Link href="/services">Web Development Services</Link>
                 </li>
                 <li>
-                  <Link href="#services">Web Design Services</Link>
+                  <Link href="/services">Web Design Services</Link>
                 </li>
                 <li>
-                  <Link href="#services">Digital Marketing Services</Link>
+                  <Link href="/services">Digital Marketing Services</Link>
                 </li>
                 <li>
-                  <Link href="#services">Mobile App Services</Link>
+                  <Link href="/services">Mobile App Services</Link>
                 </li>
               </ul>
             </div>
@@ -369,16 +369,16 @@ export default function Home() {
               <h3>Company</h3>
               <ul>
                 <li>
-                  <Link href="#services">Our Services</Link>
+                  <Link href="/services">Our Services</Link>
                 </li>
                 <li>
-                  <Link href="#work">Our Work</Link>
+                  <Link href="/work">Our Work</Link>
                 </li>
                 <li>
-                  <Link href="#testimonials">Testimonials</Link>
+                  <Link href="/testimonials">Testimonials</Link>
                 </li>
                 <li>
-                  <Link href="#contact">Contact Us</Link>
+                  <Link href="/contact">Contact Us</Link>
                 </li>
               </ul>
             </div>
@@ -386,13 +386,13 @@ export default function Home() {
               <h3>Resources</h3>
               <ul>
                 <li>
-                  <Link href="#industries">Industries We Serve</Link>
+                  <Link href="/industries">Industries We Serve</Link>
                 </li>
                 <li>
-                  <Link href="#contact">Get a Free Proposal</Link>
+                  <Link href="/proposal">Get a Free Proposal</Link>
                 </li>
                 <li>
-                  <Link href="#contact">Request a Call</Link>
+                  <Link href="/request-a-call">Request a Call</Link>
                 </li>
               </ul>
             </div>
