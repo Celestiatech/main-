@@ -97,8 +97,10 @@
 
 .navItem {
   position: relative;
+}
 
 .navTrigger {
+  border: none;
   border: none;
   background: transparent;
   color: #6b7280;
@@ -638,76 +640,6 @@
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-
-@media (hover: hover) and (pointer: fine) {
-  .primaryButton:hover {
-    background: linear-gradient(to bottom right, #fb923c, #f97316);
-    transform: translateY(-1px);
-  }
-
-  .secondaryButton:hover {
-    border-color: #111827;
-  }
-}
-
-@media (max-width: 900px) {
-  .cardsGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .projectsGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 768px) {
-  .header {
-    padding-inline: 16px;
-  }
-
-  .nav {
-    display: none;
-  }
-
-  .main {
-    padding-inline: 16px;
-  }
-
-  .hero {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .cardsGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .projectsGrid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .testimonialsGrid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .contactLayout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .footerColumns {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-}
-
-@keyframes heroSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(18px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -767,5 +699,4 @@
   .footerColumns {
     grid-template-columns: minmax(0, 1fr);
   }
-}
 }
