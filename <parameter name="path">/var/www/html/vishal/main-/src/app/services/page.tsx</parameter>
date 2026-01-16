@@ -1,7 +1,7 @@
-import Link from "next/link";
+<parameter name="content">import Link from "next/link";
 import styles from "../page.module.css";
 
-export default function WorkPage() {
+export default function ServicesPage() {
   return (
     <div className={styles.page}>
       {/* Floating orbs for background */}
@@ -10,8 +10,8 @@ export default function WorkPage() {
       <div className="orb orb-3"></div>
 
       {/* 3D Geometric Shapes */}
-      <div className="morph-shape" style={{ top: "10%", left: "5%" }}></div>
-      <div className="morph-shape" style={{ top: "60%", right: "10%" }}></div>
+      <div className="morph-shape" style={{ top: '10%', left: '5%' }}></div>
+      <div className="morph-shape" style={{ top: '60%', right: '10%' }}></div>
 
       {/* 3D Particle System */}
       <div className="particle-3d"></div>
@@ -130,7 +130,6 @@ export default function WorkPage() {
                   Flutter App Development
                 </Link>
               </div>
-            </div>
           </div>
           <Link href="/industries" className={styles.navLink}>
             Industries We Serve
@@ -153,29 +152,53 @@ export default function WorkPage() {
       <main className={styles.main}>
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
-            <h2>Our Work</h2>
-            <p>Explore our portfolio of successful projects and client success stories.</p>
+            <h2>Our Services</h2>
+            <p>Complete digital solutions for your business growth and online success.</p>
           </div>
-          <div className={styles.projectsGrid}>
-            <article className={styles.projectCard}>
-              <h3>Grasshopper Soccer</h3>
-              <p>Community sports website with online enrolment, location search and mobile-first experience.</p>
+          <div className={styles.cardsGrid}>
+            <article className={styles.card}>
+              <h3>Web Development</h3>
+              <p>Custom websites built with modern technologies like React, Next.js, and Node.js.</p>
+              <ul>
+                <li>Custom Web Development</li>
+                <li>CMS Development</li>
+                <li>E-commerce Solutions</li>
+              </ul>
             </article>
-            <article className={styles.projectCard}>
-              <h3>Zion Cases</h3>
-              <p>Product-focused storefront with optimized product pages and streamlined checkout.</p>
+            <article className={styles.card}>
+              <h3>Web Design</h3>
+              <p>Beautiful, responsive designs that convert visitors into customers.</p>
+              <ul>
+                <li>UI/UX Design</li>
+                <li>Brand Identity</li>
+                <li>Responsive Design</li>
+              </ul>
             </article>
-            <article className={styles.projectCard}>
-              <h3>Finance Platform</h3>
-              <p>Marketing site for a fintech product, highlighting features, security and customer stories.</p>
+            <article className={styles.card}>
+              <h3>Digital Marketing</h3>
+              <p>Data-driven marketing strategies to grow your online presence.</p>
+              <ul>
+                <li>SEO Services</li>
+                <li>PPC Advertising</li>
+                <li>Social Media Marketing</li>
+              </ul>
+            </article>
+            <article className={styles.card}>
+              <h3>Mobile Apps</h3>
+              <p>Native and cross-platform mobile applications for iOS and Android.</p>
+              <ul>
+                <li>iOS Development</li>
+                <li>Android Development</li>
+                <li>Cross-Platform Apps</li>
+              </ul>
             </article>
           </div>
           <div className={styles.heroActions}>
             <Link href="/contact" className={styles.primaryButton}>
-              Start your project
+              Get started
             </Link>
-            <Link href="/" className={styles.secondaryButton}>
-              Back to home
+            <Link href="/proposal" className={styles.secondaryButton}>
+              Free proposal
             </Link>
           </div>
         </section>
@@ -231,7 +254,6 @@ export default function WorkPage() {
               </li>
             </ul>
           </div>
-        </div>
         <div className={styles.footerBottom}>
           <span>© {new Date().getFullYear()} YourAgency. All rights reserved.</span>
           <span>Built with Next.js</span>
@@ -240,4 +262,4 @@ export default function WorkPage() {
     </div>
   );
 }
-
+</parameter>

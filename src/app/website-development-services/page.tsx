@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../page.module.css";
 
-export default function WorkPage() {
+export default function WebsiteDevelopmentServicesPage() {
   return (
     <div className={styles.page}>
       {/* Floating orbs for background */}
@@ -10,8 +10,8 @@ export default function WorkPage() {
       <div className="orb orb-3"></div>
 
       {/* 3D Geometric Shapes */}
-      <div className="morph-shape" style={{ top: "10%", left: "5%" }}></div>
-      <div className="morph-shape" style={{ top: "60%", right: "10%" }}></div>
+      <div className="morph-shape" style={{ top: '10%', left: '5%' }}></div>
+      <div className="morph-shape" style={{ top: '60%', right: '10%' }}></div>
 
       {/* 3D Particle System */}
       <div className="particle-3d"></div>
@@ -153,29 +153,53 @@ export default function WorkPage() {
       <main className={styles.main}>
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
-            <h2>Our Work</h2>
-            <p>Explore our portfolio of successful projects and client success stories.</p>
+            <h2>Website Development Services</h2>
+            <p>Professional website development using modern technologies and best practices.</p>
           </div>
-          <div className={styles.projectsGrid}>
-            <article className={styles.projectCard}>
-              <h3>Grasshopper Soccer</h3>
-              <p>Community sports website with online enrolment, location search and mobile-first experience.</p>
+          <div className={styles.cardsGrid}>
+            <article className={styles.card}>
+              <h3>Custom Web Development</h3>
+              <p>Tailored websites built from scratch using the latest technologies.</p>
+              <ul>
+                <li>React & Next.js</li>
+                <li>Node.js Backend</li>
+                <li>Database Integration</li>
+              </ul>
             </article>
-            <article className={styles.projectCard}>
-              <h3>Zion Cases</h3>
-              <p>Product-focused storefront with optimized product pages and streamlined checkout.</p>
+            <article className={styles.card}>
+              <h3>CMS Development</h3>
+              <p>Content management systems for easy website updates and maintenance.</p>
+              <ul>
+                <li>WordPress</li>
+                <li>Joomla</li>
+                <li>Custom CMS</li>
+              </ul>
             </article>
-            <article className={styles.projectCard}>
-              <h3>Finance Platform</h3>
-              <p>Marketing site for a fintech product, highlighting features, security and customer stories.</p>
+            <article className={styles.card}>
+              <h3>E-commerce Solutions</h3>
+              <p>Online stores with payment integration and inventory management.</p>
+              <ul>
+                <li>Shopify</li>
+                <li>WooCommerce</li>
+                <li>Custom E-commerce</li>
+              </ul>
+            </article>
+            <article className={styles.card}>
+              <h3>API Development</h3>
+              <p>RESTful APIs and microservices for scalable web applications.</p>
+              <ul>
+                <li>REST APIs</li>
+                <li>GraphQL</li>
+                <li>Microservices</li>
+              </ul>
             </article>
           </div>
           <div className={styles.heroActions}>
             <Link href="/contact" className={styles.primaryButton}>
               Start your project
             </Link>
-            <Link href="/" className={styles.secondaryButton}>
-              Back to home
+            <Link href="/services" className={styles.secondaryButton}>
+              View all services
             </Link>
           </div>
         </section>
@@ -240,4 +264,3 @@ export default function WorkPage() {
     </div>
   );
 }
-

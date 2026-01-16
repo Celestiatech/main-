@@ -1,7 +1,7 @@
-import Link from "next/link";
+<parameter name="content">import Link from "next/link";
 import styles from "../page.module.css";
 
-export default function WorkPage() {
+export default function IndustriesPage() {
   return (
     <div className={styles.page}>
       {/* Floating orbs for background */}
@@ -130,7 +130,6 @@ export default function WorkPage() {
                   Flutter App Development
                 </Link>
               </div>
-            </div>
           </div>
           <Link href="/industries" className={styles.navLink}>
             Industries We Serve
@@ -153,22 +152,16 @@ export default function WorkPage() {
       <main className={styles.main}>
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
-            <h2>Our Work</h2>
-            <p>Explore our portfolio of successful projects and client success stories.</p>
+            <h2>Industries We Serve</h2>
+            <p>We adapt our approach for different markets and audiences.</p>
           </div>
-          <div className={styles.projectsGrid}>
-            <article className={styles.projectCard}>
-              <h3>Grasshopper Soccer</h3>
-              <p>Community sports website with online enrolment, location search and mobile-first experience.</p>
-            </article>
-            <article className={styles.projectCard}>
-              <h3>Zion Cases</h3>
-              <p>Product-focused storefront with optimized product pages and streamlined checkout.</p>
-            </article>
-            <article className={styles.projectCard}>
-              <h3>Finance Platform</h3>
-              <p>Marketing site for a fintech product, highlighting features, security and customer stories.</p>
-            </article>
+          <div className={styles.pills}>
+            <span>Technology & SaaS</span>
+            <span>E-commerce</span>
+            <span>Professional services</span>
+            <span>Education</span>
+            <span>Real estate</span>
+            <span>Healthcare</span>
           </div>
           <div className={styles.heroActions}>
             <Link href="/contact" className={styles.primaryButton}>
@@ -231,7 +224,6 @@ export default function WorkPage() {
               </li>
             </ul>
           </div>
-        </div>
         <div className={styles.footerBottom}>
           <span>© {new Date().getFullYear()} YourAgency. All rights reserved.</span>
           <span>Built with Next.js</span>
@@ -240,4 +232,4 @@ export default function WorkPage() {
     </div>
   );
 }
-
+</parameter>

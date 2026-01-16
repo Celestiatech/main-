@@ -1,7 +1,7 @@
-import Link from "next/link";
+<parameter name="content">import Link from "next/link";
 import styles from "../page.module.css";
 
-export default function WorkPage() {
+export default function TestimonialsPage() {
   return (
     <div className={styles.page}>
       {/* Floating orbs for background */}
@@ -10,8 +10,8 @@ export default function WorkPage() {
       <div className="orb orb-3"></div>
 
       {/* 3D Geometric Shapes */}
-      <div className="morph-shape" style={{ top: "10%", left: "5%" }}></div>
-      <div className="morph-shape" style={{ top: "60%", right: "10%" }}></div>
+      <div className="morph-shape" style={{ top: '10%', left: '5%' }}></div>
+      <div className="morph-shape" style={{ top: '60%', right: '10%' }}></div>
 
       {/* 3D Particle System */}
       <div className="particle-3d"></div>
@@ -130,7 +130,6 @@ export default function WorkPage() {
                   Flutter App Development
                 </Link>
               </div>
-            </div>
           </div>
           <Link href="/industries" className={styles.navLink}>
             Industries We Serve
@@ -153,29 +152,33 @@ export default function WorkPage() {
       <main className={styles.main}>
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
-            <h2>Our Work</h2>
-            <p>Explore our portfolio of successful projects and client success stories.</p>
+            <h2>Testimonials</h2>
+            <p>What our clients say about working with us.</p>
           </div>
-          <div className={styles.projectsGrid}>
-            <article className={styles.projectCard}>
-              <h3>Grasshopper Soccer</h3>
-              <p>Community sports website with online enrolment, location search and mobile-first experience.</p>
+          <div className={styles.testimonialsGrid}>
+            <article className={styles.testimonialCard}>
+              <p>"They delivered a fast, modern site that matched our brand perfectly."</p>
+              <span className={styles.testimonialAuthor}>Ben Wright, Founder</span>
             </article>
-            <article className={styles.projectCard}>
-              <h3>Zion Cases</h3>
-              <p>Product-focused storefront with optimized product pages and streamlined checkout.</p>
+            <article className={styles.testimonialCard}>
+              <p>"Process was smooth from start to finish and results exceeded expectations."</p>
+              <span className={styles.testimonialAuthor}>Ivana Jablanovic, Project Manager</span>
             </article>
-            <article className={styles.projectCard}>
-              <h3>Finance Platform</h3>
-              <p>Marketing site for a fintech product, highlighting features, security and customer stories.</p>
+            <article className={styles.testimonialCard}>
+              <p>"Professional team that understood our requirements and delivered on time."</p>
+              <span className={styles.testimonialAuthor}>Sarah Johnson, CEO</span>
+            </article>
+            <article className={styles.testimonialCard}>
+              <p>"Excellent communication throughout the project. Highly recommended!"</p>
+              <span className={styles.testimonialAuthor}>Michael Chen, Marketing Director</span>
             </article>
           </div>
           <div className={styles.heroActions}>
             <Link href="/contact" className={styles.primaryButton}>
-              Start your project
+              Work with us
             </Link>
-            <Link href="/" className={styles.secondaryButton}>
-              Back to home
+            <Link href="/work" className={styles.secondaryButton}>
+              View our work
             </Link>
           </div>
         </section>
@@ -231,7 +234,6 @@ export default function WorkPage() {
               </li>
             </ul>
           </div>
-        </div>
         <div className={styles.footerBottom}>
           <span>© {new Date().getFullYear()} YourAgency. All rights reserved.</span>
           <span>Built with Next.js</span>
@@ -240,4 +242,4 @@ export default function WorkPage() {
     </div>
   );
 }
-
+</parameter>

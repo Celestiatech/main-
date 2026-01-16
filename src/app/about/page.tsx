@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../page.module.css";
 
-export default function WorkPage() {
+export default function AboutPage() {
   return (
     <div className={styles.page}>
       {/* Floating orbs for background */}
@@ -10,8 +10,8 @@ export default function WorkPage() {
       <div className="orb orb-3"></div>
 
       {/* 3D Geometric Shapes */}
-      <div className="morph-shape" style={{ top: "10%", left: "5%" }}></div>
-      <div className="morph-shape" style={{ top: "60%", right: "10%" }}></div>
+      <div className="morph-shape" style={{ top: '10%', left: '5%' }}></div>
+      <div className="morph-shape" style={{ top: '60%', right: '10%' }}></div>
 
       {/* 3D Particle System */}
       <div className="particle-3d"></div>
@@ -153,26 +153,30 @@ export default function WorkPage() {
       <main className={styles.main}>
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
-            <h2>Our Work</h2>
-            <p>Explore our portfolio of successful projects and client success stories.</p>
+            <h2>About Us</h2>
+            <p>Learn about our mission, values, and the team behind YourAgency.</p>
           </div>
-          <div className={styles.projectsGrid}>
-            <article className={styles.projectCard}>
-              <h3>Grasshopper Soccer</h3>
-              <p>Community sports website with online enrolment, location search and mobile-first experience.</p>
+          <div className={styles.cardsGrid}>
+            <article className={styles.card}>
+              <h3>Our Mission</h3>
+              <p>To empower businesses with cutting-edge digital solutions that drive growth and success.</p>
             </article>
-            <article className={styles.projectCard}>
-              <h3>Zion Cases</h3>
-              <p>Product-focused storefront with optimized product pages and streamlined checkout.</p>
+            <article className={styles.card}>
+              <h3>Our Vision</h3>
+              <p>To be the leading digital agency that transforms ideas into exceptional online experiences.</p>
             </article>
-            <article className={styles.projectCard}>
-              <h3>Finance Platform</h3>
-              <p>Marketing site for a fintech product, highlighting features, security and customer stories.</p>
+            <article className={styles.card}>
+              <h3>Our Values</h3>
+              <p>Innovation, quality, integrity, and client satisfaction are at the core of everything we do.</p>
+            </article>
+            <article className={styles.card}>
+              <h3>Our Team</h3>
+              <p>A diverse group of talented professionals passionate about digital excellence.</p>
             </article>
           </div>
           <div className={styles.heroActions}>
             <Link href="/contact" className={styles.primaryButton}>
-              Start your project
+              Work with us
             </Link>
             <Link href="/" className={styles.secondaryButton}>
               Back to home
@@ -240,4 +244,3 @@ export default function WorkPage() {
     </div>
   );
 }
-

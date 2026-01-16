@@ -10,113 +10,75 @@ export default function Home() {
         <span>Custom web solutions in React, Next.js and Node.js.</span>
         <span>Specialists in WordPress, Wix, Webflow and Joomla.</span>
       </div>
+      
       <header className={styles.header}>
         <div className={styles.logo}>YourAgency</div>
         <nav className={styles.nav}>
-          <Link href="/" className={styles.navLink}>
-            Home
-          </Link>
+          <Link href="/" className={styles.navLink}>Home</Link>
           <div className={styles.navItem}>
-            <button type="button" className={styles.navTrigger}>
-              Services
-            </button>
+            <button type="button" className={styles.navTrigger}>Services</button>
             <div className={styles.navMenu}>
               <div className={styles.navMenuGroup}>
-                <div className={styles.navMenuTitle}>Web Development Services</div>
-                <Link href="#services" className={styles.navMenuItem}>
-                  WordPress Development
-                </Link>
-                <Link href="#services" className={styles.navMenuItem}>
-                  Joomla Development
-                </Link>
-                <Link href="#services" className={styles.navMenuItem}>
-                  Laravel Development
-                </Link>
-                <Link href="#services" className={styles.navMenuItem}>
-                  ReactJS Development
-                </Link>
-                <Link href="#services" className={styles.navMenuItem}>
-                  Node.js Development
-                </Link>
-                <Link href="#services" className={styles.navMenuItem}>
-                  Vue.js Development
-                </Link>
+                <div className={styles.navMenuTitle}>Web Development</div>
+                <Link href="/website-development-services" className={styles.navMenuItem}>Website Development Services</Link>
+                <Link href="/nextjs-development-services" className={styles.navMenuItem}>Next.js Development</Link>
+                <Link href="/shopify-development-services" className={styles.navMenuItem}>Shopify Development</Link>
+                <Link href="/wordpress-development-services" className={styles.navMenuItem}>WordPress Development</Link>
+                <Link href="/joomla-development-services" className={styles.navMenuItem}>Joomla Development</Link>
+                <Link href="/laravel-development-services" className={styles.navMenuItem}>Laravel Development</Link>
+                <Link href="/reactjs-development-services" className={styles.navMenuItem}>ReactJS Development</Link>
+                <Link href="/nodejs-development-services" className={styles.navMenuItem}>Node.js Development</Link>
+                <Link href="/vuejs-development-services" className={styles.navMenuItem}>Vue.js Development</Link>
+                <Link href="/wix-development-services" className={styles.navMenuItem}>Wix Development</Link>
+                <Link href="/webflow-development-services" className={styles.navMenuItem}>Webflow Development</Link>
               </div>
               <div className={styles.navMenuGroup}>
-                <div className={styles.navMenuTitle}>Web Design Services</div>
-                <Link href="#services" className={styles.navMenuItem}>
-                  Website UI/UX Design
-                </Link>
-                <Link href="#services" className={styles.navMenuItem}>
-                  Branding & Visual Identity
-                </Link>
-                <Link href="#services" className={styles.navMenuItem}>
-                  Landing Page Design
-                </Link>
+                <div className={styles.navMenuTitle}>Web Design</div>
+                <Link href="/website-design-services" className={styles.navMenuItem}>Website Design Services</Link>
+                <Link href="/ux-design-services" className={styles.navMenuItem}>UX Design Services</Link>
+                <Link href="/graphic-design-services" className={styles.navMenuItem}>Graphic Design Services</Link>
+                <Link href="/logo-design-services" className={styles.navMenuItem}>Logo Design Services</Link>
+                <Link href="/brochure-design-services" className={styles.navMenuItem}>Brochure Design Services</Link>
+                <Link href="/banner-design-services" className={styles.navMenuItem}>Banner Design Services</Link>
               </div>
               <div className={styles.navMenuGroup}>
-                <div className={styles.navMenuTitle}>Digital Marketing Services</div>
-                <Link href="#services" className={styles.navMenuItem}>
-                  SEO Services
-                </Link>
-                <Link href="#services" className={styles.navMenuItem}>
-                  PPC Management
-                </Link>
-                <Link href="#services" className={styles.navMenuItem}>
-                  Social Media Marketing
-                </Link>
-                <Link href="#services" className={styles.navMenuItem}>
-                  Content Marketing
-                </Link>
+                <div className={styles.navMenuTitle}>Digital Marketing</div>
+                <Link href="/digital-marketing-services" className={styles.navMenuItem}>Digital Marketing Services</Link>
+                <Link href="/seo-services" className={styles.navMenuItem}>SEO Services</Link>
+                <Link href="/social-media-marketing-services" className={styles.navMenuItem}>Social Media Marketing</Link>
+                <Link href="/pay-per-click-advertising-services" className={styles.navMenuItem}>PPC Advertising</Link>
+                <Link href="/email-marketing-services" className={styles.navMenuItem}>Email Marketing</Link>
+                <Link href="/search-engine-marketing-services" className={styles.navMenuItem}>Search Engine Marketing</Link>
               </div>
               <div className={styles.navMenuGroup}>
-                <div className={styles.navMenuTitle}>Mobile App Services</div>
-                <Link href="#services" className={styles.navMenuItem}>
-                  Android App Development
-                </Link>
-                <Link href="#services" className={styles.navMenuItem}>
-                  iOS App Development
-                </Link>
-                <Link href="#services" className={styles.navMenuItem}>
-                  App UI/UX Design
-                </Link>
+                <div className={styles.navMenuTitle}>Mobile Apps</div>
+                <Link href="/mobile-app-development-services" className={styles.navMenuItem}>Mobile App Development</Link>
+                <Link href="/ios-application-development-services" className={styles.navMenuItem}>iOS App Development</Link>
+                <Link href="/android-app-development-services" className={styles.navMenuItem}>Android App Development</Link>
+                <Link href="/flutter-app-development-services" className={styles.navMenuItem}>Flutter App Development</Link>
               </div>
             </div>
           </div>
-          <Link href="/industries" className={styles.navLink}>
-            Industries We Serve
-          </Link>
-          <Link href="/work" className={styles.navLink}>
-            Our Work
-          </Link>
-          <Link href="/testimonials" className={styles.navLink}>
-            Testimonials
-          </Link>
-          <Link href="/contact" className={styles.navLink}>
-            Contact
-          </Link>
+          <Link href="/industries" className={styles.navLink}>Industries We Serve</Link>
+          <Link href="/work" className={styles.navLink}>Our Work</Link>
+          <Link href="/testimonials" className={styles.navLink}>Testimonials</Link>
+          <Link href="/contact" className={styles.navLink}>Contact</Link>
         </nav>
-        <Link href="/clients" className={styles.headerCta}>
-          For Clients
-        </Link>
+        <Link href="/clients" className={styles.headerCta}>For Clients</Link>
       </header>
 
       <main className={styles.main}>
         <section className={styles.hero}>
           <div className={styles.heroContent}>
-            <p className={styles.badge}>Digital marketing, web design and development agency</p>
+            <span className={styles.badge}>Digital marketing, web design and development agency</span>
             <h1>We craft websites and campaigns that grow your business.</h1>
             <p className={styles.heroSubtitle}>
               Modern websites, result-focused marketing and long-term support to help your
               business stand out online.
             </p>
             <div className={styles.heroActions}>
-              <Link href="/proposal" className={styles.primaryButton}>
-                Get free proposal
-              </Link>
-              <Link href="/work" className={styles.secondaryButton}>
-                View work
-              </Link>
+              <Link href="/proposal" className={styles.primaryButton}>Get free proposal</Link>
+              <Link href="/work" className={styles.secondaryButton}>View work</Link>
             </div>
             <div className={styles.metrics}>
               <div>
@@ -147,18 +109,12 @@ export default function Home() {
         <section id="services" className={styles.section}>
           <div className={styles.sectionHeader}>
             <h2>Our Services</h2>
-            <p>
-              From idea to launch and ongoing growth, we cover every step of your digital
-              journey.
-            </p>
+            <p>From idea to launch and ongoing growth, we cover every step of your digital journey.</p>
           </div>
           <div className={styles.cardsGrid}>
             <article className={styles.card}>
               <h3>Web Design</h3>
-              <p>
-                Conversion-focused designs that match your brand and guide visitors to take
-                action.
-              </p>
+              <p>Conversion-focused designs that match your brand and guide visitors to take action.</p>
               <ul>
                 <li>Responsive layouts</li>
                 <li>UI/UX design</li>
@@ -167,10 +123,7 @@ export default function Home() {
             </article>
             <article className={styles.card}>
               <h3>Web Development</h3>
-              <p>
-                Fast, secure and scalable websites powered by modern frameworks and best
-                practices.
-              </p>
+              <p>Fast, secure and scalable websites powered by modern frameworks and best practices.</p>
               <ul>
                 <li>Next.js and React</li>
                 <li>Content management</li>
@@ -179,9 +132,7 @@ export default function Home() {
             </article>
             <article className={styles.card}>
               <h3>Digital Marketing</h3>
-              <p>
-                Data-driven campaigns that increase visibility, traffic and qualified leads.
-              </p>
+              <p>Data-driven campaigns that increase visibility, traffic and qualified leads.</p>
               <ul>
                 <li>SEO and content</li>
                 <li>Paid search and social</li>
@@ -190,9 +141,7 @@ export default function Home() {
             </article>
             <article className={styles.card}>
               <h3>Ongoing Support</h3>
-              <p>
-                Long-term partners for maintenance, improvements and continuous optimization.
-              </p>
+              <p>Long-term partners for maintenance, improvements and continuous optimization.</p>
               <ul>
                 <li>Performance monitoring</li>
                 <li>Security updates</li>
@@ -205,10 +154,7 @@ export default function Home() {
         <section id="industries" className={styles.sectionMuted}>
           <div className={styles.sectionHeader}>
             <h2>Industries We Serve</h2>
-            <p>
-              We adapt our approach to different markets while keeping the same focus on
-              measurable results.
-            </p>
+            <p>We adapt our approach to different markets while keeping the same focus on measurable results.</p>
           </div>
           <div className={styles.pills}>
             <span>Technology & SaaS</span>
@@ -223,31 +169,20 @@ export default function Home() {
         <section id="work" className={styles.section}>
           <div className={styles.sectionHeader}>
             <h2>Our Work</h2>
-            <p>
-              A snapshot of the types of projects we deliver. Replace these with your own
-              case studies.
-            </p>
+            <p>A snapshot of the types of projects we deliver.</p>
           </div>
           <div className={styles.projectsGrid}>
             <article className={styles.projectCard}>
               <h3>Grasshopper Soccer</h3>
-              <p>
-                Community sports website with online enrolment, location search and mobile-first
-                experience.
-              </p>
+              <p>Community sports website with online enrolment, location search and mobile-first experience.</p>
             </article>
             <article className={styles.projectCard}>
               <h3>Zion Cases</h3>
-              <p>
-                Product-focused storefront with optimized product pages and streamlined checkout.
-              </p>
+              <p>Product-focused storefront with optimized product pages and streamlined checkout.</p>
             </article>
             <article className={styles.projectCard}>
               <h3>Finance Platform</h3>
-              <p>
-                Marketing site for a fintech product, highlighting features, security and
-                customer stories.
-              </p>
+              <p>Marketing site for a fintech product, highlighting features, security and customer stories.</p>
             </article>
           </div>
         </section>
@@ -268,37 +203,27 @@ export default function Home() {
         <section id="testimonials" className={styles.sectionMuted}>
           <div className={styles.sectionHeader}>
             <h2>What clients say</h2>
-            <p>
-              Clients choose us for clear communication, reliable delivery and long-term
-              partnerships.
-            </p>
+            <p>Clients choose us for clear communication, reliable delivery and long-term partnerships.</p>
           </div>
           <div className={styles.testimonialsGrid}>
             <article className={styles.testimonialCard}>
-              <p>
-                “They quickly understood our product and delivered a site that feels fast,
-                modern and on-brand.”
-              </p>
+              <p>"They quickly understood our product and delivered a site that feels fast, modern and on-brand."</p>
               <span className={styles.testimonialAuthor}>Ben Wright, Founder</span>
             </article>
             <article className={styles.testimonialCard}>
-              <p>
-                “Process was smooth from start to finish and the results exceeded our
-                expectations.”
-              </p>
+              <p>"Process was smooth from start to finish and the results exceeded our expectations."</p>
               <span className={styles.testimonialAuthor}>Ivana Jablanovic, Project Manager</span>
             </article>
           </div>
         </section>
 
         <section id="contact" className={styles.section}>
+          <div className={styles.sectionHeader}>
+            <h2>Ready to start?</h2>
+            <p>Tell us about your project, timelines and goals. We will get back to you within one business day.</p>
+          </div>
           <div className={styles.contactLayout}>
             <div>
-              <h2>Ready to start?</h2>
-              <p>
-                Tell us about your project, timelines and goals. We will get back to you
-                within one business day.
-              </p>
               <div className={styles.contactHighlights}>
                 <span>Free initial consultation</span>
                 <span>Clear pricing before we start</span>
@@ -319,29 +244,10 @@ export default function Home() {
                 <input id="company" name="company" placeholder="Your company" />
               </div>
               <div className={styles.field}>
-                <label htmlFor="budget">Budget range</label>
-                <select id="budget" name="budget" defaultValue="">
-                  <option value="" disabled>
-                    Select a range
-                  </option>
-                  <option value="5-10k">$5k – $10k</option>
-                  <option value="10-25k">$10k – $25k</option>
-                  <option value="25-50k">$25k – $50k</option>
-                  <option value="50k+">$50k+</option>
-                </select>
-              </div>
-              <div className={styles.field}>
                 <label htmlFor="message">Project details</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  placeholder="Share a short overview of your project."
-                />
+                <textarea id="message" name="message" rows={4} placeholder="Share a short overview of your project." />
               </div>
-              <button type="submit" className={styles.primaryButton}>
-                Send message
-              </button>
+              <button type="submit" className={styles.primaryButton}>Send message</button>
             </form>
           </div>
         </section>
@@ -351,49 +257,26 @@ export default function Home() {
             <div>
               <h3>Services</h3>
               <ul>
-                <li>
-                  <Link href="/services">Web Development Services</Link>
-                </li>
-                <li>
-                  <Link href="/services">Web Design Services</Link>
-                </li>
-                <li>
-                  <Link href="/services">Digital Marketing Services</Link>
-                </li>
-                <li>
-                  <Link href="/services">Mobile App Services</Link>
-                </li>
+                <li><Link href="/services">Web Development Services</Link></li>
+                <li><Link href="/services">Web Design Services</Link></li>
+                <li><Link href="/services">Digital Marketing Services</Link></li>
+                <li><Link href="/services">Mobile App Services</Link></li>
               </ul>
             </div>
             <div>
               <h3>Company</h3>
               <ul>
-                <li>
-                  <Link href="/services">Our Services</Link>
-                </li>
-                <li>
-                  <Link href="/work">Our Work</Link>
-                </li>
-                <li>
-                  <Link href="/testimonials">Testimonials</Link>
-                </li>
-                <li>
-                  <Link href="/contact">Contact Us</Link>
-                </li>
+                <li><Link href="/work">Our Work</Link></li>
+                <li><Link href="/testimonials">Testimonials</Link></li>
+                <li><Link href="/contact">Contact Us</Link></li>
               </ul>
             </div>
             <div>
               <h3>Resources</h3>
               <ul>
-                <li>
-                  <Link href="/industries">Industries We Serve</Link>
-                </li>
-                <li>
-                  <Link href="/proposal">Get a Free Proposal</Link>
-                </li>
-                <li>
-                  <Link href="/request-a-call">Request a Call</Link>
-                </li>
+                <li><Link href="/industries">Industries We Serve</Link></li>
+                <li><Link href="/proposal">Get a Free Proposal</Link></li>
+                <li><Link href="/request-a-call">Request a Call</Link></li>
               </ul>
             </div>
           </div>
@@ -406,3 +289,4 @@ export default function Home() {
     </div>
   );
 }
+

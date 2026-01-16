@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../page.module.css";
 
-export default function WorkPage() {
+export default function ContactPage() {
   return (
     <div className={styles.page}>
       {/* Floating orbs for background */}
@@ -10,8 +10,8 @@ export default function WorkPage() {
       <div className="orb orb-3"></div>
 
       {/* 3D Geometric Shapes */}
-      <div className="morph-shape" style={{ top: "10%", left: "5%" }}></div>
-      <div className="morph-shape" style={{ top: "60%", right: "10%" }}></div>
+      <div className="morph-shape" style={{ top: '10%', left: '5%' }}></div>
+      <div className="morph-shape" style={{ top: '60%', right: '10%' }}></div>
 
       {/* 3D Particle System */}
       <div className="particle-3d"></div>
@@ -39,98 +39,64 @@ export default function WorkPage() {
             <div className={styles.navMenu}>
               <div className={styles.navMenuGroup}>
                 <div className={styles.navMenuTitle}>Web Development</div>
-                <Link href="/website-development-services" className={styles.navMenuItem}>
-                  Website Development Services
-                </Link>
-                <Link href="/nextjs-development-services" className={styles.navMenuItem}>
-                  Next.js Development
-                </Link>
-                <Link href="/shopify-development-services" className={styles.navMenuItem}>
-                  Shopify Development
-                </Link>
-                <Link href="/wordpress-development-services" className={styles.navMenuItem}>
+                <Link href="/services" className={styles.navMenuItem}>
                   WordPress Development
                 </Link>
-                <Link href="/joomla-development-services" className={styles.navMenuItem}>
+                <Link href="/services" className={styles.navMenuItem}>
                   Joomla Development
                 </Link>
-                <Link href="/laravel-development-services" className={styles.navMenuItem}>
+                <Link href="/services" className={styles.navMenuItem}>
                   Laravel Development
                 </Link>
-                <Link href="/reactjs-development-services" className={styles.navMenuItem}>
+                <Link href="/services" className={styles.navMenuItem}>
                   ReactJS Development
                 </Link>
-                <Link href="/nodejs-development-services" className={styles.navMenuItem}>
+                <Link href="/services" className={styles.navMenuItem}>
                   Node.js Development
                 </Link>
-                <Link href="/vuejs-development-services" className={styles.navMenuItem}>
+                <Link href="/services" className={styles.navMenuItem}>
                   Vue.js Development
-                </Link>
-                <Link href="/wix-development-services" className={styles.navMenuItem}>
-                  Wix Development
-                </Link>
-                <Link href="/webflow-development-services" className={styles.navMenuItem}>
-                  Webflow Development
                 </Link>
               </div>
               <div className={styles.navMenuGroup}>
                 <div className={styles.navMenuTitle}>Web Design</div>
-                <Link href="/website-design-services" className={styles.navMenuItem}>
-                  Website Design Services
+                <Link href="/services" className={styles.navMenuItem}>
+                  Website UI/UX Design
                 </Link>
-                <Link href="/ux-design-services" className={styles.navMenuItem}>
-                  UX Design Services
+                <Link href="/services" className={styles.navMenuItem}>
+                  Branding & Visual Identity
                 </Link>
-                <Link href="/graphic-design-services" className={styles.navMenuItem}>
-                  Graphic Design Services
-                </Link>
-                <Link href="/logo-design-services" className={styles.navMenuItem}>
-                  Logo Design Services
-                </Link>
-                <Link href="/brochure-design-services" className={styles.navMenuItem}>
-                  Brochure Design Services
-                </Link>
-                <Link href="/banner-design-services" className={styles.navMenuItem}>
-                  Banner Design Services
+                <Link href="/services" className={styles.navMenuItem}>
+                  Landing Page Design
                 </Link>
               </div>
               <div className={styles.navMenuGroup}>
                 <div className={styles.navMenuTitle}>Digital Marketing</div>
-                <Link href="/digital-marketing-services" className={styles.navMenuItem}>
-                  Digital Marketing Services
-                </Link>
-                <Link href="/seo-services" className={styles.navMenuItem}>
+                <Link href="/services" className={styles.navMenuItem}>
                   SEO Services
                 </Link>
-                <Link href="/social-media-marketing-services" className={styles.navMenuItem}>
+                <Link href="/services" className={styles.navMenuItem}>
+                  PPC Management
+                </Link>
+                <Link href="/services" className={styles.navMenuItem}>
                   Social Media Marketing
                 </Link>
-                <Link href="/pay-per-click-advertising-services" className={styles.navMenuItem}>
-                  PPC Advertising
-                </Link>
-                <Link href="/email-marketing-services" className={styles.navMenuItem}>
-                  Email Marketing
-                </Link>
-                <Link href="/search-engine-marketing-services" className={styles.navMenuItem}>
-                  Search Engine Marketing
+                <Link href="/services" className={styles.navMenuItem}>
+                  Content Marketing
                 </Link>
               </div>
               <div className={styles.navMenuGroup}>
                 <div className={styles.navMenuTitle}>Mobile Apps</div>
-                <Link href="/mobile-app-development-services" className={styles.navMenuItem}>
-                  Mobile App Development
-                </Link>
-                <Link href="/ios-application-development-services" className={styles.navMenuItem}>
-                  iOS App Development
-                </Link>
-                <Link href="/android-app-development-services" className={styles.navMenuItem}>
+                <Link href="/services" className={styles.navMenuItem}>
                   Android App Development
                 </Link>
-                <Link href="/flutter-app-development-services" className={styles.navMenuItem}>
-                  Flutter App Development
+                <Link href="/services" className={styles.navMenuItem}>
+                  iOS App Development
+                </Link>
+                <Link href="/services" className={styles.navMenuItem}>
+                  App UI/UX Design
                 </Link>
               </div>
-            </div>
           </div>
           <Link href="/industries" className={styles.navLink}>
             Industries We Serve
@@ -153,27 +119,37 @@ export default function WorkPage() {
       <main className={styles.main}>
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
-            <h2>Our Work</h2>
-            <p>Explore our portfolio of successful projects and client success stories.</p>
+            <h2>Contact Us</h2>
+            <p>Tell us about your project, timelines and goals.</p>
           </div>
-          <div className={styles.projectsGrid}>
-            <article className={styles.projectCard}>
-              <h3>Grasshopper Soccer</h3>
-              <p>Community sports website with online enrolment, location search and mobile-first experience.</p>
-            </article>
-            <article className={styles.projectCard}>
-              <h3>Zion Cases</h3>
-              <p>Product-focused storefront with optimized product pages and streamlined checkout.</p>
-            </article>
-            <article className={styles.projectCard}>
-              <h3>Finance Platform</h3>
-              <p>Marketing site for a fintech product, highlighting features, security and customer stories.</p>
-            </article>
+          <div className={styles.contactLayout}>
+            <div>
+              <div className={styles.contactHighlights}>
+                <span>Free initial consultation</span>
+                <span>Clear pricing before we start</span>
+                <span>Dedicated project manager</span>
+              </div>
+            <form className={styles.form}>
+              <div className={styles.field}>
+                <label htmlFor="name">Name</label>
+                <input id="name" name="name" placeholder="Your name" />
+              </div>
+              <div className={styles.field}>
+                <label htmlFor="email">Email</label>
+                <input id="email" name="email" placeholder="you@example.com" type="email" />
+              </div>
+              <div className={styles.field}>
+                <label htmlFor="company">Company</label>
+                <input id="company" name="company" placeholder="Your company" />
+              </div>
+              <div className={styles.field}>
+                <label htmlFor="message">Project details</label>
+                <textarea id="message" name="message" rows={4} placeholder="Short overview." />
+              </div>
+              <button type="submit" className={styles.primaryButton}>Send message</button>
+            </form>
           </div>
           <div className={styles.heroActions}>
-            <Link href="/contact" className={styles.primaryButton}>
-              Start your project
-            </Link>
             <Link href="/" className={styles.secondaryButton}>
               Back to home
             </Link>
@@ -231,7 +207,6 @@ export default function WorkPage() {
               </li>
             </ul>
           </div>
-        </div>
         <div className={styles.footerBottom}>
           <span>© {new Date().getFullYear()} YourAgency. All rights reserved.</span>
           <span>Built with Next.js</span>
@@ -240,4 +215,3 @@ export default function WorkPage() {
     </div>
   );
 }
-

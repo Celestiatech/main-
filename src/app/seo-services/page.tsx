@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../page.module.css";
 
-export default function WorkPage() {
+export default function SEOServicesPage() {
   return (
     <div className={styles.page}>
       {/* Floating orbs for background */}
@@ -10,8 +10,8 @@ export default function WorkPage() {
       <div className="orb orb-3"></div>
 
       {/* 3D Geometric Shapes */}
-      <div className="morph-shape" style={{ top: "10%", left: "5%" }}></div>
-      <div className="morph-shape" style={{ top: "60%", right: "10%" }}></div>
+      <div className="morph-shape" style={{ top: '10%', left: '5%' }}></div>
+      <div className="morph-shape" style={{ top: '60%', right: '10%' }}></div>
 
       {/* 3D Particle System */}
       <div className="particle-3d"></div>
@@ -153,29 +153,53 @@ export default function WorkPage() {
       <main className={styles.main}>
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
-            <h2>Our Work</h2>
-            <p>Explore our portfolio of successful projects and client success stories.</p>
+            <h2>SEO Services</h2>
+            <p>Search engine optimization to improve your website rankings and drive organic traffic.</p>
           </div>
-          <div className={styles.projectsGrid}>
-            <article className={styles.projectCard}>
-              <h3>Grasshopper Soccer</h3>
-              <p>Community sports website with online enrolment, location search and mobile-first experience.</p>
+          <div className={styles.cardsGrid}>
+            <article className={styles.card}>
+              <h3>On-Page SEO</h3>
+              <p>Optimization of website content, meta tags, headers, and structure.</p>
+              <ul>
+                <li>Keyword Research</li>
+                <li>Meta Optimization</li>
+                <li>Content Optimization</li>
+              </ul>
             </article>
-            <article className={styles.projectCard}>
-              <h3>Zion Cases</h3>
-              <p>Product-focused storefront with optimized product pages and streamlined checkout.</p>
+            <article className={styles.card}>
+              <h3>Off-Page SEO</h3>
+              <p>Building quality backlinks and improving domain authority.</p>
+              <ul>
+                <li>Link Building</li>
+                <li>Guest Posting</li>
+                <li>Digital PR</li>
+              </ul>
             </article>
-            <article className={styles.projectCard}>
-              <h3>Finance Platform</h3>
-              <p>Marketing site for a fintech product, highlighting features, security and customer stories.</p>
+            <article className={styles.card}>
+              <h3>Technical SEO</h3>
+              <p>Improving website performance, crawlability, and indexation.</p>
+              <ul>
+                <li>Site Speed</li>
+                <li>Mobile Optimization</li>
+                <li>Schema Markup</li>
+              </ul>
+            </article>
+            <article className={styles.card}>
+              <h3>Local SEO</h3>
+              <p>Optimizing for local search and Google Business Profile.</p>
+              <ul>
+                <li>Google My Business</li>
+                <li>Local Citations</li>
+                <li>Review Management</li>
+              </ul>
             </article>
           </div>
           <div className={styles.heroActions}>
             <Link href="/contact" className={styles.primaryButton}>
               Start your project
             </Link>
-            <Link href="/" className={styles.secondaryButton}>
-              Back to home
+            <Link href="/services" className={styles.secondaryButton}>
+              View all services
             </Link>
           </div>
         </section>

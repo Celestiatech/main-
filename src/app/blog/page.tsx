@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../page.module.css";
 
-export default function WorkPage() {
+export default function BlogPage() {
   return (
     <div className={styles.page}>
       {/* Floating orbs for background */}
@@ -10,8 +10,8 @@ export default function WorkPage() {
       <div className="orb orb-3"></div>
 
       {/* 3D Geometric Shapes */}
-      <div className="morph-shape" style={{ top: "10%", left: "5%" }}></div>
-      <div className="morph-shape" style={{ top: "60%", right: "10%" }}></div>
+      <div className="morph-shape" style={{ top: '10%', left: '5%' }}></div>
+      <div className="morph-shape" style={{ top: '60%', right: '10%' }}></div>
 
       {/* 3D Particle System */}
       <div className="particle-3d"></div>
@@ -153,26 +153,26 @@ export default function WorkPage() {
       <main className={styles.main}>
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
-            <h2>Our Work</h2>
-            <p>Explore our portfolio of successful projects and client success stories.</p>
+            <h2>Blog</h2>
+            <p>Latest insights, tips and trends in web development and digital marketing.</p>
           </div>
           <div className={styles.projectsGrid}>
             <article className={styles.projectCard}>
-              <h3>Grasshopper Soccer</h3>
-              <p>Community sports website with online enrolment, location search and mobile-first experience.</p>
+              <h3>AI in Digital Marketing</h3>
+              <p>Discover how artificial intelligence is revolutionizing digital marketing strategies.</p>
             </article>
             <article className={styles.projectCard}>
-              <h3>Zion Cases</h3>
-              <p>Product-focused storefront with optimized product pages and streamlined checkout.</p>
+              <h3>Next.js Best Practices</h3>
+              <p>Learn the latest techniques for building high-performance React applications.</p>
             </article>
             <article className={styles.projectCard}>
-              <h3>Finance Platform</h3>
-              <p>Marketing site for a fintech product, highlighting features, security and customer stories.</p>
+              <h3>SEO Trends 2024</h3>
+              <p>Stay ahead of the curve with the latest search engine optimization trends.</p>
             </article>
           </div>
           <div className={styles.heroActions}>
             <Link href="/contact" className={styles.primaryButton}>
-              Start your project
+              Get in touch
             </Link>
             <Link href="/" className={styles.secondaryButton}>
               Back to home
@@ -240,4 +240,3 @@ export default function WorkPage() {
     </div>
   );
 }
-

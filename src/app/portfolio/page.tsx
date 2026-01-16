@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../page.module.css";
 
-export default function WorkPage() {
+export default function PortfolioPage() {
   return (
     <div className={styles.page}>
       {/* Floating orbs for background */}
@@ -10,8 +10,8 @@ export default function WorkPage() {
       <div className="orb orb-3"></div>
 
       {/* 3D Geometric Shapes */}
-      <div className="morph-shape" style={{ top: "10%", left: "5%" }}></div>
-      <div className="morph-shape" style={{ top: "60%", right: "10%" }}></div>
+      <div className="morph-shape" style={{ top: '10%', left: '5%' }}></div>
+      <div className="morph-shape" style={{ top: '60%', right: '10%' }}></div>
 
       {/* 3D Particle System */}
       <div className="particle-3d"></div>
@@ -153,21 +153,33 @@ export default function WorkPage() {
       <main className={styles.main}>
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
-            <h2>Our Work</h2>
-            <p>Explore our portfolio of successful projects and client success stories.</p>
+            <h2>Portfolio</h2>
+            <p>Showcase of our recent projects and successful client work.</p>
           </div>
           <div className={styles.projectsGrid}>
             <article className={styles.projectCard}>
-              <h3>Grasshopper Soccer</h3>
-              <p>Community sports website with online enrolment, location search and mobile-first experience.</p>
+              <h3>E-commerce Platform</h3>
+              <p>Modern Shopify store with custom integrations and advanced analytics.</p>
             </article>
             <article className={styles.projectCard}>
-              <h3>Zion Cases</h3>
-              <p>Product-focused storefront with optimized product pages and streamlined checkout.</p>
+              <h3>Corporate Website</h3>
+              <p>Professional business website with CMS integration and SEO optimization.</p>
             </article>
             <article className={styles.projectCard}>
-              <h3>Finance Platform</h3>
-              <p>Marketing site for a fintech product, highlighting features, security and customer stories.</p>
+              <h3>Mobile Application</h3>
+              <p>Cross-platform mobile app with real-time features and offline capabilities.</p>
+            </article>
+            <article className={styles.projectCard}>
+              <h3>Brand Identity</h3>
+              <p>Complete brand redesign including logo, website, and marketing materials.</p>
+            </article>
+            <article className={styles.projectCard}>
+              <h3>SEO Campaign</h3>
+              <p>Comprehensive SEO strategy that increased organic traffic by 300%.</p>
+            </article>
+            <article className={styles.projectCard}>
+              <h3>Marketing Automation</h3>
+              <p>Automated marketing system with email campaigns and lead nurturing.</p>
             </article>
           </div>
           <div className={styles.heroActions}>
@@ -240,4 +252,3 @@ export default function WorkPage() {
     </div>
   );
 }
-
