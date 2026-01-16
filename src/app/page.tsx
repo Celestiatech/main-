@@ -1,291 +1,738 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import styles from "./page.module.css";
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState("all");
+
+  const services = [
+    {
+      icon: "📱",
+      title: "Mobile Development",
+      description: "Native & cross-platform apps for iOS and Android with exceptional UX",
+    },
+    {
+      icon: "🌐",
+      title: "Web Development",
+      description: "Scalable web applications using modern frameworks and technologies",
+    },
+    {
+      icon: "🎮",
+      title: "Game Development",
+      description: "Engaging 2D/3D games for mobile, web, and desktop platforms",
+    },
+    {
+      icon: "⛓️",
+      title: "Blockchain Development",
+      description: "Web3 solutions, smart contracts, and decentralized applications",
+    },
+    {
+      icon: "⚙️",
+      title: "DevOps Services",
+      description: "CI/CD pipelines, cloud infrastructure, and automation solutions",
+    },
+    {
+      icon: "🥽",
+      title: "Metaverse Development",
+      description: "Immersive VR/AR experiences and virtual world construction",
+    },
+    {
+      icon: "✅",
+      title: "Quality Assurance",
+      description: "Comprehensive testing services ensuring bug-free deliverables",
+    },
+  ];
+
+  const awards = [
+    { name: "Upwork", badge: "Top Rated Plus" },
+    { name: "Clutch", badge: "B2B Leader 2024" },
+    { name: "TechReviewer", badge: "Best Developer" },
+    { name: "GoodFirms", badge: "Excellence Award" },
+    { name: "AppFutura", badge: "Verified Partner" },
+  ];
+
+  const partners = [
+    "Google",
+    "Microsoft",
+    "Amazon",
+    "Meta",
+    "Apple",
+    "Netflix",
+  ];
+
+  const industries = [
+    { icon: "📚", name: "Education" },
+    { icon: "✈️", name: "Travel" },
+    { icon: "👥", name: "Social Networking" },
+    { icon: "💪", name: "Fitness" },
+    { icon: "💼", name: "Business" },
+    { icon: "🚚", name: "Logistics" },
+    { icon: "❤️", name: "Dating" },
+    { icon: "🏥", name: "Healthcare" },
+    { icon: "🏠", name: "Real Estate" },
+    { icon: "⚡", name: "On-Demand" },
+    { icon: "🔧", name: "Utility" },
+    { icon: "🎬", name: "Entertainment" },
+  ];
+
+  const portfolio = [
+    {
+      category: "mobile",
+      title: "HealthTrack Pro",
+      description: "Fitness tracking app with AI-powered insights",
+      tags: ["iOS", "Android", "Health"],
+    },
+    {
+      category: "web",
+      title: "EduLearn Platform",
+      description: "E-learning portal serving 100K+ students",
+      tags: ["React", "Node.js", "AWS"],
+    },
+    {
+      category: "game",
+      title: "Space Quest",
+      description: "Popular mobile game with 1M+ downloads",
+      tags: ["Unity", "3D", "Mobile"],
+    },
+    {
+      category: "blockchain",
+      title: "CryptoVault",
+      description: "DeFi platform with smart contracts",
+      tags: ["Web3", "Solidity", "DeFi"],
+    },
+    {
+      category: "ai",
+      title: "SmartAssist AI",
+      description: "AI chatbot for customer support",
+      tags: ["NLP", "Machine Learning"],
+    },
+    {
+      category: "design",
+      title: "BrandRebrand",
+      description: "Complete brand identity redesign",
+      tags: ["UI/UX", "Branding"],
+    },
+  ];
+
+  const processSteps = [
+    { icon: "💡", title: "Idea", desc: "Concept & vision" },
+    { icon: "📝", title: "Concept", desc: "Wireframes & design" },
+    { icon: "📋", title: "Plan", desc: "Strategy & roadmap" },
+    { icon: "⚡", title: "Develop", desc: "Agile development" },
+    { icon: "🚀", title: "Launch", desc: "Deployment & release" },
+    { icon: "🔄", title: "Iterate", desc: "Continuous improvement" },
+  ];
+
+  const techStack = {
+    frontend: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Angular", "Vue", "Svelte", "Tailwind", "Bootstrap"],
+    backend: ["Node.js", "Python", "Java", "Go", "Ruby", "PHP", ".NET"],
+    mobile: ["React Native", "Flutter", "Swift", "Kotlin"],
+    emerging: ["AI/ML", "Blockchain", "IoT", "Cloud", "DevOps", "Cybersecurity"],
+  };
+
+  const testimonials = [
+    {
+      quote: "Exceptional work! Delivered our project ahead of schedule with outstanding quality.",
+      author: "Sarah Johnson",
+      role: "CEO, TechStart Inc.",
+      stars: 5,
+    },
+    {
+      quote: "Professional team with deep expertise. They became our trusted development partner.",
+      author: "Michael Chen",
+      role: "Founder, HealthTech Solutions",
+      stars: 5,
+    },
+    {
+      quote: "Outstanding communication and technical skills. Highly recommended!",
+      author: "Emily Davis",
+      role: "Director, EduCorp",
+      stars: 5,
+    },
+  ];
+
+  const whyChooseUs = [
+    {
+      icon: "🎯",
+      title: "Tailored Solutions",
+      description: "Custom strategies aligned with your unique business goals",
+    },
+    {
+      icon: "📊",
+      title: "Project Management",
+      description: "Agile methodology with transparent progress tracking",
+    },
+    {
+      icon: "✅",
+      title: "Quality Assurance",
+      description: "Rigorous testing ensuring bug-free, scalable solutions",
+    },
+    {
+      icon: "⭐",
+      title: "Expertise & Experience",
+      description: "12+ years delivering successful solutions across industries",
+    },
+  ];
+
   return (
     <div className={styles.page}>
-      <div className={styles.topStrip}>
-        <span>Need help with SEO or PPC?</span>
-        <span>Grow your Shopify or e‑commerce store.</span>
-        <span>Custom web solutions in React, Next.js and Node.js.</span>
-        <span>Specialists in WordPress, Wix, Webflow and Joomla.</span>
-      </div>
-      
+      {/* ===== HEADER ===== */}
       <header className={styles.header}>
-        <div className={styles.logo}>YourAgency</div>
-        <nav className={styles.nav}>
-          <Link href="/" className={styles.navLink}>Home</Link>
-          <div className={styles.navItem}>
-            <button type="button" className={styles.navTrigger}>Services</button>
-            <div className={styles.navMenu}>
-              <div className={styles.navMenuGroup}>
-                <div className={styles.navMenuTitle}>Web Development</div>
-                <Link href="/website-development-services" className={styles.navMenuItem}>Website Development Services</Link>
-                <Link href="/nextjs-development-services" className={styles.navMenuItem}>Next.js Development</Link>
-                <Link href="/shopify-development-services" className={styles.navMenuItem}>Shopify Development</Link>
-                <Link href="/wordpress-development-services" className={styles.navMenuItem}>WordPress Development</Link>
-                <Link href="/joomla-development-services" className={styles.navMenuItem}>Joomla Development</Link>
-                <Link href="/laravel-development-services" className={styles.navMenuItem}>Laravel Development</Link>
-                <Link href="/reactjs-development-services" className={styles.navMenuItem}>ReactJS Development</Link>
-                <Link href="/nodejs-development-services" className={styles.navMenuItem}>Node.js Development</Link>
-                <Link href="/vuejs-development-services" className={styles.navMenuItem}>Vue.js Development</Link>
-                <Link href="/wix-development-services" className={styles.navMenuItem}>Wix Development</Link>
-                <Link href="/webflow-development-services" className={styles.navMenuItem}>Webflow Development</Link>
+        <div className={styles.headerTop}>
+          <div className="container">
+            <div className={styles.headerTopContent}>
+              <div className={styles.headerPhones}>
+                <a href="tel:+971500000000">🇦🇪 +971 50 000 0000</a>
+                <a href="tel:+919876543210">🇮🇳 +91 98765 43210</a>
               </div>
-              <div className={styles.navMenuGroup}>
-                <div className={styles.navMenuTitle}>Web Design</div>
-                <Link href="/website-design-services" className={styles.navMenuItem}>Website Design Services</Link>
-                <Link href="/ux-design-services" className={styles.navMenuItem}>UX Design Services</Link>
-                <Link href="/graphic-design-services" className={styles.navMenuItem}>Graphic Design Services</Link>
-                <Link href="/logo-design-services" className={styles.navMenuItem}>Logo Design Services</Link>
-                <Link href="/brochure-design-services" className={styles.navMenuItem}>Brochure Design Services</Link>
-                <Link href="/banner-design-services" className={styles.navMenuItem}>Banner Design Services</Link>
-              </div>
-              <div className={styles.navMenuGroup}>
-                <div className={styles.navMenuTitle}>Digital Marketing</div>
-                <Link href="/digital-marketing-services" className={styles.navMenuItem}>Digital Marketing Services</Link>
-                <Link href="/seo-services" className={styles.navMenuItem}>SEO Services</Link>
-                <Link href="/social-media-marketing-services" className={styles.navMenuItem}>Social Media Marketing</Link>
-                <Link href="/pay-per-click-advertising-services" className={styles.navMenuItem}>PPC Advertising</Link>
-                <Link href="/email-marketing-services" className={styles.navMenuItem}>Email Marketing</Link>
-                <Link href="/search-engine-marketing-services" className={styles.navMenuItem}>Search Engine Marketing</Link>
-              </div>
-              <div className={styles.navMenuGroup}>
-                <div className={styles.navMenuTitle}>Mobile Apps</div>
-                <Link href="/mobile-app-development-services" className={styles.navMenuItem}>Mobile App Development</Link>
-                <Link href="/ios-application-development-services" className={styles.navMenuItem}>iOS App Development</Link>
-                <Link href="/android-app-development-services" className={styles.navMenuItem}>Android App Development</Link>
-                <Link href="/flutter-app-development-services" className={styles.navMenuItem}>Flutter App Development</Link>
+              <div style={{ color: "rgba(255,255,255,0.7)", fontSize: "13px" }}>
+                Get a free consultation today!
               </div>
             </div>
           </div>
-          <Link href="/industries" className={styles.navLink}>Industries We Serve</Link>
-          <Link href="/work" className={styles.navLink}>Our Work</Link>
-          <Link href="/testimonials" className={styles.navLink}>Testimonials</Link>
-          <Link href="/contact" className={styles.navLink}>Contact</Link>
-        </nav>
-        <Link href="/clients" className={styles.headerCta}>For Clients</Link>
+        </div>
+        <div className="container">
+          <div className={styles.headerMain}>
+            <Link href="/" className={styles.logo}>
+              <div className={styles.logoIcon}>T</div>
+              TechNova
+            </Link>
+            <nav className={styles.nav}>
+              <Link href="/" className={styles.navLink}>Home</Link>
+              <div className={styles.navItem}>
+                <button className={styles.navLink}>
+                  Services <span>▼</span>
+                </button>
+                <div className={styles.navDropdown}>
+                  {/* Mobile Services */}
+                  <div className={styles.dropdownGroup}>
+                    <div className={styles.dropdownTitle}>📱 Mobile App Development</div>
+                    <Link href="/services" className={styles.dropdownSubLink}>iOS App Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Android Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>React Native Apps</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Flutter Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Cross-Platform Apps</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Mobile App Design</Link>
+                  </div>
+                  {/* Web Services */}
+                  <div className={styles.dropdownGroup}>
+                    <div className={styles.dropdownTitle}>🌐 Web Development</div>
+                    <Link href="/services" className={styles.dropdownSubLink}>Frontend Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Backend Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>React.js Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Next.js Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>E-commerce Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>CMS Development</Link>
+                  </div>
+                  {/* Game Services */}
+                  <div className={styles.dropdownGroup}>
+                    <div className={styles.dropdownTitle}>🎮 Game Development</div>
+                    <Link href="/services" className={styles.dropdownSubLink}>Unity Game Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Unreal Engine Games</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>2D Game Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>3D Game Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Multiplayer Games</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Game UI/UX Design</Link>
+                  </div>
+                  {/* AI & Blockchain */}
+                  <div className={styles.dropdownGroup}>
+                    <div className={styles.dropdownTitle}>🤖 AI & Blockchain</div>
+                    <Link href="/services" className={styles.dropdownSubLink}>Machine Learning</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>AI Chatbots</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Blockchain Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Smart Contracts</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>NFT Marketplace</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Web3 Development</Link>
+                  </div>
+                  {/* Design Services */}
+                  <div className={styles.dropdownGroup}>
+                    <div className={styles.dropdownTitle}>🎨 Design Services</div>
+                    <Link href="/services" className={styles.dropdownSubLink}>UI/UX Design</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Website Design</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Mobile App Design</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Brand Identity</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Logo Design</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Graphics Design</Link>
+                  </div>
+                  {/* Other Services */}
+                  <div className={styles.dropdownGroup}>
+                    <div className={styles.dropdownTitle}>⚙️ Other Services</div>
+                    <Link href="/services" className={styles.dropdownSubLink}>DevOps & Cloud</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Quality Assurance</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>API Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Cybersecurity</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Metaverse Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>AR/VR Solutions</Link>
+                  </div>
+                </div>
+              </div>
+              <Link href="/industries" className={styles.navLink}>Industries</Link>
+              <Link href="/work" className={styles.navLink}>Portfolio</Link>
+              <Link href="/about" className={styles.navLink}>Company</Link>
+              <Link href="/contact" className={styles.navLink}>Contact</Link>
+            </nav>
+            <div className={styles.headerActions}>
+              <Link href="/contact" className="btn btn-primary">
+                Share Your Requirement
+              </Link>
+              <Link href="/request-a-call" className="btn btn-secondary">
+                Schedule a Call
+              </Link>
+            </div>
+          </div>
+        </div>
       </header>
 
-      <main className={styles.main}>
-        <section className={styles.hero}>
+      {/* ===== HERO SECTION ===== */}
+      <section className={styles.hero}>
+        <div className={styles.heroBg}>
+          <video autoPlay loop muted playsInline>
+            <source src="/PixVerse_V5.5_Image_Text_540P_A_cinematic_shotonline-video-cutter.com-ezgif.com-video-to-gif-converter.mp4" type="video/mp4" />
+          </video>
+          <div className={styles.heroOverlay}></div>
+        </div>
+        <div className="container">
           <div className={styles.heroContent}>
-            <span className={styles.badge}>Digital marketing, web design and development agency</span>
-            <h1>We craft websites and campaigns that grow your business.</h1>
+            <div className={styles.heroBadge}>
+              <span className={styles.heroBadgeDot}></span>
+              Premium IT & Software Development Company
+            </div>
+            <h1>
+              Building <span>Innovative</span> Digital Solutions for Global Enterprises
+            </h1>
             <p className={styles.heroSubtitle}>
-              Modern websites, result-focused marketing and long-term support to help your
-              business stand out online.
+              Transform your business with our end-to-end development services. From mobile apps 
+              and web platforms to AI solutions and blockchain development — we deliver 
+              scalable, secure, and cutting-edge technology.
             </p>
             <div className={styles.heroActions}>
-              <Link href="/proposal" className={styles.primaryButton}>Get free proposal</Link>
-              <Link href="/work" className={styles.secondaryButton}>View work</Link>
+              <Link href="/proposal" className="btn btn-primary">
+                Share Your Requirement
+              </Link>
+              <Link href="/request-a-call" className="btn btn-secondary">
+                Schedule a Call
+              </Link>
             </div>
-            <div className={styles.metrics}>
-              <div>
-                <span className={styles.metricValue}>10+</span>
-                <span className={styles.metricLabel}>Years experience</span>
+            <div className={styles.heroStats}>
+              <div className={styles.statCard}>
+                <div className={styles.statNumber}>2,500+</div>
+                <div className={styles.statLabel}>Happy Clients</div>
               </div>
-              <div>
-                <span className={styles.metricValue}>300+</span>
-                <span className={styles.metricLabel}>Happy clients</span>
+              <div className={styles.statCard}>
+                <div className={styles.statNumber}>2,000+</div>
+                <div className={styles.statLabel}>Apps Developed</div>
               </div>
-              <div>
-                <span className={styles.metricValue}>900+</span>
-                <span className={styles.metricLabel}>Projects delivered</span>
+              <div className={styles.statCard}>
+                <div className={styles.statNumber}>1,000+</div>
+                <div className={styles.statLabel}>Games Developed</div>
+              </div>
+              <div className={styles.statCard}>
+                <div className={styles.statNumber}>12+</div>
+                <div className={styles.statLabel}>Years Experience</div>
               </div>
             </div>
           </div>
-          <div className={styles.heroPanel}>
-            <h2>What we can help with</h2>
-            <ul>
-              <li>Corporate and agency websites</li>
-              <li>E‑commerce and booking platforms</li>
-              <li>Branding and user experience</li>
-              <li>SEO, PPC and social media campaigns</li>
-            </ul>
-          </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="services" className={styles.section}>
+      {/* ===== SERVICES SECTION ===== */}
+      <section className={styles.services} id="services">
+        <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>Our Services</h2>
-            <p>From idea to launch and ongoing growth, we cover every step of your digital journey.</p>
+            <h2>Tap into Over a Decade of Expertise</h2>
+            <p>
+              With 12+ years of experience, we've helped startups and enterprises 
+              transform their digital presence. Our team combines innovation, scalability, 
+              and reliability to deliver solutions that drive real business growth.
+            </p>
           </div>
-          <div className={styles.cardsGrid}>
-            <article className={styles.card}>
-              <h3>Web Design</h3>
-              <p>Conversion-focused designs that match your brand and guide visitors to take action.</p>
-              <ul>
-                <li>Responsive layouts</li>
-                <li>UI/UX design</li>
-                <li>Design systems</li>
-              </ul>
-            </article>
-            <article className={styles.card}>
-              <h3>Web Development</h3>
-              <p>Fast, secure and scalable websites powered by modern frameworks and best practices.</p>
-              <ul>
-                <li>Next.js and React</li>
-                <li>Content management</li>
-                <li>API integrations</li>
-              </ul>
-            </article>
-            <article className={styles.card}>
-              <h3>Digital Marketing</h3>
-              <p>Data-driven campaigns that increase visibility, traffic and qualified leads.</p>
-              <ul>
-                <li>SEO and content</li>
-                <li>Paid search and social</li>
-                <li>Analytics and reporting</li>
-              </ul>
-            </article>
-            <article className={styles.card}>
-              <h3>Ongoing Support</h3>
-              <p>Long-term partners for maintenance, improvements and continuous optimization.</p>
-              <ul>
-                <li>Performance monitoring</li>
-                <li>Security updates</li>
-                <li>A/B testing</li>
-              </ul>
-            </article>
+          <div className={styles.servicesGrid}>
+            {services.map((service, index) => (
+              <div key={index} className={styles.serviceCard}>
+                <div className={styles.serviceIcon}>{service.icon}</div>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="industries" className={styles.sectionMuted}>
-          <div className={styles.sectionHeader}>
-            <h2>Industries We Serve</h2>
-            <p>We adapt our approach to different markets while keeping the same focus on measurable results.</p>
+      {/* ===== AWARDS SECTION ===== */}
+      <section className={styles.awards}>
+        <div className="container">
+          <div className={styles.awardsHeader}>
+            <h3>Ranked Among the Top Web & App Development Companies</h3>
+            <p>Recognized by leading industry platforms worldwide</p>
           </div>
-          <div className={styles.pills}>
-            <span>Technology & SaaS</span>
-            <span>E‑commerce</span>
-            <span>Professional services</span>
-            <span>Education</span>
-            <span>Real estate</span>
-            <span>Healthcare</span>
+          <div className={styles.awardsGrid}>
+            {awards.map((award, index) => (
+              <div key={index} className={styles.awardCard}>
+                <div className={styles.awardLogo}>{award.name}</div>
+                <span>{award.badge}</span>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="work" className={styles.section}>
+      {/* ===== TRUST/PARTNERS SECTION ===== */}
+      <section className={styles.trust}>
+        <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>Our Work</h2>
-            <p>A snapshot of the types of projects we deliver.</p>
+            <h3>Our Esteemed Partners</h3>
           </div>
-          <div className={styles.projectsGrid}>
-            <article className={styles.projectCard}>
-              <h3>Grasshopper Soccer</h3>
-              <p>Community sports website with online enrolment, location search and mobile-first experience.</p>
-            </article>
-            <article className={styles.projectCard}>
-              <h3>Zion Cases</h3>
-              <p>Product-focused storefront with optimized product pages and streamlined checkout.</p>
-            </article>
-            <article className={styles.projectCard}>
-              <h3>Finance Platform</h3>
-              <p>Marketing site for a fintech product, highlighting features, security and customer stories.</p>
-            </article>
+          <div className={styles.trustGrid}>
+            {partners.map((partner, index) => (
+              <div key={index} className={styles.trustItem}>
+                <div className={styles.trustLogo}>{partner}</div>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className={styles.section}>
+      {/* ===== INDUSTRIES SECTION ===== */}
+      <section className={styles.industries}>
+        <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>Awards & Certifications</h2>
-            <p>Clients trust us because we focus on quality, consistency and support.</p>
+            <h2>Industries We Cater To</h2>
+            <p>Delivering specialized solutions across diverse sectors</p>
           </div>
-          <div className={styles.awardsStrip}>
-            <span>10+ Years Experience</span>
-            <span>300+ Clients Worldwide</span>
-            <span>900+ Projects Completed</span>
-            <span>Verified Web & Marketing Experts</span>
+          <div className={styles.industriesGrid}>
+            {industries.map((industry, index) => (
+              <div key={index} className={styles.industryCard}>
+                <div className={styles.industryIcon}>{industry.icon}</div>
+                <h4>{industry.name}</h4>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="testimonials" className={styles.sectionMuted}>
+      {/* ===== PORTFOLIO SECTION ===== */}
+      <section className={styles.portfolio}>
+        <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>What clients say</h2>
-            <p>Clients choose us for clear communication, reliable delivery and long-term partnerships.</p>
+            <h2>Our Portfolio — Results That Speak</h2>
+            <p>Explore our success stories and delivered projects</p>
+          </div>
+          <div className={styles.portfolioTabs}>
+            {["all", "mobile", "web", "game", "blockchain", "ai"].map((tab) => (
+              <button
+                key={tab}
+                className={`${styles.portfolioTab} ${activeTab === tab ? styles.active : ""}`}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              </button>
+            ))}
+          </div>
+          <div className={styles.portfolioGrid}>
+            {portfolio
+              .filter((item) => activeTab === "all" || item.category === activeTab)
+              .slice(0, 6)
+              .map((item, index) => (
+                <div key={index} className={styles.portfolioCard}>
+                  <div className={styles.portfolioImage}>📱</div>
+                  <div className={styles.portfolioContent}>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                    <div className={styles.portfolioTags}>
+                      {item.tags.map((tag, i) => (
+                        <span key={i} className={styles.portfolioTag}>{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== PROCESS SECTION ===== */}
+      <section className={styles.process}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2>How It Works</h2>
+            <p>Our streamlined development process ensures success</p>
+          </div>
+          <div className={styles.processSteps}>
+            {processSteps.map((step, index) => (
+              <div key={index} className={styles.processStep}>
+                <div className={styles.processIcon}>{step.icon}</div>
+                <h4>{step.title}</h4>
+                <p>{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== UPWORK SECTION ===== */}
+      <section className={styles.upwork}>
+        <div className="container">
+          <div className={styles.upworkContent}>
+            <div>
+              <h2 style={{ color: "white", fontSize: "32px", marginBottom: "12px" }}>
+                Top-Rated Upwork Partner
+              </h2>
+              <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "16px" }}>
+                Join 1,800+ satisfied clients who trusted us with their projects
+              </p>
+            </div>
+            <div className={styles.upworkStats}>
+              <div className={styles.upworkStat}>
+                <div className={styles.upworkStatNumber}>1,800+</div>
+                <div className={styles.upworkStatLabel}>Jobs Completed</div>
+              </div>
+              <div className={styles.upworkStat}>
+                <div className={styles.upworkStatNumber}>$9M+</div>
+                <div className={styles.upworkStatLabel}>Earned</div>
+              </div>
+              <div className={styles.upworkStat}>
+                <div className={styles.upworkStatNumber}>Top 3%</div>
+                <div className={styles.upworkStatLabel}>Talent Worldwide</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== TECH STACK SECTION ===== */}
+      <section className={styles.techStack}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2>Technology Stack</h2>
+            <p>Modern tools and frameworks for powerful solutions</p>
+          </div>
+          <div className={styles.techCategories}>
+            <div className={styles.techCategory}>
+              <h3>
+                <span>🎨</span> Frontend
+              </h3>
+              <div className={styles.techGrid}>
+                {techStack.frontend.map((tech, index) => (
+                  <span key={index} className={styles.techTag}>{tech}</span>
+                ))}
+              </div>
+            </div>
+            <div className={styles.techCategory}>
+              <h3>
+                <span>⚙️</span> Backend & Database
+              </h3>
+              <div className={styles.techGrid}>
+                {techStack.backend.map((tech, index) => (
+                  <span key={index} className={styles.techTag}>{tech}</span>
+                ))}
+              </div>
+            </div>
+            <div className={styles.techCategory}>
+              <h3>
+                <span>🚀</span> Mobile & Emerging
+              </h3>
+              <div className={styles.techGrid}>
+                {techStack.mobile.map((tech, index) => (
+                  <span key={index} className={styles.techTag}>{tech}</span>
+                ))}
+                {techStack.emerging.map((tech, index) => (
+                  <span key={index} className={styles.techTag}>{tech}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== CTA SECTION ===== */}
+      <section className={styles.cta}>
+        <div className="container">
+          <h2>Ready to Create an Impact?</h2>
+          <p>Let's discuss your project and turn your vision into reality</p>
+          <Link href="/proposal" className="btn btn-accent">
+            Get Free Consultation
+          </Link>
+        </div>
+      </section>
+
+      {/* ===== WHY CHOOSE US SECTION ===== */}
+      <section className={styles.whyChooseUs}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2>Why Choose TechNova?</h2>
+            <p>Partner with a team committed to your success</p>
+          </div>
+          <div className={styles.whyGrid}>
+            {whyChooseUs.map((item, index) => (
+              <div key={index} className={styles.whyCard}>
+                <div className={styles.whyIcon}>{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== TESTIMONIALS SECTION ===== */}
+      <section className={styles.testimonials}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2>What Our Clients Say</h2>
+            <p>Trusted by businesses worldwide</p>
           </div>
           <div className={styles.testimonialsGrid}>
-            <article className={styles.testimonialCard}>
-              <p>"They quickly understood our product and delivered a site that feels fast, modern and on-brand."</p>
-              <span className={styles.testimonialAuthor}>Ben Wright, Founder</span>
-            </article>
-            <article className={styles.testimonialCard}>
-              <p>"Process was smooth from start to finish and the results exceeded our expectations."</p>
-              <span className={styles.testimonialAuthor}>Ivana Jablanovic, Project Manager</span>
-            </article>
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className={styles.testimonialCard}>
+                <div className={styles.testimonialStars}>
+                  {"★".repeat(testimonial.stars)}
+                </div>
+                <p>"{testimonial.quote}"</p>
+                <div className={styles.testimonialAuthor}>
+                  <div className={styles.testimonialAvatar}>
+                    {testimonial.author.charAt(0)}
+                  </div>
+                  <div className={styles.testimonialInfo}>
+                    <h4>{testimonial.author}</h4>
+                    <span>{testimonial.role}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="contact" className={styles.section}>
-          <div className={styles.sectionHeader}>
-            <h2>Ready to start?</h2>
-            <p>Tell us about your project, timelines and goals. We will get back to you within one business day.</p>
-          </div>
-          <div className={styles.contactLayout}>
-            <div>
-              <div className={styles.contactHighlights}>
-                <span>Free initial consultation</span>
-                <span>Clear pricing before we start</span>
-                <span>Dedicated project manager</span>
+      {/* ===== CONTACT SECTION ===== */}
+      <section className={styles.contact}>
+        <div className="container">
+          <div className={styles.contactGrid}>
+            <div className={styles.contactInfo}>
+              <h2>Let's Work Together</h2>
+              <p>
+                Tell us about your project and we'll help bring your ideas to life.
+                Fill out the form and our team will get back to you within 24 hours.
+              </p>
+              <div className={styles.contactLocations}>
+                <div className={styles.contactLocation}>
+                  <h4>🇦🇪 Dubai, UAE</h4>
+                  <p>Business Bay, Dubai</p>
+                </div>
+                <div className={styles.contactLocation}>
+                  <h4>🇮🇳 India</h4>
+                  <p>Mohali, Punjab</p>
+                </div>
               </div>
             </div>
-            <form className={styles.form}>
-              <div className={styles.field}>
-                <label htmlFor="name">Name</label>
-                <input id="name" name="name" placeholder="Your name" />
+            <form className={styles.contactForm}>
+              <div className={styles.formRow}>
+                <div className={styles.formGroup}>
+                  <label>Name *</label>
+                  <input type="text" placeholder="Your name" required />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Email *</label>
+                  <input type="email" placeholder="you@company.com" required />
+                </div>
               </div>
-              <div className={styles.field}>
-                <label htmlFor="email">Email</label>
-                <input id="email" name="email" placeholder="you@example.com" type="email" />
+              <div className={styles.formGroup}>
+                <label>Phone Number</label>
+                <input type="tel" placeholder="+1 555 000 0000" />
               </div>
-              <div className={styles.field}>
-                <label htmlFor="company">Company</label>
-                <input id="company" name="company" placeholder="Your company" />
+              <div className={styles.formGroup}>
+                <label>Project Description *</label>
+                <textarea rows={4} placeholder="Tell us about your project..." required></textarea>
               </div>
-              <div className={styles.field}>
-                <label htmlFor="message">Project details</label>
-                <textarea id="message" name="message" rows={4} placeholder="Share a short overview of your project." />
+              <button type="submit" className="btn btn-primary" style={{ width: "100%" }}>
+                Send Message
+              </button>
+              <div className={styles.formNote}>
+                🔒 Your information is secure. We sign NDAs for all projects.
               </div>
-              <button type="submit" className={styles.primaryButton}>Send message</button>
             </form>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <footer className={styles.footer}>
-          <div className={styles.footerColumns}>
-            <div>
-              <h3>Services</h3>
+      {/* ===== FOOTER ===== */}
+      <footer className={styles.footer}>
+        <div className="container">
+          <div className={styles.footerGrid}>
+            <div className={styles.footerAbout}>
+              <div className={styles.logo}>
+                <div className={styles.logoIcon}>T</div>
+                TechNova
+              </div>
+              <p>
+                Premium IT development company delivering innovative solutions 
+                in mobile apps, web development, AI, and blockchain technologies.
+              </p>
+              <div className={styles.footerSocial}>
+                <a href="#">in</a>
+                <a href="#">tw</a>
+                <a href="#">fb</a>
+                <a href="#">ig</a>
+              </div>
+            </div>
+            <div className={styles.footerColumn}>
+              <h4>Services</h4>
               <ul>
-                <li><Link href="/services">Web Development Services</Link></li>
-                <li><Link href="/services">Web Design Services</Link></li>
-                <li><Link href="/services">Digital Marketing Services</Link></li>
-                <li><Link href="/services">Mobile App Services</Link></li>
+                <li><Link href="#">Mobile Development</Link></li>
+                <li><Link href="#">Web Development</Link></li>
+                <li><Link href="#">Game Development</Link></li>
+                <li><Link href="#">AI Solutions</Link></li>
+                <li><Link href="#">Blockchain</Link></li>
               </ul>
             </div>
-            <div>
-              <h3>Company</h3>
+            <div className={styles.footerColumn}>
+              <h4>Company</h4>
               <ul>
-                <li><Link href="/work">Our Work</Link></li>
-                <li><Link href="/testimonials">Testimonials</Link></li>
-                <li><Link href="/contact">Contact Us</Link></li>
+                <li><Link href="/about">About Us</Link></li>
+                <li><Link href="#">Careers</Link></li>
+                <li><Link href="#">Blog</Link></li>
+                <li><Link href="/contact">Contact</Link></li>
               </ul>
             </div>
-            <div>
-              <h3>Resources</h3>
+            <div className={styles.footerColumn}>
+              <h4>Industries</h4>
               <ul>
-                <li><Link href="/industries">Industries We Serve</Link></li>
-                <li><Link href="/proposal">Get a Free Proposal</Link></li>
-                <li><Link href="/request-a-call">Request a Call</Link></li>
+                <li><Link href="/industries">Healthcare</Link></li>
+                <li><Link href="/industries">Education</Link></li>
+                <li><Link href="/industries">Finance</Link></li>
+                <li><Link href="/industries">E-commerce</Link></li>
+                <li><Link href="/industries">Real Estate</Link></li>
+              </ul>
+            </div>
+            <div className={styles.footerColumn}>
+              <h4>Support</h4>
+              <ul>
+                <li><Link href="#">Help Center</Link></li>
+                <li><Link href="#">Privacy Policy</Link></li>
+                <li><Link href="#">Terms of Service</Link></li>
+                <li><Link href="#">Sitemap</Link></li>
               </ul>
             </div>
           </div>
           <div className={styles.footerBottom}>
-            <span>© {new Date().getFullYear()} YourAgency. All rights reserved.</span>
-            <span>Built with Next.js</span>
+            <p>© 2024 TechNova Solutions. All rights reserved.</p>
+            <div className={styles.footerLegal}>
+              <Link href="#">Privacy Policy</Link>
+              <Link href="#">Terms of Service</Link>
+              <Link href="#">Cookie Policy</Link>
+            </div>
           </div>
-        </footer>
-      </main>
+        </div>
+      </footer>
+
+      {/* ===== CHATBOT ===== */}
+      <div className={styles.chatbot}>
+        <div className={styles.chatbotGreeting}>
+          👋 Hi! How can we help you today?
+        </div>
+        <button className={styles.chatbotButton}>💬</button>
+      </div>
     </div>
   );
 }

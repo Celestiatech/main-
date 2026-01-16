@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
   subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-poppins",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: "YourAgency – Web Design, Development & Digital Marketing",
-  description:
-    "YourAgency is a full-service web design, development and digital marketing agency delivering modern, results-driven websites and campaigns.",
+  title: "TechNova - Premium IT & Software Development Company",
+  description: "Leading IT development company specializing in mobile apps, web development, AI solutions, blockchain, and game development. Trusted by 2,500+ clients worldwide.",
 };
 
 export default function RootLayout({
@@ -25,9 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${poppins.variable} ${inter.variable}`}>
         {children}
       </body>
     </html>
   );
 }
+
