@@ -1149,46 +1149,6 @@
   color: white;
 }
 
-/* ===== CHATBOT ===== */
-.chatbot {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 999;
-}
-
-.chatbotButton {
-  width: 60px;
-  height: 60px;
-  background: var(--gradient-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 24px;
-  box-shadow: var(--shadow-xl);
-  transition: all var(--transition-base);
-}
-
-.chatbotButton:hover {
-  transform: scale(1.1);
-}
-
-.chatbotGreeting {
-  position: absolute;
-  bottom: 72px;
-  right: 0;
-  background: white;
-  padding: 12px 16px;
-  border-radius: var(--radius-md);
-  font-size: 13px;
-  color: var(--text-primary);
-  box-shadow: var(--shadow-lg);
-  white-space: nowrap;
-  animation: fadeInUp 0.3s ease-out;
-}
-
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .hero h1 {
@@ -1995,6 +1955,46 @@
   font-weight: 600;
   margin-bottom: 24px;
   color: var(--text-primary);
+}
+
+/* ===== PAGE HERO ===== */
+.pageHero {
+  padding: 140px 0 60px;
+  background: linear-gradient(135deg, var(--secondary) 0%, #0f172a 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pageHero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 60%;
+  height: 150%;
+  background: radial-gradient(ellipse, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+}
+
+.pageHeroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.pageHero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.pageHero p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  animation: fadeInUp 0.6s ease-out 0.2s both;
 }
 
 /* ===== BREADCRUMBS ===== */

@@ -1,36 +1,110 @@
 
-
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import styles from "../page.module.css";
 import Breadcrumb from "../components/Breadcrumb";
 
-export default function IndustriesPage() {
+export default function CareerPage() {
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "Industries" },
+    { label: "Careers" },
   ];
 
-  const industries = [
-
-    { icon: "📚", name: "Education", desc: "E-learning, LMS, and educational apps" },
-    { icon: "✈️", name: "Travel & Tourism", desc: "Booking platforms and travel apps" },
-    { icon: "👥", name: "Social Networking", desc: "Community apps and social platforms" },
-    { icon: "💪", name: "Fitness & Health", desc: "Health tracking and wellness apps" },
-    { icon: "💼", name: "Business & Finance", desc: "Enterprise solutions and fintech" },
-    { icon: "🚚", name: "Logistics", desc: "Fleet management and delivery systems" },
-    { icon: "❤️", name: "Dating & Social", desc: "Dating apps and social platforms" },
-    { icon: "🏥", name: "Healthcare", desc: "Medical apps and telemedicine" },
-    { icon: "🏠", name: "Real Estate", desc: "Property listings and management" },
-    { icon: "⚡", name: "On-Demand", desc: "Service delivery and booking apps" },
-    { icon: "🔧", name: "Utilities", desc: "Tools and productivity apps" },
-    { icon: "🎬", name: "Entertainment", desc: "Streaming and media platforms" },
-    { icon: "🛒", name: "E-commerce", desc: "Online stores and marketplaces" },
-    { icon: "🎓", name: "EdTech", desc: "Educational technology solutions" },
-    { icon: "🏭", name: "Manufacturing", desc: "Industrial IoT and automation" },
-    { icon: "🚗", name: "Automotive", desc: "Car rental and vehicle services" },
+  const openPositions = [
+    {
+      title: "Senior React Developer",
+      department: "Engineering",
+      location: "Dubai, UAE",
+      type: "Full-time",
+      description: "We're looking for an experienced React developer to join our team and build cutting-edge web applications.",
+      requirements: [
+        "5+ years of experience with React and TypeScript",
+        "Strong knowledge of Next.js and modern frontend practices",
+        "Experience with state management (Redux, Zustand, or similar)",
+        "Familiarity with testing frameworks (Jest, React Testing Library)",
+      ],
+    },
+    {
+      title: "Mobile App Developer",
+      department: "Engineering",
+      location: "Mohali, India",
+      type: "Full-time",
+      description: "Join our mobile development team to create innovative iOS and Android applications.",
+      requirements: [
+        "3+ years of experience in mobile development",
+        "Proficiency in Swift, Kotlin, or Flutter",
+        "Experience with React Native is a plus",
+        "Strong understanding of mobile UI/UX principles",
+      ],
+    },
+    {
+      title: "UI/UX Designer",
+      department: "Design",
+      location: "Remote",
+      type: "Full-time",
+      description: "We're seeking a talented designer to create beautiful and intuitive user experiences.",
+      requirements: [
+        "4+ years of UI/UX design experience",
+        "Proficiency in Figma, Sketch, or Adobe XD",
+        "Strong portfolio showcasing web and mobile designs",
+        "Experience with design systems and prototyping",
+      ],
+    },
+    {
+      title: "DevOps Engineer",
+      department: "Operations",
+      location: "Dubai, UAE",
+      type: "Full-time",
+      description: "Help us build and maintain scalable cloud infrastructure for our clients.",
+      requirements: [
+        "4+ years of DevOps experience",
+        "Strong knowledge of AWS, Azure, or GCP",
+        "Experience with Docker, Kubernetes, and CI/CD pipelines",
+        "Familiarity with Infrastructure as Code tools",
+      ],
+    },
+    {
+      title: "Blockchain Developer",
+      department: "Engineering",
+      location: "Remote",
+      type: "Full-time",
+      description: "Join our blockchain team to build Web3 solutions and smart contracts.",
+      requirements: [
+        "3+ years of blockchain development experience",
+        "Strong knowledge of Solidity and Ethereum",
+        "Experience with Web3.js or Ethers.js",
+        "Understanding of DeFi protocols and NFT standards",
+      ],
+    },
+    {
+      title: "AI/ML Engineer",
+      department: "Engineering",
+      location: "Mohali, India",
+      type: "Full-time",
+      description: "Work on cutting-edge AI solutions for our clients across various industries.",
+      requirements: [
+        "3+ years of machine learning experience",
+        "Strong knowledge of Python, TensorFlow, or PyTorch",
+        "Experience with NLP, computer vision, or recommendation systems",
+        "Published research or open-source contributions are a plus",
+      ],
+    },
   ];
+
+  const benefits = [
+    { icon: "💰", title: "Competitive Salary", desc: "Industry-leading compensation packages" },
+    { icon: "🏠", title: "Remote Work", desc: "Flexible work from anywhere" },
+    { icon: "🏥", title: "Health Insurance", desc: "Comprehensive medical coverage" },
+    { icon: "🎓", title: "Learning Budget", desc: "Annual budget for courses and conferences" },
+    { icon: "🏖️", title: "Unlimited PTO", desc: "Take time off when you need it" },
+    { icon: "👶", title: "Parental Leave", desc: "Generous leave for new parents" },
+    { icon: "🎮", title: "Team Events", desc: "Regular team building activities" },
+    { icon: "💻", title: "Latest Tech", desc: "Top-of-the-line equipment" },
+  ];
+
+  const [selectedJob, setSelectedJob] = useState<number | null>(null);
 
   return (
     <div className={styles.page}>
@@ -118,7 +192,7 @@ export default function IndustriesPage() {
                   </div>
                 </div>
               </div>
-              <Link href="/industries" className={`${styles.navLink} ${styles.active}`}>Industries</Link>
+              <Link href="/blog" className={styles.navLink}>Blogs</Link>
               <Link href="/work" className={styles.navLink}>Portfolio</Link>
               <Link href="/about" className={styles.navLink}>Company</Link>
               <Link href="/contact" className={styles.navLink}>Contact</Link>
@@ -133,72 +207,82 @@ export default function IndustriesPage() {
             </div>
           </div>
         </div>
-
       </header>
 
       <Breadcrumb items={breadcrumbItems} />
 
       {/* ===== PAGE HERO ===== */}
-
       <section className={styles.pageHero}>
         <div className="container">
           <div className={styles.pageHeroContent}>
-            <h1>Industries We Serve</h1>
-            <p>Delivering specialized solutions across diverse sectors worldwide</p>
+            <h1>Join Our Team</h1>
+            <p>Build the future of technology with TechNova. We're always looking for talented individuals.</p>
           </div>
         </div>
       </section>
 
-      {/* ===== INDUSTRIES SECTION ===== */}
+      {/* ===== WHY JOIN US ===== */}
       <section className={styles.services}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>Our Industry Expertise</h2>
-            <p>
-              With over 12 years of experience, we've successfully delivered 
-              solutions to clients across various industries worldwide.
-            </p>
+            <h2>Why Work With Us?</h2>
+            <p>Join a team that values innovation, growth, and work-life balance</p>
           </div>
-          <div className={styles.industriesGrid}>
-            {industries.map((industry, index) => (
-              <div key={index} className={styles.industryCard}>
-                <div className={styles.industryIcon}>{industry.icon}</div>
-                <h4>{industry.name}</h4>
-                <p>{industry.desc}</p>
+          <div className={styles.whyGrid}>
+            {benefits.map((benefit, index) => (
+              <div key={index} className={styles.whyCard}>
+                <div className={styles.whyIcon}>{benefit.icon}</div>
+                <h3>{benefit.title}</h3>
+                <p>{benefit.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===== WHY CHOOSE US ===== */}
-      <section className={styles.whyChooseUs}>
+      {/* ===== OPEN POSITIONS ===== */}
+      <section className={styles.servicesSection}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>Why Industry Leaders Choose Us</h2>
-            <p>Trusted by businesses across the globe</p>
+            <h2>Open Positions</h2>
+            <p>Find your next role and make an impact</p>
           </div>
-          <div className={styles.whyGrid}>
-            <div className={styles.whyCard}>
-              <div className={styles.whyIcon}>🏆</div>
-              <h3>Industry Recognition</h3>
-              <p>Award-winning solutions recognized by leading platforms</p>
-            </div>
-            <div className={styles.whyCard}>
-              <div className={styles.whyIcon}>🌍</div>
-              <h3>Global Experience</h3>
-              <p>Delivered projects to clients in 50+ countries</p>
-            </div>
-            <div className={styles.whyCard}>
-              <div className={styles.whyIcon}>⚡</div>
-              <h3>Fast Turnaround</h3>
-              <p>Agile methodology ensuring quick time-to-market</p>
-            </div>
-            <div className={styles.whyCard}>
-              <div className={styles.whyIcon}>🔒</div>
-              <h3>Data Security</h3>
-              <p>Enterprise-grade security protocols and compliance</p>
-            </div>
+          <div className={styles.faqGrid}>
+            {openPositions.map((job, index) => (
+              <div key={index} className={styles.faqCard}>
+                <h4>{job.title}</h4>
+                <p style={{ marginBottom: "12px", color: "var(--primary)", fontWeight: 500 }}>
+                  {job.department} • {job.location} • {job.type}
+                </p>
+                <p style={{ marginBottom: "16px", fontSize: "14px", color: "var(--text-secondary)" }}>
+                  {job.description}
+                </p>
+                <button 
+                  className="btn btn-primary"
+                  style={{ width: "100%", padding: "10px 20px", fontSize: "14px" }}
+                  onClick={() => setSelectedJob(selectedJob === index ? null : index)}
+                >
+                  {selectedJob === index ? "Hide Details" : "View Details"}
+                </button>
+                {selectedJob === index && (
+                  <div style={{ marginTop: "16px", padding: "16px", background: "var(--bg-primary)", borderRadius: "var(--radius-md)" }}>
+                    <h5 style={{ marginBottom: "12px", fontSize: "14px", fontWeight: 600 }}>Requirements:</h5>
+                    <ul style={{ listStyle: "disc", paddingLeft: "20px", fontSize: "14px", color: "var(--text-secondary)" }}>
+                      {job.requirements.map((req, i) => (
+                        <li key={i} style={{ marginBottom: "8px" }}>{req}</li>
+                      ))}
+                    </ul>
+                    <Link 
+                      href="/contact" 
+                      className="btn btn-accent"
+                      style={{ width: "100%", marginTop: "16px", padding: "10px 20px", fontSize: "14px", display: "inline-flex" }}
+                    >
+                      Apply Now
+                    </Link>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -206,10 +290,10 @@ export default function IndustriesPage() {
       {/* ===== CTA SECTION ===== */}
       <section className={styles.cta}>
         <div className="container">
-          <h2>Ready to Transform Your Industry?</h2>
-          <p>Let's discuss how we can help your business grow</p>
+          <h2>Don't See Your Role?</h2>
+          <p>We're always interested in hearing from talented individuals. Send us your resume!</p>
           <Link href="/contact" className="btn btn-accent">
-            Get Free Consultation
+            Get In Touch
           </Link>
         </div>
       </section>
@@ -237,24 +321,24 @@ export default function IndustriesPage() {
             <div className={styles.footerColumn}>
               <h4>Services</h4>
               <ul>
-                <li><Link href="#">Mobile Development</Link></li>
-                <li><Link href="#">Web Development</Link></li>
-                <li><Link href="#">Game Development</Link></li>
-                <li><Link href="#">AI Solutions</Link></li>
-                <li><Link href="#">Blockchain</Link></li>
+                <li><Link href="/services">Mobile Development</Link></li>
+                <li><Link href="/services">Web Development</Link></li>
+                <li><Link href="/services">Game Development</Link></li>
+                <li><Link href="/services">AI Solutions</Link></li>
+                <li><Link href="/services">Blockchain</Link></li>
               </ul>
             </div>
             <div className={styles.footerColumn}>
               <h4>Company</h4>
               <ul>
                 <li><Link href="/about">About Us</Link></li>
-                <li><Link href="#">Careers</Link></li>
-                <li><Link href="#">Blog</Link></li>
+                <li><Link href="/career">Careers</Link></li>
+                <li><Link href="/blog">Blog</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
               </ul>
             </div>
             <div className={styles.footerColumn}>
-              <h4>Industries</h4>
+              <h4>Blogs</h4>
               <ul>
                 <li><Link href="/industries">Healthcare</Link></li>
                 <li><Link href="/industries">Education</Link></li>

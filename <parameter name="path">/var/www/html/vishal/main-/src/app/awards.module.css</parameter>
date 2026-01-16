@@ -1,0 +1,108 @@
+<parameter name="content">/* Awards Marquee Animation */
+.awardsMarquee {
+  overflow: hidden;
+  background: #f8f9fc;
+  padding: 40px 0;
+  position: relative;
+}
+
+.awardsMarqueeWithOverlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background: linear-gradient(to right, #f8f9fc, transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.awardsMarqueeWithOverlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  background: linear-gradient(to left, #f8f9fc, transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marqueeContent {
+  display: flex;
+  animation: marqueeScroll 30s linear infinite;
+  width: fit-content;
+}
+
+.marqueeContent:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marqueeItem {
+  flex-shrink: 0;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+}
+
+.marqueeLogo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4b5563;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.marqueeBadge {
+  font-size: 12px;
+  color: #3b82f6;
+  font-weight: 500;
+  text-align: center;
+}
+
+.marqueeItemAnimation {
+  animation: floatItem 3s ease-in-out infinite;
+}
+
+.marqueeItemAnimation:nth-child(odd) {
+  animation-delay: -1.5s;
+}
+
+@keyframes floatItem {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(8px);
+  }
+}
+
+.marqueeWrapper {
+  display: flex;
+  width: 200%;
+}
+
+.marqueeSection {
+  width: 50%;
+}
+</parameter>

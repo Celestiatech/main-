@@ -1,242 +1,408 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import styles from "../page.module.css";
+import Breadcrumb from "../components/Breadcrumb";
 
 export default function BlogPage() {
+  const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    { label: "Blogs" },
+  ];
+
+  const categories = [
+    { name: "All", count: 24 },
+    { name: "Web Development", count: 8 },
+    { name: "Mobile Development", count: 5 },
+    { name: "AI & Machine Learning", count: 4 },
+    { name: "Blockchain", count: 3 },
+    { name: "DevOps", count: 2 },
+    { name: "Design", count: 2 },
+  ];
+
+  const blogs = [
+    {
+      id: 1,
+      title: "Complete Guide to React 19: New Features and Improvements",
+      excerpt: "Explore the exciting new features in React 19 including the use hook, improved concurrency, and better TypeScript support.",
+      category: "Web Development",
+      author: "John Smith",
+      date: "Jan 15, 2024",
+      readTime: "8 min read",
+      featured: true,
+    },
+    {
+      id: 2,
+      title: "Building Scalable APIs with Node.js and TypeScript",
+      excerpt: "Learn best practices for creating high-performance, type-safe APIs using Node.js, Express, and TypeScript.",
+      category: "Web Development",
+      author: "Sarah Johnson",
+      date: "Jan 12, 2024",
+      readTime: "10 min read",
+    },
+    {
+      id: 3,
+      title: "Flutter vs React Native: Which Framework to Choose in 2024?",
+      excerpt: "A comprehensive comparison of the two leading cross-platform mobile development frameworks.",
+      category: "Mobile Development",
+      author: "Michael Chen",
+      date: "Jan 10, 2024",
+      readTime: "12 min read",
+    },
+    {
+      id: 4,
+      title: "Introduction to Large Language Models and GPT-4",
+      excerpt: "Understanding how LLMs work and how to integrate them into your applications.",
+      category: "AI & Machine Learning",
+      author: "Emily Davis",
+      date: "Jan 8, 2024",
+      readTime: "15 min read",
+      featured: true,
+    },
+    {
+      id: 5,
+      title: "Smart Contract Development with Solidity",
+      excerpt: "Learn how to build secure and efficient smart contracts for Ethereum and other EVM chains.",
+      category: "Blockchain",
+      author: "David Wilson",
+      date: "Jan 5, 2024",
+      readTime: "14 min read",
+    },
+    {
+      id: 6,
+      title: "Docker and Kubernetes: Container Orchestration Explained",
+      excerpt: "Master containerization and orchestration for deploying scalable applications.",
+      category: "DevOps",
+      author: "Alex Turner",
+      date: "Jan 3, 2024",
+      readTime: "11 min read",
+    },
+    {
+      id: 7,
+      title: "UI/UX Design Principles for Developers",
+      excerpt: "Essential design principles every developer should know to create beautiful user interfaces.",
+      category: "Design",
+      author: "Lisa Anderson",
+      date: "Jan 1, 2024",
+      readTime: "9 min read",
+    },
+    {
+      id: 8,
+      title: "Next.js 14: Server Actions and App Router Deep Dive",
+      excerpt: "Master the new features in Next.js 14 including server actions and improved data fetching.",
+      category: "Web Development",
+      author: "John Smith",
+      date: "Dec 28, 2023",
+      readTime: "10 min read",
+    },
+    {
+      id: 9,
+      title: "Building Real-time Applications with WebSockets",
+      excerpt: "Create interactive real-time features using WebSockets and Socket.io.",
+      category: "Web Development",
+      author: "Sarah Johnson",
+      date: "Dec 25, 2023",
+      readTime: "8 min read",
+    },
+    {
+      id: 10,
+      title: "iOS Development with SwiftUI: A Beginner's Guide",
+      excerpt: "Start building beautiful iOS applications with SwiftUI and modern Swift programming.",
+      category: "Mobile Development",
+      author: "Michael Chen",
+      date: "Dec 22, 2023",
+      readTime: "12 min read",
+    },
+    {
+      id: 11,
+      title: "Introduction to Machine Learning with Python",
+      excerpt: "Get started with ML using scikit-learn, TensorFlow, and practical examples.",
+      category: "AI & Machine Learning",
+      author: "Emily Davis",
+      date: "Dec 20, 2023",
+      readTime: "16 min read",
+    },
+    {
+      id: 12,
+      title: "Blockchain Beyond Crypto: Enterprise Use Cases",
+      excerpt: "Explore how blockchain technology is transforming supply chain, healthcare, and finance.",
+      category: "Blockchain",
+      author: "David Wilson",
+      date: "Dec 18, 2023",
+      readTime: "10 min read",
+    },
+  ];
+
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredBlogs = activeCategory === "All" 
+    ? blogs 
+    : blogs.filter((blog) => blog.category === activeCategory);
+
+  const featuredBlogs = blogs.filter((blog) => blog.featured);
+
   return (
     <div className={styles.page}>
-      {/* Floating orbs for background */}
-      <div className="orb orb-1"></div>
-      <div className="orb orb-2"></div>
-      <div className="orb orb-3"></div>
-
-      {/* 3D Geometric Shapes */}
-      <div className="morph-shape" style={{ top: '10%', left: '5%' }}></div>
-      <div className="morph-shape" style={{ top: '60%', right: '10%' }}></div>
-
-      {/* 3D Particle System */}
-      <div className="particle-3d"></div>
-      <div className="particle-3d"></div>
-      <div className="particle-3d"></div>
-      <div className="particle-3d"></div>
-
-      <div className={styles.topStrip}>
-        <span>Need help with SEO or PPC?</span>
-        <span>Grow your Shopify or e‑commerce store.</span>
-        <span>Custom web solutions in React, Next.js and Node.js.</span>
-        <span>Specialists in WordPress, Wix, Webflow and Joomla.</span>
-      </div>
-
       <header className={styles.header}>
-        <div className={styles.logo}>YourAgency</div>
-        <nav className={styles.nav}>
-          <Link href="/" className={styles.navLink}>
-            Home
-          </Link>
-          <div className={styles.navItem}>
-            <button type="button" className={styles.navTrigger}>
-              Services
-            </button>
-            <div className={styles.navMenu}>
-              <div className={styles.navMenuGroup}>
-                <div className={styles.navMenuTitle}>Web Development</div>
-                <Link href="/website-development-services" className={styles.navMenuItem}>
-                  Website Development Services
-                </Link>
-                <Link href="/nextjs-development-services" className={styles.navMenuItem}>
-                  Next.js Development
-                </Link>
-                <Link href="/shopify-development-services" className={styles.navMenuItem}>
-                  Shopify Development
-                </Link>
-                <Link href="/wordpress-development-services" className={styles.navMenuItem}>
-                  WordPress Development
-                </Link>
-                <Link href="/joomla-development-services" className={styles.navMenuItem}>
-                  Joomla Development
-                </Link>
-                <Link href="/laravel-development-services" className={styles.navMenuItem}>
-                  Laravel Development
-                </Link>
-                <Link href="/reactjs-development-services" className={styles.navMenuItem}>
-                  ReactJS Development
-                </Link>
-                <Link href="/nodejs-development-services" className={styles.navMenuItem}>
-                  Node.js Development
-                </Link>
-                <Link href="/vuejs-development-services" className={styles.navMenuItem}>
-                  Vue.js Development
-                </Link>
-                <Link href="/wix-development-services" className={styles.navMenuItem}>
-                  Wix Development
-                </Link>
-                <Link href="/webflow-development-services" className={styles.navMenuItem}>
-                  Webflow Development
-                </Link>
+        <div className={styles.headerTop}>
+          <div className="container">
+            <div className={styles.headerTopContent}>
+              <div className={styles.headerPhones}>
+                <a href="tel:+971500000000">+971 50 000 0000</a>
+                <a href="tel:+919876543210">+91 98765 43210</a>
               </div>
-              <div className={styles.navMenuGroup}>
-                <div className={styles.navMenuTitle}>Web Design</div>
-                <Link href="/website-design-services" className={styles.navMenuItem}>
-                  Website Design Services
-                </Link>
-                <Link href="/ux-design-services" className={styles.navMenuItem}>
-                  UX Design Services
-                </Link>
-                <Link href="/graphic-design-services" className={styles.navMenuItem}>
-                  Graphic Design Services
-                </Link>
-                <Link href="/logo-design-services" className={styles.navMenuItem}>
-                  Logo Design Services
-                </Link>
-                <Link href="/brochure-design-services" className={styles.navMenuItem}>
-                  Brochure Design Services
-                </Link>
-                <Link href="/banner-design-services" className={styles.navMenuItem}>
-                  Banner Design Services
-                </Link>
-              </div>
-              <div className={styles.navMenuGroup}>
-                <div className={styles.navMenuTitle}>Digital Marketing</div>
-                <Link href="/digital-marketing-services" className={styles.navMenuItem}>
-                  Digital Marketing Services
-                </Link>
-                <Link href="/seo-services" className={styles.navMenuItem}>
-                  SEO Services
-                </Link>
-                <Link href="/social-media-marketing-services" className={styles.navMenuItem}>
-                  Social Media Marketing
-                </Link>
-                <Link href="/pay-per-click-advertising-services" className={styles.navMenuItem}>
-                  PPC Advertising
-                </Link>
-                <Link href="/email-marketing-services" className={styles.navMenuItem}>
-                  Email Marketing
-                </Link>
-                <Link href="/search-engine-marketing-services" className={styles.navMenuItem}>
-                  Search Engine Marketing
-                </Link>
-              </div>
-              <div className={styles.navMenuGroup}>
-                <div className={styles.navMenuTitle}>Mobile Apps</div>
-                <Link href="/mobile-app-development-services" className={styles.navMenuItem}>
-                  Mobile App Development
-                </Link>
-                <Link href="/ios-application-development-services" className={styles.navMenuItem}>
-                  iOS App Development
-                </Link>
-                <Link href="/android-app-development-services" className={styles.navMenuItem}>
-                  Android App Development
-                </Link>
-                <Link href="/flutter-app-development-services" className={styles.navMenuItem}>
-                  Flutter App Development
-                </Link>
+              <div style={{ color: "rgba(255,255,255,0.7)", fontSize: "13px" }}>
+                Get a free consultation today!
               </div>
             </div>
           </div>
-          <Link href="/industries" className={styles.navLink}>
-            Industries We Serve
-          </Link>
-          <Link href="/work" className={styles.navLink}>
-            Our Work
-          </Link>
-          <Link href="/testimonials" className={styles.navLink}>
-            Testimonials
-          </Link>
-          <Link href="/contact" className={styles.navLink}>
-            Contact
-          </Link>
-        </nav>
-        <Link href="/clients" className={styles.headerCta}>
-          For Clients
-        </Link>
-      </header>
-
-      <main className={styles.main}>
-        <section className={styles.section}>
-          <div className={styles.sectionHeader}>
-            <h2>Blog</h2>
-            <p>Latest insights, tips and trends in web development and digital marketing.</p>
-          </div>
-          <div className={styles.projectsGrid}>
-            <article className={styles.projectCard}>
-              <h3>AI in Digital Marketing</h3>
-              <p>Discover how artificial intelligence is revolutionizing digital marketing strategies.</p>
-            </article>
-            <article className={styles.projectCard}>
-              <h3>Next.js Best Practices</h3>
-              <p>Learn the latest techniques for building high-performance React applications.</p>
-            </article>
-            <article className={styles.projectCard}>
-              <h3>SEO Trends 2024</h3>
-              <p>Stay ahead of the curve with the latest search engine optimization trends.</p>
-            </article>
-          </div>
-          <div className={styles.heroActions}>
-            <Link href="/contact" className={styles.primaryButton}>
-              Get in touch
+        </div>
+        <div className="container">
+          <div className={styles.headerMain}>
+            <Link href="/" className={styles.logo}>
+              <div className={styles.logoIcon}>T</div>
+              TechNova
             </Link>
-            <Link href="/" className={styles.secondaryButton}>
-              Back to home
-            </Link>
-          </div>
-        </section>
-      </main>
-
-      <footer className={styles.footer}>
-        <div className={styles.footerColumns}>
-          <div>
-            <h3>Services</h3>
-            <ul>
-              <li>
-                <Link href="/services">Web Development Services</Link>
-              </li>
-              <li>
-                <Link href="/services">Web Design Services</Link>
-              </li>
-              <li>
-                <Link href="/services">Digital Marketing Services</Link>
-              </li>
-              <li>
-                <Link href="/services">Mobile App Services</Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3>Company</h3>
-            <ul>
-              <li>
-                <Link href="/services">Our Services</Link>
-              </li>
-              <li>
-                <Link href="/work">Our Work</Link>
-              </li>
-              <li>
-                <Link href="/testimonials">Testimonials</Link>
-              </li>
-              <li>
-                <Link href="/contact">Contact Us</Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3>Resources</h3>
-            <ul>
-              <li>
-                <Link href="/industries">Industries We Serve</Link>
-              </li>
-              <li>
-                <Link href="/proposal">Get a Free Proposal</Link>
-              </li>
-              <li>
-                <Link href="/request-a-call">Request a Call</Link>
-              </li>
-            </ul>
+            <nav className={styles.nav}>
+              <Link href="/" className={styles.navLink}>Home</Link>
+              <div className={styles.navItem}>
+                <button className={styles.navLink}>
+                  Services <span>&#9660;</span>
+                </button>
+                <div className={styles.navDropdown}>
+                  <div className={styles.dropdownGroup}>
+                    <div className={styles.dropdownTitle}>Mobile App Development</div>
+                    <Link href="/services" className={styles.dropdownSubLink}>iOS App Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Android Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>React Native Apps</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Flutter Development</Link>
+                  </div>
+                  <div className={styles.dropdownGroup}>
+                    <div className={styles.dropdownTitle}>Web Development</div>
+                    <Link href="/services" className={styles.dropdownSubLink}>Frontend Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Backend Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>React.js Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Next.js Development</Link>
+                  </div>
+                  <div className={styles.dropdownGroup}>
+                    <div className={styles.dropdownTitle}>AI & Blockchain</div>
+                    <Link href="/services" className={styles.dropdownSubLink}>Machine Learning</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>AI Chatbots</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Blockchain Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Smart Contracts</Link>
+                  </div>
+                </div>
+              </div>
+              <Link href="/blog" className={`${styles.navLink} ${styles.active}`}>Blogs</Link>
+              <Link href="/work" className={styles.navLink}>Portfolio</Link>
+              <Link href="/about" className={styles.navLink}>Company</Link>
+              <Link href="/contact" className={styles.navLink}>Contact</Link>
+            </nav>
+            <div className={styles.headerActions}>
+              <Link href="/proposal" className="btn btn-primary">
+                Share Your Requirement
+              </Link>
+              <Link href="/request-a-call" className="btn btn-secondary">
+                Schedule a Call
+              </Link>
+            </div>
           </div>
         </div>
-        <div className={styles.footerBottom}>
-          <span>© {new Date().getFullYear()} YourAgency. All rights reserved.</span>
-          <span>Built with Next.js</span>
+      </header>
+
+      <Breadcrumb items={breadcrumbItems} />
+
+      <section className={styles.pageHero}>
+        <div className="container">
+          <div className={styles.pageHeroContent}>
+            <h1>TechNova Blog</h1>
+            <p>Latest insights, tutorials, and trends in software development, AI, and technology</p>
+          </div>
+        </div>
+      </section>
+
+      {featuredBlogs.length > 0 && (
+        <section className={styles.portfolio}>
+          <div className="container">
+            <div className={styles.sectionHeader}>
+              <h2>Featured Articles</h2>
+              <p>Top picks from our experts</p>
+            </div>
+            <div className={styles.portfolioGrid}>
+              {featuredBlogs.map((blog) => (
+                <div key={blog.id} className={styles.portfolioCard}>
+                  <div className={styles.portfolioImage} style={{ background: "linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%)" }}>
+                    <span style={{ fontSize: "48px" }}>R</span>
+                  </div>
+                  <div className={styles.portfolioContent}>
+                    <span className={styles.portfolioTag}>{blog.category}</span>
+                    <h3>{blog.title}</h3>
+                    <p>{blog.excerpt}</p>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "16px", fontSize: "13px", color: "var(--text-muted)" }}>
+                      <span>{blog.author}</span>
+                      <span>{blog.readTime}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className={styles.services} style={{ paddingBottom: "0" }}>
+        <div className="container">
+          <div className={styles.portfolioTabs} style={{ flexWrap: "wrap" }}>
+            {categories.map((cat) => (
+              <button
+                key={cat.name}
+                className={`${styles.portfolioTab} ${activeCategory === cat.name ? styles.active : ""}`}
+                onClick={() => setActiveCategory(cat.name)}
+              >
+                {cat.name} ({cat.count})
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.servicesSection}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2>{activeCategory === "All" ? "Latest Articles" : activeCategory}</h2>
+            <p>{filteredBlogs.length} articles found</p>
+          </div>
+          <div className={styles.servicesGrid}>
+            {filteredBlogs.map((blog) => (
+              <div key={blog.id} className={styles.serviceCard}>
+                <div style={{ fontSize: "40px", textAlign: "center", marginBottom: "16px", background: "rgba(59, 130, 246, 0.1)", padding: "20px", borderRadius: "50%" }}>
+                  {blog.category.charAt(0)}
+                </div>
+                <span style={{ 
+                  display: "inline-block", 
+                  padding: "4px 12px", 
+                  background: "rgba(59, 130, 246, 0.1)", 
+                  color: "var(--primary)", 
+                  borderRadius: "var(--radius-full)",
+                  fontSize: "12px",
+                  fontWeight: 500,
+                  marginBottom: "12px"
+                }}>
+                  {blog.category}
+                </span>
+                <h3 style={{ fontSize: "16px", marginBottom: "8px" }}>{blog.title}</h3>
+                <p style={{ fontSize: "14px", color: "var(--text-secondary)", marginBottom: "16px" }}>
+                  {blog.excerpt}
+                </p>
+                <div style={{ 
+                  display: "flex", 
+                  justifyContent: "space-between", 
+                  alignItems: "center",
+                  paddingTop: "12px",
+                  borderTop: "1px solid var(--border-light)",
+                  fontSize: "12px",
+                  color: "var(--text-muted)"
+                }}>
+                  <span>{blog.author}</span>
+                  <span>{blog.readTime}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.cta}>
+        <div className="container">
+          <h2>Stay Updated</h2>
+          <p>Subscribe to our newsletter for the latest tech insights and tutorials</p>
+          <div style={{ display: "flex", gap: "16px", justifyContent: "center", marginTop: "24px", flexWrap: "wrap" }}>
+            <input 
+              type="email" 
+              placeholder="Enter your email" 
+              style={{
+                padding: "14px 24px",
+                borderRadius: "var(--radius-full)",
+                border: "2px solid rgba(255,255,255,0.3)",
+                background: "rgba(255,255,255,0.1)",
+                color: "white",
+                fontSize: "15px",
+                width: "300px",
+                outline: "none"
+              }}
+            />
+            <button className="btn btn-accent">Subscribe</button>
+          </div>
+        </div>
+      </section>
+
+      <footer className={styles.footer}>
+        <div className="container">
+          <div className={styles.footerGrid}>
+            <div className={styles.footerAbout}>
+              <div className={styles.logo}>
+                <div className={styles.logoIcon}>T</div>
+                TechNova
+              </div>
+              <p>
+                Premium IT development company delivering innovative solutions 
+                in mobile apps, web development, AI, and blockchain technologies.
+              </p>
+              <div className={styles.footerSocial}>
+                <a href="#">in</a>
+                <a href="#">tw</a>
+                <a href="#">fb</a>
+                <a href="#">ig</a>
+              </div>
+            </div>
+            <div className={styles.footerColumn}>
+              <h4>Services</h4>
+              <ul>
+                <li><Link href="/services">Mobile Development</Link></li>
+                <li><Link href="/services">Web Development</Link></li>
+                <li><Link href="/services">Game Development</Link></li>
+                <li><Link href="/services">AI Solutions</Link></li>
+                <li><Link href="/services">Blockchain</Link></li>
+              </ul>
+            </div>
+            <div className={styles.footerColumn}>
+              <h4>Company</h4>
+              <ul>
+                <li><Link href="/about">About Us</Link></li>
+                <li><Link href="/career">Careers</Link></li>
+                <li><Link href="/blog">Blog</Link></li>
+                <li><Link href="/contact">Contact</Link></li>
+              </ul>
+            </div>
+            <div className={styles.footerColumn}>
+              <h4>Resources</h4>
+              <ul>
+                <li><Link href="/blog">Tech Blog</Link></li>
+                <li><Link href="/work">Case Studies</Link></li>
+                <li><Link href="/proposal">Get a Proposal</Link></li>
+                <li><Link href="/request-a-call">Schedule a Call</Link></li>
+              </ul>
+            </div>
+            <div className={styles.footerColumn}>
+              <h4>Support</h4>
+              <ul>
+                <li><Link href="#">Help Center</Link></li>
+                <li><Link href="#">Privacy Policy</Link></li>
+                <li><Link href="#">Terms of Service</Link></li>
+              </ul>
+            </div>
+          </div>
+          <div className={styles.footerBottom}>
+            <p>© 2024 TechNova Solutions. All rights reserved.</p>
+            <div className={styles.footerLegal}>
+              <Link href="#">Privacy Policy</Link>
+              <Link href="#">Terms of Service</Link>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
   );
 }
+

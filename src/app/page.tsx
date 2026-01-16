@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import styles from "./page.module.css";
+import Chatbot from "./components/Chatbot";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("all");
@@ -268,7 +269,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <Link href="/industries" className={styles.navLink}>Industries</Link>
+              <Link href="/blog" className={styles.navLink}>Blogs</Link>
               <Link href="/work" className={styles.navLink}>Portfolio</Link>
               <Link href="/about" className={styles.navLink}>Company</Link>
               <Link href="/contact" className={styles.navLink}>Contact</Link>
@@ -398,7 +399,7 @@ export default function Home() {
       <section className={styles.industries}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>Industries We Cater To</h2>
+            <h2>Blogs We Cater To</h2>
             <p>Delivering specialized solutions across diverse sectors</p>
           </div>
           <div className={styles.industriesGrid}>
@@ -696,7 +697,7 @@ export default function Home() {
               </ul>
             </div>
             <div className={styles.footerColumn}>
-              <h4>Industries</h4>
+              <h4>Blogs</h4>
               <ul>
                 <li><Link href="/industries">Healthcare</Link></li>
                 <li><Link href="/industries">Education</Link></li>
@@ -727,12 +728,7 @@ export default function Home() {
       </footer>
 
       {/* ===== CHATBOT ===== */}
-      <div className={styles.chatbot}>
-        <div className={styles.chatbotGreeting}>
-          👋 Hi! How can we help you today?
-        </div>
-        <button className={styles.chatbotButton}>💬</button>
-      </div>
+      <Chatbot />
     </div>
   );
 }

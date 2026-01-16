@@ -114,7 +114,7 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-              <Link href="/industries" className={styles.navLink}>Industries</Link>
+              <Link href="/blog" className={styles.navLink}>Blogs</Link>
               <Link href="/work" className={styles.navLink}>Portfolio</Link>
               <Link href="/about" className={styles.navLink}>Company</Link>
               <Link href="/contact" className={`${styles.navLink} ${styles.active}`}>Contact</Link>
@@ -373,7 +373,7 @@ export default function ContactPage() {
               </ul>
             </div>
             <div className={styles.footerColumn}>
-              <h4>Industries</h4>
+              <h4>Blogs</h4>
               <ul>
                 <li><Link href="/industries">Healthcare</Link></li>
                 <li><Link href="/industries">Education</Link></li>
