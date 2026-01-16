@@ -680,19 +680,19 @@ export default function Home() {
             <div className={styles.footerColumn}>
               <h4>Services</h4>
               <ul>
-                <li><Link href="#">Mobile Development</Link></li>
-                <li><Link href="#">Web Development</Link></li>
-                <li><Link href="#">Game Development</Link></li>
-                <li><Link href="#">AI Solutions</Link></li>
-                <li><Link href="#">Blockchain</Link></li>
+                <li><Link href="/services">Mobile Development</Link></li>
+                <li><Link href="/services">Web Development</Link></li>
+                <li><Link href="/services">Game Development</Link></li>
+                <li><Link href="/services">AI Solutions</Link></li>
+                <li><Link href="/services">Blockchain</Link></li>
               </ul>
             </div>
             <div className={styles.footerColumn}>
               <h4>Company</h4>
               <ul>
                 <li><Link href="/about">About Us</Link></li>
-                <li><Link href="#">Careers</Link></li>
-                <li><Link href="#">Blog</Link></li>
+                <li><Link href="/career">Careers</Link></li>
+                <li><Link href="/blog">Blog</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
               </ul>
             </div>
@@ -710,8 +710,8 @@ export default function Home() {
               <h4>Support</h4>
               <ul>
                 <li><Link href="#">Help Center</Link></li>
-                <li><Link href="#">Privacy Policy</Link></li>
-                <li><Link href="#">Terms of Service</Link></li>
+                <li><Link href="/privacy-policy">Privacy Policy</Link></li>
+                <li><Link href="/terms-of-service">Terms of Service</Link></li>
                 <li><Link href="#">Sitemap</Link></li>
               </ul>
             </div>
@@ -719,9 +719,9 @@ export default function Home() {
           <div className={styles.footerBottom}>
             <p>© 2024 TechNova Solutions. All rights reserved.</p>
             <div className={styles.footerLegal}>
-              <Link href="#">Privacy Policy</Link>
-              <Link href="#">Terms of Service</Link>
-              <Link href="#">Cookie Policy</Link>
+              <Link href="/privacy-policy">Privacy Policy</Link>
+              <Link href="/terms-of-service">Terms of Service</Link>
+              <Link href="/cookie-policy">Cookie Policy</Link>
             </div>
           </div>
         </div>

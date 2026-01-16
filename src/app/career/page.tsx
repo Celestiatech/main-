@@ -350,16 +350,18 @@ export default function CareerPage() {
               <h4>Support</h4>
               <ul>
                 <li><Link href="#">Help Center</Link></li>
-                <li><Link href="#">Privacy Policy</Link></li>
-                <li><Link href="#">Terms of Service</Link></li>
+                <li><Link href="/privacy-policy">Privacy Policy</Link></li>
+                <li><Link href="/terms-of-service">Terms of Service</Link></li>
+                <li><Link href="/cookie-policy">Cookie Policy</Link></li>
               </ul>
             </div>
           </div>
           <div className={styles.footerBottom}>
             <p>© 2024 TechNova Solutions. All rights reserved.</p>
             <div className={styles.footerLegal}>
-              <Link href="#">Privacy Policy</Link>
-              <Link href="#">Terms of Service</Link>
+              <Link href="/privacy-policy">Privacy Policy</Link>
+              <Link href="/terms-of-service">Terms of Service</Link>
+              <Link href="/cookie-policy">Cookie Policy</Link>
             </div>
           </div>
         </div>
