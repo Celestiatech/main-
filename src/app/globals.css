@@ -240,6 +240,8 @@ ul, ol {
   font-weight: 500;
   font-family: 'Poppins', sans-serif;
   transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-primary {
@@ -274,6 +276,350 @@ ul, ol {
 .btn-accent:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+}
+
+/* ===== WATER FILL BUTTON ANIMATION ===== */
+.btn-water {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease;
+}
+
+.btn-water::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.btn-water:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.btn-water:hover {
+  color: white;
+}
+
+.btn-water.btn-secondary:hover {
+  color: white;
+}
+
+/* ===== SHINE SWEEP BUTTON ANIMATION ===== */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-shine:hover::after {
+  left: 100%;
+}
+
+/* ===== SCALE GLOW BUTTON ANIMATION ===== */
+.btn-glow {
+  position: relative;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.btn-glow:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* ===== BORDER FILL FROM BOTTOM ===== */
+.btn-border-fill {
+  position: relative;
+  background: transparent;
+}
+
+.btn-border-fill::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.btn-border-fill:hover::before {
+  transform: scaleY(1);
+  transform-origin: top;
+}
+
+.btn-border-fill:hover {
+  color: white;
+}
+
+.btn-border-fill.btn-secondary:hover {
+  border-color: var(--primary);
+}
+
+.btn-border-fill.btn-accent::before {
+  background: var(--gradient-accent);
+}
+
+/* ===== ARROW SLIDE BUTTON ===== */
+.btn-arrow {
+  position: relative;
+  padding-right: 50px;
+}
+
+.btn-arrow .arrow {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.btn-arrow:hover .arrow {
+  opacity: 1;
+  right: 16px;
+}
+
+.btn-arrow:hover {
+  padding-right: 56px;
+}
+
+/* ===== RIPPLE EFFECT BUTTON ===== */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.btn-ripple:hover::before {
+  width: 300px;
+  height: 300px;
+  opacity: 1;
+}
+
+.btn-ripple:active::before {
+  transition: 0s;
+  opacity: 1;
+  width: 0;
+  height: 0;
+}
+
+/* ===== SLIDE UP BUTTON ===== */
+.btn-slide-up {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-slide-up::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-primary);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  color: white;
+}
+
+.btn-slide-up:hover::before {
+  transform: translateY(0);
+}
+
+.btn-slide-up span {
+  transition: transform 0.3s ease;
+}
+
+.btn-slide-up:hover span {
+  transform: translateY(-100%);
+}
+
+.btn-slide-up.btn-accent::before {
+  background: var(--gradient-accent);
+}
+
+/* ===== 3D PRESS BUTTON ===== */
+.btn-3d {
+  transition: all 0.15s ease;
+  box-shadow: 0 6px 0 var(--primary-dark), 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 var(--primary-dark), 0 12px 20px rgba(0, 0, 0, 0.25);
+}
+
+.btn-3d:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 var(--primary-dark), 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d.btn-accent {
+  box-shadow: 0 6px 0 var(--accent-dark), 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d.btn-accent:hover {
+  box-shadow: 0 8px 0 var(--accent-dark), 0 12px 20px rgba(0, 0, 0, 0.25);
+}
+
+.btn-3d.btn-accent:active {
+  box-shadow: 0 2px 0 var(--accent-dark), 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== MAGNETIC BUTTON ===== */
+.btn-magnetic {
+  transition: transform 0.3s ease;
+}
+
+.btn-magnetic:hover {
+  transform: scale(1.05);
+}
+
+/* ===== UNDERLINE ANIMATION ===== */
+.btn-underline {
+  position: relative;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.btn-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.btn-underline:hover::after {
+  width: calc(100% - 56px);
+  left: 28px;
+}
+
+.btn-underline.btn-accent::after {
+  background: var(--accent);
+}
+
+.btn-underline.btn-secondary:hover {
+  color: var(--primary);
+}
+
+/* ===== GRADIENT SHIFT BUTTON ===== */
+.btn-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.btn-gradient-shift:hover {
+  background-position: 100% 50%;
+  animation: none;
+}
+
+/* ===== BUBBLE FLOAT BUTTON ===== */
+.btn-bubble {
+  position: relative;
+}
+
+.btn-bubble::before,
+.btn-bubble::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: bubbleFloat 2s ease-in-out infinite;
+}
+
+.btn-bubble::before {
+  width: 10px;
+  height: 10px;
+  top: -5px;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.btn-bubble::after {
+  width: 6px;
+  height: 6px;
+  top: -8px;
+  left: 60%;
+  animation-delay: 0.5s;
+}
+
+@keyframes bubbleFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.2);
+    opacity: 1;
+  }
 }
 
 /* Card styles */

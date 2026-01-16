@@ -275,10 +275,10 @@ export default function Home() {
               <Link href="/contact" className={styles.navLink}>Contact</Link>
             </nav>
             <div className={styles.headerActions}>
-              <Link href="/contact" className="btn btn-primary">
+              <Link href="/contact" className="btn btn-primary btn-water">
                 Share Your Requirement
               </Link>
-              <Link href="/request-a-call" className="btn btn-secondary">
+              <Link href="/request-a-call" className="btn btn-secondary btn-water">
                 Schedule a Call
               </Link>
             </div>
@@ -309,10 +309,10 @@ export default function Home() {
               scalable, secure, and cutting-edge technology.
             </p>
             <div className={styles.heroActions}>
-              <Link href="/proposal" className="btn btn-primary">
+              <Link href="/proposal" className="btn btn-primary btn-water">
                 Share Your Requirement
               </Link>
-              <Link href="/request-a-call" className="btn btn-secondary">
+              <Link href="/request-a-call" className="btn btn-secondary btn-water">
                 Schedule a Call
               </Link>
             </div>
@@ -552,7 +552,7 @@ export default function Home() {
         <div className="container">
           <h2>Ready to Create an Impact?</h2>
           <p>Let's discuss your project and turn your vision into reality</p>
-          <Link href="/proposal" className="btn btn-accent">
+          <Link href="/proposal" className="btn btn-accent btn-3d">
             Get Free Consultation
           </Link>
         </div>
@@ -646,7 +646,7 @@ export default function Home() {
                 <label>Project Description *</label>
                 <textarea rows={4} placeholder="Tell us about your project..." required></textarea>
               </div>
-              <button type="submit" className="btn btn-primary" style={{ width: "100%" }}>
+              <button type="submit" className="btn btn-primary btn-ripple" style={{ width: "100%" }}>
                 Send Message
               </button>
               <div className={styles.formNote}>
