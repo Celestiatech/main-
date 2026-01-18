@@ -1,57 +1,93 @@
-"use client";
+    "use client";
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./page.module.css";
 import Chatbot from "./components/Chatbot";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("all");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hoveredStep, setHoveredStep] = useState<number | null>(null);
+  const [selectedIndustry, setSelectedIndustry] = useState("startup");
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   const services = [
     {
-      icon: "📱",
-      title: "Mobile Development",
-      description: "Native & cross-platform apps for iOS and Android with exceptional UX",
+      icon: "/images/icons/mobile-development.svg",
+      title: "Mobile App Development",
+      whoFor: "For startups & enterprises",
+      businessResult: "Launch in 60–90 days",
+      metric: "⏱ Avg. 35% faster go-to-market | 📈 42% higher user retention",
+      description: "Monetization-ready apps with exceptional UX",
+      cta: "View Live Apps",
     },
     {
-      icon: "🌐",
+      icon: "/images/icons/web-development.svg",
       title: "Web Development",
-      description: "Scalable web applications using modern frameworks and technologies",
+      whoFor: "For businesses & agencies",
+      businessResult: "Scalable platforms in 45–75 days",
+      metric: "🚀 300% faster load times | 💰 40% cost reduction",
+      description: "Modern web applications with cutting-edge tech",
+      cta: "View Live Apps",
     },
     {
-      icon: "🎮",
+      icon: "/images/icons/game-development.svg",
       title: "Game Development",
-      description: "Engaging 2D/3D games for mobile, web, and desktop platforms",
+      whoFor: "For indie developers & studios",
+      businessResult: "Viral games in 90–120 days",
+      metric: "🎮 1M+ downloads | ⭐ 4.8 rating on app stores",
+      description: "Engaging 2D/3D games across platforms",
+      cta: "View Live Apps",
     },
     {
-      icon: "⛓️",
+      icon: "/images/icons/blockchain-development.svg",
       title: "Blockchain Development",
-      description: "Web3 solutions, smart contracts, and decentralized applications",
+      whoFor: "For fintech & startups",
+      businessResult: "Secure solutions in 60–90 days",
+      metric: "🔒 Zero security breaches | 💰 $50M+ assets secured",
+      description: "Web3 apps, smart contracts, and DeFi platforms",
+      cta: "View Live Apps",
     },
     {
-      icon: "⚙️",
+      icon: "/images/icons/devops-services.svg",
       title: "DevOps Services",
-      description: "CI/CD pipelines, cloud infrastructure, and automation solutions",
+      whoFor: "For tech teams & enterprises",
+      businessResult: "50% faster deployments",
+      metric: "⚡ 70% faster CI/CD | 📊 60% fewer downtime incidents",
+      description: "CI/CD pipelines and cloud automation",
+      cta: "View Live Apps",
     },
     {
-      icon: "🥽",
+      icon: "/images/icons/metaverse-development.svg",
       title: "Metaverse Development",
-      description: "Immersive VR/AR experiences and virtual world construction",
+      whoFor: "For brands & innovators",
+      businessResult: "Immersive experiences in 90–120 days",
+      metric: "🌐 200% engagement increase | 🎯 85% user satisfaction",
+      description: "VR/AR worlds and virtual reality solutions",
+      cta: "View Live Apps",
     },
     {
-      icon: "✅",
+      icon: "/images/icons/quality-assurance.svg",
       title: "Quality Assurance",
-      description: "Comprehensive testing services ensuring bug-free deliverables",
+      whoFor: "For all development projects",
+      businessResult: "Bug-free launches guaranteed",
+      metric: "✅ 99.9% bug-free releases | 🛡️ 100% compliance rate",
+      description: "Comprehensive testing and QA services",
+      cta: "View Live Apps",
     },
   ];
 
   const awards = [
-    { name: "Upwork", badge: "Top Rated Plus" },
-    { name: "Clutch", badge: "B2B Leader 2024" },
-    { name: "TechReviewer", badge: "Best Developer" },
-    { name: "GoodFirms", badge: "Excellence Award" },
-    { name: "AppFutura", badge: "Verified Partner" },
+    { name: "Upwork", badge: "Top Rated Plus", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIHJ4PSI0IiBmaWxsPSIjMTRBM0JBIi8+CiAgPHRleHQgeD0iNjAiIHk9IjI1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iYm9sZCI+VXB3b3JrPC90ZXh0Pgo8L3N2Zz4=" },
+    { name: "Clutch", badge: "B2B Leader 2024", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIHJ4PSI0IiBmaWxsPSIjRkY2QjM1Ii8+CiAgPHRleHQgeD0iNjAiIHk9IjI1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iYm9sZCI+Q2x1dGNoPC90ZXh0Pgo8L3N2Zz4=" },
+    { name: "TechReviewer", badge: "Best Developer", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIHJ4PSI0IiBmaWxsPSIjRjU5RTBCLiIvPgogIDx0ZXh0IHg9IjYwIiB5PSIyNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9ImJvbGQiPlRlY2hSZXY8L3RleHQ+Cjwvc3ZnPg==" },
+    { name: "GoodFirms", badge: "Excellence Award", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIHJ4PSI0IiBmaWxsPSIjMkU1OTlDIi8+CiAgPHRleHQgeD0iNjAiIHk9IjI1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCI+R29vZEZpcm1zPC90ZXh0Pgo8L3N2Zz4=" },
+    { name: "AppFutura", badge: "Verified Partner", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIHJ4PSI0IiBmaWxsPSIjRjQ3QzIyIi8+CiAgPHRleHQgeD0iNjAiIHk9IjI1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCI+QXBwRnV0dXJhPC90ZXh0Pgo8L3N2Zz4=" },
   ];
 
   const partners = [
@@ -64,66 +100,132 @@ export default function Home() {
   ];
 
   const industries = [
-    { icon: "📚", name: "Education" },
-    { icon: "✈️", name: "Travel" },
-    { icon: "👥", name: "Social Networking" },
-    { icon: "💪", name: "Fitness" },
-    { icon: "💼", name: "Business" },
-    { icon: "🚚", name: "Logistics" },
-    { icon: "❤️", name: "Dating" },
-    { icon: "🏥", name: "Healthcare" },
-    { icon: "🏠", name: "Real Estate" },
-    { icon: "⚡", name: "On-Demand" },
-    { icon: "🔧", name: "Utility" },
-    { icon: "🎬", name: "Entertainment" },
+    { icon: "/images/icons/education.svg", name: "Education" },
+    { icon: "/images/icons/travel.svg", name: "Travel" },
+    { icon: "/images/icons/social-networking.svg", name: "Social Networking" },
+    { icon: "/images/icons/fitness.svg", name: "Fitness" },
+    { icon: "/images/icons/education.svg", name: "Business" }, // placeholder
+    { icon: "/images/icons/travel.svg", name: "Logistics" }, // placeholder
+    { icon: "/images/icons/social-networking.svg", name: "Dating" }, // placeholder
+    { icon: "/images/icons/fitness.svg", name: "Healthcare" }, // placeholder
+    { icon: "/images/icons/education.svg", name: "Real Estate" }, // placeholder
+    { icon: "/images/icons/travel.svg", name: "On-Demand" }, // placeholder
+    { icon: "/images/icons/fitness.svg", name: "Utility" }, // placeholder
+    { icon: "/images/icons/social-networking.svg", name: "Entertainment" }, // placeholder
   ];
 
   const portfolio = [
     {
       category: "mobile",
       title: "HealthTrack Pro",
-      description: "Fitness tracking app with AI-powered insights",
+      clientGoal: "Increase user engagement in fitness apps",
+      problem: "Low retention rates and lack of personalized insights",
+      solution: "Built AI-powered fitness tracking with personalized recommendations",
+      techStack: ["React Native", "Node.js", "TensorFlow"],
+      result: "📈 Increased user retention by 42% | 💰 Generated ₹3.2 Cr revenue in 6 months",
+      beforeAfter: ["/images/portfolio/healthtrack-before.jpg", "/images/portfolio/healthtrack-after.jpg"],
+      video: "/videos/healthtrack-demo.mp4",
       tags: ["iOS", "Android", "Health"],
     },
     {
       category: "web",
       title: "EduLearn Platform",
-      description: "E-learning portal serving 100K+ students",
+      clientGoal: "Scale e-learning platform to 100K+ users",
+      problem: "Outdated tech stack causing performance issues",
+      solution: "Migrated to modern React/Node.js with AWS scaling",
+      techStack: ["React", "Node.js", "AWS", "MongoDB"],
+      result: "🚀 300% faster load times | 👥 Served 100K+ students",
+      beforeAfter: ["/images/portfolio/edulearn-before.jpg", "/images/portfolio/edulearn-after.jpg"],
+      video: "/videos/edulearn-demo.mp4",
       tags: ["React", "Node.js", "AWS"],
     },
     {
       category: "game",
       title: "Space Quest",
-      description: "Popular mobile game with 1M+ downloads",
+      clientGoal: "Launch viral mobile game",
+      problem: "Generic gameplay leading to quick abandonment",
+      solution: "Developed immersive 3D space adventure with multiplayer",
+      techStack: ["Unity", "C#", "Photon"],
+      result: "🎮 1M+ downloads | ⭐ 4.8 rating on app stores",
+      beforeAfter: ["/images/portfolio/spacequest-before.jpg", "/images/portfolio/spacequest-after.jpg"],
+      video: "/videos/spacequest-demo.mp4",
       tags: ["Unity", "3D", "Mobile"],
     },
     {
       category: "blockchain",
       title: "CryptoVault",
-      description: "DeFi platform with smart contracts",
+      clientGoal: "Build secure DeFi platform",
+      problem: "Complex smart contracts with security vulnerabilities",
+      solution: "Developed audited smart contracts with user-friendly interface",
+      techStack: ["Solidity", "Web3.js", "React"],
+      result: "🔒 Zero security breaches | 💰 $50M+ assets secured",
+      beforeAfter: ["/images/portfolio/cryptovault-before.jpg", "/images/portfolio/cryptovault-after.jpg"],
+      video: "/videos/cryptovault-demo.mp4",
       tags: ["Web3", "Solidity", "DeFi"],
     },
     {
       category: "ai",
       title: "SmartAssist AI",
-      description: "AI chatbot for customer support",
+      clientGoal: "Automate customer support",
+      problem: "High support costs and slow response times",
+      solution: "Built NLP-powered chatbot with 24/7 availability",
+      techStack: ["Python", "TensorFlow", "Dialogflow"],
+      result: "⚡ 70% faster responses | 💸 Saved ₹2 Cr annually",
+      beforeAfter: ["/images/portfolio/smartassist-before.jpg", "/images/portfolio/smartassist-after.jpg"],
+      video: "/videos/smartassist-demo.mp4",
       tags: ["NLP", "Machine Learning"],
     },
     {
       category: "design",
       title: "BrandRebrand",
-      description: "Complete brand identity redesign",
+      clientGoal: "Modernize brand identity",
+      problem: "Outdated design hurting market perception",
+      solution: "Complete brand redesign with modern UI/UX",
+      techStack: ["Figma", "Adobe Creative Suite", "React"],
+      result: "📈 150% increase in brand recognition | 🎨 Won 3 design awards",
+      beforeAfter: ["/images/portfolio/brandrebrand-before.jpg", "/images/portfolio/brandrebrand-after.jpg"],
+      video: "/videos/brandrebrand-demo.mp4",
       tags: ["UI/UX", "Branding"],
     },
   ];
 
   const processSteps = [
-    { icon: "💡", title: "Idea", desc: "Concept & vision" },
-    { icon: "📝", title: "Concept", desc: "Wireframes & design" },
-    { icon: "📋", title: "Plan", desc: "Strategy & roadmap" },
-    { icon: "⚡", title: "Develop", desc: "Agile development" },
-    { icon: "🚀", title: "Launch", desc: "Deployment & release" },
-    { icon: "🔄", title: "Iterate", desc: "Continuous improvement" },
+    {
+      icon: "/images/icons/idea.svg",
+      title: "Idea",
+      desc: "Concept & vision",
+      details: "We start by understanding your vision, goals, and requirements. Our team conducts thorough research, market analysis, and feasibility studies to transform your idea into a solid foundation for development."
+    },
+    {
+      icon: "/images/icons/concept.svg",
+      title: "Concept",
+      desc: "Wireframes & design",
+      details: "We create detailed wireframes, user flows, and interactive prototypes. Our design team develops the visual identity, user experience, and interface that will make your product intuitive and engaging."
+    },
+    {
+      icon: "/images/icons/plan.svg",
+      title: "Plan",
+      desc: "Strategy & roadmap",
+      details: "We develop a comprehensive project roadmap with timelines, milestones, and resource allocation. Our technical architects design the system architecture and select the best technologies for your project."
+    },
+    {
+      icon: "/images/icons/develop.svg",
+      title: "Develop",
+      desc: "Agile development",
+      details: "Our development team uses agile methodologies to build your solution iteratively. We maintain regular communication, conduct code reviews, and ensure quality at every stage of development."
+    },
+    {
+      icon: "/images/icons/launch.svg",
+      title: "Launch",
+      desc: "Deployment & release",
+      details: "We handle the complete deployment process, including testing, optimization, and launch. Our team ensures smooth transition to production with monitoring and support for the initial launch phase."
+    },
+    {
+      icon: "/images/icons/iterate.svg",
+      title: "Iterate",
+      desc: "Continuous improvement",
+      details: "Post-launch, we monitor performance, gather user feedback, and continuously improve the product. Our team provides ongoing maintenance, updates, and feature enhancements based on user needs."
+    },
   ];
 
   const techStack = {
@@ -135,43 +237,46 @@ export default function Home() {
 
   const testimonials = [
     {
-      quote: "Exceptional work! Delivered our project ahead of schedule with outstanding quality.",
-      author: "Sarah Johnson",
-      role: "CEO, TechStart Inc.",
+      quote: "TechNova rebuilt our SaaS backend and cut infra cost by 38%. Their DevOps expertise is unmatched.",
+      author: "CTO, US-based HealthTech Startup",
+      service: "DevOps Services",
       stars: 5,
+      avatar: "/images/testimonials/healthtech-cto.jpg",
     },
     {
-      quote: "Professional team with deep expertise. They became our trusted development partner.",
-      author: "Michael Chen",
-      role: "Founder, HealthTech Solutions",
+      quote: "From MVP to 100K users in 6 months. TechNova's mobile app development delivered exactly what we needed.",
+      author: "Founder, EduTech Platform",
+      service: "Mobile App Development",
       stars: 5,
+      avatar: "/images/testimonials/edutech-founder.jpg",
     },
     {
-      quote: "Outstanding communication and technical skills. Highly recommended!",
-      author: "Emily Davis",
-      role: "Director, EduCorp",
+      quote: "Their blockchain team secured $50M+ in assets. Zero breaches, full compliance. Highly professional.",
+      author: "CEO, FinTech Company",
+      service: "Blockchain Development",
       stars: 5,
+      avatar: "/images/testimonials/fintech-ceo.jpg",
     },
   ];
 
   const whyChooseUs = [
     {
-      icon: "🎯",
+      icon: "/images/icons/tailored-solutions.svg",
       title: "Tailored Solutions",
       description: "Custom strategies aligned with your unique business goals",
     },
     {
-      icon: "📊",
+      icon: "/images/icons/project-management.svg",
       title: "Project Management",
       description: "Agile methodology with transparent progress tracking",
     },
     {
-      icon: "✅",
+      icon: "/images/icons/quality-assurance.svg",
       title: "Quality Assurance",
       description: "Rigorous testing ensuring bug-free, scalable solutions",
     },
     {
-      icon: "⭐",
+      icon: "/images/icons/expertise.svg",
       title: "Expertise & Experience",
       description: "12+ years delivering successful solutions across industries",
     },
@@ -197,94 +302,154 @@ export default function Home() {
         <div className="container">
           <div className={styles.headerMain}>
             <Link href="/" className={styles.logo}>
-              <div className={styles.logoIcon}>T</div>
               TechNova
             </Link>
             <nav className={styles.nav}>
               <Link href="/" className={styles.navLink}>Home</Link>
               <div className={styles.navItem}>
                 <button className={styles.navLink}>
-                  Services <span>▼</span>
+                  Solutions <span>▼</span>
                 </button>
                 <div className={styles.navDropdown}>
-                  {/* Mobile Services */}
+                  {/* Product Development */}
                   <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>📱 Mobile App Development</div>
-                    <Link href="/services" className={styles.dropdownSubLink}>iOS App Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Android Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>React Native Apps</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Flutter Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Cross-Platform Apps</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Mobile App Design</Link>
+                    <div className={styles.dropdownTitle}>🚀 Product Development</div>
+                    <Link href="/services" className={styles.dropdownSubLink}>MVP Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Startup Apps</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>SaaS Platforms</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Mobile Apps</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Web Applications</Link>
                   </div>
-                  {/* Web Services */}
+                  {/* Growth Engineering */}
                   <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>🌐 Web Development</div>
-                    <Link href="/services" className={styles.dropdownSubLink}>Frontend Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Backend Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>React.js Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Next.js Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>E-commerce Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>CMS Development</Link>
+                    <div className={styles.dropdownTitle}>📈 Growth Engineering</div>
+                    <Link href="/services" className={styles.dropdownSubLink}>Performance Optimization</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Scalability Solutions</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>DevOps & Cloud</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>API Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>System Integration</Link>
                   </div>
-                  {/* Game Services */}
+                  {/* AI & Automation */}
                   <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>🎮 Game Development</div>
-                    <Link href="/services" className={styles.dropdownSubLink}>Unity Game Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Unreal Engine Games</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>2D Game Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>3D Game Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Multiplayer Games</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Game UI/UX Design</Link>
-                  </div>
-                  {/* AI & Blockchain */}
-                  <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>🤖 AI & Blockchain</div>
+                    <div className={styles.dropdownTitle}>🤖 AI & Automation</div>
                     <Link href="/services" className={styles.dropdownSubLink}>Machine Learning</Link>
                     <Link href="/services" className={styles.dropdownSubLink}>AI Chatbots</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Blockchain Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Predictive Analytics</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Automation Solutions</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>NLP Services</Link>
+                  </div>
+                  {/* Blockchain & Web3 */}
+                  <div className={styles.dropdownGroup}>
+                    <div className={styles.dropdownTitle}>⛓️ Blockchain & Web3</div>
                     <Link href="/services" className={styles.dropdownSubLink}>Smart Contracts</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>NFT Marketplace</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Web3 Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>DeFi Platforms</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>NFT Marketplaces</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Web3 Apps</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Crypto Wallets</Link>
                   </div>
-                  {/* Design Services */}
+                  {/* Solutions by Industry */}
                   <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>🎨 Design Services</div>
-                    <Link href="/services" className={styles.dropdownSubLink}>UI/UX Design</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Website Design</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Mobile App Design</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Brand Identity</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Logo Design</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Graphics Design</Link>
-                  </div>
-                  {/* Other Services */}
-                  <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>⚙️ Other Services</div>
-                    <Link href="/services" className={styles.dropdownSubLink}>DevOps & Cloud</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Quality Assurance</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>API Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Cybersecurity</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Metaverse Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>AR/VR Solutions</Link>
+                    <div className={styles.dropdownTitle}>🏭 Solutions by Industry</div>
+                    <Link href="/industries" className={styles.dropdownSubLink}>Healthcare</Link>
+                    <Link href="/industries" className={styles.dropdownSubLink}>Education</Link>
+                    <Link href="/industries" className={styles.dropdownSubLink}>Finance</Link>
+                    <Link href="/industries" className={styles.dropdownSubLink}>E-commerce</Link>
+                    <Link href="/industries" className={styles.dropdownSubLink}>Real Estate</Link>
                   </div>
                 </div>
               </div>
+              <Link href="/pricing" className={styles.navLink}>Pricing</Link>
               <Link href="/blog" className={styles.navLink}>Blogs</Link>
               <Link href="/work" className={styles.navLink}>Portfolio</Link>
-              <Link href="/about" className={styles.navLink}>Company</Link>
               <Link href="/contact" className={styles.navLink}>Contact</Link>
+              <Link href="/request-a-call" className="btn btn-secondary btn-sm">
+                Schedule a Call
+              </Link>
+              <Link href="/clients" className="btn btn-primary btn-sm">
+                For Clients
+              </Link>
             </nav>
-            <div className={styles.headerActions}>
-              <Link href="/contact" className="btn btn-primary btn-water">
+
+            {/* Mobile Menu Button */}
+            <button
+              className={styles.mobileMenuBtn}
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              <span className={styles.hamburgerLine}></span>
+              <span className={styles.hamburgerLine}></span>
+              <span className={styles.hamburgerLine}></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* ===== MOBILE MENU OVERLAY ===== */}
+      {isMobileMenuOpen && (
+        <div className={styles.mobileMenuOverlay}>
+          <div className={styles.mobileMenu}>
+            <div className={styles.mobileMenuHeader}>
+              <Link href="/" className={styles.mobileLogo} onClick={toggleMobileMenu}>
+                <div className={styles.logoIcon}>T</div>
+                TechNova
+              </Link>
+              <button
+                className={styles.mobileMenuClose}
+                onClick={toggleMobileMenu}
+                aria-label="Close mobile menu"
+              >
+                ✕
+              </button>
+            </div>
+            <nav className={styles.mobileNav}>
+              <Link href="/" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
+                Home
+              </Link>
+              <div className={styles.mobileNavGroup}>
+                <div className={styles.mobileNavTitle}>Services</div>
+                <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>
+                  Mobile App Development
+                </Link>
+                <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>
+                  Web Development
+                </Link>
+                <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>
+                  Game Development
+                </Link>
+                <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>
+                  AI & Blockchain
+                </Link>
+                <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>
+                  Design Services
+                </Link>
+                <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>
+                  Other Services
+                </Link>
+              </div>
+              <Link href="/blog" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
+                Blogs
+              </Link>
+              <Link href="/work" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
+                Portfolio
+              </Link>
+              <Link href="/about" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
+                Company
+              </Link>
+              <Link href="/contact" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
+                Contact
+              </Link>
+            </nav>
+            <div className={styles.mobileMenuActions}>
+              <Link href="/contact" className="btn btn-primary btn-water" onClick={toggleMobileMenu}>
                 Share Your Requirement
               </Link>
-              <Link href="/request-a-call" className="btn btn-secondary btn-water">
+              <Link href="/request-a-call" className="btn btn-secondary btn-water" onClick={toggleMobileMenu}>
                 Schedule a Call
               </Link>
             </div>
           </div>
         </div>
-      </header>
+      )}
 
       {/* ===== HERO SECTION ===== */}
       <section className={styles.hero}>
@@ -300,20 +465,38 @@ export default function Home() {
               <span className={styles.heroBadgeDot}></span>
               Premium IT & Software Development Company
             </div>
-            <h1>
-              Building <span>Innovative</span> Digital Solutions for Global Enterprises
+            <div className={styles.industryToggle}>
+              {["startup", "enterprise", "agency", "founder"].map((industry) => (
+                <button
+                  key={industry}
+                  className={`${styles.industryBtn} ${selectedIndustry === industry ? styles.active : ""}`}
+                  onClick={() => setSelectedIndustry(industry)}
+                >
+                  {industry.charAt(0).toUpperCase() + industry.slice(1)}
+                </button>
+              ))}
+            </div>
+            <h1 style={{ display: 'block', whiteSpace: 'normal', wordBreak: 'break-word', overflowWrap: 'break-word', maxWidth: '100%', overflow: 'visible', textAlign: 'center' }}>
+              We Build Scalable Apps That <span>Generate Revenue</span> – Not Just Code.
             </h1>
+            <div style={{ fontSize: '18px', color: 'rgba(255,255,255,0.9)', marginTop: '12px', textAlign: 'center' }}>
+              🚀 Helping funded startups & digital-first enterprises scale faster with custom software
+            </div>
             <p className={styles.heroSubtitle}>
-              Transform your business with our end-to-end development services. From mobile apps 
-              and web platforms to AI solutions and blockchain development — we deliver 
-              scalable, secure, and cutting-edge technology.
+              {selectedIndustry === "startup" && "Launch your MVP in 60 days with our proven startup framework. From idea to market-ready app."}
+              {selectedIndustry === "enterprise" && "Scale your business with enterprise-grade solutions. Secure, scalable, and compliant with industry standards."}
+              {selectedIndustry === "agency" && "Partner with us for white-label development. Deliver exceptional results to your clients."}
+              {selectedIndustry === "founder" && "Turn your vision into reality. Expert guidance from concept to launch and beyond."}
             </p>
+            <div className={styles.heroTrust}>
+              ⭐ Trusted by 2,500+ clients in 32 countries
+            </div>
             <div className={styles.heroActions}>
               <Link href="/proposal" className="btn btn-primary btn-water">
-                Share Your Requirement
+                Get Free Project Audit
               </Link>
-              <Link href="/request-a-call" className="btn btn-secondary btn-water">
-                Schedule a Call
+              <Link href="/work" className="btn btn-secondary btn-water">
+                See Real Case Studies
               </Link>
             </div>
             <div className={styles.heroStats}>
@@ -352,9 +535,21 @@ export default function Home() {
           <div className={styles.servicesGrid}>
             {services.map((service, index) => (
               <div key={index} className={styles.serviceCard}>
-                <div className={styles.serviceIcon}>{service.icon}</div>
+                <div className={styles.serviceIcon}>
+                  <Image
+                    src={service.icon}
+                    alt={service.title}
+                    width={60}
+                    height={60}
+                    className={styles.iconImage}
+                  />
+                </div>
                 <h3>{service.title}</h3>
+                <div className={styles.serviceWhoFor}>{service.whoFor}</div>
+                <div className={styles.serviceResult}>{service.businessResult}</div>
+                <div className={styles.serviceMetric}>{service.metric}</div>
                 <p>{service.description}</p>
+                <Link href="/work" className="btn btn-primary btn-sm">{service.cta}</Link>
               </div>
             ))}
           </div>
@@ -371,8 +566,16 @@ export default function Home() {
           <div className={styles.awardsGrid}>
             {awards.map((award, index) => (
               <div key={index} className={styles.awardCard}>
-                <div className={styles.awardLogo}>{award.name}</div>
-                <span>{award.badge}</span>
+                <div className={styles.awardLogo}>
+                  <Image
+                    src={award.logo}
+                    alt={`${award.name} logo`}
+                    width={80}
+                    height={40}
+                    className={styles.awardLogoImage}
+                  />
+                </div>
+                <span className={styles.awardBadge}>{award.badge}</span>
               </div>
             ))}
           </div>
@@ -405,7 +608,15 @@ export default function Home() {
           <div className={styles.industriesGrid}>
             {industries.map((industry, index) => (
               <div key={index} className={styles.industryCard}>
-                <div className={styles.industryIcon}>{industry.icon}</div>
+                <div className={styles.industryIcon}>
+                  <Image 
+                    src={industry.icon} 
+                    alt={industry.name}
+                    width={50}
+                    height={50}
+                    className={styles.iconImage}
+                  />
+                </div>
                 <h4>{industry.name}</h4>
               </div>
             ))}
@@ -437,14 +648,58 @@ export default function Home() {
               .slice(0, 6)
               .map((item, index) => (
                 <div key={index} className={styles.portfolioCard}>
-                  <div className={styles.portfolioImage}>📱</div>
+                  <div className={styles.portfolioImage}>
+                    <Image
+                      src={item.beforeAfter[0]}
+                      alt={`${item.title} before`}
+                      width={300}
+                      height={200}
+                      className={styles.portfolioBeforeImage}
+                    />
+                    <Image
+                      src={item.beforeAfter[1]}
+                      alt={`${item.title} after`}
+                      width={300}
+                      height={200}
+                      className={styles.portfolioAfterImage}
+                    />
+                  </div>
                   <div className={styles.portfolioContent}>
                     <h3>{item.title}</h3>
-                    <p>{item.description}</p>
+                    <div className={styles.portfolioBadges}>
+                      <span className={styles.portfolioBadge}>{item.clientType}</span>
+                      <span className={styles.portfolioBadge}>{item.budgetRange}</span>
+                      <span className={styles.portfolioBadge}>{item.businessImpact}</span>
+                    </div>
+                    <div className={styles.portfolioCaseStudy}>
+                      <div className={styles.caseStudyItem}>
+                        <strong>🎯 Client Goal:</strong> {item.clientGoal}
+                      </div>
+                      <div className={styles.caseStudyItem}>
+                        <strong>⚠️ Problem:</strong> {item.problem}
+                      </div>
+                      <div className={styles.caseStudyItem}>
+                        <strong>💡 Solution:</strong> {item.solution}
+                      </div>
+                      <div className={styles.caseStudyItem}>
+                        <strong>🛠️ Tech Stack:</strong> {item.techStack.join(", ")}
+                      </div>
+                      <div className={styles.caseStudyResult}>
+                        <strong>📈 Result:</strong> {item.result}
+                      </div>
+                    </div>
                     <div className={styles.portfolioTags}>
                       {item.tags.map((tag, i) => (
                         <span key={i} className={styles.portfolioTag}>{tag}</span>
                       ))}
+                    </div>
+                    <div className={styles.portfolioActions}>
+                      <Link href={item.video} className="btn btn-secondary btn-sm">
+                        ▶️ Watch Demo
+                      </Link>
+                      <Link href="/work" className="btn btn-primary btn-sm">
+                        View Live App
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -462,10 +717,28 @@ export default function Home() {
           </div>
           <div className={styles.processSteps}>
             {processSteps.map((step, index) => (
-              <div key={index} className={styles.processStep}>
-                <div className={styles.processIcon}>{step.icon}</div>
+              <div
+                key={index}
+                className={styles.processStep}
+                onMouseEnter={() => setHoveredStep(index)}
+                onMouseLeave={() => setHoveredStep(null)}
+              >
+                <div className={styles.processIcon}>
+                  <Image
+                    src={step.icon}
+                    alt={step.title}
+                    width={60}
+                    height={60}
+                    className={styles.iconImage}
+                  />
+                </div>
                 <h4>{step.title}</h4>
                 <p>{step.desc}</p>
+                {hoveredStep === index && (
+                  <div className={`${styles.processDetails} ${styles.visible}`}>
+                    <p>{step.details}</p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -568,7 +841,15 @@ export default function Home() {
           <div className={styles.whyGrid}>
             {whyChooseUs.map((item, index) => (
               <div key={index} className={styles.whyCard}>
-                <div className={styles.whyIcon}>{item.icon}</div>
+                <div className={styles.whyIcon}>
+                  <Image 
+                    src={item.icon} 
+                    alt={item.title}
+                    width={60}
+                    height={60}
+                    className={styles.iconImage}
+                  />
+                </div>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </div>

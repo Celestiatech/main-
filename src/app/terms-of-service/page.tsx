@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import "../../globals.css";
-import "../../page.module.css";
+import { useState } from "react";
+import Image from "next/image";
+import "../globals.css";
+import styles from "../page.module.css";
 
 const styles = {
   cta: "cta",
@@ -35,12 +37,12 @@ export default function TermsOfService() {
       </section>
 
       {/* ===== BREADCRUMBS ===== */}
-      <div className="breadcrumb">
+      <div className={styles.breadcrumb}>
         <div className="container">
-          <div className="breadcrumbContent">
-            <Link href="/" className="breadcrumbLink">Home</Link>
-            <span className="breadcrumbSeparator">›</span>
-            <span className="breadcrumbCurrent">Terms of Service</span>
+          <div className={styles.breadcrumbContent}>
+            <Link href="/" className={styles.breadcrumbLink}>Home</Link>
+            <span className={styles.breadcrumbSeparator}>›</span>
+            <span className={styles.breadcrumbCurrent}>Terms of Service</span>
           </div>
         </div>
       </div>
@@ -338,4 +340,5 @@ const styles = {
   footerBottom: "footerBottom",
   footerLegal: "footerLegal",
 };
+
 

@@ -23,9 +23,44 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you for your message! We'll get back to you within 24 hours.");
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitMessage('Thank you for your message! We\'ll get back to you within 24 hours.');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          projectType: '',
+          budget: '',
+          message: '',
+        });
+      } else {
+        setSubmitMessage('Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      setSubmitMessage('An error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -125,6 +160,12 @@ export default function ContactPage() {
               </Link>
               <Link href="/request-a-call" className="btn btn-secondary">
                 Schedule a Call
+              </Link>
+              <Link href="/request-a-call" className="btn btn-accent">
+                Get Free Consultation
+              </Link>
+              <Link href="/clients" className="btn btn-primary">
+                For Clients
               </Link>
             </div>
           </div>
@@ -283,9 +324,14 @@ export default function ContactPage() {
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-primary" style={{ width: "100%" }}>
-                Send Message
+              <button type="submit" className="btn btn-primary" style={{ width: "100%" }} disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
+              {submitMessage && (
+                <div className={styles.formNote} style={{ marginTop: '16px', color: submitMessage.includes('Thank you') ? '#22c55e' : '#ef4444' }}>
+                  {submitMessage}
+                </div>
+              )}
               <div className={styles.formNote}>
                 🔒 Your information is secure. We sign NDAs for all projects.
               </div>

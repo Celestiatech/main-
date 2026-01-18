@@ -156,6 +156,12 @@ export default function ClientsPage() {
               <Link href="/request-a-call" className="btn btn-secondary">
                 Schedule a Call
               </Link>
+              <Link href="/request-a-call" className="btn btn-accent">
+                Get Free Consultation
+              </Link>
+              <Link href="/clients" className="btn btn-primary">
+                For Clients
+              </Link>
             </div>
           </div>
         </div>

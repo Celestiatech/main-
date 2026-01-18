@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import "../../globals.css";
-import "../../page.module.css";
+import "../globals.css";
+import styles from "../page.module.css";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | TechNova Solutions",
@@ -273,16 +273,5 @@ export default function PrivacyPolicy() {
   );
 }
 
-const styles = {
-  cta: "cta",
-  footer: "footer",
-  footerGrid: "footerGrid",
-  footerAbout: "footerAbout",
-  logo: "logo",
-  logoIcon: "logoIcon",
-  footerSocial: "footerSocial",
-  footerColumn: "footerColumn",
-  footerBottom: "footerBottom",
-  footerLegal: "footerLegal",
-};
+
 

@@ -5,7 +5,7 @@ import styles from "./Chatbot.module.css";
 
 interface Message {
   id: number;
-  text: string;
+  text: string | React.ReactNode;
   sender: "user" | "bot";
   timestamp: Date;
 }
@@ -13,6 +13,16 @@ interface Message {
 interface QuickReply {
   label: string;
   response: string;
+}
+
+interface QualificationData {
+  budget?: string;
+  timeline?: string;
+  projectType?: string;
+  companySize?: string;
+  currentStep: number;
+  leadScore: number;
+  qualified: boolean;
 }
 
 const QUICK_REPLIES: QuickReply[] = [
@@ -61,6 +71,11 @@ export default function Chatbot() {
     },
   ]);
   const [inputValue, setInputValue] = useState("");
+  const [qualificationData, setQualificationData] = useState<QualificationData>({
+    currentStep: 0,
+    leadScore: 0,
+    qualified: false,
+  });
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -71,21 +86,116 @@ export default function Chatbot() {
     scrollToBottom();
   }, [messages, isOpen]);
 
-  const getBotResponse = (userText: string): string => {
+  // Qualification flow functions
+  const startQualification = () => {
+    setQualificationData(prev => ({ ...prev, currentStep: 1 }));
+    return "Great! I'd love to help you with your project. To provide the best recommendations, could you tell me about your budget range?\n\n💰 Under $10K\n💰 $10K - $50K\n💰 $50K - $100K\n💰 Over $100K\n💰 Not sure yet";
+  };
+
+  const handleQualificationResponse = (userText: string): string => {
+    const lowerText = userText.toLowerCase();
+    let newScore = qualificationData.leadScore;
+    let nextStep = qualificationData.currentStep + 1;
+
+    switch (qualificationData.currentStep) {
+      case 1: // Budget
+        if (lowerText.includes("$50k") || lowerText.includes("50k") || lowerText.includes("over") || lowerText.includes("100k")) {
+          newScore += 30;
+          setQualificationData(prev => ({ ...prev, budget: "high", leadScore: newScore, currentStep: nextStep }));
+          return "Excellent! A substantial budget gives us flexibility to deliver premium solutions. What's your preferred timeline for the project?\n\n⏱️ ASAP (1-2 months)\n⏱️ 3-6 months\n⏱️ 6-12 months\n⏱️ Flexible";
+        } else if (lowerText.includes("$10k") || lowerText.includes("10k")) {
+          newScore += 20;
+          setQualificationData(prev => ({ ...prev, budget: "medium", leadScore: newScore, currentStep: nextStep }));
+          return "Good budget range! We can build something impactful. What's your timeline preference?\n\n⏱️ ASAP (1-2 months)\n⏱️ 3-6 months\n⏱️ 6-12 months\n⏱️ Flexible";
+        } else {
+          newScore += 10;
+          setQualificationData(prev => ({ ...prev, budget: "low", leadScore: newScore, currentStep: nextStep }));
+          return "No problem! We can start with an MVP approach. What's your timeline?\n\n⏱️ ASAP (1-2 months)\n⏱️ 3-6 months\n⏱️ 6-12 months\n⏱️ Flexible";
+        }
+
+      case 2: // Timeline
+        if (lowerText.includes("asap") || lowerText.includes("1-2")) {
+          newScore += 20;
+          setQualificationData(prev => ({ ...prev, timeline: "urgent", leadScore: newScore, currentStep: nextStep }));
+          return "Urgent timeline noted! We specialize in fast delivery. What type of project are you looking to build?\n\n📱 Mobile App\n🌐 Web Application\n🎮 Game Development\n🤖 AI Solution\n⛓️ Blockchain/Web3\n💻 Custom Software";
+        } else {
+          newScore += 10;
+          setQualificationData(prev => ({ ...prev, timeline: "standard", leadScore: newScore, currentStep: nextStep }));
+          return "Perfect! That gives us time for thorough development. What type of project interests you?\n\n📱 Mobile App\n🌐 Web Application\n🎮 Game Development\n🤖 AI Solution\n⛓️ Blockchain/Web3\n💻 Custom Software";
+        }
+
+      case 3: // Project Type
+        newScore += 15;
+        setQualificationData(prev => ({ ...prev, projectType: userText, leadScore: newScore, currentStep: nextStep }));
+        return "Great choice! Last question: What's your company size?\n\n🏢 Startup (1-50 employees)\n🏢 Small Business (51-200 employees)\n🏢 Enterprise (200+ employees)\n👤 Individual/Founder";
+
+      case 4: // Company Size
+        if (lowerText.includes("enterprise") || lowerText.includes("200+")) {
+          newScore += 25;
+          setQualificationData(prev => ({ ...prev, companySize: "enterprise", leadScore: newScore, qualified: true }));
+          return "Perfect! Based on your responses, you're an ideal candidate for our Dedicated Team model. We have extensive experience with enterprise clients.\n\n🎯 HIGH PRIORITY LEAD DETECTED\n\nWould you like me to:\n📅 Schedule a call with our Enterprise Solutions Director\n📋 Send you our enterprise case studies\n💼 Provide a custom proposal\n\nOr tell me more about your specific needs!";
+        } else if (lowerText.includes("startup") || lowerText.includes("small")) {
+          newScore += 20;
+          setQualificationData(prev => ({ ...prev, companySize: "startup", leadScore: newScore, qualified: true }));
+          return "Excellent! We love working with startups and have helped hundreds scale successfully.\n\n🚀 Based on your profile, our Fixed Price or Dedicated Team models would work perfectly.\n\nWould you like to:\n📅 Book a free consultation call\n📖 See relevant case studies\n💡 Get a project estimate\n\nWhat's your biggest challenge right now?";
+        } else {
+          newScore += 15;
+          setQualificationData(prev => ({ ...prev, companySize: "individual", leadScore: newScore, qualified: true }));
+          return "Awesome! We work with individual founders and entrepreneurs regularly.\n\n💡 Many successful apps started just like yours!\n\nWould you like to:\n📅 Schedule a free strategy call\n📚 Check our founder success stories\n💰 See pricing options\n\nWhat's your vision for this project?";
+        }
+
+      default:
+        return BOT_RESPONSES.default;
+    }
+  };
+
+  const getRoutingResponse = (): string => {
+    const score = qualificationData.leadScore;
+
+    if (score >= 70) {
+      // High-intent: Direct to Calendly booking
+      return "🎯 EXCELLENT FIT DETECTED!\n\nBased on your requirements, you're a perfect match for our premium services. Our team would love to discuss your project in detail.\n\n📅 **Let's schedule a call right now!**\n\n[Book a free 30-min consultation](https://calendly.com/technova-consultation)\n\nOr I can send you our detailed proposal first - which would you prefer?";
+    } else if (score >= 40) {
+      // Medium-intent: Show case studies
+      return "📈 GOOD POTENTIAL!\n\nYour project aligns well with our expertise. Let me show you some relevant success stories that might inspire you.\n\n📖 **Check out these case studies:**\n• [Similar Project Case Study 1](/work/case-study-1)\n• [Similar Project Case Study 2](/work/case-study-2)\n\nWould you like to see more examples or schedule a consultation?";
+    } else {
+      // Low-intent: Educational content
+      return "🤔 GETTING STARTED?\n\nThat's completely fine! Many great projects start with exploring options.\n\n📚 **Helpful resources:**\n• [How to Choose the Right Development Partner](/blog/choosing-developer)\n• [MVP Development Guide](/blog/mvp-guide)\n• [Startup Tech Stack Guide](/blog/tech-stack)\n\nWhen you're ready to move forward, I'm here to help!";
+    }
+  };
+
+  const getBotResponse = (userText: string): string | JSX.Element => {
     const lowerText = userText.toLowerCase();
 
-    // Check for specific keywords
+    // Check if we're in qualification flow
+    if (qualificationData.currentStep > 0 && qualificationData.currentStep < 5) {
+      return handleQualificationResponse(userText);
+    }
+
+    // Check if qualification is complete and route accordingly
+    if (qualificationData.qualified) {
+      return getRoutingResponse();
+    }
+
+    // Start qualification for project-related queries
+    if (lowerText.includes("build") || lowerText.includes("develop") || lowerText.includes("create") ||
+        lowerText.includes("app") || lowerText.includes("website") || lowerText.includes("project") ||
+        lowerText.includes("mvp") || lowerText.includes("startup")) {
+      return startQualification();
+    }
+
+    // Standard responses
     if (lowerText.includes("hello") || lowerText.includes("hi") || lowerText.includes("hey")) {
       return BOT_RESPONSES.greeting;
     }
     if (lowerText.includes("service") || lowerText.includes("offer") || lowerText.includes("what do you do")) {
       return BOT_RESPONSES.services;
     }
-    if (lowerText.includes("portfolio") || lowerText.includes("project") || lowerText.includes("work")) {
+    if (lowerText.includes("portfolio") || lowerText.includes("work")) {
       return BOT_RESPONSES.portfolio;
     }
     if (lowerText.includes("price") || lowerText.includes("cost") || lowerText.includes("rate") || lowerText.includes("quote")) {
-      return BOT_RESPONSES.pricing;
+      return startQualification();
     }
     if (lowerText.includes("contact") || lowerText.includes("phone") || lowerText.includes("email") || lowerText.includes("location")) {
       return BOT_RESPONSES.contact;

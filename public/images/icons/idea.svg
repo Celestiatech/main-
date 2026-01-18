@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="ideaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <path d="M 50 20 Q 30 30 30 50 Q 30 70 50 70 Q 70 70 70 50 Q 70 30 50 20" fill="url(#ideaGrad)"/>
+  <rect x="45" y="70" width="10" height="15" rx="2" fill="url(#ideaGrad)"/>
+  <path d="M 40 85 L 30 85 M 60 85 L 70 85" stroke="url(#ideaGrad)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="50" cy="45" r="8" fill="white" opacity="0.9"/>
+  <path d="M 45 40 L 50 35 L 55 40" stroke="white" stroke-width="2" fill="none"/>
+</svg>
