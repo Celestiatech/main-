@@ -22,14 +22,14 @@ function generateSeedRandom(seed: number) {
 }
 
 // Neural Particle Network Component
-function NeuralNetwork({ particleCount = 80, maxConnections = 3, connectionDistance = 3 }: { particleCount?: number; maxConnections?: number; connectionDistance?: number }) {
+function NeuralNetwork({ particleCount = 80, connectionDistance = 3 }: { particleCount?: number; maxConnections?: number; connectionDistance?: number }) {
   const linesGeometryRef = useRef<THREE.BufferGeometry>(null);
   
   // Generate particles with deterministic randomness
   const { particles, positions, connections } = useMemo(() => {
     const random = generateSeedRandom(42);
     const particlesData: NeuralParticle[] = [];
-    const positions = new Float32Array(particleCount * 3);
+    const positionsArray = new Float32Array(particleCount * 3);
     const connectionsData: { start: THREE.Vector3; end: THREE.Vector3; opacity: number }[] = [];
     
     for (let i = 0; i < particleCount; i++) {
@@ -37,9 +37,9 @@ function NeuralNetwork({ particleCount = 80, maxConnections = 3, connectionDista
       const y = (random() - 0.5) * 10;
       const z = (random() - 0.5) * 5;
       
-      positions[i * 3] = x;
-      positions[i * 3 + 1] = y;
-      positions[i * 3 + 2] = z;
+      positionsArray[i * 3] = x;
+      positionsArray[i * 3 + 1] = y;
+      positionsArray[i * 3 + 2] = z;
       
       particlesData.push({
         position: new THREE.Vector3(x, y, z),
@@ -63,11 +63,12 @@ function NeuralNetwork({ particleCount = 80, maxConnections = 3, connectionDista
       }
     }
     
-    return { particles: particlesData, positions, connections: connectionsData };
+    return { particles: particlesData, positions: positionsArray, connections: connectionsData };
   }, [particleCount, connectionDistance]);
 
   const { pointer } = useThree();
-  const basePositionsRef = useRef(new Float32Array(positions.length));
+  const basePositionsRef = useRef<Float32Array | null>(null);
+  const animatedPositionsRef = useRef<Float32Array>(new Float32Array(positions.length));
 
   // Store base positions
   useEffect(() => {
@@ -78,6 +79,9 @@ function NeuralNetwork({ particleCount = 80, maxConnections = 3, connectionDista
   useFrame((state) => {
     const time = state.clock.elapsedTime;
     const basePositions = basePositionsRef.current;
+    const animatedPositions = animatedPositionsRef.current;
+    
+    if (!basePositions) return;
     
     for (let i = 0; i < particleCount; i++) {
       // Gentle floating motion
@@ -86,28 +90,34 @@ function NeuralNetwork({ particleCount = 80, maxConnections = 3, connectionDista
       const iz = i * 3 + 2;
       
       // Update position with subtle movement
-      positions[ix] = basePositions[ix] + Math.sin(time * 0.3 + i) * 0.3;
-      positions[iy] = basePositions[iy] + Math.cos(time * 0.2 + i * 0.5) * 0.3;
-      positions[iz] = basePositions[iz] + Math.sin(time * 0.15 + i * 0.3) * 0.2;
+      animatedPositions[ix] = basePositions[ix] + Math.sin(time * 0.3 + i) * 0.3;
+      animatedPositions[iy] = basePositions[iy] + Math.cos(time * 0.2 + i * 0.5) * 0.3;
+      animatedPositions[iz] = basePositions[iz] + Math.sin(time * 0.15 + i * 0.3) * 0.2;
       
       // Mouse parallax on desktop
       const mouseX = pointer.x * 0.5;
       const mouseY = pointer.y * 0.5;
-      positions[ix] += mouseX * (Math.random() - 0.5) * 0.1;
-      positions[iy] += mouseY * (Math.random() - 0.5) * 0.1;
+      animatedPositions[ix] += mouseX * (Math.random() - 0.5) * 0.1;
+      animatedPositions[iy] += mouseY * (Math.random() - 0.5) * 0.1;
     }
     
     // Update line geometry
     if (linesGeometryRef.current) {
-      const positionsArray = linesGeometryRef.current.attributes.position.array as Float32Array;
+      const positionsAttribute = linesGeometryRef.current.attributes.position.array as Float32Array;
       let idx = 0;
       for (const conn of connections) {
-        positionsArray[idx++] = conn.start.x;
-        positionsArray[idx++] = conn.start.y;
-        positionsArray[idx++] = conn.start.z;
-        positionsArray[idx++] = conn.end.x;
-        positionsArray[idx++] = conn.end.y;
-        positionsArray[idx++] = conn.end.z;
+        // Use animated positions for line positions
+        const startIdx = particles.findIndex(p => p.position.equals(conn.start));
+        const endIdx = particles.findIndex(p => p.position.equals(conn.end));
+        
+        if (startIdx >= 0 && endIdx >= 0) {
+          positionsAttribute[idx++] = animatedPositions[startIdx * 3];
+          positionsAttribute[idx++] = animatedPositions[startIdx * 3 + 1];
+          positionsAttribute[idx++] = animatedPositions[startIdx * 3 + 2];
+          positionsAttribute[idx++] = animatedPositions[endIdx * 3];
+          positionsAttribute[idx++] = animatedPositions[endIdx * 3 + 1];
+          positionsAttribute[idx++] = animatedPositions[endIdx * 3 + 2];
+        }
       }
       linesGeometryRef.current.attributes.position.needsUpdate = true;
       linesGeometryRef.current.setDrawRange(0, connections.length * 2);
@@ -130,7 +140,7 @@ function NeuralNetwork({ particleCount = 80, maxConnections = 3, connectionDista
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
-            args={[positions, 3]}
+            args={[animatedPositionsRef.current, 3]}
           />
         </bufferGeometry>
         <PointMaterial
@@ -199,6 +209,7 @@ function CameraDrift() {
   const { camera } = useThree();
   const scroll = useScroll();
   const initialPosition = useRef(new THREE.Vector3(0, 0, 8));
+  const currentPosition = useRef(new THREE.Vector3(0, 0, 8));
   
   useEffect(() => {
     initialPosition.current.copy(camera.position);
@@ -206,9 +217,17 @@ function CameraDrift() {
   
   useFrame(() => {
     const scrollOffset = scroll.offset;
-    // Subtle camera movement on scroll
-    camera.position.x = initialPosition.current.x + Math.sin(scrollOffset * Math.PI) * 0.5;
-    camera.position.y = initialPosition.current.y + Math.sin(scrollOffset * Math.PI * 2) * 0.2;
+    // Calculate target position
+    const targetX = initialPosition.current.x + Math.sin(scrollOffset * Math.PI) * 0.5;
+    const targetY = initialPosition.current.y + Math.sin(scrollOffset * Math.PI * 2) * 0.2;
+    
+    // Smoothly interpolate current position
+    currentPosition.current.x += (targetX - currentPosition.current.x) * 0.05;
+    currentPosition.current.y += (targetY - currentPosition.current.y) * 0.05;
+    
+    // Update camera position
+    camera.position.x = currentPosition.current.x;
+    camera.position.y = currentPosition.current.y;
   });
   
   return null;

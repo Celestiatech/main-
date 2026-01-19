@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import styles from "./Chatbot.module.css";
 
 interface Message {
-  id: number;
+  id: string;
   text: string | React.ReactNode;
   sender: "user" | "bot";
   timestamp: Date;
@@ -64,7 +64,7 @@ export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
-      id: 1,
+      id: "1",
       text: BOT_RESPONSES.greeting,
       sender: "bot",
       timestamp: new Date(),
@@ -77,6 +77,12 @@ export default function Chatbot() {
     qualified: false,
   });
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messageIdRef = useRef(0);
+
+  const getNextMessageId = useCallback(() => {
+    messageIdRef.current += 1;
+    return messageIdRef.current.toString();
+  }, []);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -95,7 +101,7 @@ export default function Chatbot() {
   const handleQualificationResponse = (userText: string): string => {
     const lowerText = userText.toLowerCase();
     let newScore = qualificationData.leadScore;
-    let nextStep = qualificationData.currentStep + 1;
+    const nextStep = qualificationData.currentStep + 1;
 
     switch (qualificationData.currentStep) {
       case 1: // Budget
@@ -238,7 +244,7 @@ export default function Chatbot() {
     if (!inputValue.trim()) return;
 
     const userMessage: Message = {
-      id: Date.now(),
+      id: getNextMessageId(),
       text: inputValue,
       sender: "user",
       timestamp: new Date(),
@@ -251,7 +257,7 @@ export default function Chatbot() {
     setTimeout(() => {
       const botResponse = getBotResponse(inputValue);
       const botMessage: Message = {
-        id: Date.now() + 1,
+        id: getNextMessageId(),
         text: botResponse,
         sender: "bot",
         timestamp: new Date(),
@@ -262,7 +268,7 @@ export default function Chatbot() {
 
   const handleQuickReply = (label: string, response: string) => {
     const userMessage: Message = {
-      id: Date.now(),
+      id: getNextMessageId(),
       text: label,
       sender: "user",
       timestamp: new Date(),
@@ -274,7 +280,7 @@ export default function Chatbot() {
     setTimeout(() => {
       const botResponse = getBotResponse(response);
       const botMessage: Message = {
-        id: Date.now() + 1,
+        id: getNextMessageId(),
         text: botResponse,
         sender: "bot",
         timestamp: new Date(),

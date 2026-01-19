@@ -14,7 +14,7 @@ interface ThreeDCardProps {
 function CardMesh({ hovered, color }: { hovered: boolean; color?: string }) {
   const groupRef = useRef<THREE.Group>(null);
 
-  useFrame((state) => {
+  useFrame(() => {
     if (groupRef.current) {
       const targetRotationX = hovered ? 0.1 : 0;
       const targetRotationY = hovered ? 0.1 : 0;

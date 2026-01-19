@@ -18,7 +18,7 @@ export default function CareerPage() {
       department: "Engineering",
       location: "Dubai, UAE",
       type: "Full-time",
-      description: "We're looking for an experienced React developer to join our team and build cutting-edge web applications.",
+      description: "WeWe'reapos;re looking for an experienced React developer to join our team and build cutting-edge web applications.",
       requirements: [
         "5+ years of experience with React and TypeScript",
         "Strong knowledge of Next.js and modern frontend practices",
@@ -44,7 +44,7 @@ export default function CareerPage() {
       department: "Design",
       location: "Remote",
       type: "Full-time",
-      description: "We're seeking a talented designer to create beautiful and intuitive user experiences.",
+      description: "WeWe'reapos;re seeking a talented designer to create beautiful and intuitive user experiences.",
       requirements: [
         "4+ years of UI/UX design experience",
         "Proficiency in Figma, Sketch, or Adobe XD",
@@ -216,7 +216,7 @@ export default function CareerPage() {
         <div className="container">
           <div className={styles.pageHeroContent}>
             <h1>Join Our Team</h1>
-            <p>Build the future of technology with TechNova. We're always looking for talented individuals.</p>
+            <p>Build the future of technology with TechNova. WeWe'reapos;re always looking for talented individuals.</p>
           </div>
         </div>
       </section>
@@ -291,7 +291,7 @@ export default function CareerPage() {
       <section className={styles.cta}>
         <div className="container">
           <h2>Don't See Your Role?</h2>
-          <p>We're always interested in hearing from talented individuals. Send us your resume!</p>
+          <p>WeWe'reapos;re always interested in hearing from talented individuals. Send us your resume!</p>
           <Link href="/contact" className="btn btn-accent">
             Get In Touch
           </Link>

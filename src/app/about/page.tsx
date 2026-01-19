@@ -148,7 +148,7 @@ export default function AboutPage() {
           <div className={styles.aboutContent}>
             <h1>About TechNova</h1>
             <p>
-              We're a team of passionate developers, designers, and strategists 
+              WeWe'reapos;re a team of passionate developers, designers, and strategists 
               committed to transforming businesses through innovative digital solutions.
             </p>
             <div className={styles.statsRow}>
