@@ -5,32 +5,23 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { PointMaterial, AdaptiveDpr, AdaptiveEvents, useScroll } from "@react-three/drei";
 import * as THREE from "three";
 
-interface NeuralParticle {
-  position: THREE.Vector3;
-  velocity: THREE.Vector3;
-  basePosition: THREE.Vector3;
-  connections: number[];
-}
-
-// Generate deterministic random positions
-function generateSeedRandom(seed: number) {
-  let s = seed;
-  return () => {
-    s = (s * 16807) % 2147483647;
-    return (s - 1) / 2147483646;
-  };
-}
-
 // Neural Particle Network Component
 function NeuralNetwork({ particleCount = 80, connectionDistance = 3 }: { particleCount?: number; maxConnections?: number; connectionDistance?: number }) {
   const linesGeometryRef = useRef<THREE.BufferGeometry>(null);
   
   // Generate particles with deterministic randomness
-  const { particles, positions, connections } = useMemo(() => {
-    const random = generateSeedRandom(42);
-    const particlesData: NeuralParticle[] = [];
+  const { positions, connections } = useMemo(() => {
+    const random = ((seed: number) => {
+      let s = seed;
+      return () => {
+        s = (s * 16807) % 2147483647;
+        return (s - 1) / 2147483646;
+      };
+    })(42);
+    
     const positionsArray = new Float32Array(particleCount * 3);
     const connectionsData: { start: THREE.Vector3; end: THREE.Vector3; opacity: number }[] = [];
+    const particlesData: { position: THREE.Vector3; basePosition: THREE.Vector3 }[] = [];
     
     for (let i = 0; i < particleCount; i++) {
       const x = (random() - 0.5) * 15;
@@ -43,9 +34,7 @@ function NeuralNetwork({ particleCount = 80, connectionDistance = 3 }: { particl
       
       particlesData.push({
         position: new THREE.Vector3(x, y, z),
-        velocity: new THREE.Vector3((random() - 0.5) * 0.002, (random() - 0.5) * 0.002, (random() - 0.5) * 0.001),
-        basePosition: new THREE.Vector3(x, y, z),
-        connections: []
+        basePosition: new THREE.Vector3(x, y, z)
       });
     }
     
@@ -63,11 +52,11 @@ function NeuralNetwork({ particleCount = 80, connectionDistance = 3 }: { particl
       }
     }
     
-    return { particles: particlesData, positions: positionsArray, connections: connectionsData };
+    return { positions: positionsArray, connections: connectionsData, particles: particlesData };
   }, [particleCount, connectionDistance]);
 
   const { pointer } = useThree();
-  const basePositionsRef = useRef<Float32Array | null>(null);
+  const basePositionsRef = useRef<Float32Array>(new Float32Array(positions.length));
   const animatedPositionsRef = useRef<Float32Array>(new Float32Array(positions.length));
 
   // Store base positions
@@ -80,8 +69,6 @@ function NeuralNetwork({ particleCount = 80, connectionDistance = 3 }: { particl
     const time = state.clock.elapsedTime;
     const basePositions = basePositionsRef.current;
     const animatedPositions = animatedPositionsRef.current;
-    
-    if (!basePositions) return;
     
     for (let i = 0; i < particleCount; i++) {
       // Gentle floating motion
@@ -106,9 +93,18 @@ function NeuralNetwork({ particleCount = 80, connectionDistance = 3 }: { particl
       const positionsAttribute = linesGeometryRef.current.attributes.position.array as Float32Array;
       let idx = 0;
       for (const conn of connections) {
-        // Use animated positions for line positions
-        const startIdx = particles.findIndex(p => p.position.equals(conn.start));
-        const endIdx = particles.findIndex(p => p.position.equals(conn.end));
+        const startIdx = positions.findIndex((_, i) => {
+          const x = positions[i * 3];
+          const y = positions[i * 3 + 1];
+          const z = positions[i * 3 + 2];
+          return x === conn.start.x && y === conn.start.y && z === conn.start.z;
+        });
+        const endIdx = positions.findIndex((_, i) => {
+          const x = positions[i * 3];
+          const y = positions[i * 3 + 1];
+          const z = positions[i * 3 + 2];
+          return x === conn.end.x && y === conn.end.y && z === conn.end.z;
+        });
         
         if (startIdx >= 0 && endIdx >= 0) {
           positionsAttribute[idx++] = animatedPositions[startIdx * 3];
@@ -133,6 +129,9 @@ function NeuralNetwork({ particleCount = 80, connectionDistance = 3 }: { particl
     return geo;
   }, [connections.length]);
 
+  // Create a stable positions array for the buffer attribute
+  const stablePositions = useMemo(() => new Float32Array(particleCount * 3), [particleCount]);
+
   return (
     <group>
       {/* Particles */}
@@ -140,7 +139,7 @@ function NeuralNetwork({ particleCount = 80, connectionDistance = 3 }: { particl
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
-            args={[animatedPositionsRef.current, 3]}
+            args={[stablePositions, 3]}
           />
         </bufferGeometry>
         <PointMaterial
@@ -225,9 +224,11 @@ function CameraDrift() {
     currentPosition.current.x += (targetX - currentPosition.current.x) * 0.05;
     currentPosition.current.y += (targetY - currentPosition.current.y) * 0.05;
     
-    // Update camera position
-    camera.position.x = currentPosition.current.x;
-    camera.position.y = currentPosition.current.y;
+    // Update camera position using copy
+    const newPos = camera.position.clone();
+    newPos.x = currentPosition.current.x;
+    newPos.y = currentPosition.current.y;
+    camera.position.copy(newPos);
   });
   
   return null;
@@ -257,6 +258,7 @@ export default function CinematicNeuralBackground({
     
     // Check reduced motion preference
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    // Initialize state from media query
     setReducedMotion(mediaQuery.matches);
     const handleMotionChange = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
     mediaQuery.addEventListener("change", handleMotionChange);

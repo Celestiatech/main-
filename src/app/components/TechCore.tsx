@@ -290,16 +290,19 @@ export default function TechCore({
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
+    
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    // Initialize state
     setReducedMotion(mediaQuery.matches);
+    const handleMotionChange = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
     
     checkMobile();
     window.addEventListener("resize", checkMobile);
-    mediaQuery.addEventListener("change", (e) => setReducedMotion(e.matches));
+    mediaQuery.addEventListener("change", handleMotionChange);
     
     return () => {
       window.removeEventListener("resize", checkMobile);
-      mediaQuery.removeEventListener("change", () => {});
+      mediaQuery.removeEventListener("change", handleMotionChange);
     };
   }, []);
 

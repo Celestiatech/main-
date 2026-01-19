@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState, useMemo } from "react";
+import { useRef, useEffect, useMemo } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useScroll, ScrollControls, Scroll } from "@react-three/drei";
 import * as THREE from "three";
@@ -105,27 +105,6 @@ export default function ScrollCameraJourney({
   damping = 0.1,
   sectionIds
 }: ScrollCameraJourneyProps) {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  const sections = useMemo(() => [
-    { id: "hero", position: [0, 0, 0] as [number, number, number] },
-    { id: "services", position: [0, -10, 0] as [number, number, number] },
-    { id: "awards", position: [0, -20, 0] as [number, number, number] },
-    { id: "portfolio", position: [0, -30, 0] as [number, number, number] },
-    { id: "process", position: [0, -40, 0] as [number, number, number] },
-    { id: "testimonials", position: [0, -50, 0] as [number, number, number] },
-    { id: "contact", position: [0, -60, 0] as [number, number, number] },
-  ], []);
-
   return (
     <ScrollControls
       pages={pages}
