@@ -164,7 +164,7 @@ export default function Chatbot() {
     }
   };
 
-  const getBotResponse = (userText: string): string | JSX.Element => {
+  const getBotResponse = (userText: string): string | React.ReactElement => {
     const lowerText = userText.toLowerCase();
 
     // Check if we're in qualification flow
@@ -333,9 +333,9 @@ export default function Chatbot() {
               </div>
               <div className={styles.messageContent}>
                 <div className={styles.messageBubble}>
-                  {message.text.split("\n").map((line, index) => (
+                  {typeof message.text === 'string' ? message.text.split("\n").map((line: string, index: number) => (
                     <p key={index}>{line}</p>
-                  ))}
+                  )) : message.text}
                 </div>
                 <span className={styles.messageTime}>{formatTime(message.timestamp)}</span>
               </div>

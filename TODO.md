@@ -1,35 +1,33 @@
-# TechNova Website Optimization - High-Converting Revenue Engine
+# Lint Fixes TODO List
 
-## Completed Tasks
-- [x] Pricing & Engagement Models Page
-  - Created comprehensive pricing page with Fixed Price, Dedicated Team, and Monthly Retainer models
-  - Included detailed breakdowns, testimonials, FAQs, and conversion-focused CTAs
-  - Files: src/app/pricing/page.tsx, src/app/pricing/page.module.css
+## Component Fixes (High Priority)
+- [ ] 1. Fix Chatbot.tsx - Date.now() during render issue
+- [ ] 2. Fix CinematicNeuralBackground.tsx - mutating positions array and camera.position
+- [ ] 3. Fix ScrollCameraJourney.tsx - refs during render, unused imports, any types
+- [ ] 4. Fix TechCore.tsx - unused useMemo, setState in effect
 
-## Completed Tasks
-- [x] Pricing & Engagement Models Page
-  - Created comprehensive pricing page with Fixed Price, Dedicated Team, and Monthly Retainer models
-  - Included detailed breakdowns, testimonials, FAQs, and conversion-focused CTAs
-  - Files: src/app/pricing/page.tsx, src/app/pricing/page.module.css
+## Unused Import/Warning Fixes
+- [ ] 5. Fix ThreeDIcon.tsx - remove unused RoundedBox, MeshDistortMaterial
+- [ ] 6. Fix ThreeDAnimatedLogo.tsx - remove unused Text3D, Center
+- [ ] 7. Fix ThreeDCard.tsx - remove unused state
+- [ ] 8. Fix ScrollCameraJourney.tsx - remove unused Canvas, Environment, MeshTransmissionMaterial
+- [ ] 9. Fix ServiceIcon.tsx - fix @next/next/no-img-element warning
+- [ ] 10. Fix Pricing page - remove unused Image, billingCycle
+- [ ] 11. Fix Services page - remove unused useState
+- [ ] 12. Fix Terms of Service page - remove unused useState, Image
 
-- [x] Sales-Qualified AI Chatbot Flow
-  - Enhanced chatbot with 4-step qualification flow (budget → timeline → project type → company size)
-  - Implemented lead scoring system (0-100 points based on responses)
-  - Added intelligent routing: high-intent leads (70+ score) → Calendly booking, medium-intent (40+ score) → case studies, low-intent → educational content
-  - Updated existing chatbot component with sales qualification logic
-  - Files: src/app/components/Chatbot.tsx (enhanced)
+## Text Content Fixes (Escaping)
+- [ ] 13. Fix about/page.tsx - escape apostrophes
+- [ ] 14. Fix career/page.tsx - escape apostrophes
+- [ ] 15. Fix contact/page.tsx - escape apostrophes
+- [ ] 16. Fix cookie-policy/page.tsx - escape quotes
+- [ ] 17. Fix privacy-policy/page.tsx - escape quotes and apostrophes
+- [ ] 18. Fix proposal/page.tsx - escape apostrophes
+- [ ] 19. Fix request-a-call/page.tsx - escape apostrophes
+- [ ] 20. Fix services/page.tsx - escape apostrophes
+- [ ] 21. Fix terms-of-service/page.tsx - escape quotes and apostrophes
+- [ ] 22. Fix testimonials/page.tsx - escape quotes and apostrophes
+- [ ] 23. Fix work/[slug]/page.tsx - escape quotes and apostrophes
+- [ ] 24. Fix work/page.tsx - escape apostrophes
+- [ ] 25. Fix page.tsx - escape quotes and apostrophes
 
-## Pending Tasks
-- [ ] Case Study Inner Page Template
-  - Design reusable layout with hero summary, client background, problem/solution/tech stack/timeline/business results/screenshots/CTAs
-  - Include copywriting examples and UX tips
-
-- [ ] SEO Money Pages Strategy
-  - Create list of high-intent pages (Startup MVP Development, AI Development Company, etc.)
-  - Define search intent, page structure (H1-H3), CTA placement, content angles, and FAQ ideas
-
-- [ ] Conversion Optimization Checklist
-  - Provide checklist for hero, services, portfolio, forms, footer with micro-copy suggestions, CTA wording, UX improvements, and trust reinforcement ideas
-
-## Current Focus
-Working on Case Study Inner Page Template

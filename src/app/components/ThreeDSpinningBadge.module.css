@@ -1,0 +1,190 @@
+.badgeContainer {
+  perspective: 1000px;
+  cursor: pointer;
+  display: inline-block;
+  transform-style: preserve-3d;
+}
+
+.badge3D {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateY(0deg);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.badgeContainer:hover .badge3D {
+  transform: rotateX(180deg) rotateY(360deg) scale3d(1.1, 1.1, 1.1);
+}
+
+.badgeFace {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  border: 3px solid var(--badge-color);
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 0.15) 0%, 
+    rgba(139, 92, 246, 0.1) 50%,
+    rgba(249, 115, 22, 0.1) 100%
+  );
+  box-shadow: 
+    0 4px 20px rgba(59, 130, 246, 0.2),
+    inset 0 0 30px rgba(59, 130, 246, 0.05);
+  transition: all 0.3s ease;
+}
+
+.front {
+  transform: translateZ(calc(var(--badge-size, 100px) / 2));
+}
+
+.front::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.1) 0%,
+    transparent 70%
+  );
+  animation: rotate 10s linear infinite;
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(calc(var(--badge-size, 100px) / 2));
+  background: linear-gradient(135deg, var(--badge-color) 0%, #8b5cf6 100%);
+  border-color: transparent;
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4);
+}
+
+.back::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%
+  );
+  animation: rotate 15s linear infinite reverse;
+}
+
+.right {
+  width: var(--badge-size, 100px);
+  transform: rotateY(90deg) translateZ(calc(var(--badge-size, 100px) / 2));
+  background: linear-gradient(180deg, 
+    rgba(59, 130, 246, 0.05) 0%, 
+    rgba(59, 130, 246, 0.15) 50%, 
+    rgba(59, 130, 246, 0.05) 100%
+  );
+  border: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+.left {
+  width: var(--badge-size, 100px);
+  transform: rotateY(-90deg) translateZ(calc(var(--badge-size, 100px) / 2));
+  background: linear-gradient(180deg, 
+    rgba(139, 92, 246, 0.05) 0%, 
+    rgba(139, 92, 246, 0.15) 50%, 
+    rgba(139, 92, 246, 0.05) 100%
+  );
+  border: 2px solid rgba(139, 92, 246, 0.3);
+}
+
+.top {
+  height: var(--badge-size, 100px);
+  transform: rotateX(90deg) translateZ(calc(var(--badge-size, 100px) / 2));
+  background: linear-gradient(90deg, 
+    rgba(249, 115, 22, 0.05) 0%, 
+    rgba(249, 115, 22, 0.15) 50%, 
+    rgba(249, 115, 22, 0.05) 100%
+  );
+  border: 2px solid rgba(249, 115, 22, 0.3);
+}
+
+.bottom {
+  height: var(--badge-size, 100px);
+  transform: rotateX(-90deg) translateZ(calc(var(--badge-size, 100px) / 2));
+  background: linear-gradient(90deg, 
+    rgba(59, 130, 246, 0.05) 0%, 
+    rgba(59, 130, 246, 0.15) 50%, 
+    rgba(59, 130, 246, 0.05) 100%
+  );
+  border: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+.innerContent {
+  font-size: 40px;
+  color: white;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.badgeContainer:hover .front {
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.5);
+  border-color: #8b5cf6;
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 0.2) 0%, 
+    rgba(139, 92, 246, 0.15) 50%,
+    rgba(249, 115, 22, 0.15) 100%
+  );
+}
+
+.badgeContainer:hover .back {
+  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.6);
+}
+
+.badgeContainer:hover .right,
+.badgeContainer:hover .left,
+.badgeContainer:hover .top,
+.badgeContainer:hover .bottom {
+  border-color: rgba(59, 130, 246, 0.5);
+  background: rgba(59, 130, 246, 0.1);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Glow effect */
+.badgeContainer::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.3) 0%,
+    transparent 70%
+  );
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.badgeContainer:hover::before {
+  opacity: 1;
+}
+

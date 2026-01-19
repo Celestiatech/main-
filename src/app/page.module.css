@@ -539,7 +539,7 @@
 /* ===== SERVICES SECTION ===== */
 .services {
   padding: 100px 0;
-  background: white;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
 }
 
 .servicesGrid {
@@ -549,70 +549,11 @@
 }
 
 .serviceCard {
-  background: var(--bg-primary);
-  border-radius: var(--radius-lg);
+  background: #ffffff;
+  border-radius: 20px;
   padding: 32px;
-  border: 1px solid var(--border-light);
-  transition: all var(--transition-base);
-  position: relative;
-  overflow: hidden;
-}
-
-.serviceWhoFor {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--primary);
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.serviceResult {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 8px;
-}
-
-.serviceMetric {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--text-secondary);
-  margin-bottom: 12px;
-  line-height: 1.4;
-}
-
-.sectionHeader {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 60px;
-}
-
-.sectionHeader h2 {
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  color: var(--text-primary);
-}
-
-.sectionHeader p {
-  font-size: 16px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-
-.servicesGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.serviceCard {
-  background: var(--bg-primary);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  border: 1px solid var(--border-light);
-  transition: all var(--transition-base);
+  border: 1px solid #e2e8f0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
 }
@@ -624,14 +565,26 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--gradient-primary);
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
   transform: scaleX(0);
-  transition: transform var(--transition-base);
+  transition: transform 0.4s ease;
+}
+
+.serviceCard::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .serviceCard:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
   border-color: transparent;
 }
 
@@ -639,18 +592,22 @@
   transform: scaleX(1);
 }
 
+.serviceCard:hover::after {
+  opacity: 1;
+}
+
 .serviceIcon {
-  width: 60px;
-  height: 60px;
-  background: rgba(59, 130, 246, 0.1);
-  border-radius: var(--radius-md);
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(139, 92, 246, 0.08) 100%);
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   color: var(--primary);
   font-size: 28px;
-  transition: all var(--transition-base);
+  transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
 }
@@ -663,39 +620,190 @@
   width: 0;
   height: 0;
   border-radius: 50%;
-  background: rgba(59, 130, 246, 0.2);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(139, 92, 246, 0.15) 100%);
   transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
+  transition: width 0.6s ease, height 0.6s ease;
 }
 
 .serviceCard:hover .serviceIcon::before {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
+}
+
+.serviceCard h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1e293b;
+  line-height: 1.25;
+  position: relative;
+  z-index: 1;
+}
+
+.serviceWhoFor {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #3b82f6;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+  padding: 8px 16px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.serviceResult {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f97316;
+  margin-bottom: 16px;
+  padding: 16px;
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.08) 0%, rgba(249, 115, 22, 0.03) 100%);
+  border-radius: 12px;
+  border-left: 4px solid #f97316;
+  position: relative;
+  overflow: hidden;
+}
+
+.serviceResult::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(249, 115, 22, 0.3), transparent);
+}
+
+.serviceMetric {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.serviceMetric span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.serviceMetric span:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.serviceMetric span::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.serviceDescription {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+}
+
+.serviceDescription::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+}
+
+.serviceCard > p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.serviceCard .btn {
+  width: 100%;
+  margin-top: auto;
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+}
+
+.serviceCard .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
 }
 
 .iconImage {
   position: relative;
   z-index: 1;
-  transition: all var(--transition-base);
-  animation: float 3s ease-in-out infinite;
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.2));
 }
 
 .serviceCard:hover .iconImage {
   transform: scale(1.15) rotate(5deg);
-  animation: pulse 0.6s ease-in-out;
+  filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.3));
 }
 
-.serviceCard h3 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: var(--text-primary);
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
 }
 
-.serviceCard p {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.6;
+.sectionHeader h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #1e293b;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionHeader h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  border-radius: 2px;
+}
+
+.sectionHeader p {
+  font-size: 18px;
+  color: #64748b;
+  line-height: 1.75;
+  margin-top: 24px;
 }
 
 /* ===== AWARDS SECTION ===== */
@@ -2678,91 +2786,254 @@
   color: var(--text-primary);
 }
 
-/* ===== PAGE HERO ===== */
-.pageHero {
-  padding: 140px 0 60px;
-  background: linear-gradient(135deg, var(--secondary) 0%, #0f172a 100%);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+/* ===== HERO ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.pageHero::before {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+}
+
+@keyframes floatHero {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  50% {
+    transform: translateY(0px) translateX(0px);
+  }
+  75% {
+    transform: translateY(10px) translateX(-5px);
+  }
+}
+
+/* Scroll Animation Base Classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+.animate-fade-in.visible {
+  opacity: 1;
+}
+
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger animation delays for child elements */
+.stagger-1 { transition-delay: 0ms; }
+.stagger-2 { transition-delay: 100ms; }
+.stagger-3 { transition-delay: 200ms; }
+.stagger-4 { transition-delay: 300ms; }
+.stagger-5 { transition-delay: 400ms; }
+.stagger-6 { transition-delay: 500ms; }
+.stagger-7 { transition-delay: 600ms; }
+.stagger-8 { transition-delay: 700ms; }
+
+/* Hero specific animation delays */
+.heroBadgeAnimate {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.heroTitleAnimate {
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.heroSubtitleAnimate {
+  animation: fadeInUp 0.8s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.heroTrustAnimate {
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.heroActionsAnimate {
+  animation: fadeInUp 0.8s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+.heroStatsAnimate {
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.statCardAnimate {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.statCardAnimate:nth-child(1) { animation-delay: 0.7s; }
+.statCardAnimate:nth-child(2) { animation-delay: 0.8s; }
+.statCardAnimate:nth-child(3) { animation-delay: 0.9s; }
+.statCardAnimate:nth-child(4) { animation-delay: 1s; }
+
+/* Process details animation fix */
+.processDetails {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-light);
+  width: 300px;
+  max-width: 90vw;
+  z-index: 1000;
+  margin-top: 15px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+}
+
+.processDetails.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.processDetails::before {
   content: '';
   position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 60%;
-  height: 150%;
-  background: radial-gradient(ellipse, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
-}
-
-.pageHeroContent {
-  position: relative;
-  z-index: 1;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.pageHero h1 {
-  font-size: 48px;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 16px;
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.pageHero p {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.8);
-  animation: fadeInUp 0.6s ease-out 0.2s both;
-}
-
-/* ===== BREADCRUMBS ===== */
-.breadcrumb {
-  padding: 16px 0;
-  background: transparent;
-  border-bottom: 1px solid rgba(59, 130, 246, 0.1);
-}
-
-.breadcrumbContent {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 4px;
-  font-size: 14px;
-}
-
-.breadcrumbItem {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.breadcrumbLink {
-  color: var(--text-secondary);
-  transition: all var(--transition-fast);
-  padding: 4px 8px;
-  border-radius: var(--radius-sm);
-}
-
-.breadcrumbLink:hover {
-  color: var(--primary);
-  background: rgba(59, 130, 246, 0.08);
-}
-
-.breadcrumbCurrent {
-  color: var(--primary);
-  font-weight: 500;
-  padding: 4px 8px;
-  background: rgba(59, 130, 246, 0.1);
-  border-radius: var(--radius-sm);
-}
-
-.breadcrumbSeparator {
-  color: var(--text-light);
-  font-size: 18px;
-  margin: 0 4px;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
 }
 
 /* ===== LOGO HOVER EFFECT ===== */
@@ -2832,3 +3103,36 @@
 }
 
 
+
+/* ===== BREADCRUMB STYLES ===== */
+.breadcrumb {
+  background: var(--bg-primary);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.breadcrumbContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.breadcrumbLink {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumbLink:hover {
+  color: var(--primary);
+}
+
+.breadcrumbSeparator {
+  color: var(--text-muted);
+}
+
+.breadcrumbCurrent {
+  color: var(--text-primary);
+  font-weight: 500;
+}

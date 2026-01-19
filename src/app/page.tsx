@@ -1,16 +1,47 @@
-    "use client";
+"use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.css";
 import Chatbot from "./components/Chatbot";
+import Hero3DScene from "./components/Hero3DScene";
+import ThreeDIcon from "./components/ThreeDIcon";
+import ThreeDSpinningBadge from "./components/ThreeDSpinningBadge";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("all");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
   const [selectedIndustry, setSelectedIndustry] = useState("startup");
+
+  // Scroll animation observer
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    // Create observer for scroll animations
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    // Observe all animated elements
+    const animatedElements = document.querySelectorAll(".animate-on-scroll, .animate-fade-in, .animate-slide-left, .animate-slide-right, .animate-scale-in");
+    animatedElements.forEach((el) => observerRef.current?.observe(el));
+
+    return () => {
+      observerRef.current?.disconnect();
+    };
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -459,13 +490,15 @@ export default function Home() {
           </video>
           <div className={styles.heroOverlay}></div>
         </div>
+        {/* 3D Scene */}
+        <Hero3DScene />
         <div className="container">
           <div className={styles.heroContent}>
-            <div className={styles.heroBadge}>
+            <div className={`${styles.heroBadge} heroBadgeAnimate`}>
               <span className={styles.heroBadgeDot}></span>
               Premium IT & Software Development Company
             </div>
-            <div className={styles.industryToggle}>
+            <div className={`${styles.industryToggle} heroSubtitleAnimate`}>
               {["startup", "enterprise", "agency", "founder"].map((industry) => (
                 <button
                   key={industry}
@@ -476,22 +509,28 @@ export default function Home() {
                 </button>
               ))}
             </div>
-            <h1 style={{ display: 'block', whiteSpace: 'normal', wordBreak: 'break-word', overflowWrap: 'break-word', maxWidth: '100%', overflow: 'visible', textAlign: 'center' }}>
+            <h1 
+              style={{ display: 'block', whiteSpace: 'normal', wordBreak: 'break-word', overflowWrap: 'break-word', maxWidth: '100%', overflow: 'visible', textAlign: 'center' }}
+              className="heroTitleAnimate"
+            >
               We Build Scalable Apps That <span>Generate Revenue</span> – Not Just Code.
             </h1>
-            <div style={{ fontSize: '18px', color: 'rgba(255,255,255,0.9)', marginTop: '12px', textAlign: 'center' }}>
+            <div 
+              style={{ fontSize: '18px', color: 'rgba(255,255,255,0.9)', marginTop: '12px', textAlign: 'center' }}
+              className="heroSubtitleAnimate"
+            >
               🚀 Helping funded startups & digital-first enterprises scale faster with custom software
             </div>
-            <p className={styles.heroSubtitle}>
+            <p className={`${styles.heroSubtitle} heroTrustAnimate`}>
               {selectedIndustry === "startup" && "Launch your MVP in 60 days with our proven startup framework. From idea to market-ready app."}
               {selectedIndustry === "enterprise" && "Scale your business with enterprise-grade solutions. Secure, scalable, and compliant with industry standards."}
               {selectedIndustry === "agency" && "Partner with us for white-label development. Deliver exceptional results to your clients."}
               {selectedIndustry === "founder" && "Turn your vision into reality. Expert guidance from concept to launch and beyond."}
             </p>
-            <div className={styles.heroTrust}>
+            <div className={`${styles.heroTrust} heroActionsAnimate`}>
               ⭐ Trusted by 2,500+ clients in 32 countries
             </div>
-            <div className={styles.heroActions}>
+            <div className={`${styles.heroActions} heroStatsAnimate`}>
               <Link href="/proposal" className="btn btn-primary btn-water">
                 Get Free Project Audit
               </Link>
@@ -499,20 +538,20 @@ export default function Home() {
                 See Real Case Studies
               </Link>
             </div>
-            <div className={styles.heroStats}>
-              <div className={styles.statCard}>
+            <div className={`${styles.heroStats} heroStatsAnimate`}>
+              <div className={`${styles.statCard} statCardAnimate`}>
                 <div className={styles.statNumber}>2,500+</div>
                 <div className={styles.statLabel}>Happy Clients</div>
               </div>
-              <div className={styles.statCard}>
+              <div className={`${styles.statCard} statCardAnimate`}>
                 <div className={styles.statNumber}>2,000+</div>
                 <div className={styles.statLabel}>Apps Developed</div>
               </div>
-              <div className={styles.statCard}>
+              <div className={`${styles.statCard} statCardAnimate`}>
                 <div className={styles.statNumber}>1,000+</div>
                 <div className={styles.statLabel}>Games Developed</div>
               </div>
-              <div className={styles.statCard}>
+              <div className={`${styles.statCard} statCardAnimate`}>
                 <div className={styles.statNumber}>12+</div>
                 <div className={styles.statLabel}>Years Experience</div>
               </div>
@@ -524,7 +563,7 @@ export default function Home() {
       {/* ===== SERVICES SECTION ===== */}
       <section className={styles.services} id="services">
         <div className="container">
-          <div className={styles.sectionHeader}>
+          <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Tap into Over a Decade of Expertise</h2>
             <p>
               With 12+ years of experience, we've helped startups and enterprises 
@@ -534,21 +573,26 @@ export default function Home() {
           </div>
           <div className={styles.servicesGrid}>
             {services.map((service, index) => (
-              <div key={index} className={styles.serviceCard}>
+              <div key={index} className={`${styles.serviceCard} animate-on-scroll stagger-${(index % 4) + 1}`}>
                 <div className={styles.serviceIcon}>
-                  <Image
-                    src={service.icon}
-                    alt={service.title}
-                    width={60}
-                    height={60}
-                    className={styles.iconImage}
+                  <ThreeDIcon 
+                    color="#3b82f6" 
+                    secondaryColor="#f97316"
+                    size={80}
                   />
                 </div>
                 <h3>{service.title}</h3>
-                <div className={styles.serviceWhoFor}>{service.whoFor}</div>
-                <div className={styles.serviceResult}>{service.businessResult}</div>
-                <div className={styles.serviceMetric}>{service.metric}</div>
-                <p>{service.description}</p>
+                <div className={styles.serviceWhoFor}>
+                  <span>👥</span> {service.whoFor}
+                </div>
+                <div className={styles.serviceResult}>
+                  <span>🚀</span> {service.businessResult}
+                </div>
+                <div className={styles.serviceMetric}>
+                  <span>{service.metric.split('|')[0].trim()}</span>
+                  <span>{service.metric.split('|')[1].trim()}</span>
+                </div>
+                <p className={styles.serviceDescription}>{service.description}</p>
                 <Link href="/work" className="btn btn-primary btn-sm">{service.cta}</Link>
               </div>
             ))}
@@ -559,21 +603,20 @@ export default function Home() {
       {/* ===== AWARDS SECTION ===== */}
       <section className={styles.awards}>
         <div className="container">
-          <div className={styles.awardsHeader}>
+          <div className={`${styles.awardsHeader} animate-on-scroll`}>
             <h3>Ranked Among the Top Web & App Development Companies</h3>
             <p>Recognized by leading industry platforms worldwide</p>
           </div>
           <div className={styles.awardsGrid}>
             {awards.map((award, index) => (
-              <div key={index} className={styles.awardCard}>
+              <div key={index} className={`${styles.awardCard} animate-scale-in stagger-${(index % 5) + 1}`}>
                 <div className={styles.awardLogo}>
-                  <Image
-                    src={award.logo}
-                    alt={`${award.name} logo`}
-                    width={80}
-                    height={40}
-                    className={styles.awardLogoImage}
-                  />
+                  <ThreeDSpinningBadge 
+                    color={index === 0 ? "#14a3b8" : index === 1 ? "#ff6b35" : index === 2 ? "#f59e0b" : index === 3 ? "#2e5999" : index === 4 ? "#f47c22" : "#3b82f6"}
+                    size={80}
+                  >
+                    <span style={{ fontSize: "12px", fontWeight: "bold", color: "#3b82f6" }}>{award.name}</span>
+                  </ThreeDSpinningBadge>
                 </div>
                 <span className={styles.awardBadge}>{award.badge}</span>
               </div>
@@ -585,12 +628,12 @@ export default function Home() {
       {/* ===== TRUST/PARTNERS SECTION ===== */}
       <section className={styles.trust}>
         <div className="container">
-          <div className={styles.sectionHeader}>
+          <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h3>Our Esteemed Partners</h3>
           </div>
           <div className={styles.trustGrid}>
             {partners.map((partner, index) => (
-              <div key={index} className={styles.trustItem}>
+              <div key={index} className={`${styles.trustItem} animate-on-scroll stagger-${(index % 6) + 1}`}>
                 <div className={styles.trustLogo}>{partner}</div>
               </div>
             ))}
@@ -601,20 +644,18 @@ export default function Home() {
       {/* ===== INDUSTRIES SECTION ===== */}
       <section className={styles.industries}>
         <div className="container">
-          <div className={styles.sectionHeader}>
+          <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Blogs We Cater To</h2>
             <p>Delivering specialized solutions across diverse sectors</p>
           </div>
           <div className={styles.industriesGrid}>
             {industries.map((industry, index) => (
-              <div key={index} className={styles.industryCard}>
+              <div key={index} className={`${styles.industryCard} animate-on-scroll stagger-${(index % 6) + 1}`}>
                 <div className={styles.industryIcon}>
-                  <Image 
-                    src={industry.icon} 
-                    alt={industry.name}
-                    width={50}
-                    height={50}
-                    className={styles.iconImage}
+                  <ThreeDIcon 
+                    color={["#3b82f6", "#f97316", "#8b5cf6", "#06b6d4", "#10b981", "#ec4899"][index % 6]}
+                    secondaryColor={["#f97316", "#3b82f6", "#06b6d4", "#8b5cf6", "#ec4899", "#10b981"][index % 6]}
+                    size={60}
                   />
                 </div>
                 <h4>{industry.name}</h4>
@@ -627,11 +668,11 @@ export default function Home() {
       {/* ===== PORTFOLIO SECTION ===== */}
       <section className={styles.portfolio}>
         <div className="container">
-          <div className={styles.sectionHeader}>
+          <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Our Portfolio — Results That Speak</h2>
             <p>Explore our success stories and delivered projects</p>
           </div>
-          <div className={styles.portfolioTabs}>
+          <div className={`${styles.portfolioTabs} animate-on-scroll`}>
             {["all", "mobile", "web", "game", "blockchain", "ai"].map((tab) => (
               <button
                 key={tab}
@@ -647,7 +688,7 @@ export default function Home() {
               .filter((item) => activeTab === "all" || item.category === activeTab)
               .slice(0, 6)
               .map((item, index) => (
-                <div key={index} className={styles.portfolioCard}>
+                <div key={index} className={`${styles.portfolioCard} animate-on-scroll stagger-${(index % 3) + 1}`}>
                   <div className={styles.portfolioImage}>
                     <Image
                       src={item.beforeAfter[0]}
@@ -666,11 +707,6 @@ export default function Home() {
                   </div>
                   <div className={styles.portfolioContent}>
                     <h3>{item.title}</h3>
-                    <div className={styles.portfolioBadges}>
-                      <span className={styles.portfolioBadge}>{item.clientType}</span>
-                      <span className={styles.portfolioBadge}>{item.budgetRange}</span>
-                      <span className={styles.portfolioBadge}>{item.businessImpact}</span>
-                    </div>
                     <div className={styles.portfolioCaseStudy}>
                       <div className={styles.caseStudyItem}>
                         <strong>🎯 Client Goal:</strong> {item.clientGoal}
@@ -711,7 +747,7 @@ export default function Home() {
       {/* ===== PROCESS SECTION ===== */}
       <section className={styles.process}>
         <div className="container">
-          <div className={styles.sectionHeader}>
+          <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>How It Works</h2>
             <p>Our streamlined development process ensures success</p>
           </div>
@@ -719,17 +755,15 @@ export default function Home() {
             {processSteps.map((step, index) => (
               <div
                 key={index}
-                className={styles.processStep}
+                className={`${styles.processStep} animate-on-scroll stagger-${(index % 6) + 1}`}
                 onMouseEnter={() => setHoveredStep(index)}
                 onMouseLeave={() => setHoveredStep(null)}
               >
                 <div className={styles.processIcon}>
-                  <Image
-                    src={step.icon}
-                    alt={step.title}
-                    width={60}
-                    height={60}
-                    className={styles.iconImage}
+                  <ThreeDIcon 
+                    color={index % 2 === 0 ? "#3b82f6" : "#f97316"}
+                    secondaryColor={index % 2 === 0 ? "#f97316" : "#3b82f6"}
+                    size={70}
                   />
                 </div>
                 <h4>{step.title}</h4>
@@ -748,7 +782,7 @@ export default function Home() {
       {/* ===== UPWORK SECTION ===== */}
       <section className={styles.upwork}>
         <div className="container">
-          <div className={styles.upworkContent}>
+          <div className={`${styles.upworkContent} animate-on-scroll`}>
             <div>
               <h2 style={{ color: "white", fontSize: "32px", marginBottom: "12px" }}>
                 Top-Rated Upwork Partner
@@ -758,15 +792,15 @@ export default function Home() {
               </p>
             </div>
             <div className={styles.upworkStats}>
-              <div className={styles.upworkStat}>
+              <div className={`${styles.upworkStat} statCardAnimate`}>
                 <div className={styles.upworkStatNumber}>1,800+</div>
                 <div className={styles.upworkStatLabel}>Jobs Completed</div>
               </div>
-              <div className={styles.upworkStat}>
+              <div className={`${styles.upworkStat} statCardAnimate`}>
                 <div className={styles.upworkStatNumber}>$9M+</div>
                 <div className={styles.upworkStatLabel}>Earned</div>
               </div>
-              <div className={styles.upworkStat}>
+              <div className={`${styles.upworkStat} statCardAnimate`}>
                 <div className={styles.upworkStatNumber}>Top 3%</div>
                 <div className={styles.upworkStatLabel}>Talent Worldwide</div>
               </div>
@@ -778,12 +812,12 @@ export default function Home() {
       {/* ===== TECH STACK SECTION ===== */}
       <section className={styles.techStack}>
         <div className="container">
-          <div className={styles.sectionHeader}>
+          <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Technology Stack</h2>
             <p>Modern tools and frameworks for powerful solutions</p>
           </div>
           <div className={styles.techCategories}>
-            <div className={styles.techCategory}>
+            <div className={`${styles.techCategory} animate-on-scroll stagger-1`}>
               <h3>
                 <span>🎨</span> Frontend
               </h3>
@@ -793,7 +827,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className={styles.techCategory}>
+            <div className={`${styles.techCategory} animate-on-scroll stagger-2`}>
               <h3>
                 <span>⚙️</span> Backend & Database
               </h3>
@@ -803,7 +837,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className={styles.techCategory}>
+            <div className={`${styles.techCategory} animate-on-scroll stagger-3`}>
               <h3>
                 <span>🚀</span> Mobile & Emerging
               </h3>
@@ -823,31 +857,31 @@ export default function Home() {
       {/* ===== CTA SECTION ===== */}
       <section className={styles.cta}>
         <div className="container">
-          <h2>Ready to Create an Impact?</h2>
-          <p>Let's discuss your project and turn your vision into reality</p>
-          <Link href="/proposal" className="btn btn-accent btn-3d">
-            Get Free Consultation
-          </Link>
+          <div className="animate-on-scroll">
+            <h2>Ready to Create an Impact?</h2>
+            <p>Let's discuss your project and turn your vision into reality</p>
+            <Link href="/proposal" className="btn btn-accent btn-3d">
+              Get Free Consultation
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* ===== WHY CHOOSE US SECTION ===== */}
       <section className={styles.whyChooseUs}>
         <div className="container">
-          <div className={styles.sectionHeader}>
+          <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Why Choose TechNova?</h2>
             <p>Partner with a team committed to your success</p>
           </div>
           <div className={styles.whyGrid}>
             {whyChooseUs.map((item, index) => (
-              <div key={index} className={styles.whyCard}>
+              <div key={index} className={`${styles.whyCard} animate-on-scroll stagger-${(index % 4) + 1}`}>
                 <div className={styles.whyIcon}>
-                  <Image 
-                    src={item.icon} 
-                    alt={item.title}
-                    width={60}
-                    height={60}
-                    className={styles.iconImage}
+                  <ThreeDIcon 
+                    color={["#3b82f6", "#f97316", "#8b5cf6", "#06b6d4"][index % 4]}
+                    secondaryColor={["#f97316", "#3b82f6", "#06b6d4", "#8b5cf6"][index % 4]}
+                    size={70}
                   />
                 </div>
                 <h3>{item.title}</h3>
@@ -861,13 +895,13 @@ export default function Home() {
       {/* ===== TESTIMONIALS SECTION ===== */}
       <section className={styles.testimonials}>
         <div className="container">
-          <div className={styles.sectionHeader}>
+          <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>What Our Clients Say</h2>
             <p>Trusted by businesses worldwide</p>
           </div>
           <div className={styles.testimonialsGrid}>
             {testimonials.map((testimonial, index) => (
-              <div key={index} className={styles.testimonialCard}>
+              <div key={index} className={`${styles.testimonialCard} animate-on-scroll stagger-${(index % 3) + 1}`}>
                 <div className={styles.testimonialStars}>
                   {"★".repeat(testimonial.stars)}
                 </div>
@@ -878,7 +912,7 @@ export default function Home() {
                   </div>
                   <div className={styles.testimonialInfo}>
                     <h4>{testimonial.author}</h4>
-                    <span>{testimonial.role}</span>
+                    <span>{testimonial.service}</span>
                   </div>
                 </div>
               </div>
@@ -891,7 +925,7 @@ export default function Home() {
       <section className={styles.contact}>
         <div className="container">
           <div className={styles.contactGrid}>
-            <div className={styles.contactInfo}>
+            <div className={`${styles.contactInfo} animate-slide-left`}>
               <h2>Let's Work Together</h2>
               <p>
                 Tell us about your project and we'll help bring your ideas to life.
@@ -908,7 +942,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <form className={styles.contactForm}>
+            <form className={`${styles.contactForm} animate-slide-right`}>
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
                   <label>Name *</label>
