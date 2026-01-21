@@ -1,64 +1,51 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Float } from "@react-three/drei";
-import * as THREE from "three";
+import { useState } from "react";
+import styles from "./ThreeDIcon.module.css";
+
+interface ThreeDIconProps {
+  color?: string;
+  secondaryColor?: string;
+  size?: number;
+}
 
 export default function ThreeDIcon({ 
   color = "#3b82f6", 
   secondaryColor = "#f97316",
   size = 60 
-}: { 
-  color?: string;
-  secondaryColor?: string;
-  size?: number;
-}) {
+}: ThreeDIconProps) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div style={{ width: size, height: size }}>
-      <Canvas camera={{ position: [0, 0, 3], fov: 50 }}>
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} />
-        <pointLight position={[-10, -10, -10]} intensity={0.5} color={secondaryColor} />
-        <IconMesh color={color} secondaryColor={secondaryColor} />
-      </Canvas>
+    <div 
+      className={`${styles.iconContainer} ${isHovered ? styles.hovered : ""}`}
+      style={{ 
+        "--icon-color": color,
+        "--secondary-color": secondaryColor,
+        "--size": `${size}px`
+      } as React.CSSProperties}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className={styles.icon3D}>
+        <div className={styles.face + " " + styles.front}>
+          <svg 
+            viewBox="0 0 24 24" 
+            fill="currentColor" 
+            width="60%" 
+            height="60%"
+          >
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div className={styles.face + " " + styles.back}></div>
+        <div className={styles.face + " " + styles.right}></div>
+        <div className={styles.face + " " + styles.left}></div>
+        <div className={styles.face + " " + styles.top}></div>
+        <div className={styles.face + " " + styles.bottom}></div>
+      </div>
+      <div className={styles.accentSphere}></div>
     </div>
-  );
-}
-
-function IconMesh({ color, secondaryColor }: { color: string; secondaryColor: string }) {
-  const meshRef = useRef<THREE.Mesh>(null);
-  const [hovered, setHovered] = useState(false);
-  
-  useFrame((state) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
-      meshRef.current.rotation.y += 0.01;
-    }
-  });
-
-  return (
-    <Float speed={2} rotationIntensity={0.5} floatIntensity={0.3}>
-      <mesh
-        ref={meshRef}
-        onPointerOver={() => setHovered(true)}
-        onPointerOut={() => setHovered(false)}
-      >
-        <octahedronGeometry args={[0.8, 0]} />
-        <meshStandardMaterial
-          color={color}
-          emissive={color}
-          emissiveIntensity={hovered ? 0.5 : 0.2}
-          metalness={0.5}
-          roughness={0.3}
-        />
-      </mesh>
-      {/* Accent sphere */}
-      <mesh position={[0.6, 0.6, 0.3]}>
-        <sphereGeometry args={[0.15, 16, 16]} />
-        <meshBasicMaterial color={secondaryColor} />
-      </mesh>
-    </Float>
   );
 }
 

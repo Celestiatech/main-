@@ -8,6 +8,7 @@ import Chatbot from "./components/Chatbot";
 import Hero3DScene from "./components/Hero3DScene";
 import ThreeDIcon from "./components/ThreeDIcon";
 import ThreeDSpinningBadge from "./components/ThreeDSpinningBadge";
+import SparklesBackground from "./components/SparklesBackground";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("all");
@@ -491,7 +492,9 @@ export default function Home() {
           <div className={styles.heroOverlay}></div>
         </div>
         {/* 3D Scene */}
-        <Hero3DScene />
+        <div className={styles.hero3DScene}>
+          <Hero3DScene />
+        </div>
         <div className="container">
           <div className={styles.heroContent}>
             <div className={`${styles.heroBadge} heroBadgeAnimate`}>
@@ -562,6 +565,7 @@ export default function Home() {
 
       {/* ===== SERVICES SECTION ===== */}
       <section className={styles.services} id="services">
+        <SparklesBackground color="#3b82f6" count={80} scale={8} size={2} speed={0.3} opacity={0.3} zIndex={0} />
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Tap into Over a Decade of Expertise</h2>
@@ -602,6 +606,7 @@ export default function Home() {
 
       {/* ===== AWARDS SECTION ===== */}
       <section className={styles.awards}>
+        <SparklesBackground color="#f59e0b" count={60} scale={6} size={2} speed={0.2} opacity={0.25} zIndex={0} />
         <div className="container">
           <div className={`${styles.awardsHeader} animate-on-scroll`}>
             <h3>Ranked Among the Top Web & App Development Companies</h3>
@@ -627,6 +632,7 @@ export default function Home() {
 
       {/* ===== TRUST/PARTNERS SECTION ===== */}
       <section className={styles.trust}>
+        <SparklesBackground color="#10b981" count={70} scale={7} size={2} speed={0.25} opacity={0.3} zIndex={0} />
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h3>Our Esteemed Partners</h3>
@@ -643,6 +649,7 @@ export default function Home() {
 
       {/* ===== INDUSTRIES SECTION ===== */}
       <section className={styles.industries}>
+        <SparklesBackground color="#8b5cf6" count={80} scale={8} size={2} speed={0.3} opacity={0.3} zIndex={0} />
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Blogs We Cater To</h2>
@@ -667,6 +674,7 @@ export default function Home() {
 
       {/* ===== PORTFOLIO SECTION ===== */}
       <section className={styles.portfolio}>
+        <SparklesBackground color="#f97316" count={90} scale={9} size={2} speed={0.35} opacity={0.3} zIndex={0} />
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Our Portfolio — Results That Speak</h2>
@@ -746,6 +754,7 @@ export default function Home() {
 
       {/* ===== PROCESS SECTION ===== */}
       <section className={styles.process}>
+        <SparklesBackground color="#06b6d4" count={80} scale={8} size={2} speed={0.3} opacity={0.3} zIndex={0} />
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>How It Works</h2>
@@ -781,6 +790,7 @@ export default function Home() {
 
       {/* ===== UPWORK SECTION ===== */}
       <section className={styles.upwork}>
+        <SparklesBackground color="#14a3b8" count={100} scale={10} size={3} speed={0.4} opacity={0.4} zIndex={1} />
         <div className="container">
           <div className={`${styles.upworkContent} animate-on-scroll`}>
             <div>
@@ -811,6 +821,7 @@ export default function Home() {
 
       {/* ===== TECH STACK SECTION ===== */}
       <section className={styles.techStack}>
+        <SparklesBackground color="#3b82f6" count={80} scale={8} size={2} speed={0.3} opacity={0.3} zIndex={0} />
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Technology Stack</h2>
@@ -856,6 +867,7 @@ export default function Home() {
 
       {/* ===== CTA SECTION ===== */}
       <section className={styles.cta}>
+        <SparklesBackground color="#f97316" count={100} scale={10} size={3} speed={0.4} opacity={0.4} zIndex={1} />
         <div className="container">
           <div className="animate-on-scroll">
             <h2>Ready to Create an Impact?</h2>
@@ -869,6 +881,7 @@ export default function Home() {
 
       {/* ===== WHY CHOOSE US SECTION ===== */}
       <section className={styles.whyChooseUs}>
+        <SparklesBackground color="#8b5cf6" count={80} scale={8} size={2} speed={0.3} opacity={0.3} zIndex={0} />
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Why Choose TechNova?</h2>
@@ -894,6 +907,7 @@ export default function Home() {
 
       {/* ===== TESTIMONIALS SECTION ===== */}
       <section className={styles.testimonials}>
+        <SparklesBackground color="#fbbf24" count={70} scale={7} size={2} speed={0.25} opacity={0.3} zIndex={0} />
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>What Our Clients Say</h2>
@@ -923,6 +937,7 @@ export default function Home() {
 
       {/* ===== CONTACT SECTION ===== */}
       <section className={styles.contact}>
+        <SparklesBackground color="#3b82f6" count={80} scale={8} size={2} speed={0.3} opacity={0.3} zIndex={0} />
         <div className="container">
           <div className={styles.contactGrid}>
             <div className={`${styles.contactInfo} animate-slide-left`}>
