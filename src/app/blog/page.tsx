@@ -213,9 +213,9 @@ export default function BlogPage() {
 
       <Breadcrumb items={breadcrumbItems} />
 
-      <section className={styles.pageHero}>
+      <section className={styles.blogHero}>
         <div className="container">
-          <div className={styles.pageHeroContent}>
+          <div className={styles.blogHeroContent}>
             <h1>TechNova Blog</h1>
             <p>Latest insights, tutorials, and trends in software development, AI, and technology</p>
           </div>
@@ -223,23 +223,23 @@ export default function BlogPage() {
       </section>
 
       {featuredBlogs.length > 0 && (
-        <section className={styles.portfolio}>
+        <section className={styles.blogFeatured}>
           <div className="container">
             <div className={styles.sectionHeader}>
               <h2>Featured Articles</h2>
               <p>Top picks from our experts</p>
             </div>
-            <div className={styles.portfolioGrid}>
+            <div className={styles.blogGrid}>
               {featuredBlogs.map((blog) => (
-                <div key={blog.id} className={styles.portfolioCard}>
-                  <div className={styles.portfolioImage} style={{ background: "linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%)" }}>
-                    <span style={{ fontSize: "48px" }}>R</span>
+                <div key={blog.id} className={styles.blogCard}>
+                  <div className={styles.blogCardImage}>
+                    <span>{blog.category.charAt(0)}</span>
                   </div>
-                  <div className={styles.portfolioContent}>
-                    <span className={styles.portfolioTag}>{blog.category}</span>
+                  <div className={styles.blogCardContent}>
+                    <span className={styles.blogCardCategory}>{blog.category}</span>
                     <h3>{blog.title}</h3>
                     <p>{blog.excerpt}</p>
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "16px", fontSize: "13px", color: "var(--text-muted)" }}>
+                    <div className={styles.blogCardMeta}>
                       <span>{blog.author}</span>
                       <span>{blog.readTime}</span>
                     </div>
@@ -251,59 +251,42 @@ export default function BlogPage() {
         </section>
       )}
 
-      <section className={styles.services} style={{ paddingBottom: "0" }}>
+      <section className={styles.blogFilters}>
         <div className="container">
-          <div className={styles.portfolioTabs} style={{ flexWrap: "wrap" }}>
+          <div className={styles.blogFilterTabs}>
             {categories.map((cat) => (
               <button
                 key={cat.name}
-                className={`${styles.portfolioTab} ${activeCategory === cat.name ? styles.active : ""}`}
+                className={`${styles.blogFilterTab} ${activeCategory === cat.name ? styles.active : ""}`}
                 onClick={() => setActiveCategory(cat.name)}
               >
-                {cat.name} ({cat.count})
+                {cat.name} <span style={{ opacity: 0.7 }}>({cat.count})</span>
               </button>
             ))}
           </div>
         </div>
       </section>
 
-      <section className={styles.servicesSection}>
+      <section className={styles.blogArticles}>
         <div className="container">
           <div className={styles.sectionHeader}>
             <h2>{activeCategory === "All" ? "Latest Articles" : activeCategory}</h2>
             <p>{filteredBlogs.length} articles found</p>
           </div>
-          <div className={styles.servicesGrid}>
+          <div className={styles.blogArticlesGrid}>
             {filteredBlogs.map((blog) => (
-              <div key={blog.id} className={styles.serviceCard}>
-                <div style={{ fontSize: "40px", textAlign: "center", marginBottom: "16px", background: "rgba(59, 130, 246, 0.1)", padding: "20px", borderRadius: "50%" }}>
+              <div key={blog.id} className={styles.blogArticleCard}>
+                <div className={styles.blogArticleIcon}>
                   {blog.category.charAt(0)}
                 </div>
-                <span style={{ 
-                  display: "inline-block", 
-                  padding: "4px 12px", 
-                  background: "rgba(59, 130, 246, 0.1)", 
-                  color: "var(--primary)", 
-                  borderRadius: "var(--radius-full)",
-                  fontSize: "12px",
-                  fontWeight: 500,
-                  marginBottom: "12px"
-                }}>
-                  {blog.category}
-                </span>
-                <h3 style={{ fontSize: "16px", marginBottom: "8px" }}>{blog.title}</h3>
-                <p style={{ fontSize: "14px", color: "var(--text-secondary)", marginBottom: "16px" }}>
-                  {blog.excerpt}
-                </p>
-                <div style={{ 
-                  display: "flex", 
-                  justifyContent: "space-between", 
-                  alignItems: "center",
-                  paddingTop: "12px",
-                  borderTop: "1px solid var(--border-light)",
-                  fontSize: "12px",
-                  color: "var(--text-muted)"
-                }}>
+                <div style={{ padding: "0 20px 0" }}>
+                  <div className={styles.blogArticleCategory}>
+                    {blog.category}
+                  </div>
+                  <h3>{blog.title}</h3>
+                  <p>{blog.excerpt}</p>
+                </div>
+                <div className={styles.blogArticleMeta}>
                   <span>{blog.author}</span>
                   <span>{blog.readTime}</span>
                 </div>
@@ -313,26 +296,17 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className={styles.cta}>
+      <section className={styles.blogNewsletter}>
         <div className="container">
           <h2>Stay Updated</h2>
           <p>Subscribe to our newsletter for the latest tech insights and tutorials</p>
-          <div style={{ display: "flex", gap: "16px", justifyContent: "center", marginTop: "24px", flexWrap: "wrap" }}>
+          <div className={styles.blogNewsletterForm}>
             <input 
               type="email" 
-              placeholder="Enter your email" 
-              style={{
-                padding: "14px 24px",
-                borderRadius: "var(--radius-full)",
-                border: "2px solid rgba(255,255,255,0.3)",
-                background: "rgba(255,255,255,0.1)",
-                color: "white",
-                fontSize: "15px",
-                width: "300px",
-                outline: "none"
-              }}
+              placeholder="Enter your email"
+              className={styles.blogNewsletterInput}
             />
-            <button className="btn btn-accent">Subscribe</button>
+            <button className={styles.blogNewsletterButton}>Subscribe</button>
           </div>
         </div>
       </section>

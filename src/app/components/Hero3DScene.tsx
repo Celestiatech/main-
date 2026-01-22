@@ -12,6 +12,7 @@ import {
   Stars, 
   Sparkles,
 } from "@react-three/drei";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import * as THREE from "three";
 
 // ======== GLOWING SPHERE ========
@@ -116,6 +117,48 @@ function FloatingTorusKnot() {
   );
 }
 
+// ======== MORPHING BLOB ========
+function MorphingBlob() {
+  const meshRef = useRef<THREE.Mesh>(null);
+  const geometryRef = useRef<THREE.SphereGeometry>(null);
+
+  useFrame((state) => {
+    if (meshRef.current && geometryRef.current) {
+      meshRef.current.rotation.x = state.clock.elapsedTime * 0.1;
+      meshRef.current.rotation.y = state.clock.elapsedTime * 0.15;
+      
+      // Morph the geometry
+      const time = state.clock.elapsedTime;
+      const positions = geometryRef.current.attributes.position.array as Float32Array;
+      for (let i = 0; i < positions.length; i += 3) {
+        const x = positions[i];
+        const y = positions[i + 1];
+        const z = positions[i + 2];
+        const noise = Math.sin(time + x * 2) * Math.cos(time + y * 2) * Math.sin(time + z * 2);
+        positions[i + 2] += noise * 0.01;
+      }
+      geometryRef.current.attributes.position.needsUpdate = true;
+    }
+  });
+
+  return (
+    <Float speed={0.5} rotationIntensity={0.2} floatIntensity={0.3}>
+      <mesh ref={meshRef} position={[0, 0, -8]}>
+        <sphereGeometry ref={geometryRef} args={[2, 32, 32]} />
+        <meshStandardMaterial
+          color="#8b5cf6"
+          emissive="#8b5cf6"
+          emissiveIntensity={0.3}
+          metalness={0.5}
+          roughness={0.3}
+          transparent
+          opacity={0.8}
+        />
+      </mesh>
+    </Float>
+  );
+}
+
 // ======== MOUSE FOLLOWER ========
 function MouseFollower() {
   const { viewport } = useThree();
@@ -178,21 +221,29 @@ export default function Hero3DScene() {
         {/* Sparkles effect */}
         <Sparkles count={80} scale={12} size={4} speed={0.4} opacity={0.5} color="#60a5fa" />
         
+        {/* Morphing blob */}
+        <MorphingBlob />
+        
         {/* Interactive elements */}
-        {/* <InteractiveCube /> */}
-        {/* <FloatingTorusKnot /> */}
+        <InteractiveCube />
+        <FloatingTorusKnot />
         
         {/* Glowing spheres */}
-        {/* <GlowingSphere position={[4, -2, -4]} color="#3b82f6" size={0.6} offset={0} />
+        <GlowingSphere position={[4, -2, -4]} color="#3b82f6" size={0.6} offset={0} />
         <GlowingSphere position={[-4, 3, -3]} color="#f97316" size={0.5} offset={1} />
         <GlowingSphere position={[2, 4, -5]} color="#8b5cf6" size={0.4} offset={2} />
         <GlowingSphere position={[-3, -3, -4]} color="#06b6d4" size={0.55} offset={3} />
-         */}
+        
         {/* Mouse follower */}
         <MouseFollower />
         
         {/* Fog for depth */}
         <fog attach="fog" args={["#0f172a", 8, 25]} />
+        
+        {/* Post-processing effects */}
+        <EffectComposer>
+          <Bloom intensity={0.5} luminanceThreshold={0.9} luminanceSmoothing={0.9} />
+        </EffectComposer>
       </Canvas>
     </div>
   );

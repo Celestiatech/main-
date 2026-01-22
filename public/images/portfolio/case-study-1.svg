@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="portfolioGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5f3ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#portfolioGrad1)"/>
+  <!-- Device frame -->
+  <rect x="50" y="30" width="300" height="240" rx="12" fill="white" stroke="url(#accentGrad1)" stroke-width="2"/>
+  <!-- Screen content -->
+  <rect x="60" y="45" width="280" height="30" rx="4" fill="url(#accentGrad1)" opacity="0.1"/>
+  <rect x="60" y="85" width="280" height="15" rx="3" fill="url(#accentGrad1)" opacity="0.15"/>
+  <rect x="60" y="110" width="280" height="15" rx="3" fill="url(#accentGrad1)" opacity="0.12"/>
+  <rect x="60" y="135" width="200" height="15" rx="3" fill="url(#accentGrad1)" opacity="0.1"/>
+  <!-- Accent shapes -->
+  <circle cx="330" cy="80" r="20" fill="url(#accentGrad1)" opacity="0.2"/>
+  <circle cx="320" cy="220" r="15" fill="url(#accentGrad1)" opacity="0.15"/>
+</svg>

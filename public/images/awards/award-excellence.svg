@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="badgeGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Ribbon left -->
+  <path d="M 50 80 L 40 60 L 50 70 L 50 140 L 40 150 L 50 140 Z" fill="url(#badgeGrad1)" opacity="0.8"/>
+  <!-- Ribbon right -->
+  <path d="M 150 80 L 160 60 L 150 70 L 150 140 L 160 150 L 150 140 Z" fill="url(#badgeGrad1)" opacity="0.8"/>
+  <!-- Star badge -->
+  <circle cx="100" cy="100" r="70" fill="url(#badgeGrad1)"/>
+  <!-- Inner circle -->
+  <circle cx="100" cy="100" r="55" fill="#ffffff" opacity="0.9"/>
+  <!-- Star -->
+  <path d="M 100 60 L 110 85 L 138 85 L 115 105 L 125 130 L 100 110 L 75 130 L 85 105 L 62 85 L 90 85 Z" fill="url(#badgeGrad1)"/>
+  <!-- Text background -->
+  <rect x="70" y="140" width="60" height="30" rx="4" fill="url(#badgeGrad1)" opacity="0.2"/>
+</svg>

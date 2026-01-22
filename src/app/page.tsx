@@ -5,10 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.css";
 import Chatbot from "./components/Chatbot";
-import Hero3DScene from "./components/Hero3DScene";
-import ThreeDIcon from "./components/ThreeDIcon";
-import ThreeDSpinningBadge from "./components/ThreeDSpinningBadge";
-import SparklesBackground from "./components/SparklesBackground";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("all");
@@ -155,7 +151,7 @@ export default function Home() {
       solution: "Built AI-powered fitness tracking with personalized recommendations",
       techStack: ["React Native", "Node.js", "TensorFlow"],
       result: "📈 Increased user retention by 42% | 💰 Generated ₹3.2 Cr revenue in 6 months",
-      beforeAfter: ["/images/portfolio/healthtrack-before.jpg", "/images/portfolio/healthtrack-after.jpg"],
+      beforeAfter: ["/images/portfolio/healthtrack-before.svg", "/images/portfolio/healthtrack-after.svg"],
       video: "/videos/healthtrack-demo.mp4",
       tags: ["iOS", "Android", "Health"],
     },
@@ -167,7 +163,7 @@ export default function Home() {
       solution: "Migrated to modern React/Node.js with AWS scaling",
       techStack: ["React", "Node.js", "AWS", "MongoDB"],
       result: "🚀 300% faster load times | 👥 Served 100K+ students",
-      beforeAfter: ["/images/portfolio/edulearn-before.jpg", "/images/portfolio/edulearn-after.jpg"],
+      beforeAfter: ["/images/portfolio/edulearn-before.svg", "/images/portfolio/edulearn-after.svg"],
       video: "/videos/edulearn-demo.mp4",
       tags: ["React", "Node.js", "AWS"],
     },
@@ -179,7 +175,7 @@ export default function Home() {
       solution: "Developed immersive 3D space adventure with multiplayer",
       techStack: ["Unity", "C#", "Photon"],
       result: "🎮 1M+ downloads | ⭐ 4.8 rating on app stores",
-      beforeAfter: ["/images/portfolio/spacequest-before.jpg", "/images/portfolio/spacequest-after.jpg"],
+      beforeAfter: ["/images/portfolio/spacequest-before.svg", "/images/portfolio/spacequest-after.svg"],
       video: "/videos/spacequest-demo.mp4",
       tags: ["Unity", "3D", "Mobile"],
     },
@@ -191,7 +187,7 @@ export default function Home() {
       solution: "Developed audited smart contracts with user-friendly interface",
       techStack: ["Solidity", "Web3.js", "React"],
       result: "🔒 Zero security breaches | 💰 $50M+ assets secured",
-      beforeAfter: ["/images/portfolio/cryptovault-before.jpg", "/images/portfolio/cryptovault-after.jpg"],
+      beforeAfter: ["/images/portfolio/cryptovault-before.svg", "/images/portfolio/cryptovault-after.svg"],
       video: "/videos/cryptovault-demo.mp4",
       tags: ["Web3", "Solidity", "DeFi"],
     },
@@ -203,7 +199,7 @@ export default function Home() {
       solution: "Built NLP-powered chatbot with 24/7 availability",
       techStack: ["Python", "TensorFlow", "Dialogflow"],
       result: "⚡ 70% faster responses | 💸 Saved ₹2 Cr annually",
-      beforeAfter: ["/images/portfolio/smartassist-before.jpg", "/images/portfolio/smartassist-after.jpg"],
+      beforeAfter: ["/images/portfolio/smartassist-before.svg", "/images/portfolio/smartassist-after.svg"],
       video: "/videos/smartassist-demo.mp4",
       tags: ["NLP", "Machine Learning"],
     },
@@ -215,7 +211,7 @@ export default function Home() {
       solution: "Complete brand redesign with modern UI/UX",
       techStack: ["Figma", "Adobe Creative Suite", "React"],
       result: "📈 150% increase in brand recognition | 🎨 Won 3 design awards",
-      beforeAfter: ["/images/portfolio/brandrebrand-before.jpg", "/images/portfolio/brandrebrand-after.jpg"],
+      beforeAfter: ["/images/portfolio/brandrebrand-before.svg", "/images/portfolio/brandrebrand-after.svg"],
       video: "/videos/brandrebrand-demo.mp4",
       tags: ["UI/UX", "Branding"],
     },
@@ -273,21 +269,21 @@ export default function Home() {
       author: "CTO, US-based HealthTech Startup",
       service: "DevOps Services",
       stars: 5,
-      avatar: "/images/testimonials/healthtech-cto.jpg",
+      avatar: "/images/testimonials/healthtech-cto.svg",
     },
     {
       quote: "From MVP to 100K users in 6 months. TechNova's mobile app development delivered exactly what we needed.",
       author: "Founder, EduTech Platform",
       service: "Mobile App Development",
       stars: 5,
-      avatar: "/images/testimonials/edutech-founder.jpg",
+      avatar: "/images/testimonials/edutech-founder.svg",
     },
     {
       quote: "Their blockchain team secured $50M+ in assets. Zero breaches, full compliance. Highly professional.",
       author: "CEO, FinTech Company",
       service: "Blockchain Development",
       stars: 5,
-      avatar: "/images/testimonials/fintech-ceo.jpg",
+      avatar: "/images/testimonials/fintech-ceo.svg",
     },
   ];
 
@@ -484,80 +480,35 @@ export default function Home() {
       )}
 
       {/* ===== HERO SECTION ===== */}
-      <section className={styles.hero}>
+      <section className={`${styles.hero} hero-enhanced`}>
         <div className={styles.heroBg}>
           <video autoPlay loop muted playsInline>
             <source src="/PixVerse_V5.5_Image_Text_540P_A_cinematic_shotonline-video-cutter.com-ezgif.com-video-to-gif-converter.mp4" type="video/mp4" />
           </video>
           <div className={styles.heroOverlay}></div>
         </div>
-        {/* 3D Scene */}
-        <div className={styles.hero3DScene}>
-          <Hero3DScene />
-        </div>
         <div className="container">
           <div className={styles.heroContent}>
             <div className={`${styles.heroBadge} heroBadgeAnimate`}>
               <span className={styles.heroBadgeDot}></span>
-              Premium IT & Software Development Company
-            </div>
-            <div className={`${styles.industryToggle} heroSubtitleAnimate`}>
-              {["startup", "enterprise", "agency", "founder"].map((industry) => (
-                <button
-                  key={industry}
-                  className={`${styles.industryBtn} ${selectedIndustry === industry ? styles.active : ""}`}
-                  onClick={() => setSelectedIndustry(industry)}
-                >
-                  {industry.charAt(0).toUpperCase() + industry.slice(1)}
-                </button>
-              ))}
+              Premium IT & Software Development
             </div>
             <h1 
               style={{ display: 'block', whiteSpace: 'normal', wordBreak: 'break-word', overflowWrap: 'break-word', maxWidth: '100%', overflow: 'visible', textAlign: 'center' }}
               className="heroTitleAnimate"
             >
-              We Build Scalable Apps That <span>Generate Revenue</span> – Not Just Code.
+              We Build <span>Revenue-Generating</span> Apps
             </h1>
-            <div 
-              style={{ fontSize: '18px', color: 'rgba(255,255,255,0.9)', marginTop: '12px', textAlign: 'center' }}
-              className="heroSubtitleAnimate"
-            >
-              🚀 Helping funded startups & digital-first enterprises scale faster with custom software
-            </div>
-            <p className={`${styles.heroSubtitle} heroTrustAnimate`}>
-              {selectedIndustry === "startup" && "Launch your MVP in 60 days with our proven startup framework. From idea to market-ready app."}
-              {selectedIndustry === "enterprise" && "Scale your business with enterprise-grade solutions. Secure, scalable, and compliant with industry standards."}
-              {selectedIndustry === "agency" && "Partner with us for white-label development. Deliver exceptional results to your clients."}
-              {selectedIndustry === "founder" && "Turn your vision into reality. Expert guidance from concept to launch and beyond."}
+            <p className={`${styles.heroSubtitle} heroSubtitleAnimate`}>
+              Custom software solutions for startups and enterprises that scale
             </p>
-            <div className={`${styles.heroTrust} heroActionsAnimate`}>
-              ⭐ Trusted by 2,500+ clients in 32 countries
-            </div>
-            <div className={`${styles.heroActions} heroStatsAnimate`}>
-              <Link href="/proposal" className="btn btn-primary btn-water">
-                Get Free Project Audit
+            <div className={`${styles.heroActions} heroActionsAnimate`}>
+              <Link href="/proposal" className="btn btn-primary btn-water btn-3d">
+                Get Free Audit
               </Link>
-              <Link href="/work" className="btn btn-secondary btn-water">
-                See Real Case Studies
+              <Link href="/work" className="btn btn-secondary btn-water btn-3d">
+                View Case Studies
               </Link>
-            </div>
-            <div className={`${styles.heroStats} heroStatsAnimate`}>
-              <div className={`${styles.statCard} statCardAnimate`}>
-                <div className={styles.statNumber}>2,500+</div>
-                <div className={styles.statLabel}>Happy Clients</div>
-              </div>
-              <div className={`${styles.statCard} statCardAnimate`}>
-                <div className={styles.statNumber}>2,000+</div>
-                <div className={styles.statLabel}>Apps Developed</div>
-              </div>
-              <div className={`${styles.statCard} statCardAnimate`}>
-                <div className={styles.statNumber}>1,000+</div>
-                <div className={styles.statLabel}>Games Developed</div>
-              </div>
-              <div className={`${styles.statCard} statCardAnimate`}>
-                <div className={styles.statNumber}>12+</div>
-                <div className={styles.statLabel}>Years Experience</div>
-              </div>
             </div>
           </div>
         </div>
@@ -565,7 +516,6 @@ export default function Home() {
 
       {/* ===== SERVICES SECTION ===== */}
       <section className={styles.services} id="services">
-        <SparklesBackground color="#3b82f6" count={80} scale={8} size={2} speed={0.3} opacity={0.3} zIndex={0} />
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Tap into Over a Decade of Expertise</h2>
@@ -577,13 +527,9 @@ export default function Home() {
           </div>
           <div className={styles.servicesGrid}>
             {services.map((service, index) => (
-              <div key={index} className={`${styles.serviceCard} animate-on-scroll stagger-${(index % 4) + 1}`}>
+              <div key={index} className={`${styles.serviceCard} service-card-enhanced animate-on-scroll stagger-${(index % 4) + 1}`}>
                 <div className={styles.serviceIcon}>
-                  <ThreeDIcon 
-                    color="#3b82f6" 
-                    secondaryColor="#f97316"
-                    size={80}
-                  />
+                  <img src={service.icon} alt={service.title} style={{ width: '80px', height: '80px' }} />
                 </div>
                 <h3>{service.title}</h3>
                 <div className={styles.serviceWhoFor}>
@@ -606,7 +552,6 @@ export default function Home() {
 
       {/* ===== AWARDS SECTION ===== */}
       <section className={styles.awards}>
-        <SparklesBackground color="#f59e0b" count={60} scale={6} size={2} speed={0.2} opacity={0.25} zIndex={0} />
         <div className="container">
           <div className={`${styles.awardsHeader} animate-on-scroll`}>
             <h3>Ranked Among the Top Web & App Development Companies</h3>
@@ -616,12 +561,7 @@ export default function Home() {
             {awards.map((award, index) => (
               <div key={index} className={`${styles.awardCard} animate-scale-in stagger-${(index % 5) + 1}`}>
                 <div className={styles.awardLogo}>
-                  <ThreeDSpinningBadge 
-                    color={index === 0 ? "#14a3b8" : index === 1 ? "#ff6b35" : index === 2 ? "#f59e0b" : index === 3 ? "#2e5999" : index === 4 ? "#f47c22" : "#3b82f6"}
-                    size={80}
-                  >
-                    <span style={{ fontSize: "12px", fontWeight: "bold", color: "#3b82f6" }}>{award.name}</span>
-                  </ThreeDSpinningBadge>
+                  <img src={award.logo} alt={award.name} style={{ width: '80px', height: '80px' }} />
                 </div>
                 <span className={styles.awardBadge}>{award.badge}</span>
               </div>
@@ -632,7 +572,6 @@ export default function Home() {
 
       {/* ===== TRUST/PARTNERS SECTION ===== */}
       <section className={styles.trust}>
-        <SparklesBackground color="#10b981" count={70} scale={7} size={2} speed={0.25} opacity={0.3} zIndex={0} />
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h3>Our Esteemed Partners</h3>
@@ -649,7 +588,6 @@ export default function Home() {
 
       {/* ===== INDUSTRIES SECTION ===== */}
       <section className={styles.industries}>
-        <SparklesBackground color="#8b5cf6" count={80} scale={8} size={2} speed={0.3} opacity={0.3} zIndex={0} />
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Blogs We Cater To</h2>
@@ -659,11 +597,7 @@ export default function Home() {
             {industries.map((industry, index) => (
               <div key={index} className={`${styles.industryCard} animate-on-scroll stagger-${(index % 6) + 1}`}>
                 <div className={styles.industryIcon}>
-                  <ThreeDIcon 
-                    color={["#3b82f6", "#f97316", "#8b5cf6", "#06b6d4", "#10b981", "#ec4899"][index % 6]}
-                    secondaryColor={["#f97316", "#3b82f6", "#06b6d4", "#8b5cf6", "#ec4899", "#10b981"][index % 6]}
-                    size={60}
-                  />
+                  <img src={`/images/icons/${industry.icon || 'default.svg'}`} alt={industry.name} style={{ width: '60px', height: '60px' }} />
                 </div>
                 <h4>{industry.name}</h4>
               </div>
@@ -674,7 +608,6 @@ export default function Home() {
 
       {/* ===== PORTFOLIO SECTION ===== */}
       <section className={styles.portfolio}>
-        <SparklesBackground color="#f97316" count={90} scale={9} size={2} speed={0.35} opacity={0.3} zIndex={0} />
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Our Portfolio — Results That Speak</h2>
@@ -754,7 +687,6 @@ export default function Home() {
 
       {/* ===== PROCESS SECTION ===== */}
       <section className={styles.process}>
-        <SparklesBackground color="#06b6d4" count={80} scale={8} size={2} speed={0.3} opacity={0.3} zIndex={0} />
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>How It Works</h2>
@@ -769,11 +701,7 @@ export default function Home() {
                 onMouseLeave={() => setHoveredStep(null)}
               >
                 <div className={styles.processIcon}>
-                  <ThreeDIcon 
-                    color={index % 2 === 0 ? "#3b82f6" : "#f97316"}
-                    secondaryColor={index % 2 === 0 ? "#f97316" : "#3b82f6"}
-                    size={70}
-                  />
+                  <img src={step.icon} alt={step.title} style={{ width: '70px', height: '70px' }} />
                 </div>
                 <h4>{step.title}</h4>
                 <p>{step.desc}</p>
@@ -790,7 +718,6 @@ export default function Home() {
 
       {/* ===== UPWORK SECTION ===== */}
       <section className={styles.upwork}>
-        <SparklesBackground color="#14a3b8" count={100} scale={10} size={3} speed={0.4} opacity={0.4} zIndex={1} />
         <div className="container">
           <div className={`${styles.upworkContent} animate-on-scroll`}>
             <div>
@@ -821,7 +748,6 @@ export default function Home() {
 
       {/* ===== TECH STACK SECTION ===== */}
       <section className={styles.techStack}>
-        <SparklesBackground color="#3b82f6" count={80} scale={8} size={2} speed={0.3} opacity={0.3} zIndex={0} />
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Technology Stack</h2>
@@ -867,7 +793,7 @@ export default function Home() {
 
       {/* ===== CTA SECTION ===== */}
       <section className={styles.cta}>
-        <SparklesBackground color="#f97316" count={100} scale={10} size={3} speed={0.4} opacity={0.4} zIndex={1} />
+
         <div className="container">
           <div className="animate-on-scroll">
             <h2>Ready to Create an Impact?</h2>
@@ -881,7 +807,6 @@ export default function Home() {
 
       {/* ===== WHY CHOOSE US SECTION ===== */}
       <section className={styles.whyChooseUs}>
-        <SparklesBackground color="#8b5cf6" count={80} scale={8} size={2} speed={0.3} opacity={0.3} zIndex={0} />
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Why Choose TechNova?</h2>
@@ -891,11 +816,7 @@ export default function Home() {
             {whyChooseUs.map((item, index) => (
               <div key={index} className={`${styles.whyCard} animate-on-scroll stagger-${(index % 4) + 1}`}>
                 <div className={styles.whyIcon}>
-                  <ThreeDIcon 
-                    color={["#3b82f6", "#f97316", "#8b5cf6", "#06b6d4"][index % 4]}
-                    secondaryColor={["#f97316", "#3b82f6", "#06b6d4", "#8b5cf6"][index % 4]}
-                    size={70}
-                  />
+                  <img src={`/images/icons/${item.icon || 'default.svg'}`} alt={item.title} style={{ width: '70px', height: '70px' }} />
                 </div>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
@@ -907,7 +828,7 @@ export default function Home() {
 
       {/* ===== TESTIMONIALS SECTION ===== */}
       <section className={styles.testimonials}>
-        <SparklesBackground color="#fbbf24" count={70} scale={7} size={2} speed={0.25} opacity={0.3} zIndex={0} />
+
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>What Our Clients Say</h2>
@@ -937,7 +858,6 @@ export default function Home() {
 
       {/* ===== CONTACT SECTION ===== */}
       <section className={styles.contact}>
-        <SparklesBackground color="#3b82f6" count={80} scale={8} size={2} speed={0.3} opacity={0.3} zIndex={0} />
         <div className="container">
           <div className={styles.contactGrid}>
             <div className={`${styles.contactInfo} animate-slide-left`}>
