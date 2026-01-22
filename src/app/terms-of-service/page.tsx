@@ -8,11 +8,11 @@ import styles from "../page.module.css";
 
 export default function TermsOfService() {
   return (
-    <div className="page">
+    <div className={styles.page}>
       {/* ===== PAGE HERO ===== */}
-      <section className="pageHero">
+      <section className={styles.pageHero}>
         <div className="container">
-          <div className="pageHeroContent">
+          <div className={styles.pageHeroContent}>
             <h1>Terms of Service</h1>
             <p>Last updated: January 2024</p>
           </div>

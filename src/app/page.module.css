@@ -3612,3 +3612,105 @@
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
+
+/* ===== WEBSITE DEVELOPMENT SERVICES STYLES ===== */
+.topStrip {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 500;
+  overflow: hidden;
+  position: relative;
+}
+
+.topStrip span {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scrollText 20s linear infinite;
+  margin-right: 50px;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.05));
+  z-index: -1;
+}
+
+.orb-1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 10%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  right: 15%;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+.orb-3 {
+  width: 150px;
+  height: 150px;
+  bottom: 20%;
+  left: 20%;
+  animation: float 7s ease-in-out infinite;
+}
+
+.morph-shape {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(6, 182, 212, 0.05));
+  border-radius: 50% 20% 70% 30%;
+  z-index: -1;
+  animation: morph 10s ease-in-out infinite;
+}
+
+@keyframes morph {
+  0%, 100% { border-radius: 50% 20% 70% 30%; }
+  25% { border-radius: 30% 70% 20% 50%; }
+  50% { border-radius: 70% 30% 50% 20%; }
+  75% { border-radius: 20% 50% 30% 70%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.particle-3d {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: rgba(37, 99, 235, 0.3);
+  border-radius: 50%;
+  z-index: -1;
+  animation: particleFloat 15s ease-in-out infinite;
+}
+
+.particle-3d:nth-child(1) { top: 20%; left: 20%; animation-delay: 0s; }
+.particle-3d:nth-child(2) { top: 40%; right: 30%; animation-delay: 3s; }
+.particle-3d:nth-child(3) { top: 70%; left: 40%; animation-delay: 6s; }
+.particle-3d:nth-child(4) { top: 80%; right: 20%; animation-delay: 9s; }
+
+@keyframes particleFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+    opacity: 0.3;
+  }
+  50% { 
+    transform: translateY(-30px) rotate(180deg); 
+    opacity: 0.8;
+  }
+}

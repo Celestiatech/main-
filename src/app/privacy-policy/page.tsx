@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicy() {
   return (
-    <div className="page">
+    <div className={styles.page}>
       {/* ===== PAGE HERO ===== */}
-      <section className="pageHero">
+      <section className={styles.pageHero}>
         <div className="container">
-          <div className="pageHeroContent">
+          <div className={styles.pageHeroContent}>
             <h1>Privacy Policy</h1>
             <p>Last updated: January 2024</p>
           </div>
@@ -22,12 +22,12 @@ export default function PrivacyPolicy() {
       </section>
 
       {/* ===== BREADCRUMBS ===== */}
-      <div className="breadcrumb">
+      <div className={styles.breadcrumb}>
         <div className="container">
-          <div className="breadcrumbContent">
-            <Link href="/" className="breadcrumbLink">Home</Link>
-            <span className="breadcrumbSeparator">›</span>
-            <span className="breadcrumbCurrent">Privacy Policy</span>
+          <div className={styles.breadcrumbContent}>
+            <Link href="/" className={styles.breadcrumbLink}>Home</Link>
+            <span className={styles.breadcrumbSeparator}>›</span>
+            <span className={styles.breadcrumbCurrent}>Privacy Policy</span>
           </div>
         </div>
       </div>
