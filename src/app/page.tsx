@@ -318,83 +318,130 @@ export default function Home() {
           <div className="container">
             <div className={styles.headerTopContent}>
               <div className={styles.headerPhones}>
-                <a href="tel:+971500000000">🇦🇪 +971 50 000 0000</a>
-                <a href="tel:+919876543210">🇮🇳 +91 98765 43210</a>
+                <a href="tel:+971500000000">📞 +971 50 000 0000</a>
+                <a href="tel:+919876543210">📱 +91 98765 43210</a>
+                <a href="mailto:hello@nexavibe.com">✉️ hello@nexavibe.com</a>
               </div>
-              <div style={{ color: "rgba(255,255,255,0.7)", fontSize: "13px" }}>
-                Get a free consultation today!
+              <div style={{ color: "rgba(229,231,235,0.8)", fontSize: "13px", fontWeight: "500" }}>
+                ⚡ Get a free consultation today!
               </div>
             </div>
           </div>
         </div>
         <div className="container">
           <div className={styles.headerMain}>
-            <Link href="/" className={styles.logo}>
-              TechNova
+            <Link href="/" className={styles.logo} aria-label="NexaVibe Solutions Home">
+              <div className={styles.logoIcon}>N</div>
+              NexaVibe
             </Link>
-            <nav className={styles.nav}>
-              <Link href="/" className={styles.navLink}>Home</Link>
+            <nav className={styles.nav} role="navigation" aria-label="Main navigation">
+              <Link href="/" className={styles.navLink}>
+                Home
+              </Link>
+              
+              {/* Services Dropdown */}
               <div className={styles.navItem}>
-                <button className={styles.navLink}>
-                  Solutions <span>▼</span>
+                <button className={styles.navLink} aria-label="Services and solutions">
+                  Services <span>▼</span>
                 </button>
-                <div className={styles.navDropdown}>
+                <div className={styles.navDropdown} role="menu">
                   {/* Product Development */}
                   <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>🚀 Product Development</div>
-                    <Link href="/services" className={styles.dropdownSubLink}>MVP Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Startup Apps</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>SaaS Platforms</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Mobile Apps</Link>
+                    <div className={styles.dropdownTitle}>Custom Development</div>
                     <Link href="/services" className={styles.dropdownSubLink}>Web Applications</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Mobile App Dev</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>SaaS Platforms</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>MVP Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Startup Solutions</Link>
                   </div>
                   {/* Growth Engineering */}
                   <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>📈 Growth Engineering</div>
+                    <div className={styles.dropdownTitle}>Growth & Scale</div>
                     <Link href="/services" className={styles.dropdownSubLink}>Performance Optimization</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Scalability Solutions</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>DevOps & Cloud</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>API Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Cloud & DevOps</Link>
                     <Link href="/services" className={styles.dropdownSubLink}>System Integration</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>API Development</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Database Design</Link>
                   </div>
-                  {/* AI & Automation */}
+                  {/* AI & Emerging Tech */}
                   <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>🤖 AI & Automation</div>
+                    <div className={styles.dropdownTitle}>AI & Innovation</div>
                     <Link href="/services" className={styles.dropdownSubLink}>Machine Learning</Link>
                     <Link href="/services" className={styles.dropdownSubLink}>AI Chatbots</Link>
                     <Link href="/services" className={styles.dropdownSubLink}>Predictive Analytics</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Automation Solutions</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Automation</Link>
                     <Link href="/services" className={styles.dropdownSubLink}>NLP Services</Link>
                   </div>
                   {/* Blockchain & Web3 */}
                   <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>⛓️ Blockchain & Web3</div>
+                    <div className={styles.dropdownTitle}>Web3 Solutions</div>
                     <Link href="/services" className={styles.dropdownSubLink}>Smart Contracts</Link>
                     <Link href="/services" className={styles.dropdownSubLink}>DeFi Platforms</Link>
                     <Link href="/services" className={styles.dropdownSubLink}>NFT Marketplaces</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Web3 Apps</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Crypto Wallets</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Blockchain Apps</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Crypto Solutions</Link>
                   </div>
-                  {/* Solutions by Industry */}
+                  {/* Design & UX */}
                   <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>🏭 Solutions by Industry</div>
-                    <Link href="/industries" className={styles.dropdownSubLink}>Healthcare</Link>
-                    <Link href="/industries" className={styles.dropdownSubLink}>Education</Link>
-                    <Link href="/industries" className={styles.dropdownSubLink}>Finance</Link>
-                    <Link href="/industries" className={styles.dropdownSubLink}>E-commerce</Link>
-                    <Link href="/industries" className={styles.dropdownSubLink}>Real Estate</Link>
+                    <div className={styles.dropdownTitle}>Design & UX</div>
+                    <Link href="/services" className={styles.dropdownSubLink}>UI/UX Design</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Product Design</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Branding</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Animation</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Design Systems</Link>
+                  </div>
+                  {/* Support & Maintenance */}
+                  <div className={styles.dropdownGroup}>
+                    <div className={styles.dropdownTitle}>Support Services</div>
+                    <Link href="/services" className={styles.dropdownSubLink}>Quality Assurance</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Maintenance & Support</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Performance Monitoring</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Security Audit</Link>
+                    <Link href="/services" className={styles.dropdownSubLink}>Code Review</Link>
                   </div>
                 </div>
               </div>
-              <Link href="/pricing" className={styles.navLink}>Pricing</Link>
-              <Link href="/blog" className={styles.navLink}>Blogs</Link>
-              <Link href="/work" className={styles.navLink}>Portfolio</Link>
-              <Link href="/contact" className={styles.navLink}>Contact</Link>
-              <Link href="/request-a-call" className="btn btn-secondary btn-sm">
-                Schedule a Call
+
+              {/* Company Dropdown */}
+              <div className={styles.navItem}>
+                <button className={styles.navLink} aria-label="Company information">
+                  Company <span>▼</span>
+                </button>
+                <div className={styles.navDropdown} style={{ minWidth: '400px' }} role="menu">
+                  <div className={styles.dropdownGroup}>
+                    <div className={styles.dropdownTitle}>About Us</div>
+                    <Link href="/about" className={styles.dropdownSubLink}>Company Overview</Link>
+                    <Link href="/about" className={styles.dropdownSubLink}>Our Team</Link>
+                    <Link href="/about" className={styles.dropdownSubLink}>Our Story</Link>
+                    <Link href="/about" className={styles.dropdownSubLink}>Company Culture</Link>
+                  </div>
+                  <div className={styles.dropdownGroup}>
+                    <div className={styles.dropdownTitle}>Resources</div>
+                    <Link href="/blog" className={styles.dropdownSubLink}>Blog & Articles</Link>
+                    <Link href="/portfolio" className={styles.dropdownSubLink}>Case Studies</Link>
+                    <Link href="/testimonials" className={styles.dropdownSubLink}>Testimonials</Link>
+                    <Link href="/career" className={styles.dropdownSubLink}>Career</Link>
+                  </div>
+                  <div className={styles.dropdownGroup}>
+                    <div className={styles.dropdownTitle}>Legal</div>
+                    <Link href="/privacy-policy" className={styles.dropdownSubLink}>Privacy Policy</Link>
+                    <Link href="/terms-of-service" className={styles.dropdownSubLink}>Terms of Service</Link>
+                    <Link href="/cookie-policy" className={styles.dropdownSubLink}>Cookie Policy</Link>
+                  </div>
+                </div>
+              </div>
+
+              <Link href="/pricing" className={styles.navLink}>
+                Pricing
               </Link>
-              <Link href="/clients" className="btn btn-primary btn-sm">
-                For Clients
+              <Link href="/portfolio" className={styles.navLink}>
+                Portfolio
+              </Link>
+              <Link href="/blog" className={styles.navLink}>
+                Blog
+              </Link>
+              <Link href="/contact" className={styles.navLink}>
+                Contact
               </Link>
             </nav>
 
@@ -414,12 +461,12 @@ export default function Home() {
 
       {/* ===== MOBILE MENU OVERLAY ===== */}
       {isMobileMenuOpen && (
-        <div className={styles.mobileMenuOverlay}>
-          <div className={styles.mobileMenu}>
+        <div className={styles.mobileMenuOverlay} onClick={toggleMobileMenu}>
+          <div className={styles.mobileMenu} onClick={(e) => e.stopPropagation()}>
             <div className={styles.mobileMenuHeader}>
               <Link href="/" className={styles.mobileLogo} onClick={toggleMobileMenu}>
-                <div className={styles.logoIcon}>T</div>
-                TechNova
+                <div className={styles.logoIcon}>N</div>
+                <span>NexaVibe</span>
               </Link>
               <button
                 className={styles.mobileMenuClose}
@@ -430,50 +477,109 @@ export default function Home() {
               </button>
             </div>
             <nav className={styles.mobileNav}>
+              {/* Home Link */}
               <Link href="/" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
                 Home
               </Link>
+
+              {/* Services Group */}
               <div className={styles.mobileNavGroup}>
                 <div className={styles.mobileNavTitle}>Services</div>
-                <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>
-                  Mobile App Development
-                </Link>
-                <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>
-                  Web Development
-                </Link>
-                <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>
-                  Game Development
-                </Link>
-                <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>
-                  AI & Blockchain
-                </Link>
-                <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>
-                  Design Services
-                </Link>
-                <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>
-                  Other Services
-                </Link>
+                <div className={styles.mobileNavSubGroup}>
+                  <div className={styles.mobileNavSmallTitle}>Custom Development</div>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Web Applications</Link>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Mobile App Dev</Link>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>SaaS Platforms</Link>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>MVP Development</Link>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Startup Solutions</Link>
+                </div>
+                <div className={styles.mobileNavSubGroup}>
+                  <div className={styles.mobileNavSmallTitle}>Growth & Scale</div>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Performance Optimization</Link>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Cloud & DevOps</Link>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>System Integration</Link>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>API Development</Link>
+                </div>
+                <div className={styles.mobileNavSubGroup}>
+                  <div className={styles.mobileNavSmallTitle}>AI & Innovation</div>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Machine Learning</Link>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>AI Chatbots</Link>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Predictive Analytics</Link>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Automation</Link>
+                </div>
+                <div className={styles.mobileNavSubGroup}>
+                  <div className={styles.mobileNavSmallTitle}>Web3 Solutions</div>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Smart Contracts</Link>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>DeFi Platforms</Link>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>NFT Marketplaces</Link>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Blockchain Apps</Link>
+                </div>
+                <div className={styles.mobileNavSubGroup}>
+                  <div className={styles.mobileNavSmallTitle}>Design & UX</div>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>UI/UX Design</Link>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Product Design</Link>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Branding</Link>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Animation</Link>
+                </div>
+                <div className={styles.mobileNavSubGroup}>
+                  <div className={styles.mobileNavSmallTitle}>Support Services</div>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Quality Assurance</Link>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Maintenance & Support</Link>
+                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Performance Monitoring</Link>
+                </div>
               </div>
-              <Link href="/blog" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
-                Blogs
+
+              {/* Company Group */}
+              <div className={styles.mobileNavGroup}>
+                <div className={styles.mobileNavTitle}>Company</div>
+                <div className={styles.mobileNavSubGroup}>
+                  <div className={styles.mobileNavSmallTitle}>About</div>
+                  <Link href="/about" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Company Overview</Link>
+                  <Link href="/about" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Our Team</Link>
+                  <Link href="/about" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Our Story</Link>
+                  <Link href="/about" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Company Culture</Link>
+                </div>
+                <div className={styles.mobileNavSubGroup}>
+                  <div className={styles.mobileNavSmallTitle}>Resources</div>
+                  <Link href="/blog" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Blog & Articles</Link>
+                  <Link href="/portfolio" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Case Studies</Link>
+                  <Link href="/testimonials" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Testimonials</Link>
+                  <Link href="/career" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Career</Link>
+                </div>
+              </div>
+
+              {/* Other Links */}
+              <Link href="/pricing" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
+                Pricing
               </Link>
-              <Link href="/work" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
+              <Link href="/portfolio" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
                 Portfolio
               </Link>
-              <Link href="/about" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
-                Company
+              <Link href="/blog" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
+                Blog
               </Link>
               <Link href="/contact" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
                 Contact
               </Link>
             </nav>
+
+            {/* Mobile Menu Actions */}
             <div className={styles.mobileMenuActions}>
-              <Link href="/contact" className="btn btn-primary btn-water" onClick={toggleMobileMenu}>
-                Share Your Requirement
-              </Link>
               <Link href="/request-a-call" className="btn btn-secondary btn-water" onClick={toggleMobileMenu}>
                 Schedule a Call
               </Link>
+              <Link href="/proposal" className="btn btn-primary btn-water" onClick={toggleMobileMenu}>
+                Get Free Audit
+              </Link>
+            </div>
+
+            {/* Mobile Contact Info */}
+            <div className={styles.mobileMenuFooter}>
+              <div style={{ fontSize: '12px', color: 'rgba(229,231,235,0.6)', padding: '16px 24px', borderTop: '1px solid rgba(46,91,255,0.1)' }}>
+                <p style={{ margin: '8px 0' }}>📞 +971 50 000 0000</p>
+                <p style={{ margin: '8px 0' }}>📱 +91 98765 43210</p>
+                <p style={{ margin: '8px 0' }}>✉️ hello@nexavibe.com</p>
+              </div>
             </div>
           </div>
         </div>

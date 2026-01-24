@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Poppins, Inter } from "next/font/google";
+import { Syne, Poppins, Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-syne",
+});
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
 });
 
@@ -14,9 +20,15 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-jakarta",
+});
+
 export const metadata: Metadata = {
-  title: "TechNova - Premium IT & Software Development Company",
-  description: "Leading IT development company specializing in mobile apps, web development, AI solutions, blockchain, and game development. Trusted by 2,500+ clients worldwide.",
+  title: "NexaVibe Solutions - Premium Tech Agency 2026",
+  description: "Elite IT solutions with neo-glassmorphism design. Specializing in web development, mobile apps, AI solutions, and blockchain technology.",
 };
 
 export default function RootLayout({
@@ -26,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${inter.variable}`}>
+      <body className={`${syne.variable} ${poppins.variable} ${inter.variable} ${plusJakarta.variable}`}>
         {children}
       </body>
     </html>
