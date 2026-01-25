@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import styles from "../page.module.css";
 import Breadcrumb from "../components/Breadcrumb";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 export default function BlogPage() {
   const breadcrumbItems = [
@@ -144,79 +146,14 @@ export default function BlogPage() {
 
   return (
     <div className={styles.page}>
-      <header className={styles.header}>
-        <div className={styles.headerTop}>
-          <div className="container">
-            <div className={styles.headerTopContent}>
-              <div className={styles.headerPhones}>
-                <a href="tel:+971500000000">+971 50 000 0000</a>
-                <a href="tel:+919876543210">+91 98765 43210</a>
-              </div>
-              <div style={{ color: "rgba(255,255,255,0.7)", fontSize: "13px" }}>
-                Get a free consultation today!
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="container">
-          <div className={styles.headerMain}>
-            <Link href="/" className={styles.logo}>
-              <div className={styles.logoIcon}>T</div>
-              TechNova
-            </Link>
-            <nav className={styles.nav}>
-              <Link href="/" className={styles.navLink}>Home</Link>
-              <div className={styles.navItem}>
-                <button className={styles.navLink}>
-                  Services <span>&#9660;</span>
-                </button>
-                <div className={styles.navDropdown}>
-                  <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>Mobile App Development</div>
-                    <Link href="/services" className={styles.dropdownSubLink}>iOS App Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Android Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>React Native Apps</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Flutter Development</Link>
-                  </div>
-                  <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>Web Development</div>
-                    <Link href="/services" className={styles.dropdownSubLink}>Frontend Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Backend Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>React.js Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Next.js Development</Link>
-                  </div>
-                  <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>AI & Blockchain</div>
-                    <Link href="/services" className={styles.dropdownSubLink}>Machine Learning</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>AI Chatbots</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Blockchain Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Smart Contracts</Link>
-                  </div>
-                </div>
-              </div>
-              <Link href="/blog" className={`${styles.navLink} ${styles.active}`}>Blogs</Link>
-              <Link href="/work" className={styles.navLink}>Portfolio</Link>
-              <Link href="/about" className={styles.navLink}>Company</Link>
-              <Link href="/contact" className={styles.navLink}>Contact</Link>
-            </nav>
-            <div className={styles.headerActions}>
-              <Link href="/proposal" className="btn btn-primary">
-                Share Your Requirement
-              </Link>
-              <Link href="/request-a-call" className="btn btn-secondary">
-                Schedule a Call
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <Breadcrumb items={breadcrumbItems} />
 
       <section className={styles.blogHero}>
         <div className="container">
           <div className={styles.blogHeroContent}>
-            <h1>TechNova Blog</h1>
+            <h1>NexaVibe Blog</h1>
             <p>Latest insights, tutorials, and trends in software development, AI, and technology</p>
           </div>
         </div>
@@ -311,71 +248,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <footer className={styles.footer}>
-        <div className="container">
-          <div className={styles.footerGrid}>
-            <div className={styles.footerAbout}>
-              <div className={styles.logo}>
-                <div className={styles.logoIcon}>T</div>
-                TechNova
-              </div>
-              <p>
-                Premium IT development company delivering innovative solutions 
-                in mobile apps, web development, AI, and blockchain technologies.
-              </p>
-              <div className={styles.footerSocial}>
-                <a href="#">in</a>
-                <a href="#">tw</a>
-                <a href="#">fb</a>
-                <a href="#">ig</a>
-              </div>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Services</h4>
-              <ul>
-                <li><Link href="/services">Mobile Development</Link></li>
-                <li><Link href="/services">Web Development</Link></li>
-                <li><Link href="/services">Game Development</Link></li>
-                <li><Link href="/services">AI Solutions</Link></li>
-                <li><Link href="/services">Blockchain</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Company</h4>
-              <ul>
-                <li><Link href="/about">About Us</Link></li>
-                <li><Link href="/career">Careers</Link></li>
-                <li><Link href="/blog">Blog</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Resources</h4>
-              <ul>
-                <li><Link href="/blog">Tech Blog</Link></li>
-                <li><Link href="/work">Case Studies</Link></li>
-                <li><Link href="/proposal">Get a Proposal</Link></li>
-                <li><Link href="/request-a-call">Schedule a Call</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Support</h4>
-              <ul>
-                <li><Link href="#">Help Center</Link></li>
-                <li><Link href="#">Privacy Policy</Link></li>
-                <li><Link href="#">Terms of Service</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className={styles.footerBottom}>
-            <p>© 2024 TechNova Solutions. All rights reserved.</p>
-            <div className={styles.footerLegal}>
-              <Link href="#">Privacy Policy</Link>
-              <Link href="#">Terms of Service</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -35,7 +35,7 @@ const QUICK_REPLIES: QuickReply[] = [
 const BOT_RESPONSES: Record<string, string> = {
   default: "Thanks for your message! A member of our team will get back to you shortly. In the meantime, feel free to explore our services or check out our portfolio.",
   
-  greeting: "👋 Hello! Welcome to TechNova! We're a premium IT & Software Development Company specializing in mobile apps, web development, AI solutions, blockchain, and game development. How can I help you today?",
+  greeting: "👋 Hello! Welcome to NexaVibe! We're a premium IT & Software Development Company specializing in mobile apps, web development, AI solutions, blockchain, and game development. How can I help you today?",
   
   services: "We offer a wide range of services:\n\n📱 Mobile Development - Native & cross-platform apps for iOS/Android\n🌐 Web Development - Scalable web applications\n🎮 Game Development - 2D/3D games for all platforms\n⛓️ Blockchain - Web3 solutions & smart contracts\n🤖 AI/ML - Machine learning solutions\n🎨 UI/UX Design - Modern, user-friendly designs\n⚙️ DevOps - Cloud infrastructure & automation\n\nWhich service interests you most?",
   
@@ -43,13 +43,13 @@ const BOT_RESPONSES: Record<string, string> = {
   
   pricing: "Our pricing varies based on project complexity, timeline, and requirements. We offer:\n\n💰 Fixed Price Projects\n💰 Time & Material Model\n💰 Dedicated Team Options\n\nWe provide a free initial consultation to understand your needs and provide a customized quote. Would you like to schedule a consultation?",
   
-  contact: "📍 Our Locations:\n🇦🇪 Dubai, UAE - Business Bay\n🇮🇳 Mohali, India - Punjab\n\n📞 Phone:\n🇦🇪 +971 50 000 0000\n🇮🇳 +91 98765 43210\n\n✉️ Email: info@technova.com\n\nWould you like us to call you back?",
+  contact: "📍 Our Locations:\n🇦🇪 Dubai, UAE - Business Bay\n🇮🇳 Mohali, India - Punjab\n\n📞 Phone:\n🇦🇪 +971 50 000 0000\n🇮🇳 +91 98765 43210\n\n✉️ Email: hello@nexavibe.com\n\nWould you like us to call you back?",
   
   timeline: "Project timelines depend on complexity:\n\n⏱️ Simple Apps: 2-3 months\n⏱️ Medium Projects: 3-6 months\n⏱️ Complex Solutions: 6-12 months\n\nWe follow agile methodology with regular updates. Want to discuss your timeline?",
   
   technology: "We use modern technologies:\n\nFrontend: React, Next.js, Vue, Angular\nBackend: Node.js, Python, Go, Java\nMobile: React Native, Flutter, Swift, Kotlin\nCloud: AWS, Azure, Google Cloud\nDatabase: PostgreSQL, MongoDB, Firebase\n\nAny specific tech stack you prefer?",
   
-  company: "TechNova is a premium IT company with 12+ years of experience. We've helped 2,500+ clients worldwide deliver successful digital solutions. We're recognized as Top Rated Plus on Upwork and rated by Clutch, GoodFirms, and AppFutura.",
+  company: "NexaVibe is a premium IT company with 12+ years of experience. We've helped 2,500+ clients worldwide deliver successful digital solutions. We're recognized as Top Rated Plus on Upwork and rated by Clutch, GoodFirms, and AppFutura.",
   
   blockchain: "Our blockchain services include:\n\n⛓️ Smart Contract Development\n🌐 Web3 Application Development\n🪙 DeFi Solutions\n🎨 NFT Marketplace Development\n🔐 Decentralized Applications\n\nWe work with Ethereum, Solana, Polygon, and other chains.",
   
@@ -62,7 +62,8 @@ const BOT_RESPONSES: Record<string, string> = {
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
+  // Use a function to initialize messages to avoid Date.now() during render
+  const [messages, setMessages] = useState<Message[]>(() => [
     {
       id: "1",
       text: BOT_RESPONSES.greeting,
@@ -160,7 +161,7 @@ export default function Chatbot() {
 
     if (score >= 70) {
       // High-intent: Direct to Calendly booking
-      return "🎯 EXCELLENT FIT DETECTED!\n\nBased on your requirements, you're a perfect match for our premium services. Our team would love to discuss your project in detail.\n\n📅 **Let's schedule a call right now!**\n\n[Book a free 30-min consultation](https://calendly.com/technova-consultation)\n\nOr I can send you our detailed proposal first - which would you prefer?";
+      return "🎯 EXCELLENT FIT DETECTED!\n\nBased on your requirements, you're a perfect match for our premium services. Our team would love to discuss your project in detail.\n\n📅 **Let's schedule a call right now!**\n\n[Book a free 30-min consultation](https://calendly.com/nexavibe-consultation)\n\nOr I can send you our detailed proposal first - which would you prefer?";
     } else if (score >= 40) {
       // Medium-intent: Show case studies
       return "📈 GOOD POTENTIAL!\n\nYour project aligns well with our expertise. Let me show you some relevant success stories that might inspire you.\n\n📖 **Check out these case studies:**\n• [Similar Project Case Study 1](/work/case-study-1)\n• [Similar Project Case Study 2](/work/case-study-2)\n\nWould you like to see more examples or schedule a consultation?";
@@ -317,7 +318,7 @@ export default function Chatbot() {
               <span>🤖</span>
             </div>
             <div className={styles.headerText}>
-              <h3>TechNova Assistant</h3>
+              <h3>NexaVibe Assistant</h3>
               <span className={styles.status}>
                 <span className={styles.statusDot}></span>
                 Online
@@ -392,7 +393,7 @@ export default function Chatbot() {
             </button>
           </div>
           <p className={styles.disclaimer}>
-            Powered by TechNova AI
+            Powered by NexaVibe AI
           </p>
         </div>
       </div>

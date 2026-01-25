@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
             <p style="white-space: pre-wrap;">${message}</p>
           </div>
           <p style="color: #6b7280; font-size: 14px;">
-            This message was sent from the TechNova contact form.
+            This message was sent from the NexaVibe contact form.
           </p>
         </div>
       `,

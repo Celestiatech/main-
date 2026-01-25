@@ -2,15 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "../globals.css";
 import styles from "../page.module.css";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | TechNova Solutions",
-  description: "Learn how TechNova Solutions uses cookies and similar technologies on our website.",
+  title: "Cookie Policy | NexaVibe Solutions",
+  description: "Learn how NexaVibe Solutions uses cookies and similar technologies on our website.",
 };
 
 export default function CookiePolicy() {
   return (
     <div className={styles.page}>
+      <Header />
       {/* ===== PAGE HERO ===== */}
       <section className={styles.pageHero}>
         <div className="container">
@@ -41,7 +44,7 @@ export default function CookiePolicy() {
                 1. Introduction
               </h2>
               <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
-                This Cookie Policy explains what Cookies are and how TechNova Solutions ("we," "our," or "us") uses them on our website. It explains what these technologies are and why we use them, as well as your rights to control our use of them.
+                This Cookie Policy explains what Cookies are and how NexaVibe Solutions (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) uses them on our website. It explains what these technologies are and why we use them, as well as your rights to control our use of them.
               </p>
 
               <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "var(--text-primary)" }}>
@@ -288,7 +291,7 @@ export default function CookiePolicy() {
                 marginBottom: "24px"
               }}>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "12px" }}>
-                  <strong>TechNova Solutions</strong>
+                  <strong>NexaVibe Solutions</strong>
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "8px" }}>
                   📍 Dubai, UAE: Business Bay, Dubai
@@ -297,7 +300,7 @@ export default function CookiePolicy() {
                   📍 India: Mohali, Punjab
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)" }}>
-                  📧 <Link href="mailto:privacy@technova.com" style={{ color: "var(--primary)" }}>privacy@technova.com</Link>
+                  📧 <Link href="mailto:privacy@nexavibe.com" style={{ color: "var(--primary)" }}>privacy@nexavibe.com</Link>
                 </p>
               </div>
             </div>
@@ -317,74 +320,7 @@ export default function CookiePolicy() {
       </section>
 
       {/* ===== FOOTER ===== */}
-      <footer className={styles.footer}>
-        <div className="container">
-          <div className={styles.footerGrid}>
-            <div className={styles.footerAbout}>
-              <div className={styles.logo}>
-                <div className={styles.logoIcon}>T</div>
-                TechNova
-              </div>
-              <p>
-                Premium IT development company delivering innovative solutions 
-                in mobile apps, web development, AI, and blockchain technologies.
-              </p>
-              <div className={styles.footerSocial}>
-                <a href="#">in</a>
-                <a href="#">tw</a>
-                <a href="#">fb</a>
-                <a href="#">ig</a>
-              </div>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Services</h4>
-              <ul>
-                <li><Link href="/services">Mobile Development</Link></li>
-                <li><Link href="/services">Web Development</Link></li>
-                <li><Link href="/services">Game Development</Link></li>
-                <li><Link href="/services">AI Solutions</Link></li>
-                <li><Link href="/services">Blockchain</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Company</h4>
-              <ul>
-                <li><Link href="/about">About Us</Link></li>
-                <li><Link href="/career">Careers</Link></li>
-                <li><Link href="/blog">Blog</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Blogs</h4>
-              <ul>
-                <li><Link href="/industries">Healthcare</Link></li>
-                <li><Link href="/industries">Education</Link></li>
-                <li><Link href="/industries">Finance</Link></li>
-                <li><Link href="/industries">E-commerce</Link></li>
-                <li><Link href="/industries">Real Estate</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Support</h4>
-              <ul>
-                <li><Link href="/help-center">Help Center</Link></li>
-                <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-                <li><Link href="/terms-of-service">Terms of Service</Link></li>
-                <li><Link href="/sitemap">Sitemap</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className={styles.footerBottom}>
-            <p>© 2024 TechNova Solutions. All rights reserved.</p>
-            <div className={styles.footerLegal}>
-              <Link href="/privacy-policy">Privacy Policy</Link>
-              <Link href="/terms-of-service">Terms of Service</Link>
-              <Link href="/cookie-policy">Cookie Policy</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

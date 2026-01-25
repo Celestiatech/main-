@@ -6,6 +6,8 @@ import { useState } from "react";
 import Link from "next/link";
 import styles from "../page.module.css";
 import Breadcrumb from "../components/Breadcrumb";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 export default function ContactPage() {
   const breadcrumbItems = [
@@ -43,7 +45,7 @@ export default function ContactPage() {
       const result = await response.json();
 
       if (result.success) {
-        setSubmitMessage('Thank you for your message! We\'ll get back to you within 24 hours.');
+        setSubmitMessage('Thank you for your message! We&apos;ll get back to you within 24 hours.');
         setFormData({
           name: '',
           email: '',
@@ -66,7 +68,7 @@ export default function ContactPage() {
   return (
     <div className={styles.page}>
       {/* ===== HEADER ===== */}
-      <header className={styles.header}>
+      <Header />
         <div className={styles.headerTop}>
           <div className="container">
             <div className={styles.headerTopContent}>
@@ -84,7 +86,7 @@ export default function ContactPage() {
           <div className={styles.headerMain}>
             <Link href="/" className={styles.logo}>
               <div className={styles.logoIcon}>T</div>
-              TechNova
+              NexaVibe
             </Link>
             <nav className={styles.nav}>
               <Link href="/" className={styles.navLink}>Home</Link>
@@ -171,8 +173,6 @@ export default function ContactPage() {
           </div>
         </div>
 
-      </header>
-
       <Breadcrumb items={breadcrumbItems} />
 
       {/* ===== PAGE HERO ===== */}
@@ -181,7 +181,7 @@ export default function ContactPage() {
         <div className="container">
           <div className={styles.pageHeroContent}>
             <h1>Contact Us</h1>
-            <p>Let's discuss your project and bring your ideas to life</p>
+            <p>Let&apos;s discuss your project and bring your ideas to life</p>
           </div>
         </div>
       </section>
@@ -193,7 +193,7 @@ export default function ContactPage() {
             <div className={styles.contactInfo}>
               <h2>Get In Touch</h2>
               <p>
-                Ready to start your next project? We'd love to hear from you. 
+                Ready to start your next project? We&apos;d love to hear from you. 
                 Fill out the form and our team will get back to you within 24 hours.
               </p>
               
@@ -201,22 +201,22 @@ export default function ContactPage() {
                 <div className={styles.contactDetailItem}>
                   <div className={styles.contactDetailIcon}>📍</div>
                   <div>
-                    <h4>Dubai, UAE</h4>
-                    <p>Business Bay, Dubai</p>
+                    <h4>Our UAE Office</h4>
+                    <p>Business Bay, Dubai, UAE</p>
                   </div>
                 </div>
                 <div className={styles.contactDetailItem}>
                   <div className={styles.contactDetailIcon}>📍</div>
                   <div>
-                    <h4>India</h4>
-                    <p>Mohali, Punjab</p>
+                    <h4>Our India Office</h4>
+                    <p>Mohali, Punjab, India</p>
                   </div>
                 </div>
                 <div className={styles.contactDetailItem}>
                   <div className={styles.contactDetailIcon}>📧</div>
                   <div>
                     <h4>Email</h4>
-                    <p>info@technova.com</p>
+                    <p>hello@nexavibe.com</p>
                   </div>
                 </div>
                 <div className={styles.contactDetailItem}>
@@ -350,7 +350,7 @@ export default function ContactPage() {
           <div className={styles.faqGrid}>
             <div className={styles.faqCard}>
               <h4>What is your typical project timeline?</h4>
-              <p>Project timelines vary based on complexity. Simple apps take 2-3 months, while enterprise solutions may take 6-12 months. We'll provide a detailed timeline after understanding your requirements.</p>
+              <p>Project timelines vary based on complexity. Simple apps take 2-3 months, while enterprise solutions may take 6-12 months. We&apos;ll provide a detailed timeline after understanding your requirements.</p>
             </div>
             <div className={styles.faqCard}>
               <h4>Do you offer post-development support?</h4>
@@ -380,71 +380,7 @@ export default function ContactPage() {
       </section>
 
       {/* ===== FOOTER ===== */}
-      <footer className={styles.footer}>
-        <div className="container">
-          <div className={styles.footerGrid}>
-            <div className={styles.footerAbout}>
-              <div className={styles.logo}>
-                <div className={styles.logoIcon}>T</div>
-                TechNova
-              </div>
-              <p>
-                Premium IT development company delivering innovative solutions 
-                in mobile apps, web development, AI, and blockchain technologies.
-              </p>
-              <div className={styles.footerSocial}>
-                <a href="#">in</a>
-                <a href="#">tw</a>
-                <a href="#">fb</a>
-                <a href="#">ig</a>
-              </div>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Services</h4>
-              <ul>
-                <li><Link href="#">Mobile Development</Link></li>
-                <li><Link href="#">Web Development</Link></li>
-                <li><Link href="#">Game Development</Link></li>
-                <li><Link href="#">AI Solutions</Link></li>
-                <li><Link href="#">Blockchain</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Company</h4>
-              <ul>
-                <li><Link href="/about">About Us</Link></li>
-                <li><Link href="#">Careers</Link></li>
-                <li><Link href="#">Blog</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Blogs</h4>
-              <ul>
-                <li><Link href="/industries">Healthcare</Link></li>
-                <li><Link href="/industries">Education</Link></li>
-                <li><Link href="/industries">Finance</Link></li>
-                <li><Link href="/industries">E-commerce</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Support</h4>
-              <ul>
-                <li><Link href="#">Help Center</Link></li>
-                <li><Link href="#">Privacy Policy</Link></li>
-                <li><Link href="#">Terms of Service</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className={styles.footerBottom}>
-            <p>© 2024 TechNova Solutions. All rights reserved.</p>
-            <div className={styles.footerLegal}>
-              <Link href="#">Privacy Policy</Link>
-              <Link href="#">Terms of Service</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

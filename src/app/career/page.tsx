@@ -5,6 +5,8 @@ import { useState } from "react";
 import Link from "next/link";
 import styles from "../page.module.css";
 import Breadcrumb from "../components/Breadcrumb";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 export default function CareerPage() {
   const breadcrumbItems = [
@@ -18,7 +20,7 @@ export default function CareerPage() {
       department: "Engineering",
       location: "Dubai, UAE",
       type: "Full-time",
-      description: "WeWe'reapos;re looking for an experienced React developer to join our team and build cutting-edge web applications.",
+      description: "We&apos;re looking for an experienced React developer to join our team and build cutting-edge web applications.",
       requirements: [
         "5+ years of experience with React and TypeScript",
         "Strong knowledge of Next.js and modern frontend practices",
@@ -44,7 +46,7 @@ export default function CareerPage() {
       department: "Design",
       location: "Remote",
       type: "Full-time",
-      description: "WeWe'reapos;re seeking a talented designer to create beautiful and intuitive user experiences.",
+      description: "We&apos;re seeking a talented designer to create beautiful and intuitive user experiences.",
       requirements: [
         "4+ years of UI/UX design experience",
         "Proficiency in Figma, Sketch, or Adobe XD",
@@ -109,7 +111,7 @@ export default function CareerPage() {
   return (
     <div className={styles.page}>
       {/* ===== HEADER ===== */}
-      <header className={styles.header}>
+      <Header />
         <div className={styles.headerTop}>
           <div className="container">
             <div className={styles.headerTopContent}>
@@ -127,7 +129,7 @@ export default function CareerPage() {
           <div className={styles.headerMain}>
             <Link href="/" className={styles.logo}>
               <div className={styles.logoIcon}>T</div>
-              TechNova
+              NexaVibe
             </Link>
             <nav className={styles.nav}>
               <Link href="/" className={styles.navLink}>Home</Link>
@@ -207,8 +209,6 @@ export default function CareerPage() {
             </div>
           </div>
         </div>
-      </header>
-
       <Breadcrumb items={breadcrumbItems} />
 
       {/* ===== PAGE HERO ===== */}
@@ -216,7 +216,7 @@ export default function CareerPage() {
         <div className="container">
           <div className={styles.pageHeroContent}>
             <h1>Join Our Team</h1>
-            <p>Build the future of technology with TechNova. WeWe'reapos;re always looking for talented individuals.</p>
+            <p>Build the future of technology with NexaVibe. We&apos;re always looking for talented individuals.</p>
           </div>
         </div>
       </section>
@@ -290,8 +290,8 @@ export default function CareerPage() {
       {/* ===== CTA SECTION ===== */}
       <section className={styles.cta}>
         <div className="container">
-          <h2>Don't See Your Role?</h2>
-          <p>WeWe'reapos;re always interested in hearing from talented individuals. Send us your resume!</p>
+          <h2>Don&apos;t See Your Role?</h2>
+          <p>We&apos;re always interested in hearing from talented individuals. Send us your resume!</p>
           <Link href="/contact" className="btn btn-accent">
             Get In Touch
           </Link>
@@ -299,73 +299,7 @@ export default function CareerPage() {
       </section>
 
       {/* ===== FOOTER ===== */}
-      <footer className={styles.footer}>
-        <div className="container">
-          <div className={styles.footerGrid}>
-            <div className={styles.footerAbout}>
-              <div className={styles.logo}>
-                <div className={styles.logoIcon}>T</div>
-                TechNova
-              </div>
-              <p>
-                Premium IT development company delivering innovative solutions 
-                in mobile apps, web development, AI, and blockchain technologies.
-              </p>
-              <div className={styles.footerSocial}>
-                <a href="#">in</a>
-                <a href="#">tw</a>
-                <a href="#">fb</a>
-                <a href="#">ig</a>
-              </div>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Services</h4>
-              <ul>
-                <li><Link href="/services">Mobile Development</Link></li>
-                <li><Link href="/services">Web Development</Link></li>
-                <li><Link href="/services">Game Development</Link></li>
-                <li><Link href="/services">AI Solutions</Link></li>
-                <li><Link href="/services">Blockchain</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Company</h4>
-              <ul>
-                <li><Link href="/about">About Us</Link></li>
-                <li><Link href="/career">Careers</Link></li>
-                <li><Link href="/blog">Blog</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Blogs</h4>
-              <ul>
-                <li><Link href="/industries">Healthcare</Link></li>
-                <li><Link href="/industries">Education</Link></li>
-                <li><Link href="/industries">Finance</Link></li>
-                <li><Link href="/industries">E-commerce</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Support</h4>
-              <ul>
-                <li><Link href="#">Help Center</Link></li>
-                <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-                <li><Link href="/terms-of-service">Terms of Service</Link></li>
-                <li><Link href="/cookie-policy">Cookie Policy</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className={styles.footerBottom}>
-            <p>© 2024 TechNova Solutions. All rights reserved.</p>
-            <div className={styles.footerLegal}>
-              <Link href="/privacy-policy">Privacy Policy</Link>
-              <Link href="/terms-of-service">Terms of Service</Link>
-              <Link href="/cookie-policy">Cookie Policy</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

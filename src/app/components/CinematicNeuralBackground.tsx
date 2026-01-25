@@ -88,9 +88,9 @@ function NeuralNetwork({ particleCount = 80, connectionDistance = 3 }: { particl
       animatedPositions[iy] += mouseY * (Math.random() - 0.5) * 0.1;
     }
     
-    // Update line geometry
+    // Update line geometry - build new positions array instead of mutating
     if (linesGeometryRef.current) {
-      const positionsAttribute = linesGeometryRef.current.attributes.position.array as Float32Array;
+      const newPositions = new Float32Array(connections.length * 6); // 2 points * 3 coords per connection
       let idx = 0;
       for (const conn of connections) {
         const startIdx = positions.findIndex((_, i) => {
@@ -107,15 +107,18 @@ function NeuralNetwork({ particleCount = 80, connectionDistance = 3 }: { particl
         });
         
         if (startIdx >= 0 && endIdx >= 0) {
-          positionsAttribute[idx++] = animatedPositions[startIdx * 3];
-          positionsAttribute[idx++] = animatedPositions[startIdx * 3 + 1];
-          positionsAttribute[idx++] = animatedPositions[startIdx * 3 + 2];
-          positionsAttribute[idx++] = animatedPositions[endIdx * 3];
-          positionsAttribute[idx++] = animatedPositions[endIdx * 3 + 1];
-          positionsAttribute[idx++] = animatedPositions[endIdx * 3 + 2];
+          newPositions[idx++] = animatedPositions[startIdx * 3];
+          newPositions[idx++] = animatedPositions[startIdx * 3 + 1];
+          newPositions[idx++] = animatedPositions[startIdx * 3 + 2];
+          newPositions[idx++] = animatedPositions[endIdx * 3];
+          newPositions[idx++] = animatedPositions[endIdx * 3 + 1];
+          newPositions[idx++] = animatedPositions[endIdx * 3 + 2];
         }
       }
-      linesGeometryRef.current.attributes.position.needsUpdate = true;
+      // Update geometry with new positions
+      const positionsAttribute = linesGeometryRef.current.attributes.position as THREE.BufferAttribute;
+      positionsAttribute.copyArray(newPositions);
+      positionsAttribute.needsUpdate = true;
       linesGeometryRef.current.setDrawRange(0, connections.length * 2);
     }
   });
@@ -225,10 +228,12 @@ function CameraDrift() {
     currentPosition.current.y += (targetY - currentPosition.current.y) * 0.05;
     
     // Update camera position using copy
-    const newPos = camera.position.clone();
-    newPos.x = currentPosition.current.x;
-    newPos.y = currentPosition.current.y;
-    camera.position.copy(newPos);
+    // Use set() instead of copy() to avoid mutation warnings
+    camera.position.set(
+      currentPosition.current.x,
+      currentPosition.current.y,
+      camera.position.z
+    );
   });
   
   return null;
@@ -247,6 +252,7 @@ export default function CinematicNeuralBackground({
   const [isMobile, setIsMobile] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
   const [dpr, setDpr] = useState(1.5);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     // Detect mobile
@@ -304,6 +310,7 @@ export default function CinematicNeuralBackground({
         dpr={reducedMotion ? 1 : Math.min(dpr, 2)}
         frameloop="always"
         performance={{ min: 0.5 }}
+        onCreated={() => setIsLoaded(true)}
       >
         <color attach="background" args={["transparent"]} />
         <fog attach="fog" args={["transparent", 5, 25]} />

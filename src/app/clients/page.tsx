@@ -1,10 +1,11 @@
 
 "use client";
 
-
 import Link from "next/link";
 import styles from "../page.module.css";
 import Breadcrumb from "../components/Breadcrumb";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 export default function ClientsPage() {
   const breadcrumbItems = [
@@ -61,7 +62,7 @@ export default function ClientsPage() {
   return (
     <div className={styles.page}>
       {/* ===== HEADER ===== */}
-      <header className={styles.header}>
+      <Header />
         <div className={styles.headerTop}>
           <div className="container">
             <div className={styles.headerTopContent}>
@@ -79,7 +80,7 @@ export default function ClientsPage() {
           <div className={styles.headerMain}>
             <Link href="/" className={styles.logo}>
               <div className={styles.logoIcon}>T</div>
-              TechNova
+              NexaVibe
             </Link>
             <nav className={styles.nav}>
               <Link href="/" className={styles.navLink}>Home</Link>
@@ -166,8 +167,6 @@ export default function ClientsPage() {
           </div>
         </div>
 
-      </header>
-
       <Breadcrumb items={breadcrumbItems} />
 
       {/* ===== PAGE HERO ===== */}
@@ -230,71 +229,7 @@ export default function ClientsPage() {
       </section>
 
       {/* ===== FOOTER ===== */}
-      <footer className={styles.footer}>
-        <div className="container">
-          <div className={styles.footerGrid}>
-            <div className={styles.footerAbout}>
-              <div className={styles.logo}>
-                <div className={styles.logoIcon}>T</div>
-                TechNova
-              </div>
-              <p>
-                Premium IT development company delivering innovative solutions 
-                in mobile apps, web development, AI, and blockchain technologies.
-              </p>
-              <div className={styles.footerSocial}>
-                <a href="#">in</a>
-                <a href="#">tw</a>
-                <a href="#">fb</a>
-                <a href="#">ig</a>
-              </div>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Services</h4>
-              <ul>
-                <li><Link href="#">Mobile Development</Link></li>
-                <li><Link href="#">Web Development</Link></li>
-                <li><Link href="#">Game Development</Link></li>
-                <li><Link href="#">AI Solutions</Link></li>
-                <li><Link href="#">Blockchain</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Company</h4>
-              <ul>
-                <li><Link href="/about">About Us</Link></li>
-                <li><Link href="#">Careers</Link></li>
-                <li><Link href="#">Blog</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Industries</h4>
-              <ul>
-                <li><Link href="/industries">Healthcare</Link></li>
-                <li><Link href="/industries">Education</Link></li>
-                <li><Link href="/industries">Finance</Link></li>
-                <li><Link href="/industries">E-commerce</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Support</h4>
-              <ul>
-                <li><Link href="#">Help Center</Link></li>
-                <li><Link href="#">Privacy Policy</Link></li>
-                <li><Link href="#">Terms of Service</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className={styles.footerBottom}>
-            <p>© 2024 TechNova Solutions. All rights reserved.</p>
-            <div className={styles.footerLegal}>
-              <Link href="#">Privacy Policy</Link>
-              <Link href="#">Terms of Service</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

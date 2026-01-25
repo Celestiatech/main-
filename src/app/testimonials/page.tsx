@@ -5,6 +5,8 @@
 import Link from "next/link";
 import styles from "../page.module.css";
 import Breadcrumb from "../components/Breadcrumb";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 export default function TestimonialsPage() {
   const breadcrumbItems = [
@@ -14,7 +16,7 @@ export default function TestimonialsPage() {
 
   const testimonials = [
     {
-      quote: "TechNova delivered our mobile app ahead of schedule with exceptional quality. Their team understood our vision and executed it perfectly. The app has received outstanding reviews from our users.",
+      quote: "NexaVibe delivered our mobile app ahead of schedule with exceptional quality. Their team understood our vision and executed it perfectly. The app has received outstanding reviews from our users.",
       author: "Sarah Johnson",
       role: "CEO, TechStart Inc.",
       company: "TechStart Inc.",
@@ -22,7 +24,7 @@ export default function TestimonialsPage() {
       project: "Mobile App Development",
     },
     {
-      quote: "Working with TechNova was a game-changer for our business. Their expertise in blockchain development helped us launch our DeFi platform successfully. Highly recommended!",
+      quote: "Working with NexaVibe was a game-changer for our business. Their expertise in blockchain development helped us launch our DeFi platform successfully. Highly recommended!",
       author: "Michael Chen",
       role: "Founder",
       company: "CryptoVault",
@@ -30,7 +32,7 @@ export default function TestimonialsPage() {
       project: "Blockchain Development",
     },
     {
-      quote: "The team at TechNova demonstrated exceptional professionalism and technical expertise. They became our trusted development partner for all our digital initiatives.",
+      quote: "The team at NexaVibe demonstrated exceptional professionalism and technical expertise. They became our trusted development partner for all our digital initiatives.",
       author: "Emily Davis",
       role: "Director of Technology",
       company: "EduCorp Global",
@@ -38,7 +40,7 @@ export default function TestimonialsPage() {
       project: "Web Platform Development",
     },
     {
-      quote: "From concept to launch, TechNova provided outstanding support. Their UI/UX design transformed our vision into a beautiful, user-friendly application.",
+      quote: "From concept to launch, NexaVibe provided outstanding support. Their UI/UX design transformed our vision into a beautiful, user-friendly application.",
       author: "James Wilson",
       role: "Product Manager",
       company: "HealthTech Solutions",
@@ -46,7 +48,7 @@ export default function TestimonialsPage() {
       project: "Healthcare App",
     },
     {
-      quote: "We've worked with many development teams, but TechNova stands out for their communication, expertise, and commitment to quality. They truly care about our success.",
+      quote: "We've worked with many development teams, but NexaVibe stands out for their communication, expertise, and commitment to quality. They truly care about our success.",
       author: "Lisa Anderson",
       role: "COO",
       company: "LogiTech Solutions",
@@ -73,7 +75,7 @@ export default function TestimonialsPage() {
   return (
     <div className={styles.page}>
       {/* ===== HEADER ===== */}
-      <header className={styles.header}>
+      <Header />
         <div className={styles.headerTop}>
           <div className="container">
             <div className={styles.headerTopContent}>
@@ -91,7 +93,7 @@ export default function TestimonialsPage() {
           <div className={styles.headerMain}>
             <Link href="/" className={styles.logo}>
               <div className={styles.logoIcon}>T</div>
-              TechNova
+              NexaVibe
             </Link>
             <nav className={styles.nav}>
               <Link href="/" className={styles.navLink}>Home</Link>
@@ -172,8 +174,6 @@ export default function TestimonialsPage() {
           </div>
         </div>
 
-      </header>
-
       <Breadcrumb items={breadcrumbItems} />
 
       {/* ===== PAGE HERO ===== */}
@@ -245,71 +245,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* ===== FOOTER ===== */}
-      <footer className={styles.footer}>
-        <div className="container">
-          <div className={styles.footerGrid}>
-            <div className={styles.footerAbout}>
-              <div className={styles.logo}>
-                <div className={styles.logoIcon}>T</div>
-                TechNova
-              </div>
-              <p>
-                Premium IT development company delivering innovative solutions 
-                in mobile apps, web development, AI, and blockchain technologies.
-              </p>
-              <div className={styles.footerSocial}>
-                <a href="#">in</a>
-                <a href="#">tw</a>
-                <a href="#">fb</a>
-                <a href="#">ig</a>
-              </div>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Services</h4>
-              <ul>
-                <li><Link href="#">Mobile Development</Link></li>
-                <li><Link href="#">Web Development</Link></li>
-                <li><Link href="#">Game Development</Link></li>
-                <li><Link href="#">AI Solutions</Link></li>
-                <li><Link href="#">Blockchain</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Company</h4>
-              <ul>
-                <li><Link href="/about">About Us</Link></li>
-                <li><Link href="#">Careers</Link></li>
-                <li><Link href="#">Blog</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Industries</h4>
-              <ul>
-                <li><Link href="/industries">Healthcare</Link></li>
-                <li><Link href="/industries">Education</Link></li>
-                <li><Link href="/industries">Finance</Link></li>
-                <li><Link href="/industries">E-commerce</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Support</h4>
-              <ul>
-                <li><Link href="#">Help Center</Link></li>
-                <li><Link href="#">Privacy Policy</Link></li>
-                <li><Link href="#">Terms of Service</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className={styles.footerBottom}>
-            <p>© 2024 TechNova Solutions. All rights reserved.</p>
-            <div className={styles.footerLegal}>
-              <Link href="#">Privacy Policy</Link>
-              <Link href="#">Terms of Service</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

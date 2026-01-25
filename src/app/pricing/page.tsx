@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import styles from "./page.module.css";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 export default function Pricing() {
   const [selectedModel, setSelectedModel] = useState("fixed-price");
-  const [billingCycle, setBillingCycle] = useState("monthly");
 
   const pricingModels = [
     {
@@ -109,7 +109,7 @@ export default function Pricing() {
 
   const testimonials = [
     {
-      quote: "TechNova's fixed-price model helped us launch our MVP in 8 weeks within budget. Highly recommend for startups!",
+      quote: "NexaVibe's fixed-price model helped us launch our MVP in 8 weeks within budget. Highly recommend for startups!",
       author: "Sarah Chen",
       role: "CEO, HealthTech Startup",
       avatar: "/images/testimonials/sarah.jpg",
@@ -163,25 +163,7 @@ export default function Pricing() {
   return (
     <div className={styles.page}>
       {/* ===== HEADER ===== */}
-      <header className={styles.header}>
-        <div className="container">
-          <div className={styles.headerContent}>
-            <Link href="/" className={styles.logo}>
-              TechNova
-            </Link>
-            <nav className={styles.nav}>
-              <Link href="/" className={styles.navLink}>Home</Link>
-              <Link href="/services" className={styles.navLink}>Services</Link>
-              <Link href="/pricing" className={`${styles.navLink} ${styles.active}`}>Pricing</Link>
-              <Link href="/work" className={styles.navLink}>Portfolio</Link>
-              <Link href="/contact" className={styles.navLink}>Contact</Link>
-              <Link href="/request-a-call" className="btn btn-secondary btn-sm">
-                Schedule a Call
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* ===== HERO SECTION ===== */}
       <section className={styles.hero}>
@@ -402,7 +384,7 @@ export default function Pricing() {
         <div className="container">
           <div className={styles.finalCtaContent}>
             <h2>Transform Your Ideas Into Reality</h2>
-            <p>Join 2,500+ satisfied clients who chose TechNova for their development needs</p>
+            <p>Join 2,500+ satisfied clients who chose NexaVibe for their development needs</p>
             <div className={styles.finalCtaButtons}>
               <Link href="/contact" className="btn btn-accent btn-3d">
                 Start Your Project Today
@@ -419,64 +401,7 @@ export default function Pricing() {
       </section>
 
       {/* ===== FOOTER ===== */}
-      <footer className={styles.footer}>
-        <div className="container">
-          <div className={styles.footerGrid}>
-            <div className={styles.footerAbout}>
-              <div className={styles.logo}>
-                <div className={styles.logoIcon}>T</div>
-                TechNova
-              </div>
-              <p>
-                Premium IT development company delivering innovative solutions
-                in mobile apps, web development, AI, and blockchain technologies.
-              </p>
-              <div className={styles.footerSocial}>
-                <a href="#">in</a>
-                <a href="#">tw</a>
-                <a href="#">fb</a>
-                <a href="#">ig</a>
-              </div>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Services</h4>
-              <ul>
-                <li><Link href="/services">Mobile Development</Link></li>
-                <li><Link href="/services">Web Development</Link></li>
-                <li><Link href="/services">Game Development</Link></li>
-                <li><Link href="/services">AI Solutions</Link></li>
-                <li><Link href="/services">Blockchain</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Company</h4>
-              <ul>
-                <li><Link href="/about">About Us</Link></li>
-                <li><Link href="/career">Careers</Link></li>
-                <li><Link href="/blog">Blog</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Support</h4>
-              <ul>
-                <li><Link href="#">Help Center</Link></li>
-                <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-                <li><Link href="/terms-of-service">Terms of Service</Link></li>
-                <li><Link href="#">Sitemap</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className={styles.footerBottom}>
-            <p>© 2024 TechNova Solutions. All rights reserved.</p>
-            <div className={styles.footerLegal}>
-              <Link href="/privacy-policy">Privacy Policy</Link>
-              <Link href="/terms-of-service">Terms of Service</Link>
-              <Link href="/cookie-policy">Cookie Policy</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

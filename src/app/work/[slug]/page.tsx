@@ -6,6 +6,8 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./case-study.module.css";
 import Breadcrumb from "../../components/Breadcrumb";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 
 // Mock data - in production this would come from CMS/API
 const caseStudies = {
@@ -103,7 +105,7 @@ const caseStudies = {
       "/images/case-studies/healthtrack-4.jpg"
     ],
     testimonial: {
-      quote: "HealthTrack Pro transformed our business. The AI-powered personalization and gamification features increased our user retention by 42% and generated ₹3.2 Cr in revenue within 6 months. TechNova delivered exactly what we needed.",
+      quote: "HealthTrack Pro transformed our business. The AI-powered personalization and gamification features increased our user retention by 42% and generated ₹3.2 Cr in revenue within 6 months. NexaVibe delivered exactly what we needed.",
       author: "Sarah Johnson",
       role: "CEO, FitLife Inc.",
       avatar: "/images/testimonials/sarah.jpg"
@@ -133,28 +135,14 @@ export default function CaseStudyPage() {
     return (
       <div className={styles.page}>
         {/* Header */}
-        <header className={styles.header}>
-          <div className="container">
-            <div className={styles.headerContent}>
-              <Link href="/" className={styles.logo}>
-                TechNova
-              </Link>
-              <nav className={styles.nav}>
-                <Link href="/" className={styles.navLink}>Home</Link>
-                <Link href="/services" className={styles.navLink}>Services</Link>
-                <Link href="/work" className={`${styles.navLink} ${styles.active}`}>Portfolio</Link>
-                <Link href="/contact" className={styles.navLink}>Contact</Link>
-              </nav>
-            </div>
-          </div>
-        </header>
+        <Header />
 
         <Breadcrumb items={breadcrumbItems} />
 
         <section className={styles.notFound}>
           <div className="container">
             <h1>Case Study Not Found</h1>
-            <p>The case study you're looking for doesn't exist.</p>
+            <p>The case study you&apos;re looking for doesn&apos;t exist.</p>
             <Link href="/work" className="btn btn-primary">
               View All Case Studies
             </Link>
@@ -172,21 +160,7 @@ export default function CaseStudyPage() {
   return (
     <div className={styles.page}>
       {/* ===== HEADER ===== */}
-      <header className={styles.header}>
-        <div className="container">
-          <div className={styles.headerContent}>
-            <Link href="/" className={styles.logo}>
-              TechNova
-            </Link>
-            <nav className={styles.nav}>
-              <Link href="/" className={styles.navLink}>Home</Link>
-              <Link href="/services" className={styles.navLink}>Services</Link>
-              <Link href="/work" className={`${styles.navLink} ${styles.active}`}>Portfolio</Link>
-              <Link href="/contact" className={styles.navLink}>Contact</Link>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <Breadcrumb items={breadcrumbItems} />
 
@@ -390,7 +364,7 @@ export default function CaseStudyPage() {
 
                 <div className={styles.testimonial}>
                   <div className={styles.testimonialCard}>
-                    <p className={styles.testimonialQuote}>"{caseStudy.testimonial.quote}"</p>
+                    <p className={styles.testimonialQuote}>&ldquo;{caseStudy.testimonial.quote}&rdquo;</p>
                     <div className={styles.testimonialAuthor}>
                       <div className={styles.testimonialAvatar}>
                         {caseStudy.testimonial.author.charAt(0)}
@@ -425,7 +399,7 @@ export default function CaseStudyPage() {
         <div className="container">
           <div className={styles.ctaContent}>
             <h2>Ready to Create Your Success Story?</h2>
-            <p>Let's discuss how we can help transform your business with custom software solutions</p>
+            <p>Let&apos;s discuss how we can help transform your business with custom software solutions</p>
             <div className={styles.ctaButtons}>
               <Link href="/contact" className="btn btn-accent btn-lg">
                 Start Your Project
@@ -442,64 +416,7 @@ export default function CaseStudyPage() {
       </section>
 
       {/* ===== FOOTER ===== */}
-      <footer className={styles.footer}>
-        <div className="container">
-          <div className={styles.footerGrid}>
-            <div className={styles.footerAbout}>
-              <div className={styles.logo}>
-                <div className={styles.logoIcon}>T</div>
-                TechNova
-              </div>
-              <p>
-                Premium IT development company delivering innovative solutions
-                in mobile apps, web development, AI, and blockchain technologies.
-              </p>
-              <div className={styles.footerSocial}>
-                <a href="#">in</a>
-                <a href="#">tw</a>
-                <a href="#">fb</a>
-                <a href="#">ig</a>
-              </div>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Services</h4>
-              <ul>
-                <li><Link href="/services">Mobile Development</Link></li>
-                <li><Link href="/services">Web Development</Link></li>
-                <li><Link href="/services">Game Development</Link></li>
-                <li><Link href="/services">AI Solutions</Link></li>
-                <li><Link href="/services">Blockchain</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Company</h4>
-              <ul>
-                <li><Link href="/about">About Us</Link></li>
-                <li><Link href="/career">Careers</Link></li>
-                <li><Link href="/blog">Blog</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Support</h4>
-              <ul>
-                <li><Link href="#">Help Center</Link></li>
-                <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-                <li><Link href="/terms-of-service">Terms of Service</Link></li>
-                <li><Link href="#">Sitemap</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className={styles.footerBottom}>
-            <p>© 2024 TechNova Solutions. All rights reserved.</p>
-            <div className={styles.footerLegal}>
-              <Link href="/privacy-policy">Privacy Policy</Link>
-              <Link href="/terms-of-service">Terms of Service</Link>
-              <Link href="/cookie-policy">Cookie Policy</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

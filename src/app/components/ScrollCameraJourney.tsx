@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useMemo } from "react";
+import { useRef, useEffect, useMemo, useState, Suspense } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useScroll, ScrollControls, Scroll } from "@react-three/drei";
 import * as THREE from "three";
@@ -50,7 +50,12 @@ function AnimatedScene({ sectionIds }: { sectionIds?: string[] }) {
     const dampingFactor = 0.05;
     currentPosition.current.lerp(targetPosition.current, dampingFactor);
     
-    camera.position.copy(currentPosition.current);
+    // Use set() instead of copy() to avoid mutation warnings
+    camera.position.set(
+      currentPosition.current.x,
+      currentPosition.current.y,
+      currentPosition.current.z
+    );
     
     // Subtle look-at interpolation
     const lookY = -scrollOffset * 30;
@@ -105,22 +110,28 @@ export default function ScrollCameraJourney({
   damping = 0.1,
   sectionIds
 }: ScrollCameraJourneyProps) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
-    <ScrollControls
-      pages={pages}
-      damping={damping}
-      horizontal={false}
-      infinite={false}
-    >
-      <Scroll>
-        <AnimatedScene sectionIds={sectionIds} />
-        <ParallaxElements />
-      </Scroll>
-      
-      <Scroll html style={{ width: "100%" }}>
-        {children}
-      </Scroll>
-    </ScrollControls>
+    <div style={{ opacity: isLoaded ? 1 : 0, transition: "opacity 0.5s ease-in" }}>
+      <ScrollControls
+        pages={pages}
+        damping={damping}
+        horizontal={false}
+        infinite={false}
+      >
+        <Suspense fallback={null}>
+          <Scroll>
+            <AnimatedScene sectionIds={sectionIds} />
+            <ParallaxElements />
+          </Scroll>
+        </Suspense>
+        
+        <Scroll html style={{ width: "100%" }}>
+          {children}
+        </Scroll>
+      </ScrollControls>
+    </div>
   );
 }
 

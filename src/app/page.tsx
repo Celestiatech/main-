@@ -1,16 +1,25 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { trackCTAClick, useScrollTracking } from "@/lib/analytics";
 import styles from "./page.module.css";
-import Chatbot from "./components/Chatbot";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
+
+// Lazy load Chatbot component
+const Chatbot = lazy(() => import("./components/Chatbot"));
 
 export default function Home() {
+  const pathname = usePathname();
   const [activeTab, setActiveTab] = useState("all");
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
   const [selectedIndustry, setSelectedIndustry] = useState("startup");
+
+  // Track scroll depth
+  useScrollTracking(pathname || "/");
 
   // Scroll animation observer
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -39,10 +48,6 @@ export default function Home() {
       observerRef.current?.disconnect();
     };
   }, []);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
 
   const services = [
     {
@@ -77,7 +82,7 @@ export default function Home() {
       title: "Blockchain Development",
       whoFor: "For fintech & startups",
       businessResult: "Secure solutions in 60–90 days",
-      metric: "🔒 Zero security breaches | 💰 $50M+ assets secured",
+      metric: "<img src='/images/icons/security.svg' alt='Security' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />Zero security breaches | <img src='/images/icons/chart-growth.svg' alt='Assets' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />$50M+ assets secured",
       description: "Web3 apps, smart contracts, and DeFi platforms",
       cta: "View Live Apps",
     },
@@ -86,7 +91,7 @@ export default function Home() {
       title: "DevOps Services",
       whoFor: "For tech teams & enterprises",
       businessResult: "50% faster deployments",
-      metric: "⚡ 70% faster CI/CD | 📊 60% fewer downtime incidents",
+      metric: "<img src='/images/icons/launch.svg' alt='Speed' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />70% faster CI/CD | <img src='/images/icons/chart-growth.svg' alt='Analytics' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />60% fewer downtime incidents",
       description: "CI/CD pipelines and cloud automation",
       cta: "View Live Apps",
     },
@@ -95,7 +100,7 @@ export default function Home() {
       title: "Metaverse Development",
       whoFor: "For brands & innovators",
       businessResult: "Immersive experiences in 90–120 days",
-      metric: "🌐 200% engagement increase | 🎯 85% user satisfaction",
+      metric: "<img src='/images/icons/location-pin.svg' alt='Engagement' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />200% engagement increase | <img src='/images/icons/expertise.svg' alt='Satisfaction' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />85% user satisfaction",
       description: "VR/AR worlds and virtual reality solutions",
       cta: "View Live Apps",
     },
@@ -104,7 +109,7 @@ export default function Home() {
       title: "Quality Assurance",
       whoFor: "For all development projects",
       businessResult: "Bug-free launches guaranteed",
-      metric: "✅ 99.9% bug-free releases | 🛡️ 100% compliance rate",
+      metric: "<img src='/images/icons/quality-assurance.svg' alt='Quality' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />99.9% bug-free releases | <img src='/images/icons/security.svg' alt='Compliance' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />100% compliance rate",
       description: "Comprehensive testing and QA services",
       cta: "View Live Apps",
     },
@@ -128,18 +133,18 @@ export default function Home() {
   ];
 
   const industries = [
-    { icon: "/images/icons/education.svg", name: "Education" },
-    { icon: "/images/icons/travel.svg", name: "Travel" },
-    { icon: "/images/icons/social-networking.svg", name: "Social Networking" },
-    { icon: "/images/icons/fitness.svg", name: "Fitness" },
-    { icon: "/images/icons/education.svg", name: "Business" }, // placeholder
-    { icon: "/images/icons/travel.svg", name: "Logistics" }, // placeholder
-    { icon: "/images/icons/social-networking.svg", name: "Dating" }, // placeholder
-    { icon: "/images/icons/fitness.svg", name: "Healthcare" }, // placeholder
-    { icon: "/images/icons/education.svg", name: "Real Estate" }, // placeholder
-    { icon: "/images/icons/travel.svg", name: "On-Demand" }, // placeholder
-    { icon: "/images/icons/fitness.svg", name: "Utility" }, // placeholder
-    { icon: "/images/icons/social-networking.svg", name: "Entertainment" }, // placeholder
+    { icon: "education.svg", name: "Education" },
+    { icon: "travel.svg", name: "Travel" },
+    { icon: "social-networking.svg", name: "Social Networking" },
+    { icon: "fitness.svg", name: "Fitness" },
+    { icon: "education.svg", name: "Business" },
+    { icon: "travel.svg", name: "Logistics" },
+    { icon: "social-networking.svg", name: "Dating" },
+    { icon: "fitness.svg", name: "Healthcare" },
+    { icon: "education.svg", name: "Real Estate" },
+    { icon: "travel.svg", name: "On-Demand" },
+    { icon: "fitness.svg", name: "Utility" },
+    { icon: "social-networking.svg", name: "Entertainment" },
   ];
 
   const portfolio = [
@@ -150,7 +155,7 @@ export default function Home() {
       problem: "Low retention rates and lack of personalized insights",
       solution: "Built AI-powered fitness tracking with personalized recommendations",
       techStack: ["React Native", "Node.js", "TensorFlow"],
-      result: "📈 Increased user retention by 42% | 💰 Generated ₹3.2 Cr revenue in 6 months",
+      result: "<img src='/images/icons/chart-growth.svg' alt='Growth' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />Increased user retention by 42% | <img src='/images/icons/chart-growth.svg' alt='Revenue' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />Generated ₹3.2 Cr revenue in 6 months",
       beforeAfter: ["/images/portfolio/healthtrack-before.svg", "/images/portfolio/healthtrack-after.svg"],
       video: "/videos/healthtrack-demo.mp4",
       tags: ["iOS", "Android", "Health"],
@@ -162,7 +167,7 @@ export default function Home() {
       problem: "Outdated tech stack causing performance issues",
       solution: "Migrated to modern React/Node.js with AWS scaling",
       techStack: ["React", "Node.js", "AWS", "MongoDB"],
-      result: "🚀 300% faster load times | 👥 Served 100K+ students",
+      result: "<img src='/images/icons/launch.svg' alt='Speed' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />300% faster load times | <img src='/images/icons/tailored-solutions.svg' alt='Users' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />Served 100K+ students",
       beforeAfter: ["/images/portfolio/edulearn-before.svg", "/images/portfolio/edulearn-after.svg"],
       video: "/videos/edulearn-demo.mp4",
       tags: ["React", "Node.js", "AWS"],
@@ -174,7 +179,7 @@ export default function Home() {
       problem: "Generic gameplay leading to quick abandonment",
       solution: "Developed immersive 3D space adventure with multiplayer",
       techStack: ["Unity", "C#", "Photon"],
-      result: "🎮 1M+ downloads | ⭐ 4.8 rating on app stores",
+      result: "<img src='/images/icons/mobile-development.svg' alt='Downloads' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />1M+ downloads | <img src='/images/icons/expertise.svg' alt='Rating' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />4.8 rating on app stores",
       beforeAfter: ["/images/portfolio/spacequest-before.svg", "/images/portfolio/spacequest-after.svg"],
       video: "/videos/spacequest-demo.mp4",
       tags: ["Unity", "3D", "Mobile"],
@@ -186,7 +191,7 @@ export default function Home() {
       problem: "Complex smart contracts with security vulnerabilities",
       solution: "Developed audited smart contracts with user-friendly interface",
       techStack: ["Solidity", "Web3.js", "React"],
-      result: "🔒 Zero security breaches | 💰 $50M+ assets secured",
+      result: "<img src='/images/icons/security.svg' alt='Security' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />Zero security breaches | <img src='/images/icons/chart-growth.svg' alt='Assets' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />$50M+ assets secured",
       beforeAfter: ["/images/portfolio/cryptovault-before.svg", "/images/portfolio/cryptovault-after.svg"],
       video: "/videos/cryptovault-demo.mp4",
       tags: ["Web3", "Solidity", "DeFi"],
@@ -198,7 +203,7 @@ export default function Home() {
       problem: "High support costs and slow response times",
       solution: "Built NLP-powered chatbot with 24/7 availability",
       techStack: ["Python", "TensorFlow", "Dialogflow"],
-      result: "⚡ 70% faster responses | 💸 Saved ₹2 Cr annually",
+      result: "<img src='/images/icons/launch.svg' alt='Speed' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />70% faster responses | <img src='/images/icons/chart-growth.svg' alt='Savings' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />Saved ₹2 Cr annually",
       beforeAfter: ["/images/portfolio/smartassist-before.svg", "/images/portfolio/smartassist-after.svg"],
       video: "/videos/smartassist-demo.mp4",
       tags: ["NLP", "Machine Learning"],
@@ -210,7 +215,7 @@ export default function Home() {
       problem: "Outdated design hurting market perception",
       solution: "Complete brand redesign with modern UI/UX",
       techStack: ["Figma", "Adobe Creative Suite", "React"],
-      result: "📈 150% increase in brand recognition | 🎨 Won 3 design awards",
+      result: "<img src='/images/icons/chart-growth.svg' alt='Growth' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />150% increase in brand recognition | <img src='/images/icons/concept.svg' alt='Awards' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />Won 3 design awards",
       beforeAfter: ["/images/portfolio/brandrebrand-before.svg", "/images/portfolio/brandrebrand-after.svg"],
       video: "/videos/brandrebrand-demo.mp4",
       tags: ["UI/UX", "Branding"],
@@ -265,14 +270,14 @@ export default function Home() {
 
   const testimonials = [
     {
-      quote: "TechNova rebuilt our SaaS backend and cut infra cost by 38%. Their DevOps expertise is unmatched.",
+      quote: "NexaVibe rebuilt our SaaS backend and cut infra cost by 38%. Their DevOps expertise is unmatched.",
       author: "CTO, US-based HealthTech Startup",
       service: "DevOps Services",
       stars: 5,
       avatar: "/images/testimonials/healthtech-cto.svg",
     },
     {
-      quote: "From MVP to 100K users in 6 months. TechNova's mobile app development delivered exactly what we needed.",
+      quote: "From MVP to 100K users in 6 months. NexaVibe's mobile app development delivered exactly what we needed.",
       author: "Founder, EduTech Platform",
       service: "Mobile App Development",
       stars: 5,
@@ -313,277 +318,8 @@ export default function Home() {
   return (
     <div className={styles.page}>
       {/* ===== HEADER ===== */}
-      <header className={styles.header}>
-        <div className={styles.headerTop}>
-          <div className="container">
-            <div className={styles.headerTopContent}>
-              <div className={styles.headerPhones}>
-                <a href="tel:+971500000000">📞 +971 50 000 0000</a>
-                <a href="tel:+919876543210">📱 +91 98765 43210</a>
-                <a href="mailto:hello@nexavibe.com">✉️ hello@nexavibe.com</a>
-              </div>
-              <div style={{ color: "rgba(229,231,235,0.8)", fontSize: "13px", fontWeight: "500" }}>
-                ⚡ Get a free consultation today!
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="container">
-          <div className={styles.headerMain}>
-            <Link href="/" className={styles.logo} aria-label="NexaVibe Solutions Home">
-              <div className={styles.logoIcon}>N</div>
-              NexaVibe
-            </Link>
-            <nav className={styles.nav} role="navigation" aria-label="Main navigation">
-              <Link href="/" className={styles.navLink}>
-                Home
-              </Link>
-              
-              {/* Services Dropdown */}
-              <div className={styles.navItem}>
-                <button className={styles.navLink} aria-label="Services and solutions">
-                  Services <span>▼</span>
-                </button>
-                <div className={styles.navDropdown} role="menu">
-                  {/* Product Development */}
-                  <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>Custom Development</div>
-                    <Link href="/services" className={styles.dropdownSubLink}>Web Applications</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Mobile App Dev</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>SaaS Platforms</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>MVP Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Startup Solutions</Link>
-                  </div>
-                  {/* Growth Engineering */}
-                  <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>Growth & Scale</div>
-                    <Link href="/services" className={styles.dropdownSubLink}>Performance Optimization</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Cloud & DevOps</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>System Integration</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>API Development</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Database Design</Link>
-                  </div>
-                  {/* AI & Emerging Tech */}
-                  <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>AI & Innovation</div>
-                    <Link href="/services" className={styles.dropdownSubLink}>Machine Learning</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>AI Chatbots</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Predictive Analytics</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Automation</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>NLP Services</Link>
-                  </div>
-                  {/* Blockchain & Web3 */}
-                  <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>Web3 Solutions</div>
-                    <Link href="/services" className={styles.dropdownSubLink}>Smart Contracts</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>DeFi Platforms</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>NFT Marketplaces</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Blockchain Apps</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Crypto Solutions</Link>
-                  </div>
-                  {/* Design & UX */}
-                  <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>Design & UX</div>
-                    <Link href="/services" className={styles.dropdownSubLink}>UI/UX Design</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Product Design</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Branding</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Animation</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Design Systems</Link>
-                  </div>
-                  {/* Support & Maintenance */}
-                  <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>Support Services</div>
-                    <Link href="/services" className={styles.dropdownSubLink}>Quality Assurance</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Maintenance & Support</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Performance Monitoring</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Security Audit</Link>
-                    <Link href="/services" className={styles.dropdownSubLink}>Code Review</Link>
-                  </div>
-                </div>
-              </div>
-
-              {/* Company Dropdown */}
-              <div className={styles.navItem}>
-                <button className={styles.navLink} aria-label="Company information">
-                  Company <span>▼</span>
-                </button>
-                <div className={styles.navDropdown} style={{ minWidth: '400px' }} role="menu">
-                  <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>About Us</div>
-                    <Link href="/about" className={styles.dropdownSubLink}>Company Overview</Link>
-                    <Link href="/about" className={styles.dropdownSubLink}>Our Team</Link>
-                    <Link href="/about" className={styles.dropdownSubLink}>Our Story</Link>
-                    <Link href="/about" className={styles.dropdownSubLink}>Company Culture</Link>
-                  </div>
-                  <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>Resources</div>
-                    <Link href="/blog" className={styles.dropdownSubLink}>Blog & Articles</Link>
-                    <Link href="/portfolio" className={styles.dropdownSubLink}>Case Studies</Link>
-                    <Link href="/testimonials" className={styles.dropdownSubLink}>Testimonials</Link>
-                    <Link href="/career" className={styles.dropdownSubLink}>Career</Link>
-                  </div>
-                  <div className={styles.dropdownGroup}>
-                    <div className={styles.dropdownTitle}>Legal</div>
-                    <Link href="/privacy-policy" className={styles.dropdownSubLink}>Privacy Policy</Link>
-                    <Link href="/terms-of-service" className={styles.dropdownSubLink}>Terms of Service</Link>
-                    <Link href="/cookie-policy" className={styles.dropdownSubLink}>Cookie Policy</Link>
-                  </div>
-                </div>
-              </div>
-
-              <Link href="/pricing" className={styles.navLink}>
-                Pricing
-              </Link>
-              <Link href="/portfolio" className={styles.navLink}>
-                Portfolio
-              </Link>
-              <Link href="/blog" className={styles.navLink}>
-                Blog
-              </Link>
-              <Link href="/contact" className={styles.navLink}>
-                Contact
-              </Link>
-            </nav>
-
-            {/* Mobile Menu Button */}
-            <button
-              className={styles.mobileMenuBtn}
-              onClick={toggleMobileMenu}
-              aria-label="Toggle mobile menu"
-            >
-              <span className={styles.hamburgerLine}></span>
-              <span className={styles.hamburgerLine}></span>
-              <span className={styles.hamburgerLine}></span>
-            </button>
-          </div>
-        </div>
-      </header>
-
-      {/* ===== MOBILE MENU OVERLAY ===== */}
-      {isMobileMenuOpen && (
-        <div className={styles.mobileMenuOverlay} onClick={toggleMobileMenu}>
-          <div className={styles.mobileMenu} onClick={(e) => e.stopPropagation()}>
-            <div className={styles.mobileMenuHeader}>
-              <Link href="/" className={styles.mobileLogo} onClick={toggleMobileMenu}>
-                <div className={styles.logoIcon}>N</div>
-                <span>NexaVibe</span>
-              </Link>
-              <button
-                className={styles.mobileMenuClose}
-                onClick={toggleMobileMenu}
-                aria-label="Close mobile menu"
-              >
-                ✕
-              </button>
-            </div>
-            <nav className={styles.mobileNav}>
-              {/* Home Link */}
-              <Link href="/" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
-                Home
-              </Link>
-
-              {/* Services Group */}
-              <div className={styles.mobileNavGroup}>
-                <div className={styles.mobileNavTitle}>Services</div>
-                <div className={styles.mobileNavSubGroup}>
-                  <div className={styles.mobileNavSmallTitle}>Custom Development</div>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Web Applications</Link>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Mobile App Dev</Link>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>SaaS Platforms</Link>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>MVP Development</Link>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Startup Solutions</Link>
-                </div>
-                <div className={styles.mobileNavSubGroup}>
-                  <div className={styles.mobileNavSmallTitle}>Growth & Scale</div>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Performance Optimization</Link>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Cloud & DevOps</Link>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>System Integration</Link>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>API Development</Link>
-                </div>
-                <div className={styles.mobileNavSubGroup}>
-                  <div className={styles.mobileNavSmallTitle}>AI & Innovation</div>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Machine Learning</Link>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>AI Chatbots</Link>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Predictive Analytics</Link>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Automation</Link>
-                </div>
-                <div className={styles.mobileNavSubGroup}>
-                  <div className={styles.mobileNavSmallTitle}>Web3 Solutions</div>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Smart Contracts</Link>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>DeFi Platforms</Link>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>NFT Marketplaces</Link>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Blockchain Apps</Link>
-                </div>
-                <div className={styles.mobileNavSubGroup}>
-                  <div className={styles.mobileNavSmallTitle}>Design & UX</div>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>UI/UX Design</Link>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Product Design</Link>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Branding</Link>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Animation</Link>
-                </div>
-                <div className={styles.mobileNavSubGroup}>
-                  <div className={styles.mobileNavSmallTitle}>Support Services</div>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Quality Assurance</Link>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Maintenance & Support</Link>
-                  <Link href="/services" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Performance Monitoring</Link>
-                </div>
-              </div>
-
-              {/* Company Group */}
-              <div className={styles.mobileNavGroup}>
-                <div className={styles.mobileNavTitle}>Company</div>
-                <div className={styles.mobileNavSubGroup}>
-                  <div className={styles.mobileNavSmallTitle}>About</div>
-                  <Link href="/about" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Company Overview</Link>
-                  <Link href="/about" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Our Team</Link>
-                  <Link href="/about" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Our Story</Link>
-                  <Link href="/about" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Company Culture</Link>
-                </div>
-                <div className={styles.mobileNavSubGroup}>
-                  <div className={styles.mobileNavSmallTitle}>Resources</div>
-                  <Link href="/blog" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Blog & Articles</Link>
-                  <Link href="/portfolio" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Case Studies</Link>
-                  <Link href="/testimonials" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Testimonials</Link>
-                  <Link href="/career" className={styles.mobileNavSubLink} onClick={toggleMobileMenu}>Career</Link>
-                </div>
-              </div>
-
-              {/* Other Links */}
-              <Link href="/pricing" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
-                Pricing
-              </Link>
-              <Link href="/portfolio" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
-                Portfolio
-              </Link>
-              <Link href="/blog" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
-                Blog
-              </Link>
-              <Link href="/contact" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
-                Contact
-              </Link>
-            </nav>
-
-            {/* Mobile Menu Actions */}
-            <div className={styles.mobileMenuActions}>
-              <Link href="/request-a-call" className="btn btn-secondary btn-water" onClick={toggleMobileMenu}>
-                Schedule a Call
-              </Link>
-              <Link href="/proposal" className="btn btn-primary btn-water" onClick={toggleMobileMenu}>
-                Get Free Audit
-              </Link>
-            </div>
-
-            {/* Mobile Contact Info */}
-            <div className={styles.mobileMenuFooter}>
-              <div style={{ fontSize: '12px', color: 'rgba(229,231,235,0.6)', padding: '16px 24px', borderTop: '1px solid rgba(46,91,255,0.1)' }}>
-                <p style={{ margin: '8px 0' }}>📞 +971 50 000 0000</p>
-                <p style={{ margin: '8px 0' }}>📱 +91 98765 43210</p>
-                <p style={{ margin: '8px 0' }}>✉️ hello@nexavibe.com</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      <Header />
+      <main id="main-content" className={styles.main} tabIndex={-1}>
 
       {/* ===== HERO SECTION ===== */}
       <section className={`${styles.hero} hero-enhanced`}>
@@ -609,7 +345,11 @@ export default function Home() {
               Custom software solutions for startups and enterprises that scale
             </p>
             <div className={`${styles.heroActions} heroActionsAnimate`}>
-              <Link href="/proposal" className="btn btn-primary btn-water btn-3d">
+              <Link 
+                href="/proposal" 
+                className="btn btn-primary btn-water btn-3d"
+                onClick={() => trackCTAClick("Get Free Audit", "hero", pathname || "/")}
+              >
                 Get Free Audit
               </Link>
               <Link href="/work" className="btn btn-secondary btn-water btn-3d">
@@ -635,14 +375,16 @@ export default function Home() {
             {services.map((service, index) => (
               <div key={index} className={`${styles.serviceCard} service-card-enhanced animate-on-scroll stagger-${(index % 4) + 1}`}>
                 <div className={styles.serviceIcon}>
-                  <img src={service.icon} alt={service.title} style={{ width: '80px', height: '80px' }} />
+                  <Image src={service.icon} alt={service.title} width={80} height={80} loading="lazy" />
                 </div>
                 <h3>{service.title}</h3>
                 <div className={styles.serviceWhoFor}>
-                  <span>👥</span> {service.whoFor}
+                  <Image src="/images/icons/tailored-solutions.svg" alt="Target audience" width={16} height={16} style={{ marginRight: '8px' }} loading="lazy" />
+                  {service.whoFor}
                 </div>
                 <div className={styles.serviceResult}>
-                  <span>🚀</span> {service.businessResult}
+                  <Image src="/images/icons/chart-growth.svg" alt="Business result" width={16} height={16} style={{ marginRight: '8px' }} loading="lazy" />
+                  {service.businessResult}
                 </div>
                 <div className={styles.serviceMetric}>
                   <span>{service.metric.split('|')[0].trim()}</span>
@@ -667,7 +409,7 @@ export default function Home() {
             {awards.map((award, index) => (
               <div key={index} className={`${styles.awardCard} animate-scale-in stagger-${(index % 5) + 1}`}>
                 <div className={styles.awardLogo}>
-                  <img src={award.logo} alt={award.name} style={{ width: '80px', height: '80px' }} />
+                  <Image src={award.logo} alt={award.name} width={80} height={80} loading="lazy" />
                 </div>
                 <span className={styles.awardBadge}>{award.badge}</span>
               </div>
@@ -703,7 +445,7 @@ export default function Home() {
             {industries.map((industry, index) => (
               <div key={index} className={`${styles.industryCard} animate-on-scroll stagger-${(index % 6) + 1}`}>
                 <div className={styles.industryIcon}>
-                  <img src={`/images/icons/${industry.icon || 'default.svg'}`} alt={industry.name} style={{ width: '60px', height: '60px' }} />
+                  <Image src={`/images/icons/${industry.icon || 'default.svg'}`} alt={industry.name} width={60} height={60} loading="lazy" />
                 </div>
                 <h4>{industry.name}</h4>
               </div>
@@ -743,6 +485,7 @@ export default function Home() {
                       width={300}
                       height={200}
                       className={styles.portfolioBeforeImage}
+                      loading="lazy"
                     />
                     <Image
                       src={item.beforeAfter[1]}
@@ -750,25 +493,26 @@ export default function Home() {
                       width={300}
                       height={200}
                       className={styles.portfolioAfterImage}
+                      loading="lazy"
                     />
                   </div>
                   <div className={styles.portfolioContent}>
                     <h3>{item.title}</h3>
                     <div className={styles.portfolioCaseStudy}>
                       <div className={styles.caseStudyItem}>
-                        <strong>🎯 Client Goal:</strong> {item.clientGoal}
+                        <strong><Image src="/images/icons/idea.svg" alt="Goal" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />Client Goal:</strong> {item.clientGoal}
                       </div>
                       <div className={styles.caseStudyItem}>
-                        <strong>⚠️ Problem:</strong> {item.problem}
+                        <strong><Image src="/images/icons/expertise.svg" alt="Problem" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />Problem:</strong> {item.problem}
                       </div>
                       <div className={styles.caseStudyItem}>
-                        <strong>💡 Solution:</strong> {item.solution}
+                        <strong><Image src="/images/icons/concept.svg" alt="Solution" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />Solution:</strong> {item.solution}
                       </div>
                       <div className={styles.caseStudyItem}>
-                        <strong>🛠️ Tech Stack:</strong> {item.techStack.join(", ")}
+                        <strong><Image src="/images/icons/develop.svg" alt="Tech Stack" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />Tech Stack:</strong> {item.techStack.join(", ")}
                       </div>
                       <div className={styles.caseStudyResult}>
-                        <strong>📈 Result:</strong> {item.result}
+                        <strong><Image src="/images/icons/chart-growth.svg" alt="Result" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />Result:</strong> <span dangerouslySetInnerHTML={{ __html: item.result }} />
                       </div>
                     </div>
                     <div className={styles.portfolioTags}>
@@ -778,7 +522,7 @@ export default function Home() {
                     </div>
                     <div className={styles.portfolioActions}>
                       <Link href={item.video} className="btn btn-secondary btn-sm">
-                        ▶️ Watch Demo
+                        <Image src="/images/icons/launch.svg" alt="Play" width={14} height={14} style={{ marginRight: '6px', display: 'inline' }} loading="lazy" />Watch Demo
                       </Link>
                       <Link href="/work" className="btn btn-primary btn-sm">
                         View Live App
@@ -807,7 +551,7 @@ export default function Home() {
                 onMouseLeave={() => setHoveredStep(null)}
               >
                 <div className={styles.processIcon}>
-                  <img src={step.icon} alt={step.title} style={{ width: '70px', height: '70px' }} />
+                  <Image src={step.icon} alt={step.title} width={70} height={70} loading="lazy" />
                 </div>
                 <h4>{step.title}</h4>
                 <p>{step.desc}</p>
@@ -862,7 +606,8 @@ export default function Home() {
           <div className={styles.techCategories}>
             <div className={`${styles.techCategory} animate-on-scroll stagger-1`}>
               <h3>
-                <span>🎨</span> Frontend
+                <Image src="/images/icons/develop.svg" alt="Frontend" width={20} height={20} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />
+                Frontend
               </h3>
               <div className={styles.techGrid}>
                 {techStack.frontend.map((tech, index) => (
@@ -872,7 +617,8 @@ export default function Home() {
             </div>
             <div className={`${styles.techCategory} animate-on-scroll stagger-2`}>
               <h3>
-                <span>⚙️</span> Backend & Database
+                <Image src="/images/icons/expertise.svg" alt="Backend" width={20} height={20} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />
+                Backend & Database
               </h3>
               <div className={styles.techGrid}>
                 {techStack.backend.map((tech, index) => (
@@ -882,7 +628,8 @@ export default function Home() {
             </div>
             <div className={`${styles.techCategory} animate-on-scroll stagger-3`}>
               <h3>
-                <span>🚀</span> Mobile & Emerging
+                <Image src="/images/icons/mobile-development.svg" alt="Mobile" width={20} height={20} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />
+                Mobile & Emerging
               </h3>
               <div className={styles.techGrid}>
                 {techStack.mobile.map((tech, index) => (
@@ -903,8 +650,12 @@ export default function Home() {
         <div className="container">
           <div className="animate-on-scroll">
             <h2>Ready to Create an Impact?</h2>
-            <p>Let's discuss your project and turn your vision into reality</p>
-            <Link href="/proposal" className="btn btn-accent btn-3d">
+            <p>Let&apos;s discuss your project and turn your vision into reality</p>
+            <Link 
+              href="/proposal" 
+              className="btn btn-accent btn-3d"
+              onClick={() => trackCTAClick("Get Free Consultation", "cta_section")}
+            >
               Get Free Consultation
             </Link>
           </div>
@@ -915,14 +666,14 @@ export default function Home() {
       <section className={styles.whyChooseUs}>
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
-            <h2>Why Choose TechNova?</h2>
+            <h2>Why Choose NexaVibe?</h2>
             <p>Partner with a team committed to your success</p>
           </div>
           <div className={styles.whyGrid}>
             {whyChooseUs.map((item, index) => (
               <div key={index} className={`${styles.whyCard} animate-on-scroll stagger-${(index % 4) + 1}`}>
                 <div className={styles.whyIcon}>
-                  <img src={`/images/icons/${item.icon || 'default.svg'}`} alt={item.title} style={{ width: '70px', height: '70px' }} />
+                  <Image src={`/images/icons/${item.icon || 'default.svg'}`} alt={item.title} width={70} height={70} loading="lazy" />
                 </div>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
@@ -974,11 +725,11 @@ export default function Home() {
               </p>
               <div className={styles.contactLocations}>
                 <div className={styles.contactLocation}>
-                  <h4>🇦🇪 Dubai, UAE</h4>
+                  <h4><Image src="/images/icons/location-pin.svg" alt="Location" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />Dubai, UAE</h4>
                   <p>Business Bay, Dubai</p>
                 </div>
                 <div className={styles.contactLocation}>
-                  <h4>🇮🇳 India</h4>
+                  <h4><Image src="/images/icons/location-pin.svg" alt="Location" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />India</h4>
                   <p>Mohali, Punjab</p>
                 </div>
               </div>
@@ -1006,85 +757,21 @@ export default function Home() {
                 Send Message
               </button>
               <div className={styles.formNote}>
-                🔒 Your information is secure. We sign NDAs for all projects.
+                <Image src="/images/icons/security.svg" alt="Security" width={14} height={14} style={{ marginRight: '6px', display: 'inline' }} loading="lazy" />Your information is secure. We sign NDAs for all projects.
               </div>
             </form>
           </div>
         </div>
       </section>
 
+      </main>
       {/* ===== FOOTER ===== */}
-      <footer className={styles.footer}>
-        <div className="container">
-          <div className={styles.footerGrid}>
-            <div className={styles.footerAbout}>
-              <div className={styles.logo}>
-                <div className={styles.logoIcon}>T</div>
-                TechNova
-              </div>
-              <p>
-                Premium IT development company delivering innovative solutions 
-                in mobile apps, web development, AI, and blockchain technologies.
-              </p>
-              <div className={styles.footerSocial}>
-                <a href="#">in</a>
-                <a href="#">tw</a>
-                <a href="#">fb</a>
-                <a href="#">ig</a>
-              </div>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Services</h4>
-              <ul>
-                <li><Link href="/services">Mobile Development</Link></li>
-                <li><Link href="/services">Web Development</Link></li>
-                <li><Link href="/services">Game Development</Link></li>
-                <li><Link href="/services">AI Solutions</Link></li>
-                <li><Link href="/services">Blockchain</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Company</h4>
-              <ul>
-                <li><Link href="/about">About Us</Link></li>
-                <li><Link href="/career">Careers</Link></li>
-                <li><Link href="/blog">Blog</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Blogs</h4>
-              <ul>
-                <li><Link href="/industries">Healthcare</Link></li>
-                <li><Link href="/industries">Education</Link></li>
-                <li><Link href="/industries">Finance</Link></li>
-                <li><Link href="/industries">E-commerce</Link></li>
-                <li><Link href="/industries">Real Estate</Link></li>
-              </ul>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Support</h4>
-              <ul>
-                <li><Link href="#">Help Center</Link></li>
-                <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-                <li><Link href="/terms-of-service">Terms of Service</Link></li>
-                <li><Link href="#">Sitemap</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className={styles.footerBottom}>
-            <p>© 2024 TechNova Solutions. All rights reserved.</p>
-            <div className={styles.footerLegal}>
-              <Link href="/privacy-policy">Privacy Policy</Link>
-              <Link href="/terms-of-service">Terms of Service</Link>
-              <Link href="/cookie-policy">Cookie Policy</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       {/* ===== CHATBOT ===== */}
-      <Chatbot />
+      <Suspense fallback={null}>
+        <Chatbot />
+      </Suspense>
     </div>
   );
 }
