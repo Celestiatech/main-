@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 @import './design-tokens.css';
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* ===== ACCESSIBILITY & MOTION PREFERENCES ===== */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -83,11 +87,11 @@
   --glow-subtle: 0 0 20px rgba(59, 130, 246, 0.25);
 
   /* 3D Shadows - Deep and Premium */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 20px 40px rgba(59, 130, 246, 0.15);
-  --shadow-xl: 0 30px 60px rgba(59, 130, 246, 0.2);
-  --shadow-2xl: 0 40px 80px rgba(59, 130, 246, 0.25);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(59, 130, 246, 0.08);
+  --shadow-xl: 0 15px 40px rgba(59, 130, 246, 0.1);
+  --shadow-2xl: 0 25px 60px rgba(59, 130, 246, 0.12);
   
   /* Mesh Gradient Backgrounds */
   --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 50%, #0A0E27 100%);
@@ -455,7 +459,7 @@ ul, ol {
 
 .btn-primary {
   background: linear-gradient(135deg, var(--action-color), var(--gradient-purple));
-  color: #0A0E27;
+  color: white;
   box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
   border: 1px solid rgba(59, 130, 246, 0.4);
   font-weight: 700;
@@ -465,19 +469,20 @@ ul, ol {
   transform: translateY(-2px);
   box-shadow: 0 0 50px rgba(59, 130, 246, 0.7), inset 0 0 20px rgba(59, 130, 246, 0.3);
   border-color: rgba(59, 130, 246, 0.6);
+  color: white !important;
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--action-color);
-  border: 1px solid var(--action-color);
+  color: white;
+  border: 1px solid white;
   backdrop-filter: blur(10px);
   font-weight: 700;
 }
 
 .btn-secondary:hover {
-  border-color: var(--text-primary);
-  color: var(--text-primary);
+  border-color: white;
+  color: white;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
 }
@@ -522,7 +527,7 @@ ul, ol {
 }
 
 .btn-water:hover {
-  color: var(--text-primary);
+  color: white;
 }
 
 .btn-water.btn-secondary:hover {

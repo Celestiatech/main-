@@ -86,7 +86,7 @@ export default function Home() {
       title: "Blockchain Development",
       whoFor: "For fintech & startups",
       businessResult: "Secure solutions in 60–90 days",
-      metric: "<img src='/images/icons/security.svg' alt='Security' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />Zero security breaches | <img src='/images/icons/chart-growth.svg' alt='Assets' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />$50M+ assets secured",
+      metric: "Zero security breaches | $50M+ assets secured",
       description: "Web3 apps, smart contracts, and DeFi platforms",
       cta: "View Live Apps",
     },
@@ -95,7 +95,7 @@ export default function Home() {
       title: "DevOps Services",
       whoFor: "For tech teams & enterprises",
       businessResult: "50% faster deployments",
-      metric: "<img src='/images/icons/launch.svg' alt='Speed' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />70% faster CI/CD | <img src='/images/icons/chart-growth.svg' alt='Analytics' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />60% fewer downtime incidents",
+      metric: "70% faster CI/CD | 60% fewer downtime incidents",
       description: "CI/CD pipelines and cloud automation",
       cta: "View Live Apps",
     },
@@ -104,7 +104,7 @@ export default function Home() {
       title: "Metaverse Development",
       whoFor: "For brands & innovators",
       businessResult: "Immersive experiences in 90–120 days",
-      metric: "<img src='/images/icons/location-pin.svg' alt='Engagement' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />200% engagement increase | <img src='/images/icons/expertise.svg' alt='Satisfaction' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />85% user satisfaction",
+      metric: "200% engagement increase | 85% user satisfaction",
       description: "VR/AR worlds and virtual reality solutions",
       cta: "View Live Apps",
     },
@@ -113,18 +113,18 @@ export default function Home() {
       title: "Quality Assurance",
       whoFor: "For all development projects",
       businessResult: "Bug-free launches guaranteed",
-      metric: "<img src='/images/icons/quality-assurance.svg' alt='Quality' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />99.9% bug-free releases | <img src='/images/icons/security.svg' alt='Compliance' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />100% compliance rate",
+      metric: "99.9% bug-free releases | 100% compliance rate",
       description: "Comprehensive testing and QA services",
       cta: "View Live Apps",
     },
   ];
 
   const awards = [
-    { name: "Upwork", badge: "Top Rated Plus", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIHJ4PSI0IiBmaWxsPSIjMTRBM0JBIi8+CiAgPHRleHQgeD0iNjAiIHk9IjI1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iYm9sZCI+VXB3b3JrPC90ZXh0Pgo8L3N2Zz4=" },
-    { name: "Clutch", badge: "B2B Leader 2024", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIHJ4PSI0IiBmaWxsPSIjRkY2QjM1Ii8+CiAgPHRleHQgeD0iNjAiIHk9IjI1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iYm9sZCI+Q2x1dGNoPC90ZXh0Pgo8L3N2Zz4=" },
-    { name: "TechReviewer", badge: "Best Developer", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIHJ4PSI0IiBmaWxsPSIjRjU5RTBCLiIvPgogIDx0ZXh0IHg9IjYwIiB5PSIyNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9ImJvbGQiPlRlY2hSZXY8L3RleHQ+Cjwvc3ZnPg==" },
-    { name: "GoodFirms", badge: "Excellence Award", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIHJ4PSI0IiBmaWxsPSIjMkU1OTlDIi8+CiAgPHRleHQgeD0iNjAiIHk9IjI1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCI+R29vZEZpcm1zPC90ZXh0Pgo8L3N2Zz4=" },
-    { name: "AppFutura", badge: "Verified Partner", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIHJ4PSI0IiBmaWxsPSIjRjQ3QzIyIi8+CiAgPHRleHQgeD0iNjAiIHk9IjI1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCI+QXBwRnV0dXJhPC90ZXh0Pgo8L3N2Zz4=" },
+    { name: "Upwork", badge: "Top Rated Plus", logo: "/images/awards/upwork.png" },
+    { name: "Clutch", badge: "B2B Leader 2024", logo: "/images/awards/clutch.png" },
+    { name: "TechReviewer", badge: "Best Developer", logo: "/images/awards/techreviewer.png" },
+    { name: "GoodFirms", badge: "Excellence Award", logo: "/images/awards/goodfirms.png" },
+    { name: "AppFutura", badge: "Verified Partner", logo: "/images/awards/appfutura.png" },
   ];
 
   const partners = [
@@ -475,15 +475,15 @@ export default function Home() {
             {services.map((service, index) => (
               <div key={index} className={`${styles.serviceCard} service-card-enhanced animate-on-scroll stagger-${(index % 4) + 1}`}>
                 <div className={styles.serviceIcon}>
-                  <Image src={service.icon} alt={service.title} width={80} height={80} loading="lazy" />
+                  <img src={service.icon} alt={service.title} width={80} height={80} loading="lazy" />
                 </div>
                 <h3>{service.title}</h3>
                 <div className={styles.serviceWhoFor}>
-                  <Image src="/images/icons/tailored-solutions.svg" alt="Target audience" width={16} height={16} style={{ marginRight: '8px' }} loading="lazy" />
+                  <img src="/images/icons/tailored-solutions.svg" alt="Target audience" width={16} height={16} style={{ marginRight: '8px' }} loading="lazy" />
                   {service.whoFor}
                 </div>
                 <div className={styles.serviceResult}>
-                  <Image src="/images/icons/chart-growth.svg" alt="Business result" width={16} height={16} style={{ marginRight: '8px' }} loading="lazy" />
+                  <img src="/images/icons/chart-growth.svg" alt="Business result" width={16} height={16} style={{ marginRight: '8px' }} loading="lazy" />
                   {service.businessResult}
                 </div>
                 <div className={styles.serviceMetric}>

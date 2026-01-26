@@ -421,7 +421,7 @@ export function Header() {
                 </a>
               </div>
               <div className={styles.headerTopMessage}>
-                ⚡ Get a free consultation today!
+                <i className="fas fa-bolt" aria-hidden="true"></i> Get a free consultation today!
               </div>
             </div>
           </div>
@@ -936,7 +936,7 @@ export function Header() {
 
             {/* CTA Buttons */}
             <div className={styles.headerActions}>
-              <Link href="/proposal" className="btn btn-primary btn-sm">
+              <Link href="/proposal" className="btn btn-primary btn-water btn-sm">
                 Get Free Audit
               </Link>
             </div>
@@ -1129,7 +1129,7 @@ export function Header() {
             <div className={styles.mobileMenuActions}>
               <Link 
                 href="/proposal" 
-                className="btn btn-primary" 
+                className="btn btn-primary btn-water" 
                 onClick={(e) => {
                   trackCTAClick("Get Free Audit", "mobile_menu", pathname);
                   closeMobileMenu();
