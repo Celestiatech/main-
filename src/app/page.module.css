@@ -307,6 +307,7 @@
   transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(59, 130, 246, 0.25);
   border-color: rgba(59, 130, 246, 0.35);
+}
 
 .dropdownTitle {
   font-size: 11px;
@@ -4228,3 +4229,4 @@
     opacity: 0.8;
   }
 }
+

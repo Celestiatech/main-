@@ -9,6 +9,10 @@ import styles from "./page.module.css";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 
+// Debug CSS import
+console.log("DEBUG: page.module.css imported styles:", styles);
+console.log("DEBUG: Available style classes:", Object.keys(styles));
+
 // Lazy load Chatbot component
 const Chatbot = lazy(() => import("./components/Chatbot"));
 
@@ -315,6 +319,102 @@ export default function Home() {
     },
   ];
 
+  // Debug CSS application
+  useEffect(() => {
+    console.log("DEBUG: Component mounted, checking CSS application");
+    setTimeout(() => {
+      const heroSection = document.querySelector(`.${styles.hero}`);
+      const servicesSection = document.querySelector(`.${styles.services}`);
+      const pageDiv = document.querySelector(`.${styles.page}`);
+
+      console.log("DEBUG: Hero section element:", heroSection);
+      console.log("DEBUG: Hero section computed styles:", heroSection ? window.getComputedStyle(heroSection) : "Not found");
+
+      // Detailed hero section CSS debugging
+      if (heroSection) {
+        const heroStyles = window.getComputedStyle(heroSection);
+        console.log("DEBUG: Hero section - position:", heroStyles.position);
+        console.log("DEBUG: Hero section - min-height:", heroStyles.minHeight);
+        console.log("DEBUG: Hero section - display:", heroStyles.display);
+        console.log("DEBUG: Hero section - background:", heroStyles.background);
+        console.log("DEBUG: Hero section - padding:", heroStyles.padding);
+        console.log("DEBUG: Hero section - overflow:", heroStyles.overflow);
+        console.log("DEBUG: Hero section - z-index:", heroStyles.zIndex);
+
+        // Check hero background video
+        const heroBg = heroSection.querySelector(`.${styles.heroBg}`);
+        console.log("DEBUG: Hero background element:", heroBg);
+        if (heroBg) {
+          const video = heroBg.querySelector('video');
+          console.log("DEBUG: Hero video element:", video);
+          if (video) {
+            console.log("DEBUG: Hero video - src:", video.src);
+            console.log("DEBUG: Hero video - readyState:", video.readyState);
+            console.log("DEBUG: Hero video - paused:", video.paused);
+          }
+        }
+
+        // Check hero overlay
+        const heroOverlay = heroSection.querySelector(`.${styles.heroOverlay}`);
+        console.log("DEBUG: Hero overlay element:", heroOverlay);
+        if (heroOverlay) {
+          const overlayStyles = window.getComputedStyle(heroOverlay);
+          console.log("DEBUG: Hero overlay - background:", overlayStyles.background);
+          console.log("DEBUG: Hero overlay - position:", overlayStyles.position);
+        }
+
+        // Check hero content
+        const heroContent = heroSection.querySelector(`.${styles.heroContent}`);
+        console.log("DEBUG: Hero content element:", heroContent);
+        if (heroContent) {
+          const contentStyles = window.getComputedStyle(heroContent);
+          console.log("DEBUG: Hero content - position:", contentStyles.position);
+          console.log("DEBUG: Hero content - z-index:", contentStyles.zIndex);
+          console.log("DEBUG: Hero content - text-align:", contentStyles.textAlign);
+        }
+      }
+
+      console.log("DEBUG: Services section element:", servicesSection);
+      console.log("DEBUG: Services section computed styles:", servicesSection ? window.getComputedStyle(servicesSection) : "Not found");
+      console.log("DEBUG: Page div element:", pageDiv);
+      console.log("DEBUG: Page div computed styles:", pageDiv ? window.getComputedStyle(pageDiv) : "Not found");
+
+      // Check if styles object has the expected properties
+      console.log("DEBUG: styles.hero exists:", !!styles.hero);
+      console.log("DEBUG: styles.services exists:", !!styles.services);
+      console.log("DEBUG: styles.page exists:", !!styles.page);
+
+      // Additional CSS working check
+      if (pageDiv) {
+        const hasBackground = window.getComputedStyle(pageDiv).background !== 'none' && window.getComputedStyle(pageDiv).background !== '';
+        console.log("DEBUG: CSS is working - page has background:", hasBackground);
+      } else {
+        console.log("DEBUG: CSS may not be working - page div not found");
+      }
+
+      // Visual debug indicator
+      const debugDiv = document.createElement('div');
+      debugDiv.style.position = 'fixed';
+      debugDiv.style.top = '10px';
+      debugDiv.style.right = '10px';
+      debugDiv.style.background = 'red';
+      debugDiv.style.color = 'white';
+      debugDiv.style.padding = '5px 10px';
+      debugDiv.style.borderRadius = '4px';
+      debugDiv.style.zIndex = '9999';
+      debugDiv.style.fontSize = '12px';
+      debugDiv.textContent = 'CSS Debug: ' + (pageDiv ? 'Working' : 'Not Working');
+      document.body.appendChild(debugDiv);
+
+      // Remove debug indicator after 5 seconds
+      setTimeout(() => {
+        if (debugDiv.parentNode) {
+          debugDiv.parentNode.removeChild(debugDiv);
+        }
+      }, 5000);
+    }, 1000); // Wait for DOM to be ready
+  }, []);
+
   return (
     <div className={styles.page}>
       {/* ===== HEADER ===== */}
@@ -322,7 +422,7 @@ export default function Home() {
       <main id="main-content" className={styles.main} tabIndex={-1}>
 
       {/* ===== HERO SECTION ===== */}
-      <section className={`${styles.hero} hero-enhanced`}>
+      <section className={`${styles.hero} hero-enhanced`} data-debug="hero-section">
         <div className={styles.heroBg}>
           <video autoPlay loop muted playsInline>
             <source src="/PixVerse_V5.5_Image_Text_540P_A_cinematic_shotonline-video-cutter.com-ezgif.com-video-to-gif-converter.mp4" type="video/mp4" />
