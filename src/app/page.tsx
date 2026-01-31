@@ -159,7 +159,10 @@ export default function Home() {
       problem: "Low retention rates and lack of personalized insights",
       solution: "Built AI-powered fitness tracking with personalized recommendations",
       techStack: ["React Native", "Node.js", "TensorFlow"],
-      result: "<img src='/images/icons/chart-growth.svg' alt='Growth' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />Increased user retention by 42% | <img src='/images/icons/chart-growth.svg' alt='Revenue' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />Generated ₹3.2 Cr revenue in 6 months",
+      result: [
+        { icon: '/images/icons/chart-growth.svg', alt: 'Growth', text: 'Increased user retention by 42%' },
+        { icon: '/images/icons/chart-growth.svg', alt: 'Revenue', text: 'Generated ₹3.2 Cr revenue in 6 months' }
+      ],
       beforeAfter: ["/images/portfolio/healthtrack-before.svg", "/images/portfolio/healthtrack-after.svg"],
       video: "/videos/healthtrack-demo.mp4",
       tags: ["iOS", "Android", "Health"],
@@ -171,7 +174,10 @@ export default function Home() {
       problem: "Outdated tech stack causing performance issues",
       solution: "Migrated to modern React/Node.js with AWS scaling",
       techStack: ["React", "Node.js", "AWS", "MongoDB"],
-      result: "<img src='/images/icons/launch.svg' alt='Speed' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />300% faster load times | <img src='/images/icons/tailored-solutions.svg' alt='Users' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />Served 100K+ students",
+      result: [
+        { icon: '/images/icons/launch.svg', alt: 'Speed', text: '300% faster load times' },
+        { icon: '/images/icons/tailored-solutions.svg', alt: 'Users', text: 'Served 100K+ students' }
+      ],
       beforeAfter: ["/images/portfolio/edulearn-before.svg", "/images/portfolio/edulearn-after.svg"],
       video: "/videos/edulearn-demo.mp4",
       tags: ["React", "Node.js", "AWS"],
@@ -183,7 +189,10 @@ export default function Home() {
       problem: "Generic gameplay leading to quick abandonment",
       solution: "Developed immersive 3D space adventure with multiplayer",
       techStack: ["Unity", "C#", "Photon"],
-      result: "<img src='/images/icons/mobile-development.svg' alt='Downloads' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />1M+ downloads | <img src='/images/icons/expertise.svg' alt='Rating' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />4.8 rating on app stores",
+      result: [
+        { icon: '/images/icons/mobile-development.svg', alt: 'Downloads', text: '1M+ downloads' },
+        { icon: '/images/icons/expertise.svg', alt: 'Rating', text: '4.8 rating on app stores' }
+      ],
       beforeAfter: ["/images/portfolio/spacequest-before.svg", "/images/portfolio/spacequest-after.svg"],
       video: "/videos/spacequest-demo.mp4",
       tags: ["Unity", "3D", "Mobile"],
@@ -195,7 +204,10 @@ export default function Home() {
       problem: "Complex smart contracts with security vulnerabilities",
       solution: "Developed audited smart contracts with user-friendly interface",
       techStack: ["Solidity", "Web3.js", "React"],
-      result: "<img src='/images/icons/security.svg' alt='Security' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />Zero security breaches | <img src='/images/icons/chart-growth.svg' alt='Assets' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />$50M+ assets secured",
+      result: [
+        { icon: '/images/icons/security.svg', alt: 'Security', text: 'Zero security breaches' },
+        { icon: '/images/icons/chart-growth.svg', alt: 'Assets', text: '$50M+ assets secured' }
+      ],
       beforeAfter: ["/images/portfolio/cryptovault-before.svg", "/images/portfolio/cryptovault-after.svg"],
       video: "/videos/cryptovault-demo.mp4",
       tags: ["Web3", "Solidity", "DeFi"],
@@ -207,7 +219,10 @@ export default function Home() {
       problem: "High support costs and slow response times",
       solution: "Built NLP-powered chatbot with 24/7 availability",
       techStack: ["Python", "TensorFlow", "Dialogflow"],
-      result: "<img src='/images/icons/launch.svg' alt='Speed' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />70% faster responses | <img src='/images/icons/chart-growth.svg' alt='Savings' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />Saved ₹2 Cr annually",
+      result: [
+        { icon: '/images/icons/launch.svg', alt: 'Speed', text: '70% faster responses' },
+        { icon: '/images/icons/chart-growth.svg', alt: 'Savings', text: 'Saved ₹2 Cr annually' }
+      ],
       beforeAfter: ["/images/portfolio/smartassist-before.svg", "/images/portfolio/smartassist-after.svg"],
       video: "/videos/smartassist-demo.mp4",
       tags: ["NLP", "Machine Learning"],
@@ -219,7 +234,10 @@ export default function Home() {
       problem: "Outdated design hurting market perception",
       solution: "Complete brand redesign with modern UI/UX",
       techStack: ["Figma", "Adobe Creative Suite", "React"],
-      result: "<img src='/images/icons/chart-growth.svg' alt='Growth' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />150% increase in brand recognition | <img src='/images/icons/concept.svg' alt='Awards' style={{ width: '14px', height: '14px', marginRight: '4px', display: 'inline' }} />Won 3 design awards",
+      result: [
+        { icon: '/images/icons/chart-growth.svg', alt: 'Growth', text: '150% increase in brand recognition' },
+        { icon: '/images/icons/concept.svg', alt: 'Awards', text: 'Won 3 design awards' }
+      ],
       beforeAfter: ["/images/portfolio/brandrebrand-before.svg", "/images/portfolio/brandrebrand-after.svg"],
       video: "/videos/brandrebrand-demo.mp4",
       tags: ["UI/UX", "Branding"],
@@ -612,7 +630,16 @@ export default function Home() {
                         <strong><Image src="/images/icons/develop.svg" alt="Tech Stack" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />Tech Stack:</strong> {item.techStack.join(", ")}
                       </div>
                       <div className={styles.caseStudyResult}>
-                        <strong><Image src="/images/icons/chart-growth.svg" alt="Result" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />Result:</strong> <span dangerouslySetInnerHTML={{ __html: item.result }} />
+                        <strong><Image src="/images/icons/chart-growth.svg" alt="Result" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />Result:</strong>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginLeft: '4px' }}>
+                          {(item.result as any[]).map((res, idx) => (
+                            <span key={idx} style={{ display: 'inline-flex', alignItems: 'center' }}>
+                              <Image src={res.icon} alt={res.alt} width={14} height={14} style={{ marginRight: '4px' }} loading="lazy" />
+                              {res.text}
+                              {idx < (item.result as any[]).length - 1 && <span style={{ margin: '0 8px', opacity: 0.5 }}>|</span>}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                     <div className={styles.portfolioTags}>
@@ -671,10 +698,10 @@ export default function Home() {
         <div className="container">
           <div className={`${styles.upworkContent} animate-on-scroll`}>
             <div>
-              <h2 style={{ color: "white", fontSize: "32px", marginBottom: "12px" }}>
+              <h2>
                 Top-Rated Upwork Partner
               </h2>
-              <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "16px" }}>
+              <p>
                 Join 1,800+ satisfied clients who trusted us with their projects
               </p>
             </div>
@@ -753,7 +780,7 @@ export default function Home() {
             <p>Let&apos;s discuss your project and turn your vision into reality</p>
             <Link 
               href="/proposal" 
-              className="btn btn-accent btn-3d"
+              className="btn btn-primary btn-3d"
               onClick={() => trackCTAClick("Get Free Consultation", "cta_section")}
             >
               Get Free Consultation

@@ -967,6 +967,11 @@ ul, ol {
   transform: translateY(0);
 }
 
+/* Primary color override for 3D buttons */
+.btn-3d.btn-primary {
+  background: linear-gradient(135deg, var(--action-color), var(--gradient-purple));
+}
+
 /* 3D Card Hover Effects */
 .card-3d {
   transition: all 0.3s ease;
