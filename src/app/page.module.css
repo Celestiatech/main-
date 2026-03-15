@@ -2774,13 +2774,18 @@
   .formGroup select {
     width: 100%;
     padding: 14px 18px;
-    border: 1px solid var(--glass-border);
+    border: 1px solid #d1d5db;
     border-radius: var(--radius-md);
     font-size: 15px;
     font-family: inherit;
     transition: all var(--transition-fast);
-    background: rgba(18, 18, 19, 0.4);
-    color: var(--text-primary);
+    background: #ffffff;
+    color: #111827;
+  }
+
+  .formGroup select option {
+    background: #ffffff;
+    color: #111827;
   }
 
   .formGroup input:focus,
@@ -2789,7 +2794,7 @@
     outline: none;
     border-color: var(--action-color);
     box-shadow: 0 0 15px rgba(46, 91, 255, 0.2);
-    background: rgba(18, 18, 19, 0.6);
+    background: #ffffff;
   }
 
   .formNote {

@@ -1,0 +1,277 @@
+{
+  "generated": "2026-01-26",
+  "description": "Image manifest for all downloaded Pixabay images",
+  "sections": {
+    "hero": [
+      {
+        "filename": "hero_business_technology_digital_transformation_0.jpg",
+        "path": "/images/hero/hero_business_technology_digital_transformation_0.jpg",
+        "title": "digitization",
+        "photographer": "geralt",
+        "url": "https://pixabay.com/photos/digitization-transformation-hand-4667376/"
+      },
+      {
+        "filename": "hero_business_technology_digital_transformation_1.jpg",
+        "path": "/images/hero/hero_business_technology_digital_transformation_1.jpg",
+        "title": "digitization",
+        "photographer": "geralt",
+        "url": "https://pixabay.com/photos/digitization-transformation-hand-4667371/"
+      },
+      {
+        "filename": "hero_business_technology_digital_transformation_2.jpg",
+        "path": "/images/hero/hero_business_technology_digital_transformation_2.jpg",
+        "title": "digitization",
+        "photographer": "geralt",
+        "url": "https://pixabay.com/photos/digitization-transformation-4667378/"
+      }
+    ],
+    "services": [
+      {
+        "filename": "services_software_development_0.jpg",
+        "path": "/images/services/services_software_development_0.jpg",
+        "title": "code",
+        "photographer": "jamesmarkosborne",
+        "url": "https://pixabay.com/photos/code-html-digital-coding-web-1076536/"
+      },
+      {
+        "filename": "services_software_development_1.jpg",
+        "path": "/images/services/services_software_development_1.jpg",
+        "title": "code",
+        "photographer": "Pexels",
+        "url": "https://pixabay.com/photos/code-coding-computer-data-1839406/"
+      },
+      {
+        "filename": "services_software_development_2.jpg",
+        "path": "/images/services/services_software_development_2.jpg",
+        "title": "code",
+        "photographer": "fancycrave1",
+        "url": "https://pixabay.com/photos/code-programming-hacking-html-web-820275/"
+      },
+      {
+        "filename": "services_web_design_0.jpg",
+        "path": "/images/services/services_web_design_0.jpg",
+        "title": "cobweb",
+        "photographer": "ClaudiaWollesen",
+        "url": "https://pixabay.com/photos/cobweb-web-dew-dewdrops-droplets-921039/"
+      },
+      {
+        "filename": "services_web_design_1.jpg",
+        "path": "/images/services/services_web_design_1.jpg",
+        "title": "plans",
+        "photographer": "Pexels",
+        "url": "https://pixabay.com/photos/plans-design-web-design-designer-1867745/"
+      },
+      {
+        "filename": "services_web_design_2.jpg",
+        "path": "/images/services/services_web_design_2.jpg",
+        "title": "scrabble",
+        "photographer": "bavarian_web_solutions",
+        "url": "https://pixabay.com/photos/scrabble-website-marketing-server-2129648/"
+      },
+      {
+        "filename": "services_digital_marketing_0.jpg",
+        "path": "/images/services/services_digital_marketing_0.jpg",
+        "title": "facebook",
+        "photographer": "Firmbee",
+        "url": "https://pixabay.com/photos/facebook-social-media-media-social-793048/"
+      },
+      {
+        "filename": "services_digital_marketing_1.jpg",
+        "path": "/images/services/services_digital_marketing_1.jpg",
+        "title": "student",
+        "photographer": "StartupStockPhotos",
+        "url": "https://pixabay.com/photos/student-typing-keyboard-text-849826/"
+      },
+      {
+        "filename": "services_digital_marketing_2.jpg",
+        "path": "/images/services/services_digital_marketing_2.jpg",
+        "title": "business",
+        "photographer": "IqbalStock",
+        "url": "https://pixabay.com/photos/business-smartphone-hands-7304257/"
+      },
+      {
+        "filename": "services_cloud_computing_0.jpg",
+        "path": "/images/services/services_cloud_computing_0.jpg",
+        "title": "cloud",
+        "photographer": "wige",
+        "url": "https://pixabay.com/photos/cloud-data-technology-server-2946152/"
+      },
+      {
+        "filename": "services_cloud_computing_1.jpg",
+        "path": "/images/services/services_cloud_computing_1.jpg",
+        "title": "network",
+        "photographer": "bsdrouin",
+        "url": "https://pixabay.com/photos/network-server-system-2402637/"
+      },
+      {
+        "filename": "services_cloud_computing_2.jpg",
+        "path": "/images/services/services_cloud_computing_2.jpg",
+        "title": "cloud",
+        "photographer": "Tumisu",
+        "url": "https://pixabay.com/photos/cloud-network-finger-6181051/"
+      }
+    ],
+    "portfolio": [
+      {
+        "filename": "portfolio_website_design_0.jpg",
+        "path": "/images/portfolio/portfolio_website_design_0.jpg",
+        "title": "code",
+        "photographer": "jamesmarkosborne",
+        "url": "https://pixabay.com/photos/code-html-digital-coding-web-1076536/"
+      },
+      {
+        "filename": "portfolio_website_design_1.jpg",
+        "path": "/images/portfolio/portfolio_website_design_1.jpg",
+        "title": "laptop",
+        "photographer": "27707",
+        "url": "https://pixabay.com/photos/laptop-wordpress-wordpress-design-593673/"
+      },
+      {
+        "filename": "portfolio_website_design_2.jpg",
+        "path": "/images/portfolio/portfolio_website_design_2.jpg",
+        "title": "code",
+        "photographer": "fancycrave1",
+        "url": "https://pixabay.com/photos/code-programming-hacking-html-web-820275/"
+      },
+      {
+        "filename": "portfolio_mobile_app_0.jpg",
+        "path": "/images/portfolio/portfolio_mobile_app_0.jpg",
+        "title": "social media",
+        "photographer": "Firmbee",
+        "url": "https://pixabay.com/photos/social-media-facebook-smartphone-763731/"
+      },
+      {
+        "filename": "portfolio_mobile_app_1.jpg",
+        "path": "/images/portfolio/portfolio_mobile_app_1.jpg",
+        "title": "smartphone",
+        "photographer": "stevepb",
+        "url": "https://pixabay.com/photos/smartphone-cellphone-touchscreen-1894723/"
+      },
+      {
+        "filename": "portfolio_mobile_app_2.jpg",
+        "path": "/images/portfolio/portfolio_mobile_app_2.jpg",
+        "title": "navigation",
+        "photographer": "DariuszSankowski",
+        "url": "https://pixabay.com/photos/navigation-car-drive-road-gps-1048294/"
+      },
+      {
+        "filename": "portfolio_startup_0.jpg",
+        "path": "/images/portfolio/portfolio_startup_0.jpg",
+        "title": "desk",
+        "photographer": "rawpixel",
+        "url": "https://pixabay.com/photos/desk-work-business-office-finance-3139127/"
+      },
+      {
+        "filename": "portfolio_startup_1.jpg",
+        "path": "/images/portfolio/portfolio_startup_1.jpg",
+        "title": "startup",
+        "photographer": "StartupStockPhotos",
+        "url": "https://pixabay.com/photos/startup-meeting-brainstorming-594090/"
+      },
+      {
+        "filename": "portfolio_startup_2.jpg",
+        "path": "/images/portfolio/portfolio_startup_2.jpg",
+        "title": "startup",
+        "photographer": "StartupStockPhotos",
+        "url": "https://pixabay.com/photos/startup-start-up-people-593341/"
+      },
+      {
+        "filename": "portfolio_innovation_0.jpg",
+        "path": "/images/portfolio/portfolio_innovation_0.jpg",
+        "title": "lightbulb",
+        "photographer": "Alexas_Fotos",
+        "url": "https://pixabay.com/photos/lightbulb-light-electricity-energy-5352822/"
+      },
+      {
+        "filename": "portfolio_innovation_1.jpg",
+        "path": "/images/portfolio/portfolio_innovation_1.jpg",
+        "title": "concept",
+        "photographer": "Pexels",
+        "url": "https://pixabay.com/photos/concept-man-papers-person-plan-1868728/"
+      },
+      {
+        "filename": "portfolio_innovation_2.jpg",
+        "path": "/images/portfolio/portfolio_innovation_2.jpg",
+        "title": "building",
+        "photographer": "wal_172619",
+        "url": "https://pixabay.com/photos/building-facade-glass-facade-modern-9639806/"
+      }
+    ],
+    "testimonials": [
+      {
+        "filename": "testimonials_team_success_happy_clients_business_0.jpg",
+        "path": "/images/testimonials/testimonials_team_success_happy_clients_business_0.jpg",
+        "title": "job",
+        "photographer": "RonaldCandonga",
+        "url": "https://pixabay.com/photos/job-office-team-business-internet-5382501/"
+      },
+      {
+        "filename": "testimonials_team_success_happy_clients_business_1.jpg",
+        "path": "/images/testimonials/testimonials_team_success_happy_clients_business_1.jpg",
+        "title": "people",
+        "photographer": "089photoshootings",
+        "url": "https://pixabay.com/photos/people-business-meeting-1979261/"
+      },
+      {
+        "filename": "testimonials_team_success_happy_clients_business_2.jpg",
+        "path": "/images/testimonials/testimonials_team_success_happy_clients_business_2.jpg",
+        "title": "action",
+        "photographer": "rawpixel",
+        "url": "https://pixabay.com/photos/action-collaborate-collaboration-2277292/"
+      },
+      {
+        "filename": "testimonials_team_success_happy_clients_business_3.jpg",
+        "path": "/images/testimonials/testimonials_team_success_happy_clients_business_3.jpg",
+        "title": "businessman",
+        "photographer": "geralt",
+        "url": "https://pixabay.com/photos/businessman-consulting-business-2606509/"
+      }
+    ],
+    "about": [
+      {
+        "filename": "about_team_collaboration_office_culture_0.jpg",
+        "path": "/images/about/about_team_collaboration_office_culture_0.jpg",
+        "title": "teamwork",
+        "photographer": "pmbbun",
+        "url": "https://pixabay.com/photos/teamwork-co-workers-office-business-383939/"
+      },
+      {
+        "filename": "about_team_collaboration_office_culture_1.jpg",
+        "path": "/images/about/about_team_collaboration_office_culture_1.jpg",
+        "title": "meeting",
+        "photographer": "mwitt1337",
+        "url": "https://pixabay.com/photos/meeting-business-architect-office-2284501/"
+      },
+      {
+        "filename": "about_team_collaboration_office_culture_2.jpg",
+        "path": "/images/about/about_team_collaboration_office_culture_2.jpg",
+        "title": "people",
+        "photographer": "StockSnap",
+        "url": "https://pixabay.com/photos/people-group-friends-concept-2569234/"
+      }
+    ],
+    "pricing": [
+      {
+        "filename": "pricing_pricing_plans_value_cost_0.jpg",
+        "path": "/images/pricing/pricing_pricing_plans_value_cost_0.jpg",
+        "title": "money",
+        "photographer": "coyot",
+        "url": "https://pixabay.com/photos/money-euro-finance-currency-cash-2259045/"
+      },
+      {
+        "filename": "pricing_pricing_plans_value_cost_1.jpg",
+        "path": "/images/pricing/pricing_pricing_plans_value_cost_1.jpg",
+        "title": "fruit stand",
+        "photographer": "652234",
+        "url": "https://pixabay.com/photos/fruit-stand-fruits-produce-harvest-1275551/"
+      },
+      {
+        "filename": "pricing_pricing_plans_value_cost_2.jpg",
+        "path": "/images/pricing/pricing_pricing_plans_value_cost_2.jpg",
+        "title": "money",
+        "photographer": "nattanan23",
+        "url": "https://pixabay.com/photos/money-coin-investment-business-2724241/"
+      }
+    ]
+  }
+}
