@@ -1,5 +1,5 @@
 /**
- * NexaVibe Solutions - Analytics & Tracking
+ * Celestiatech - Analytics & Tracking
  * Centralized analytics implementation
  */
 

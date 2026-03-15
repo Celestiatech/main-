@@ -48,7 +48,7 @@ export default function AboutPage() {
       <section className={styles.aboutHero}>
         <div className="container">
           <div className={styles.aboutContent}>
-            <h1>About NexaVibe</h1>
+            <h1>About Celestiatech</h1>
             <p>
               We&apos;re a team of passionate developers, designers, and strategists 
               committed to transforming businesses through innovative digital solutions.
@@ -185,4 +185,3 @@ export default function AboutPage() {
     </div>
   );
 }
-

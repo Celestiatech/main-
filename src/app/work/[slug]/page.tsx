@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { useParams } from "next/navigation";
@@ -82,7 +82,7 @@ const caseStudies = {
         description: "Increase in user retention after 30 days"
       },
       {
-        metric: "₹3.2 Cr",
+        metric: "â‚¹3.2 Cr",
         description: "Revenue generated in first 6 months"
       },
       {
@@ -105,7 +105,7 @@ const caseStudies = {
       "/images/case-studies/healthtrack-4.jpg"
     ],
     testimonial: {
-      quote: "HealthTrack Pro transformed our business. The AI-powered personalization and gamification features increased our user retention by 42% and generated ₹3.2 Cr in revenue within 6 months. NexaVibe delivered exactly what we needed.",
+      quote: "HealthTrack Pro transformed our business. The AI-powered personalization and gamification features increased our user retention by 42% and generated â‚¹3.2 Cr in revenue within 6 months. Celestiatech delivered exactly what we needed.",
       author: "Sarah Johnson",
       role: "CEO, FitLife Inc.",
       avatar: "/images/testimonials/sarah.jpg"
@@ -298,7 +298,7 @@ export default function CaseStudyPage() {
                 <div className={styles.challengePoints}>
                   {caseStudy.challengePoints.map((point, index) => (
                     <div key={index} className={styles.challengePoint}>
-                      <span className={styles.challengeIcon}>⚠️</span>
+                      <span className={styles.challengeIcon}>âš ï¸</span>
                       <p>{point}</p>
                     </div>
                   ))}
@@ -319,7 +319,7 @@ export default function CaseStudyPage() {
                 <div className={styles.solutionPoints}>
                   {caseStudy.solutionPoints.map((point, index) => (
                     <div key={index} className={styles.solutionPoint}>
-                      <span className={styles.solutionIcon}>💡</span>
+                      <span className={styles.solutionIcon}>ðŸ’¡</span>
                       <p>{point}</p>
                     </div>
                   ))}
@@ -382,7 +382,7 @@ export default function CaseStudyPage() {
                   <div className={styles.nextStepsList}>
                     {caseStudy.nextSteps.map((step, index) => (
                       <div key={index} className={styles.nextStep}>
-                        <span className={styles.nextStepIcon}>🚀</span>
+                        <span className={styles.nextStepIcon}>ðŸš€</span>
                         <span>{step}</span>
                       </div>
                     ))}
@@ -409,7 +409,7 @@ export default function CaseStudyPage() {
               </Link>
             </div>
             <div className={styles.ctaTrust}>
-              ⭐ 98% client satisfaction • 2,500+ projects delivered • 12+ years experience
+              â­ 98% client satisfaction â€¢ 2,500+ projects delivered â€¢ 12+ years experience
             </div>
           </div>
         </div>
@@ -420,3 +420,4 @@ export default function CaseStudyPage() {
     </div>
   );
 }
+

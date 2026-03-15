@@ -6,8 +6,8 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | NexaVibe Solutions",
-  description: "Learn how NexaVibe Solutions uses cookies and similar technologies on our website.",
+  title: "Cookie Policy | Celestiatech",
+  description: "Learn how Celestiatech uses cookies and similar technologies on our website.",
 };
 
 export default function CookiePolicy() {
@@ -44,7 +44,7 @@ export default function CookiePolicy() {
                 1. Introduction
               </h2>
               <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
-                This Cookie Policy explains what Cookies are and how NexaVibe Solutions (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) uses them on our website. It explains what these technologies are and why we use them, as well as your rights to control our use of them.
+                This Cookie Policy explains what Cookies are and how Celestiatech (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) uses them on our website. It explains what these technologies are and why we use them, as well as your rights to control our use of them.
               </p>
 
               <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "var(--text-primary)" }}>
@@ -291,7 +291,7 @@ export default function CookiePolicy() {
                 marginBottom: "24px"
               }}>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "12px" }}>
-                  <strong>NexaVibe Solutions</strong>
+                  <strong>Celestiatech</strong>
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "8px" }}>
                   📍 Dubai, UAE: Business Bay, Dubai
@@ -300,7 +300,7 @@ export default function CookiePolicy() {
                   📍 India: Mohali, Punjab
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)" }}>
-                  📧 <Link href="mailto:privacy@nexavibe.com" style={{ color: "var(--primary)" }}>privacy@nexavibe.com</Link>
+                  📧 <Link href="mailto:privacy@celestiatech.in" style={{ color: "var(--primary)" }}>privacy@celestiatech.in</Link>
                 </p>
               </div>
             </div>
@@ -324,4 +324,3 @@ export default function CookiePolicy() {
     </div>
   );
 }
-

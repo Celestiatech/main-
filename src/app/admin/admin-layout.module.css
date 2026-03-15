@@ -1,0 +1,151 @@
+.shell {
+  min-height: 100vh;
+  display: flex;
+  background:
+    radial-gradient(circle at 16% 10%, rgba(59, 130, 246, 0.14), transparent 42%),
+    radial-gradient(circle at 84% 88%, rgba(147, 197, 253, 0.2), transparent 45%),
+    #ffffff;
+  color: #000000;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-right: 1px solid #dbeafe;
+  box-shadow: 0 10px 30px rgba(30, 58, 138, 0.08);
+}
+
+.brand {
+  margin-bottom: 1.5rem;
+}
+
+.brand h1 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #000000;
+  font-weight: 700;
+}
+
+.brand p {
+  margin-top: 0.35rem;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+.nav {
+  display: grid;
+  gap: 0.55rem;
+  flex: 1;
+}
+
+.navLink {
+  display: block;
+  color: #111827;
+  text-decoration: none;
+  border: 1px solid #dbeafe;
+  background: #f8fbff;
+  padding: 0.62rem 0.72rem;
+  border-radius: 10px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.navLink:hover {
+  color: #1e3a8a;
+  border-color: #93c5fd;
+  background: #eff6ff;
+}
+
+.bottom {
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.backLink {
+  color: #1e3a8a;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.backLink:hover {
+  color: #3b82f6;
+}
+
+.logout {
+  text-align: left;
+  color: #b91c1c;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.logout:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.main {
+  margin-left: 260px;
+  flex: 1;
+  min-width: 0;
+}
+
+.header {
+  border-bottom: 1px solid #dbeafe;
+  background: #f8fbff;
+  padding: 1rem 1.5rem;
+}
+
+.header h2 {
+  margin: 0;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.header p {
+  margin-top: 0.25rem;
+  color: #4b5563;
+  font-size: 0.88rem;
+}
+
+.content {
+  padding: 1.5rem;
+}
+
+.loading {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  color: #1e3a8a;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.22);
+  }
+
+  .main {
+    margin-left: 0;
+  }
+
+  .shell {
+    flex-direction: column;
+  }
+}

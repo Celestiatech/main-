@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { addMessage } from '@/lib/messages';
 
 export async function POST(request: NextRequest) {
   try {
@@ -12,6 +13,21 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    // Save message to storage
+    const savedMessage = addMessage({
+      type: 'contact',
+      name,
+      email,
+      phone,
+      company,
+      message,
+      status: 'new',
+      extra: {
+        projectType,
+        budget,
+      },
+    });
 
     // Create transporter
     const transporter = nodemailer.createTransport({
@@ -46,7 +62,7 @@ export async function POST(request: NextRequest) {
             <p style="white-space: pre-wrap;">${message}</p>
           </div>
           <p style="color: #6b7280; font-size: 14px;">
-            This message was sent from the NexaVibe contact form.
+            This message was sent from the Celestiatech contact form.
           </p>
         </div>
       `,
@@ -55,7 +71,7 @@ export async function POST(request: NextRequest) {
     // Send email
     await transporter.sendMail(mailOptions);
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, messageId: savedMessage.id });
   } catch (error) {
     console.error('Email sending error:', error);
     return NextResponse.json(

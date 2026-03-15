@@ -31,42 +31,54 @@ export default function PortfolioPage() {
       <Header />
 
       <main className={styles.main}>
-        <section className={styles.section}>
+        <section className={styles.portfolio}>
           <div className={styles.sectionHeader}>
             <h2>Portfolio</h2>
             <p>Showcase of our recent projects and successful client work.</p>
           </div>
-          <div className={styles.projectsGrid}>
-            <article className={styles.projectCard}>
+          <div className={styles.portfolioGrid}>
+            <article className={styles.portfolioCard}>
+              <div className={styles.portfolioContent}>
               <h3>E-commerce Platform</h3>
               <p>Modern Shopify store with custom integrations and advanced analytics.</p>
+              </div>
             </article>
-            <article className={styles.projectCard}>
+            <article className={styles.portfolioCard}>
+              <div className={styles.portfolioContent}>
               <h3>Corporate Website</h3>
               <p>Professional business website with CMS integration and SEO optimization.</p>
+              </div>
             </article>
-            <article className={styles.projectCard}>
+            <article className={styles.portfolioCard}>
+              <div className={styles.portfolioContent}>
               <h3>Mobile Application</h3>
               <p>Cross-platform mobile app with real-time features and offline capabilities.</p>
+              </div>
             </article>
-            <article className={styles.projectCard}>
+            <article className={styles.portfolioCard}>
+              <div className={styles.portfolioContent}>
               <h3>Brand Identity</h3>
               <p>Complete brand redesign including logo, website, and marketing materials.</p>
+              </div>
             </article>
-            <article className={styles.projectCard}>
+            <article className={styles.portfolioCard}>
+              <div className={styles.portfolioContent}>
               <h3>SEO Campaign</h3>
               <p>Comprehensive SEO strategy that increased organic traffic by 300%.</p>
+              </div>
             </article>
-            <article className={styles.projectCard}>
+            <article className={styles.portfolioCard}>
+              <div className={styles.portfolioContent}>
               <h3>Marketing Automation</h3>
               <p>Automated marketing system with email campaigns and lead nurturing.</p>
+              </div>
             </article>
           </div>
           <div className={styles.heroActions}>
-            <Link href="/contact" className={styles.primaryButton}>
+            <Link href="/contact" className="btn btn-primary">
               Start your project
             </Link>
-            <Link href="/" className={styles.secondaryButton}>
+            <Link href="/" className="btn btn-secondary">
               Back to home
             </Link>
           </div>

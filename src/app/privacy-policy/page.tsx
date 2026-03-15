@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import "../globals.css";
 import styles from "../page.module.css";
@@ -6,8 +6,8 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | NexaVibe Solutions",
-  description: "Read NexaVibe's Privacy Policy to understand how we collect, use, and protect your personal information.",
+  title: "Privacy Policy | Celestiatech",
+  description: "Read Celestiatech's Privacy Policy to understand how we collect, use, and protect your personal information.",
 };
 
 export default function PrivacyPolicy() {
@@ -28,7 +28,7 @@ export default function PrivacyPolicy() {
         <div className="container">
           <div className={styles.breadcrumbContent}>
             <Link href="/" className={styles.breadcrumbLink}>Home</Link>
-            <span className={styles.breadcrumbSeparator}>›</span>
+            <span className={styles.breadcrumbSeparator}>â€º</span>
             <span className={styles.breadcrumbCurrent}>Privacy Policy</span>
           </div>
         </div>
@@ -43,7 +43,7 @@ export default function PrivacyPolicy() {
                 1. Introduction
               </h2>
               <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
-                Welcome to NexaVibe Solutions (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
+                Welcome to Celestiatech (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
               </p>
 
               <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "var(--text-primary)" }}>
@@ -115,7 +115,7 @@ export default function PrivacyPolicy() {
                 Our website uses cookies and similar tracking technologies to enhance your browsing experience. For more information about our cookie practices, please refer to our Cookie Policy.
               </p>
               <Link href="/cookie-policy" style={{ color: "var(--primary)", fontWeight: "500" }}>
-                Read our Cookie Policy →
+                Read our Cookie Policy â†’
               </Link>
 
               <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "var(--text-primary)", marginTop: "32px" }}>
@@ -174,16 +174,16 @@ export default function PrivacyPolicy() {
                 marginBottom: "24px"
               }}>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "12px" }}>
-                  <strong>NexaVibe Solutions</strong>
+                  <strong>Celestiatech</strong>
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "8px" }}>
-                  📍 Dubai, UAE: Business Bay, Dubai
+                  ðŸ“ Dubai, UAE: Business Bay, Dubai
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "8px" }}>
-                  📍 India: Mohali, Punjab
+                  ðŸ“ India: Mohali, Punjab
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)" }}>
-                  📧 <Link href="mailto:privacy@nexavibe.com" style={{ color: "var(--primary)" }}>privacy@nexavibe.com</Link>
+                  ðŸ“§ <Link href="mailto:privacy@celestiatech.in" style={{ color: "var(--primary)" }}>privacy@celestiatech.in</Link>
                 </p>
               </div>
             </div>
@@ -207,6 +207,7 @@ export default function PrivacyPolicy() {
     </div>
   );
 }
+
 
 
 

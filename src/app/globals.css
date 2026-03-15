@@ -22,6 +22,10 @@
 }
 
 :root {
+  /* Legacy aliases used by shared page.module.css */
+  --primary: #3b82f6;
+  --secondary: #1e3a8a;
+
   /* Primary Gradient */
   --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #000000 100%);
 
@@ -965,11 +969,6 @@ ul, ol {
 
 .btn-3d:active {
   transform: translateY(0);
-}
-
-/* Primary color override for 3D buttons */
-.btn-3d.btn-primary {
-  background: linear-gradient(135deg, var(--action-color), var(--gradient-purple));
 }
 
 /* 3D Card Hover Effects */

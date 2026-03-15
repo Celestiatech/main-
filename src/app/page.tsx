@@ -122,18 +122,18 @@ export default function Home() {
   const awards = [
     { name: "Upwork", badge: "Top Rated Plus", logo: "/images/awards/upwork.png" },
     { name: "Clutch", badge: "B2B Leader 2024", logo: "/images/awards/clutch.png" },
-    { name: "TechReviewer", badge: "Best Developer", logo: "/images/awards/techreviewer.png" },
+    { name: "TechReviewer", badge: "Best Developer", logo: "/images/awards/software-developers.png" },
     { name: "GoodFirms", badge: "Excellence Award", logo: "/images/awards/goodfirms.png" },
-    { name: "AppFutura", badge: "Verified Partner", logo: "/images/awards/appfutura.png" },
+    { name: "AppFutura", badge: "Verified Partner", logo: "/images/awards/top-company.png" },
   ];
 
   const partners = [
-    "Google",
-    "Microsoft",
-    "Amazon",
-    "Meta",
-    "Apple",
-    "Netflix",
+    { name: "Google", logo: "/images/partners/google.svg" },
+    { name: "Microsoft", logo: "/images/partners/microsoft.svg" },
+    { name: "Amazon", logo: "/images/partners/amazon.svg" },
+    { name: "Meta", logo: "/images/partners/meta.svg" },
+    { name: "Apple", logo: "/images/partners/apple.svg" },
+    { name: "Netflix", logo: "/images/partners/netflix.svg" },
   ];
 
   const industries = [
@@ -159,11 +159,8 @@ export default function Home() {
       problem: "Low retention rates and lack of personalized insights",
       solution: "Built AI-powered fitness tracking with personalized recommendations",
       techStack: ["React Native", "Node.js", "TensorFlow"],
-      result: [
-        { icon: '/images/icons/chart-growth.svg', alt: 'Growth', text: 'Increased user retention by 42%' },
-        { icon: '/images/icons/chart-growth.svg', alt: 'Revenue', text: 'Generated ₹3.2 Cr revenue in 6 months' }
-      ],
-      beforeAfter: ["/images/portfolio/healthtrack-before.svg", "/images/portfolio/healthtrack-after.svg"],
+      result: "<img src='/images/icons/chart-growth.svg' alt='Growth' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Increased user retention by 42% | <img src='/images/icons/chart-growth.svg' alt='Revenue' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Generated ₹3.2 Cr revenue in 6 months",
+      beforeAfter: ["/images/portfolio/healthtrack-before.jpg", "/images/portfolio/healthtrack-after.jpg"],
       video: "/videos/healthtrack-demo.mp4",
       tags: ["iOS", "Android", "Health"],
     },
@@ -174,11 +171,8 @@ export default function Home() {
       problem: "Outdated tech stack causing performance issues",
       solution: "Migrated to modern React/Node.js with AWS scaling",
       techStack: ["React", "Node.js", "AWS", "MongoDB"],
-      result: [
-        { icon: '/images/icons/launch.svg', alt: 'Speed', text: '300% faster load times' },
-        { icon: '/images/icons/tailored-solutions.svg', alt: 'Users', text: 'Served 100K+ students' }
-      ],
-      beforeAfter: ["/images/portfolio/edulearn-before.svg", "/images/portfolio/edulearn-after.svg"],
+      result: "<img src='/images/icons/launch.svg' alt='Speed' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />300% faster load times | <img src='/images/icons/tailored-solutions.svg' alt='Users' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Served 100K+ students",
+      beforeAfter: ["/images/portfolio/edulearn-before.jpg", "/images/portfolio/edulearn-after.jpg"],
       video: "/videos/edulearn-demo.mp4",
       tags: ["React", "Node.js", "AWS"],
     },
@@ -189,11 +183,8 @@ export default function Home() {
       problem: "Generic gameplay leading to quick abandonment",
       solution: "Developed immersive 3D space adventure with multiplayer",
       techStack: ["Unity", "C#", "Photon"],
-      result: [
-        { icon: '/images/icons/mobile-development.svg', alt: 'Downloads', text: '1M+ downloads' },
-        { icon: '/images/icons/expertise.svg', alt: 'Rating', text: '4.8 rating on app stores' }
-      ],
-      beforeAfter: ["/images/portfolio/spacequest-before.svg", "/images/portfolio/spacequest-after.svg"],
+      result: "<img src='/images/icons/mobile-development.svg' alt='Downloads' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />1M+ downloads | <img src='/images/icons/expertise.svg' alt='Rating' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />4.8 rating on app stores",
+      beforeAfter: ["/images/portfolio/spacequest-before.jpg", "/images/portfolio/spacequest-after.jpg"],
       video: "/videos/spacequest-demo.mp4",
       tags: ["Unity", "3D", "Mobile"],
     },
@@ -204,11 +195,8 @@ export default function Home() {
       problem: "Complex smart contracts with security vulnerabilities",
       solution: "Developed audited smart contracts with user-friendly interface",
       techStack: ["Solidity", "Web3.js", "React"],
-      result: [
-        { icon: '/images/icons/security.svg', alt: 'Security', text: 'Zero security breaches' },
-        { icon: '/images/icons/chart-growth.svg', alt: 'Assets', text: '$50M+ assets secured' }
-      ],
-      beforeAfter: ["/images/portfolio/cryptovault-before.svg", "/images/portfolio/cryptovault-after.svg"],
+      result: "<img src='/images/icons/security.svg' alt='Security' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Zero security breaches | <img src='/images/icons/chart-growth.svg' alt='Assets' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />$50M+ assets secured",
+      beforeAfter: ["/images/portfolio/cryptovault-before.jpg", "/images/portfolio/cryptovault-after.jpg"],
       video: "/videos/cryptovault-demo.mp4",
       tags: ["Web3", "Solidity", "DeFi"],
     },
@@ -219,11 +207,8 @@ export default function Home() {
       problem: "High support costs and slow response times",
       solution: "Built NLP-powered chatbot with 24/7 availability",
       techStack: ["Python", "TensorFlow", "Dialogflow"],
-      result: [
-        { icon: '/images/icons/launch.svg', alt: 'Speed', text: '70% faster responses' },
-        { icon: '/images/icons/chart-growth.svg', alt: 'Savings', text: 'Saved ₹2 Cr annually' }
-      ],
-      beforeAfter: ["/images/portfolio/smartassist-before.svg", "/images/portfolio/smartassist-after.svg"],
+      result: "<img src='/images/icons/launch.svg' alt='Speed' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />70% faster responses | <img src='/images/icons/chart-growth.svg' alt='Savings' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Saved ₹2 Cr annually",
+      beforeAfter: ["/images/portfolio/smartassist-before.jpg", "/images/portfolio/smartassist-after.jpg"],
       video: "/videos/smartassist-demo.mp4",
       tags: ["NLP", "Machine Learning"],
     },
@@ -234,11 +219,8 @@ export default function Home() {
       problem: "Outdated design hurting market perception",
       solution: "Complete brand redesign with modern UI/UX",
       techStack: ["Figma", "Adobe Creative Suite", "React"],
-      result: [
-        { icon: '/images/icons/chart-growth.svg', alt: 'Growth', text: '150% increase in brand recognition' },
-        { icon: '/images/icons/concept.svg', alt: 'Awards', text: 'Won 3 design awards' }
-      ],
-      beforeAfter: ["/images/portfolio/brandrebrand-before.svg", "/images/portfolio/brandrebrand-after.svg"],
+      result: "<img src='/images/icons/chart-growth.svg' alt='Growth' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />150% increase in brand recognition | <img src='/images/icons/concept.svg' alt='Awards' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Won 3 design awards",
+      beforeAfter: ["/images/portfolio/brandrebrand-before.jpg", "/images/portfolio/brandrebrand-after.jpg"],
       video: "/videos/brandrebrand-demo.mp4",
       tags: ["UI/UX", "Branding"],
     },
@@ -292,14 +274,14 @@ export default function Home() {
 
   const testimonials = [
     {
-      quote: "NexaVibe rebuilt our SaaS backend and cut infra cost by 38%. Their DevOps expertise is unmatched.",
+      quote: "Celestiatech rebuilt our SaaS backend and cut infra cost by 38%. Their DevOps expertise is unmatched.",
       author: "CTO, US-based HealthTech Startup",
       service: "DevOps Services",
       stars: 5,
       avatar: "/images/testimonials/healthtech-cto.svg",
     },
     {
-      quote: "From MVP to 100K users in 6 months. NexaVibe's mobile app development delivered exactly what we needed.",
+      quote: "From MVP to 100K users in 6 months. Celestiatech's mobile app development delivered exactly what we needed.",
       author: "Founder, EduTech Platform",
       service: "Mobile App Development",
       stars: 5,
@@ -316,22 +298,22 @@ export default function Home() {
 
   const whyChooseUs = [
     {
-      icon: "/images/icons/tailored-solutions.svg",
+      icon: "/images/whychoose/tailored-solutions.jpg",
       title: "Tailored Solutions",
       description: "Custom strategies aligned with your unique business goals",
     },
     {
-      icon: "/images/icons/project-management.svg",
+      icon: "/images/whychoose/project-management.png",
       title: "Project Management",
       description: "Agile methodology with transparent progress tracking",
     },
     {
-      icon: "/images/icons/quality-assurance.svg",
+      icon: "/images/whychoose/quality-assurance.png",
       title: "Quality Assurance",
       description: "Rigorous testing ensuring bug-free, scalable solutions",
     },
     {
-      icon: "/images/icons/expertise.svg",
+      icon: "/images/whychoose/expertise-experience.png",
       title: "Expertise & Experience",
       description: "12+ years delivering successful solutions across industries",
     },
@@ -545,7 +527,9 @@ export default function Home() {
           <div className={styles.trustGrid}>
             {partners.map((partner, index) => (
               <div key={index} className={`${styles.trustItem} animate-on-scroll stagger-${(index % 6) + 1}`}>
-                <div className={styles.trustLogo}>{partner}</div>
+                <div className={styles.trustLogo}>
+                  <Image src={partner.logo} alt={partner.name} width={120} height={40} loading="lazy" />
+                </div>
               </div>
             ))}
           </div>
@@ -630,16 +614,7 @@ export default function Home() {
                         <strong><Image src="/images/icons/develop.svg" alt="Tech Stack" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />Tech Stack:</strong> {item.techStack.join(", ")}
                       </div>
                       <div className={styles.caseStudyResult}>
-                        <strong><Image src="/images/icons/chart-growth.svg" alt="Result" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />Result:</strong>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginLeft: '4px' }}>
-                          {(item.result as any[]).map((res, idx) => (
-                            <span key={idx} style={{ display: 'inline-flex', alignItems: 'center' }}>
-                              <Image src={res.icon} alt={res.alt} width={14} height={14} style={{ marginRight: '4px' }} loading="lazy" />
-                              {res.text}
-                              {idx < (item.result as any[]).length - 1 && <span style={{ margin: '0 8px', opacity: 0.5 }}>|</span>}
-                            </span>
-                          ))}
-                        </div>
+                        <strong><Image src="/images/icons/chart-growth.svg" alt="Result" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />Result:</strong> <span dangerouslySetInnerHTML={{ __html: item.result }} />
                       </div>
                     </div>
                     <div className={styles.portfolioTags}>
@@ -698,10 +673,10 @@ export default function Home() {
         <div className="container">
           <div className={`${styles.upworkContent} animate-on-scroll`}>
             <div>
-              <h2>
+              <h2 style={{ color: "white", fontSize: "32px", marginBottom: "12px" }}>
                 Top-Rated Upwork Partner
               </h2>
-              <p>
+              <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "16px" }}>
                 Join 1,800+ satisfied clients who trusted us with their projects
               </p>
             </div>
@@ -780,7 +755,7 @@ export default function Home() {
             <p>Let&apos;s discuss your project and turn your vision into reality</p>
             <Link 
               href="/proposal" 
-              className="btn btn-primary btn-3d"
+              className="btn btn-accent btn-3d"
               onClick={() => trackCTAClick("Get Free Consultation", "cta_section")}
             >
               Get Free Consultation
@@ -793,14 +768,14 @@ export default function Home() {
       <section className={styles.whyChooseUs}>
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
-            <h2>Why Choose NexaVibe?</h2>
+            <h2>Why Choose Celestiatech?</h2>
             <p>Partner with a team committed to your success</p>
           </div>
           <div className={styles.whyGrid}>
             {whyChooseUs.map((item, index) => (
               <div key={index} className={`${styles.whyCard} animate-on-scroll stagger-${(index % 4) + 1}`}>
                 <div className={styles.whyIcon}>
-                  <Image src={`/images/icons/${item.icon || 'default.svg'}`} alt={item.title} width={70} height={70} loading="lazy" />
+                  <Image src={item.icon} alt={item.title} width={70} height={70} className={styles.iconImage} loading="lazy" />
                 </div>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>

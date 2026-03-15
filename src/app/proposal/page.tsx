@@ -43,7 +43,7 @@ export default function ProposalPage() {
             <div className={styles.proposalInfo}>
               <h2>Let&apos;s Build Something Amazing</h2>
               <p>
-                At NexaVibe, we believe every project deserves a tailored approach. 
+                At Celestiatech, we believe every project deserves a tailored approach. 
                 Share your vision with us, and we&apos;ll create a comprehensive proposal 
                 that addresses your unique requirements and goals.
               </p>
@@ -83,4 +83,3 @@ export default function ProposalPage() {
     </div>
   );
 }
-

@@ -131,7 +131,7 @@ export default function StartupMVPDevelopmentPage() {
           <section className={styles.section}>
             <div className="container">
               <div className={styles.sectionHeader}>
-                <h2>Why Choose NexaVibe for Your MVP?</h2>
+                <h2>Why Choose Celestiatech for Your MVP?</h2>
               </div>
               <div className={styles.benefitsGrid}>
                 <div className={styles.benefitCard}>

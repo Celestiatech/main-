@@ -153,7 +153,7 @@ export default function BlogPage() {
       <section className={styles.blogHero}>
         <div className="container">
           <div className={styles.blogHeroContent}>
-            <h1>NexaVibe Blog</h1>
+            <h1>Celestiatech Blog</h1>
             <p>Latest insights, tutorials, and trends in software development, AI, and technology</p>
           </div>
         </div>
@@ -252,4 +252,3 @@ export default function BlogPage() {
     </div>
   );
 }
-

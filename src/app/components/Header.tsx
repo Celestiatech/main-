@@ -145,7 +145,7 @@ export function Header() {
         { 
           label: "Company Overview", 
           href: "/about",
-          description: "Learn about NexaVibe's mission, vision, and values. Discover how we've grown from a startup to a trusted partner for 2,500+ clients worldwide over 12+ years."
+          description: "Learn about Celestiatech's mission, vision, and values. Discover how we've grown from a startup to a trusted partner for 2,500+ clients worldwide over 12+ years."
         },
         { 
           label: "Our Team", 
@@ -181,12 +181,12 @@ export function Header() {
         { 
           label: "Testimonials", 
           href: "/testimonials",
-          description: "Hear from our satisfied clients about their experience working with NexaVibe. Real feedback from startups, enterprises, and industry leaders."
+          description: "Hear from our satisfied clients about their experience working with Celestiatech. Real feedback from startups, enterprises, and industry leaders."
         },
         { 
-          label: "Career", 
+          label: "Careers", 
           href: "/career",
-          description: "Join our growing team of innovators. Explore career opportunities, our work culture, benefits, and how you can grow your career with NexaVibe."
+          description: "Join our growing team of innovators. Explore career opportunities, our work culture, benefits, and how you can grow your career with Celestiatech."
         },
       ],
     },
@@ -202,7 +202,7 @@ export function Header() {
         { 
           label: "Terms of Service", 
           href: "/terms-of-service",
-          description: "Terms and conditions governing the use of our services. Understand your rights and responsibilities when working with NexaVibe."
+          description: "Terms and conditions governing the use of our services. Understand your rights and responsibilities when working with Celestiatech."
         },
         { 
           label: "Cookie Policy", 

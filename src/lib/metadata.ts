@@ -1,16 +1,16 @@
 /**
- * NexaVibe Solutions - Metadata Configuration
+ * Celestiatech - Metadata Configuration
  * Single source of truth for all brand metadata
  */
 
 import type { Metadata } from "next";
 
 export const siteConfig = {
-  name: "NexaVibe Solutions",
-  shortName: "NexaVibe",
+  name: "Celestiatech",
+  shortName: "Celestiatech",
   tagline: "Premium IT & Software Development Company",
   description: "Elite IT solutions with neo-glassmorphism design. Specializing in web development, mobile apps, AI solutions, and blockchain technology. 12+ years of experience serving 2,500+ clients worldwide.",
-  url: "https://nexavibe.com",
+  url: "https://celestiatech.in",
   ogImage: "/brand/og-image.png",
   logo: {
     primary: "/brand/logo.svg",
@@ -21,10 +21,10 @@ export const siteConfig = {
   },
   contact: {
     email: {
-      general: "hello@nexavibe.com",
-      legal: "legal@nexavibe.com",
-      privacy: "privacy@nexavibe.com",
-      support: "support@nexavibe.com",
+      general: "hello@celestiatech.in",
+      legal: "legal@celestiatech.in",
+      privacy: "privacy@celestiatech.in",
+      support: "support@celestiatech.in",
     },
     phone: {
       uae: "+971 50 000 0000",

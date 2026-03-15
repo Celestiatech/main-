@@ -1,5 +1,5 @@
 /**
- * NexaVibe Solutions - Structured Data (JSON-LD)
+ * Celestiatech - Structured Data (JSON-LD)
  * Implements schema.org markup for SEO
  */
 
