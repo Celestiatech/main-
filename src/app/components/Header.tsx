@@ -936,8 +936,8 @@ export function Header() {
 
             {/* CTA Buttons */}
             <div className={styles.headerActions}>
-              <Link href="/proposal" className="btn btn-primary btn-water btn-sm">
-                Get Free Audit
+              <Link href="/popular-tools" className="btn btn-primary btn-water btn-sm">
+                See Popular Tools
               </Link>
             </div>
 
@@ -1128,14 +1128,14 @@ export function Header() {
             </nav>
             <div className={styles.mobileMenuActions}>
               <Link 
-                href="/proposal" 
+                href="/popular-tools" 
                 className="btn btn-primary btn-water" 
                 onClick={(e) => {
-                  trackCTAClick("Get Free Audit", "mobile_menu", pathname);
+                  trackCTAClick("See Popular Tools", "mobile_menu", pathname);
                   closeMobileMenu();
                 }}
               >
-                Get Free Audit
+                See Popular Tools
               </Link>
               <Link 
                 href="/request-a-call" 

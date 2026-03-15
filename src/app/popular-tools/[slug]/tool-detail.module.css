@@ -1,0 +1,212 @@
+.page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 15%, rgba(23, 88, 243, 0.08), transparent 40%),
+    radial-gradient(circle at 85% 10%, rgba(30, 150, 106, 0.08), transparent 45%),
+    #f8fafc;
+}
+
+.headerGap {
+  height: 88px;
+}
+
+.main {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 1.5rem 0 4rem;
+}
+
+.backLink {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: #1859d1;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.heroCard,
+.workspaceCard,
+.playgroundCard,
+.comingSoonCard {
+  background: #ffffff;
+  border: 1px solid #dbe3ef;
+  border-radius: 16px;
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.07);
+}
+
+.heroCard {
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.heroCard h1 {
+  margin: 0.45rem 0;
+  color: #0f172a;
+  font-size: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+}
+
+.heroCard p {
+  margin: 0;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.categoryLabel {
+  margin: 0;
+  text-transform: capitalize;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  color: #4a6078;
+}
+
+.badge {
+  display: inline-flex;
+  margin-top: 1rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.live {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.soon {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.workspaceCard {
+  padding: 1.25rem;
+}
+
+.playgroundCard,
+.comingSoonCard {
+  padding: 1rem;
+}
+
+.comingSoonCard h3 {
+  margin-top: 0;
+  color: #0f172a;
+}
+
+.comingSoonCard p {
+  margin-bottom: 0;
+  color: #475569;
+}
+
+.label {
+  display: block;
+  margin: 0 0 0.5rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  border: 1px solid #cdd7e3;
+  border-radius: 10px;
+  padding: 0.75rem;
+  font: inherit;
+  color: #0f172a;
+  background: #fff;
+}
+
+.textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.7rem;
+}
+
+.button {
+  border: none;
+  border-radius: 10px;
+  background: #1758f3;
+  color: #fff;
+  padding: 0.6rem 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.metricGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin-top: 0.75rem;
+}
+
+.metric {
+  border: 1px solid #d6e0eb;
+  border-radius: 10px;
+  padding: 0.7rem;
+  background: #f8fbff;
+}
+
+.metric span {
+  display: block;
+  color: #4b627b;
+  font-size: 0.85rem;
+}
+
+.metric strong {
+  color: #0f172a;
+  font-size: 1.2rem;
+}
+
+.output {
+  margin: 0.85rem 0 0;
+  border: 1px solid #d5deea;
+  border-radius: 10px;
+  background: #f8fafc;
+  padding: 0.75rem;
+  min-height: 56px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.statusBadge {
+  margin-top: 0.75rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.ok {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.error {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+@media (max-width: 840px) {
+  .headerGap {
+    height: 76px;
+  }
+
+  .main {
+    width: min(1100px, 94vw);
+  }
+
+  .twoCol,
+  .metricGrid {
+    grid-template-columns: 1fr;
+  }
+}

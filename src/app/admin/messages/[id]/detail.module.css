@@ -1,0 +1,244 @@
+.page {
+  display: grid;
+  gap: 1rem;
+}
+
+.state {
+  text-align: center;
+  color: #64748b;
+  padding: 2.5rem 1rem;
+}
+
+.notFound {
+  color: #dc2626;
+  margin: 0 0 1rem;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.backLink {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.title {
+  margin: 0.6rem 0 0;
+  font-size: 1.9rem;
+  color: #0f172a;
+}
+
+.idText {
+  margin: 0.3rem 0 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.primaryBtn,
+.deleteBtnTop,
+.actionBtn {
+  border: none;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primaryBtn {
+  background: #2563eb;
+}
+
+.deleteBtnTop {
+  background: #e11d48;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.leftCol {
+  display: grid;
+  gap: 1rem;
+}
+
+.card,
+.stickyCard {
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 12px 22px rgba(30, 58, 138, 0.08);
+}
+
+.stickyCard {
+  position: sticky;
+  top: 1rem;
+}
+
+.cardTitle {
+  margin: 0 0 0.8rem;
+  color: #0f172a;
+  font-size: 1.05rem;
+}
+
+.stack {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.label {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.value,
+.valueLarge {
+  margin: 0.25rem 0 0;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.valueLarge {
+  font-size: 1.05rem;
+}
+
+.linkText {
+  color: #1d4ed8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.extraGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.messageBox {
+  background: #f8fbff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.85rem;
+}
+
+.messageText {
+  margin: 0;
+  color: #334155;
+  white-space: pre-wrap;
+}
+
+.timeline {
+  display: grid;
+  gap: 0.45rem;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.timeline span {
+  color: #334155;
+  font-weight: 600;
+}
+
+.currentStatus {
+  margin-bottom: 1rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: 1px solid;
+}
+
+.statusNew {
+  background: #ecfdf5;
+  color: #065f46;
+  border-color: #a7f3d0;
+}
+
+.statusRead {
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #fde68a;
+}
+
+.statusReplied {
+  background: #e0e7ff;
+  color: #3730a3;
+  border-color: #c7d2fe;
+}
+
+.statusDefault {
+  background: #f1f5f9;
+  color: #334155;
+  border-color: #cbd5e1;
+}
+
+.statusButtons,
+.ctaButtons {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.statusButtons {
+  margin-bottom: 1rem;
+}
+
+.actionBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btnNew {
+  background: #059669;
+}
+
+.btnRead {
+  background: #d97706;
+}
+
+.btnReplied {
+  background: #7c3aed;
+}
+
+.btnEmail {
+  background: #2563eb;
+}
+
+.btnReply {
+  background: #4f46e5;
+}
+
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stickyCard {
+    position: static;
+  }
+}
+
+@media (max-width: 700px) {
+  .extraGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -9,10 +9,6 @@ import styles from "./page.module.css";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 
-// Debug CSS import
-console.log("DEBUG: page.module.css imported styles:", styles);
-console.log("DEBUG: Available style classes:", Object.keys(styles));
-
 // Lazy load Chatbot component
 const Chatbot = lazy(() => import("./components/Chatbot"));
 
@@ -172,7 +168,7 @@ export default function Home() {
       solution: "Migrated to modern React/Node.js with AWS scaling",
       techStack: ["React", "Node.js", "AWS", "MongoDB"],
       result: "<img src='/images/icons/launch.svg' alt='Speed' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />300% faster load times | <img src='/images/icons/tailored-solutions.svg' alt='Users' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Served 100K+ students",
-      beforeAfter: ["/images/portfolio/edulearn-before.jpg", "/images/portfolio/edulearn-after.jpg"],
+      beforeAfter: ["/images/portfolio/edulearn-before.jpg", "/images/portfolio/edulearn-after.png"],
       video: "/videos/edulearn-demo.mp4",
       tags: ["React", "Node.js", "AWS"],
     },
@@ -266,10 +262,41 @@ export default function Home() {
   ];
 
   const techStack = {
-    frontend: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Angular", "Vue", "Svelte", "Tailwind", "Bootstrap"],
-    backend: ["Node.js", "Python", "Java", "Go", "Ruby", "PHP", ".NET"],
-    mobile: ["React Native", "Flutter", "Swift", "Kotlin"],
-    emerging: ["AI/ML", "Blockchain", "IoT", "Cloud", "DevOps", "Cybersecurity"],
+    frontend: [
+      { name: "HTML5", icon: "/images/tech/html5.svg" },
+      { name: "CSS3", icon: "/images/tech/css3.svg" },
+      { name: "JavaScript", icon: "/images/tech/javascript.svg" },
+      { name: "TypeScript", icon: "/images/tech/typescript.svg" },
+      { name: "React", icon: "/images/tech/react.svg" },
+      { name: "Angular", icon: "/images/tech/angular.svg" },
+      { name: "Vue", icon: "/images/tech/vuedotjs.svg" },
+      { name: "Svelte", icon: "/images/tech/svelte.svg" },
+      { name: "Tailwind", icon: "/images/tech/tailwindcss.svg" },
+      { name: "Bootstrap", icon: "/images/tech/bootstrap.svg" },
+    ],
+    backend: [
+      { name: "Node.js", icon: "/images/tech/nodejs.svg" },
+      { name: "Python", icon: "/images/tech/python.svg" },
+      { name: "Java", icon: "/images/tech/java.svg" },
+      { name: "Go", icon: "/images/tech/go.svg" },
+      { name: "Ruby", icon: "/images/tech/ruby.svg" },
+      { name: "PHP", icon: "/images/tech/php.svg" },
+      { name: ".NET", icon: "/images/tech/dotnet.svg" },
+    ],
+    mobile: [
+      { name: "React Native", icon: "/images/tech/reactnative.svg" },
+      { name: "Flutter", icon: "/images/tech/flutter.svg" },
+      { name: "Swift", icon: "/images/tech/swift.svg" },
+      { name: "Kotlin", icon: "/images/tech/kotlin.svg" },
+    ],
+    emerging: [
+      { name: "AI/ML", icon: "/images/tech/tensorflow.svg" },
+      { name: "Blockchain", icon: "/images/tech/ethereum.svg" },
+      { name: "IoT", icon: "/images/tech/iot.svg" },
+      { name: "Cloud", icon: "/images/tech/googlecloud.svg" },
+      { name: "DevOps", icon: "/images/tech/docker.svg" },
+      { name: "Cybersecurity", icon: "/images/tech/cybersecurity.svg" },
+    ],
   };
 
   const testimonials = [
@@ -319,102 +346,6 @@ export default function Home() {
     },
   ];
 
-  // Debug CSS application
-  useEffect(() => {
-    console.log("DEBUG: Component mounted, checking CSS application");
-    setTimeout(() => {
-      const heroSection = document.querySelector(`.${styles.hero}`);
-      const servicesSection = document.querySelector(`.${styles.services}`);
-      const pageDiv = document.querySelector(`.${styles.page}`);
-
-      console.log("DEBUG: Hero section element:", heroSection);
-      console.log("DEBUG: Hero section computed styles:", heroSection ? window.getComputedStyle(heroSection) : "Not found");
-
-      // Detailed hero section CSS debugging
-      if (heroSection) {
-        const heroStyles = window.getComputedStyle(heroSection);
-        console.log("DEBUG: Hero section - position:", heroStyles.position);
-        console.log("DEBUG: Hero section - min-height:", heroStyles.minHeight);
-        console.log("DEBUG: Hero section - display:", heroStyles.display);
-        console.log("DEBUG: Hero section - background:", heroStyles.background);
-        console.log("DEBUG: Hero section - padding:", heroStyles.padding);
-        console.log("DEBUG: Hero section - overflow:", heroStyles.overflow);
-        console.log("DEBUG: Hero section - z-index:", heroStyles.zIndex);
-
-        // Check hero background video
-        const heroBg = heroSection.querySelector(`.${styles.heroBg}`);
-        console.log("DEBUG: Hero background element:", heroBg);
-        if (heroBg) {
-          const video = heroBg.querySelector('video');
-          console.log("DEBUG: Hero video element:", video);
-          if (video) {
-            console.log("DEBUG: Hero video - src:", video.src);
-            console.log("DEBUG: Hero video - readyState:", video.readyState);
-            console.log("DEBUG: Hero video - paused:", video.paused);
-          }
-        }
-
-        // Check hero overlay
-        const heroOverlay = heroSection.querySelector(`.${styles.heroOverlay}`);
-        console.log("DEBUG: Hero overlay element:", heroOverlay);
-        if (heroOverlay) {
-          const overlayStyles = window.getComputedStyle(heroOverlay);
-          console.log("DEBUG: Hero overlay - background:", overlayStyles.background);
-          console.log("DEBUG: Hero overlay - position:", overlayStyles.position);
-        }
-
-        // Check hero content
-        const heroContent = heroSection.querySelector(`.${styles.heroContent}`);
-        console.log("DEBUG: Hero content element:", heroContent);
-        if (heroContent) {
-          const contentStyles = window.getComputedStyle(heroContent);
-          console.log("DEBUG: Hero content - position:", contentStyles.position);
-          console.log("DEBUG: Hero content - z-index:", contentStyles.zIndex);
-          console.log("DEBUG: Hero content - text-align:", contentStyles.textAlign);
-        }
-      }
-
-      console.log("DEBUG: Services section element:", servicesSection);
-      console.log("DEBUG: Services section computed styles:", servicesSection ? window.getComputedStyle(servicesSection) : "Not found");
-      console.log("DEBUG: Page div element:", pageDiv);
-      console.log("DEBUG: Page div computed styles:", pageDiv ? window.getComputedStyle(pageDiv) : "Not found");
-
-      // Check if styles object has the expected properties
-      console.log("DEBUG: styles.hero exists:", !!styles.hero);
-      console.log("DEBUG: styles.services exists:", !!styles.services);
-      console.log("DEBUG: styles.page exists:", !!styles.page);
-
-      // Additional CSS working check
-      if (pageDiv) {
-        const hasBackground = window.getComputedStyle(pageDiv).background !== 'none' && window.getComputedStyle(pageDiv).background !== '';
-        console.log("DEBUG: CSS is working - page has background:", hasBackground);
-      } else {
-        console.log("DEBUG: CSS may not be working - page div not found");
-      }
-
-      // Visual debug indicator
-      const debugDiv = document.createElement('div');
-      debugDiv.style.position = 'fixed';
-      debugDiv.style.top = '10px';
-      debugDiv.style.right = '10px';
-      debugDiv.style.background = 'red';
-      debugDiv.style.color = 'white';
-      debugDiv.style.padding = '5px 10px';
-      debugDiv.style.borderRadius = '4px';
-      debugDiv.style.zIndex = '9999';
-      debugDiv.style.fontSize = '12px';
-      debugDiv.textContent = 'CSS Debug: ' + (pageDiv ? 'Working' : 'Not Working');
-      document.body.appendChild(debugDiv);
-
-      // Remove debug indicator after 5 seconds
-      setTimeout(() => {
-        if (debugDiv.parentNode) {
-          debugDiv.parentNode.removeChild(debugDiv);
-        }
-      }, 5000);
-    }, 1000); // Wait for DOM to be ready
-  }, []);
-
   return (
     <div className={styles.page}>
       {/* ===== HEADER ===== */}
@@ -446,11 +377,11 @@ export default function Home() {
             </p>
             <div className={`${styles.heroActions} heroActionsAnimate`}>
               <Link 
-                href="/proposal" 
+                href="/popular-tools" 
                 className="btn btn-primary btn-water btn-3d"
-                onClick={() => trackCTAClick("Get Free Audit", "hero", pathname || "/")}
+                onClick={() => trackCTAClick("See Popular Tools", "hero", pathname || "/")}
               >
-                Get Free Audit
+                See Popular Tools
               </Link>
               <Link href="/work" className="btn btn-secondary btn-water btn-3d">
                 View Case Studies
@@ -623,12 +554,9 @@ export default function Home() {
                       ))}
                     </div>
                     <div className={styles.portfolioActions}>
-                      <Link href={item.video} className="btn btn-secondary btn-sm">
-                        <Image src="/images/icons/launch.svg" alt="Play" width={14} height={14} style={{ marginRight: '6px', display: 'inline' }} loading="lazy" />Watch Demo
-                      </Link>
-                      <Link href="/work" className="btn btn-primary btn-sm">
-                        View Live App
-                      </Link>
+                      <p className={styles.portfolioContact}>
+                        Contact us for a brief walkthrough of this project.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -713,7 +641,10 @@ export default function Home() {
               </h3>
               <div className={styles.techGrid}>
                 {techStack.frontend.map((tech, index) => (
-                  <span key={index} className={styles.techTag}>{tech}</span>
+                  <span key={index} className={`${styles.techTag} ${styles.techTagWithIcon}`}>
+                    <Image src={tech.icon} alt={tech.name} width={18} height={18} className={styles.techTagIcon} loading="lazy" />
+                    {tech.name}
+                  </span>
                 ))}
               </div>
             </div>
@@ -724,7 +655,10 @@ export default function Home() {
               </h3>
               <div className={styles.techGrid}>
                 {techStack.backend.map((tech, index) => (
-                  <span key={index} className={styles.techTag}>{tech}</span>
+                  <span key={index} className={`${styles.techTag} ${styles.techTagWithIcon}`}>
+                    <Image src={tech.icon} alt={tech.name} width={18} height={18} className={styles.techTagIcon} loading="lazy" />
+                    {tech.name}
+                  </span>
                 ))}
               </div>
             </div>
@@ -735,10 +669,16 @@ export default function Home() {
               </h3>
               <div className={styles.techGrid}>
                 {techStack.mobile.map((tech, index) => (
-                  <span key={index} className={styles.techTag}>{tech}</span>
+                  <span key={index} className={`${styles.techTag} ${styles.techTagWithIcon}`}>
+                    <Image src={tech.icon} alt={tech.name} width={18} height={18} className={styles.techTagIcon} loading="lazy" />
+                    {tech.name}
+                  </span>
                 ))}
                 {techStack.emerging.map((tech, index) => (
-                  <span key={index} className={styles.techTag}>{tech}</span>
+                  <span key={index} className={`${styles.techTag} ${styles.techTagWithIcon}`}>
+                    <Image src={tech.icon} alt={tech.name} width={18} height={18} className={styles.techTagIcon} loading="lazy" />
+                    {tech.name}
+                  </span>
                 ))}
               </div>
             </div>
@@ -834,6 +774,15 @@ export default function Home() {
                   <h4><Image src="/images/icons/location-pin.svg" alt="Location" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />India</h4>
                   <p>Mohali, Punjab</p>
                 </div>
+              </div>
+              <div className={styles.contactChecklist}>
+                <h4>Why contact us</h4>
+                <ul>
+                  <li className={styles.highlightItem}>Free 30-minute strategy call with senior consultants</li>
+                  <li>Clear project timeline, scope, and delivery milestones</li>
+                  <li>Transparent cost estimates and tech recommendations</li>
+                  <li>Dedicated team options for fast execution</li>
+                </ul>
               </div>
             </div>
             <form className={`${styles.contactForm} animate-slide-right`}>

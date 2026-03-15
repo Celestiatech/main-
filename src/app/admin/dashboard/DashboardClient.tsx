@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { DashboardStats } from '@/lib/types';
 import styles from './dashboard.module.css';
@@ -8,10 +8,53 @@ import styles from './dashboard.module.css';
 export default function DashboardClient() {
   const [stats, setStats] = useState<DashboardStats | null>(null);
   const [loading, setLoading] = useState(true);
+  const [cssDebug, setCssDebug] = useState(false);
+  const [debugInfo, setDebugInfo] = useState<Record<string, string>>({});
+  const dashboardRef = useRef<HTMLDivElement | null>(null);
+  const heroRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     fetchStats();
   }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    setCssDebug(params.get('cssDebug') === '1');
+  }, []);
+
+  useEffect(() => {
+    if (!cssDebug) return;
+
+    const dashboardStyle = dashboardRef.current
+      ? window.getComputedStyle(dashboardRef.current)
+      : null;
+    const heroStyle = heroRef.current ? window.getComputedStyle(heroRef.current) : null;
+
+    setDebugInfo({
+      dashboardClass: styles.dashboard || 'missing',
+      heroClass: styles.hero || 'missing',
+      kpiCardClass: styles.kpiCard || 'missing',
+      dashboardBackground: dashboardStyle?.background || 'n/a',
+      dashboardPadding: dashboardStyle?.padding || 'n/a',
+      heroBorderRadius: heroStyle?.borderRadius || 'n/a',
+      heroDisplay: heroStyle?.display || 'n/a',
+    });
+
+    console.log('Dashboard CSS Debug', {
+      classes: {
+        dashboard: styles.dashboard,
+        hero: styles.hero,
+        kpiCard: styles.kpiCard,
+      },
+      computed: {
+        dashboardBackground: dashboardStyle?.background,
+        dashboardPadding: dashboardStyle?.padding,
+        heroBorderRadius: heroStyle?.borderRadius,
+        heroDisplay: heroStyle?.display,
+      },
+    });
+  }, [cssDebug, stats]);
 
   const fetchStats = async () => {
     try {
@@ -90,8 +133,28 @@ export default function DashboardClient() {
   ];
 
   return (
-    <div className={styles.dashboard}>
-      <section className={styles.hero}>
+    <div className={styles.dashboard} ref={dashboardRef}>
+      {cssDebug && (
+        <section
+          style={{
+            marginBottom: '12px',
+            border: '1px dashed #2563eb',
+            background: '#ffffff',
+            borderRadius: '12px',
+            padding: '12px',
+            fontSize: '12px',
+            color: '#0f172a',
+          }}
+        >
+          <strong style={{ display: 'block', marginBottom: '6px' }}>CSS Debug Mode Enabled</strong>
+          <p style={{ margin: 0, marginBottom: '8px' }}>
+            Open with <code>?cssDebug=1</code> to inspect module classes and computed values.
+          </p>
+          <pre style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{JSON.stringify(debugInfo, null, 2)}</pre>
+        </section>
+      )}
+
+      <section className={styles.hero} ref={heroRef}>
         <div>
           <p className={styles.overline}>Admin Workspace</p>
           <h1>Message Operations Dashboard</h1>

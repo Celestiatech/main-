@@ -1,13 +1,13 @@
 'use client';
 
 import { useEffect, useState, Suspense } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Message } from '@/lib/types';
+import styles from './messages.module.css';
 
 function MessagesContent() {
   const searchParams = useSearchParams();
-  const router = useRouter();
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
@@ -65,174 +65,210 @@ function MessagesContent() {
   };
 
   const getTypeColor = (type: string) => {
-    return type === 'contact'
-      ? 'bg-blue-100 text-blue-800'
-      : 'bg-orange-100 text-orange-800';
+    return type === 'contact' ? styles.badgeContact : styles.badgeCareer;
   };
 
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'new':
-        return 'bg-green-100 text-green-800';
+        return styles.statusNew;
       case 'read':
-        return 'bg-yellow-100 text-yellow-800';
+        return styles.statusRead;
       case 'replied':
-        return 'bg-purple-100 text-purple-800';
+        return styles.statusReplied;
       default:
-        return 'bg-gray-100 text-gray-800';
+        return styles.statusDefault;
     }
   };
 
+  const totalCount = messages.length;
+  const contactCount = messages.filter((msg) => msg.type === 'contact').length;
+  const careerCount = messages.filter((msg) => msg.type === 'career').length;
+  const newCount = messages.filter((msg) => msg.status === 'new').length;
+
   return (
-    <div>
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-white mb-2">Messages</h1>
-        <p className="text-gray-400">View and manage all contact and career messages</p>
-      </div>
-
-      {/* Search and Filters */}
-      <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 mb-6">
-        <form onSubmit={handleSearch} className="flex gap-4 mb-4">
-          <input
-            type="text"
-            placeholder="Search by name or email..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="flex-1 px-4 py-2 bg-gray-700 text-white rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <button
-            type="submit"
-            className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition font-medium"
-          >
-            Search
-          </button>
-        </form>
-
-        <div className="flex gap-4 flex-wrap">
-          <Link
-            href="/admin/messages"
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
-              !typeFilter && !statusFilter
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-            }`}
-          >
-            All
-          </Link>
-          <Link
-            href="/admin/messages?type=contact"
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
-              typeFilter === 'contact'
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-            }`}
-          >
-            Contact Messages
-          </Link>
-          <Link
-            href="/admin/messages?type=career"
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
-              typeFilter === 'career'
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-            }`}
-          >
-            Career Applications
-          </Link>
-          <Link
-            href="/admin/messages?status=new"
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
-              statusFilter === 'new'
-                ? 'bg-green-600 text-white'
-                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-            }`}
-          >
-            New
-          </Link>
-          <Link
-            href="/admin/messages?status=replied"
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
-              statusFilter === 'replied'
-                ? 'bg-purple-600 text-white'
-                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-            }`}
-          >
-            Replied
-          </Link>
+    <div className={styles.page}>
+      <div className={styles.wrap}>
+        <div className={styles.heroCard}>
+          <div className={styles.heroRow}>
+            <div>
+              <p className={styles.kicker}>Admin Inbox</p>
+              <h1 className={styles.title}>Messages</h1>
+              <p className={styles.subtitle}>
+                View and manage contact leads and career applications with a single command center.
+              </p>
+            </div>
+            <div className={styles.heroActions}>
+              <Link
+                href="/admin/messages?status=new"
+                className={styles.chipNew}
+              >
+                <span className={styles.dotNew} />
+                Review New
+              </Link>
+              <Link
+                href="/admin/messages?status=replied"
+                className={styles.chipReplied}
+              >
+                <span className={styles.dotReplied} />
+                View Replied
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
 
-      {/* Messages Table */}
-      {loading ? (
-        <div className="text-center py-12 text-gray-400">Loading...</div>
-      ) : messages.length === 0 ? (
-        <div className="text-center py-12 text-gray-400">No messages found</div>
-      ) : (
-        <div className="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full">
+        <div className={styles.statsGrid}>
+          <div className={styles.statCard}>
+            <p className={styles.statLabel}>Total</p>
+            <p className={styles.statValue}>{totalCount}</p>
+            <p className={styles.statHint}>All submissions received</p>
+          </div>
+          <div className={`${styles.statCard} ${styles.statContact}`}>
+            <p className={styles.statLabel}>Contact</p>
+            <p className={styles.statValue}>{contactCount}</p>
+            <p className={styles.statHint}>Business inquiries</p>
+          </div>
+          <div className={`${styles.statCard} ${styles.statCareer}`}>
+            <p className={styles.statLabel}>Career</p>
+            <p className={styles.statValue}>{careerCount}</p>
+            <p className={styles.statHint}>Hiring pipeline</p>
+          </div>
+          <div className={`${styles.statCard} ${styles.statNew}`}>
+            <p className={styles.statLabel}>New</p>
+            <p className={styles.statValue}>{newCount}</p>
+            <p className={styles.statHint}>Waiting for review</p>
+          </div>
+        </div>
+
+        <div className={styles.filterCard}>
+          <form onSubmit={handleSearch} className={styles.searchRow}>
+            <input
+              type="text"
+              placeholder="Search by name or email..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className={styles.searchInput}
+            />
+            <button type="submit" className={styles.searchBtn}>
+              Search
+            </button>
+          </form>
+
+          <div className={styles.filterRow}>
+            <Link
+              href="/admin/messages"
+              className={`${styles.filterChip} ${
+                !typeFilter && !statusFilter
+                  ? styles.filterChipAllActive
+                  : styles.filterChipIdle
+              }`}
+            >
+              All
+            </Link>
+            <Link
+              href="/admin/messages?type=contact"
+              className={`${styles.filterChip} ${
+                typeFilter === 'contact'
+                  ? styles.filterChipContactActive
+                  : styles.filterChipIdle
+              }`}
+            >
+              Contact Messages
+            </Link>
+            <Link
+              href="/admin/messages?type=career"
+              className={`${styles.filterChip} ${
+                typeFilter === 'career'
+                  ? styles.filterChipCareerActive
+                  : styles.filterChipIdle
+              }`}
+            >
+              Career Applications
+            </Link>
+            <Link
+              href="/admin/messages?status=new"
+              className={`${styles.filterChip} ${
+                statusFilter === 'new'
+                  ? styles.filterChipNewActive
+                  : styles.filterChipIdle
+              }`}
+            >
+              New
+            </Link>
+            <Link
+              href="/admin/messages?status=replied"
+              className={`${styles.filterChip} ${
+                statusFilter === 'replied'
+                  ? styles.filterChipRepliedActive
+                  : styles.filterChipIdle
+              }`}
+            >
+              Replied
+            </Link>
+          </div>
+        </div>
+
+        {loading ? (
+          <div className={styles.emptyState}>
+            Loading messages...
+          </div>
+        ) : messages.length === 0 ? (
+          <div className={styles.emptyState}>
+            No messages found for this filter.
+          </div>
+        ) : (
+          <div className={styles.tableCard}>
+            <div className={styles.tableWrap}>
+              <table className={styles.table}>
               <thead>
-                <tr className="border-b border-gray-700 bg-gray-900">
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">
+                <tr>
+                  <th>
                     Name
                   </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">
+                  <th>
                     Email
                   </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">
+                  <th>
                     Type
                   </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">
+                  <th>
                     Status
                   </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">
+                  <th>
                     Date
                   </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">
+                  <th>
                     Actions
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {messages.map((message) => (
-                  <tr
-                    key={message.id}
-                    className="border-b border-gray-700 hover:bg-gray-700 transition"
-                  >
-                    <td className="px-6 py-4 text-sm text-white font-medium">{message.name}</td>
-                    <td className="px-6 py-4 text-sm text-gray-300">{message.email}</td>
-                    <td className="px-6 py-4 text-sm">
-                      <span
-                        className={`inline-px-3 py-1 rounded-full text-xs font-medium ${getTypeColor(
-                          message.type
-                        )}`}
-                      >
-                        {message.type === 'contact' ? '📧 Contact' : '👔 Career'}
+                  <tr key={message.id}>
+                    <td>{message.name}</td>
+                    <td>{message.email}</td>
+                    <td>
+                      <span className={`${styles.badge} ${getTypeColor(message.type)}`}>
+                        {message.type === 'contact' ? 'Contact' : 'Career'}
                       </span>
                     </td>
-                    <td className="px-6 py-4 text-sm">
-                      <span
-                        className={`inline-px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(
-                          message.status
-                        )}`}
-                      >
+                    <td>
+                      <span className={`${styles.badge} ${getStatusColor(message.status)}`}>
                         {message.status.charAt(0).toUpperCase() + message.status.slice(1)}
                       </span>
                     </td>
-                    <td className="px-6 py-4 text-sm text-gray-400">
-                      {new Date(message.createdAt).toLocaleDateString()}
-                    </td>
-                    <td className="px-6 py-4 text-sm">
-                      <div className="flex gap-2">
+                    <td>{new Date(message.createdAt).toLocaleDateString()}</td>
+                    <td>
+                      <div className={styles.actionRow}>
                         <Link
                           href={`/admin/messages/${message.id}`}
-                          className="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded text-xs font-medium transition"
+                          className={styles.viewBtn}
                         >
                           View
                         </Link>
                         <button
                           onClick={() => handleDelete(message.id)}
-                          className="px-3 py-1 bg-red-600 hover:bg-red-700 text-white rounded text-xs font-medium transition"
+                          className={styles.deleteBtn}
                         >
                           Delete
                         </button>
@@ -245,13 +281,14 @@ function MessagesContent() {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }
 
 export default function MessagesPage() {
   return (
-    <Suspense fallback={<div className="text-center py-12">Loading...</div>}>
+    <Suspense fallback={<div className={styles.suspense}>Loading...</div>}>
       <MessagesContent />
     </Suspense>
   );

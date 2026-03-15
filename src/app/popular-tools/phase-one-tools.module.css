@@ -1,0 +1,115 @@
+.section {
+  margin-top: 1.2rem;
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+  background: #f8fbff;
+  padding: 1rem;
+}
+
+.head h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: #0f172a;
+}
+
+.head p {
+  margin: 0.35rem 0 0;
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.grid {
+  margin-top: 0.9rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.card {
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 0.75rem;
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+  color: #0f172a;
+  font-size: 0.95rem;
+}
+
+.card textarea,
+.card input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.45rem;
+  font-size: 0.85rem;
+  color: #0f172a;
+  background: #ffffff;
+}
+
+.card textarea {
+  resize: vertical;
+}
+
+.card p {
+  margin: 0.5rem 0 0;
+  color: #334155;
+  font-size: 0.84rem;
+}
+
+.card pre {
+  margin: 0.5rem 0 0;
+  white-space: pre-wrap;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.45rem;
+  background: #f8fafc;
+  color: #1e293b;
+  font-size: 0.8rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.row {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cols {
+  display: grid;
+  gap: 0.45rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.check {
+  display: inline-flex;
+  gap: 0.3rem;
+  align-items: center;
+  font-size: 0.82rem;
+  color: #334155;
+}
+
+.card button {
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cols {
+    grid-template-columns: 1fr;
+  }
+}

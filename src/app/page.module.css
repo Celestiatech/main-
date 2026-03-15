@@ -190,10 +190,29 @@
     font-weight: 600;
     color: var(--text-secondary);
     border-radius: 8px;
+  /* ===== CAREER APPLY SECTION ===== */
+  .careerApplySection {
+    padding: 86px 0;
+    background: linear-gradient(180deg, #f8fbff 0%, #eef6ff 100%);
+    border-top: 1px solid #dbeafe;
+    border-bottom: 1px solid #dbeafe;
+  }
+
+  .careerApplySection .contactInfo h2 {
+    color: #0f172a;
+  }
+
+  .careerApplySection .contactInfo > p {
+    color: #475569;
+    max-width: 56ch;
+  }
     transition: all var(--transition-fast);
     display: flex;
     align-items: center;
     gap: 4px;
+    .careerApplySection {
+      padding: 64px 0;
+    }
     position: relative;
     text-decoration: none;
     letter-spacing: 0.02em;
@@ -1821,12 +1840,12 @@
     backdrop-filter: blur(30px);
   }
 
-  .portfolioCard:hover {
-    transform: translateY(-12px);
-    box-shadow: var(--glow-primary);
-    border-color: var(--action-color);
-    background: rgba(18, 18, 19, 0.7);
-  }
+.portfolioCard:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--glow-primary);
+  border-color: var(--action-color);
+  background: rgba(246, 249, 255, 0.9);
+}
 
   .portfolioImage {
     height: 220px;
@@ -1893,12 +1912,23 @@
     border: 1px solid rgba(46, 91, 255, 0.3);
   }
 
-  .portfolioActions {
-    display: flex;
-    gap: 10px;
-    margin-top: auto;
-    flex-wrap: wrap;
-  }
+.portfolioActions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.portfolioContact {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(37, 99, 235, 0.08);
+  color: #1e3a8a;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
 
   .portfolioActions button,
   .portfolioActions a {
@@ -2321,6 +2351,18 @@
     letter-spacing: 0.3px;
   }
 
+  .techTagWithIcon {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .techTagIcon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+  }
+
   .techTag:hover {
     border-color: rgba(59, 130, 246, 0.6);
     color: #3b82f6;
@@ -2712,6 +2754,38 @@
     display: flex;
     gap: 24px;
     margin-bottom: 32px;
+  }
+
+  .contactChecklist {
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    box-shadow: var(--glass-shadow);
+    padding: 20px;
+  }
+
+  .contactChecklist h4 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .contactChecklist ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 14px;
+  }
+
+  .contactChecklist li {
+    margin-bottom: 8px;
+  }
+
+  .highlightItem {
+    font-weight: 700;
+    color: #1e3a8a;
   }
 
   .contactLocation {

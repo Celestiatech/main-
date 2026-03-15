@@ -15,6 +15,13 @@
   margin-bottom: var(--spacing-12);
 }
 
+.footerRowTwo {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: var(--spacing-12);
+  margin-bottom: var(--spacing-12);
+}
+
 .footerAbout {
   max-width: 300px;
 }
@@ -158,6 +165,22 @@
   text-decoration: underline;
 }
 
+.officeMap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.2);
+}
+
+.officeMap iframe {
+  width: 100%;
+  height: 200px;
+  border: 0;
+  display: block;
+}
+
+
 .footerBottom {
   padding-top: var(--spacing-6);
   border-top: 1px solid rgba(255, 255, 255, 0.15);
@@ -196,6 +219,11 @@
 @media (max-width: 1024px) {
   .footerGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-8);
+  }
+
+  .footerRowTwo {
+    grid-template-columns: 1fr;
     gap: var(--spacing-8);
   }
 }

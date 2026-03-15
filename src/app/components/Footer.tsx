@@ -102,8 +102,10 @@ export function Footer() {
               <li><Link href="/contact">Help Center</Link></li>
             </ul>
           </div>
+        </div>
 
-          {/* Office Locations */}
+        <div className={styles.footerRowTwo}>
+          {/* Offices */}
           <div className={styles.footerColumn}>
             <h4>Our Offices</h4>
             <div className={styles.officeLocation}>
@@ -129,6 +131,32 @@ export function Footer() {
                 {siteConfig.contact.email.general}
               </a>
             </p>
+          </div>
+
+          {/* Map 1 */}
+          <div className={styles.footerColumn}>
+            <h4>Dubai</h4>
+            <div className={styles.officeMap}>
+              <iframe
+                title="Business Bay, Dubai"
+                src="https://www.google.com/maps?q=Business%20Bay%2C%20Dubai%2C%20UAE&z=13&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+
+          {/* Map 2 */}
+          <div className={styles.footerColumn}>
+            <h4>India</h4>
+            <div className={styles.officeMap}>
+              <iframe
+                title="Mohali, Punjab"
+                src="https://www.google.com/maps?q=Mohali%2C%20Punjab%2C%20India&z=12&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
         </div>
 

@@ -1,18 +1,25 @@
 .dashboard {
-  color: #000000;
+  color: #0b1120;
+  min-height: 100vh;
+  padding: 1.5rem;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.12), transparent 45%),
+    radial-gradient(circle at 90% 10%, rgba(16, 185, 129, 0.1), transparent 40%),
+    linear-gradient(180deg, #f8fbff 0%, #f2f6ff 45%, #eef2ff 100%);
 }
 
 .hero {
   display: flex;
   justify-content: space-between;
   gap: 1.25rem;
-  padding: 1.3rem;
-  border: 1px solid #dbeafe;
-  border-radius: 20px;
+  padding: 1.5rem 1.6rem;
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  border-radius: 22px;
   background:
-    radial-gradient(circle at 90% 20%, rgba(59, 130, 246, 0.16), transparent 46%),
-    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-  box-shadow: 0 18px 34px rgba(30, 58, 138, 0.08);
+    radial-gradient(circle at 85% 20%, rgba(59, 130, 246, 0.22), transparent 55%),
+    radial-gradient(circle at 10% 80%, rgba(16, 185, 129, 0.16), transparent 50%),
+    linear-gradient(180deg, #ffffff 0%, #f6f9ff 100%);
+  box-shadow: 0 22px 40px rgba(30, 58, 138, 0.12);
 }
 
 .overline {
@@ -28,7 +35,7 @@
   margin: 0.4rem 0 0;
   font-size: clamp(1.6rem, 3vw, 2.1rem);
   line-height: 1.1;
-  color: #000000;
+  color: #0b1120;
 }
 
 .subtitle {
@@ -60,17 +67,20 @@
 }
 
 .refreshBtn {
-  border: 1px solid #bfdbfe;
-  background: #eff6ff;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
   color: #1e3a8a;
   border-radius: 10px;
   padding: 0.56rem 0.9rem;
   cursor: pointer;
   font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .refreshBtn:hover {
-  background: #dbeafe;
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(30, 58, 138, 0.18);
 }
 
 .kpiGrid {
@@ -81,10 +91,17 @@
 }
 
 .kpiCard {
+  border: 1px solid #dbeafe;
   border-radius: 16px;
   padding: 0.95rem;
-  color: #ffffff;
-  box-shadow: 0 12px 22px rgba(30, 58, 138, 0.18);
+  color: #0f172a;
+  box-shadow: 0 12px 22px rgba(30, 58, 138, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kpiCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 32px rgba(30, 58, 138, 0.16);
 }
 
 .kpiTop {
@@ -96,12 +113,12 @@
 .kpiTop p {
   margin: 0;
   font-size: 0.82rem;
-  opacity: 0.95;
+  color: #334155;
 }
 
 .kpiTop span {
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
   width: 2rem;
   height: 2rem;
   display: grid;
@@ -109,25 +126,27 @@
   border-radius: 999px;
   font-size: 0.7rem;
   font-weight: 700;
+  color: #1d4ed8;
 }
 
 .kpiCard h2 {
   margin: 0.55rem 0 0;
   font-size: 1.7rem;
   letter-spacing: -0.03em;
+  color: #0f172a;
 }
 
 .kpiCard small {
   display: block;
   margin-top: 0.3rem;
-  opacity: 0.92;
+  color: #475569;
   font-size: 0.76rem;
 }
 
 .progressTrack {
   margin-top: 0.7rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.2);
+  background: #dbeafe;
   height: 6px;
   overflow: hidden;
 }
@@ -136,27 +155,32 @@
   display: block;
   height: 100%;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.9);
-}
-
-.toneBlue {
   background: linear-gradient(135deg, #1d4ed8, #3b82f6);
 }
 
+.toneBlue {
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  border-color: #bae6fd;
+}
+
 .toneNavy {
-  background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  border-color: #bfdbfe;
 }
 
 .toneSky {
-  background: linear-gradient(135deg, #2563eb, #60a5fa);
+  background: linear-gradient(135deg, #ecfeff, #cffafe);
+  border-color: #a5f3fc;
 }
 
 .toneInk {
-  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  border-color: #cbd5e1;
 }
 
 .toneRoyal {
-  background: linear-gradient(135deg, #1e40af, #2563eb);
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  border-color: #c7d2fe;
 }
 
 .grid {
@@ -168,10 +192,10 @@
 
 .panel {
   background: #ffffff;
-  border: 1px solid #dbeafe;
-  border-radius: 16px;
-  padding: 1rem;
-  box-shadow: 0 10px 20px rgba(30, 58, 138, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: 18px;
+  padding: 1.1rem;
+  box-shadow: 0 16px 28px rgba(30, 58, 138, 0.1);
 }
 
 .panelHead h3 {
@@ -236,18 +260,21 @@
 
 .actionBtn {
   text-decoration: none;
-  border: 1px solid #bfdbfe;
-  background: #eff6ff;
-  color: #1e3a8a;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  color: #0f172a;
   border-radius: 10px;
   padding: 0.62rem 0.7rem;
   font-size: 0.84rem;
   font-weight: 600;
   text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .actionBtn:hover {
-  background: #dbeafe;
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(30, 58, 138, 0.16);
 }
 
 .wide {
@@ -288,10 +315,11 @@
 
 .footerNote {
   margin-top: 0.95rem;
-  border: 1px solid #dbeafe;
+  border: 1px solid rgba(59, 130, 246, 0.15);
   background: #ffffff;
   border-radius: 14px;
   padding: 0.95rem 1rem;
+  box-shadow: 0 12px 22px rgba(30, 58, 138, 0.08);
 }
 
 .footerNote h4 {

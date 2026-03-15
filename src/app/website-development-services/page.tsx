@@ -99,7 +99,7 @@ export default function WebsiteDevelopmentServicesPage() {
                 <Link href="/digital-marketing-services" className={styles.navMenuItem}>
                   Digital Marketing Services
                 </Link>
-                <Link href="/seo-services" className={styles.navMenuItem}>
+                <Link href="/popular-tools" className={styles.navMenuItem}>
                   SEO Services
                 </Link>
                 <Link href="/social-media-marketing-services" className={styles.navMenuItem}>

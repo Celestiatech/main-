@@ -107,6 +107,57 @@ export default function CareerPage() {
   ];
 
   const [selectedJob, setSelectedJob] = useState<number | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    position: "",
+    experience: "",
+    message: "",
+  });
+
+  const handleApplyClick = (jobTitle: string) => {
+    setFormData((prev) => ({ ...prev, position: jobTitle }));
+    if (typeof window !== "undefined") {
+      const formSection = document.getElementById("career-application-form");
+      formSection?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage("");
+
+    try {
+      const response = await fetch("/api/career", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      if (response.ok && data.success) {
+        setSubmitMessage("Application submitted successfully. Our team will contact you soon.");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          position: "",
+          experience: "",
+          message: "",
+        });
+      } else {
+        setSubmitMessage(data.error || "Failed to submit application. Please try again.");
+      }
+    } catch (error) {
+      setSubmitMessage("Failed to submit application. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className={styles.page}>
@@ -176,9 +227,13 @@ export default function CareerPage() {
                       ))}
                     </ul>
                     <Link 
-                      href="/contact" 
+                      href="#career-application-form"
                       className="btn btn-accent"
                       style={{ width: "100%", marginTop: "16px", padding: "10px 20px", fontSize: "14px", display: "inline-flex" }}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleApplyClick(job.title);
+                      }}
                     >
                       Apply Now
                     </Link>
@@ -186,6 +241,123 @@ export default function CareerPage() {
                 )}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== CAREER APPLICATION FORM ===== */}
+      <section id="career-application-form" className={styles.careerApplySection}>
+        <div className="container">
+          <div className={styles.contactGrid}>
+            <div className={styles.contactInfo}>
+              <h2>Apply For A Role</h2>
+              <p>
+                Submit your application directly from this page. Select any open role or choose "Other" if your role is not listed.
+              </p>
+              <div className={styles.contactLocations}>
+                <div className={styles.contactLocation}>
+                  <h4>Fast Review</h4>
+                  <p>Initial screening in 2-4 business days.</p>
+                </div>
+                <div className={styles.contactLocation}>
+                  <h4>Global Roles</h4>
+                  <p>Onsite, hybrid, and remote opportunities.</p>
+                </div>
+              </div>
+            </div>
+
+            <form className={styles.contactForm} onSubmit={handleSubmit}>
+              <div className={styles.formRow}>
+                <div className={styles.formGroup}>
+                  <label>Full Name *</label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="Your full name"
+                  />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Email Address *</label>
+                  <input
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    placeholder="your@email.com"
+                  />
+                </div>
+              </div>
+
+              <div className={styles.formRow}>
+                <div className={styles.formGroup}>
+                  <label>Phone Number *</label>
+                  <input
+                    type="tel"
+                    required
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    placeholder="+971 00 000 0000"
+                  />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Position *</label>
+                  <select
+                    required
+                    value={formData.position}
+                    onChange={(e) => setFormData({ ...formData, position: e.target.value })}
+                  >
+                    <option value="">Select open position</option>
+                    {openPositions.map((job) => (
+                      <option key={job.title} value={job.title}>
+                        {job.title}
+                      </option>
+                    ))}
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className={styles.formGroup}>
+                <label>Years of Experience</label>
+                <select
+                  value={formData.experience}
+                  onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
+                >
+                  <option value="">Select experience range</option>
+                  <option value="0-1">0-1 years</option>
+                  <option value="2-3">2-3 years</option>
+                  <option value="4-6">4-6 years</option>
+                  <option value="7-10">7-10 years</option>
+                  <option value="10+">10+ years</option>
+                </select>
+              </div>
+
+              <div className={styles.formGroup}>
+                <label>Why should we hire you? *</label>
+                <textarea
+                  rows={5}
+                  required
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  placeholder="Share your skills, achievements, and why you are a great fit..."
+                />
+              </div>
+
+              <button type="submit" className="btn btn-primary" style={{ width: "100%" }} disabled={isSubmitting}>
+                {isSubmitting ? "Submitting..." : "Submit Application"}
+              </button>
+
+              {submitMessage && (
+                <div
+                  className={styles.formNote}
+                  style={{ marginTop: "16px", color: submitMessage.includes("successfully") ? "#16a34a" : "#dc2626" }}
+                >
+                  {submitMessage}
+                </div>
+              )}
+            </form>
           </div>
         </div>
       </section>
