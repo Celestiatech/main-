@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import styles from "./tool-detail.module.css";
 
 interface ToolPlaygroundProps {
@@ -148,6 +148,25 @@ async function loadImage(src: string): Promise<HTMLImageElement> {
   });
 }
 
+function parsePdfPageRange(rangeStr: string, totalPages: number): number[] {
+  const indices: number[] = [];
+  const parts = rangeStr.split(",");
+  for (const part of parts) {
+    const trimmed = part.trim();
+    if (!trimmed) continue;
+    if (trimmed.includes("-")) {
+      const [startStr, endStr] = trimmed.split("-");
+      const start = Math.max(1, parseInt(startStr, 10));
+      const end = Math.min(totalPages, parseInt(endStr, 10));
+      for (let i = start; i <= end; i += 1) indices.push(i - 1);
+    } else {
+      const page = parseInt(trimmed, 10);
+      if (page >= 1 && page <= totalPages) indices.push(page - 1);
+    }
+  }
+  return [...new Set(indices)].sort((a, b) => a - b);
+}
+
 export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
   const [text, setText] = useState("");
   const [leftText, setLeftText] = useState("");
@@ -216,6 +235,23 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
   const [pdfFiles, setPdfFiles] = useState<File[]>([]);
   const [pdfPlainText, setPdfPlainText] = useState("");
   const [pdfPageRange, setPdfPageRange] = useState("1-2");
+  const [pdfStatus, setPdfStatus] = useState("");
+  const [pdfProcessing, setPdfProcessing] = useState(false);
+
+  const [copiedKey, setCopiedKey] = useState<string | null>(null);
+  const copyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const copyToClipboard = useCallback((value: string, key: string) => {
+    navigator.clipboard.writeText(value).then(() => {
+      setCopiedKey(key);
+      if (copyTimerRef.current) clearTimeout(copyTimerRef.current);
+      copyTimerRef.current = setTimeout(() => setCopiedKey(null), 1800);
+    }).catch(() => {
+      setCopiedKey(`${key}-fail`);
+      if (copyTimerRef.current) clearTimeout(copyTimerRef.current);
+      copyTimerRef.current = setTimeout(() => setCopiedKey(null), 2000);
+    });
+  }, []);
 
   const wordCount = useMemo(() => {
     if (!text.trim()) {
@@ -546,7 +582,10 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
           <textarea className={styles.textarea} value={leftText} onChange={(e) => setLeftText(e.target.value)} placeholder="Original text" />
           <textarea className={styles.textarea} value={rightText} onChange={(e) => setRightText(e.target.value)} placeholder="Changed text" />
         </div>
-        <pre className={styles.output}>{diffOutput || "Diff will appear here"}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{diffOutput || "Diff will appear here"}</pre>
+          {diffOutput && <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(diffOutput, "diff")}>{(copiedKey === "diff" ? "Copied!" : copiedKey === "diff-fail" ? "Failed!" : "Copy")}</button>}
+        </div>
       </div>
     );
   }
@@ -555,7 +594,10 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
     return (
       <div className={styles.playgroundCard}>
         <textarea className={styles.textarea} value={text} onChange={(e) => setText(e.target.value)} placeholder="Paste lines here" />
-        <pre className={styles.output}>{deduplicatedLines || "Deduplicated lines will appear here"}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{deduplicatedLines || "Deduplicated lines will appear here"}</pre>
+          {deduplicatedLines && <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(deduplicatedLines, "dedup")}>{(copiedKey === "dedup" ? "Copied!" : copiedKey === "dedup-fail" ? "Failed!" : "Copy")}</button>}
+        </div>
       </div>
     );
   }
@@ -564,7 +606,10 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
     return (
       <div className={styles.playgroundCard}>
         <textarea className={styles.textarea} value={text} onChange={(e) => setText(e.target.value)} placeholder="One item per line" />
-        <pre className={styles.output}>{sortedLines || "Sorted lines will appear here"}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{sortedLines || "Sorted lines will appear here"}</pre>
+          {sortedLines && <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(sortedLines, "sorted")}>{(copiedKey === "sorted" ? "Copied!" : copiedKey === "sorted-fail" ? "Failed!" : "Copy")}</button>}
+        </div>
       </div>
     );
   }
@@ -585,7 +630,10 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
         <button className={styles.button} type="button" onClick={() => setGeneratedPassword(generatePassword(passwordLength))}>
           Generate Password
         </button>
-        <pre className={styles.output}>{generatedPassword || "Click generate to create a password"}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{generatedPassword || "Click generate to create a password"}</pre>
+          {generatedPassword && <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(generatedPassword, "pw")}>{(copiedKey === "pw" ? "Copied!" : copiedKey === "pw-fail" ? "Failed!" : "Copy")}</button>}
+        </div>
       </div>
     );
   }
@@ -596,7 +644,10 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
         <button className={styles.button} type="button" onClick={() => setGeneratedUuid(generateUuidV4())}>
           Generate UUID
         </button>
-        <pre className={styles.output}>{generatedUuid || "Click generate to create a UUID"}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{generatedUuid || "Click generate to create a UUID"}</pre>
+          {generatedUuid && <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(generatedUuid, "uuid")}>{(copiedKey === "uuid" ? "Copied!" : copiedKey === "uuid-fail" ? "Failed!" : "Copy")}</button>}
+        </div>
       </div>
     );
   }
@@ -657,12 +708,16 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
         <div className={`${styles.statusBadge} ${jsonResult.ok ? styles.ok : styles.error}`}>
           {jsonResult.message}
         </div>
-        <pre className={styles.output}>{jsonResult.ok ? jsonResult.formatted : "Fix JSON errors to view output"}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{jsonResult.ok ? jsonResult.formatted : "Fix JSON errors to view output"}</pre>
+          {jsonResult.ok && <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(jsonResult.formatted, "json")}>{(copiedKey === "json" ? "Copied!" : copiedKey === "json-fail" ? "Failed!" : "Copy")}</button>}
+        </div>
       </div>
     );
   }
 
   if (slug === "regex-tester") {
+    const regexOutput = regexResult.ok ? (regexResult.matches.length > 0 ? regexResult.matches.join("\n") : "No matches") : "";
     return (
       <div className={styles.playgroundCard}>
         <div className={styles.twoCol}>
@@ -677,7 +732,10 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
         </div>
         <textarea className={styles.textarea} value={regexInput} onChange={(e) => setRegexInput(e.target.value)} placeholder="Input text" />
         {regexResult.ok ? (
-          <pre className={styles.output}>{regexResult.matches.length > 0 ? regexResult.matches.join("\n") : "No matches"}</pre>
+          <div className={styles.copyWrapper}>
+            <pre className={styles.output}>{regexOutput}</pre>
+            {regexResult.matches.length > 0 && <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(regexOutput, "regex")}>{(copiedKey === "regex" ? "Copied!" : copiedKey === "regex-fail" ? "Failed!" : "Copy")}</button>}
+          </div>
         ) : (
           <div className={`${styles.statusBadge} ${styles.error}`}>{regexResult.error}</div>
         )}
@@ -689,7 +747,10 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
     return (
       <div className={styles.playgroundCard}>
         <textarea className={styles.textarea} value={minifyInput} onChange={(e) => setMinifyInput(e.target.value)} />
-        <pre className={styles.output}>{minifiedOutput}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{minifiedOutput}</pre>
+          {minifiedOutput && <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(minifiedOutput, "min")}>{(copiedKey === "min" ? "Copied!" : copiedKey === "min-fail" ? "Failed!" : "Copy")}</button>}
+        </div>
       </div>
     );
   }
@@ -710,7 +771,10 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
       <div className={styles.playgroundCard}>
         <label className={styles.label}>Number of words</label>
         <input className={styles.input} type="number" min={1} max={500} value={randomTextWords} onChange={(e) => setRandomTextWords(Number(e.target.value) || 1)} />
-        <pre className={styles.output}>{randomTextOutput}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{randomTextOutput}</pre>
+          {randomTextOutput && <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(randomTextOutput, "rtext")}>{(copiedKey === "rtext" ? "Copied!" : copiedKey === "rtext-fail" ? "Failed!" : "Copy")}</button>}
+        </div>
       </div>
     );
   }
@@ -720,7 +784,10 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
       <div className={styles.playgroundCard}>
         <label className={styles.label}>Paragraphs</label>
         <input className={styles.input} type="number" min={1} max={20} value={loremParagraphs} onChange={(e) => setLoremParagraphs(Number(e.target.value) || 1)} />
-        <pre className={styles.output}>{loremOutput}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{loremOutput}</pre>
+          {loremOutput && <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(loremOutput, "lorem")}>{(copiedKey === "lorem" ? "Copied!" : copiedKey === "lorem-fail" ? "Failed!" : "Copy")}</button>}
+        </div>
       </div>
     );
   }
@@ -926,62 +993,148 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
   }
 
   if (["pdf-to-word", "word-to-pdf", "merge-pdf", "split-pdf", "compress-pdf", "pdf-page-extractor", "pdf-password-remover"].includes(slug)) {
+    const isMultiFile = slug === "merge-pdf";
+    const needsRange = slug === "split-pdf" || slug === "pdf-page-extractor";
+    const isWordToPdf = slug === "word-to-pdf";
+    const needsPassword = slug === "pdf-password-remover";
+
+    const handlePdfAction = async () => {
+      if (isWordToPdf) {
+        if (!pdfPlainText.trim()) { setPdfStatus("Please paste some text first."); return; }
+        setPdfProcessing(true);
+        setPdfStatus("");
+        try {
+          const { default: jsPDF } = await import("jspdf");
+          const doc = new jsPDF();
+          const lines = doc.splitTextToSize(pdfPlainText, 180) as string[];
+          let y = 10;
+          for (const line of lines) {
+            if (y > 275) { doc.addPage(); y = 10; }
+            doc.text(line, 10, y);
+            y += 7;
+          }
+          downloadBlob(new Blob([doc.output("arraybuffer")], { type: "application/pdf" }), "document.pdf");
+          setPdfStatus("PDF downloaded.");
+        } catch (err) {
+          setPdfStatus(`Error: ${err instanceof Error ? err.message : String(err)}`);
+        } finally {
+          setPdfProcessing(false);
+        }
+        return;
+      }
+
+      if (pdfFiles.length === 0) { setPdfStatus("Please select a PDF file first."); return; }
+      setPdfProcessing(true);
+      setPdfStatus("");
+
+      try {
+        const { PDFDocument } = await import("pdf-lib");
+
+        if (slug === "merge-pdf") {
+          const merged = await PDFDocument.create();
+          for (const file of pdfFiles) {
+            const bytes = await file.arrayBuffer();
+            const doc = await PDFDocument.load(bytes);
+            const pages = await merged.copyPages(doc, doc.getPageIndices());
+            pages.forEach((p) => merged.addPage(p));
+          }
+          const out = await merged.save();
+          downloadBlob(new Blob([out.buffer as ArrayBuffer], { type: "application/pdf" }), "merged.pdf");
+          setPdfStatus(`Merged ${pdfFiles.length} files successfully.`);
+
+        } else if (slug === "split-pdf" || slug === "pdf-page-extractor") {
+          const bytes = await pdfFiles[0].arrayBuffer();
+          const original = await PDFDocument.load(bytes);
+          const indices = parsePdfPageRange(pdfPageRange, original.getPageCount());
+          if (indices.length === 0) { setPdfStatus("No valid pages in that range."); setPdfProcessing(false); return; }
+          const newDoc = await PDFDocument.create();
+          const pages = await newDoc.copyPages(original, indices);
+          pages.forEach((p) => newDoc.addPage(p));
+          const out = await newDoc.save();
+          downloadBlob(new Blob([out.buffer as ArrayBuffer], { type: "application/pdf" }), `${slug}-output.pdf`);
+          setPdfStatus(`Extracted ${indices.length} page(s) from ${original.getPageCount()} total.`);
+
+        } else if (slug === "compress-pdf") {
+          const bytes = await pdfFiles[0].arrayBuffer();
+          const doc = await PDFDocument.load(bytes);
+          const out = await doc.save({ useObjectStreams: true });
+          downloadBlob(new Blob([out.buffer as ArrayBuffer], { type: "application/pdf" }), "compressed.pdf");
+          const saved = ((bytes.byteLength - out.byteLength) / bytes.byteLength * 100).toFixed(1);
+          setPdfStatus(`Done. Original: ${(bytes.byteLength / 1024).toFixed(1)} KB → Output: ${(out.byteLength / 1024).toFixed(1)} KB (${saved}% reduction).`);
+
+        } else if (slug === "pdf-password-remover") {
+          const bytes = await pdfFiles[0].arrayBuffer();
+          try {
+            const doc = await PDFDocument.load(bytes, { ignoreEncryption: true });
+            const out = await doc.save();
+            downloadBlob(new Blob([out.buffer as ArrayBuffer], { type: "application/pdf" }), "unlocked.pdf");
+            setPdfStatus("PDF re-saved (encryption stripped). Download the unlocked PDF.");
+          } catch (encryptErr) {
+            setPdfStatus(`Could not process this PDF: ${encryptErr instanceof Error ? encryptErr.message : "Unsupported encryption method."}`);
+          }
+
+        } else if (slug === "pdf-to-word") {
+          const bytes = await pdfFiles[0].arrayBuffer();
+          const doc = await PDFDocument.load(bytes);
+          const info = [
+            `File: ${pdfFiles[0].name}`,
+            `Size: ${(bytes.byteLength / 1024).toFixed(1)} KB`,
+            `Pages: ${doc.getPageCount()}`,
+            `Title: ${doc.getTitle() ?? "(none)"}`,
+            `Author: ${doc.getAuthor() ?? "(none)"}`,
+            `Subject: ${doc.getSubject() ?? "(none)"}`,
+            ``,
+            `Note: Full text extraction and Word conversion requires server-side processing.`,
+            `The metadata above was extracted client-side with pdf-lib.`,
+          ].join("\n");
+          downloadBlob(new Blob([info], { type: "text/plain" }), "pdf-info.txt");
+          setPdfStatus("PDF info extracted. For DOCX output, server-side conversion (e.g. LibreOffice) is needed.");
+        }
+      } catch (err) {
+        setPdfStatus(`Error: ${err instanceof Error ? err.message : String(err)}`);
+      } finally {
+        setPdfProcessing(false);
+      }
+    };
+
     return (
       <div className={styles.playgroundCard}>
-        <label className={styles.label}>PDF files</label>
-        <input
-          className={styles.input}
-          type="file"
-          accept="application/pdf"
-          multiple={slug === "merge-pdf"}
-          onChange={(e) => {
-            const files = Array.from(e.target.files ?? []);
-            setPdfFiles(files);
-          }}
-        />
-
-        {(slug === "split-pdf" || slug === "pdf-page-extractor") && (
+        {!isWordToPdf && (
           <>
-            <label className={styles.label}>Page range (example: 1-3,5)</label>
+            <label className={styles.label}>{isMultiFile ? "PDF files (select multiple)" : "PDF file"}</label>
+            <input
+              className={styles.input}
+              type="file"
+              accept="application/pdf"
+              multiple={isMultiFile}
+              onChange={(e) => { setPdfFiles(Array.from(e.target.files ?? [])); setPdfStatus(""); }}
+            />
+          </>
+        )}
+
+        {needsRange && (
+          <>
+            <label className={styles.label}>Page range (e.g. 1-3,5)</label>
             <input className={styles.input} value={pdfPageRange} onChange={(e) => setPdfPageRange(e.target.value)} />
           </>
         )}
 
-        {slug === "word-to-pdf" && (
+        {isWordToPdf && (
           <>
-            <label className={styles.label}>Paste text to export</label>
-            <textarea className={styles.textarea} value={pdfPlainText} onChange={(e) => setPdfPlainText(e.target.value)} />
+            <label className={styles.label}>Paste or type your text</label>
+            <textarea className={styles.textarea} value={pdfPlainText} onChange={(e) => setPdfPlainText(e.target.value)} placeholder="Your document text here…" />
           </>
         )}
 
-        <button
-          className={styles.button}
-          type="button"
-          onClick={() => {
-            const payload = {
-              tool: slug,
-              files: pdfFiles.map((f) => ({ name: f.name, size: f.size })),
-              pageRange: pdfPageRange,
-              textLength: pdfPlainText.length,
-              note: "Client-side PDF workflow export",
-            };
-            downloadBlob(new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" }), `${slug}-result.json`);
-          }}
-        >
-          Generate Result File
+        {needsPassword && (
+          <p className={styles.helperText}>This tool uses pdf-lib to re-save the PDF with encryption stripped (works on PDFs with standard encryption).</p>
+        )}
+
+        <button className={styles.button} type="button" disabled={pdfProcessing} onClick={handlePdfAction}>
+          {pdfProcessing ? "Processing…" : slug === "merge-pdf" ? "Merge & Download" : slug === "word-to-pdf" ? "Convert to PDF" : slug === "compress-pdf" ? "Compress & Download" : slug === "pdf-password-remover" ? "Remove Password & Download" : "Extract & Download"}
         </button>
 
-        <pre className={styles.output}>
-          {JSON.stringify(
-            {
-              selectedFiles: pdfFiles.map((f) => `${f.name} (${(f.size / 1024).toFixed(1)} KB)`),
-              pageRange: pdfPageRange,
-              hint: "For full binary conversion (real PDF to DOCX or page-level rewrite), add dedicated server-side PDF libraries.",
-            },
-            null,
-            2
-          )}
-        </pre>
+        {pdfStatus && <p className={styles.helperText}>{pdfStatus}</p>}
       </div>
     );
   }
@@ -994,7 +1147,10 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
         <textarea className={styles.textarea} value={metaDescription} onChange={(e) => setMetaDescription(e.target.value)} placeholder="Meta description" />
         <input className={styles.input} value={metaKeywords} onChange={(e) => setMetaKeywords(e.target.value)} placeholder="Keywords" />
         <input className={styles.input} value={metaUrl} onChange={(e) => setMetaUrl(e.target.value)} placeholder="Canonical URL" />
-        <pre className={styles.output}>{metaSnippet}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{metaSnippet}</pre>
+          <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(metaSnippet, "meta")}>{(copiedKey === "meta" ? "Copied!" : copiedKey === "meta-fail" ? "Failed!" : "Copy")}</button>
+        </div>
       </div>
     );
   }
@@ -1006,7 +1162,10 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
           <input type="checkbox" checked={robotsAllowIndex} onChange={(e) => setRobotsAllowIndex(e.target.checked)} />
           Allow indexing
         </label>
-        <pre className={styles.output}>{robotsText}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{robotsText}</pre>
+          <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(robotsText, "robots")}>{(copiedKey === "robots" ? "Copied!" : copiedKey === "robots-fail" ? "Failed!" : "Copy")}</button>
+        </div>
       </div>
     );
   }
@@ -1015,7 +1174,10 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
     return (
       <div className={styles.playgroundCard}>
         <textarea className={styles.textarea} value={sitemapUrls} onChange={(e) => setSitemapUrls(e.target.value)} placeholder="One URL per line" />
-        <pre className={styles.output}>{sitemapXml}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{sitemapXml}</pre>
+          <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(sitemapXml, "sitemap")}>{(copiedKey === "sitemap" ? "Copied!" : copiedKey === "sitemap-fail" ? "Failed!" : "Copy")}</button>
+        </div>
       </div>
     );
   }
@@ -1037,8 +1199,9 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
     const screenshotUrl = `https://image.thum.io/get/width/1200/noanimate/${encodeURIComponent(metaUrl || "https://example.com")}`;
     return (
       <div className={styles.playgroundCard}>
-        <input className={styles.input} value={metaUrl} onChange={(e) => setMetaUrl(e.target.value)} placeholder="Website URL" />
-        <p className={styles.helperText}>Preview is fetched from a screenshot service URL.</p>
+        <label className={styles.label}>Website URL</label>
+        <input className={styles.input} value={metaUrl} onChange={(e) => setMetaUrl(e.target.value)} placeholder="https://example.com" />
+        <p className={styles.helperText}>Preview is fetched via a third-party screenshot service.</p>
         <img className={styles.imagePreview} src={screenshotUrl} alt="Website screenshot" />
       </div>
     );
@@ -1090,36 +1253,54 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
   }
 
   if (slug === "gradient-generator") {
+    const gradientCode = `background: ${gradientCss};`;
     return (
       <div className={styles.playgroundCard}>
         <div className={styles.twoCol}>
-          <input className={styles.input} type="color" value={gradientA} onChange={(e) => setGradientA(e.target.value)} />
-          <input className={styles.input} type="color" value={gradientB} onChange={(e) => setGradientB(e.target.value)} />
+          <div>
+            <label className={styles.label}>Color A</label>
+            <input className={styles.input} type="color" value={gradientA} onChange={(e) => setGradientA(e.target.value)} />
+          </div>
+          <div>
+            <label className={styles.label}>Color B</label>
+            <input className={styles.input} type="color" value={gradientB} onChange={(e) => setGradientB(e.target.value)} />
+          </div>
         </div>
-        <label className={styles.label}>Angle</label>
+        <label className={styles.label}>Angle (degrees)</label>
         <input className={styles.input} type="number" value={gradientAngle} onChange={(e) => setGradientAngle(Number(e.target.value) || 0)} />
         <div className={styles.gradientPreview} style={{ background: gradientCss }} />
-        <pre className={styles.output}>{`background: ${gradientCss};`}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{gradientCode}</pre>
+          <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(gradientCode, "grad")}>{(copiedKey === "grad" ? "Copied!" : copiedKey === "grad-fail" ? "Failed!" : "Copy")}</button>
+        </div>
       </div>
     );
   }
 
   if (slug === "fake-user-generator") {
+    const fakeUsersJson = JSON.stringify(fakeUsers, null, 2);
     return (
       <div className={styles.playgroundCard}>
         <label className={styles.label}>Users count</label>
         <input className={styles.input} type="number" min={1} max={50} value={fakeUserCount} onChange={(e) => setFakeUserCount(Number(e.target.value) || 1)} />
-        <pre className={styles.output}>{JSON.stringify(fakeUsers, null, 2)}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{fakeUsersJson}</pre>
+          <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(fakeUsersJson, "fakeuser")}>{(copiedKey === "fakeuser" ? "Copied!" : copiedKey === "fakeuser-fail" ? "Failed!" : "Copy")}</button>
+        </div>
       </div>
     );
   }
 
   if (slug === "random-name-generator") {
+    const namesText = randomNames.join("\n");
     return (
       <div className={styles.playgroundCard}>
         <label className={styles.label}>Names count</label>
         <input className={styles.input} type="number" min={1} max={100} value={randomNameCount} onChange={(e) => setRandomNameCount(Number(e.target.value) || 1)} />
-        <pre className={styles.output}>{randomNames.join("\n")}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{namesText}</pre>
+          <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(namesText, "names")}>{(copiedKey === "names" ? "Copied!" : copiedKey === "names-fail" ? "Failed!" : "Copy")}</button>
+        </div>
       </div>
     );
   }
@@ -1128,8 +1309,11 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
     const invoiceText = `Invoice #${Math.floor(10000 + Math.random() * 90000)}\nClient: ${invoiceClient}\nService: ${invoiceService}\nAmount: $${invoiceAmount.toFixed(2)}\nDate: ${new Date().toLocaleDateString()}`;
     return (
       <div className={styles.playgroundCard}>
+        <label className={styles.label}>Client name</label>
         <input className={styles.input} value={invoiceClient} onChange={(e) => setInvoiceClient(e.target.value)} placeholder="Client" />
+        <label className={styles.label}>Service description</label>
         <input className={styles.input} value={invoiceService} onChange={(e) => setInvoiceService(e.target.value)} placeholder="Service" />
+        <label className={styles.label}>Amount ($)</label>
         <input className={styles.input} type="number" value={invoiceAmount} onChange={(e) => setInvoiceAmount(Number(e.target.value) || 0)} placeholder="Amount" />
         <pre className={styles.output}>{invoiceText}</pre>
         <button className={styles.buttonSecondary} type="button" onClick={() => downloadBlob(new Blob([invoiceText], { type: "text/plain" }), "invoice.txt")}>Download Invoice</button>
@@ -1140,7 +1324,8 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
   if (slug === "password-strength-checker") {
     return (
       <div className={styles.playgroundCard}>
-        <input className={styles.input} type="text" value={passwordToCheck} onChange={(e) => setPasswordToCheck(e.target.value)} placeholder="Enter password" />
+        <label className={styles.label}>Enter password to check</label>
+        <input className={styles.input} type="text" value={passwordToCheck} onChange={(e) => setPasswordToCheck(e.target.value)} placeholder="Type a password…" />
         <div className={styles.metric}><span>Strength</span><strong>{passwordStrength.label}</strong></div>
         <div className={styles.progressBar}><div style={{ width: `${(passwordStrength.score / 5) * 100}%` }} /></div>
       </div>
@@ -1148,11 +1333,15 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
   }
 
   if (slug === "age-calculator") {
+    const ageText = ageData ? `${ageData.years} years, ${ageData.months} months, ${ageData.days} days` : "Pick a valid date";
     return (
       <div className={styles.playgroundCard}>
         <label className={styles.label}>Date of birth</label>
         <input className={styles.input} type="date" value={dob} onChange={(e) => setDob(e.target.value)} />
-        <pre className={styles.output}>{ageData ? `${ageData.years} years, ${ageData.months} months, ${ageData.days} days` : "Pick a valid date"}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{ageText}</pre>
+          {ageData && <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(ageText, "age")}>{(copiedKey === "age" ? "Copied!" : copiedKey === "age-fail" ? "Failed!" : "Copy")}</button>}
+        </div>
       </div>
     );
   }
@@ -1160,12 +1349,18 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
   if (slug === "timestamp-converter") {
     return (
       <div className={styles.playgroundCard}>
-        <label className={styles.label}>Unix timestamp</label>
-        <input className={styles.input} value={timestampInput} onChange={(e) => setTimestampInput(e.target.value)} />
-        <pre className={styles.output}>{timestampToDate}</pre>
-        <label className={styles.label}>Date to timestamp</label>
+        <label className={styles.label}>Unix timestamp → Human date</label>
+        <input className={styles.input} value={timestampInput} onChange={(e) => setTimestampInput(e.target.value)} placeholder="e.g. 1700000000" />
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{timestampToDate}</pre>
+          {timestampToDate && <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(timestampToDate, "ts1")}>{(copiedKey === "ts1" ? "Copied!" : copiedKey === "ts1-fail" ? "Failed!" : "Copy")}</button>}
+        </div>
+        <label className={styles.label}>Date/time → Unix timestamp</label>
         <input className={styles.input} type="datetime-local" value={dateToTimestamp} onChange={(e) => setDateToTimestamp(e.target.value)} />
-        <pre className={styles.output}>{dateAsTimestamp}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{dateAsTimestamp}</pre>
+          {dateAsTimestamp && <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(dateAsTimestamp, "ts2")}>{(copiedKey === "ts2" ? "Copied!" : copiedKey === "ts2-fail" ? "Failed!" : "Copy")}</button>}
+        </div>
       </div>
     );
   }
@@ -1183,7 +1378,7 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
   if (slug === "time-zone-converter") {
     return (
       <div className={styles.playgroundCard}>
-        <label className={styles.label}>Date/time</label>
+        <label className={styles.label}>Date/time (local)</label>
         <input className={styles.input} type="datetime-local" value={timezoneDateTime} onChange={(e) => setTimezoneDateTime(e.target.value)} />
         <label className={styles.label}>Target timezone</label>
         <select className={styles.select} value={timezoneTarget} onChange={(e) => setTimezoneTarget(e.target.value)}>
@@ -1191,7 +1386,10 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
             <option key={tz.value} value={tz.value}>{tz.label}</option>
           ))}
         </select>
-        <pre className={styles.output}>{convertedTimezone}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{convertedTimezone}</pre>
+          {convertedTimezone && <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(convertedTimezone, "tz")}>{(copiedKey === "tz" ? "Copied!" : copiedKey === "tz-fail" ? "Failed!" : "Copy")}</button>}
+        </div>
       </div>
     );
   }
@@ -1205,20 +1403,30 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
           <option value="weight">Weight</option>
           <option value="temperature">Temperature</option>
         </select>
+        <label className={styles.label}>Value</label>
         <input className={styles.input} type="number" value={unitValue} onChange={(e) => setUnitValue(Number(e.target.value) || 0)} />
         <div className={styles.twoCol}>
-          <select className={styles.select} value={fromUnit} onChange={(e) => setFromUnit(e.target.value)}>
-            {unitOptions.map((u) => (
-              <option key={u} value={u}>{u}</option>
-            ))}
-          </select>
-          <select className={styles.select} value={toUnit} onChange={(e) => setToUnit(e.target.value)}>
-            {unitOptions.map((u) => (
-              <option key={u} value={u}>{u}</option>
-            ))}
-          </select>
+          <div>
+            <label className={styles.label}>From</label>
+            <select className={styles.select} value={fromUnit} onChange={(e) => setFromUnit(e.target.value)}>
+              {unitOptions.map((u) => (
+                <option key={u} value={u}>{u}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label className={styles.label}>To</label>
+            <select className={styles.select} value={toUnit} onChange={(e) => setToUnit(e.target.value)}>
+              {unitOptions.map((u) => (
+                <option key={u} value={u}>{u}</option>
+              ))}
+            </select>
+          </div>
         </div>
-        <pre className={styles.output}>{unitResult}</pre>
+        <div className={styles.copyWrapper}>
+          <pre className={styles.output}>{unitResult}</pre>
+          {unitResult && <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(unitResult, "unit")}>{(copiedKey === "unit" ? "Copied!" : copiedKey === "unit-fail" ? "Failed!" : "Copy")}</button>}
+        </div>
       </div>
     );
   }
