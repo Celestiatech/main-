@@ -159,6 +159,13 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
           >
             📋 All Messages
           </Link>
+          <Link
+            href="/admin/outreach"
+            className={styles.navLink}
+            style={fallback.navLink}
+          >
+            ✉️ Outreach Email
+          </Link>
         </nav>
 
         <div className={styles.bottom} style={fallback.bottom}>
