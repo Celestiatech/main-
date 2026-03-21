@@ -354,96 +354,117 @@ export default function Home() {
 
       {/* ===== HERO SECTION ===== */}
       <section className={`${styles.hero} ${styles.heroRedesign}`} data-debug="hero-section">
-        {/* Decorative sparkles */}
-        <span className={`${styles.sparkle} ${styles.sparkle1}`}>✦</span>
-        <span className={`${styles.sparkle} ${styles.sparkle2}`}>✦</span>
-        <span className={`${styles.sparkle} ${styles.sparkle3}`}>✦</span>
-        <span className={`${styles.sparkle} ${styles.sparkle4}`}>✦</span>
+        {/* Ambient sparkle decorations — positions match reference image */}
+        <span className={`${styles.sparkle} ${styles.sparkle1}`} aria-hidden="true">✦</span>
+        <span className={`${styles.sparkle} ${styles.sparkle2}`} aria-hidden="true">✦</span>
+        <span className={`${styles.sparkle} ${styles.sparkle3}`} aria-hidden="true">✦</span>
+        <span className={`${styles.sparkle} ${styles.sparkle4}`} aria-hidden="true">✦</span>
 
         <div className={`${styles.heroRedesignInner} container`}>
-          {/* Top-right badge */}
-          <div className={styles.heroPillBadge}>
-            <span>CT Partner</span>
-            <span className={styles.heroPillBadgeSep}>·</span>
-            <span>2026</span>
+
+          {/* ── Two stacked pill badges, top-right ── */}
+          <div className={styles.heroBadgeStack}>
+            <span className={styles.heroBadgeTop}>CT Production</span>
+            <span className={styles.heroBadgeBottom}>2026.03</span>
           </div>
 
-          {/* Main headline */}
+          {/* ── Three-line headline ── */}
           <div className={styles.heroHeadlineWrap}>
             <h1 className={styles.heroRedesignTitle}>
-              We Build{" "}
-              <span className={styles.heroTitleAccent}>Revenue-Generating</span>
-              <span className={styles.heroTitleSparkleInline}>✦</span>
-              <br />
-              <span className={styles.heroTitleOrangeChip}>
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                  <circle cx="14" cy="14" r="14" fill="#F59E0B"/>
-                  <path d="M9 14l4 4 6-8" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+              {/* Line 1 */}
+              <span className={styles.heroLine1}>
+                We Build Revenue-
+                <span className={styles.heroSparkleSmall} aria-hidden="true">✦</span>
+              </span>
+              {/* Line 2: "Generating [orange pill ✦] Apps" */}
+              <span className={styles.heroLine2}>
+                Generating{" "}
+                <span
+                  className={styles.heroOrangePill}
+                  aria-hidden="true"
+                >
+                  <span className={styles.heroOrangePillStar}>✦</span>
+                </span>
+                {" "}Apps
+              </span>
+              {/* Line 3: arc + sparkle + "for Business" */}
+              <span className={styles.heroLine3}>
+                {/* Decorative arc/ellipse SVG */}
+                <svg
+                  className={styles.heroArc}
+                  viewBox="0 0 160 48"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M8 40 C30 8, 130 8, 152 40"
+                    stroke="#7C3AED"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    fill="none"
+                  />
                 </svg>
-              </span>{" "}
-              Apps for Your Business
+                <span className={styles.heroSparkleSmall} aria-hidden="true">✦</span>
+                {" "}for Business
+              </span>
             </h1>
-            {/* Decorative ring */}
-            <svg className={styles.heroRing} viewBox="0 0 220 40" fill="none" aria-hidden="true">
-              <ellipse cx="110" cy="20" rx="108" ry="16" stroke="#7C3AED" strokeWidth="2.5" strokeDasharray="6 4"/>
-            </svg>
           </div>
 
-          {/* Stats + CTA row */}
+          {/* ── Stats (left) + Join us button (right) ── */}
           <div className={styles.heroStatsRow}>
             <div className={styles.heroStatItem}>
               <span className={styles.heroStatLabel}>With more than</span>
-              <span className={styles.heroStatValue}>1,800+&nbsp;PROJECTS</span>
-              <span className={styles.heroStatValue}>200+&nbsp;CLIENTS</span>
+              <span className={styles.heroStatValue}>1,800 + PROJECTS</span>
+              <span className={styles.heroStatValue}>200 + CLIENTS</span>
             </div>
             <Link
               href="/proposal"
               className={styles.heroJoinBtn}
-              onClick={() => trackCTAClick("Get Started", "hero", pathname || "/")}
+              onClick={() => trackCTAClick("Join Us", "hero", pathname || "/")}
             >
-              Get Started
-              <span className={styles.heroJoinBtnArrow} aria-hidden="true">↗</span>
+              <span>Join us</span>
+              <span className={styles.heroJoinBtnBox} aria-hidden="true">↗</span>
             </Link>
           </div>
 
-          {/* Service cards carousel */}
+          {/* ── Scrollable service-icon cards with arrow buttons ── */}
           <div className={styles.heroCarouselWrap}>
             <button
-              className={`${styles.heroCarouselArrow} ${styles.heroCarouselArrowLeft}`}
+              className={styles.heroCarouselArrow}
               aria-label="Previous"
               onClick={() => {
                 const el = document.getElementById("heroCarousel");
-                if (el) el.scrollBy({ left: -158, behavior: "smooth" });
+                if (el) el.scrollBy({ left: -178, behavior: "smooth" });
               }}
             >
               ←
             </button>
             <div id="heroCarousel" className={styles.heroCarousel}>
               {[
-                { bg: "#F472B6", icon: "/images/icons/mobile-development.svg", label: "Mobile Apps" },
-                { bg: "#A78BFA", icon: "/images/icons/web-development.svg",    label: "Web Dev" },
-                { bg: "#34D399", icon: "/images/icons/blockchain-development.svg", label: "Blockchain" },
-                { bg: "#FBBF24", icon: "/images/icons/devops-services.svg",    label: "DevOps" },
-                { bg: "#60A5FA", icon: "/images/icons/metaverse-development.svg",  label: "AI / AR" },
-                { bg: "#F87171", icon: "/images/icons/game-development.svg",   label: "Game Dev" },
+                { bg: "#F472B6", emoji: "📱", label: "Mobile Apps" },
+                { bg: "#A78BFA", emoji: "🎨", label: "Web Dev" },
+                { bg: "#22D3EE", emoji: "🔗", label: "Blockchain" },
+                { bg: "#FBBF24", emoji: "⚙️", label: "DevOps" },
+                { bg: "#818CF8", emoji: "🤖", label: "AI / AR" },
+                { bg: "#F87171", emoji: "🎮", label: "Game Dev" },
               ].map((card, i) => (
                 <div key={i} className={styles.heroServiceCard} style={{ background: card.bg }}>
-                  <Image src={card.icon} alt={card.label} width={64} height={64} />
-                  <span className={styles.heroServiceCardLabel}>{card.label}</span>
+                  <span className={styles.heroServiceCardEmoji} role="img" aria-label={card.label}>{card.emoji}</span>
                 </div>
               ))}
             </div>
             <button
-              className={`${styles.heroCarouselArrow} ${styles.heroCarouselArrowRight}`}
+              className={styles.heroCarouselArrow}
               aria-label="Next"
               onClick={() => {
                 const el = document.getElementById("heroCarousel");
-                if (el) el.scrollBy({ left: 158, behavior: "smooth" });
+                if (el) el.scrollBy({ left: 178, behavior: "smooth" });
               }}
             >
               →
             </button>
           </div>
+
         </div>
       </section>
 
