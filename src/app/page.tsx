@@ -353,40 +353,96 @@ export default function Home() {
       <main id="main-content" className={styles.main} tabIndex={-1}>
 
       {/* ===== HERO SECTION ===== */}
-      <section className={`${styles.hero} hero-enhanced`} data-debug="hero-section">
-        <div className={styles.heroBg}>
-          <video autoPlay loop muted playsInline>
-            <source src="/PixVerse_V5.5_Image_Text_540P_A_cinematic_shotonline-video-cutter.com-ezgif.com-video-to-gif-converter.mp4" type="video/mp4" />
-          </video>
-          <div className={styles.heroOverlay}></div>
-        </div>
-        <div className="container">
-          <div className={styles.heroContent}>
-            <div className={`${styles.heroBadge} heroBadgeAnimate`}>
-              <span className={styles.heroBadgeDot}></span>
-              Premium IT & Software Development
-            </div>
-            <h1 
-              style={{ display: 'block', whiteSpace: 'normal', wordBreak: 'break-word', overflowWrap: 'break-word', maxWidth: '100%', overflow: 'visible', textAlign: 'center' }}
-              className="heroTitleAnimate"
-            >
-              We Build <span>Revenue-Generating</span> Apps
+      <section className={`${styles.hero} ${styles.heroRedesign}`} data-debug="hero-section">
+        {/* Decorative sparkles */}
+        <span className={`${styles.sparkle} ${styles.sparkle1}`}>✦</span>
+        <span className={`${styles.sparkle} ${styles.sparkle2}`}>✦</span>
+        <span className={`${styles.sparkle} ${styles.sparkle3}`}>✦</span>
+        <span className={`${styles.sparkle} ${styles.sparkle4}`}>✦</span>
+
+        <div className={`${styles.heroRedesignInner} container`}>
+          {/* Top-right badge */}
+          <div className={styles.heroPillBadge}>
+            <span>CT Partner</span>
+            <span className={styles.heroPillBadgeSep}>·</span>
+            <span>2026</span>
+          </div>
+
+          {/* Main headline */}
+          <div className={styles.heroHeadlineWrap}>
+            <h1 className={styles.heroRedesignTitle}>
+              We Build{" "}
+              <span className={styles.heroTitleAccent}>Revenue-Generating</span>
+              <span className={styles.heroTitleSparkleInline}>✦</span>
+              <br />
+              <span className={styles.heroTitleOrangeChip}>
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                  <circle cx="14" cy="14" r="14" fill="#F59E0B"/>
+                  <path d="M9 14l4 4 6-8" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>{" "}
+              Apps for Your Business
             </h1>
-            <p className={`${styles.heroSubtitle} heroSubtitleAnimate`}>
-              Custom software solutions for startups and enterprises that scale
-            </p>
-            <div className={`${styles.heroActions} heroActionsAnimate`}>
-              <Link 
-                href="/popular-tools" 
-                className="btn btn-primary btn-water btn-3d"
-                onClick={() => trackCTAClick("See Popular Tools", "hero", pathname || "/")}
-              >
-                See Popular Tools
-              </Link>
-              <Link href="/work" className="btn btn-secondary btn-water btn-3d">
-                View Case Studies
-              </Link>
+            {/* Decorative ring */}
+            <svg className={styles.heroRing} viewBox="0 0 220 40" fill="none" aria-hidden="true">
+              <ellipse cx="110" cy="20" rx="108" ry="16" stroke="#7C3AED" strokeWidth="2.5" strokeDasharray="6 4"/>
+            </svg>
+          </div>
+
+          {/* Stats + CTA row */}
+          <div className={styles.heroStatsRow}>
+            <div className={styles.heroStatItem}>
+              <span className={styles.heroStatLabel}>With more than</span>
+              <span className={styles.heroStatValue}>1,800+&nbsp;PROJECTS</span>
+              <span className={styles.heroStatValue}>200+&nbsp;CLIENTS</span>
             </div>
+            <Link
+              href="/proposal"
+              className={styles.heroJoinBtn}
+              onClick={() => trackCTAClick("Get Started", "hero", pathname || "/")}
+            >
+              Get Started
+              <span className={styles.heroJoinBtnArrow} aria-hidden="true">↗</span>
+            </Link>
+          </div>
+
+          {/* Service cards carousel */}
+          <div className={styles.heroCarouselWrap}>
+            <button
+              className={`${styles.heroCarouselArrow} ${styles.heroCarouselArrowLeft}`}
+              aria-label="Previous"
+              onClick={() => {
+                const el = document.getElementById("heroCarousel");
+                if (el) el.scrollBy({ left: -158, behavior: "smooth" });
+              }}
+            >
+              ←
+            </button>
+            <div id="heroCarousel" className={styles.heroCarousel}>
+              {[
+                { bg: "#F472B6", icon: "/images/icons/mobile-development.svg", label: "Mobile Apps" },
+                { bg: "#A78BFA", icon: "/images/icons/web-development.svg",    label: "Web Dev" },
+                { bg: "#34D399", icon: "/images/icons/blockchain-development.svg", label: "Blockchain" },
+                { bg: "#FBBF24", icon: "/images/icons/devops-services.svg",    label: "DevOps" },
+                { bg: "#60A5FA", icon: "/images/icons/metaverse-development.svg",  label: "AI / AR" },
+                { bg: "#F87171", icon: "/images/icons/game-development.svg",   label: "Game Dev" },
+              ].map((card, i) => (
+                <div key={i} className={styles.heroServiceCard} style={{ background: card.bg }}>
+                  <Image src={card.icon} alt={card.label} width={64} height={64} />
+                  <span className={styles.heroServiceCardLabel}>{card.label}</span>
+                </div>
+              ))}
+            </div>
+            <button
+              className={`${styles.heroCarouselArrow} ${styles.heroCarouselArrowRight}`}
+              aria-label="Next"
+              onClick={() => {
+                const el = document.getElementById("heroCarousel");
+                if (el) el.scrollBy({ left: 158, behavior: "smooth" });
+              }}
+            >
+              →
+            </button>
           </div>
         </div>
       </section>
