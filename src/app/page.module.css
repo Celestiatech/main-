@@ -5128,14 +5128,14 @@
 
 
 /* ===================================================================
-
-/* === HERO REDESIGN v2 — exact reference match === */
+   HERO REDESIGN v2 — exact reference match
+   =================================================================== */
 
 .heroRedesign {
   background: #fdfcff !important;
   background-image: none !important;
   min-height: auto !important;
-  padding: 100px 0 72px !important;
+  padding: 115px 0 48px !important;
   position: relative;
   overflow: hidden;
 }
@@ -5164,10 +5164,11 @@
   font-style: normal;
   z-index: 1;
 }
-.sparkle1 { top: 18%;  left: 5%;   font-size: 28px; animation-delay: 0s;   }
-.sparkle2 { top: 13%;  right: 20%; font-size: 12px; animation-delay: 0.7s; }
-.sparkle3 { top: 52%;  left: 2%;   font-size: 20px; animation-delay: 1.3s; }
-.sparkle4 { bottom: 12%; right: 4%; font-size: 26px; animation-delay: 0.3s; }
+.sparkle1 { top: 28%;  left: 7%;   font-size: 26px; animation-delay: 0s;   }
+.sparkle2 { top: 15%;  right: 22%; font-size: 13px; animation-delay: 0.7s; }
+.sparkle3 { top: 48%;  left: 3%;   font-size: 18px; animation-delay: 1.3s; }
+.sparkle4 { bottom: 15%; right: 5%; font-size: 28px; animation-delay: 0.3s; }
+.sparkle5 { top: 20%;  right: 10%; font-size: 10px; animation-delay: 1.0s; }
 
 @keyframes sparklePulse {
   0%, 100% { opacity: 0.72; transform: scale(1) rotate(0deg); }
@@ -5206,11 +5207,11 @@
 
 /* Override global .hero h1 (0,1,1) and .hero h1 span (0,1,2) */
 .heroRedesign h1 {
-  font-size: clamp(2.8rem, 7.5vw, 5.2rem) !important;
+  font-size: clamp(2.2rem, 4.8vw, 3.8rem) !important;
   font-weight: 900 !important;
-  line-height: 1.12 !important;
+  line-height: 1.15 !important;
   color: #18181b !important;
-  letter-spacing: -2px !important;
+  letter-spacing: -1.5px !important;
   margin: 0 !important;
   animation: none !important;
   background: none !important;
@@ -5262,11 +5263,11 @@
   justify-content: center;
   background: #F59E0B !important;
   background-image: none !important;
-  border-radius: 20px;
-  width: 88px;
-  height: 64px;
+  border-radius: 18px;
+  width: 76px;
+  height: 54px;
   flex-shrink: 0;
-  box-shadow: 0 4px 18px rgba(245, 158, 11, 0.4);
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.38);
   transition: transform 0.25s ease;
   -webkit-text-fill-color: #fff !important;
 }
@@ -5275,14 +5276,14 @@
 .heroOrangePillStar {
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
-  font-size: 2rem;
+  font-size: 1.9rem;
   line-height: 1;
   background: none !important;
 }
 
 .heroArc {
-  width: 110px;
-  height: 44px;
+  width: 70px;
+  height: 56px;
   flex-shrink: 0;
   overflow: visible;
 }
@@ -5293,7 +5294,7 @@
   justify-content: space-between;
   width: 100%;
   max-width: 700px;
-  margin-top: 44px;
+  margin-top: 28px;
   gap: 24px;
   flex-wrap: wrap;
 }
@@ -5339,7 +5340,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-top: 52px;
+  margin-top: 32px;
   width: 100%;
   max-width: 780px;
 }
@@ -5356,14 +5357,14 @@
 .heroCarousel::-webkit-scrollbar { display: none; }
 
 .heroServiceCard {
-  flex: 0 0 160px;
-  height: 160px;
-  border-radius: 32px;
+  flex: 0 0 148px;
+  height: 148px;
+  border-radius: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
   scroll-snap-align: start;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.13);
+  box-shadow: 0 8px 26px rgba(0,0,0,0.12);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
   overflow: hidden;
@@ -5389,24 +5390,24 @@
 .heroCarouselArrow:hover { background: #6D28D9; transform: scale(1.1); }
 
 @media (max-width: 768px) {
-  .heroRedesign { padding: 88px 0 52px !important; }
-  .heroBadgeStack { position: static !important; flex-direction: row; align-self: flex-end; margin-bottom: 18px; gap: 6px; }
-  .heroRedesign h1 { font-size: clamp(2rem, 9.5vw, 3rem) !important; letter-spacing: -1.5px !important; }
+  .heroRedesign { padding: 90px 0 36px !important; }
+  .heroBadgeStack { position: static !important; flex-direction: row; align-self: flex-end; margin-bottom: 16px; gap: 6px; }
+  .heroRedesign h1 { font-size: clamp(1.8rem, 8vw, 2.6rem) !important; letter-spacing: -1px !important; }
   .heroLine1, .heroLine2, .heroLine3 { white-space: normal; flex-wrap: wrap; gap: 0.1em; }
-  .heroOrangePill { width: 64px; height: 48px; }
-  .heroOrangePillStar { font-size: 1.5rem; }
-  .heroArc { width: 80px; height: 34px; }
-  .heroStatsRow { flex-direction: column; align-items: flex-start; gap: 14px; }
-  .heroServiceCard { flex: 0 0 130px; height: 130px; border-radius: 24px; }
-  .heroCarouselArrow { width: 38px; height: 38px; font-size: 17px; }
+  .heroOrangePill { width: 56px; height: 42px; }
+  .heroOrangePillStar { font-size: 1.4rem; }
+  .heroArc { width: 60px; height: 44px; }
+  .heroStatsRow { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .heroServiceCard { flex: 0 0 120px; height: 120px; border-radius: 22px; }
+  .heroCarouselArrow { width: 36px; height: 36px; font-size: 16px; }
 }
 
 /* Emoji icons on carousel cards */
 .heroServiceCardEmoji {
-  font-size: 4.5rem;
+  font-size: 4rem;
   line-height: 1;
   display: block;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.18));
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.15));
   user-select: none;
 }
 

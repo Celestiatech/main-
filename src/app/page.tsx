@@ -354,58 +354,64 @@ export default function Home() {
 
       {/* ===== HERO SECTION ===== */}
       <section className={`${styles.hero} ${styles.heroRedesign}`} data-debug="hero-section">
-        {/* Ambient sparkle decorations — positions match reference image */}
+        {/* Ambient sparkle decorations — matching reference image positions */}
         <span className={`${styles.sparkle} ${styles.sparkle1}`} aria-hidden="true">✦</span>
         <span className={`${styles.sparkle} ${styles.sparkle2}`} aria-hidden="true">✦</span>
         <span className={`${styles.sparkle} ${styles.sparkle3}`} aria-hidden="true">✦</span>
         <span className={`${styles.sparkle} ${styles.sparkle4}`} aria-hidden="true">✦</span>
+        <span className={`${styles.sparkle} ${styles.sparkle5}`} aria-hidden="true">✦</span>
 
         <div className={`${styles.heroRedesignInner} container`}>
 
-          {/* ── Two stacked pill badges, top-right ── */}
+          {/* ── Two stacked pill badges, top-right (RE Production / 2024.09) ── */}
           <div className={styles.heroBadgeStack}>
-            <span className={styles.heroBadgeTop}>CT Production</span>
-            <span className={styles.heroBadgeBottom}>2026.03</span>
+            <span className={styles.heroBadgeTop}>RE Production</span>
+            <span className={styles.heroBadgeBottom}>2024.09</span>
           </div>
 
-          {/* ── Three-line headline ── */}
+          {/* ── Three-line headline matching reference exactly ── */}
           <div className={styles.heroHeadlineWrap}>
             <h1 className={styles.heroRedesignTitle}>
-              {/* Line 1 */}
+              {/* Line 1: "Level Up Your ✦" */}
               <span className={styles.heroLine1}>
-                We Build Revenue-
+                Level Up Your
                 <span className={styles.heroSparkleSmall} aria-hidden="true">✦</span>
               </span>
-              {/* Line 2: "Generating [orange pill ✦] Apps" */}
+              {/* Line 2: "Design [orange pill ✦] with Our" */}
               <span className={styles.heroLine2}>
-                Generating{" "}
-                <span
-                  className={styles.heroOrangePill}
-                  aria-hidden="true"
-                >
+                Design{" "}
+                <span className={styles.heroOrangePill} aria-hidden="true">
                   <span className={styles.heroOrangePillStar}>✦</span>
                 </span>
-                {" "}Apps
+                {" "}with Our
               </span>
-              {/* Line 3: arc + sparkle + "for Business" */}
+              {/* Line 3: "[purple swirl] ✦ Design Class ✦" */}
               <span className={styles.heroLine3}>
-                {/* Decorative arc/ellipse SVG */}
                 <svg
                   className={styles.heroArc}
-                  viewBox="0 0 160 48"
+                  viewBox="0 0 90 56"
                   fill="none"
                   aria-hidden="true"
                 >
+                  {/* Purple decorative swirl/arc matching reference */}
                   <path
-                    d="M8 40 C30 8, 130 8, 152 40"
+                    d="M80 12 C60 4, 20 20, 8 44"
                     stroke="#7C3AED"
-                    strokeWidth="3"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    fill="none"
+                  />
+                  <path
+                    d="M8 44 C10 36, 18 32, 24 28"
+                    stroke="#7C3AED"
+                    strokeWidth="2.5"
                     strokeLinecap="round"
                     fill="none"
                   />
                 </svg>
                 <span className={styles.heroSparkleSmall} aria-hidden="true">✦</span>
-                {" "}for Business
+                {" "}Design Class
+                <span className={styles.heroSparkleSmall} aria-hidden="true">✦</span>
               </span>
             </h1>
           </div>
@@ -414,8 +420,8 @@ export default function Home() {
           <div className={styles.heroStatsRow}>
             <div className={styles.heroStatItem}>
               <span className={styles.heroStatLabel}>With more than</span>
-              <span className={styles.heroStatValue}>1,800 + PROJECTS</span>
-              <span className={styles.heroStatValue}>200 + CLIENTS</span>
+              <span className={styles.heroStatValue}>2K + MEMBERS</span>
+              <span className={styles.heroStatValue}>500 + TUTORIALS</span>
             </div>
             <Link
               href="/proposal"
@@ -427,7 +433,7 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* ── Scrollable service-icon cards with arrow buttons ── */}
+          {/* ── Scrollable 3D-style icon cards with purple circle arrow buttons ── */}
           <div className={styles.heroCarouselWrap}>
             <button
               className={styles.heroCarouselArrow}
@@ -441,12 +447,12 @@ export default function Home() {
             </button>
             <div id="heroCarousel" className={styles.heroCarousel}>
               {[
-                { bg: "#F472B6", emoji: "📱", label: "Mobile Apps" },
-                { bg: "#A78BFA", emoji: "🎨", label: "Web Dev" },
-                { bg: "#22D3EE", emoji: "🔗", label: "Blockchain" },
-                { bg: "#FBBF24", emoji: "⚙️", label: "DevOps" },
-                { bg: "#818CF8", emoji: "🤖", label: "AI / AR" },
-                { bg: "#F87171", emoji: "🎮", label: "Game Dev" },
+                { bg: "#F9A8D4", emoji: "💡", label: "Creative Ideas" },
+                { bg: "#C4B5FD", emoji: "✏️", label: "UI Design" },
+                { bg: "#67E8F9", emoji: "🖼️", label: "Visual Design" },
+                { bg: "#FCD34D", emoji: "🖊️", label: "Illustration" },
+                { bg: "#86EFAC", emoji: "🎯", label: "Strategy" },
+                { bg: "#FCA5A5", emoji: "🎬", label: "Motion" },
               ].map((card, i) => (
                 <div key={i} className={styles.heroServiceCard} style={{ background: card.bg }}>
                   <span className={styles.heroServiceCardEmoji} role="img" aria-label={card.label}>{card.emoji}</span>
