@@ -353,41 +353,124 @@ export default function Home() {
       <main id="main-content" className={styles.main} tabIndex={-1}>
 
       {/* ===== HERO SECTION ===== */}
-      <section className={`${styles.hero} hero-enhanced`} data-debug="hero-section">
-        <div className={styles.heroBg}>
-          <video autoPlay loop muted playsInline>
-            <source src="/PixVerse_V5.5_Image_Text_540P_A_cinematic_shotonline-video-cutter.com-ezgif.com-video-to-gif-converter.mp4" type="video/mp4" />
-          </video>
-          <div className={styles.heroOverlay}></div>
-        </div>
-        <div className="container">
-          <div className={styles.heroContent}>
-            <div className={`${styles.heroBadge} heroBadgeAnimate`}>
-              <span className={styles.heroBadgeDot}></span>
-              Premium IT & Software Development
-            </div>
-            <h1 
-              style={{ display: 'block', whiteSpace: 'normal', wordBreak: 'break-word', overflowWrap: 'break-word', maxWidth: '100%', overflow: 'visible', textAlign: 'center' }}
-              className="heroTitleAnimate"
-            >
-              We Build <span>Revenue-Generating</span> Apps
-            </h1>
-            <p className={`${styles.heroSubtitle} heroSubtitleAnimate`}>
-              Custom software solutions for startups and enterprises that scale
-            </p>
-            <div className={`${styles.heroActions} heroActionsAnimate`}>
-              <Link 
-                href="/popular-tools" 
-                className="btn btn-primary btn-water btn-3d"
-                onClick={() => trackCTAClick("See Popular Tools", "hero", pathname || "/")}
-              >
-                See Popular Tools
-              </Link>
-              <Link href="/work" className="btn btn-secondary btn-water btn-3d">
-                View Case Studies
-              </Link>
-            </div>
+      <section className={`${styles.hero} ${styles.heroRedesign}`} data-debug="hero-section">
+        {/* Ambient sparkle decorations — matching reference image positions */}
+        <span className={`${styles.sparkle} ${styles.sparkle1}`} aria-hidden="true">✦</span>
+        <span className={`${styles.sparkle} ${styles.sparkle2}`} aria-hidden="true">✦</span>
+        <span className={`${styles.sparkle} ${styles.sparkle3}`} aria-hidden="true">✦</span>
+        <span className={`${styles.sparkle} ${styles.sparkle4}`} aria-hidden="true">✦</span>
+        <span className={`${styles.sparkle} ${styles.sparkle5}`} aria-hidden="true">✦</span>
+
+        <div className={`${styles.heroRedesignInner} container`}>
+
+          {/* ── Two stacked pill badges, top-right (RE Production / 2024.09) ── */}
+          <div className={styles.heroBadgeStack}>
+            <span className={styles.heroBadgeTop}>RE Production</span>
+            <span className={styles.heroBadgeBottom}>2024.09</span>
           </div>
+
+          {/* ── Three-line headline matching reference exactly ── */}
+          <div className={styles.heroHeadlineWrap}>
+            <h1 className={styles.heroRedesignTitle}>
+              {/* Line 1: "Level Up Your ✦" */}
+              <span className={styles.heroLine1}>
+                Level Up Your
+                <span className={styles.heroSparkleSmall} aria-hidden="true">✦</span>
+              </span>
+              {/* Line 2: "Design [orange pill ✦] with Our" */}
+              <span className={styles.heroLine2}>
+                Design{" "}
+                <span className={styles.heroOrangePill} aria-hidden="true">
+                  <span className={styles.heroOrangePillStar}>✦</span>
+                </span>
+                {" "}with Our
+              </span>
+              {/* Line 3: "[purple swirl] ✦ Design Class ✦" */}
+              <span className={styles.heroLine3}>
+                <svg
+                  className={styles.heroArc}
+                  viewBox="0 0 90 56"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  {/* Purple decorative swirl/arc matching reference */}
+                  <path
+                    d="M80 12 C60 4, 20 20, 8 44"
+                    stroke="#7C3AED"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    fill="none"
+                  />
+                  <path
+                    d="M8 44 C10 36, 18 32, 24 28"
+                    stroke="#7C3AED"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    fill="none"
+                  />
+                </svg>
+                <span className={styles.heroSparkleSmall} aria-hidden="true">✦</span>
+                {" "}Design Class
+                <span className={styles.heroSparkleSmall} aria-hidden="true">✦</span>
+              </span>
+            </h1>
+          </div>
+
+          {/* ── Stats (left) + Join us button (right) ── */}
+          <div className={styles.heroStatsRow}>
+            <div className={styles.heroStatItem}>
+              <span className={styles.heroStatLabel}>With more than</span>
+              <span className={styles.heroStatValue}>2K + MEMBERS</span>
+              <span className={styles.heroStatValue}>500 + TUTORIALS</span>
+            </div>
+            <Link
+              href="/proposal"
+              className={styles.heroJoinBtn}
+              onClick={() => trackCTAClick("Join Us", "hero", pathname || "/")}
+            >
+              <span>Join us</span>
+              <span className={styles.heroJoinBtnBox} aria-hidden="true">↗</span>
+            </Link>
+          </div>
+
+          {/* ── Scrollable 3D-style icon cards with purple circle arrow buttons ── */}
+          <div className={styles.heroCarouselWrap}>
+            <button
+              className={styles.heroCarouselArrow}
+              aria-label="Previous"
+              onClick={() => {
+                const el = document.getElementById("heroCarousel");
+                if (el) el.scrollBy({ left: -178, behavior: "smooth" });
+              }}
+            >
+              ←
+            </button>
+            <div id="heroCarousel" className={styles.heroCarousel}>
+              {[
+                { bg: "#F9A8D4", emoji: "💡", label: "Creative Ideas" },
+                { bg: "#C4B5FD", emoji: "✏️", label: "UI Design" },
+                { bg: "#67E8F9", emoji: "🖼️", label: "Visual Design" },
+                { bg: "#FCD34D", emoji: "🖊️", label: "Illustration" },
+                { bg: "#86EFAC", emoji: "🎯", label: "Strategy" },
+                { bg: "#FCA5A5", emoji: "🎬", label: "Motion" },
+              ].map((card, i) => (
+                <div key={i} className={styles.heroServiceCard} style={{ background: card.bg }}>
+                  <span className={styles.heroServiceCardEmoji} role="img" aria-label={card.label}>{card.emoji}</span>
+                </div>
+              ))}
+            </div>
+            <button
+              className={styles.heroCarouselArrow}
+              aria-label="Next"
+              onClick={() => {
+                const el = document.getElementById("heroCarousel");
+                if (el) el.scrollBy({ left: 178, behavior: "smooth" });
+              }}
+            >
+              →
+            </button>
+          </div>
+
         </div>
       </section>
 

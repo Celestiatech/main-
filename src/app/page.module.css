@@ -5125,3 +5125,304 @@
   }
 
 
+
+
+/* ===================================================================
+   HERO REDESIGN v2 — exact reference match
+   =================================================================== */
+
+.heroRedesign {
+  background: #fdfcff !important;
+  background-image: none !important;
+  min-height: auto !important;
+  padding: 115px 0 48px !important;
+  position: relative;
+  overflow: hidden;
+}
+.heroRedesign::before { display: none !important; }
+
+.heroRedesignInner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sparkle {
+  position: absolute;
+  color: #7C3AED;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  animation: sparklePulse 3s ease-in-out infinite;
+  font-style: normal;
+  z-index: 1;
+}
+.sparkle1 { top: 28%;  left: 7%;   font-size: 26px; animation-delay: 0s;   }
+.sparkle2 { top: 15%;  right: 22%; font-size: 13px; animation-delay: 0.7s; }
+.sparkle3 { top: 48%;  left: 3%;   font-size: 18px; animation-delay: 1.3s; }
+.sparkle4 { bottom: 15%; right: 5%; font-size: 28px; animation-delay: 0.3s; }
+.sparkle5 { top: 20%;  right: 10%; font-size: 10px; animation-delay: 1.0s; }
+
+@keyframes sparklePulse {
+  0%, 100% { opacity: 0.72; transform: scale(1) rotate(0deg); }
+  50%       { opacity: 1;    transform: scale(1.25) rotate(15deg); }
+}
+
+.heroBadgeStack {
+  position: absolute;
+  top: 0; right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  z-index: 4;
+}
+.heroBadgeTop {
+  background: #9B72E6;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  font-size: 11px; font-weight: 700;
+  padding: 5px 15px;
+  border-radius: 999px;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+.heroBadgeBottom {
+  background: #6D28D9;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  font-size: 11px; font-weight: 700;
+  padding: 5px 15px;
+  border-radius: 999px;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+/* Override global .hero h1 (0,1,1) and .hero h1 span (0,1,2) */
+.heroRedesign h1 {
+  font-size: clamp(2.2rem, 4.8vw, 3.8rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.15 !important;
+  color: #18181b !important;
+  letter-spacing: -1.5px !important;
+  margin: 0 !important;
+  animation: none !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #18181b !important;
+}
+.heroRedesign h1 span {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #18181b !important;
+  color: #18181b !important;
+  animation: none !important;
+  text-shadow: none !important;
+}
+
+.heroHeadlineWrap { text-align: center; width: 100%; }
+
+.heroRedesignTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.04em;
+  text-align: center;
+}
+
+.heroLine1, .heroLine2, .heroLine3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15em;
+  white-space: nowrap;
+}
+
+.heroSparkleSmall {
+  display: inline-flex;
+  align-items: center;
+  color: #7C3AED !important;
+  -webkit-text-fill-color: #7C3AED !important;
+  font-size: 0.45em;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.heroOrangePill {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background: #F59E0B !important;
+  background-image: none !important;
+  border-radius: 18px;
+  width: 76px;
+  height: 54px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.38);
+  transition: transform 0.25s ease;
+  -webkit-text-fill-color: #fff !important;
+}
+.heroOrangePill:hover { transform: scale(1.07); }
+
+.heroOrangePillStar {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  font-size: 1.9rem;
+  line-height: 1;
+  background: none !important;
+}
+
+.heroArc {
+  width: 70px;
+  height: 56px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.heroStatsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 700px;
+  margin-top: 28px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.heroStatItem { display: flex; flex-direction: column; gap: 1px; }
+.heroStatLabel { font-size: 10px; font-weight: 500; color: #71717a; letter-spacing: 0.3px; line-height: 1.5; }
+.heroStatValue { font-size: 13px; font-weight: 800; color: #18181b; letter-spacing: 0.3px; line-height: 1.5; }
+
+.heroJoinBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #92400e;
+  background: transparent;
+  text-decoration: none;
+  border: 2px solid #F59E0B;
+  overflow: hidden;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.heroJoinBtn:hover { background: #FEF3C7; }
+.heroJoinBtn > span:first-child { padding: 10px 20px; color: #92400e; }
+.heroJoinBtnBox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px; height: 42px;
+  background: #F59E0B !important;
+  background-image: none !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  font-size: 17px; font-weight: 900;
+  border-radius: 0 calc(999px - 2px) calc(999px - 2px) 0;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.heroJoinBtn:hover .heroJoinBtnBox { background: #D97706 !important; }
+
+.heroCarouselWrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 32px;
+  width: 100%;
+  max-width: 780px;
+}
+.heroCarousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 4px 18px;
+  scrollbar-width: none;
+  flex: 1;
+}
+.heroCarousel::-webkit-scrollbar { display: none; }
+
+.heroServiceCard {
+  flex: 0 0 148px;
+  height: 148px;
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  box-shadow: 0 8px 26px rgba(0,0,0,0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+.heroServiceCard:hover { transform: translateY(-8px) scale(1.04); box-shadow: 0 18px 40px rgba(0,0,0,0.18); }
+
+.heroCarouselArrow {
+  flex-shrink: 0;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: #7C3AED;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  line-height: 1;
+  box-shadow: 0 4px 16px rgba(124,58,237,0.38);
+}
+.heroCarouselArrow:hover { background: #6D28D9; transform: scale(1.1); }
+
+@media (max-width: 768px) {
+  .heroRedesign { padding: 90px 0 36px !important; }
+  .heroBadgeStack { position: static !important; flex-direction: row; align-self: flex-end; margin-bottom: 16px; gap: 6px; }
+  .heroRedesign h1 { font-size: clamp(1.8rem, 8vw, 2.6rem) !important; letter-spacing: -1px !important; }
+  .heroLine1, .heroLine2, .heroLine3 { white-space: normal; flex-wrap: wrap; gap: 0.1em; }
+  .heroOrangePill { width: 56px; height: 42px; }
+  .heroOrangePillStar { font-size: 1.4rem; }
+  .heroArc { width: 60px; height: 44px; }
+  .heroStatsRow { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .heroServiceCard { flex: 0 0 120px; height: 120px; border-radius: 22px; }
+  .heroCarouselArrow { width: 36px; height: 36px; font-size: 16px; }
+}
+
+/* Emoji icons on carousel cards */
+.heroServiceCardEmoji {
+  font-size: 4rem;
+  line-height: 1;
+  display: block;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.15));
+  user-select: none;
+}
+
+/* ── Orange pill: must come AFTER the general ".heroRedesign h1 span" reset ──
+   Specificity: .heroRedesign(C) + h1(E) + .heroOrangePill(C) = (0,2,1)
+   beats .heroRedesign(C) + h1(E) + span(E) = (0,1,2), so this wins. ── */
+.heroRedesign h1 .heroOrangePill {
+  background: #F59E0B !important;
+  background-color: #F59E0B !important;
+  background-image: none !important;
+  -webkit-text-fill-color: initial !important;
+}
+.heroRedesign h1 .heroOrangePill .heroOrangePillStar {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  background: none !important;
+  background-image: none !important;
+}
