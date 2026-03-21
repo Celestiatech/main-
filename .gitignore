@@ -45,4 +45,5 @@ next-env.d.ts
 .cursorrules
 
 # Temporary files
-.tmp_*
+.tmp_admin_cookie.txt
+*.tmp
