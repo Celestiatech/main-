@@ -53,20 +53,20 @@ export default function Home() {
     {
       icon: "/images/icons/mobile-development.svg",
       title: "Mobile App Development",
-      whoFor: "For startups & enterprises",
+      whoFor: "For startups & enterprise teams",
       businessResult: "Launch in 60–90 days",
-      metric: "Avg. 35% faster go-to-market | 42% higher user retention",
-      description: "Monetization-ready apps with exceptional UX",
-      cta: "View Live Apps",
+      metric: "35% faster go-to-market | 42% higher retention",
+      description: "iOS & Android apps built for scale, analytics, and monetization.",
+      cta: "View Case Studies",
     },
     {
       icon: "/images/icons/web-development.svg",
       title: "Web Development",
       whoFor: "For businesses & agencies",
       businessResult: "Scalable platforms in 45–75 days",
-      metric: "300% faster load times | 40% cost reduction",
-      description: "Modern web applications with cutting-edge tech",
-      cta: "View Live Apps",
+      metric: "300% faster load times | 40% lower infra cost",
+      description: "Modern web apps optimized for speed, security, and conversion.",
+      cta: "View Case Studies",
     },
     {
       icon: "/images/icons/game-development.svg",
@@ -74,8 +74,8 @@ export default function Home() {
       whoFor: "For indie developers & studios",
       businessResult: "Viral games in 90–120 days",
       metric: "1M+ downloads | 4.8 rating on app stores",
-      description: "Engaging 2D/3D games across platforms",
-      cta: "View Live Apps",
+      description: "Engaging 2D/3D experiences built for retention and revenue.",
+      cta: "View Case Studies",
     },
     {
       icon: "/images/icons/blockchain-development.svg",
@@ -83,8 +83,8 @@ export default function Home() {
       whoFor: "For fintech & startups",
       businessResult: "Secure solutions in 60–90 days",
       metric: "Zero security breaches | $50M+ assets secured",
-      description: "Web3 apps, smart contracts, and DeFi platforms",
-      cta: "View Live Apps",
+      description: "Web3 apps, audited smart contracts, and DeFi platforms.",
+      cta: "View Case Studies",
     },
     {
       icon: "/images/icons/devops-services.svg",
@@ -92,8 +92,8 @@ export default function Home() {
       whoFor: "For tech teams & enterprises",
       businessResult: "50% faster deployments",
       metric: "70% faster CI/CD | 60% fewer downtime incidents",
-      description: "CI/CD pipelines and cloud automation",
-      cta: "View Live Apps",
+      description: "CI/CD pipelines, infra automation, and reliability engineering.",
+      cta: "View Case Studies",
     },
     {
       icon: "/images/icons/metaverse-development.svg",
@@ -101,8 +101,8 @@ export default function Home() {
       whoFor: "For brands & innovators",
       businessResult: "Immersive experiences in 90–120 days",
       metric: "200% engagement increase | 85% user satisfaction",
-      description: "VR/AR worlds and virtual reality solutions",
-      cta: "View Live Apps",
+      description: "VR/AR worlds, 3D experiences, and immersive brand activations.",
+      cta: "View Case Studies",
     },
     {
       icon: "/images/icons/quality-assurance.svg",
@@ -110,8 +110,8 @@ export default function Home() {
       whoFor: "For all development projects",
       businessResult: "Bug-free launches guaranteed",
       metric: "99.9% bug-free releases | 100% compliance rate",
-      description: "Comprehensive testing and QA services",
-      cta: "View Live Apps",
+      description: "Automation, regression, and performance testing across devices.",
+      cta: "View Case Studies",
     },
   ];
 
@@ -156,7 +156,7 @@ export default function Home() {
       solution: "Built AI-powered fitness tracking with personalized recommendations",
       techStack: ["React Native", "Node.js", "TensorFlow"],
       result: "<img src='/images/icons/chart-growth.svg' alt='Growth' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Increased user retention by 42% | <img src='/images/icons/chart-growth.svg' alt='Revenue' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Generated ₹3.2 Cr revenue in 6 months",
-      beforeAfter: ["/images/portfolio/healthtrack-before.jpg", "/images/portfolio/healthtrack-after.jpg"],
+      beforeAfter: ["/images/portfolio/healthtrack-before.jpg", "/images/portfolio/custom/healthtrack-after-new.jpg"],
       video: "/videos/healthtrack-demo.mp4",
       tags: ["iOS", "Android", "Health"],
     },
@@ -168,7 +168,7 @@ export default function Home() {
       solution: "Migrated to modern React/Node.js with AWS scaling",
       techStack: ["React", "Node.js", "AWS", "MongoDB"],
       result: "<img src='/images/icons/launch.svg' alt='Speed' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />300% faster load times | <img src='/images/icons/tailored-solutions.svg' alt='Users' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Served 100K+ students",
-      beforeAfter: ["/images/portfolio/edulearn-before.jpg", "/images/portfolio/edulearn-after.png"],
+      beforeAfter: ["/images/portfolio/edulearn-before.jpg", "/images/portfolio/custom/edulearn-after-new.jpg"],
       video: "/videos/edulearn-demo.mp4",
       tags: ["React", "Node.js", "AWS"],
     },
@@ -180,7 +180,7 @@ export default function Home() {
       solution: "Developed immersive 3D space adventure with multiplayer",
       techStack: ["Unity", "C#", "Photon"],
       result: "<img src='/images/icons/mobile-development.svg' alt='Downloads' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />1M+ downloads | <img src='/images/icons/expertise.svg' alt='Rating' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />4.8 rating on app stores",
-      beforeAfter: ["/images/portfolio/spacequest-before.jpg", "/images/portfolio/spacequest-after.jpg"],
+      beforeAfter: ["/images/portfolio/spacequest-before.jpg", "/images/portfolio/custom/spacequest-after-new.jpg"],
       video: "/videos/spacequest-demo.mp4",
       tags: ["Unity", "3D", "Mobile"],
     },
@@ -192,7 +192,7 @@ export default function Home() {
       solution: "Developed audited smart contracts with user-friendly interface",
       techStack: ["Solidity", "Web3.js", "React"],
       result: "<img src='/images/icons/security.svg' alt='Security' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Zero security breaches | <img src='/images/icons/chart-growth.svg' alt='Assets' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />$50M+ assets secured",
-      beforeAfter: ["/images/portfolio/cryptovault-before.jpg", "/images/portfolio/cryptovault-after.jpg"],
+      beforeAfter: ["/images/portfolio/cryptovault-before.jpg", "/images/portfolio/custom/cryptovault-after-new.jpg"],
       video: "/videos/cryptovault-demo.mp4",
       tags: ["Web3", "Solidity", "DeFi"],
     },
@@ -204,7 +204,7 @@ export default function Home() {
       solution: "Built NLP-powered chatbot with 24/7 availability",
       techStack: ["Python", "TensorFlow", "Dialogflow"],
       result: "<img src='/images/icons/launch.svg' alt='Speed' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />70% faster responses | <img src='/images/icons/chart-growth.svg' alt='Savings' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Saved ₹2 Cr annually",
-      beforeAfter: ["/images/portfolio/smartassist-before.jpg", "/images/portfolio/smartassist-after.jpg"],
+      beforeAfter: ["/images/portfolio/smartassist-before.jpg", "/images/portfolio/custom/smartassist-after-new.jpg"],
       video: "/videos/smartassist-demo.mp4",
       tags: ["NLP", "Machine Learning"],
     },
@@ -216,7 +216,7 @@ export default function Home() {
       solution: "Complete brand redesign with modern UI/UX",
       techStack: ["Figma", "Adobe Creative Suite", "React"],
       result: "<img src='/images/icons/chart-growth.svg' alt='Growth' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />150% increase in brand recognition | <img src='/images/icons/concept.svg' alt='Awards' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Won 3 design awards",
-      beforeAfter: ["/images/portfolio/brandrebrand-before.jpg", "/images/portfolio/brandrebrand-after.jpg"],
+      beforeAfter: ["/images/portfolio/brandrebrand-before.jpg", "/images/portfolio/custom/brandrebrand-after-new.jpg"],
       video: "/videos/brandrebrand-demo.mp4",
       tags: ["UI/UX", "Branding"],
     },
@@ -372,20 +372,20 @@ export default function Home() {
           {/* ── Three-line headline matching reference exactly ── */}
           <div className={styles.heroHeadlineWrap}>
             <h1 className={styles.heroRedesignTitle}>
-              {/* Line 1: "Level Up Your ✦" */}
+              {/* Line 1: "Scale Your Brand ✦" */}
               <span className={styles.heroLine1}>
-                Level Up Your
+                Scale Your Brand
                 <span className={styles.heroSparkleSmall} aria-hidden="true">✦</span>
               </span>
-              {/* Line 2: "Design [orange pill ✦] with Our" */}
+              {/* Line 2: "Web & App [orange pill ✦] with Our" */}
               <span className={styles.heroLine2}>
-                Design{" "}
+                Web & App{" "}
                 <span className={styles.heroOrangePill} aria-hidden="true">
                   <span className={styles.heroOrangePillStar}>✦</span>
                 </span>
                 {" "}with Our
               </span>
-              {/* Line 3: "[purple swirl] ✦ Design Class ✦" */}
+              {/* Line 3: "[purple swirl] ✦ Specialist Studio ✦" */}
               <span className={styles.heroLine3}>
                 <svg
                   className={styles.heroArc}
@@ -410,7 +410,7 @@ export default function Home() {
                   />
                 </svg>
                 <span className={styles.heroSparkleSmall} aria-hidden="true">✦</span>
-                {" "}Design Class
+                {" "}Specialist Studio
                 <span className={styles.heroSparkleSmall} aria-hidden="true">✦</span>
               </span>
             </h1>
@@ -419,16 +419,16 @@ export default function Home() {
           {/* ── Stats (left) + Join us button (right) ── */}
           <div className={styles.heroStatsRow}>
             <div className={styles.heroStatItem}>
-              <span className={styles.heroStatLabel}>With more than</span>
-              <span className={styles.heroStatValue}>2K + MEMBERS</span>
-              <span className={styles.heroStatValue}>500 + TUTORIALS</span>
+              <span className={styles.heroStatLabel}>Full-Stack Specialists</span>
+              <span className={styles.heroStatValue}>Web • App • UI/UX</span>
+              <span className={styles.heroStatValue}>SEO • Performance • Growth</span>
             </div>
             <Link
               href="/proposal"
               className={styles.heroJoinBtn}
               onClick={() => trackCTAClick("Join Us", "hero", pathname || "/")}
             >
-              <span>Join us</span>
+              <span>Get Free Proposal</span>
               <span className={styles.heroJoinBtnBox} aria-hidden="true">↗</span>
             </Link>
           </div>
@@ -447,15 +447,36 @@ export default function Home() {
             </button>
             <div id="heroCarousel" className={styles.heroCarousel}>
               {[
-                { bg: "#F9A8D4", emoji: "💡", label: "Creative Ideas" },
-                { bg: "#C4B5FD", emoji: "✏️", label: "UI Design" },
-                { bg: "#67E8F9", emoji: "🖼️", label: "Visual Design" },
-                { bg: "#FCD34D", emoji: "🖊️", label: "Illustration" },
-                { bg: "#86EFAC", emoji: "🎯", label: "Strategy" },
-                { bg: "#FCA5A5", emoji: "🎬", label: "Motion" },
+                {
+                  bg: "#F9A8D4",
+                  image: "/images/hero-specialist/web-dev.jpg",
+                  label: "Web Design Specialist",
+                },
+                {
+                  bg: "#C4B5FD",
+                  image: "/images/hero-specialist/app-dev.jpg",
+                  label: "App Development Specialist",
+                },
+                {
+                  bg: "#67E8F9",
+                  image: "/images/hero-specialist/ui-ux.jpg",
+                  label: "UI/UX Specialist",
+                },
+                {
+                  bg: "#FCD34D",
+                  image: "/images/hero-specialist/seo.jpg",
+                  label: "SEO Specialist",
+                },
               ].map((card, i) => (
                 <div key={i} className={styles.heroServiceCard} style={{ background: card.bg }}>
-                  <span className={styles.heroServiceCardEmoji} role="img" aria-label={card.label}>{card.emoji}</span>
+                  <img
+                    className={styles.heroServiceCardImage}
+                    src={card.image}
+                    alt={card.label}
+                    width={160}
+                    height={160}
+                    loading="lazy"
+                  />
                 </div>
               ))}
             </div>
@@ -478,11 +499,10 @@ export default function Home() {
       <section className={styles.services} id="services">
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
-            <h2>Tap into Over a Decade of Expertise</h2>
+            <h2>Specialist Teams Built for Growth</h2>
             <p>
-              With 12+ years of experience, we've helped startups and enterprises 
-              transform their digital presence. Our team combines innovation, scalability, 
-              and reliability to deliver solutions that drive real business growth.
+              We design, build, and optimize digital products that scale. From web and mobile
+              to DevOps and emerging tech, our specialists deliver measurable business outcomes.
             </p>
           </div>
           <div className={styles.servicesGrid}>
@@ -491,7 +511,10 @@ export default function Home() {
                 <div className={styles.serviceIcon}>
                   <img src={service.icon} alt={service.title} width={80} height={80} loading="lazy" />
                 </div>
-                <h3>{service.title}</h3>
+                <div className={styles.serviceHeader}>
+                  <h3>{service.title}</h3>
+                  <span className={styles.serviceTag}>Specialist</span>
+                </div>
                 <div className={styles.serviceWhoFor}>
                   <img src="/images/icons/tailored-solutions.svg" alt="Target audience" width={16} height={16} style={{ marginRight: '8px' }} loading="lazy" />
                   {service.whoFor}
@@ -578,7 +601,7 @@ export default function Home() {
             <p>Explore our success stories and delivered projects</p>
           </div>
           <div className={`${styles.portfolioTabs} animate-on-scroll`}>
-            {["all", "mobile", "web", "game", "blockchain", "ai"].map((tab) => (
+            {["all", "mobile", "web", "game", "blockchain", "ai", "design"].map((tab) => (
               <button
                 key={tab}
                 className={`${styles.portfolioTab} ${activeTab === tab ? styles.active : ""}`}

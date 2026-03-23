@@ -2,7 +2,8 @@ import Link from "next/link";
 import styles from "./popular-tools.module.css";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import { TOOL_CATEGORIES, getToolsByCategory } from "@/lib/tools-catalog";
+import { TOOL_CATEGORIES, TOOLS } from "@/lib/tools-catalog";
+import PopularToolsClient from "./PopularToolsClient";
 
 export default function PopularToolsPage() {
   return (
@@ -11,58 +12,32 @@ export default function PopularToolsPage() {
       <div className={styles.headerGap} aria-hidden="true" />
 
       <main className={styles.main}>
-        <section className={styles.section}>
-          <div className={styles.sectionHeader}>
-            <h1>Popular Tools</h1>
-            <p>Browse all tools and open each one on its own dedicated detail page.</p>
-          </div>
-
-          <div className={styles.categoryNav}>
-            {TOOL_CATEGORIES.map((category) => (
-              <a key={category.id} href={`#${category.id}`} className={styles.categoryChip}>
-                {category.title}
-              </a>
-            ))}
-          </div>
-
-          {TOOL_CATEGORIES.map((category) => {
-            const tools = getToolsByCategory(category.id);
-
-            return (
-            <section key={category.id} id={category.id} className={styles.categorySection}>
-              <div className={styles.categoryHead}>
-                <h2>{category.title}</h2>
-                <p>{category.description}</p>
+        <section className={styles.surface}>
+          <div className={styles.hero}>
+            <div className={styles.heroCopy}>
+              <h1 className={styles.title}>Popular Tools</h1>
+              <p className={styles.subtitle}>
+                Fast utilities for developers, marketers, designers and teams - built to be simple, clean and ready to use.
+              </p>
+              <div className={styles.heroActions}>
+                <Link href="/contact" className={styles.primaryButton}>
+                  Start your project
+                </Link>
+                <Link href="/services" className={styles.secondaryButton}>
+                  View all services
+                </Link>
               </div>
+            </div>
 
-              <div className={styles.cardsGrid}>
-                {tools.map((tool) => (
-                  <article key={tool.slug} className={styles.card}>
-                    <h3>{tool.title}</h3>
-                    <p>{tool.description}</p>
-                    <div className={styles.cardMeta}>
-                      <span className={`${styles.toolTag} ${tool.status === "live" ? styles.tagLive : styles.tagSoon}`}>
-                        {tool.status === "live" ? "Live" : "Coming Soon"}
-                      </span>
-                      <Link href={`/popular-tools/${tool.slug}`} className={styles.viewLink}>
-                        Open Tool
-                      </Link>
-                    </div>
-                  </article>
-                ))}
+            <div className={styles.heroPanel} aria-hidden="true">
+              <div className={styles.heroPanelInner}>
+                <div className={styles.heroPanelTitle}>Tip</div>
+                <div className={styles.heroPanelText}>Use search to jump to any tool instantly.</div>
               </div>
-            </section>
-            );
-          })}
-
-          <div className={styles.heroActions}>
-            <Link href="/contact" className={styles.primaryButton}>
-              Start your project
-            </Link>
-            <Link href="/services" className={styles.secondaryButton}>
-              View all services
-            </Link>
+            </div>
           </div>
+
+          <PopularToolsClient categories={TOOL_CATEGORIES} tools={TOOLS} />
         </section>
       </main>
 
