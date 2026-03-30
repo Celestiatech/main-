@@ -2299,14 +2299,14 @@
   .upworkContent h2 {
     font-size: 42px;
     font-weight: 800;
-    color: white;
+    color: #0f172a;
     margin: 0 0 12px 0;
     letter-spacing: -1px;
   }
 
   .upworkContent p {
     font-size: 18px;
-    color: rgba(255, 255, 255, 0.9);
+    color: #475569;
     margin: 0;
     line-height: 1.6;
   }
@@ -2320,27 +2320,29 @@
 
   .upworkStat {
     text-align: center;
-    color: white;
+    color: #0f172a;
     padding: 24px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.88);
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(191, 219, 254, 0.9);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     min-width: 140px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
   }
 
   .upworkStat:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.3);
+    background: #ffffff;
+    border-color: rgba(37, 99, 235, 0.35);
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 18px 36px rgba(37, 99, 235, 0.14);
   }
 
   .upworkStatNumber {
     font-family: 'Syne', sans-serif;
     font-size: 48px;
     font-weight: 800;
+    color: #1d4ed8;
     margin: 0 0 8px 0;
     letter-spacing: -1.5px;
     display: block;
@@ -2349,7 +2351,7 @@
 
   .upworkStatLabel {
     font-size: 13px;
-    opacity: 0.95;
+    color: #475569;
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -3536,7 +3538,7 @@
 
   /* ===== PAGE HERO ===== */
   .pageHero {
-    padding: 140px 0 60px;
+    padding: 175px 0 60px;
     background: #ffffff;
     border-bottom: 1px solid #dbeafe;
     text-align: center;
@@ -4539,7 +4541,7 @@
   /* ===== BREADCRUMB STYLES ===== */
   .breadcrumb {
     background: var(--bg-primary);
-    padding: 16px 0;
+    padding: 28px 0 16px;
     border-bottom: 1px solid var(--border-light);
   }
 
@@ -4577,7 +4579,7 @@
 
   /* ===== BLOG STYLES ===== */
   .blogHero {
-    padding: 148px 0 80px;
+    padding: 185px 0 80px;
     background: #ffffff;
     border-bottom: 1px solid #dbeafe;
     text-align: center;

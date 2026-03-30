@@ -4,24 +4,8 @@ import styles from "./page.module.css";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { GROCITO_PORTFOLIO_ITEMS } from "@/lib/grocitoPortfolio";
-import { PortfolioShowcase } from "@/components/PortfolioShowcase";
 
 export default function PortfolioPage() {
-  const showcaseMedia = [
-    {
-      title: "Custom Store Layouts",
-      image: "/images/portfolio/portfolio_website_design_0.jpg",
-    },
-    {
-      title: "Optimized Product Screens",
-      image: "/images/portfolio/portfolio_website_design_1.jpg",
-    },
-    {
-      title: "Conversion-Ready Mobile Views",
-      image: "/images/portfolio/portfolio_mobile_app_0.jpg",
-    },
-  ];
-
   const recentWorks = GROCITO_PORTFOLIO_ITEMS.slice(0, 3);
 
   const featureList = [
@@ -121,36 +105,6 @@ export default function PortfolioPage() {
                 Our Works
               </Link>
             </div>
-          </div>
-        </section>
-
-        <section className={styles.mediaSection}>
-          <div className="container">
-            <div className={styles.sectionIntro}>
-              <h2>Customize Everything. Everywhere. Anytime.</h2>
-              <p>We build flexible ecommerce and business websites with strong visuals, mobile clarity, and conversion-first structure.</p>
-            </div>
-            <div className={styles.mediaGrid}>
-              {showcaseMedia.map((item) => (
-                <article key={item.title} className={styles.mediaCard}>
-                  <div className={styles.mediaFrame}>
-                    <Image src={item.image} alt={item.title} fill className={styles.mediaImage} sizes="(max-width: 768px) 100vw, 33vw" />
-                  </div>
-                  <h3>{item.title}</h3>
-                </article>
-              ))}
-            </div>
-            <div className={styles.centerAction}>
-              <Link href="/contact" className={styles.primaryAction}>
-                Book Free Consultation
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        <section className={styles.section}>
-          <div className="container">
-            <PortfolioShowcase />
           </div>
         </section>
 

@@ -22,7 +22,10 @@ export function PortfolioShowcase() {
   const [activeFilter, setActiveFilter] = useState<Category>("all");
   const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRef = useRef<HTMLElement | null>(null);
+  const viewportRef = useRef<HTMLDivElement | null>(null);
   const progressRef = useRef(0);
+  const targetProgressRef = useRef(0);
+  const animationFrameRef = useRef<number | null>(null);
 
   const filteredStudies = useMemo(() => {
     if (activeFilter === "all") {
@@ -34,48 +37,85 @@ export function PortfolioShowcase() {
 
   useEffect(() => {
     progressRef.current = 0;
+    targetProgressRef.current = 0;
     setScrollProgress(0);
   }, [activeFilter]);
 
   useEffect(() => {
+    const viewport = viewportRef.current;
+    if (!viewport) {
+      return;
+    }
+
+    const animateProgress = () => {
+      const current = progressRef.current;
+      const target = targetProgressRef.current;
+      const delta = target - current;
+
+      if (Math.abs(delta) < 0.001) {
+        progressRef.current = target;
+        setScrollProgress(target);
+        animationFrameRef.current = null;
+        return;
+      }
+
+      const next = current + delta * 0.14;
+      progressRef.current = next;
+      setScrollProgress(next);
+      animationFrameRef.current = window.requestAnimationFrame(animateProgress);
+    };
+
     const handleWheel = (event: WheelEvent) => {
       const section = sectionRef.current;
-      if (!section || window.innerWidth <= 768) {
+      if (!section || !viewport || window.innerWidth <= 768) {
         return;
       }
 
       const rect = section.getBoundingClientRect();
       const stickyTop = 112;
-      const isPinnedZone = rect.top <= stickyTop + 12 && rect.bottom >= window.innerHeight * 0.72;
+      const isPinnedZone = rect.top <= stickyTop + 20 && rect.bottom >= stickyTop + 320;
+      const isReverseAligned = rect.top >= stickyTop - 28;
 
       if (!isPinnedZone) {
         return;
       }
 
       const direction = Math.sign(event.deltaY);
-      const currentProgress = progressRef.current;
-      const step = Math.min(Math.abs(event.deltaY) / Math.max(filteredStudies.length * 520, 1800), 0.16);
+      const currentProgress = targetProgressRef.current;
+      const step = Math.min(Math.abs(event.deltaY) / Math.max(filteredStudies.length * 900, 3200), 0.06);
 
       if (direction > 0 && currentProgress < 1) {
         event.preventDefault();
         const nextProgress = Math.min(1, currentProgress + step);
-        progressRef.current = nextProgress;
-        setScrollProgress(nextProgress);
+        targetProgressRef.current = nextProgress;
+        if (animationFrameRef.current === null) {
+          animationFrameRef.current = window.requestAnimationFrame(animateProgress);
+        }
         return;
       }
 
       if (direction < 0 && currentProgress > 0) {
+        if (!isReverseAligned && currentProgress < 0.08) {
+          return;
+        }
+
         event.preventDefault();
         const nextProgress = Math.max(0, currentProgress - step);
-        progressRef.current = nextProgress;
-        setScrollProgress(nextProgress);
+        targetProgressRef.current = nextProgress;
+        if (animationFrameRef.current === null) {
+          animationFrameRef.current = window.requestAnimationFrame(animateProgress);
+        }
       }
     };
 
-    window.addEventListener("wheel", handleWheel, { passive: false });
+    viewport.addEventListener("wheel", handleWheel, { passive: false });
 
     return () => {
-      window.removeEventListener("wheel", handleWheel);
+      viewport.removeEventListener("wheel", handleWheel);
+      if (animationFrameRef.current !== null) {
+        window.cancelAnimationFrame(animationFrameRef.current);
+        animationFrameRef.current = null;
+      }
     };
   }, [filteredStudies.length]);
 
@@ -119,7 +159,7 @@ export function PortfolioShowcase() {
               } as CSSProperties
             }
           >
-            <div className={styles.cardsViewport}>
+            <div ref={viewportRef} className={styles.cardsViewport}>
               {filteredStudies.map((study, index) => (
                 <article
                   key={study.title}
@@ -128,8 +168,7 @@ export function PortfolioShowcase() {
                   {
                     "--card-translate-y": `${getCardTranslateY(index, activeIndex)}px`,
                     "--card-scale": getCardScale(index, activeIndex).toString(),
-                    "--card-opacity": getCardOpacity(index, activeIndex).toString(),
-                    "--card-blur": `${getCardBlur(index, activeIndex)}px`,
+                    "--card-opacity": "1",
                     zIndex: getCardZIndex(index, activeIndex, filteredStudies.length),
                     pointerEvents: Math.abs(index - activeIndex) < 0.85 ? "auto" : "none",
                   } as CSSProperties
@@ -254,34 +293,6 @@ function getCardScale(index: number, activeIndex: number) {
   }
 
   return Math.max(0.8, 0.9 - (distance - 1) * 0.04);
-}
-
-function getCardOpacity(index: number, activeIndex: number) {
-  const distance = index - activeIndex;
-
-  if (distance <= -1) {
-    return 0.28;
-  }
-
-  if (distance <= 0) {
-    return 1 + distance * 0.35;
-  }
-
-  if (distance <= 1) {
-    return 0.58 + (1 - distance) * 0.36;
-  }
-
-  return Math.max(0.16, 0.58 - (distance - 1) * 0.22);
-}
-
-function getCardBlur(index: number, activeIndex: number) {
-  const distance = index - activeIndex;
-
-  if (distance <= 1.05) {
-    return 0;
-  }
-
-  return Math.min((distance - 1.05) * 2.4, 8);
 }
 
 function getCardZIndex(index: number, activeIndex: number, total: number) {

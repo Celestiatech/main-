@@ -7,13 +7,13 @@
 }
 
 .headerGap {
-  height: 88px;
+  height: 170px;
 }
 
 .main {
   width: min(1680px, 96vw);
   margin: 0 auto;
-  padding: 1.25rem 0 4rem;
+  padding: 3rem 0 4rem;
 }
 
 .auditMain {

@@ -3,139 +3,95 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import styles from "./popular-tools.module.css";
-import type { ToolCategory, ToolItem } from "@/lib/tools-catalog";
+import type { ToolCategory, ToolItem, ToolCategoryId } from "@/lib/tools-catalog";
 
 type PopularToolsClientProps = {
   categories: ToolCategory[];
   tools: ToolItem[];
 };
 
-function normalizeQuery(value: string) {
-  return value.trim().toLowerCase();
-}
+type CategoryFilter = "all" | ToolCategoryId;
 
-function matchesQuery(tool: ToolItem, query: string) {
-  const haystack = `${tool.title} ${tool.description} ${tool.slug}`.toLowerCase();
-  return haystack.includes(query);
-}
+const CATEGORY_ICON_MAP: Record<ToolCategoryId, string> = {
+  "developer-tools": "/images/hero-icons/code.svg",
+  "text-tools": "/images/icons/concept.svg",
+  "image-tools": "/images/hero-icons/palette.svg",
+  "pdf-tools": "/images/icons/plan.svg",
+  "seo-tools": "/images/icons/chart-growth.svg",
+  generators: "/images/hero-icons/rocket.svg",
+  "date-utility-tools": "/images/icons/clock-fast.svg",
+};
 
 export default function PopularToolsClient({ categories, tools }: PopularToolsClientProps) {
-  const [query, setQuery] = useState("");
-  const normalizedQuery = normalizeQuery(query);
+  const [activeCategory, setActiveCategory] = useState<CategoryFilter>("all");
 
-  const grouped = useMemo(() => {
-    const filtered = normalizedQuery ? tools.filter((tool) => matchesQuery(tool, normalizedQuery)) : tools;
+  const visibleTools = useMemo(() => {
+    if (activeCategory === "all") {
+      return tools;
+    }
 
-    return categories.map((category) => ({
-      category,
-      tools: filtered.filter((tool) => tool.category === category.id),
-    }));
-  }, [categories, tools, normalizedQuery]);
+    return tools.filter((tool) => tool.category === activeCategory);
+  }, [activeCategory, tools]);
 
-  const resultCount = useMemo(() => grouped.reduce((sum, group) => sum + group.tools.length, 0), [grouped]);
-
-  const hasResults = resultCount > 0;
+  const activeTitle =
+    activeCategory === "all"
+      ? "All Tools"
+      : categories.find((category) => category.id === activeCategory)?.title ?? "Tools";
 
   return (
-    <div className={styles.content}>
-      <div className={styles.toolbar}>
-        <div className={styles.searchWrap}>
-          <label className={styles.searchLabel} htmlFor="tool-search">
-            Search tools
-          </label>
-          <div className={styles.searchRow}>
-            <input
-              id="tool-search"
-              className={styles.searchInput}
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search JSON, PDF, sitemap, QR code…"
-              autoComplete="off"
-              inputMode="search"
-            />
-            {query ? (
-              <button type="button" className={styles.clearButton} onClick={() => setQuery("")}>
-                Clear
-              </button>
-            ) : null}
-          </div>
-          <p className={styles.searchHint}>
-            {normalizedQuery ? (
-              <>
-                Showing <strong>{resultCount}</strong> result{resultCount === 1 ? "" : "s"} for{" "}
-                <span className={styles.queryPill}>{query.trim()}</span>.
-              </>
-            ) : (
-              <>
-                Browse by category or use search. <strong>{tools.length}</strong> tools available.
-              </>
-            )}
-          </p>
-        </div>
+    <div className={styles.browser}>
+      <aside className={styles.sidebar}>
+        <div className={styles.sidebarTitle}>Tool Categories</div>
+        <button
+          type="button"
+          className={`${styles.sidebarButton} ${activeCategory === "all" ? styles.sidebarButtonActive : ""}`}
+          onClick={() => setActiveCategory("all")}
+        >
+          All tools
+        </button>
 
-        <nav className={styles.categoryNav} aria-label="Tool categories">
-          {categories.map((category) => (
-            <a key={category.id} href={`#${category.id}`} className={styles.categoryChip}>
-              <span className={styles.categoryChipText}>{category.title}</span>
-            </a>
-          ))}
-        </nav>
-      </div>
-
-      {!hasResults ? (
-        <div className={styles.emptyCard} role="status" aria-live="polite">
-          <h2 className={styles.emptyTitle}>No tools found</h2>
-          <p className={styles.emptyText}>
-            Try a different keyword, or browse categories below. You can search by name, description, or slug.
-          </p>
-          <button type="button" className={styles.primaryButton} onClick={() => setQuery("")}>
-            Clear search
+        {categories.map((category) => (
+          <button
+            key={category.id}
+            type="button"
+            className={`${styles.sidebarButton} ${activeCategory === category.id ? styles.sidebarButtonActive : ""}`}
+            onClick={() => setActiveCategory(category.id)}
+          >
+            {category.title}
           </button>
-        </div>
-      ) : null}
-
-      <div className={styles.categories}>
-        {grouped.map(({ category, tools: categoryTools }) => (
-          <section key={category.id} id={category.id} className={styles.categorySection}>
-            <div className={styles.categoryHead}>
-              <div className={styles.categoryTitleRow}>
-                <h2 className={styles.categoryTitle}>{category.title}</h2>
-                <span className={styles.categoryCount}>{categoryTools.length}</span>
-              </div>
-              <p className={styles.categoryDesc}>{category.description}</p>
-            </div>
-
-            {categoryTools.length ? (
-              <div className={styles.cardsGrid}>
-                {categoryTools.map((tool) => (
-                  <Link key={tool.slug} href={`/popular-tools/${tool.slug}`} className={styles.cardLink}>
-                    <article className={styles.card}>
-                      <div className={styles.cardTop}>
-                        <span className={`${styles.toolTag} ${tool.status === "live" ? styles.tagLive : styles.tagSoon}`}>
-                          {tool.status === "live" ? "Live" : "Coming Soon"}
-                        </span>
-                        <span className={styles.cardCta} aria-hidden="true">
-                          Open →
-                        </span>
-                      </div>
-                      <h3 className={styles.cardTitle}>{tool.title}</h3>
-                      <p className={styles.cardDesc}>{tool.description}</p>
-                      <div className={styles.cardBottom}>
-                        <span className={styles.slugPill}>{tool.slug}</span>
-                      </div>
-                    </article>
-                  </Link>
-                ))}
-              </div>
-            ) : (
-              <div className={styles.noMatchRow}>
-                <span className={styles.noMatchText}>No matches in this category.</span>
-              </div>
-            )}
-          </section>
         ))}
-      </div>
+      </aside>
+
+      <section className={styles.directory}>
+        <div className={styles.directoryHead}>
+          <span className={styles.directoryEyebrow}>Free utilities</span>
+          <h1 className={styles.directoryTitle}>{activeTitle}</h1>
+          <p className={styles.directorySubtitle}>
+            Explore {visibleTools.length} ready-to-use tools in a cleaner directory layout built for quick browsing.
+          </p>
+        </div>
+
+        <div className={styles.toolsGrid}>
+          {visibleTools.map((tool) => (
+            <Link key={tool.slug} href={`/popular-tools/${tool.slug}`} className={styles.toolCard}>
+              <div className={styles.toolCardTop}>
+                <div className={styles.toolIconWrap}>
+                  <img
+                    src={CATEGORY_ICON_MAP[tool.category]}
+                    alt=""
+                    className={styles.toolIcon}
+                    aria-hidden="true"
+                  />
+                </div>
+                <div className={styles.toolArrow} aria-hidden="true">
+                  &#8594;
+                </div>
+              </div>
+              <h2 className={styles.toolTitle}>{tool.title}</h2>
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
-

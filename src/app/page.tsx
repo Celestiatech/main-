@@ -798,10 +798,10 @@ export default function Home() {
         <div className="container">
           <div className={`${styles.upworkContent} animate-on-scroll`}>
             <div>
-              <h2 style={{ color: "white", fontSize: "32px", marginBottom: "12px" }}>
+              <h2 style={{ fontSize: "32px", marginBottom: "12px" }}>
                 Top-Rated Upwork Partner
               </h2>
-              <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "16px" }}>
+              <p style={{ fontSize: "16px" }}>
                 Join 1,800+ satisfied clients who trusted us with their projects
               </p>
             </div>
