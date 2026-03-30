@@ -132,6 +132,39 @@
   line-height: 1.7;
 }
 
+.searchBarWrap {
+  margin-top: 18px;
+  max-width: 420px;
+}
+
+.searchBar {
+  width: 100%;
+  height: 52px;
+  border-radius: 14px;
+  border: 1px solid rgba(191, 219, 254, 0.9);
+  background: #ffffff;
+  padding: 0 16px;
+  font: inherit;
+  color: #0f172a;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.searchBar:focus {
+  border-color: rgba(37, 99, 235, 0.45);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.emptyState {
+  padding: 28px;
+  border-radius: 16px;
+  background: #f8fbff;
+  border: 1px solid rgba(191, 219, 254, 0.75);
+  color: #475569;
+  font-weight: 600;
+}
+
 .toolsGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -178,9 +211,8 @@
 }
 
 .toolIcon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
+  font-size: 1.7rem;
+  line-height: 1;
 }
 
 .toolArrow {
