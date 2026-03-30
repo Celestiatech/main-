@@ -1,0 +1,19 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="36" fill="#EFF6FF"/>
+  <rect x="64" y="64" width="1072" height="672" rx="28" fill="url(#paint0_linear)"/>
+  <circle cx="260" cy="248" r="86" fill="#DBEAFE"/>
+  <path d="M228 258C286 258 340 230 378 182C392 165 420 170 426 191C444 257 396 340 322 371C251 401 167 379 121 318C109 302 116 279 136 272C167 261 198 258 228 258Z" fill="#2563EB"/>
+  <path d="M296 233L503 186C515 183 525 197 518 208L385 400C379 409 366 406 363 395L324 263C322 251 308 245 296 247C289 248 289 235 296 233Z" fill="#0F172A"/>
+  <rect x="162" y="494" width="388" height="26" rx="13" fill="#BFDBFE"/>
+  <rect x="162" y="540" width="512" height="20" rx="10" fill="#DBEAFE"/>
+  <rect x="162" y="576" width="446" height="20" rx="10" fill="#DBEAFE"/>
+  <rect x="162" y="628" width="212" height="54" rx="27" fill="#2563EB"/>
+  <text x="162" y="470" fill="#0F172A" font-family="Arial, sans-serif" font-size="54" font-weight="700">Gulliver Travel</text>
+  <text x="204" y="662" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="24" font-weight="700">Preview Unavailable</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="140" y1="118" x2="1062" y2="692" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F8FAFC"/>
+    </linearGradient>
+  </defs>
+</svg>

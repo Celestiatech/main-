@@ -8,6 +8,7 @@ import { Footer } from "../components/Footer";
 
 export default function Pricing() {
   const [selectedModel, setSelectedModel] = useState("fixed-price");
+  const [selectedWebsiteTab, setSelectedWebsiteTab] = useState("wordpress");
 
   const pricingModels = [
     {
@@ -158,7 +159,69 @@ export default function Pricing() {
     }
   ];
 
+  const websitePricingTabs = [
+    {
+      id: "wordpress",
+      label: "WordPress Website Design",
+      icon: "W",
+      heading: "Select The Plan You Want",
+      columns: [
+        { name: "Basic", price: "₹4,999" },
+        { name: "Standard", price: "₹7,999" },
+        { name: "Advance", price: "₹9,999" },
+        { name: "Pro", price: "₹14,999" },
+      ],
+      rows: [
+        ["Premium Graphic", "✅", "✅", "✅", "✅"],
+        ["Premium Logo", "❌", "❌", "❌", "✅"],
+        ["Premium Images (Envato)", "❌", "✅", "✅", "✅"],
+        ["Advanced SEO", "❌", "❌", "✅", "✅"],
+        ["Google Search Console", "❌", "✅", "✅", "✅"],
+        ["Google Merchant Center", "❌", "❌", "❌", "✅"],
+        ["Product Listing", "Unlimited", "Unlimited", "Unlimited", "Unlimited"],
+        ["Wishlist", "✅", "✅", "✅", "✅"],
+        ["Compare Products", "❌", "❌", "✅", "✅"],
+        ["Shiprocket Integration", "❌", "❌", "✅", "✅"],
+        ["Live Chat", "❌", "✅", "✅", "✅"],
+        ["Social Login", "❌", "❌", "✅", "✅"],
+        ["Multi-Language Support", "❌", "✅", "✅", "✅"],
+        ["Multi-Currency Support", "❌", "✅", "✅", "✅"],
+        ["Business Emails", "1", "2", "3", "5"],
+      ],
+    },
+    {
+      id: "ecommerce",
+      label: "E-Commerce Website Design",
+      icon: "E",
+      heading: "Select The Plan You Want",
+      columns: [
+        { name: "Basic", price: "₹6,999" },
+        { name: "Standard", price: "₹14,999" },
+        { name: "Advance", price: "₹29,999" },
+      ],
+      rows: [
+        ["Online Store", "✅", "✅", "✅"],
+        ["Unlimited Products", "❌", "❌", "✅"],
+        ["Inventory Management", "❌", "✅", "✅"],
+        ["Discount Coupons", "✅", "✅", "✅"],
+        ["All in One SEO", "❌", "❌", "✅"],
+        ["WhatsApp Chat Bubble", "✅", "✅", "✅"],
+        ["0% Commission", "❌", "✅", "✅"],
+        ["Unlimited Web Hosting", "❌", "❌", "✅"],
+        ["Free SSL Certificate", "❌", "✅", "✅"],
+        ["POS (Point of Sale)", "✅", "✅", "✅"],
+        ["Multi Language", "❌", "❌", "✅"],
+        ["Multi-Currency", "✅", "✅", "✅"],
+        ["Payment Gateway", "✅", "✅", "✅"],
+        ["Google Analytics & Facebook Pixel", "❌", "✅", "✅"],
+        ["Shiprocket Integration", "✅", "✅", "✅"],
+        ["Business Emails", "❌", "✅", "✅"],
+      ],
+    },
+  ];
+
   const selectedPricing = pricingModels.find(model => model.id === selectedModel);
+  const selectedWebsitePricing = websitePricingTabs.find((tab) => tab.id === selectedWebsiteTab);
 
   return (
     <div className={styles.page}>
@@ -331,6 +394,70 @@ export default function Pricing() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className={styles.packageSection}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2>Website Package Comparison</h2>
+            <p>Compare website and ecommerce plans side by side before choosing the right package.</p>
+          </div>
+
+          <div className={styles.packageTabs}>
+            {websitePricingTabs.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                className={`${styles.packageTab} ${selectedWebsiteTab === tab.id ? styles.packageTabActive : ""}`}
+                onClick={() => setSelectedWebsiteTab(tab.id)}
+              >
+                <span className={styles.packageTabIcon}>{tab.icon}</span>
+                <span>{tab.label}</span>
+              </button>
+            ))}
+          </div>
+
+          {selectedWebsitePricing ? (
+            <div className={styles.packagePanel}>
+              <h3 className={styles.packageHeading}>{selectedWebsitePricing.heading}</h3>
+              <div className={styles.packageTableWrap}>
+                <table className={styles.packageTable}>
+                  <thead>
+                    <tr>
+                      <th>Features</th>
+                      {selectedWebsitePricing.columns.map((column) => (
+                        <th key={column.name}>
+                          <div className={styles.packagePrice}>{column.price}</div>
+                          <div className={styles.packageName}>{column.name}</div>
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {selectedWebsitePricing.rows.map((row) => (
+                      <tr key={row[0]}>
+                        <td>{row[0]}</td>
+                        {row.slice(1).map((value, index) => (
+                          <td key={`${row[0]}-${index}`}>{value}</td>
+                        ))}
+                      </tr>
+                    ))}
+                    <tr>
+                      <td></td>
+                      {selectedWebsitePricing.columns.map((column) => (
+                        <td key={`${column.name}-cta`}>
+                          <Link href="/contact" className={styles.packageButton}>
+                            Enquiry Now
+                          </Link>
+                        </td>
+                      ))}
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          ) : null}
         </div>
       </section>
 

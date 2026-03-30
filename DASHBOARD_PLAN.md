@@ -1,44 +1,56 @@
-# Admin Dashboard Plan - Contact & Career Messages
+# Admin Dashboard Plan
 
-## Current State
-- ✅ Contact form exists and sends emails via Brevo SMTP
-- ✅ Career page exists (displays positions)
-- ❌ No message storage/database
-- ❌ No admin dashboard
-- ❌ No career application submission system
+Plan for handling contact messages and career applications through a simple admin dashboard.
 
-## Proposed Architecture
+## 1. Current State
 
-### 1. **Data Storage** (Choose One)
-- **Option A (Simplest)**: JSON file-based storage in `data/messages.json`
-  - Pro: No database setup, works immediately, good for MVP
-  - Con: Not production-ready, single server only
-- **Option B (Recommended)**: Integrate lightweight DB like SQLite
-- **Option C (Production)**: Add MongoDB/PostgreSQL
+### Already in Place
+- Contact form sends emails via Brevo SMTP.
+- Career page exists and displays positions.
 
-**Recommendation: Start with Option A (JSON) for MVP, upgrade later**
+### Still Missing
+- Message storage or database layer.
+- Admin dashboard UI.
+- Career application submission flow.
 
----
+## 2. Storage Strategy
 
-## 2. **Features to Build**
+### Option A: JSON File Storage
+- Store data in `data/messages.json`.
+- Pros: no database setup, quick to ship, good for MVP.
+- Cons: not ideal for production, limited to a single server setup.
 
-### A. Backend API Routes
+### Option B: SQLite
+- Add a lightweight local database.
+- Better structure than JSON with minimal operational overhead.
+
+### Option C: MongoDB or PostgreSQL
+- Best long-term production option.
+- More setup and maintenance than the MVP needs right now.
+
+### Recommendation
+- Start with Option A for the MVP.
+- Upgrade to SQLite or a full database later if usage grows.
+
+## 3. Features to Build
+
+### Backend API Routes
+```text
+POST /api/contact         -> Save message and send email
+POST /api/career          -> Submit career application
+GET  /api/admin/messages  -> Fetch all messages with filters
+GET  /api/admin/stats     -> Fetch dashboard statistics
 ```
-POST   /api/contact          → Save + Email (existing, modify)
-POST   /api/career           → Career application endpoint
-GET    /api/admin/messages   → Get all messages (with filters)
-GET    /api/admin/stats      → Dashboard statistics
+
+### Admin Pages
+```text
+/admin/dashboard          -> Dashboard overview and stats
+/admin/messages           -> Message list with search and filters
+/admin/messages/[id]      -> Message detail page
+/admin/applications       -> Career applications list
 ```
 
-### B. Admin Dashboard Pages
-```
-/admin/dashboard            → Main dashboard with stats
-/admin/messages             → Message list with search/filter
-/admin/messages/[id]        → Message detail view
-/admin/applications         → Career applications list
-```
-
-### C. Message Storage Structure
+### Message Schema
 ```json
 {
   "id": "unique-id",
@@ -53,70 +65,64 @@ GET    /api/admin/stats      → Dashboard statistics
 }
 ```
 
----
+## 4. Implementation Phases
 
-## 3. **Implementation Steps**
+### Phase 1: Core Infrastructure
+1. Set up message storage in `/data` with a basic JSON schema.
+2. Update the contact API to save messages and continue sending email.
+3. Create the career API to accept and store applications.
 
-### Phase 1: Core Infrastructure (Step 1-3)
-1. **Setup message storage** → Create `/data` folder + JSON schema
-2. **Update Contact API** → Save to JSON + send email
-3. **Create Career API** → Accept applications + save
+### Phase 2: Admin Dashboard
+4. Create the admin layout and dashboard page.
+5. Add the messages list view.
+6. Add the message detail page.
 
-### Phase 2: Admin Dashboard (Step 4-6)
-4. **Create Dashboard Layout** → `/admin/dashboard`
-5. **Add Message List View** → `/admin/messages`
-6. **Add Message Detail** → `/admin/messages/[id]`
+### Phase 3: Enhancements
+7. Add basic authentication for admin routes.
+8. Add dashboard stats such as total, new, and replied counts.
+9. Add export support for CSV or PDF.
 
-### Phase 3: Enhancements (Optional)
-7. **Add basic auth** → Protect admin routes
-8. **Add stats/analytics** → Total, new, responded counters
-9. **Export messages** → CSV/PDF functionality
+## 5. Tech Stack
 
----
+- Frontend: React + Next.js
+- Styling: Tailwind CSS
+- Storage: JSON files first, database later
+- Type safety: TypeScript
 
-## 4. **Tech Stack**
-- **Frontend**: React + Next.js (existing)
-- **Styling**: Tailwind CSS (existing)
-- **Storage**: JSON files (initial) or DB (later)
-- **Type Safety**: TypeScript (existing)
+## 6. Planned File Structure
 
----
-
-## 5. **File Structure to Create**
-```
+```text
 src/
 ├── app/
 │   ├── admin/
-│   │   ├── layout.tsx           (NEW)
+│   │   ├── layout.tsx
 │   │   ├── dashboard/
-│   │   │   └── page.tsx         (NEW)
+│   │   │   └── page.tsx
 │   │   └── messages/
-│   │       ├── page.tsx         (NEW)
+│   │       ├── page.tsx
 │   │       └── [id]/
-│   │           └── page.tsx     (NEW)
+│   │           └── page.tsx
 │   └── api/
 │       ├── contact/
-│       │   └── route.ts         (MODIFY)
+│       │   └── route.ts
 │       ├── career/
-│       │   └── route.ts         (NEW)
+│       │   └── route.ts
 │       └── admin/
 │           ├── messages/
-│           │   └── route.ts     (NEW)
+│           │   └── route.ts
 │           └── stats/
-│               └── route.ts     (NEW)
+│               └── route.ts
 ├── lib/
-│   ├── messages.ts              (NEW - file operations)
-│   └── types.ts                 (NEW - TypeScript types)
+│   ├── messages.ts
+│   └── types.ts
 └── types/
-    └── messages.ts              (NEW)
+    └── messages.ts
 data/
-└── messages.json                (NEW - data storage)
+└── messages.json
 ```
 
----
+## 7. Next Decisions
 
-## 6. **Next Steps**
-✅ Review this plan
-❓ Confirm you want to proceed with JSON storage (Step 1)
-❓ Do you want basic password protection for admin?
-❓ Priority: Contact messages first or Career applications?
+- Confirm JSON storage for the first implementation step.
+- Decide whether admin routes need basic password protection.
+- Choose initial priority: contact messages first or career applications first.

@@ -1,0 +1,283 @@
+.portfolioSection {
+  padding: 28px 0;
+}
+
+.intro {
+  text-align: center;
+  margin: 0 auto 28px;
+  max-width: 760px;
+}
+
+.title {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #0f172a;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.filterContainer {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 28px;
+}
+
+.filterTabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 28px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(191, 219, 254, 0.9);
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.06);
+}
+
+.filterBtn {
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 2px solid rgba(191, 219, 254, 0.6);
+  background: rgba(255, 255, 255, 0.5);
+  color: #475569;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterBtn:hover {
+  border-color: #2563eb;
+  background: rgba(37, 99, 235, 0.05);
+  color: #1d4ed8;
+}
+
+.filterBtnActive {
+  border-color: #2563eb;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white;
+}
+
+.stackedContainer {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.stackedScroll {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.stackedCard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(191, 219, 254, 0.9);
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.08);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(calc(var(--index) * 8px)) rotateX(calc(var(--index) * 2deg)) scale(calc(1 - var(--index) * 0.02));
+  opacity: calc(1 - var(--index) * 0.1);
+}
+
+.stackedCard:nth-child(1) {
+  --index: 0;
+}
+
+.stackedCard:nth-child(2) {
+  --index: 1;
+}
+
+.stackedCard:nth-child(3) {
+  --index: 2;
+}
+
+.stackedCard:nth-child(4) {
+  --index: 3;
+}
+
+.stackedCard:nth-child(5) {
+  --index: 4;
+}
+
+.stackedCard:nth-child(n + 6) {
+  --index: 5;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@supports not (--index: 0) {
+  .stackedCard {
+    display: none;
+  }
+
+  .stackedCard:nth-child(1),
+  .stackedCard:nth-child(2),
+  .stackedCard:nth-child(3),
+  .stackedCard:nth-child(4),
+  .stackedCard:nth-child(5) {
+    display: block;
+  }
+}
+
+.cardLink {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.4s ease;
+}
+
+.cardLink:hover .cardImageWrapper {
+  transform: scale(1.05);
+}
+
+.cardLink:hover .cardOverlay {
+  background: rgba(31, 41, 55, 0.4);
+}
+
+.cardImageWrapper {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+  background: #f3f4f6;
+  transition: transform 0.4s ease;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(31, 41, 55, 0.2);
+  transition: background 0.4s ease;
+}
+
+.cardContent {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardTitle {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.cardCta {
+  font-size: 0.85rem;
+  color: #2563eb;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cardLink:hover .cardCta {
+  color: #1d4ed8;
+  transform: translateX(4px);
+}
+
+/* Scroll animation on viewport */
+@media (prefers-reduced-motion: no-preference) {
+  .stackedCard {
+    animation: stackSlideIn 0.6s ease forwards;
+    animation-delay: calc(var(--index) * 0.1s);
+  }
+
+  @keyframes stackSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(40px) rotateX(10deg) scale(0.95);
+    }
+    to {
+      opacity: calc(1 - var(--index) * 0.1);
+      transform: translateY(calc(var(--index) * 8px)) rotateX(calc(var(--index) * 2deg)) scale(calc(1 - var(--index) * 0.02));
+    }
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .filterTabs {
+    padding: 20px;
+    gap: 6px;
+  }
+
+  .filterBtn {
+    padding: 6px 16px;
+    font-size: 0.9rem;
+  }
+
+  .stackedContainer {
+    min-height: 300px;
+  }
+
+  .stackedScroll {
+    height: 300px;
+    max-width: 100%;
+  }
+
+  .stackedCard {
+    transform: translateY(calc(var(--index) * 6px)) rotateX(calc(var(--index) * 1deg)) scale(calc(1 - var(--index) * 0.015));
+  }
+
+  .cardContent {
+    padding: 16px;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+
+  .cardCta {
+    font-size: 0.8rem;
+  }
+
+  .title {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .stackedContainer {
+    min-height: 250px;
+  }
+
+  .stackedScroll {
+    height: 250px;
+  }
+
+  .filterBtn {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+  }
+}

@@ -105,6 +105,7 @@ export const TOOLS: ToolItem[] = [
   { slug: "robots-txt-generator", title: "Robots.txt Generator", category: "seo-tools", description: "Create robots.txt rules quickly.", status: "live" },
   { slug: "sitemap-generator", title: "Sitemap Generator", category: "seo-tools", description: "Generate XML sitemap for website pages.", status: "live" },
   { slug: "keyword-density-checker", title: "Keyword Density Checker", category: "seo-tools", description: "Analyze keyword frequency in text.", status: "live" },
+  { slug: "website-audit-tool", title: "Website Audit Tool", category: "seo-tools", description: "Run a lightweight SEO and technical audit for any public page.", status: "live" },
   { slug: "website-screenshot-tool", title: "Website Screenshot Tool", category: "seo-tools", description: "Capture website previews for audits.", status: "live" },
   { slug: "open-graph-preview-tool", title: "Open Graph Preview Tool", category: "seo-tools", description: "Preview social share cards and OG tags.", status: "live" },
 

@@ -1,10 +1,12 @@
 "use client";
 
-import { useState, useEffect, useRef, lazy, Suspense } from "react";
+import { useState, useEffect, useRef, lazy, Suspense, type CSSProperties } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { trackCTAClick, useScrollTracking } from "@/lib/analytics";
+import { CASE_STUDIES } from "@/lib/grocitoPortfolio";
+import { PortfolioShowcase } from "@/components/PortfolioShowcase";
 import styles from "./page.module.css";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
@@ -17,6 +19,8 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("all");
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
   const [selectedIndustry, setSelectedIndustry] = useState("startup");
+  const [heroPointer, setHeroPointer] = useState({ x: 0, y: 0 });
+  const [revenueCount, setRevenueCount] = useState(0);
 
   // Track scroll depth
   useScrollTracking(pathname || "/");
@@ -47,6 +51,27 @@ export default function Home() {
     return () => {
       observerRef.current?.disconnect();
     };
+  }, []);
+
+  useEffect(() => {
+    let frameId = 0;
+    const duration = 1800;
+    const target = 148;
+    const start = performance.now();
+
+    const tick = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setRevenueCount(Math.round(target * eased));
+
+      if (progress < 1) {
+        frameId = window.requestAnimationFrame(tick);
+      }
+    };
+
+    frameId = window.requestAnimationFrame(tick);
+
+    return () => window.cancelAnimationFrame(frameId);
   }, []);
 
   const services = [
@@ -147,80 +172,83 @@ export default function Home() {
     { icon: "social-networking.svg", name: "Entertainment" },
   ];
 
-  const portfolio = [
+  const industryHighlights = [
     {
-      category: "mobile",
-      title: "HealthTrack Pro",
-      clientGoal: "Increase user engagement in fitness apps",
-      problem: "Low retention rates and lack of personalized insights",
-      solution: "Built AI-powered fitness tracking with personalized recommendations",
-      techStack: ["React Native", "Node.js", "TensorFlow"],
-      result: "<img src='/images/icons/chart-growth.svg' alt='Growth' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Increased user retention by 42% | <img src='/images/icons/chart-growth.svg' alt='Revenue' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Generated ₹3.2 Cr revenue in 6 months",
-      beforeAfter: ["/images/portfolio/healthtrack-before.jpg", "/images/portfolio/custom/healthtrack-after-new.jpg"],
-      video: "/videos/healthtrack-demo.mp4",
-      tags: ["iOS", "Android", "Health"],
+      name: "Healthcare & Wellness",
+      image: "/images/industry-showcase/healthcare_n_wellness.png",
+      tint: "rgba(72, 219, 251, 0.08)",
+      points: ["Trust-Centered Design", "Booking Systems", "Mobile-Optimized"],
     },
     {
-      category: "web",
-      title: "EduLearn Platform",
-      clientGoal: "Scale e-learning platform to 100K+ users",
-      problem: "Outdated tech stack causing performance issues",
-      solution: "Migrated to modern React/Node.js with AWS scaling",
-      techStack: ["React", "Node.js", "AWS", "MongoDB"],
-      result: "<img src='/images/icons/launch.svg' alt='Speed' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />300% faster load times | <img src='/images/icons/tailored-solutions.svg' alt='Users' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Served 100K+ students",
-      beforeAfter: ["/images/portfolio/edulearn-before.jpg", "/images/portfolio/custom/edulearn-after-new.jpg"],
-      video: "/videos/edulearn-demo.mp4",
-      tags: ["React", "Node.js", "AWS"],
+      name: "Food & Restaurant",
+      image: "/images/industry-showcase/food_n_restourant.png",
+      tint: "rgba(255, 159, 67, 0.08)",
+      points: ["Visuals & Engaging UX", "Ordering Systems", "Local SEO & Reviews"],
     },
     {
-      category: "game",
-      title: "Space Quest",
-      clientGoal: "Launch viral mobile game",
-      problem: "Generic gameplay leading to quick abandonment",
-      solution: "Developed immersive 3D space adventure with multiplayer",
-      techStack: ["Unity", "C#", "Photon"],
-      result: "<img src='/images/icons/mobile-development.svg' alt='Downloads' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />1M+ downloads | <img src='/images/icons/expertise.svg' alt='Rating' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />4.8 rating on app stores",
-      beforeAfter: ["/images/portfolio/spacequest-before.jpg", "/images/portfolio/custom/spacequest-after-new.jpg"],
-      video: "/videos/spacequest-demo.mp4",
-      tags: ["Unity", "3D", "Mobile"],
+      name: "Education & E-Learning",
+      image: "/images/industry-showcase/eduction_n_elearning.png",
+      tint: "rgba(46, 213, 115, 0.08)",
+      points: ["Interactive Interfaces", "LMS & User Management", "Scalable & Accessible"],
     },
     {
-      category: "blockchain",
-      title: "CryptoVault",
-      clientGoal: "Build secure DeFi platform",
-      problem: "Complex smart contracts with security vulnerabilities",
-      solution: "Developed audited smart contracts with user-friendly interface",
-      techStack: ["Solidity", "Web3.js", "React"],
-      result: "<img src='/images/icons/security.svg' alt='Security' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Zero security breaches | <img src='/images/icons/chart-growth.svg' alt='Assets' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />$50M+ assets secured",
-      beforeAfter: ["/images/portfolio/cryptovault-before.jpg", "/images/portfolio/custom/cryptovault-after-new.jpg"],
-      video: "/videos/cryptovault-demo.mp4",
-      tags: ["Web3", "Solidity", "DeFi"],
+      name: "Startups & SMEs",
+      image: "/images/industry-showcase/startup_n_smes.png",
+      tint: "rgba(255, 71, 167, 0.08)",
+      points: ["Growth & Scalable Design", "Conversion Friendly", "Fast Ongoing Support"],
     },
     {
-      category: "ai",
-      title: "SmartAssist AI",
-      clientGoal: "Automate customer support",
-      problem: "High support costs and slow response times",
-      solution: "Built NLP-powered chatbot with 24/7 availability",
-      techStack: ["Python", "TensorFlow", "Dialogflow"],
-      result: "<img src='/images/icons/launch.svg' alt='Speed' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />70% faster responses | <img src='/images/icons/chart-growth.svg' alt='Savings' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Saved ₹2 Cr annually",
-      beforeAfter: ["/images/portfolio/smartassist-before.jpg", "/images/portfolio/custom/smartassist-after-new.jpg"],
-      video: "/videos/smartassist-demo.mp4",
-      tags: ["NLP", "Machine Learning"],
+      name: "Real Estate",
+      image: "/images/industry-showcase/realstate.png",
+      tint: "rgba(78, 45, 218, 0.08)",
+      points: ["Industry-Specific Design", "SEO & Local Optimization", "Mobile-First & Performance"],
     },
     {
-      category: "design",
-      title: "BrandRebrand",
-      clientGoal: "Modernize brand identity",
-      problem: "Outdated design hurting market perception",
-      solution: "Complete brand redesign with modern UI/UX",
-      techStack: ["Figma", "Adobe Creative Suite", "React"],
-      result: "<img src='/images/icons/chart-growth.svg' alt='Growth' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />150% increase in brand recognition | <img src='/images/icons/concept.svg' alt='Awards' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />Won 3 design awards",
-      beforeAfter: ["/images/portfolio/brandrebrand-before.jpg", "/images/portfolio/custom/brandrebrand-after-new.jpg"],
-      video: "/videos/brandrebrand-demo.mp4",
-      tags: ["UI/UX", "Branding"],
+      name: "E-commerce & Retail",
+      image: "/images/industry-showcase/ecommerce_n_retail.png",
+      tint: "rgba(255, 107, 107, 0.08)",
+      points: ["Conversion-Focused Design", "Seamless Experience", "Scalable Custom Features"],
     },
   ];
+
+  const industryCarouselItems = [...industryHighlights, ...industryHighlights];
+
+  // Transform CASE_STUDIES for homepage display
+  const portfolio = CASE_STUDIES.map((study) => {
+    // Format impacts as HTML result string
+    const resultHtml = study.impacts
+      .map((impact) => {
+        const iconMap: Record<string, string> = {
+          "Increased user retention by": "/images/icons/chart-growth.svg",
+          "Generated revenue in 6 months": "/images/icons/chart-growth.svg",
+          "300% faster load times": "/images/icons/launch.svg",
+          "Served students": "/images/icons/tailored-solutions.svg",
+          Downloads: "/images/icons/mobile-development.svg",
+          "Rating on app stores": "/images/icons/expertise.svg",
+          "Zero security breaches": "/images/icons/security.svg",
+          "Assets secured": "/images/icons/chart-growth.svg",
+          "70% faster responses": "/images/icons/launch.svg",
+          "Saved annually": "/images/icons/chart-growth.svg",
+          "Increase in brand recognition": "/images/icons/chart-growth.svg",
+          "Design awards won": "/images/icons/concept.svg",
+        };
+        const icon = iconMap[impact.label] || "/images/icons/chart-growth.svg";
+        return `<img src='${icon}' alt='${impact.label}' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />${impact.label} ${impact.value}`;
+      })
+      .join(" | ");
+
+    return {
+      category: study.category,
+      title: study.title,
+      clientGoal: study.subtitle,
+      problem: study.problem,
+      solution: study.solution,
+      techStack: study.techStack,
+      result: resultHtml,
+      beforeAfter: [study.beforeImage, study.afterImage],
+      tags: study.techStack.slice(0, 3),
+    };
+  });
 
   const processSteps = [
     {
@@ -258,6 +286,57 @@ export default function Home() {
       title: "Iterate",
       desc: "Continuous improvement",
       details: "Post-launch, we monitor performance, gather user feedback, and continuously improve the product. Our team provides ongoing maintenance, updates, and feature enhancements based on user needs."
+    },
+  ];
+
+  const heroFloatingBadges = [
+    {
+      key: "whatsapp",
+      className: styles.heroFloatBadge1,
+      iconClass: "fa-brands fa-whatsapp",
+      label: "WhatsApp",
+      href: "https://wa.me/919876543210",
+      offsetX: 18,
+      offsetY: 14,
+      rotate: 5,
+      originX: -0.82,
+      originY: -0.45,
+    },
+    {
+      key: "call",
+      className: styles.heroFloatBadge2,
+      iconClass: "fa-solid fa-phone-volume",
+      label: "Call Now",
+      href: "tel:+919876543210",
+      offsetX: -16,
+      offsetY: 12,
+      rotate: -4,
+      originX: 0.82,
+      originY: -0.18,
+    },
+    {
+      key: "revenue",
+      className: styles.heroFloatBadge3,
+      iconClass: "fa-solid fa-indian-rupee-sign",
+      label: "Revenue",
+      href: "/proposal",
+      offsetX: 14,
+      offsetY: -16,
+      rotate: 6,
+      originX: -0.78,
+      originY: 0.68,
+    },
+    {
+      key: "seo",
+      className: styles.heroFloatBadge4,
+      iconClass: "fa-solid fa-chart-line",
+      label: "SEO Growth",
+      href: "/services",
+      offsetX: -20,
+      offsetY: -14,
+      rotate: -5,
+      originX: 0.7,
+      originY: 0.56,
     },
   ];
 
@@ -323,6 +402,13 @@ export default function Home() {
     },
   ];
 
+  const testimonialCarouselItems = [...testimonials, ...testimonials];
+  const testimonialRows = [
+    [...testimonialCarouselItems, ...testimonialCarouselItems],
+    [...testimonialCarouselItems].reverse().concat([...testimonialCarouselItems].reverse()),
+    [...testimonialCarouselItems, ...testimonialCarouselItems],
+  ];
+
   const whyChooseUs = [
     {
       icon: "/images/whychoose/tailored-solutions.jpg",
@@ -353,7 +439,45 @@ export default function Home() {
       <main id="main-content" className={styles.main} tabIndex={-1}>
 
       {/* ===== HERO SECTION ===== */}
-      <section className={`${styles.hero} ${styles.heroRedesign}`} data-debug="hero-section">
+      <section
+        className={`${styles.hero} ${styles.heroRedesign}`}
+        data-debug="hero-section"
+        onMouseMove={(event) => {
+          const rect = event.currentTarget.getBoundingClientRect();
+          const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+          const y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+          setHeroPointer({ x, y });
+        }}
+        onMouseLeave={() => setHeroPointer({ x: 0, y: 0 })}
+      >
+        {heroFloatingBadges.map((badge) => (
+          (() => {
+            const distanceX = heroPointer.x - badge.originX;
+            const distanceY = heroPointer.y - badge.originY;
+            const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+            const influence = Math.max(0, 1 - distance / 1.1);
+            const badgeStyle = {
+              "--badge-shift-x": `${heroPointer.x * badge.offsetX * influence}px`,
+              "--badge-shift-y": `${heroPointer.y * badge.offsetY * influence}px`,
+              "--badge-rotate": `${heroPointer.x * badge.rotate * influence}deg`,
+            } as CSSProperties;
+
+            return (
+              <Link
+                key={badge.key}
+                href={badge.href}
+                className={`${styles.heroFloatBadge} ${badge.className}`}
+                aria-label={badge.label}
+                style={badgeStyle}
+              >
+                <span className={styles.heroFloatBadgeInner}>
+                  <i className={badge.iconClass}></i>
+                  <span>{badge.label}</span>
+                </span>
+              </Link>
+            );
+          })()
+        ))}
         {/* Ambient sparkle decorations — matching reference image positions */}
         <span className={`${styles.sparkle} ${styles.sparkle1}`} aria-hidden="true">✦</span>
         <span className={`${styles.sparkle} ${styles.sparkle2}`} aria-hidden="true">✦</span>
@@ -423,14 +547,52 @@ export default function Home() {
               <span className={styles.heroStatValue}>Web • App • UI/UX</span>
               <span className={styles.heroStatValue}>SEO • Performance • Growth</span>
             </div>
-            <Link
-              href="/proposal"
-              className={styles.heroJoinBtn}
-              onClick={() => trackCTAClick("Join Us", "hero", pathname || "/")}
-            >
-              <span>Get Free Proposal</span>
-              <span className={styles.heroJoinBtnBox} aria-hidden="true">↗</span>
-            </Link>
+            <div className={styles.heroMiniChart} aria-label="Growth snapshot">
+              <div className={styles.heroMiniChartHeader}>
+                <span className={styles.heroMiniChartLabel}>Revenue Growth</span>
+                <span className={styles.heroMiniChartValue}>${revenueCount}K</span>
+              </div>
+              <svg
+                className={styles.heroMiniChartSvg}
+                viewBox="0 0 180 72"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M8 56 C30 54, 42 44, 58 46 C75 48, 82 34, 96 32 C112 30, 122 16, 144 18 C156 19, 165 12, 172 10"
+                  className={styles.heroMiniChartArea}
+                />
+                <path
+                  d="M8 56 C30 54, 42 44, 58 46 C75 48, 82 34, 96 32 C112 30, 122 16, 144 18 C156 19, 165 12, 172 10"
+                  className={styles.heroMiniChartLine}
+                />
+                <circle cx="172" cy="10" r="4" className={styles.heroMiniChartDot} />
+              </svg>
+              <div className={styles.heroMiniChartFooter}>
+                <span>Revenue</span>
+                <span>Sales</span>
+                <span>Clients</span>
+                <span>Leads</span>
+              </div>
+            </div>
+            <div className={styles.heroButtonGroup}>
+              <Link
+                href="/proposal"
+                className={styles.heroJoinBtn}
+                onClick={() => trackCTAClick("Get Started Today", "hero", pathname || "/")}
+              >
+                <span>Get Started Today!</span>
+                <span className={styles.heroJoinBtnBox} aria-hidden="true">↗</span>
+              </Link>
+              <Link
+                href="/contact"
+                className={styles.heroContactBtn}
+                onClick={() => trackCTAClick("Contact Now", "hero", pathname || "/")}
+              >
+                <span>Contact Now</span>
+                <span className={styles.heroContactBtnBox} aria-hidden="true">→</span>
+              </Link>
+            </div>
           </div>
 
           {/* ── Scrollable 3D-style icon cards with purple circle arrow buttons ── */}
@@ -495,42 +657,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SERVICES SECTION ===== */}
+      {/* ===== INDUSTRY SHOWCASE SECTION ===== */}
       <section className={styles.services} id="services">
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
-            <h2>Specialist Teams Built for Growth</h2>
+            <h2>Industries We Serve</h2>
             <p>
-              We design, build, and optimize digital products that scale. From web and mobile
-              to DevOps and emerging tech, our specialists deliver measurable business outcomes.
+              At CelestiaTech, we shape each solution around the way your industry actually works,
+              so the product feels relevant, conversion-ready, and built for growth.
             </p>
           </div>
-          <div className={styles.servicesGrid}>
-            {services.map((service, index) => (
-              <div key={index} className={`${styles.serviceCard} service-card-enhanced animate-on-scroll stagger-${(index % 4) + 1}`}>
-                <div className={styles.serviceIcon}>
-                  <img src={service.icon} alt={service.title} width={80} height={80} loading="lazy" />
-                </div>
-                <div className={styles.serviceHeader}>
-                  <h3>{service.title}</h3>
-                  <span className={styles.serviceTag}>Specialist</span>
-                </div>
-                <div className={styles.serviceWhoFor}>
-                  <img src="/images/icons/tailored-solutions.svg" alt="Target audience" width={16} height={16} style={{ marginRight: '8px' }} loading="lazy" />
-                  {service.whoFor}
-                </div>
-                <div className={styles.serviceResult}>
-                  <img src="/images/icons/chart-growth.svg" alt="Business result" width={16} height={16} style={{ marginRight: '8px' }} loading="lazy" />
-                  {service.businessResult}
-                </div>
-                <div className={styles.serviceMetric}>
-                  <span>{service.metric.split('|')[0].trim()}</span>
-                  <span>{service.metric.split('|')[1].trim()}</span>
-                </div>
-                <p className={styles.serviceDescription}>{service.description}</p>
-                <Link href="/work" className="btn btn-primary btn-sm">{service.cta}</Link>
-              </div>
-            ))}
+          <div className={styles.industryCarouselWrapper}>
+            <div id="industryShowcaseCarousel" className={styles.industryCarouselTrack}>
+              {industryCarouselItems.map((industry, index) => (
+                <article
+                  key={`${industry.name}-${index}`}
+                  className={`${styles.industryShowcaseCard} animate-on-scroll stagger-${(index % 6) + 1}`}
+                  style={{ background: industry.tint }}
+                >
+                  <div className={styles.industryShowcaseImage}>
+                    <Image
+                      src={industry.image}
+                      alt={industry.name}
+                      width={360}
+                      height={240}
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className={styles.industryShowcaseContent}>
+                    <h3>{industry.name}</h3>
+                    <ul className={styles.industryShowcaseList}>
+                      {industry.points.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -595,80 +759,7 @@ export default function Home() {
 
       {/* ===== PORTFOLIO SECTION ===== */}
       <section className={styles.portfolio}>
-        <div className="container">
-          <div className={`${styles.sectionHeader} animate-on-scroll`}>
-            <h2>Our Portfolio — Results That Speak</h2>
-            <p>Explore our success stories and delivered projects</p>
-          </div>
-          <div className={`${styles.portfolioTabs} animate-on-scroll`}>
-            {["all", "mobile", "web", "game", "blockchain", "ai", "design"].map((tab) => (
-              <button
-                key={tab}
-                className={`${styles.portfolioTab} ${activeTab === tab ? styles.active : ""}`}
-                onClick={() => setActiveTab(tab)}
-              >
-                {tab.charAt(0).toUpperCase() + tab.slice(1)}
-              </button>
-            ))}
-          </div>
-          <div className={styles.portfolioGrid}>
-            {portfolio
-              .filter((item) => activeTab === "all" || item.category === activeTab)
-              .slice(0, 6)
-              .map((item, index) => (
-                <div key={index} className={`${styles.portfolioCard} animate-on-scroll stagger-${(index % 3) + 1}`}>
-                  <div className={styles.portfolioImage}>
-                    <Image
-                      src={item.beforeAfter[0]}
-                      alt={`${item.title} before`}
-                      width={300}
-                      height={200}
-                      className={styles.portfolioBeforeImage}
-                      loading="lazy"
-                    />
-                    <Image
-                      src={item.beforeAfter[1]}
-                      alt={`${item.title} after`}
-                      width={300}
-                      height={200}
-                      className={styles.portfolioAfterImage}
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className={styles.portfolioContent}>
-                    <h3>{item.title}</h3>
-                    <div className={styles.portfolioCaseStudy}>
-                      <div className={styles.caseStudyItem}>
-                        <strong><Image src="/images/icons/idea.svg" alt="Goal" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />Client Goal:</strong> {item.clientGoal}
-                      </div>
-                      <div className={styles.caseStudyItem}>
-                        <strong><Image src="/images/icons/expertise.svg" alt="Problem" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />Problem:</strong> {item.problem}
-                      </div>
-                      <div className={styles.caseStudyItem}>
-                        <strong><Image src="/images/icons/concept.svg" alt="Solution" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />Solution:</strong> {item.solution}
-                      </div>
-                      <div className={styles.caseStudyItem}>
-                        <strong><Image src="/images/icons/develop.svg" alt="Tech Stack" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />Tech Stack:</strong> {item.techStack.join(", ")}
-                      </div>
-                      <div className={styles.caseStudyResult}>
-                        <strong><Image src="/images/icons/chart-growth.svg" alt="Result" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />Result:</strong> <span dangerouslySetInnerHTML={{ __html: item.result }} />
-                      </div>
-                    </div>
-                    <div className={styles.portfolioTags}>
-                      {item.tags.map((tag, i) => (
-                        <span key={i} className={styles.portfolioTag}>{tag}</span>
-                      ))}
-                    </div>
-                    <div className={styles.portfolioActions}>
-                      <p className={styles.portfolioContact}>
-                        Contact us for a brief walkthrough of this project.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-          </div>
-        </div>
+        <PortfolioShowcase />
       </section>
 
       {/* ===== PROCESS SECTION ===== */}
@@ -839,21 +930,54 @@ export default function Home() {
             <h2>What Our Clients Say</h2>
             <p>Trusted by businesses worldwide</p>
           </div>
-          <div className={styles.testimonialsGrid}>
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className={`${styles.testimonialCard} animate-on-scroll stagger-${(index % 3) + 1}`}>
-                <div className={styles.testimonialStars}>
-                  {"★".repeat(testimonial.stars)}
-                </div>
-                <p>"{testimonial.quote}"</p>
-                <div className={styles.testimonialAuthor}>
-                  <div className={styles.testimonialAvatar}>
-                    {testimonial.author.charAt(0)}
-                  </div>
-                  <div className={styles.testimonialInfo}>
-                    <h4>{testimonial.author}</h4>
-                    <span>{testimonial.service}</span>
-                  </div>
+          <div className={styles.testimonialRatingRow}>
+            <div className={styles.testimonialGoogleBadge}>
+              <Image
+                src="/logos/google-logo-vector-format-white-background-illustration-407571048.webp"
+                alt="Google"
+                width={32}
+                height={32}
+                className={styles.googleLogoImage}
+                loading="lazy"
+              />
+              <div className={styles.testimonialGoogleMeta}>
+                <strong>4.5</strong>
+                <span>Google Reviews</span>
+              </div>
+            </div>
+          </div>
+          <div className={styles.testimonialRows}>
+            {testimonialRows.map((row, rowIndex) => (
+              <div
+                key={rowIndex}
+                className={`${styles.testimonialsMarquee} ${rowIndex % 2 === 1 ? styles.testimonialsMarqueeReverse : ""}`}
+              >
+                <div className={styles.testimonialsTrack}>
+                  {row.map((testimonial, index) => (
+                    <div key={`${rowIndex}-${index}-${testimonial.author}`} className={styles.testimonialCard}>
+                      <div className={styles.testimonialStars}>
+                        <span className={styles.testimonialScore}>4.5</span>
+                        {"★".repeat(testimonial.stars)}
+                      </div>
+                      <p>"{testimonial.quote}"</p>
+                      <div className={styles.testimonialAuthor}>
+                        <div className={styles.testimonialAvatar}>
+                          <Image
+                            src="/logos/google-logo-vector-format-white-background-illustration-407571048.webp"
+                            alt="Google"
+                            width={28}
+                            height={28}
+                            className={styles.googleLogoImage}
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className={styles.testimonialInfo}>
+                          <h4>{testimonial.author}</h4>
+                          <span>{testimonial.service}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}
@@ -932,4 +1056,3 @@ export default function Home() {
     </div>
   );
 }
-

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import styles from "./tool-detail.module.css";
+import WebsiteAuditTool from "./WebsiteAuditTool";
 
 interface ToolPlaygroundProps {
   slug: string;
@@ -540,6 +541,10 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
     const body = urls.map((url) => `  <url><loc>${escapeHtml(url)}</loc></url>`).join("\n");
     return `<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n${body}\n</urlset>`;
   }, [sitemapUrls]);
+
+  if (slug === "website-audit-tool") {
+    return <WebsiteAuditTool />;
+  }
 
   if (slug === "word-counter") {
     return (

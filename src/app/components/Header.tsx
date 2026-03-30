@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { siteConfig } from "@/lib/metadata";
 import { trackCTAClick } from "@/lib/analytics";
@@ -407,7 +408,7 @@ export function Header() {
       <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
         {/* Top Bar */}
         <div className={styles.headerTop}>
-          <div className="container">
+          <div className={styles.headerTopInner}>
             <div className={styles.headerTopContent}>
               <div className={styles.headerPhones}>
                 <a href={`tel:${siteConfig.contact.phone.uae.replace(/\s/g, "")}`}>
@@ -424,14 +425,39 @@ export function Header() {
                 <i className="fas fa-bolt" aria-hidden="true"></i> Get a free consultation today!
               </div>
             </div>
+            <div className={styles.headerTicker} aria-label="Announcements">
+              <div className={styles.headerTickerTrack}>
+                <span>Custom Websites</span>
+                <span>Mobile Apps</span>
+                <span>UI/UX Design</span>
+                <span>SEO Growth</span>
+                <span>Fast Delivery</span>
+                <span>Free Consultation</span>
+                <span>Custom Websites</span>
+                <span>Mobile Apps</span>
+                <span>UI/UX Design</span>
+                <span>SEO Growth</span>
+                <span>Fast Delivery</span>
+                <span>Free Consultation</span>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Main Header */}
-        <div className="container">
+        <div className={styles.headerInner}>
           <div className={styles.headerMain}>
             <Link href="/" className={styles.logo} aria-label={`${siteConfig.name} Home`}>
-              <div className={styles.logoIcon}>N</div>
+              <span className={styles.logoIcon} aria-hidden="true">
+                <Image
+                  src="/logos/celethisia.png"
+                  alt=""
+                  width={700}
+                  height={700}
+                  className={styles.logoImage}
+                  priority
+                />
+              </span>
               {siteConfig.shortName}
             </Link>
 
@@ -962,7 +988,15 @@ export function Header() {
           <div className={styles.mobileMenu} onClick={(e) => e.stopPropagation()}>
             <div className={styles.mobileMenuHeader}>
               <Link href="/" className={styles.mobileLogo} onClick={closeMobileMenu}>
-                <div className={styles.logoIcon}>N</div>
+                <span className={styles.logoIcon} aria-hidden="true">
+                  <Image
+                    src="/logos/celethisia.png"
+                    alt=""
+                    width={1024}
+                    height={1024}
+                    className={styles.logoImage}
+                  />
+                </span>
                 <span>{siteConfig.shortName}</span>
               </Link>
               <button

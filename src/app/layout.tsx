@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Syne, Poppins, Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { generateMetadata as genMeta, siteConfig } from "@/lib/metadata";
@@ -32,6 +32,13 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = genMeta();
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  viewportFit: "cover",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -63,4 +70,3 @@ export default function RootLayout({
     </html>
   );
 }
-

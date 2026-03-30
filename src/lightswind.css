@@ -1,0 +1,1564 @@
+/*
+ * lightswind.com
+ * lightswind.css
+ *
+ * This file contains a standalone CSS library with custom themes, animations,
+ * and utility classes. It does NOT require Tailwind CSS for compilation.
+ * Users can directly import this file into their projects.
+   Also works without overriding your tailwind CSS
+ */
+
+/* ==========================================================================
+   1. CSS Variables for Theming
+   ========================================================================== */
+
+/* Light (default) theme variables */
+:root {
+  --primarylw: #173eff;
+  --primarylw-2: #3758f9;
+  --darklw: #11131b;
+  --darklw-2: #1a1d25;
+
+  /* HSL values for theme colors */
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 0%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 0%;
+
+  --primary: 0 0% 0%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 0%;
+
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
+
+  --accent: 0 0% 96%;
+  --accent-foreground: 0 0% 0%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 0 0% 0%;
+
+  --radius: 0.5rem;
+  /* For rounded corners */
+
+  /* Scrollbar colors */
+  --scrollbar-thumb: 0 0% 75%;
+  --scrollbar-track: 0 0% 95%;
+  --scrollbar-hover: 0 0% 65%;
+
+  /* Custom named colors */
+  --greedy: #07eae6ff;
+}
+
+/* Dark theme variables */
+.dark {
+  --primarylw: #173eff;
+  --primarylw-2: #3758f9;
+  --darklw: #11131b;
+  --darklw-2: #1a1d25;
+
+  /* HSL values for theme colors in dark mode */
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+
+  --card: 0 0% 5%;
+  --card-foreground: 0 0% 100%;
+
+  --popover: 0 0% 5%;
+  --popover-foreground: 0 0% 100%;
+
+  --primary: 0 0% 100%;
+  --primary-foreground: 0 0% 0%;
+
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 65%;
+
+  --accent: 0 0% 15%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: #000;
+  /* Direct hex for dark border */
+  --input: 0 0% 20%;
+  --ring: 0 0% 20%;
+
+  /* Scrollbar colors for dark mode */
+  --scrollbar-thumb: 0 0% 25%;
+  --scrollbar-track: 0 0% 10%;
+  --scrollbar-hover: 0 0% 35%;
+
+  /* Custom named colors (same as light, but can be overridden if needed) */
+  --greedy: #07eae6ff;
+}
+
+/* ==========================================================================
+   2. Keyframe Animations
+   ========================================================================== */
+
+/* Neon Button Animations */
+@keyframes neon-pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes neon-bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Tiny Bar Loader Animation */
+@keyframes tiny-bar-loader-anime {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
+}
+
+/* Glassmorphism Animated Login Form Background */
+@keyframes GlassLoginAnimateBg {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Gradient Animated Background Turn */
+@keyframes GradientAnimatedBgTurn {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/* Glassmorphism Marquee Animation */
+@keyframes marquee-right-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Animated Gradient Border Button Property and Animation */
+/* @property MUST be defined at the global scope, not inside a rule */
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+
+/* Product Card Skeleton Loader Animation */
+@keyframes skeletonLoader {
+  0% {
+    background-position: -2000px 0;
+  }
+
+  100% {
+    background-position: 2000px 0;
+  }
+}
+
+/* Skeleton Bars Loader Animation */
+@keyframes skeletonBarsLoader {
+  0% {
+    background-position: -2000px 0;
+  }
+
+  100% {
+    background-position: 2000px 0;
+  }
+}
+
+/* Animated Cart Button Animations */
+@keyframes AnimatedCartBtntruck {
+  0% {
+    left: -10%;
+  }
+
+  40%,
+  55% {
+    left: 50%;
+  }
+
+  100% {
+    left: 110%;
+  }
+}
+
+@keyframes AnimatedCartBtnbox {
+
+  0%,
+  40% {
+    top: -20%;
+    left: -5%;
+  }
+
+  55% {
+    top: 37%;
+    left: 52%;
+  }
+
+  100% {
+    top: 37%;
+    left: 110%;
+  }
+}
+
+@keyframes AnimatedCartBtntxt1 {
+  0% {
+    opacity: 1;
+  }
+
+  20%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes AnimatedCartBtntxt2 {
+
+  0%,
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Shimmer Effect Animation */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Toast Notification Animations (Desktop & Mobile) */
+@keyframes toast-enter {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toast-exit {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes toast-enter-mobile {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toast-exit-mobile {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   3. Base Styles & Global Utilities
+   ========================================================================== */
+
+/* Global Scrollbar Styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--scrollbar-thumb)) hsl(var(--scrollbar-track));
+  /* Apply font family globally */
+  box-sizing: border-box;
+  /* Good practice for all elements */
+}
+
+/* Body Styling */
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  margin: 0;
+  /* Reset default body margin */
+  padding: 0;
+  /* Reset default body padding */
+}
+
+/* Overflow handling for dialogs/popovers */
+.command-dialog-open,
+.popover-open {
+  overflow: hidden;
+}
+
+.command-dialog-open::after,
+.popover-open::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 39;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+  transition: backdrop-filter 0.2s ease;
+}
+
+/* Border Styling (light and dark modes) */
+.border {
+  border-width: 1px;
+  border-color: hsl(var(--border));
+  /* Use CSS variable for consistency */
+}
+
+.dark .border {
+  border-color: var(--darklw-2);
+  /* Using darklw-2 as per your original config for dark border */
+}
+
+/* Smooth Scroll Utility */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Hide Scrollbar Utility */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* For IE and Edge */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  /* For Chrome, Safari, and Opera */
+}
+
+/* Custom Card Component Styling */
+.custom-card {
+  border-radius: var(--radius);
+  /* Using CSS variable for radius */
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  /* shadow-lg */
+  padding: 1.5rem;
+  /* spacing.6 */
+  background-color: hsl(var(--card));
+  /* Use card background color */
+  border: 1px solid hsl(var(--border));
+  /* Use border color */
+}
+
+/* Dynamic Navigation Classes */
+.dynamicNav-nav-bg {
+  background-color: #000000;
+  width: 100%;
+  position: relative;
+}
+
+.dynamicNav-highlight-glow {
+  box-shadow: inset 0 0 10px #fff;
+}
+
+.dynamicNav-nav-link {
+  color: #ffffff;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.dynamicNav-nav-link:hover {
+  transform: scale(1.1);
+}
+
+.dynamicNav-highlight-transition {
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.dynamicNav-active-link {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Interactive Gallery Card Styles */
+.InteractiveGalleryCard:hover {
+  transform: perspective(1000px);
+}
+
+.InteractiveGalleryCard {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  will-change: transform;
+}
+
+/* Glass Marquee Styles */
+.GlassMarqueeContainer {
+  display: flex;
+  width: 200%;
+  /* Important for marquee effect */
+  gap: 20px;
+  white-space: nowrap;
+  align-items: center;
+  animation: marquee-right-left 12s linear infinite;
+}
+
+.GlassMarqueeContainer:hover {
+  animation-play-state: paused;
+}
+
+.GlassMarqueeCard {
+  flex-shrink: 0;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s,
+    filter 0.3s;
+}
+
+.GlassMarqueeCard:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.4);
+}
+
+.GlassMarqueeEffect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Animated Gradient Border Button Styles */
+.gradient-border {
+  --border-angle: 0turn;
+  background:
+    conic-gradient(from var(--border-angle), #000, #000) padding-box,
+    conic-gradient(from var(--border-angle),
+      transparent 25%,
+      #08f,
+      rgb(1, 206, 46) 99%,
+      transparent) border-box;
+  animation: bg-spin 3s linear infinite;
+  border: 1px solid transparent;
+  background-origin: border-box;
+}
+
+.gradient-border:hover {
+  animation-play-state: paused;
+}
+
+/* Animated Range Input Styles */
+.animatedRangeInput .animatedRangeInputLevel::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+  -webkit-box-shadow: -200px 0 0 200px #fff;
+  box-shadow: -200px 0 0 200px #fff;
+}
+
+.animatedRangeInput .animatedRangeInputLevel::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  border-radius: 0;
+  border: none;
+  box-shadow: -200px 0 0 200px #fff;
+}
+
+/* Toggle Theme Sidebar Transitions */
+.ToggleThemeSidebar {
+  transition:
+    width 0.4s ease,
+    padding 0.4s ease;
+}
+
+.ToggleThemeSidebar-expanded {
+  width: 160px;
+}
+
+.ToggleThemeSidebar-collapsed {
+  width: 64px;
+}
+
+/* Smooth transition for theme changes */
+.transition-colors {
+  transition:
+    background-color 0.4s,
+    color 0.4s;
+}
+
+/* Content Max Height and Overflow for dialogs/popovers */
+.dropdown-content,
+.select-content,
+.popover-content,
+.command-dialog {
+  max-height: calc(90vh - 2rem);
+  overflow-y: auto;
+}
+
+/* No Scroll Utility */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Custom Scrollbar Styling */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(120, 120, 120, 0.3);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(120, 120, 120, 0.5);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(120, 120, 120, 0.7);
+}
+
+.custom-scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Flex Wrap Tabs Layout */
+.flex-wrap-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  /* 4px */
+}
+
+/* Sidebar Scrollable Syntax Scrollbar */
+.sidebar-scrollable-syntax::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.sidebar-scrollable-syntax::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+
+.sidebar-scrollable-syntax::-webkit-scrollbar-thumb {
+  background-color: #505050;
+  border-radius: 10px;
+  border: 2px solid #f0f0f0;
+}
+
+.sidebar-scrollable-syntax::-webkit-scrollbar-thumb:hover {
+  background-color: #b3b3b3;
+}
+
+/* ==========================================================================
+   4. Utility Classes (Explicitly Defined)
+   ========================================================================== */
+
+/* Color Utilities (text- and background- colors) */
+.text-greedy {
+  color: var(--greedy);
+}
+
+.bg-greedy {
+  background-color: var(--greedy);
+}
+
+.text-primarylw {
+  color: var(--primarylw);
+}
+
+.bg-primarylw {
+  background-color: var(--primarylw);
+}
+
+.text-primarylw-2 {
+  color: var(--primarylw-2);
+}
+
+.bg-primarylw-2 {
+  background-color: var(--primarylw-2);
+}
+
+.text-darklw {
+  color: var(--darklw);
+}
+
+.bg-darklw {
+  background-color: var(--darklw);
+}
+
+.text-darklw-2 {
+  color: var(--darklw-2);
+}
+
+.bg-darklw-2 {
+  background-color: var(--darklw-2);
+}
+
+.text-background {
+  color: hsl(var(--background));
+}
+
+.bg-background {
+  background-color: hsl(var(--background));
+}
+
+.text-foreground {
+  color: hsl(var(--foreground));
+}
+
+.bg-foreground {
+  background-color: hsl(var(--foreground));
+}
+
+.text-card {
+  color: hsl(var(--card));
+}
+
+.bg-card {
+  background-color: hsl(var(--card));
+}
+
+.text-card-foreground {
+  color: hsl(var(--card-foreground));
+}
+
+.bg-card-foreground {
+  background-color: hsl(var(--card-foreground));
+}
+
+.text-popover {
+  color: hsl(var(--popover));
+}
+
+.bg-popover {
+  background-color: hsl(var(--popover));
+}
+
+.text-popover-foreground {
+  color: hsl(var(--popover-foreground));
+}
+
+.bg-popover-foreground {
+  background-color: hsl(var(--popover-foreground));
+}
+
+.text-primary {
+  color: hsl(var(--primary));
+}
+
+.bg-primary {
+  background-color: hsl(var(--primary));
+}
+
+.text-primary-foreground {
+  color: hsl(var(--primary-foreground));
+}
+
+.bg-primary-foreground {
+  background-color: hsl(var(--primary-foreground));
+}
+
+.text-secondary {
+  color: hsl(var(--secondary));
+}
+
+.bg-secondary {
+  background-color: hsl(var(--secondary));
+}
+
+.text-secondary-foreground {
+  color: hsl(var(--secondary-foreground));
+}
+
+.bg-secondary-foreground {
+  background-color: hsl(var(--secondary-foreground));
+}
+
+.text-muted {
+  color: hsl(var(--muted));
+}
+
+.bg-muted {
+  background-color: hsl(var(--muted));
+}
+
+.text-muted-foreground {
+  color: hsl(var(--muted-foreground));
+}
+
+.bg-muted-foreground {
+  background-color: hsl(var(--muted-foreground));
+}
+
+.text-accent {
+  color: hsl(var(--accent));
+}
+
+.bg-accent {
+  background-color: hsl(var(--accent));
+}
+
+.text-accent-foreground {
+  color: hsl(var(--accent-foreground));
+}
+
+.bg-accent-foreground {
+  background-color: hsl(var(--accent-foreground));
+}
+
+.text-destructive {
+  color: hsl(var(--destructive));
+}
+
+.bg-destructive {
+  background-color: hsl(var(--destructive));
+}
+
+.text-destructive-foreground {
+  color: hsl(var(--destructive-foreground));
+}
+
+.bg-destructive-foreground {
+  background-color: hsl(var(--destructive-foreground));
+}
+
+.text-border {
+  color: hsl(var(--border));
+}
+
+.bg-border {
+  background-color: hsl(var(--border));
+}
+
+.text-input {
+  color: hsl(var(--input));
+}
+
+.bg-input {
+  background-color: hsl(var(--input));
+}
+
+.text-ring {
+  color: hsl(var(--ring));
+}
+
+.bg-ring {
+  background-color: hsl(var(--ring));
+}
+
+/* Scrollbar Color Utilities */
+.text-scrollbar-thumb {
+  color: hsl(var(--scrollbar-thumb));
+}
+
+.bg-scrollbar-thumb {
+  background-color: hsl(var(--scrollbar-thumb));
+}
+
+.text-scrollbar-track {
+  color: hsl(var(--scrollbar-track));
+}
+
+.bg-scrollbar-track {
+  background-color: hsl(var(--scrollbar-track));
+}
+
+.text-scrollbar-hover {
+  color: hsl(var(--scrollbar-hover));
+}
+
+.bg-scrollbar-hover {
+  background-color: hsl(var(--scrollbar-hover));
+}
+
+/* Animation Utility Classes */
+.neon-pulse-animation {
+  animation: neon-pulse 0.6s ease-in-out infinite;
+}
+
+.neon-bounce-animation {
+  animation: neon-bounce 0.3s ease-in-out infinite;
+}
+
+.tiny-bar-loader {
+  animation: tiny-bar-loader-anime 1s linear infinite;
+}
+
+.GlassMarqueeContainer {
+  /* This class is also used for layout, but also for animation */
+  animation: marquee-right-left 12s linear infinite;
+}
+
+.animated-gradient-border-button {
+  --border-angle: 0turn;
+  animation: bg-spin 3s linear infinite;
+}
+
+.animate-skeletonLoader {
+  animation: skeletonLoader 5s ease-in-out infinite;
+}
+
+.skeletonBarsLoaders {
+  background-size: 200% 100%;
+  animation: skeletonBarsLoader 6s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+/* Animated Cart Button Specific Classes */
+.cart-button.clicked .cart-shopping-svg {
+  animation: AnimatedCartBtntruck 2s ease-in-out forwards;
+}
+
+.cart-button.clicked .cart-box-svg {
+  animation: AnimatedCartBtnbox 2s ease-in-out forwards;
+}
+
+.cart-button.clicked span.add-to-cart {
+  animation: AnimatedCartBtntxt1 2s ease-in-out forwards;
+}
+
+.cart-button.clicked span.added {
+  animation: AnimatedCartBtntxt2 2s ease-in-out forwards;
+}
+
+/* Card Hover Effect */
+.card-hover {
+  transition-property: transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+  transform: none;
+}
+
+.card-hover:hover {
+  transform: scale(1.02);
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Toggle Switch Component */
+.toggle-switch {
+  position: relative;
+  width: 2.5rem;
+  /* w-10 */
+  height: 1.25rem;
+  /* h-5 */
+  border-radius: 9999px;
+  background-color: hsl(var(--secondary));
+  transition-property: background-color;
+  transition-duration: 200ms;
+}
+
+.toggle-switch.active {
+  background-color: hsl(var(--primary));
+}
+
+.toggle-switch .toggle-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 1rem;
+  /* w-4 */
+  height: 1rem;
+  /* h-4 */
+  border-radius: 9999px;
+  background-color: hsl(var(--foreground));
+  transition-property: transform;
+  transition-duration: 200ms;
+}
+
+.toggle-switch.active .toggle-knob {
+  transform: translateX(1.25rem);
+  /* translate-x-5 */
+  background-color: hsl(var(--background));
+}
+
+/* Dropdown Hover Item */
+.dropdown-hover-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition-property: color, background-color;
+  transition-duration: 200ms;
+}
+
+.dropdown-hover-item:hover {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+/* Dropdown Category & Item */
+.dropdown-category {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.dropdown-category-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  font-size: 0.875rem;
+}
+
+/* Tabs Background Indicator */
+.tabs-bg-indicator {
+  position: absolute;
+  border-radius: 0.125rem;
+  background-color: hsl(var(--primary));
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transform-origin: center center;
+}
+
+/* Sidebar Menu Indicator */
+.sidebar-menu-indicator {
+  position: absolute;
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* ========================================================================
+   ScrollStack Component Styles
+   ======================================================================== */
+
+/* ScrollStack Container */
+.scroll-stack-container {
+  position: relative;
+  width: 100%;
+  max-height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 100, 100, 0.5) rgba(200, 200, 200, 0.2);
+}
+
+.scroll-stack-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-stack-container::-webkit-scrollbar-track {
+  background: rgba(200, 200, 200, 0.2);
+  border-radius: 10px;
+}
+
+.scroll-stack-container::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.5);
+  border-radius: 10px;
+}
+
+.scroll-stack-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 100, 0.7);
+}
+
+/* ScrollStack Section */
+.scroll-stack-section {
+  position: relative;
+  width: 100%;
+}
+
+/* ScrollStack Sticky Container */
+.scroll-stack-sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* ScrollStack Cards Container */
+.scroll-stack-cards-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Individual ScrollStack Card */
+.scroll-stack-card {
+  position: absolute;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform-origin: center;
+  will-change: transform, opacity;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ScrollStack Card Content */
+.scroll-stack-card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+/* ScrollStack Card Background Overlay */
+.scroll-stack-card-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.scroll-stack-card-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 1;
+}
+
+/* ScrollStack Badge */
+.scroll-stack-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 30;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ScrollStack Inner Content */
+.scroll-stack-inner {
+  position: relative;
+  z-index: 20;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media (max-width: 640px) {
+  .scroll-stack-inner {
+    padding: 1.25rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .scroll-stack-inner {
+    padding: 1.5rem;
+  }
+}
+
+/* ScrollStack Text Content */
+.scroll-stack-text {
+  max-width: 32rem;
+  color: white;
+}
+
+.scroll-stack-text h3 {
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.scroll-stack-text p {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+/* Animations for ScrollStack */
+@keyframes scrollStackFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes scrollStackFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+}
+
+.scroll-stack-card.active {
+  animation: scrollStackFadeIn 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.scroll-stack-card.inactive {
+  animation: scrollStackFadeOut 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .scroll-stack-sticky {
+    height: 100vh;
+  }
+
+  .scroll-stack-card {
+    border-radius: 16px;
+  }
+
+  .scroll-stack-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .scroll-stack-text p {
+    font-size: 1rem;
+  }
+}
+
+/* ========================================================================
+   CSS Debug Utilities
+   ======================================================================== */
+
+/* Enable debug mode by adding data-debug="true" to html element */
+html[data-debug="true"] * {
+  outline: 1px solid rgba(255, 0, 0, 0.2) !important;
+}
+
+/* Debug Mode: Show all interactive elements */
+html[data-debug="true"] button,
+html[data-debug="true"] a,
+html[data-debug="true"] input,
+html[data-debug="true"] select,
+html[data-debug="true"] textarea {
+  outline: 2px solid rgba(0, 0, 255, 0.3) !important;
+}
+
+/* Debug Mode: Highlight images */
+html[data-debug="true"] img {
+  outline: 2px dashed rgba(255, 165, 0, 0.5) !important;
+  background-color: rgba(255, 165, 0, 0.1) !important;
+}
+
+/* Debug Mode: Show overflow */
+html[data-debug="true"] * {
+  background-clip: content-box !important;
+}
+
+/* Individual Debug Classes */
+
+/* .debug-border - Add red border to element */
+.debug-border {
+  border: 2px solid #ff0000 !important;
+}
+
+/* .debug-bg - Add semi-transparent background */
+.debug-bg {
+  background-color: rgba(255, 0, 0, 0.1) !important;
+}
+
+/* .debug-grid - Show CSS Grid lines */
+.debug-grid {
+  display: grid;
+  gap: 1px;
+  background-color: #f0f0f0;
+  padding: 1px;
+}
+
+.debug-grid > * {
+  background-color: rgba(100, 150, 255, 0.2);
+  border: 1px solid rgba(100, 150, 255, 0.5);
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .debug-flex - Highlight flex containers */
+.debug-flex {
+  border: 2px dashed #00ff00 !important;
+  background-color: rgba(0, 255, 0, 0.05) !important;
+}
+
+.debug-flex > * {
+  border: 1px solid rgba(0, 255, 0, 0.3) !important;
+  background-color: rgba(0, 255, 0, 0.1) !important;
+}
+
+/* .debug-spacing - Show margins and padding */
+.debug-spacing {
+  outline: 2px solid #0000ff !important;
+  outline-offset: -2px;
+}
+
+.debug-spacing::before {
+  content: 'P: ' attr(style);
+  position: absolute;
+  background: rgba(0, 0, 255, 0.8);
+  color: white;
+  padding: 2px 4px;
+  font-size: 10px;
+  border-radius: 2px;
+  top: -15px;
+  left: 0;
+  z-index: 9999;
+}
+
+/* .debug-text - Highlight text elements */
+.debug-text {
+  background-color: rgba(255, 255, 0, 0.2) !important;
+  border: 1px solid rgba(255, 255, 0, 0.5) !important;
+  outline: 1px dashed rgba(255, 0, 255, 0.5) !important;
+}
+
+/* .debug-z-index - Highlight elements with explicit z-index */
+.debug-z-index {
+  position: relative;
+  outline: 2px solid #ff00ff !important;
+}
+
+.debug-z-index::before {
+  content: 'z:' attr(style);
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(255, 0, 255, 0.9);
+  color: white;
+  padding: 2px 4px;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 2px;
+  z-index: 10000;
+}
+
+/* .debug-overflow - Highlight elements with overflow */
+.debug-overflow {
+  overflow: visible !important;
+  outline: 2px solid #ff6600 !important;
+}
+
+/* .debug-slow - Slow down animations for inspection */
+.debug-slow * {
+  animation-duration: 5s !important;
+  animation-delay: 0s !important;
+  transition-duration: 5s !important;
+}
+
+/* .debug-pause - Pause all animations */
+.debug-pause,
+.debug-pause * {
+  animation-play-state: paused !important;
+}
+
+/* .debug-visible - Make hidden elements visible */
+.debug-visible {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* .debug-outline-all - Show outline on all children */
+.debug-outline-all * {
+  outline: 1px solid rgba(255, 0, 0, 0.15) !important;
+}
+
+/* .debug-containers - Highlight container elements */
+.debug-containers {
+  outline: 3px solid #ff0000 !important;
+  outline-offset: 2px;
+}
+
+/* .debug-responsive - Show viewport info */
+.debug-responsive::before {
+  content: 'Viewport: 320px - 480px (xs)';
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #00ff00;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 99999;
+  font-family: monospace;
+}
+
+@media (min-width: 480px) {
+  .debug-responsive::before {
+    content: 'Viewport: 480px - 768px (sm)';
+  }
+}
+
+@media (min-width: 768px) {
+  .debug-responsive::before {
+    content: 'Viewport: 768px - 1024px (md)';
+  }
+}
+
+@media (min-width: 1024px) {
+  .debug-responsive::before {
+    content: 'Viewport: 1024px - 1280px (lg)';
+  }
+}
+
+@media (min-width: 1280px) {
+  .debug-responsive::before {
+    content: 'Viewport: 1280px - 1536px (xl)';
+  }
+}
+
+@media (min-width: 1536px) {
+  .debug-responsive::before {
+    content: 'Viewport: 1536px+ (2xl)';
+  }
+}
+
+/* .debug-grid-bg - Add grid background pattern */
+.debug-grid-bg {
+  background-image: 
+    linear-gradient(0deg, transparent 24%, rgba(68, 68, 68, .05) 25%, rgba(68, 68, 68, .05) 26%, transparent 27%, transparent 74%, rgba(68, 68, 68, .05) 75%, rgba(68, 68, 68, .05) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(68, 68, 68, .05) 25%, rgba(68, 68, 68, .05) 26%, transparent 27%, transparent 74%, rgba(68, 68, 68, .05) 75%, rgba(68, 68, 68, .05) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+  background-color: rgba(255, 255, 0, 0.02) !important;
+}
+
+/* .debug-colors - Show color information */
+.debug-colors {
+  position: relative;
+}
+
+.debug-colors::after {
+  content: 'Color: ' attr(data-color);
+  position: absolute;
+  background: rgba(0, 0, 0, 0.9);
+  color: #00ff00;
+  padding: 4px 8px;
+  font-size: 10px;
+  border-radius: 3px;
+  white-space: nowrap;
+  z-index: 9999;
+  top: -20px;
+  left: 0;
+  font-family: monospace;
+}
+
+/* Accessibility Debug - Show focus states */
+.debug-a11y *:focus {
+  outline: 3px solid #00ff00 !important;
+  outline-offset: 2px !important;
+}
+
+.debug-a11y a {
+  outline: 2px dashed #0066ff !important;
+}
+
+.debug-a11y button {
+  outline: 2px dashed #ff6600 !important;
+}
+
+/* Performance Debug - Highlight repaints */
+.debug-perf {
+  background-color: rgba(255, 0, 0, 0.1) !important;
+}
+
+.debug-perf * {
+  will-change: contents;
+}
+
+/* Layout Debug - Show block/inline behavior */
+.debug-layout {
+  background-color: rgba(100, 200, 255, 0.1) !important;
+  outline: 1px solid rgba(100, 200, 255, 0.5) !important;
+}
+
+.debug-layout--block {
+  display: block !important;
+  outline: 2px solid #0000ff !important;
+  outline-offset: -1px;
+}
+
+.debug-layout--inline {
+  display: inline !important;
+  outline: 2px solid #ff00ff !important;
+  outline-offset: -1px;
+}
+
+.debug-layout--flex {
+  display: flex !important;
+  outline: 2px solid #00ff00 !important;
+  outline-offset: -1px;
+}
+
+.debug-layout--grid {
+  display: grid !important;
+  outline: 2px solid #ffaa00 !important;
+  outline-offset: -1px;
+}
+
+/* Viewport Debug with console output */
+@media only screen and (max-width: 640px) {
+  .debug-viewport::before {
+    content: 'xs: 320-640px';
+  }
+}
+
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+  .debug-viewport::before {
+    content: 'sm: 641-768px';
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .debug-viewport::before {
+    content: 'md: 769-1024px';
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .debug-viewport::before {
+    content: 'lg: 1025-1280px';
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  .debug-viewport::before {
+    content: 'xl/2xl: 1281px+';
+  }
+}
+
+.debug-viewport::before {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #00ff00;
+  padding: 10px 15px;
+  font-size: 12px;
+  font-family: monospace;
+  border-radius: 4px;
+  z-index: 99999;
+  border: 2px solid #00ff00;
+}
+
+/* ScrollStack Debug */
+.debug-scroll-stack .scroll-stack-card {
+  border: 3px solid #ff00ff !important;
+  background-color: rgba(255, 0, 255, 0.05) !important;
+}
+
+.debug-scroll-stack .scroll-stack-cards-container {
+  border: 3px solid #00ff00 !important;
+  background-color: rgba(0, 255, 0, 0.02) !important;
+}
+
+.debug-scroll-stack .scroll-stack-container {
+  border: 3px solid #ffaa00 !important;
+}
+
+/* Reset Debug - Remove all debug styles */
+.debug-reset * {
+  outline: none !important;
+  background-image: none !important;
+  border: none !important;
+}

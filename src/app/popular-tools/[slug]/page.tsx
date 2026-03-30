@@ -20,17 +20,19 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
     notFound();
   }
 
+  const isAuditTool = tool.slug === "website-audit-tool";
+
   return (
     <div className={styles.page}>
       <Header />
       <div className={styles.headerGap} />
 
-      <main className={styles.main}>
-        <Link className={styles.backLink} href="/popular-tools">
+      <main className={`${styles.main} ${isAuditTool ? styles.auditMain : ""}`}>
+        <Link className={`${styles.backLink} ${isAuditTool ? styles.auditBackLink : ""}`} href="/popular-tools">
           Back to All Tools
         </Link>
 
-        <section className={styles.heroCard}>
+        <section className={`${styles.heroCard} ${isAuditTool ? styles.auditHeroCard : ""}`}>
           <p className={styles.categoryLabel}>{tool.category.replaceAll("-", " ")}</p>
           <h1>{tool.title}</h1>
           <p>{tool.description}</p>
@@ -39,7 +41,7 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
           </span>
         </section>
 
-        <section className={styles.workspaceCard}>
+        <section className={`${styles.workspaceCard} ${isAuditTool ? styles.auditWorkspaceCard : ""}`}>
           <ToolPlayground slug={tool.slug} />
         </section>
       </main>

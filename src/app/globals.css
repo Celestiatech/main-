@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 @import './design-tokens.css';
 @import 'tailwindcss';
-
+@plugin 'lightswind/plugin';
 /* ===== ACCESSIBILITY & MOTION PREFERENCES ===== */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -127,6 +127,9 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -137,6 +140,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
 }
 
@@ -461,14 +466,14 @@ ul, ol {
 .btn-primary {
   background: linear-gradient(135deg, var(--action-color), var(--gradient-purple));
   color: white;
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  box-shadow: none;
   border: 1px solid rgba(59, 130, 246, 0.4);
   font-weight: 700;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 50px rgba(59, 130, 246, 0.7), inset 0 0 20px rgba(59, 130, 246, 0.3);
+  box-shadow: none;
   border-color: rgba(59, 130, 246, 0.6);
   color: white !important;
 }
@@ -1397,7 +1402,6 @@ body {
   position: relative;
   border: 2px solid transparent;
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.2)) padding-box,
-  animation: rotate-border 6s linear infinite;
 }
 
 @keyframes rotate-border {
@@ -1845,4 +1849,3 @@ body {
     inset 0 0 20px rgba(37, 99, 235, 0.05);
   animation: neon-pulse-god 2s ease-in-out infinite;
 }
-
