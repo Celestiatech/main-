@@ -1,5 +1,3 @@
-import fs from "node:fs";
-import path from "node:path";
 import { notFound } from "next/navigation";
 import styles from "./page.module.css";
 import { PreviewFrame } from "./PreviewFrame";
@@ -13,26 +11,25 @@ type PreviewPageProps = {
   }>;
 };
 
-const MIRROR_ROOT = path.join(process.cwd(), "public/premiumthemes");
-
-function buildMirrorAssetPath(demo: string, pagePath: string) {
+function buildMirrorPublicPath(demo: string, pagePath: string) {
   const normalizedPath =
     pagePath === "/" ? "/index.html" : pagePath.endsWith("/") ? `${pagePath}index.html` : pagePath;
-  return {
-    filePath: path.join(MIRROR_ROOT, demo, normalizedPath.replace(/^\//, "")),
-    publicPath: `/premiumthemes/${demo}${normalizedPath}`,
-  };
+
+  return `/premiumthemes/${demo}${normalizedPath}`;
 }
 
 export default async function PopularDesignPreviewPage({ params, searchParams }: PreviewPageProps) {
   const { demo } = await params;
   const resolvedSearchParams = searchParams ? await searchParams : undefined;
   const requestedPath = resolvedSearchParams?.path || "/index.html";
-  const asset = buildMirrorAssetPath(demo, requestedPath);
+  const normalizedPath =
+    requestedPath === "/" ? "/index.html" : requestedPath.endsWith("/") ? `${requestedPath}index.html` : requestedPath;
 
-  if (!fs.existsSync(asset.filePath)) {
+  if (!/^[a-z0-9-]+$/i.test(demo) || !normalizedPath.startsWith("/") || normalizedPath.includes("..")) {
     notFound();
   }
+
+  const publicPath = buildMirrorPublicPath(demo, normalizedPath);
 
   return (
     <main className={styles.page}>
@@ -46,7 +43,7 @@ export default async function PopularDesignPreviewPage({ params, searchParams }:
         </a>
       </div>
 
-      <PreviewFrame src={asset.publicPath} title={`${demo} preview`} />
+      <PreviewFrame src={publicPath} title={`${demo} preview`} />
     </main>
   );
 }

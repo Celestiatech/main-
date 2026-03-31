@@ -20,7 +20,6 @@ type Project = {
 
 const HTML_PATH = path.join(process.cwd(), "public/premiumthemes/catalog/portfolio.html");
 const ASSET_BASE = "/premiumthemes/catalog";
-const MIRROR_ROOT = path.join(process.cwd(), "public/premiumthemes");
 
 function readReferenceHtml() {
   return fs.readFileSync(HTML_PATH, "utf8");
@@ -69,9 +68,8 @@ function getLocalMirrorHref(href: string) {
     const url = new URL(href);
     const demoName = url.hostname.replace(/\.dexignzone\.com$/i, "");
     const pathname = url.pathname === "/" ? "/index.html" : url.pathname.endsWith("/") ? `${url.pathname}index.html` : url.pathname;
-    const localPath = path.join(MIRROR_ROOT, demoName, pathname.replace(/^\//, ""));
 
-    if (fs.existsSync(localPath)) {
+    if (/^[a-z0-9-]+$/i.test(demoName)) {
       return `/populardesigns/preview/${demoName}?path=${encodeURIComponent(pathname)}`;
     }
   } catch {
