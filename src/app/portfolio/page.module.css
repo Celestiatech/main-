@@ -347,6 +347,13 @@
   margin-top: 24px;
 }
 
+.recentSection .secondaryAction {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
+  border: 1px solid transparent;
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.22);
+}
+
 .bottomCta {
   padding: 0 0 92px;
 }

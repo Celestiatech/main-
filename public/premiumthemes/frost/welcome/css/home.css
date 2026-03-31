@@ -1,0 +1,235 @@
+/* 
+Template Name: Dzone- Multipurpose Comming Soon Mobile Responsive Template For Multiple Business
+Version: 1.0
+Author: DexignZone
+Website: http://www.dexignzone.com/
+Contact: dexignexpert@gmail.com
+Follow: www.twitter.com/dexignzones
+Like: www.facebook.com/dexignzone
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+ */
+/* Welcome Page Css Not Included 	 */
+
+::selection{
+	background: var(--primary);
+	color: #fff;	
+}
+
+.main-slider{
+	background-color:#ECECEC;
+}
+.main-slider h1{
+	font-weight: 600;
+    line-height: 65px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 55px;
+	margin-top: 15px;
+}
+.main-slider p{
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+.dez-coming-soon {
+	padding:10px 20px;
+}
+.dez-coming-soon .demo-box {
+    border-radius: 0;
+    box-shadow: 0 25px 50px -5px rgba(14, 54, 140, 0.3);
+    display: block;
+    margin-bottom: 25px;
+    position: relative;
+    transition: all 0.4s linear 0s;
+    -moz-transition: all 0.4s linear 0s;
+    -webkit-transition: all 0.4s linear 0s;
+    -ms-transition: all 0.4s linear 0s;
+    -o-transition: all 0.4s linear 0s;
+    padding: 10px;
+    background: #fff;
+}
+.dez-coming-soon .demo-box:hover{
+	transform:translateY(-15px);
+	-moz-transform:translateY(-15px);
+	-webkit-transform:translateY(-15px);
+	-ms-transform:translateY(-15px);
+	-o-transform:translateY(-15px);
+}
+.details h5 {
+	color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-align: center;
+    margin-top: 0;
+}
+.header-soon {
+	background: #30333c;
+    height: 60px;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+	box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+	z-index:9; 
+}
+.details h5 a{
+	color:#000;
+}
+.section-preview .container-fluid{
+	padding-left:40px;
+	padding-right:40px;
+}
+.logo img{
+	width:100%;
+}
+.logo img {
+    height: 100%;
+    max-width: unset;
+    width: 250px;
+}
+.section-preview{
+	background-color:#30333c;
+}
+.dez-footer {
+    background-image: linear-gradient(to right,#2e79ff 0,#5462ff 51%,#2e79ff 100%);
+    background-size: 200%;
+	color:#fff;
+}
+.intro-bx{
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 5px 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    border-width: 1px 0 1px 0;
+    letter-spacing: 2px;
+}
+.demo-btn{
+	text-transform: uppercase;
+    font-weight: 700;
+    padding: 14px 30px;
+    border-radius: 4px !important;
+    font-size: 16px;
+}
+/* Support and Buy Button */
+.theme-btn{
+	background-color: #ffffff;
+    border-radius: 40px;
+    bottom: 10px;
+    color: #ffffff;
+    display: table;
+    height: 50px;
+    left: 10px;
+    min-width: 50px;
+    position: fixed;
+    text-align: center;
+	z-index: 9999;
+}
+.theme-btn i{
+	font-size: 22px;
+    line-height: 50px;
+}
+.theme-btn.bt-support-now{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1ebbf0+8,39dfaa+100 */
+	background: #1ebbf0; /* Old browsers */
+	background: -moz-linear-gradient(45deg, #1ebbf0 8%, #39dfaa 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(45deg, #1ebbf0 8%,#39dfaa 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(45deg, #1ebbf0 8%,#39dfaa 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ebbf0', endColorstr='#39dfaa',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	bottom: 70px;
+}
+.theme-btn.bt-buy-now{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1fdf61+0,88BA46+100 */
+	background: #1fdf61; /* Old browsers */
+	background: -moz-linear-gradient(top,  #A3D179 0%, #88BA46 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #A3D179 0%,#88BA46 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #A3D179 0%,#88BA46 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1fdf61', endColorstr='#88BA46',GradientType=0 ); /* IE6-9 */
+}
+.theme-btn:hover{
+	color:#fff;
+	padding: 0 20px;
+}
+ .theme-btn span{
+	display: table-cell;
+	vertical-align: middle;
+    font-size: 16px;
+    letter-spacing: -15px;
+    opacity: 0;
+	line-height: 50px;
+	transition:all 0.5s;
+	-webkit-transition:all 0.5s;
+	-moz-transition:all 0.5s;
+	text-transform:uppercase;
+}
+.theme-btn:hover span{
+	opacity:1;
+	letter-spacing: 1px;
+	padding-left:10px;
+}
+.at-expanding-share-button[data-position="bottom-left"]{
+	bottom: 130px !important;
+}
+/* Support and Buy Button END */
+@media only screen and (max-width: 991px) {
+	.dez-coming-soon {
+		padding: 10px;
+	}
+	
+}
+
+@media only screen and (max-width: 767px) {
+	.main-slider h1 {
+		line-height: 55px;
+		font-size: 45px;
+	}
+	.dez-footer,
+	.dez-footer .text-right{
+		text-align: center!important;
+	}
+	.dez-footer .text-right .p-tb20{
+		padding-top: 0;
+	}
+}
+@media only screen and (max-width: 360px) {
+    .right-slide-contant.right1 {
+        margin-left: -160px !important;
+    }
+    .mfp-gallery .card-container {
+        width: 100%;
+    }
+    .form-layout .card-container {
+        width: 100%;
+    }
+	.main-slider h1 {
+		line-height: 1.4;
+		font-size: 24px;
+		margin: 10px 0;
+	}
+	.intro-bx {
+		font-size: 16px;
+	}
+	.main-slider p {
+		font-size: 15px;
+	}
+	.main-slider.p-tb100{
+		padding-top: 50px;
+		padding-bottom: 40px;
+	}
+	.p-t80.section-preview{
+		padding-top: 50px;
+	}
+	.section-preview .container-fluid {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.dez-coming-soon .demo-box {
+		margin-bottom: 15px;
+		padding:5px;
+	}
+	.dez-coming-soon {
+		padding: 5px;
+	}
+	.logo img {
+    	width: 200px;	
+	}
+}

@@ -1277,34 +1277,27 @@
   .industryCarouselWrapper {
     position: relative;
     margin-top: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    cursor: grab;
+    user-select: none;
   }
 
   .industryCarouselTrack {
     display: flex;
     gap: 22px;
-    overflow: hidden;
     padding: 12px 4px 18px;
-    scrollbar-width: none;
-    cursor: default;
     width: max-content;
-    animation: industryCarouselDrift 36s linear infinite;
   }
 
+  .industryCarouselWrapper::-webkit-scrollbar,
   .industryCarouselTrack::-webkit-scrollbar {
     display: none;
   }
 
-  .industryCarouselWrapper:hover .industryCarouselTrack {
-    animation-play-state: paused;
-  }
-
-  @keyframes industryCarouselDrift {
-    0% {
-      transform: translateX(-50%);
-    }
-    100% {
-      transform: translateX(0);
-    }
+  .industryCarouselWrapper[data-dragging="true"] {
+    cursor: grabbing;
   }
 
   .industryShowcaseCard {
@@ -6046,12 +6039,13 @@
 }
 
 .heroCarouselWrap {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+  position: relative;
   margin-top: 40px;
-  width: 100%;
-  max-width: 980px;
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  padding: 0 72px;
+  box-sizing: border-box;
 }
 .heroCarousel {
   display: flex;
@@ -6059,9 +6053,9 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  padding: 12px 6px 20px;
+  width: 100%;
+  padding: 12px 0 20px;
   scrollbar-width: none;
-  flex: 1;
 }
 .heroCarousel::-webkit-scrollbar { display: none; }
 
@@ -6081,7 +6075,10 @@
 .heroServiceCard:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 20px 48px rgba(0,0,0,0.20); }
 
 .heroCarouselArrow {
-  flex-shrink: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
   width: 46px; height: 46px;
   border-radius: 50%;
   border: none;
@@ -6096,7 +6093,9 @@
   line-height: 1;
   box-shadow: 0 4px 16px rgba(59,130,246,0.38);
 }
-.heroCarouselArrow:hover { background: #2563EB; transform: scale(1.1); }
+.heroCarouselArrow:hover { background: #2563EB; transform: translateY(-50%) scale(1.1); }
+.heroCarouselArrow:first-child { left: 14px; }
+.heroCarouselArrow:last-child { right: 14px; }
 
 @media (max-width: 768px) {
   .main { padding-top: 96px; }
@@ -6139,8 +6138,13 @@
   .heroServiceCard { flex: 0 0 150px; height: 150px; border-radius: 28px; }
   .heroServiceCardImage { width: 100%; height: 100%; }
   .heroCarouselArrow { width: 40px; height: 40px; font-size: 18px; }
-  .heroCarouselWrap { gap: 16px; margin-top: 36px; }
+  .heroCarouselWrap {
+    margin-top: 36px;
+    padding: 0 56px;
+  }
   .heroCarousel { gap: 18px; }
+  .heroCarouselArrow:first-child { left: 8px; }
+  .heroCarouselArrow:last-child { right: 8px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

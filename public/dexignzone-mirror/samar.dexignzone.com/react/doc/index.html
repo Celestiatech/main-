@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth">
+  <head>
+    <title>Samar Multi Purpose - Creative Agency React Template</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta
+      name="description"
+      content="Samar multi purpose is super flexible, powerful, clean &amp; modern responsive admin dashboard with unlimited possibilities."
+    />
+    <meta
+      name="keywords"
+      content=" template, samar template, react template, template, flat admin template, responsive template, web app, different style theme"
+    />
+    <meta name="author" content="GetBootstrap, design by: rahulxarma.com" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- VENDOR CSS -->
+    <link
+      rel="stylesheet"
+      href="./assets/vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/vendor/font-awesome/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./assets/vendor/animate-css/vivify.min.css" />
+
+    <link rel="stylesheet" href="./assets/vendor/light-gallery/css/lightgallery.css"/>
+	<!-- JSTree (Folder Stewart) -->
+	<link rel="stylesheet" href="./assets/vendor/jstree/dist/themes/default/style.min.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="./assets/css/site.min.css" />
+
+    <!-- for demo only -->
+    <style>
+      .card .body {
+        font-size: 15px;
+      }
+      .main_features li {
+        padding: 5px 0;
+      }
+      .prettyprint {
+        color: #ffffff;
+      }
+      #Credits li {
+        line-height: 30px;
+      }
+      .lightGallery img {
+        border: 1px solid #450b5a;
+      }
+      .sm-logo {
+        width: 25px;
+      }
+      #main-content {
+        padding: 1rem;
+        box-sizing: border-box;
+      }
+      div#wrapper {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body class="theme-violet font-krub light_version">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+      <div class="loader">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <div class="bar4"></div>
+        <div class="bar5"></div>
+      </div>
+    </div>
+
+    <!-- Theme Setting -->
+    <div class="themesetting">
+      <a href="javascript:void(0);" class="theme_btn"
+        ><i class="icon-magic-wand"></i
+      ></a>
+      <div class="card theme_color">
+        <div class="header">
+          <h2>Theme Color</h2>
+        </div>
+        <ul class="choose-skin list-unstyled mb-0">
+          <li data-theme="green"><div class="green"></div></li>
+          <li data-theme="orange"><div class="orange"></div></li>
+          <li data-theme="blush"><div class="blush"></div></li>
+          <li data-theme="cyan" class="active">
+            <div class="cyan"></div>
+          </li>
+          <li data-theme="indigo"><div class="indigo"></div></li>
+          <li data-theme="red"><div class="red"></div></li>
+        </ul>
+      </div>
+      <div class="card font_setting">
+        <div class="header">
+          <h2>Font Settings</h2>
+        </div>
+        <div>
+          <div class="fancy-radio mb-2">
+            <label
+              ><input name="font" value="font-krub" type="radio" checked /><span
+                ><i></i>Krub Google font</span
+              ></label
+            >
+          </div>
+          <div class="fancy-radio mb-2">
+            <label
+              ><input name="font" value="font-montserrat" type="radio" /><span
+                ><i></i>Montserrat Google font</span
+              ></label
+            >
+          </div>
+          <div class="fancy-radio">
+            <label
+              ><input name="font" value="font-roboto" type="radio" /><span
+                ><i></i>Robot Google font</span
+              ></label
+            >
+          </div>
+        </div>
+      </div>
+      <div class="card setting_switch">
+        <div class="header">
+          <h2>Settings</h2>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">
+            Light Version
+            <div class="float-right">
+              <label class="switch" checked>
+                <input type="checkbox" class="lv-btn" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </li>
+
+          <li class="list-group-item">
+            Mini Sidebar
+            <div class="float-right">
+              <label class="switch">
+                <input type="checkbox" class="mini-sidebar-btn" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="form-group">
+          <label class="d-block"
+            >Traffic this Month <span class="float-right">77%</span></label
+          >
+          <div class="progress progress-xxs">
+            <div
+              class="progress-bar progress-bar-success"
+              role="progressbar"
+              aria-valuenow="77"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 77%"
+            ></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="d-block"
+            >Server Load <span class="float-right">50%</span></label
+          >
+          <div class="progress progress-xxs">
+            <div
+              class="progress-bar progress-bar-warning"
+              role="progressbar"
+              aria-valuenow="50"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 50%"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+
+    <div id="wrapper">
+      <nav class="navbar top-navbar">
+        <div class="container-fluid">
+          <div class="navbar-left">
+            <div class="navbar-btn">
+              <a href="index"
+                ><img
+                  src="./assets/logo.png"
+                  alt="Samar Logo"
+                  class="img-fluid sm-logo"
+              /></a>
+              <button type="button" class="btn-toggle-offcanvas">
+                <i class="lnr lnr-menu fa fa-bars"></i>
+              </button>
+            </div>
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a
+                  href="javascript:void(0);"
+                  class="dropdown-toggle icon-menu"
+                  data-toggle="dropdown"
+                >
+                  <i class="icon-envelope"></i>
+                  <span class="notification-dot bg-green">4</span>
+                </a>
+                <ul class="dropdown-menu right_chat email vivify fadeIn">
+                  <li class="header green">You have 4 New eMail</li>
+                  <li>
+                    <a href="javascript:void(0);">
+                      <div class="media">
+                        <div class="avtar-pic w35 bg-red">
+                          <span>FC</span>
+                        </div>
+                        <div class="media-body">
+                          <span class="name"
+                            >James Wert
+                            <small class="float-right text-muted"
+                              >Just now</small
+                            ></span
+                          >
+                          <span class="message">Update GitHub</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);">
+                      <div class="media">
+                        <div class="avtar-pic w35 bg-indigo">
+                          <span>FC</span>
+                        </div>
+                        <div class="media-body">
+                          <span class="name"
+                            >Folisise Chosielie
+                            <small class="float-right text-muted"
+                              >12min ago</small
+                            ></span
+                          >
+                          <span class="message">New Messages</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);">
+                      <div class="media">
+                        <img
+                          class="media-object"
+                          src="./assets/images/xs/avatar5.jpg"
+                          alt=""
+                        />
+                        <div class="media-body">
+                          <span class="name"
+                            >Louis Henry
+                            <small class="float-right text-muted"
+                              >38min ago</small
+                            ></span
+                          >
+                          <span class="message">Design bug fix</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);">
+                      <div class="media mb-0">
+                        <img
+                          class="media-object"
+                          src="./assets/images/xs/avatar2.jpg"
+                          alt=""
+                        />
+                        <div class="media-body">
+                          <span class="name"
+                            >Debra Stewart
+                            <small class="float-right text-muted"
+                              >2hr ago</small
+                            ></span
+                          >
+                          <span class="message">Fix Bug</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a
+                  href="javascript:void(0);"
+                  class="dropdown-toggle icon-menu"
+                  data-toggle="dropdown"
+                >
+                  <i class="icon-bell"></i>
+                  <span class="notification-dot bg-azura">4</span>
+                </a>
+                <ul class="dropdown-menu feeds_widget vivify fadeIn">
+                  <li class="header blue">You have 4 New Notifications</li>
+                  <li>
+                    <a href="javascript:void(0);">
+                      <div class="feeds-left bg-red">
+                        <i class="fa fa-check"></i>
+                      </div>
+                      <div class="feeds-body">
+                        <h4 class="title text-danger">
+                          Issue Fixed
+                          <small class="float-right text-muted">9:10 AM</small>
+                        </h4>
+                        <small
+                          >WE have fix all Design bug with Responsive</small
+                        >
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);">
+                      <div class="feeds-left bg-info">
+                        <i class="fa fa-user"></i>
+                      </div>
+                      <div class="feeds-body">
+                        <h4 class="title text-info">
+                          New User
+                          <small class="float-right text-muted">9:15 AM</small>
+                        </h4>
+                        <small>I feel great! Thanks team</small>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);">
+                      <div class="feeds-left bg-orange">
+                        <i class="fa fa-question-circle"></i>
+                      </div>
+                      <div class="feeds-body">
+                        <h4 class="title text-warning">
+                          Server Warning
+                          <small class="float-right text-muted">9:17 AM</small>
+                        </h4>
+                        <small>Your connection is not private</small>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);">
+                      <div class="feeds-left bg-green">
+                        <i class="fa fa-thumbs-o-up"></i>
+                      </div>
+                      <div class="feeds-body">
+                        <h4 class="title text-success">
+                          2 New Feedback
+                          <small class="float-right text-muted">9:22 AM</small>
+                        </h4>
+                        <small
+                          >It will give a smart finishing to your site</small
+                        >
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="navbar-right">
+            <div id="navbar-menu">
+              <ul class="nav navbar-nav">
+                <li>
+                  <form id="navbar-search" class="navbar-form search-form">
+                    <input
+                      value=""
+                      class="form-control"
+                      placeholder="Search here..."
+                      type="text"
+                    />
+                    <button type="button" class="btn btn-default">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </form>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="progress-container">
+          <div class="progress-bar" id="myBar"></div>
+        </div>
+      </nav>
+
+      <div id="megamenu" class="megamenu particles_js">
+        <a href="javascript:void(0);" class="megamenu_toggle btn btn-danger"
+          ><i class="icon-close"></i
+        ></a>
+        <div class="container">
+          <div class="row clearfix">
+            <div class="col-12">
+              <ul class="q_links">
+                <li>
+                  <a href="#"
+                    ><i class="icon-envelope"></i><span>Inbox</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="icon-bubbles"></i><span>Messenger</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="icon-calendar"></i><span>Event</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#"><i class="icon-user"></i><span>Profile</span></a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="icon-printer"></i><span>Invoice</span></a
+                  >
+                </li>
+                <li>
+                  <a href="page-timeline"
+                    ><i class="icon-list"></i><span>Timeline</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="card w_card3">
+                <div class="body">
+                  <div class="text-center">
+                    <i class="icon-picture text-info"></i>
+                    <h4 class="m-t-25 mb-0">104 Picture</h4>
+                    <p>Your gallery download complete</p>
+                    <a href="javascript:void(0);" class="btn btn-info btn-round"
+                      >Download now</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="card w_card3">
+                <div class="body">
+                  <div class="text-center">
+                    <i class="icon-diamond text-success"></i>
+                    <h4 class="m-t-25 mb-0">813 Point</h4>
+                    <p>You are doing great job!</p>
+                    <a
+                      href="javascript:void(0);"
+                      class="btn btn-success btn-round"
+                      >Read now</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="card w_card3">
+                <div class="body">
+                  <div class="text-center">
+                    <i class="icon-social-twitter text-primary"></i>
+                    <h4 class="m-t-25 mb-0">3,756</h4>
+                    <p>New Followers on Twitter</p>
+                    <a
+                      href="javascript:void(0);"
+                      class="btn btn-primary btn-round"
+                      >Find more</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  Anyone send me a message
+                  <div class="float-right">
+                    <label class="switch">
+                      <input type="checkbox" checked="" />
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  Anyone seeing my profile page
+                  <div class="float-right">
+                    <label class="switch">
+                      <input type="checkbox" checked="" />
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  Anyone posts a comment on my post
+                  <div class="float-right">
+                    <label class="switch">
+                      <input type="checkbox" />
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="particles-js"></div>
+      </div>
+
+      <div id="left-sidebar" class="sidebar">
+        <div class="navbar-brand">
+          <a href="https://samartheme1.vercel.app/" target="_blank"
+            ><img
+              src="./assets/logo.png"
+              alt="Samar Logo"
+              class="img-fluid sm-logo"
+            /><span>Samar</span></a
+          >
+          <button
+            type="button"
+            class="btn-toggle-offcanvas btn btn-sm float-right"
+          >
+            <i class="lnr lnr-menu fa fa-chevron-circle-left"></i>
+          </button>
+        </div>
+        <div class="sidebar-scroll">
+          <div class="user-account">
+            <div class="user_div">
+              <img
+                src="./assets/user.png"
+                class="user-photo"
+                alt="User Profile Picture"
+              />
+            </div>
+            <div class="dropdown">
+              <span>Welcome,</span>
+              <a
+                href="javascript:void(0);"
+                class="dropdown-toggle user-name"
+                data-toggle="dropdown"
+                ><strong>DexignZone</strong></a
+              >
+               <ul
+					class="dropdown-menu dropdown-menu-right account vivify flipInY"
+				>
+                <li>
+                   <a href="https://www.dexignzone.com/"><i class="icon-user"></i>My Profile</a>
+                </li>
+                <li>
+                  <a href="https://w3itexperts.ticksy.com/"
+                    ><i class="icon-envelope-open"></i>Support</a
+                  >
+                </li>
+                <li class="divider"></li>
+              </ul>
+            </div>
+          </div>
+          <nav id="left-sidebar-nav" class="sidebar-nav">
+            <ul id="main-menu" class="metismenu">
+              <li class="active">
+                <a href="#documenter_cover"
+                  ><i class="icon-home"></i><span>Start</span></a
+                >
+              </li>
+              <li>
+                <a href="#features"
+                  ><i class="icon-star"></i><span>Features</span></a
+                >
+              </li>
+              <li>
+                <a href="#react_js"
+                  ><i class="icon-tag"></i><span>React.js</span></a
+                >
+              </li>
+              <li>
+                <a href="#main_content"
+                  ><i class="icon-arrow-right"></i><span>Main Content</span></a
+                >
+              </li>
+			  <li>
+                <a href="#dependencies"
+                  ><i class="icon-support"></i><span>Dependencies</span></a
+                >
+              </li>
+				<li>
+					<a href="#create_page"><i class="icon-plus"></i><span>Create a Page</span></a>
+				</li>
+				<li>
+					<a href="#routing"><i class="icon-arrow-right"></i><span>Routing</span></a>
+				</li>
+				<li>
+					<a href="#deployment"><i class="icon-tag"></i><span>Deployment</span></a>
+				</li>
+              <li>
+                <a href="#folder_structure"
+                  ><i class="icon-folder-alt"></i
+                  ><span>Folder Structure</span></a
+                >
+              </li>
+              <li>
+                <a href="#Credits"
+                  ><i class="icon-like"></i><span>Credits</span></a
+                >
+              </li>
+              <li>
+                <a href="#thank_you"
+                  ><i class="icon-heart"></i><span>THANK YOU!</span></a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div id="main-content">
+        <div class="block-header">
+          <div class="row clearfix">
+            <div class="col-md-6 col-sm-12">
+              <h1>Documentation</h1>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Samar</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Documentation
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div class="col-md-6 col-sm-12 text-right hidden-xs">
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row clearfix">
+            <div class="col-sm-12">
+              <div class="card" id="documenter_cover">
+                <div class="body">
+                  <h4 class="mb-3">
+                    Samar - Creative Agency React Template
+                  </h4>
+                  <p>
+                    Samar is a popular WebApp template for multi purpose use
+                    . It’s responsive React template, which is based on the 
+                    Bootstrap framework. It utilizes all of the Bootstrap 
+                    components in design and re-styles many
+                    commonly used plugins to create a consistent design that can
+                    be used in all type of business an organisations website.
+                  </p>
+                  <ul>
+                    <li>Skype: <a href="skype:rahulxarma?chat" class="gmail">rahulxarma</a></li>
+                    <li>Gmail: <a target="_blank" href="https://www.google.com/intl/en-GB/gmail/about/#" class="gmail"><span class="__cf_email__" data-cfemail="1773726f7e70796d7879726457707a767e7b3974787a">[email&#160;protected]</span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="card" id="features">
+                <div class="header">
+                  <h2>Main Features</h2>
+                  <ul class="header-dropdown dropdown">
+                    <li>
+                      <a href="javascript:void(0);" class="full-screen"
+                        ><i class="icon-frame"></i
+                      ></a>
+                    </li>
+                    <li class="dropdown">
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      ></a>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a href="javascript:void(0);">Action</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);">Another Action</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);">Something else</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="body">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                      <ul class="main_features">
+                        <li>
+                          <strong
+                            ><a href="https://getbootstrap.com/" target="_blank"
+                              >Bootstrap</a
+                            >
+                          </strong>
+                        </li>
+                        <li>
+                          Built in
+                          <strong
+                            ><a href="http://sass-lang.com/" target="_blank"
+                              >SASS</a
+                            ></strong
+                          >
+                        </li>
+                        <li>Fully Responsive</li>
+                        <li>Ready to used widget</li>
+                        <li>Detailed Documentation</li>
+                        <li>Customizable React Bootstrap Components</li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                      <ul class="main_features">
+                        <li>Slider</li>
+                        <li>Portfolio</li>
+                        <li>Key Feature</li>
+                        <li>News Letter</li>
+                        <li>Pricing Plan</li>
+                        <li>Testimonial</li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                      <ul class="main_features">
+                        <li>Query Form</li>
+                        <li>FAQ</li>
+                        <li>Contact Form</li>
+                        <li>Style Varient</li>
+                        <li>Social</li>
+                        <li>Blog Style</li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                      <ul class="main_features">
+                        <li>Coming Soon Page</li>
+                        <li>Error Page</li>
+                        <li>Blog Page</li>
+                        <li>Site Down page</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <div class="card" id="react_js">
+                <div class="header">
+                  <h2>
+                    React.JS Installation & Setup
+                    <small
+                      >A JavaScript library for building user interfaces.</small
+                    >
+                  </h2>
+                </div>
+                <div class="body">
+                  <!-- <p>
+                    <strong>Manual Setup:</strong> Run
+                    <code>npm install next react react-dom</code>
+                    command from your terminal to install React Globally.
+                  </p> -->
+                  <p>
+                    <strong>Install npm:</strong> Run
+                    <code>npm install</code> command from your project
+                    directory. It will create 'node_module' folder in this all
+                    dependency files will be install with this command.
+                  </p>
+                  <p>
+                    <strong>Run Project:</strong> Run
+                    <code>npm run dev</code> command from your project directory.
+                    With is command file will be compiled and it will be loaded
+                    on local server `http://localhost:5000`.
+                  </p>
+                  <p>
+                    <strong>Production Build:</strong> Run
+                    <code>npm run build</code> Builds the app for production to
+                    the `build` folder. It correctly bundles React in production
+                    mode and optimizes the build for the best performance.
+                  </p>
+                  <p>
+                    <strong>Further help:</strong> To get more help on the
+                    Next.js checkout
+                    <a href="https://nextjs.org/">Next.js</a>
+                  </p>
+                  <p>
+                    <strong>Note:</strong> You can learn more in the
+                    <a
+                      href="https://facebook.github.io/create-react-app/docs/getting-started"
+                      >Create React App Documentation</a
+                    >. To learn Next.js, check out the
+                    <a href="https://nextjs.org/docs/getting-started">Next.js Documentation</a>.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <div class="card" id="main_content">
+                <div class="header">
+                  <h2>Main Content</h2>
+				    <h5>_app.js Structure</h5>
+                  <ul class="header-dropdown dropdown">
+                    <li>
+                      <a href="javascript:void(0);" class="full-screen"
+                        ><i class="icon-frame"></i
+                      ></a>
+                    </li>
+                    <li class="dropdown">
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      ></a>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a href="javascript:void(0);">Action</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);">Another Action</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);">Something else</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              
+                <div class="body">
+                  <pre class="prettyprint lang-html linenums">
+&lt;!-- START CONTENT --&gt;
+
+import React from 'react';
+import Slider from "react-rangeslider";
+import "react-rangeslider/lib/index.css";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import "../css/style.css";
+
+  function MyApp({ Component, pageProps }) {
+    return(
+  	&lt;div className="App"&gt;
+  	  &lt;Component {...pageProps} /&gt;
+  	&lt;/div&gt;
+    );
+  }	
+export default App;
+
+&lt;!-- END CONTENT --&gt;
+</pre
+                  >
+                </div>
+              </div>
+            </div>
+			<div class="col-sm-12">
+              <div class="card" id="dependencies">
+                <div class="header">
+                  <h2>Dependencies</h2>
+				    <h5>package.json</h5>
+                  <ul class="header-dropdown dropdown">
+                    <li>
+                      <a href="javascript:void(0);" class="full-screen"
+                        ><i class="icon-frame"></i
+                      ></a>
+                    </li>
+                    <li class="dropdown">
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      ></a>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a href="javascript:void(0);">Action</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);">Another Action</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);">Something else</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              
+                <div class="body">
+                  <pre class="prettyprint lang-html linenums">
+{
+ "name": "samar",
+ "version": "0.1.0",
+ "private": true,
+ "scripts": {
+   "dev": "next dev -p 5000",
+   "build": "next build",
+   "start": "next start",
+   "sass": "node-sass --watch scss/main.scss css/style.css --source-map css/style.css.map"
+ },
+  "dependencies": {
+    "moment": "^2.29.1",
+    "next": "^10.0.6",
+    "node-sass": "^5.0.0",
+    "react": "^17.0.1",
+    "react-bootstrap": "^1.5.0",
+    "react-countup": "^4.3.3",
+    "react-dom": "^17.0.1",
+    "react-google-recaptcha": "^2.1.0",
+    "react-modal-video": "^1.2.6",
+    "react-rangeslider": "^2.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scroll-to-top": "^1.0.5",
+    "react-slick": "^0.28.0",
+    "react-visibility-sensor": "^5.1.1",
+    "simple-react-lightbox": "^3.6.6",
+    "slick-carousel": "^1.8.1",
+    "use-scroll-position": "0.0.4",
+    "wowjs": "^1.1.3"
+  }
+}
+</pre
+                  >
+                </div>
+              </div>
+            </div>
+			<div class="col-sm-12">
+				<div class="card" id="create_page">
+						<div class="header">
+							<h2>Create a Page<h5>How to create a custom page</h5></h2>
+						</div>
+						<div class="body">
+							<p>1. Create page <code> pages\blank.js</code></p>
+							<pre class="prettyprint lang-html linenums">
+function Blank() {
+
+export function MyPage() {
+  return(
+   &lt;h1&gt;Hello!&lt;/h1&gt;
+  ) 
+} 	
+export default Blank;						
+						</pre>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12">
+				<div class="card" id="routing">
+					<div class="header">
+						<h2>Routing<h5>Linking between pages</h5></h2>
+					</div>	
+					<div class="body">
+						<p>The Next.js router allows you to do client-side route transitions between pages, similar to a single-page application.</p>
+						<p>A React component called <strong>Link</strong> is provided to do this client-side route transition.</p>
+						
+						<pre class="prettyprint lang-html linenums">
+import Link from 'next/link'
+					
+function Home() {
+  return(
+	&lt;ul&gt;
+	   &lt;li&gt;
+		&lt;Link href="/"&gt;
+		  &lt;a&gt;Home&lt;/a&gt;
+		&lt;/Link&gt;
+	   &lt;/li&gt; 
+	   &lt;li&gt;
+		&lt;Link href="/about"&gt;
+		  &lt;a&gt;About Us&lt;/a&gt;
+		&lt;/Link&gt;
+	   &lt;/li&gt; 
+	   &lt;li&gt;
+		&lt;Link href="/blog/hello-world"&gt;
+		  &lt;a&gt;Blog Post&lt;/a&gt;
+		&lt;/Link&gt;
+	   &lt;/li&gt; 
+	&lt;/ul&gt;
+  ) 
+} 	
+export default Home;						
+							</pre>
+						<p>In the example above we have multiple links, each one maps a path (href) to a known page:</p>
+						<ul>
+							<li>/ <strong> → </strong> pages/index.js</li>
+							<li>/about <strong> → </strong> pages/about.js</li>
+							<li>/blog/hello-world <strong> → </strong> pages/blog/[slug].js</li>
+						</ul>
+						<p>Any<strong> <Link /> </strong>in the viewport (initially or through scroll) will be prefetched by default (including the corresponding data) for pages using Static Generation. The corresponding data for server-rendered routes is not prefetched.</p>
+					</div>
+				</div>
+			</div>	
+			<div class="col-sm-12">
+				<div class="card" id="deployment">
+					<div class="header">
+						<h2>Vercel (Recommended) <h5>Getting started</h5></h2>
+					</div>
+					<div class="body">
+						<p>If you haven’t already done so, push your Next.js app to a Git provider of your choice: GitHub, GitLab, or BitBucket. Your repository can be private or public.</p>
+						<strong>Then, follow these steps:</strong>
+						<ul>
+							<li>Sign up to Vercel (no credit card is required).</li>
+							<li>After signing up, you’ll arrive on the “Import Project” page. Under “From Git Repository”, choose the Git provider you use and set up an integration. (Instructions: GitHub / GitLab / BitBucket).</li>
+							<li>Once that’s set up, click “Import Project From …” and import your Next.js app. It auto-detects that your app is using Next.js and sets up the build configuration for you. No need to change anything — everything should work just fine!</li>
+							<li>After importing, it’ll deploy your Next.js app and provide you with a deployment URL</li>
+							<li>To get more help on the deployment checkout <a href="https://www.youtube.com/watch?v=4DbNUJ-9_U4&t=217s" target="_blank"> Deployment</a></li>
+						</ul>
+						<strong class="d-block">In terminal, follow these steps:</strong><br/>
+						<p><strong class="d-block">Step-1:</strong> Run <code> npm i -g vercel</code></p><br/>
+						<img src="assets/images/step-1.png" class="mb-3" alt=""/>
+						<p><strong class="d-block">Step-2: </strong>Check version  <code> vercel --version</code></p><br/>
+						<img src="assets/images/step-2.png" class="mb-3" alt=""/>
+						<p><strong class="d-block">Step-3:</strong> login in vercel<code> vercel login</code> <p/><br/>
+						<img src="assets/images/step-3.png" class="mb-3" alt=""/>
+						<p><strong class="d-block">Step-4:</strong> write your mail <code> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1e7f7c7d5e7b667f736e727b307d7173">[email&#160;protected]</a></code> </p><br/>
+						<img src="assets/images/step-4.png" class="mb-3" alt=""/>
+						<p>
+							<strong class="d-block">Step-5: </strong> <br/>
+							Now, answer some questions <br/>
+							1. do you want deploy project on vercel.<br/>
+							2. Link to existing project?<br/>
+							3. write your project name.<br/>
+							4. In which directory is your code located?	<br/>
+						</p>
+						<img src="assets/images/step-7.png" class="mb-3" alt=""/>
+					</div>
+				</div>
+			</div>
+			
+            <div class="col-sm-12">
+              <div class="card" id="folder_structure">
+                <div class="header">
+					<h2>Folder Structure</h2>
+					<ul class="header-dropdown dropdown">
+						<li><a href="javascript:void(0);" class="full-screen" ><i class="icon-frame"></i></a></li>
+						<li class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"
+								aria-haspopup="true" aria-expanded="false"
+							></a>
+							<ul class="dropdown-menu">
+								<li><a href="javascript:void(0);">Action</a></li>
+								<li><a href="javascript:void(0);">Another Action</a></li>
+								<li><a href="javascript:void(0);">Something else</a></li>
+							</ul>
+						</li>
+					</ul>
+                </div>
+                <div class="body">
+					<section class="app-brief">
+						<div class="left-align">
+							<div class="section-header">
+								<!-- <h2 class="dark-text">Folder Directories - </h2> -->
+							</div>
+							<div id="dz_tree" class="tree-demo">
+								<ul>
+									<li data-jstree='{ "opened" : true }'>.next
+										<!-- <ul>
+											<li data-jstree='{ "type" : "file" }'>index.html</li>
+										</ul> -->
+									</li>	
+									<li data-jstree='{ "opened" : true }'>.vercel
+										<ul>
+											<li data-jstree='{ "type" : "file" }'>project.json</li>
+										</ul> 
+									</li>
+									<li data-jstree='{ "opened" : true }'>component</li>	
+									<li data-jstree='{ "opened" : true }'>css</li>	
+									<li data-jstree='{ "opened" : true }'>element</li>	
+									<li data-jstree='{ "opened" : true }'>icons
+										<ul>
+											<li data-jstree='{ "opened" : true }'>flaticon</li>
+											<li data-jstree='{ "opened" : true }'>flaticon-old</li>
+											<li data-jstree='{ "opened" : true }'>font-awesome</li>
+											<li data-jstree='{ "opened" : true }'>line-awesome</li>
+											<li data-jstree='{ "opened" : true }'>themify</li>
+										</ul>
+									</li>	
+									<li data-jstree='{ "opened" : true }'>layout
+										<ul>
+											<li data-jstree='{ "type" : "file" }'>header.js</li>
+											<li data-jstree='{ "type" : "file" }'>footer.js</li>
+										</ul>
+									</li>	
+									<li data-jstree='{ "opened" : true }'>pages
+										<ul>
+											<li data-jstree='{ "opened" : true }'>api</li>
+											<li data-jstree='{ "type" : "file" }'>_app.js</li>
+											<li data-jstree='{ "type" : "file" }'>index.js</li>
+											<li data-jstree='{ "type" : "file" }'>blank.js</li>
+											<li data-jstree='{ "type" : "file" }'>error-404.js</li>
+											<li data-jstree='{ "type" : "file" }'>coming-soon.js</li>
+											<li data-jstree='{ "type" : "file" }'>other-pages.js</li>
+										</ul>
+									</li>
+									<li data-jstree='{ "opened" : true }'>public
+										<ul>
+											<li data-jstree='{ "selected" : false }'>images
+												<ul>
+													<li data-jstree='{ "opened" : true }'>about</li>
+													<li data-jstree='{ "opened" : true }'>background</li>
+													<li data-jstree='{ "opened" : true }'>banner</li>
+													<li data-jstree='{ "opened" : true }'>blog</li>
+													<li data-jstree='{ "opened" : true }'>icon</li>
+													<li data-jstree='{ "opened" : true }'>logo</li>
+													<li data-jstree='{ "opened" : true }'>main-slider</li>
+													<li data-jstree='{ "opened" : true }'>move</li>
+													<li data-jstree='{ "opened" : true }'>pattern</li>
+													<li data-jstree='{ "opened" : true }'>pricingtable</li>
+													<li data-jstree='{ "opened" : true }'>projects</li>
+													<li data-jstree='{ "opened" : true }'>team</li>
+													<li data-jstree='{ "opened" : true }'>testimonials</li>
+													<li data-jstree='{ "type" : "file" }'>logo.png</li>
+												</ul>	
+												<li data-jstree='{ "type" : "file" }'>favicon.ico</li>
+											</li>
+										</ul> 
+									</li>	
+									<li data-jstree='{ "selected" : false }'>scss
+										<ul>
+											<li data-jstree='{ "opened" : true }'>abstracts</li>
+											<li data-jstree='{ "opened" : true }'>base</li>
+											<li data-jstree='{ "selected" : false }'>components</li>
+											<li data-jstree='{ "selected" : false }'>layout
+												<ul>
+													<li data-jstree='{ "type" : "file" }'>footer</li>
+													<li data-jstree='{ "type" : "file" }'>header</li>
+												</ul>
+											</li>
+											<li data-jstree='{ "opened" : true }'>pages</li>
+										</ul>
+									</li>
+									<li data-jstree='{ "selected" : false }'>vendor
+										<ul>
+											<li data-jstree='{ "opened" : true }'>animate</li>
+											<li data-jstree='{ "opened" : true }'>aos</li>
+											<li data-jstree='{ "opened" : true }'>bootstrap-select</li>
+											<li data-jstree='{ "opened" : true }'>bootstrap-v4-rtl</li>
+											<li data-jstree='{ "opened" : true }'>deznav</li>
+											<li data-jstree='{ "opened" : true }'>metismenu</li>
+											<li data-jstree='{ "opened" : true }'>perfect-scrollbar</li>
+										</ul>
+									</li>
+									<li data-jstree='{ "type" : "file" }'>package.json</li>
+									<li data-jstree='{ "type" : "file" }'>package-lock.json</li>
+									
+								</ul>
+							</div>
+						</div>
+					</section>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="card" id="Credits">
+                <div class="header">
+                  <h2>Credits</h2>
+                  <ul class="header-dropdown dropdown">
+                    <li>
+                      <a href="javascript:void(0);" class="full-screen"
+                        ><i class="icon-frame"></i
+                      ></a>
+                    </li>
+                    <li class="dropdown">
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      ></a>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a href="javascript:void(0);">Action</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);">Another Action</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);">Something else</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="body">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                      <ul>
+                        <li>
+                          Moment Js:
+                          <a
+                            href="https://momentjs.com/"
+                            class="text-warning"
+                            >Click to See</a
+                          >
+                        </li>
+                        <li>
+                          Next Js:
+                          <a
+                            href="https://nextjs.org/"
+                            class="text-warning"
+                            >Click to See</a
+                          >
+                        </li>
+                        <li>
+                          Node Sass:
+                          <a href="https://www.npmjs.com/package/node-sass" class="text-warning"
+                            >Click to see</a
+                          >
+                        </li>
+                        <li>
+                          React Bootstrap 
+                          <a
+                            href="https://react-bootstrap.github.io/"
+                            class="text-warning"
+                            >Click to See</a
+                          >
+                        </li>
+                        <li>
+                          React Count Up
+                          <a href="https://www.npmjs.com/package/react-countup" class="text-warning"
+                            >Click to See</a
+                          >
+                        </li>
+                        <li>
+                          React Google Re-captcha
+                          <a
+                            href="https://www.npmjs.com/package/react-google-recaptcha"
+                            class="text-warning"
+                            >Click to See</a
+                          >
+                        </li>
+                        <li>
+                          React Modal Video
+                          <a
+                            href="https://www.npmjs.com/package/react-modal-video"
+                            class="text-warning"
+                            >Click to See</a
+                          >
+                        </li>
+                        <li>
+                          React Range Slider
+                          <a
+                            href="https://www.npmjs.com/package/react-range"
+                            class="text-warning"
+                            >Click to See</a
+                          >
+                        </li>
+                        <li>
+                          React Scroll to top
+                          <a
+                            href="https://www.npmjs.com/package/react-scroll-to-top"
+                            class="text-warning"
+                            >Click to See</a
+                          >
+                        </li>
+                        <li>
+                          React Slick
+                          <a
+                            href="https://www.npmjs.com/package/react-slick"
+                            class="text-warning"
+                            >Click to See</a
+                          >
+                        </li>
+                        <li>
+                          React Visibility Sensor
+                          <a
+                            href="https://www.npmjs.com/package/react-visibility-sensor"
+                            class="text-warning"
+                            >Click to See</a
+                          >
+                        </li>
+                        <li>
+                          React Slick Carousel
+                          <a
+                            href="https://www.npmjs.com/package/slick-carousel"
+                            class="text-warning"
+                            >Click to See</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="card" id="thank_you">
+                <div class="header">
+                  <h2>Thank You!</h2>
+                  <ul class="header-dropdown dropdown">
+                    <li>
+                      <a href="javascript:void(0);" class="full-screen"
+                        ><i class="icon-frame"></i
+                      ></a>
+                    </li>
+                    <li class="dropdown">
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      ></a>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a href="javascript:void(0);">Action</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);">Another Action</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);">Something else</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="body">
+                  <p>
+                    Once again, thank you so much for purchasing this template.
+                    As I said at the beginning, I&#39;d be glad to help you if
+                    you have any questions relating to this template.
+                  </p>
+                  <p>
+                    <strong>REGULAR SUPPORT</strong> : You have in template
+                    support if you face any issue with the usage of it then you
+                    can contact us on below Email ID.
+                  </p>
+                  <p>
+                    <strong>EXTENDED SUPPORT</strong> : Development it is
+                    chargeable according to your requirement. For that you need
+                    to mail us your requirement on below Email ID.
+                  </p>
+                  <p>
+                    <strong>COST OF SERVICE</strong> : Depends on the hours
+                    required. But as you are already using our template we have
+                    discounted rates for our template customer.
+                  </p>
+                  <p>
+                    <strong>EXTENDED LICENSE</strong> : With the Extended
+                    Support we also include Extended License. So you save much
+                    more with your investment than you will with purchasing
+                    Regular License and later buying Extended one + Development
+                    cost.
+                  </p>
+                  <p>
+                    You will get a quick reply from our team and feel free to
+                    contact us. We don’t charge for requirement discussion so
+                    don’t worry.
+                  </p>
+                  <p>
+                    Contact Us :
+                    <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="81f3e0e9f4edf9e0f3ece0c1e6ece0e8edafe2eeec">[email&#160;protected]</a></strong>
+                  </p>
+                  <p>Skype : <strong>rahulxarma</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="./assets/bundles/libscripts.bundle.js"></script>
+    <script src="./assets/bundles/vendorscripts.bundle.js"></script>
+
+    <script src="./assets/bundles/lightgallery.bundle.js"></script>
+    <!-- Light Gallery Plugin Js -->
+
+    <script src="./assets/bundles/mainscripts.bundle.js"></script>
+	
+	<!-- Folder onClick -->
+	<script src="./assets/vendor/jstree/dist/jstree.min.js"></script>
+
+    <script>
+      $(".metismenu li").click(function () {
+        var $this = $(this);
+        if (!$this.is("active")) {
+          $(".metismenu li").removeClass("active").removeData("top");
+          $this.addClass("active").data("top", $this.offset().top);
+        }
+      });
+    </script>
+	<script>
+		// prettyPhoto
+		jQuery(document).ready(function(){
+			
+			$(".full-height").css("height", $(window).height());
+			
+			$("#dz_tree").jstree({
+				"core": {
+					"themes": {
+						"responsive": false
+					}
+				},
+				"types": {
+					"default": {
+						"icon": "fa fa-folder"
+					},
+					"file": {
+						"icon": "fa fa-file-text"
+					}
+				},
+				"plugins": ["types"]
+			});
+		});
+	</script>
+  </body>
+</html>

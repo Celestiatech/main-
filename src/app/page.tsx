@@ -21,6 +21,7 @@ export default function Home() {
   const [selectedIndustry, setSelectedIndustry] = useState("startup");
   const [heroPointer, setHeroPointer] = useState({ x: 0, y: 0 });
   const [revenueCount, setRevenueCount] = useState(0);
+  const industryCarouselRef = useRef<HTMLDivElement | null>(null);
 
   // Track scroll depth
   useScrollTracking(pathname || "/");
@@ -72,6 +73,120 @@ export default function Home() {
     frameId = window.requestAnimationFrame(tick);
 
     return () => window.cancelAnimationFrame(frameId);
+  }, []);
+
+  useEffect(() => {
+    const carousel = industryCarouselRef.current;
+    if (!carousel) {
+      return;
+    }
+
+    let isDragging = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let autoDirection = 1;
+    let idleTimeout: number | null = null;
+    let animationFrame: number | null = null;
+    let lastTimestamp = 0;
+
+    const markInteracting = () => {
+      carousel.dataset.interacting = "true";
+      if (idleTimeout !== null) {
+        window.clearTimeout(idleTimeout);
+      }
+      idleTimeout = window.setTimeout(() => {
+        carousel.dataset.interacting = "false";
+      }, 700);
+    };
+
+    const tickAutoScroll = (timestamp: number) => {
+      if (!lastTimestamp) {
+        lastTimestamp = timestamp;
+      }
+
+      const elapsed = timestamp - lastTimestamp;
+      lastTimestamp = timestamp;
+
+      if (carousel.dataset.interacting !== "true" && !isDragging) {
+        const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+
+        if (maxScrollLeft > 0) {
+          carousel.scrollLeft += autoDirection * elapsed * 0.05;
+
+          if (carousel.scrollLeft >= maxScrollLeft - 2) {
+            autoDirection = -1;
+          } else if (carousel.scrollLeft <= 2) {
+            autoDirection = 1;
+          }
+        }
+      }
+
+      animationFrame = window.requestAnimationFrame(tickAutoScroll);
+    };
+
+    const handleWheel = (event: WheelEvent) => {
+      const delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+
+      if (delta === 0) {
+        return;
+      }
+
+      event.preventDefault();
+      markInteracting();
+      carousel.scrollLeft += delta * 0.9;
+    };
+
+    const handlePointerDown = (event: PointerEvent) => {
+      isDragging = true;
+      markInteracting();
+      startX = event.clientX;
+      startScrollLeft = carousel.scrollLeft;
+      carousel.setPointerCapture(event.pointerId);
+      carousel.dataset.dragging = "true";
+    };
+
+    const handlePointerMove = (event: PointerEvent) => {
+      if (!isDragging) {
+        return;
+      }
+
+      markInteracting();
+      const deltaX = event.clientX - startX;
+      carousel.scrollLeft = startScrollLeft - deltaX;
+    };
+
+    const handlePointerUp = (event: PointerEvent) => {
+      if (!isDragging) {
+        return;
+      }
+
+      isDragging = false;
+      carousel.releasePointerCapture(event.pointerId);
+      carousel.dataset.dragging = "false";
+      markInteracting();
+    };
+
+    carousel.dataset.interacting = "false";
+    carousel.addEventListener("wheel", handleWheel, { passive: false });
+    carousel.addEventListener("pointerdown", handlePointerDown);
+    carousel.addEventListener("pointermove", handlePointerMove);
+    carousel.addEventListener("pointerup", handlePointerUp);
+    carousel.addEventListener("pointercancel", handlePointerUp);
+    animationFrame = window.requestAnimationFrame(tickAutoScroll);
+
+    return () => {
+      carousel.removeEventListener("wheel", handleWheel);
+      carousel.removeEventListener("pointerdown", handlePointerDown);
+      carousel.removeEventListener("pointermove", handlePointerMove);
+      carousel.removeEventListener("pointerup", handlePointerUp);
+      carousel.removeEventListener("pointercancel", handlePointerUp);
+      if (idleTimeout !== null) {
+        window.clearTimeout(idleTimeout);
+      }
+      if (animationFrame !== null) {
+        window.cancelAnimationFrame(animationFrame);
+      }
+    };
   }, []);
 
   const services = [
@@ -667,7 +782,7 @@ export default function Home() {
               so the product feels relevant, conversion-ready, and built for growth.
             </p>
           </div>
-          <div className={styles.industryCarouselWrapper}>
+          <div ref={industryCarouselRef} className={styles.industryCarouselWrapper}>
             <div id="industryShowcaseCarousel" className={styles.industryCarouselTrack}>
               {industryCarouselItems.map((industry, index) => (
                 <article

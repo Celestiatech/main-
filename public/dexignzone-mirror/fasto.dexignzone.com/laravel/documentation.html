@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="admin, dashboard" />
+	<meta name="author" content="DexignZone" />
+	<meta name="robots" content="index, follow" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="fasto : sass Admin Dashboard  Bootstrap 5 Laravel Template" />
+	<meta property="og:title" content="fasto : sass Admin Dashboard  Bootstrap 5 Laravel Template" />
+	<meta property="og:description" content="fasto : sass Admin Dashboard  Bootstrap 5 Laravel Template" />
+	<meta property="og:image" content="https://fasto.dexignzone.com/laravel/social-image.png"/>
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- Title -->
+	<title>Fasto- Saas Admin Laravel Dashboard</title>
+	
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	
+	<!-- Css Style -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/scrollbar.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="plugins/jstree/dist/themes/default/style.min.css">
+	
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900|Open+Sans:300,400,600,700,800|Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	
+</head>
+<body data-spy="scroll" data-target=".nav-bar" data-offset="50">
+<div class="wrapper" id="tableofcontent">
+
+	<!-- Sidebar Holder -->
+	<nav id="nevbarleft">
+		<div class="side-nav full-height">
+			<div class="sidebar-header">
+				<h2>
+					<img src="images/logo-white.png" alt="logo" class="small-logo"/>
+					<img src="images/logo-text-white.png" alt="logo"/>
+				</h2>
+			</div>
+			<div class="nav-bar">
+				<ul class="list-unstyled content-scroll components navbar-nav nav" id="download-button">
+					<li class="active"><a href="#introduction">Introduction</a></li>
+					<li class="nav-item"><a href="#quick-start">Quick Start</a></li>
+					<li><a href="#sass-compile">Sass Compile</a></li>
+					<li class="nav-item"><a href="#overview">Overview</a></li>
+					<li><a href="#folder_directories">Folder Directories</a></li>
+					<li class="nav-item"><a href="#layout-config">Layout Config</a></li>
+					<li><a href="#theme-feature">Theme Features</a></li>
+					<li><a href="#plugins"> Credit</a></li>
+					<li><a href="#html_structure">Html Structure</a></li>
+					<li><a href="#our_product">Our Products </a></li>
+					<li><a href="#custom_work">Custom Work Requirements </a></li>
+					<li><a href="#version_history">Version History</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<!-- Page Content Holder -->
+	<div id="content">
+		
+		<!-- Navber -->
+		<nav class="navbar navbar-default top-nav-bar ">
+			<div class="container-fluid">
+				<div class="navbar-header">
+				   <button type="button" id="sidebarCollapse" class="navbar-btn">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+				<a href="https://support.w3itexperts.com" target="_blank" class="site-button support-button">Support</a>
+				<a href="https://themeforest.net/cart/configure_before_adding/31858794/?license=regular" target="_blank" class="site-button support-button DZBuyNowBtn">Buy Now</a>
+			</div>
+		</nav>
+		
+		<!-- Banner -->
+		<section class="app-brief slide-banner">
+			<div class="container">
+				<div class="section-header">
+					<h2>Fasto- Saas Admin Laravel Dashboard</h2>
+					<div class="colored-line"></div>
+					<div class="section-description">
+						Fasto- Saas Admin Laravel Dashboard
+					</div>
+					<div class="colored-line"></div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- Introduction -->
+		<section class="app-brief" id="introduction">
+			<div class="container center-align">
+				<h1>Fasto</h1>
+				<h3>Fasto- Saas Bootstrap Admin Laravel Dashboard</h3>
+				<p>This documentation is last updated on 30 August 2023.</p>
+				<p>Thank you for purchasing this Laravel template.</p>
+				<p><strong>If you like this template, Please support us by rating this template with 5 stars </strong> </p>
+			</div>
+		</section>
+		<hr/>
+
+		<!-- Quick Start -->
+		<section class="app-brief grey-bg" id="quick-start">
+			<div class="container left-align">
+				<div class="section-header">
+					<h2 class="dark-text"> Quick Start - </h2>
+				</div>
+				<div class="row">
+					<h4><strong>Requirements</strong></h4>
+					<p>Laravel has a set of requirements in order to run smoothly in specific environment. Please see <a href="https://laravel.com/docs/10.x/installation#server-requirements" target="blank"><strong>requirements</strong></a> section in Laravel documentation.</p>
+					<p>Fasto similarly uses additional plugins and frameworks, so ensure You have <a href="https://getcomposer.org/" target="blank"> <strong>Composer </strong></a> installed on Your machine.</p>
+					<p>Assuming your machine meets all requirements - let's process to installation of Fasto Laravel integration (skeleton).</p>
+					<ol>
+						<li>Open in cmd or terminal app and navigate to this folder</li>
+						<li>Run following commands
+							<code class="code">composer install</code>
+							<code class="code">cp .env.example .env</code>
+							<p>For Windows command line tool use <i>copy </i>command. For unix style - cp.</p>
+							<code class="code">php artisan key:generate</code>
+						</li>
+					</ol>
+					<p>For more information about the Laravel installation, check out on this link <a href="https://laravel.com/docs/10.x/installation" target="blank">https://laravel.com/docs/10.x/installation</a></p>
+				</div>
+			</div>
+		</section>
+		<hr/>
+
+		<!-- Sass Compile -->
+		<section class="app-brief" id="sass-compile">
+			<div class="container left-align">
+				<div class="section-header">
+					<h2 class="dark-text title">Sass Compile - </h2>
+				</div>
+				<div class="sass-compile">
+					<h3 class="title">1.- Install Node.js</h3>
+					<p>To compile Sass via the command line first, we need to install <a href="https://nodejs.org/en/" target="_blank">node.js</a>. The easiest way is downloading it from the official website nodejs.org open the package and follow the wizard.</p>
+					
+					<h3 class="title">2.- Initialize NPM</h3>
+					<p>NPM is the Node Package Manager for JavaScript. NPM makes it easy to install and uninstall third party packages. To initialize a Sass project with NPM, open your terminal and CD (change directory) to your project's public folder.</p>
+<pre class="brush: javascript; h-100">npm init
+</pre>
+<p>Once in the correct folder, run the command <code>npm init</code>. You will be prompted to answer several questions about the project, after which NPM will generate a <code>package.json</code> file in your folder.</p>
+
+
+					<h3 class="title">3.- Install Node-Sass</h3>
+					<p>Node-sass is an NPM package that compiles Sass to CSS (which it does very quickly too). To install node-sass run the following command in your terminal:  <code>npm install node-sass</code></p>
+<pre class="brush: javascript; h-100">npm install node-sass
+</pre>
+
+					<h3 class="title">4.- Write Node-sass Command</h3>
+					<p>Everything is ready to write a small script in order to compile Sass. Open the package.json file in a code editor. You will see something like this:</p>
+					<p>In the scripts section add an <strong>scss command</strong></p>
+					<img src="images/jsn.png" alt="">
+<pre class="brush: javascript; h-100">"scripts": {
+  "sass": "node-sass --watch scss/main.scss css/style.css"
+},
+</pre>
+					
+					<h3 class="title">5.- Run the Script</h3>
+					<p>To execute our one-line script, we need to run the following command in the terminal: <code>npm run sass</code></p>
+<pre class="brush: javascript; h-100">npm run sass
+</pre>
+				</div>
+			</div>	
+		</section>
+		<hr/>
+
+		<!-- Overview -->
+		<section class="app-brief" id="overview">
+			<div class="container left-align">
+				<div class="section-header">
+					<h2 class="dark-text"> Overview - </h2>
+				</div>
+				<div class="row">
+					<p>We Have Converted All Fasto HTML templates In Laravel</p>
+				</div>
+			</div>
+		</section>
+		<hr/>
+		
+		<!-- Folder Directories -->
+		<section class="app-brief" id="folder_directories">
+			<div class="container left-align">
+				<div class="section-header">
+					<h2 class="dark-text">Folder Directories - </h2>
+				</div>
+				<div id="dz_tree" class="tree-demo">
+					<ul>
+						<li data-jstree='{ "opened" : true }'>Fasto
+							<ul>
+								<li data-jstree='{ "opened" : true }'>resources
+									<ul>
+										<li data-jstree='{ "opened" : true }'>views
+											<ul>
+												<li data-jstree='{ "selected" : false }'>fasto
+													<ul>
+														<li data-jstree='{ "selected" : false }'>ajax
+															<ul>
+																<li data-jstree='{ "type" : "file" }'>contact_list.blade.php</li>
+															</ul>
+														</li>
+														<li data-jstree='{ "selected" : false }'>app
+															<ul>
+																<li data-jstree='{ "type" : "file" }'>calender.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>post_details.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>profile.blade.php</li>
+															</ul>
+														</li>
+														<li data-jstree='{ "selected" : false }'>chart
+															<ul class="jstree-children">
+																<li data-jstree='{ "type" : "file" }'>chartist.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>chartjs.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>flot.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>morris.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>peity.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>sparkline.blade.php</li>
+															</ul>
+														</li>
+														<li data-jstree='{ "selected" : false }'>dashboard
+															<ul>
+																<li data-jstree='{ "type" : "file" }'>calendar.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>contacts.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>index.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>index_2.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>kanban.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>messages.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>projects.blade.php</li>
+															</ul>
+														</li>
+														<li data-jstree='{ "selected" : false }'>ecom
+															<ul>
+																<li data-jstree='{ "type" : "file" }'>checkout.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>customers.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>invoice.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>productdetail.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>productgrid.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>productlist.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>productorder.blade.php</li>
+															</ul>
+														</li>
+														<li data-jstree='{ "selected" : false }'>form
+															<ul>
+																<li data-jstree='{ "type" : "file" }'>ckeditor.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>element.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>pickers.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>validation_jquery.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>wizard.blade.php</li>
+															</ul>
+														</li>
+														<li data-jstree='{ "selected" : false }'>map
+															<ul>
+																<li data-jstree='{ "type" : "file" }'>jqvmap.blade.php</li>
+															</ul>
+														</li>
+														<li data-jstree='{ "selected" : false }'>message
+															<ul>
+																<li data-jstree='{ "type" : "file" }'>compose.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>inbox.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>read.blade.php</li>
+															</ul>
+														</li>
+														<li data-jstree='{ "selected" : false }'>page
+															<ul>
+																<li data-jstree='{ "type" : "file" }'>error400.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>error403.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>error404.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>error500.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>error503.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>forgot_password.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>lockscreen.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>login.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>register.blade.php</li>
+															</ul>
+														</li>
+														<li data-jstree='{ "selected" : false }'>table
+															<ul>
+																<li data-jstree='{ "type" : "file" }'>bootstrap_basic.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>datatablebasic.blade.php</li>
+															</ul>
+														</li>
+														<li data-jstree='{ "selected" : false }'>uc
+															<ul>
+																<li data-jstree='{ "type" : "file" }'>lightgallery.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>nestable.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>nouislider.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>select2.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>sweetalert.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>toastr.blade.php</li>
+															</ul>
+														</li>
+														<li data-jstree='{ "selected" : false }'>ui
+															<ul>
+																<li data-jstree='{ "type" : "file" }'>accordion.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>alert.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>badge.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>button.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>buttongroup.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>card.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>carousel.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>dropdown.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>grid.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>listgroup.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>media_object.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>modal.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>pagination.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>popover.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>progressbar.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>tab.blade.php</li>
+																<li data-jstree='{ "type" : "file" }'>typography.blade.php</li>
+															</ul>
+														</li>
+														<li data-jstree='{ "selected" : false }'>widget
+															<ul>
+																<li data-jstree='{ "type" : "file" }'>widget_basic.blade.blade.php</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+												<li data-jstree='{ "selected" : false }'>elements
+													<ul>
+														<li data-jstree='{ "type" : "file" }'>footer.blade.php</li>
+														<li data-jstree='{ "type" : "file" }'>header.blade.php</li>
+														<li data-jstree='{ "type" : "file" }'>sidebar.blade.php</li>
+													</ul>
+												</li>
+												<li data-jstree='{ "selected" : false }'>errors
+													<ul>
+														<li data-jstree='{ "type" : "file" }'>400.blade.php</li>
+														<li data-jstree='{ "type" : "file" }'>403.blade.php</li>
+														<li data-jstree='{ "type" : "file" }'>404.blade.php</li>
+														<li data-jstree='{ "type" : "file" }'>500.blade.php</li>
+														<li data-jstree='{ "type" : "file" }'>503.blade.php</li>
+													</ul>
+												</li>
+												<li data-jstree='{ "selected" : false }'>layout
+													<ul>
+														<li data-jstree='{ "type" : "file" }'>default.blade.php</li>
+														<li data-jstree='{ "type" : "file" }'>fullwidth.blade.php</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li data-jstree='{ "opened" : true }'>public
+									<ul>
+										<li data-jstree='{ "selected" : false }'>css</li>
+										<li data-jstree='{ "selected" : false }'>icons</li>
+										<li data-jstree='{ "selected" : false }'>images</li>
+										<li data-jstree='{ "selected" : false }'>js</li>
+										<li data-jstree='{ "selected" : false }'>scss</li>
+										<li data-jstree='{ "selected" : false }'>vendor</li>
+									</ul>
+								</li>
+								<li data-jstree='{ "opened" : true }'>config
+									<ul>
+										<li data-jstree='{ "type" : "file" }'>dz.php</li>
+									</ul>
+								</li>
+								<li data-jstree='{ "opened" : true }'>app
+									<ul>
+										<li data-jstree='{ "selected" : false }'>Http
+											<ul>
+												<li data-jstree='{ "selected" : false }'>Controllers
+													<ul>
+														<li data-jstree='{ "type" : "file" }'>FastoAdminController.php</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li data-jstree='{ "selected" : false }'>Providers
+											<ul>
+												<li data-jstree='{ "type" : "file" }'>DzServiceProvider.php</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<hr/>
+
+		<!-- Configuration -->
+		<section class="app-brief" id="layout-config">
+			<div class="container left-align">
+				<div class="section-header">
+					<h2 class="dark-text"> Configuration - </h2>
+				</div>
+				<div class="row">
+					<p>Fasto theme has a large variety of layout styles and settings. You can visually test them all in layout builder section. We also implemented this comprehensive layout configuration into our Laravel version of theme.</p>
+					<p>Configuration file <code>config/dz.php</code> here all the css and js files are defined according to different pages.</p>
+					<p>You can include your js and css file set the theme layout to your needs by given possibility.</p>
+				</div>
+			</div>
+		</section>
+		
+		<!-- Theme Feature -->
+		<section class="app-brief" id="theme-feature">
+			<div class="container left-align">
+				<div class="section-header">
+					<h2 class="dark-text">Theme Features - </h2>
+					<h4><strong>js/deznav-init.js</strong></h4>
+				</div>
+				<pre class="brush: javascript;">
+var direction =  getUrlParams('dir');    
+if(direction == 'rtl')
+{
+	direction = 'rtl'; 
+}else{
+	direction = 'ltr'; 
+}
+
+var dezSettingsOptions = {
+	typography: "poppins",
+	version: "light",
+	layout: "vertical",
+	headerBg: "color_1",
+	navheaderBg: "color_1",
+	sidebarBg: "color_1",
+	sidebarStyle: "full",
+	sidebarPosition: "fixed",
+	headerPosition: "fixed",
+	containerLayout: "full",
+	direction: direction
+};
+</pre>
+				
+				
+				<h3>Theme Version - </h3>
+<pre class="brush: javascript;">
+version: "dark",
+</pre>
+<pre class="brush: javascript;">
+version: "light",
+</pre>
+
+				<h3>RTL Ready - </h3>
+<pre class="brush: javascript;">
+direction: direction
+</pre>
+
+				<h3>Theme Layout - </h3>
+<pre class="brush: javascript;">
+layout: "vertical",
+</pre>
+
+<pre class="brush: javascript;">
+layout: "horizontal",
+</pre>
+
+				<h3>Theme Sidebar Style - </h3>
+				
+<pre class="brush: javascript;">
+sidebarStyle: "full",
+</pre>
+
+<pre class="brush: javascript;">
+sidebarStyle: "mini",
+</pre>
+
+<pre class="brush: javascript;">
+sidebarStyle: "compact",
+</pre>
+
+<pre class="brush: javascript;">
+sidebarStyle: "modern",
+</pre>
+
+<pre class="brush: javascript;">
+sidebarStyle: "overlay",
+</pre>
+
+<pre class="brush: javascript;">
+sidebarStyle: "icon-hover",
+</pre>
+				
+				<h3>Sidebar Position Style - </h3>
+<pre class="brush: javascript;">
+sidebarPosition: "static",
+</pre>
+
+<pre class="brush: javascript;">
+sidebarPosition: "fixed",
+</pre>
+
+				<h3>Header Position Style - </h3>
+<pre class="brush: javascript;">
+headerPosition: "static",
+</pre>
+
+<pre class="brush: javascript;">
+headerPosition: "fixed",
+</pre>
+
+				<h3>Container Layout - </h3>
+<pre class="brush: javascript;">
+containerLayout: "wide",
+</pre>
+
+<pre class="brush: javascript;">
+containerLayout: "boxed",
+</pre>
+
+<pre class="brush: javascript;">
+containerLayout: "wide-boxed",
+</pre>
+
+
+				<h3>Body Font - </h3>
+<pre class="brush: javascript;">
+typography: "roboto",
+</pre>
+
+<pre class="brush: javascript;">
+typography: "poppins",
+</pre>
+
+<pre class="brush: javascript;">
+typography: "opensans",
+</pre>
+
+<pre class="brush: javascript;">
+typography: "HelveticaNeue",
+</pre>
+					
+				<h3>Color Theme - </h3>
+				<p>So many color option available</p>
+				<p>color_1, color_2, color_3, color_4, color_5, color_6, color_7, color_8, color_9, color_10, color_11, color_12, color_13, color_14, color_15</p>
+					
+				<h3>Navigation Header Color - </h3>
+<pre class="brush: javascript;">
+navheaderBg: "color_1",
+</pre>
+
+	
+				<h3>Header Color - </h3>
+<pre class="brush: javascript;">
+headerBg: "color_1",
+</pre>
+
+				<h3>Sidebar Color - </h3>
+<pre class="brush: javascript;">
+sidebarBg: "color_1",
+</pre>
+
+
+
+	</div>	
+		</section>
+		<hr/>
+
+		<!-- PLUGINS -->
+		<section class="app-brief" id="plugins">
+			<div class="container left-align">
+				<div class="section-header">
+					<h2 class="dark-text">Plugins included - </h2>
+				</div>
+				<ul class="list-files">
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>Laravel 10</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://laravel.com/docs/10.x" target="_blank">https://laravel.com/docs/10.x</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>amcharts</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://www.amcharts.com" target="_blank">https://www.amcharts.com</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>animate</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://animate.style" target="_blank">https://animate.style</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>aos</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://michalsnik.github.io/aos" target="_blank">https://michalsnik.github.io/aos</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>apexchart</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://apexcharts.com" target="_blank">https://apexcharts.com</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>bootstrap</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://getbootstrap.com" target="_blank">https://getbootstrap.com</a></p>
+								<p><a href="" target="_blank"></a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>bootstrap4-notify</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="http://bootstrap-notify.remabledesigns.com" target="_blank">http://bootstrap-notify.remabledesigns.com</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>bootstrap-daterangepicker</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://www.daterangepicker.com" target="_blank">https://www.daterangepicker.com</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>bootstrap-material-datetimepicker</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://t00rk.github.io/bootstrap-material-datetimepicker" target="_blank">https://t00rk.github.io/bootstrap-material-datetimepicker</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>bootstrap-multiselect</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://github.com/davidstutz/bootstrap-multiselect" target="_blank">https://github.com/davidstutz/bootstrap-multiselect</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>bootstrap-select</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://developer.snapappointments.com/bootstrap-select" target="_blank">https://developer.snapappointments.com/bootstrap-select</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>bootstrap-tagsinput</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/examples" target="_blank">https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/examples</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>bootstrap-touchspin</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://www.virtuosoft.eu/code/bootstrap-touchspin" target="_blank">https://www.virtuosoft.eu/code/bootstrap-touchspin</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>bootstrap-v4-rtl</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://bootstrap.rtlcss.com" target="_blank">https://bootstrap.rtlcss.com</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>chart.js</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://www.chartjs.org" target="_blank">https://www.chartjs.org</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>chartist</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://gionkunz.github.io/chartist-js" target="_blank">https://gionkunz.github.io/chartist-js</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>chartist-plugin-tooltips</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://github.com/tmmdata/chartist-plugin-tooltip" target="_blank">https://github.com/tmmdata/chartist-plugin-tooltip</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>clockpicker</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://weareoutman.github.io/clockpicker" target="_blank">https://weareoutman.github.io/clockpicker</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>datatables</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://datatables.net" target="_blank">https://datatables.net</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>dropzone</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://www.dropzonejs.com" target="_blank">https://www.dropzonejs.com</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>flot</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://www.flotcharts.org" target="_blank">https://www.flotcharts.org</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>flot-spline</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://github.com/miloszfalinski/jquery.flot.spline" target="_blank">https://github.com/miloszfalinski/jquery.flot.spline</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>fullcalendar</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://fullcalendar.io" target="_blank">https://fullcalendar.io</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>highlightjs</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://highlightjs.org" target="_blank">https://highlightjs.org</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>jquery</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://jquery.com" target="_blank">https://jquery.com</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>jquery-asColor</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://github.com/thecreation/jquery-asColor" target="_blank">https://github.com/thecreation/jquery-asColor</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>jquery-asColorPicker</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://github.com/thecreation/jquery-asColorPicker" target="_blank">https://github.com/thecreation/jquery-asColorPicker</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>jquery-asGradient</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://www.npmtrends.com/jquery-asGradient" target="_blank">https://www.npmtrends.com/jquery-asGradient</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>jquery-sparkline</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://plugins.jquery.com/sparkline" target="_blank">https://plugins.jquery.com/sparkline</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>jquery-steps</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="http://www.jquery-steps.com" target="_blank">http://www.jquery-steps.com</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>jqueryui</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://jqueryui.com" target="_blank">https://jqueryui.com</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>jquery-validation</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://jqueryvalidation.org" target="_blank">https://jqueryvalidation.org</a></p>									
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>jqvmap</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://github.com/10bestdesign/jqvmap" target="_blank">https://github.com/10bestdesign/jqvmap</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>metismenu</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://github.com/onokumus/metismenu" target="_blank">https://github.com/onokumus/metismenu</a></p>	
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>moment</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://momentjs.com" target="_blank">https://momentjs.com</a></p>	
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>morris</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://morrisjs.github.io/morris.js" target="_blank">https://morrisjs.github.io/morris.js</a></p>	
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>nestable2</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://ramonsmit.github.io/Nestable2" target="_blank">https://ramonsmit.github.io/Nestable2</a></p>	
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>nouislider</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://refreshless.com/nouislider" target="_blank">https://refreshless.com/nouislider</a></p>	
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>peity</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="http://benpickles.github.io/peity" target="_blank">http://benpickles.github.io/peity</a></p>	
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>perfect-scrollbar</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://plugins.jquery.com/perfect-scrollbar" target="_blank">https://plugins.jquery.com/perfect-scrollbar</a></p>	
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>pickadate</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://amsul.ca/pickadate.js" target="_blank">https://amsul.ca/pickadate.js</a></p>	
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>raphael</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://github.com/DmitryBaranovskiy/raphael" target="_blank">https://github.com/DmitryBaranovskiy/raphael</a></p>	
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>select2</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://select2.org" target="_blank">https://select2.org</a></p>	
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>CkEditor</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://ckeditor.com/" target="_blank">https://ckeditor.com/</a></p>	
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>svganimation</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://github.com/maxwellito/vivus" target="_blank">https://github.com/maxwellito/vivus</a></p>	
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>sweetalert2</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://sweetalert2.github.io" target="_blank">https://sweetalert2.github.io</a></p>	
+							</div>
+						</div>
+					</li>
+					<li>	
+						<div class="row">
+							<div class="col-xs-4">
+								<p>toastr</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://github.com/CodeSeven/toastr" target="_blank">https://github.com/CodeSeven/toastr</a></p>	
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>wnumb</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://refreshless.com/wnumb" target="_blank">https://refreshless.com/wnumb</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col-xs-4">
+								<p>Lightgallery</p>
+							</div>
+							<div class="col-xs-8">
+								<p><a href="https://sachinchoolur.github.io/lightGallery/" target="_blank">https://sachinchoolur.github.io/lightGallery/</a></p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<hr/>
+			
+		<!-- HTML_STRUCTURE -->
+		<section class="app-brief" id="html_structure">
+			<div class="container left-align">
+				<div class="section-header">
+					<h2 class="dark-text">HTML Structure - </h2>
+					<p>All The Css and Js are added in the dz.php file under the config directory of root folder, there is multiple array of configurations, css and js in dz.config file. So css and js are included in default.blade.php(layout) File by running the loop of arrays from dz.php config file.Under the dz.php file the key of arrays of Css and Js is created by controller name and page name, Separated by '_' in the middle.when the page is open, get the controller name and page name in the default layout by helper and concate them with '_' in the middle of them and and run the loop for css and js.</p>
+				</div>
+				<h3>dz.php File</h3>
+				<img src="images/screenshot/1.png" alt="1"/>
+				<h3>Layout</h3>
+				<img src="images/screenshot/2.png" alt="1"/>
+				<div class="separator"></div>
+				<h3>Header</h3>
+				<img src="images/screenshot/3.png" alt="2"/>
+				<div class="separator"></div>
+				<div class="separator"></div>
+				<h3>Footer Section</h3>
+				<img src="images/screenshot/4.png" alt="4"/>
+				<div class="separator"></div>
+				<h3>Footer Essentials</h3>
+				<img src="images/screenshot/5.png" alt="5"/>
+			</div>
+		</section>
+		<hr/>
+			
+		<!-- Our Products -->
+		<section class="app-brief" id="our_product">
+			<div class="container left-align">
+				<div class="section-header">
+					<h2 class="dark-text">Our Products - </h2>
+				</div>
+				<div class="row other-theme">
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/0zjyE">
+								<img src="images/product/wp-beglide.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/0zjyE">
+										BeGlide: Corporate Business Consultant Agency WordPress Theme 
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/NE0QP">
+								<img src="images/product/wp-bheem.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/NE0QP">
+										Bheem : Construction WordPress Theme RTL Ready 
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/WEdAZ">
+								<img src="images/product/wp-beautyzone.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/WEdAZ">
+										BeautyZone: Beauty Spa Salon WordPress Theme
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/6MAKK">
+								<img src="images/product/wp-bucklin.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href=" ">
+										Bucklin - Creative Personal Blog WordPress Theme 
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/oJLNY">
+								<img src="images/product/archia.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/oJLNY">
+										Archia - Architecture and Interior Design RTL Ready Template
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/XEnGb">
+								<img src="images/product/agency.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/XEnGb">
+										Agency | Creative Multipurpose Bootstrap 4 HTML Template
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/3zZ9y">
+								<img src="images/product/constructzilla .png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/3zZ9y">
+										ConstructZilla : Construction, Renovation & Building HTML Template With RTL Ready
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/ZEKLg">
+								<img src="images/product/cargozone.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/ZEKLg">
+										CargoZone - Transport, Cargo, Logistics & Business Multipurpose HTML Template
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/JZVO7">
+								<img src="images/product/yogazone.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/JZVO7">
+										YogaZone: Yoga, Payment & Meditation Mobile Responsive Bootstrap Html Template
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/0zjxY">
+								<img src="images/product/gardanzone.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/0zjxY">
+										GardenZone | Agriculture, Gardening & Landscaping Responsive HTML Template
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/VdYZJ">
+								<img src="images/product/construct.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/VdYZJ">
+										Construct : Construction, Building & Maintenance Business Template
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/REnO2">
+								<img src="images/product/butterfly.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/REnO2">
+										ButterFly : Spa, Beauty Salon & Massage Template
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/bQNDm">
+								<img src="images/product/curv.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/bQNDm">
+										CURV: One Page Multipurpose Parallax
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/zObPW">
+								<img src="images/product/beautyzone.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/zObPW">
+										BeautyZone: Beauty Spa Salon HTML Template
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/3zZmk">
+								<img src="images/product/sportszone.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/3zZmk">
+										SportsZone: Sports Club, New & Game Magazine Mobile Responsive Bootstrap HTML Template
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/3zZmk">
+								<img src="images/product/medico.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/3zZmk">
+										MediCo.- Hospital and Doctor Clinic HTML Template
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/g56Wg">
+								<img src="images/product/jobboard.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/g56Wg">
+										Job Board: Job Portal | Job WebSite HTML Wireframe
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/1d1Nm">
+								<img src="images/product/industry.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/1d1Nm">
+										Industry - Factory & Industrial HTML Template
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/qoKKy">
+								<img src="images/product/lemars.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/qoKKy">
+										Le Mars - Minimal Personal Blog HTML Template
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/A53RN">
+								<img src="images/product/bizmap.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/A53RN">
+										BizMap - Business Directory Listing HTML Template
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/EYb39">
+								<img src="images/product/umang_academy.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/EYb39">
+										Umang Academy : Kindergarden, Kids Play School Template
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/EAeOQ">
+								<img src="images/product/kelsey.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/EAeOQ">
+										Kelsey - Creative Personal Blog HTML Template
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/xoqvR">
+								<img src="images/product/bucklin.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/xoqvR">
+										Bucklin - Creative Personal Blog HTML Template
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 m-b30">
+						<div class="product-port-bx">
+							<a target="_blank" href="https://1.envato.market/WvZqM">
+								<img src="images/product/smartclass.png"/>
+							</a>
+							<div class="product-info">
+								<h4 class="title">
+									<a target="_blank" href="https://1.envato.market/WvZqM">
+										SmartClass | Education Agency Choching & Tuition HTML Template
+									</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- Need Help -->
+		<section class="app-brief" id="custom_work" style="background-image: url(images/bg1.png); background-position: left center;">
+			<div class="container left-align">
+				<div class="col-md-12 text-center custom-info">
+					<h2 class="m-t0">Do You Need Help To Customization</h2>
+					<h3 class="text-primary">After Purchase A Template...</h3>
+					<h4>You Will Start Customizing According Your Requirement<br/> <span class="text-primary">BUT</span> What If You Don't Know</h4>
+					<h3 class="text-black">SOLUTION IS <span class="text-primary"><u>HIRE DexignZone</u></span></h3>
+					<div class="hire">
+						<h4><span class="text-black">Hire Same Team For </span> <span class="text-primary">Quality Customization</span></h4>
+						<ul>
+							<li>We Will Customize Template According To Your Requirement</li>
+							<li>We Will Upload On Server And Make Sure Your Website is Live</li>
+						</ul>
+						<div class="gmail-box">
+							<a href="skype:rahulxarma?chat" class="gmail"><i class="fa fa-skype"></i>rahulxarma</a>
+							<a target="_blank" href="/cdn-cgi/l/email-protection#5c383924353b32263332392f1c3b313d3530723f3331" class="gmail"><i class="fa fa-envelope"></i> <span class="__cf_email__" data-cfemail="80e4e5f8e9e7eefaefeee5f3c0e7ede1e9ecaee3efed">[email&#160;protected]</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- Change Log -->
+		<section class="app-brief change-log" id="version_history">
+			<div class="container left-align">
+				<div class="section-header">
+					<h2 class="dark-text">Version History - <small class="topbutton"><a href="#tableofcontent">#back to top</a></small></h2>
+				</div>
+				<h3> 30 August 2023 </h3>
+				<ul>
+					<li>New - Created & Upload Fasto</li>
+				</ul>
+			</div>
+		</section>
+			
+		<!-- Footer -->
+		<footer class="app-brief grey-bg">
+			<div class="container">
+				<p class="copyright">
+					© 2023 DexignZone , All Rights Reserved
+				</p>
+			</div>
+		</footer>
+	
+	</div>
+</div>
+	
+<!-- JavaScript -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/jquery.scrollTo.min.js"></script>
+<script src="js/jquery.localScroll.min.js"></script>
+<script src="js/load.js"></script>
+<script src="js/custom.js"></script>
+<script src="js/scrollbar.min.js"></script>
+<script src="plugins/jstree/dist/jstree.min.js"></script>
+<script id="DZScript" src="https://dzassets.s3.amazonaws.com/w3-global-2.0.js?token=W-bc158c9432442ba6ce2b2373b5576522"></script>
+<script>
+// prettyPhoto
+jQuery(document).ready(function(){
+	jQuery('.dzClickload').click(function(){
+		jQuery('.dzClickload').removeClass('active');
+		jQuery(this).addClass('active');
+	});
+	
+	jQuery(".content-scroll").mCustomScrollbar({
+		setWidth:false,
+		setHeight:false,
+		axis:"y"
+	});	
+		
+	$(".full-height").css("height", $(window).height());
+	
+	$("#dz_tree").jstree({
+		"core": {
+			"themes": {
+				"responsive": false
+			}
+		},
+		"types": {
+			"default": {
+				"icon": "fa fa-folder"
+			},
+			"file": {
+				"icon": "fa fa-file-text"
+			}
+		},
+		"plugins": ["types"]
+	});
+});
+</script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $(".navbar-nav a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      });
+    } // End if
+  });
+});
+</script>
+
+</body>
+</html>

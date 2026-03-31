@@ -84,6 +84,11 @@ export default function PortfolioPage() {
             <div className={styles.sectionIntro}>
               <h2>Our Most Recent Works</h2>
               <p>A quick spotlight on a few featured projects before you browse the full collection.</p>
+              <div className={styles.centerAction}>
+                <Link href="/work" className={styles.secondaryAction}>
+                  More Works
+                </Link>
+              </div>
             </div>
             <div className={styles.recentGrid}>
               {recentWorks.map((item) => (

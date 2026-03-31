@@ -145,6 +145,31 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(37, 99, 235, 0.75) rgba(219, 234, 254, 0.65);
+}
+
+html::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+html::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, rgba(239, 246, 255, 0.95) 0%, rgba(219, 234, 254, 0.9) 100%);
+  border-radius: 999px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.95) 0%, rgba(29, 78, 216, 0.95) 100%);
+  border: 2px solid rgba(239, 246, 255, 0.95);
+  border-radius: 999px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(37, 99, 235, 1) 0%, rgba(30, 64, 175, 1) 100%);
+}
+
 /* ===== TYPOGRAPHY SYSTEM ===== */
 
 h1, h2, h3, h4, h5, h6 {

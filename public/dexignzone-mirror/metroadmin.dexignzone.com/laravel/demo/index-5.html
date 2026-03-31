@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Laravel | Dashboard-5</title>
+	
+	<meta name="description" content="Some description for the page"/>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="https://metroadmin.dexignzone.com/laravel/demo/images/favicon.png">
+	
+	
+	
+	 
+						<link href="https://metroadmin.dexignzone.com/laravel/demo/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet" type="text/css"/>
+						<link href="https://metroadmin.dexignzone.com/laravel/demo/vendor/fullcalendar/css/fullcalendar.min.css" rel="stylesheet" type="text/css"/>
+						<link href="https://metroadmin.dexignzone.com/laravel/demo/vendor/chartist/css/chartist.min.css" rel="stylesheet" type="text/css"/>
+				
+
+	
+	 
+					<link href="https://metroadmin.dexignzone.com/laravel/demo/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
+					<link href="https://metroadmin.dexignzone.com/laravel/demo/css/style.css" rel="stylesheet" type="text/css"/>
+				
+
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="https://metroadmin.dexignzone.com/laravel/demo/index" class="brand-logo">
+							<img class="logo-abbr" src="https://metroadmin.dexignzone.com/laravel/demo/images/logo-white.png" alt="">
+						                <img class="logo-compact" src="https://metroadmin.dexignzone.com/laravel/demo/images/logo-text-white.png" alt="">
+                <img class="brand-title" src="https://metroadmin.dexignzone.com/laravel/demo/images/logo-text-white.png" alt="">
+				
+            </a>
+
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        
+		<div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="search_bar dropdown">
+                                <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+                                    <i class="mdi mdi-magnify"></i>
+                                </span>
+                                <div class="dropdown-menu p-0 m-0">
+                                    <form>
+                                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="navbar-nav header-right">
+                            <li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link bell ai-icon" href="#" role="button" data-toggle="dropdown">
+                                    <svg id="icon-user" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
+										<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+										<path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+									</svg>
+                                    <div class="pulse-css"></div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <ul class="list-unstyled">
+                                        <li class="media dropdown-item">
+                                            <span class="success"><i class="ti-user"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>Martin</strong> has added a <strong>customer</strong> Successfully
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="primary"><i class="ti-shopping-cart"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="danger"><i class="ti-bookmark"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="primary"><i class="ti-heart"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="success"><i class="ti-image"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong> James.</strong> has added a<strong>customer</strong> Successfully
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                    </ul>
+                                    <a class="all-notification" href="#">See all notifications <i
+                                            class="ti-arrow-right"></i></a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                    <img src="https://metroadmin.dexignzone.com/laravel/demo/images/profile/pic1.jpg" width="20" alt=""/>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="https://metroadmin.dexignzone.com/laravel/demo/app-profile" class="dropdown-item ai-icon">
+                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                        <span class="ml-2">Profile </span>
+                                    </a>
+                                    <a href="https://metroadmin.dexignzone.com/laravel/demo/email-inbox" class="dropdown-item ai-icon">
+                                        <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        <span class="ml-2">Inbox </span>
+                                    </a>
+                                    <a href="https://metroadmin.dexignzone.com/laravel/demo/page-login" class="dropdown-item ai-icon">
+                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                                        <span class="ml-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>		
+		
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="deznav">
+            <div class="deznav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label first">Main Menu</li>
+                    <li class="mega-menu mega-menu-lg"><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<svg id="icon-home" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+							<span class="nav-text">Dashboard</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/index">Dashboard 1</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/index-2">Dashboard 2</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/index-3">Dashboard 3</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/index-4">Dashboard 4</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/index-5">Dashboard 5</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/index-6">Dashboard 6</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/medical">Medical Dashboard</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/medical/index-2">Patient Dashboard</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/medical/index-3">Doctor Dashboard</a></li>
+							<li><a href="https://metroadmin.dexignzone.com/laravel/demo/education/index">Education Dashboard</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/education/index-2">Management Dashboard</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/education/index-3">Student Dashboard</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label">Apps</li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<svg id="icon-apps" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+							<span class="nav-text">Apps</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/app-profile">Profile</a></li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="https://metroadmin.dexignzone.com/laravel/demo/email-compose">Compose</a></li>
+                                    <li><a href="https://metroadmin.dexignzone.com/laravel/demo/email-inbox">Inbox</a></li>
+                                    <li><a href="https://metroadmin.dexignzone.com/laravel/demo/email-read">Read</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/app-calender">Calendar</a></li>
+							<li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Shop</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="https://metroadmin.dexignzone.com/laravel/demo/ecom-product-grid">Product Grid</a></li>
+									<li><a href="https://metroadmin.dexignzone.com/laravel/demo/ecom-product-list">Product List</a></li>
+									<li><a href="https://metroadmin.dexignzone.com/laravel/demo/ecom-product-detail">Product Details</a></li>
+									<li><a href="https://metroadmin.dexignzone.com/laravel/demo/ecom-product-order">Order</a></li>
+									<li><a href="https://metroadmin.dexignzone.com/laravel/demo/ecom-checkout">Checkout</a></li>
+									<li><a href="https://metroadmin.dexignzone.com/laravel/demo/ecom-invoice">Invoice</a></li>
+									<li><a href="https://metroadmin.dexignzone.com/laravel/demo/ecom-customers">Customers</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<svg id="icon-charts" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg>
+							<span class="nav-text">Charts</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/chart-flot">Flot</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/chart-morris">Morris</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/chart-chartjs">Chartjs</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/chart-chartist">Chartist</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/chart-sparkline">Sparkline</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/chart-peity">Peity</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label">Components</li>
+                    <li class="mega-menu mega-menu-xl"><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<svg id="icon-bootstrap" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+							<span class="nav-text">Bootstrap</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/ui-accordion">Accordion</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/ui-alert">Alert</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/ui-badge">Badge</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/ui-button">Button</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/ui-modal">Modal</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/ui-button-group">Button Group</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/ui-list-group">List Group</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/ui-media-object">Media Object</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/ui-card">Cards</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/ui-carousel">Carousel</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/ui-dropdown">Dropdown</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/ui-popover">Popover</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/ui-progressbar">Progressbar</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/ui-tab">Tab</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/ui-typography">Typography</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/ui-pagination">Pagination</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/ui-grid">Grid</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<svg id="icon-plugins" viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+							<span class="nav-text">Plugins</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/uc-select2">Select 2</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/uc-nestable">Nestedable</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/uc-noui-slider">Noui Slider</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/uc-sweetalert">Sweet Alert</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/uc-toastr">Toastr</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/map-jqvmap">Jqv Map</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://metroadmin.dexignzone.com/laravel/demo/widget-basic" class="ai-icon" aria-expanded="false">
+							<svg id="icon-widget" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg>
+							<span class="nav-text">Widget</span>
+						</a></li>
+                    <li class="nav-label">Forms</li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<svg id="icon-forms" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+							<span class="nav-text">Forms</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/form-element">Form Elements</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/form-wizard">Wizard</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/form-editor-summernote">Summernote</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/form-pickers">Pickers</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/form-validation-jquery">Jquery Validate</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label">Table</li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<svg id="icon-table" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-server"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6" y2="6"></line><line x1="6" y1="18" x2="6" y2="18"></line></svg>
+							<span class="nav-text">Table</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/table-bootstrap-basic">Bootstrap</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/table-datatable-basic">Datatable</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-label">Extra</li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<svg id="icon-pages" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+							<span class="nav-text">Pages</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/page-register">Register</a></li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/page-login">Login</a></li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="https://metroadmin.dexignzone.com/laravel/demo/page-error-400">Error 400</a></li>
+                                    <li><a href="https://metroadmin.dexignzone.com/laravel/demo/page-error-403">Error 403</a></li>
+                                    <li><a href="https://metroadmin.dexignzone.com/laravel/demo/page-error-404">Error 404</a></li>
+                                    <li><a href="https://metroadmin.dexignzone.com/laravel/demo/page-error-500">Error 500</a></li>
+                                    <li><a href="https://metroadmin.dexignzone.com/laravel/demo/page-error-503">Error 503</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="https://metroadmin.dexignzone.com/laravel/demo/page-lock-screen">Lock Screen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+		
+		
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <!-- row -->
+            
+            <div class="container-fluid">
+                <div class="row">
+					<div class="col-xl-3 col-xxl-3 col-lg-12 col-md-12">
+						<div class="row">
+							<div class="col-xl-12 col-lg-4 col-md-4 col-sm-6">
+								<div class="card bg-purpal">
+									<div class="card-body pb-0">
+										<div class="row">
+											<div class="col">
+												<h5 class="text-white">Power</h5>
+												<span class="text-white">2017.1.20</span>
+											</div>
+											<div class="col text-right">
+												<h5 class="text-white"><i class="fa fa-caret-up"></i> 260</h5>
+												<span class="text-white">+12.5(2.8%)</span>
+											</div>
+										</div>
+									</div>
+									<div class="chart-wrapper">
+										<canvas id="chart_widget_1" height="122"></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-12 col-lg-4 col-md-4 col-sm-6">
+								<div class="card">
+									<div class="card-body pb-0">
+										<div class="row">
+											<div class="col">
+												<h5>3650</h5>
+												<span>VIEWS OF YOUR PROJECT</span>
+											</div>
+										</div>
+									</div>
+									<div class="chart-wrapper">
+										<canvas id="chart_widget_2" height="122"></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-12 col-lg-4 col-md-4 col-sm-12">
+								<div class="card">
+									<div class="card-body">
+										<h5>Latency</h5>
+									</div>
+									<div class="chart-wrapper">
+										<div id="chart_widget_17"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+                    <div class="col-xl-9 col-xxl-9 col-lg-12 col-md-12">
+                        <div class="row">
+							<div class="col-lg-4">
+								<div class="row">
+									<div class="col-12">
+										<div class="card">
+											<div class="card-body">
+												<h4 class="card-intro-title">Calendar</h4>
+
+												<div class="">
+													<div id="external-events" class="my-3">
+														<p>Drag and drop your event or click in the calendar</p>
+														<div class="external-event" data-class="bg-primary"><i class="fa fa-move"></i>New Theme Release</div>
+														<div class="external-event" data-class="bg-success"><i class="fa fa-move"></i>My Event
+														</div>
+														<div class="external-event" data-class="bg-warning"><i class="fa fa-move"></i>Meet manager</div>
+														<div class="external-event" data-class="bg-danger"><i class="fa fa-move"></i>Budgut</div>
+														<div class="external-event" data-class="bg-success"><i class="fa fa-move"></i>Meet team</div>
+														<div class="external-event" data-class="bg-info"><i class="fa fa-move"></i>Sales</div>
+														<div class="external-event" data-class="bg-warning"><i class="fa fa-move"></i>Meet manager</div>
+														<div class="external-event" data-class="bg-dark"><i class="fa fa-move"></i>Create New theme</div>
+													</div>
+													<!-- checkbox -->
+													<div class="checkbox custom-control checkbox-event custom-checkbox pt-3 pb-5">
+														<input type="checkbox" class="custom-control-input" id="drop-remove">
+														<label class="custom-control-label" for="drop-remove">Remove After Drop</label>
+													</div>
+													<a href="javascript:void()" data-toggle="modal" data-target="#add-category" class="btn btn-primary btn-event w-100">
+														<span class="align-middle"><i class="ti-plus"></i></span> Create New
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="widget-stat card">
+											<div class="card-body">
+												<div class="media ai-icon">
+													<span class="mr-3">
+														<!-- <i class="ti-user"></i> -->
+														<svg id="icon-customers" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+															<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+															<circle cx="12" cy="7" r="4"></circle>
+														</svg>
+													</span>
+													<div class="media-body">
+														<p class="mb-1">Customers</p>
+														<h4 class="mb-0">328.50K</h4>
+														<span class="badge badge-primary">+3.5%</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								 
+							</div>
+							<div class="col-lg-8">
+								<div class="card">
+									<div class="card-body">
+										<div id="calendar" class="app-fullcalendar"></div>
+									</div>
+								</div>
+							</div>
+							<!-- BEGIN MODAL -->
+							<div class="modal fade none-border" id="event-modal">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h4 class="modal-title"><strong>Add New Event</strong></h4>
+										</div>
+										<div class="modal-body"></div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-success save-event waves-effect waves-light">Create
+												event</button>
+
+											<button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Modal Add Category -->
+							<div class="modal fade none-border" id="add-category">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h4 class="modal-title"><strong>Add a category</strong></h4>
+										</div>
+										<div class="modal-body">
+											<form>
+												<div class="row">
+													<div class="col-md-6">
+														<label class="control-label">Category Name</label>
+														<input class="form-control form-white" placeholder="Enter name" type="text" name="category-name">
+													</div>
+													<div class="col-md-6">
+														<label class="control-label">Choose Category Color</label>
+														<select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
+															<option value="success">Success</option>
+															<option value="danger">Danger</option>
+															<option value="info">Info</option>
+															<option value="pink">Pink</option>
+															<option value="primary">Primary</option>
+															<option value="warning">Warning</option>
+														</select>
+													</div>
+												</div>
+											</form>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Save</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>
+                    <div class="col-xl-8 col-xxl-8 col-lg-8 col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Visitors Country</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-8">
+                                        <div id="world-map"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-xxl-4 col-lg-4 col-md-6">
+                        <div class="card active_users">
+                            <div class="card-header">
+                                <h4 class="card-title">Active Users</h4>
+                            </div>
+                            <div class="card-body pt-0">
+                                <span id="counter"></span>
+                                <canvas id="activeUser"></canvas>
+                                <div class="list-group-flush mt-4">
+                                    <div class="list-group-item bg-transparent d-flex justify-content-between px-0 py-1 font-weight-semi-bold border-top-0" style="border-color: rgba(255, 255, 255, 0.15)">
+                                        <p class="mb-0">Top Active Pages</p>
+                                        <p class="mb-0">Active Users</p>
+                                    </div>
+                                    <div class="list-group-item bg-transparent d-flex justify-content-between px-0 py-1" style="border-color: rgba(255, 255, 255, 0.05)">
+                                        <p class="mb-0">/bootstrap-themes/</p>
+                                        <p class="mb-0">3</p>
+                                    </div>
+                                    <div class="list-group-item bg-transparent d-flex justify-content-between px-0 py-1" style="border-color: rgba(255, 255, 255, 0.05)">
+                                        <p class="mb-0">/tags/html5/</p>
+                                        <p class="mb-0">3</p>
+                                    </div>
+                                    <div class="list-group-item bg-transparent d-xxl-flex justify-content-between px-0 py-1 d-none" style="border-color: rgba(255, 255, 255, 0.05)">
+                                        <p class="mb-0">/</p>
+                                        <p class="mb-0">2</p>
+                                    </div>
+                                    <div class="list-group-item bg-transparent d-xxl-flex justify-content-between px-0 py-1 d-none" style="border-color: rgba(255, 255, 255, 0.05)">
+                                        <p class="mb-0">/preview/falcon/dashboard/</p>
+                                        <p class="mb-0">2</p>
+                                    </div>
+                                    <div class="list-group-item bg-transparent d-flex justify-content-between px-0 py-1" style="border-color: rgba(255, 255, 255, 0.05)">
+                                        <p class="mb-0">/100-best-themes...all-time/</p>
+                                        <p class="mb-0">1</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-xxl-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Recent Purchases</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive recentOrderTable">
+                                    <table class="table verticle-middle table-responsive-md">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">
+                                                    <div class="custom-control custom-checkbox">
+														<input type="checkbox" class="custom-control-input" id="checkAll">
+														<label class="custom-control-label" for="checkAll"></label>
+													</div>
+                                                </th>
+                                                <th scope="col">Product</th>
+                                                <th scope="col">Customer</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Price</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="custom-control custom-checkbox">
+														<input type="checkbox" class="custom-control-input" id="checkbox2">
+														<label class="custom-control-label" for="checkbox2"></label>
+													</div>
+                                                </td>
+                                                <td>
+                                                    Gray Dashboard Template
+                                                </td>
+                                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="680d10090518040d280d10090518040d460b0705">[email&#160;protected]</a></td>
+                                                <td>
+                                                    <img width="22" src="https://metroadmin.dexignzone.com/laravel/demo/images/avatar/1.png" alt="">
+                                                    <span class="ml-2">John Doe</span>
+                                                </td>
+                                                <td>
+                                                    <i class="fa fa-circle text-success"></i>
+                                                    <span class="ml-2">Successful</span>
+                                                </td>
+                                                <td>$59</td>
+                                                <td>
+                                                    <div class="dropdown custom-dropdown mb-0">
+                                                        <div data-toggle="dropdown">
+                                                            <i class="fa fa-ellipsis-v"></i>
+                                                        </div>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a class="dropdown-item" href="#">Accept Order</a>
+                                                            <a class="dropdown-item" href="https://metroadmin.dexignzone.com/laravel/demo/ecom-invoice">Order Details</a>
+                                                            <a class="dropdown-item text-danger" href="#">Cancel
+                                                                Order</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="custom-control custom-checkbox">
+														<input type="checkbox" class="custom-control-input" id="checkbox3">
+														<label class="custom-control-label" for="checkbox3"></label>
+													</div>
+                                                </td>
+                                                <td>
+                                                    MetroAdmin Pro Dashboard
+                                                </td>
+                                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c1a4b9a0acb1ada481a4b9a0acb1ada4efa2aeac">[email&#160;protected]</a></td>
+                                                <td>
+                                                    <img width="22" src="https://metroadmin.dexignzone.com/laravel/demo/images/avatar/2.png" alt="">
+                                                    <span class="ml-2">John Doe</span>
+                                                </td>
+                                                <td>
+                                                    <i class="fa fa-circle text-warning"></i>
+                                                    <span class="ml-2">Pending</span>
+                                                </td>
+                                                <td>$59</td>
+                                                <td>
+                                                    <div class="dropdown custom-dropdown mb-0">
+                                                        <div data-toggle="dropdown">
+                                                            <i class="fa fa-ellipsis-v"></i>
+                                                        </div>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a class="dropdown-item" href="#">Accept Order</a>
+                                                            <a class="dropdown-item" href="https://metroadmin.dexignzone.com/laravel/demo/ecom-invoice">Order Details</a>
+                                                            <a class="dropdown-item text-danger" href="#">Cancel
+                                                                Order</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="custom-control custom-checkbox">
+														<input type="checkbox" class="custom-control-input" id="checkbox4">
+														<label class="custom-control-label" for="checkbox4"></label>
+													</div>
+                                                </td>
+                                                <td>
+                                                    Landing Pro Template
+                                                </td>
+                                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="412439202c312d24012439202c312d246f222e2c">[email&#160;protected]</a></td>
+                                                <td>
+                                                    <img width="22" src="https://metroadmin.dexignzone.com/laravel/demo/images/avatar/3.png" alt="">
+                                                    <span class="ml-2">John Doe</span>
+                                                </td>
+                                                <td>
+                                                    <i class="fa fa-circle text-success"></i>
+                                                    <span class="ml-2">Successful</span>
+                                                </td>
+                                                <td>$59</td>
+                                                <td>
+                                                    <div class="dropdown custom-dropdown mb-0">
+                                                        <div data-toggle="dropdown">
+                                                            <i class="fa fa-ellipsis-v"></i>
+                                                        </div>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a class="dropdown-item" href="#">Accept Order</a>
+                                                            <a class="dropdown-item" href="https://metroadmin.dexignzone.com/laravel/demo/ecom-invoice">Order Details</a>
+                                                            <a class="dropdown-item text-danger" href="#">Cancel
+                                                                Order</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="custom-control custom-checkbox">
+														<input type="checkbox" class="custom-control-input" id="checkbox5">
+														<label class="custom-control-label" for="checkbox5"></label>
+													</div>
+                                                </td>
+                                                <td>
+                                                    Neuon Dashboard HTML
+                                                </td>
+                                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cca9b4ada1bca0a98ca9b4ada1bca0a9e2afa3a1">[email&#160;protected]</a></td>
+                                                <td>
+                                                    <img width="22" src="https://metroadmin.dexignzone.com/laravel/demo/images/avatar/4.png" alt="">
+                                                    <span class="ml-2">John Doe</span>
+                                                </td>
+                                                <td>
+                                                    <i class="fa fa-circle text-warning"></i>
+                                                    <span class="ml-2">Pending</span>
+                                                </td>
+                                                <td>$59</td>
+                                                <td>
+                                                    <div class="dropdown custom-dropdown mb-0">
+                                                        <div data-toggle="dropdown">
+                                                            <i class="fa fa-ellipsis-v"></i>
+                                                        </div>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a class="dropdown-item" href="#">Accept Order</a>
+                                                            <a class="dropdown-item" href="https://metroadmin.dexignzone.com/laravel/demo/ecom-invoice">Order Details</a>
+                                                            <a class="dropdown-item text-danger" href="#">Cancel
+                                                                Order</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="custom-control custom-checkbox">
+														<input type="checkbox" class="custom-control-input" id="checkbox6">
+														<label class="custom-control-label" for="checkbox6"></label>
+													</div>
+                                                </td>
+                                                <td>
+                                                    Gray Dashboard Template
+                                                </td>
+                                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6d08150c001d01082d08150c001d0108430e0200">[email&#160;protected]</a></td>
+                                                <td>
+                                                    <img width="22" src="https://metroadmin.dexignzone.com/laravel/demo/images/avatar/5.png" alt="">
+                                                    <span class="ml-2">John Doe</span>
+                                                </td>
+                                                <td>
+                                                    <i class="fa fa-circle text-danger"></i>
+                                                    <span class="ml-2">Canceled</span>
+                                                </td>
+                                                <td>$59</td>
+                                                <td>
+                                                    <div class="dropdown custom-dropdown mb-0">
+                                                        <div data-toggle="dropdown">
+                                                            <i class="fa fa-ellipsis-v"></i>
+                                                        </div>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a class="dropdown-item" href="#">Accept Order</a>
+                                                            <a class="dropdown-item" href="https://metroadmin.dexignzone.com/laravel/demo/ecom-invoice">Order Details</a>
+                                                            <a class="dropdown-item text-danger" href="#">Cancel
+                                                                Order</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-xxl-4 col-lg-4 col-md-6 col-sm-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Timeline</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="widget-timeline">
+                                    <ul class="timeline">
+                                        <li>
+                                            <div class="timeline-badge primary"></div>
+                                            <a class="timeline-panel text-muted" href="#">
+                                                <span>10 minutes ago</span>
+                                                <h6 class="m-t-5">Youtube, a video-sharing website, goes live.</h6>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <div class="timeline-badge warning">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="#">
+                                                <span>20 minutes ago</span>
+                                                <h6 class="m-t-5">Mashable, a news website and blog, goes live.</h6>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <div class="timeline-badge danger">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="#">
+                                                <span>30 minutes ago</span>
+                                                <h6 class="m-t-5">Google acquires Youtube.</h6>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <div class="timeline-badge success">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="#">
+                                                <span>15 minutes ago</span>
+                                                <h6 class="m-t-5">StumbleUpon is acquired by eBay. </h6>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <div class="timeline-badge warning">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="#">
+                                                <span>20 minutes ago</span>
+                                                <h6 class="m-t-5">Mashable, a news website and blog, goes live.</h6>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <div class="timeline-badge dark">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="#">
+                                                <span>20 minutes ago</span>
+                                                <h6 class="m-t-5">Mashable, a news website and blog, goes live.</h6>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <div class="timeline-badge info">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="#">
+                                                <span>30 minutes ago</span>
+                                                <h6 class="m-t-5">Google acquires Youtube.</h6>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-xxl-4 col-lg-4 col-md-6 col-sm-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Todo</h4>
+                            </div>
+                            <div class="card-body px-0">
+                                <div class="todo-list">
+                                    <div class="tdl-holder">
+                                        <div class="tdl-content widget-todo">
+                                            <ul id="todo_list">
+                                                <li><label><input type="checkbox"><i></i><span>Get up</span><a href='#'
+                                                            class="ti-trash"></a></label></li>
+                                                <li><label><input type="checkbox" checked><i></i><span>Stand up</span><a
+                                                            href='#' class="ti-trash"></a></label></li>
+                                                <li><label><input type="checkbox"><i></i><span>Don't give up the
+                                                            fight.</span><a href='#' class="ti-trash"></a></label></li>
+                                                <li><label><input type="checkbox" checked><i></i><span>Do something
+                                                            else</span><a href='#' class="ti-trash"></a></label></li>
+                                                <li><label><input type="checkbox" checked><i></i><span>Stand up</span><a
+                                                            href='#' class="ti-trash"></a></label></li>
+                                                <li><label><input type="checkbox"><i></i><span>Don't give up the
+                                                            fight.</span><a href='#' class="ti-trash"></a></label></li>
+                                            </ul>
+                                        </div>
+                                        <div class="px-4">
+                                            <input type="text" class="tdl-new form-control" placeholder="Write new item and hit 'Enter'...">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-xxl-4 col-lg-4 col-sm-12 col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Product Sold</h4>
+                                <div class="card-action">
+                                    <div class="dropdown custom-dropdown">
+                                        <div data-toggle="dropdown">
+                                            <i class="ti-more-alt"></i>
+                                        </div>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="#">Option 1</a>
+                                            <a class="dropdown-item" href="#">Option 2</a>
+                                            <a class="dropdown-item" href="#">Option 3</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart py-4">
+                                    <canvas id="sold-product"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+			
+			
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        
+		<div class="footer">
+	<div class="copyright">
+		<p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">DexignZone</a> 2020</p>
+	</div>
+</div>		
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+		<!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://metroadmin.dexignzone.com/laravel/demo/vendor/global/global.min.js" type="text/javascript"></script>
+				<script src="https://metroadmin.dexignzone.com/laravel/demo/vendor/bootstrap-select/dist/js/bootstrap-select.min.js" type="text/javascript"></script>
+				<script src="https://metroadmin.dexignzone.com/laravel/demo/vendor/svganimation/vivus.min.js" type="text/javascript"></script>
+				<script src="https://metroadmin.dexignzone.com/laravel/demo/vendor/svganimation/svg.animation.js" type="text/javascript"></script>
+				<script src="https://metroadmin.dexignzone.com/laravel/demo/js/styleSwitcher.js" type="text/javascript"></script>
+				<script src="https://metroadmin.dexignzone.com/laravel/demo/js/custom.min.js" type="text/javascript"></script>
+					<script src="https://metroadmin.dexignzone.com/laravel/demo/vendor/jqvmap/js/jquery.vmap.min.js" type="text/javascript"></script>
+				<script src="https://metroadmin.dexignzone.com/laravel/demo/vendor/jqvmap/js/jquery.vmap.world.js" type="text/javascript"></script>
+				<script src="https://metroadmin.dexignzone.com/laravel/demo/vendor/circle-progress/circle-progress.min.js" type="text/javascript"></script>
+				<script src="https://metroadmin.dexignzone.com/laravel/demo/vendor/chart.js/Chart.bundle.min.js" type="text/javascript"></script>
+				<script src="https://metroadmin.dexignzone.com/laravel/demo/vendor/flot/jquery.flot.js" type="text/javascript"></script>
+				<script src="https://metroadmin.dexignzone.com/laravel/demo/vendor/flot/jquery.flot.resize.js" type="text/javascript"></script>
+				<script src="https://metroadmin.dexignzone.com/laravel/demo/vendor/chartist/js/chartist.min.js" type="text/javascript"></script>
+				<script src="https://metroadmin.dexignzone.com/laravel/demo/vendor/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js" type="text/javascript"></script>
+				<script src="https://metroadmin.dexignzone.com/laravel/demo/js/dashboard/dashboard-5.js" type="text/javascript"></script>
+				<script src="https://metroadmin.dexignzone.com/laravel/demo/vendor/jqueryui/js/jquery-ui.min.js" type="text/javascript"></script>
+				<script src="https://metroadmin.dexignzone.com/laravel/demo/vendor/moment/moment.min.js" type="text/javascript"></script>
+				<script src="https://metroadmin.dexignzone.com/laravel/demo/vendor/fullcalendar/js/fullcalendar.min.js" type="text/javascript"></script>
+				<script src="https://metroadmin.dexignzone.com/laravel/demo/js/plugins-init/fullcalendar-init.js" type="text/javascript"></script>
+		
+	</body>
+</html>

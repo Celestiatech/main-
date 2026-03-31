@@ -1,0 +1,19 @@
+/*=========================
+	All css
+==========================*/
+@import url("../plugins/bootstrap/css/bootstrap.min.css");
+@import url("../plugins/fontawesome/css/font-awesome.min.css");
+@import url("../plugins/themify/themify-icons.css");
+@import url("../plugins/magnific-popup/magnific-popup.css");
+
+/*=========================
+	All css
+==========================*/
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,600,600i,700,700i|Maven+Pro:400,500,700,900|Inconsolata:400,700');
+ 
+
+/* 
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Maven Pro', sans-serif;
+	font-family: 'Inconsolata', monospace;
+ */
