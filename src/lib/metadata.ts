@@ -9,14 +9,14 @@ export const siteConfig = {
   name: "Celestiatech",
   shortName: "Celestiatech",
   tagline: "Premium IT & Software Development Company",
-  description: "Elite IT solutions with neo-glassmorphism design. Specializing in web development, mobile apps, AI solutions, and blockchain technology. 12+ years of experience serving 2,500+ clients worldwide.",
-  url: "https://celestiatech.in",
+  description: "Premium web, mobile, AI, and blockchain development services backed by 12+ years of experience and 2,500+ successful client engagements worldwide.",
+  url: "https://www.celestiatechco.in",
   ogImage: "/brand/og-image.png",
   logo: {
     primary: "/brand/logo.svg",
     dark: "/brand/logo-dark.svg",
     light: "/brand/logo-light.svg",
-    favicon: "/favicon.ico",
+    favicon: "/favicon.svg",
     social: "/brand/social-logo.png",
   },
   contact: {
@@ -97,12 +97,19 @@ export function generateMetadata(page?: {
     icons: {
       icon: [
         { url: "/favicon.ico", sizes: "any" },
-        { url: "/icon.png", type: "image/png", sizes: "512x512" },
+        { url: "/favicon.svg", type: "image/svg+xml" },
+        { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+        { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+        { url: "/favicon-192.png", type: "image/png", sizes: "192x192" },
+        { url: "/favicon-512.png", type: "image/png", sizes: "512x512" },
       ],
       apple: [
-        { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+        { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
       ],
-      shortcut: ["/favicon.ico"],
+      shortcut: ["/favicon.ico", "/favicon-32x32.png"],
+      other: [
+        { rel: "mask-icon", url: "/favicon.svg", color: "#369afb" },
+      ],
     },
     alternates: {
       canonical: page?.path || "/",

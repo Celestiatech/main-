@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import styles from "./popular-tools.module.css";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { FontAwesomeLoader } from "../components/FontAwesomeLoader";
 import { TOOL_CATEGORIES, TOOLS } from "@/lib/tools-catalog";
 import PopularToolsClient from "./PopularToolsClient";
 import { generateMetadata } from "@/lib/metadata";
@@ -23,6 +24,7 @@ export const metadata: Metadata = generateMetadata({
 export default function PopularToolsPage() {
   return (
     <div className={styles.page}>
+      <FontAwesomeLoader />
       <Header />
       <div className={styles.headerGap} aria-hidden="true" />
 

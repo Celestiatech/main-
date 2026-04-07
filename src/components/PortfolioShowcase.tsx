@@ -185,7 +185,7 @@ export function PortfolioShowcase() {
                               alt={`${study.title} before redesign`}
                               fill
                               className={styles.image}
-                              sizes="(max-width: 1024px) 100vw, 30vw"
+                              sizes="(max-width: 768px) 44vw, (max-width: 1200px) 36vw, 320px"
                             />
                           </div>
                         </div>
@@ -198,7 +198,7 @@ export function PortfolioShowcase() {
                               alt={`${study.title} after launch`}
                               fill
                               className={styles.image}
-                              sizes="(max-width: 1024px) 100vw, 30vw"
+                              sizes="(max-width: 768px) 44vw, (max-width: 1200px) 36vw, 320px"
                             />
                           </div>
                         </div>

@@ -1,6 +1,43 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { siteConfig } from "@/lib/metadata";
 import styles from "./Footer.module.css";
+
+function SocialIcon({ children }: { children: ReactNode }) {
+  return <span className={styles.footerSocialIcon} aria-hidden="true">{children}</span>;
+}
+
+function LinkedInIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+      <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 1 0 5.3 6.94 1.97 1.97 0 0 0 5.25 3Zm5.31 5.5H7.25V20h3.31v-6.03c0-1.59.3-3.13 2.27-3.13 1.94 0 1.97 1.81 1.97 3.24V20h3.31v-6.6c0-3.25-.7-5.74-4.5-5.74-1.82 0-3.04 1-3.55 1.95h-.05V8.5Z" />
+    </svg>
+  );
+}
+
+function TwitterIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+      <path d="M18.9 2H22l-6.77 7.73L23.2 22h-6.24l-4.89-7.37L5.62 22H2.5l7.24-8.27L1.8 2h6.4l4.42 6.72L18.9 2Zm-1.1 18h1.73L7.28 3.9H5.42L17.8 20Z" />
+    </svg>
+  );
+}
+
+function FacebookIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+      <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.87.25-1.46 1.5-1.46h1.7V5a20.7 20.7 0 0 0-2.46-.12c-2.43 0-4.1 1.48-4.1 4.22V11H7.5v3h2.6v8h3.4Z" />
+    </svg>
+  );
+}
+
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.25 1.65a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z" />
+    </svg>
+  );
+}
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -26,7 +63,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
-                <i className="fab fa-linkedin" aria-hidden="true"></i>
+                <SocialIcon><LinkedInIcon /></SocialIcon>
               </a>
               <a 
                 href={siteConfig.social.twitter} 
@@ -34,7 +71,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 aria-label="Twitter"
               >
-                <i className="fab fa-twitter" aria-hidden="true"></i>
+                <SocialIcon><TwitterIcon /></SocialIcon>
               </a>
               <a 
                 href={siteConfig.social.facebook} 
@@ -42,7 +79,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 aria-label="Facebook"
               >
-                <i className="fab fa-facebook" aria-hidden="true"></i>
+                <SocialIcon><FacebookIcon /></SocialIcon>
               </a>
               <a 
                 href={siteConfig.social.instagram} 
@@ -50,7 +87,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 aria-label="Instagram"
               >
-                <i className="fab fa-instagram" aria-hidden="true"></i>
+                <SocialIcon><InstagramIcon /></SocialIcon>
               </a>
             </div>
           </div>
@@ -126,7 +163,7 @@ export function Footer() {
             </div>
             <p className={styles.footerEmail}>
               <a href={`mailto:${siteConfig.contact.email.general}`}>
-                {siteConfig.contact.email.general}
+                <span aria-label={siteConfig.contact.email.general}>Email us</span>
               </a>
             </p>
           </div>

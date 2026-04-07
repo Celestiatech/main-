@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -20,6 +21,44 @@ const debugLog = (message: string, data?: any) => {
     }
   }
 };
+
+function HeaderInlineIcon({ children }: { children: ReactNode }) {
+  return <span className={styles.headerInlineIcon} aria-hidden="true">{children}</span>;
+}
+
+function PhoneIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72l.33 2.57a2 2 0 0 1-.57 1.74l-1.2 1.2a16 16 0 0 0 7.2 7.2l1.2-1.2a2 2 0 0 1 1.74-.57l2.57.33A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
+
+function SmartphoneIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="7" y="2" width="10" height="20" rx="2" ry="2" />
+      <path d="M12 18h.01" />
+    </svg>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 4h16v16H4z" />
+      <path d="m22 6-10 7L2 6" />
+    </svg>
+  );
+}
+
+function BoltIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+      <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" />
+    </svg>
+  );
+}
 
 export function Header() {
   const pathname = usePathname();
@@ -447,17 +486,21 @@ export function Header() {
             <div className={styles.headerTopContent}>
               <div className={styles.headerPhones}>
                 <a href={`tel:${siteConfig.contact.phone.uae.replace(/\s/g, "")}`}>
-                  <i className="fas fa-phone" aria-hidden="true"></i> {siteConfig.contact.phone.uae}
+                  <HeaderInlineIcon><PhoneIcon /></HeaderInlineIcon>
+                  {siteConfig.contact.phone.uae}
                 </a>
                 <a href={`tel:${siteConfig.contact.phone.india.replace(/\s/g, "")}`}>
-                  <i className="fas fa-mobile-alt" aria-hidden="true"></i> {siteConfig.contact.phone.india}
+                  <HeaderInlineIcon><SmartphoneIcon /></HeaderInlineIcon>
+                  {siteConfig.contact.phone.india}
                 </a>
                 <a href={`mailto:${siteConfig.contact.email.general}`}>
-                  <i className="fas fa-envelope" aria-hidden="true"></i> {siteConfig.contact.email.general}
+                  <HeaderInlineIcon><MailIcon /></HeaderInlineIcon>
+                  <span aria-label={siteConfig.contact.email.general}>Email us</span>
                 </a>
               </div>
               <div className={styles.headerTopMessage}>
-                <i className="fas fa-bolt" aria-hidden="true"></i> Get a free consultation today!
+                <HeaderInlineIcon><BoltIcon /></HeaderInlineIcon>
+                Get a free consultation today!
               </div>
             </div>
             <div className={styles.headerTicker} aria-label="Announcements">
@@ -1231,13 +1274,16 @@ export function Header() {
             <div className={styles.mobileMenuFooter}>
               <div className={styles.mobileContactInfo}>
                 <p>
-                  <i className="fas fa-phone" aria-hidden="true"></i> {siteConfig.contact.phone.uae}
+                  <HeaderInlineIcon><PhoneIcon /></HeaderInlineIcon>
+                  {siteConfig.contact.phone.uae}
                 </p>
                 <p>
-                  <i className="fas fa-mobile-alt" aria-hidden="true"></i> {siteConfig.contact.phone.india}
+                  <HeaderInlineIcon><SmartphoneIcon /></HeaderInlineIcon>
+                  {siteConfig.contact.phone.india}
                 </p>
                 <p>
-                  <i className="fas fa-envelope" aria-hidden="true"></i> {siteConfig.contact.email.general}
+                  <HeaderInlineIcon><MailIcon /></HeaderInlineIcon>
+                  <span aria-label={siteConfig.contact.email.general}>Email us</span>
                 </p>
               </div>
             </div>

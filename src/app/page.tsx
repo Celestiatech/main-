@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, lazy, Suspense, type MouseEvent as ReactMouseEvent } from "react";
+import { useState, useEffect, useRef, lazy, Suspense, type MouseEvent as ReactMouseEvent, type ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -13,6 +13,37 @@ import { Footer } from "./components/Footer";
 
 // Lazy load Chatbot component
 const Chatbot = lazy(() => import("./components/Chatbot"));
+
+function HeroBadgeIcon({ kind }: { kind: "whatsapp" | "call" | "revenue" | "seo" }) {
+  const icons: Record<typeof kind, ReactNode> = {
+    whatsapp: (
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+        <path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.52 0 .2 5.28.2 11.8c0 2.08.54 4.1 1.57 5.88L0 24l6.5-1.7a11.8 11.8 0 0 0 5.54 1.4h.01c6.52 0 11.85-5.28 11.85-11.8 0-3.15-1.23-6.11-3.38-8.42ZM12.05 21.7h-.01a9.8 9.8 0 0 1-4.99-1.36l-.36-.21-3.86 1.01 1.03-3.76-.24-.39a9.77 9.77 0 0 1-1.5-5.18c0-5.42 4.43-9.84 9.88-9.84 2.63 0 5.1 1.02 6.97 2.88a9.77 9.77 0 0 1 2.9 6.95c0 5.42-4.43 9.84-9.88 9.84Zm5.4-7.37c-.29-.14-1.72-.85-1.99-.95-.27-.1-.47-.14-.67.14-.19.29-.77.95-.94 1.15-.17.19-.34.22-.63.07-.29-.14-1.2-.44-2.29-1.41-.85-.75-1.42-1.68-1.59-1.97-.17-.29-.02-.44.13-.58.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.19 0-.51.07-.77.36-.27.29-1.02.99-1.02 2.42 0 1.42 1.05 2.8 1.19 2.99.14.19 2.06 3.16 5 4.43.7.3 1.24.47 1.67.6.7.22 1.33.19 1.82.12.55-.08 1.72-.7 1.97-1.37.24-.67.24-1.25.17-1.37-.07-.12-.27-.19-.56-.34Z" />
+      </svg>
+    ),
+    call: (
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72l.33 2.57a2 2 0 0 1-.57 1.74l-1.2 1.2a16 16 0 0 0 7.2 7.2l1.2-1.2a2 2 0 0 1 1.74-.57l2.57.33A2 2 0 0 1 22 16.92z" />
+      </svg>
+    ),
+    revenue: (
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6 3h12" />
+        <path d="M6 8h12" />
+        <path d="m8 8 7 13" />
+        <path d="M8 21h8" />
+      </svg>
+    ),
+    seo: (
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 17 9 11l4 4 8-8" />
+        <path d="M14 7h7v7" />
+      </svg>
+    ),
+  };
+
+  return <span className={styles.heroFloatBadgeIcon} aria-hidden="true">{icons[kind]}</span>;
+}
 
 export default function Home() {
   const pathname = usePathname();
@@ -417,7 +448,6 @@ export default function Home() {
     {
       key: "whatsapp",
       className: styles.heroFloatBadge1,
-      iconClass: "fa-brands fa-whatsapp",
       label: "WhatsApp",
       href: "https://wa.me/919876543210",
       offsetX: 18,
@@ -429,7 +459,6 @@ export default function Home() {
     {
       key: "call",
       className: styles.heroFloatBadge2,
-      iconClass: "fa-solid fa-phone-volume",
       label: "Call Now",
       href: "tel:+919876543210",
       offsetX: -16,
@@ -441,7 +470,6 @@ export default function Home() {
     {
       key: "revenue",
       className: styles.heroFloatBadge3,
-      iconClass: "fa-solid fa-indian-rupee-sign",
       label: "Revenue",
       href: "/proposal",
       offsetX: 14,
@@ -453,7 +481,6 @@ export default function Home() {
     {
       key: "seo",
       className: styles.heroFloatBadge4,
-      iconClass: "fa-solid fa-chart-line",
       label: "SEO Growth",
       href: "/services",
       offsetX: -20,
@@ -622,7 +649,7 @@ export default function Home() {
             aria-label={badge.label}
           >
             <span className={styles.heroFloatBadgeInner}>
-              <i className={badge.iconClass}></i>
+              <HeroBadgeIcon kind={badge.key as "whatsapp" | "call" | "revenue" | "seo"} />
               <span>{badge.label}</span>
             </span>
           </Link>
@@ -833,7 +860,7 @@ export default function Home() {
                       width={360}
                       height={240}
                       loading="lazy"
-                      sizes="(max-width: 768px) 82vw, (max-width: 1200px) 45vw, 360px"
+                      sizes="(max-width: 640px) 76vw, (max-width: 1024px) 38vw, (max-width: 1440px) 28vw, 300px"
                       quality={70}
                     />
                   </div>
@@ -903,7 +930,7 @@ export default function Home() {
                 <div className={styles.industryIcon}>
                   <Image src={`/images/icons/${industry.icon || 'default.svg'}`} alt={industry.name} width={60} height={60} loading="lazy" />
                 </div>
-                <h4>{industry.name}</h4>
+                <h3>{industry.name}</h3>
               </div>
             ))}
           </div>
@@ -933,7 +960,7 @@ export default function Home() {
                 <div className={styles.processIcon}>
                   <Image src={step.icon} alt={step.title} width={70} height={70} loading="lazy" />
                 </div>
-                <h4>{step.title}</h4>
+                <h3>{step.title}</h3>
                 <p>{step.desc}</p>
                 {hoveredStep === index && (
                   <div className={`${styles.processDetails} ${styles.visible}`}>
@@ -951,10 +978,10 @@ export default function Home() {
         <div className="container">
           <div className={`${styles.upworkContent} animate-on-scroll`}>
             <div>
-              <h2 style={{ fontSize: "32px", marginBottom: "12px" }}>
+              <h2 className={styles.upworkHeading}>
                 Top-Rated Upwork Partner
               </h2>
-              <p style={{ fontSize: "16px" }}>
+              <p className={styles.upworkIntro}>
                 Join 1,800+ satisfied clients who trusted us with their projects
               </p>
             </div>
@@ -986,7 +1013,7 @@ export default function Home() {
           <div className={styles.techCategories}>
             <div className={`${styles.techCategory} animate-on-scroll stagger-1`}>
               <h3>
-                <Image src="/images/icons/develop.svg" alt="Frontend" width={20} height={20} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />
+                <Image src="/images/icons/develop.svg" alt="" width={20} height={20} className={styles.inlineHeadingIcon} loading="lazy" />
                 Frontend
               </h3>
               <div className={styles.techGrid}>
@@ -1000,7 +1027,7 @@ export default function Home() {
             </div>
             <div className={`${styles.techCategory} animate-on-scroll stagger-2`}>
               <h3>
-                <Image src="/images/icons/expertise.svg" alt="Backend" width={20} height={20} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />
+                <Image src="/images/icons/expertise.svg" alt="" width={20} height={20} className={styles.inlineHeadingIcon} loading="lazy" />
                 Backend & Database
               </h3>
               <div className={styles.techGrid}>
@@ -1014,7 +1041,7 @@ export default function Home() {
             </div>
             <div className={`${styles.techCategory} animate-on-scroll stagger-3`}>
               <h3>
-                <Image src="/images/icons/mobile-development.svg" alt="Mobile" width={20} height={20} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />
+                <Image src="/images/icons/mobile-development.svg" alt="" width={20} height={20} className={styles.inlineHeadingIcon} loading="lazy" />
                 Mobile & Emerging
               </h3>
               <div className={styles.techGrid}>
@@ -1125,7 +1152,7 @@ export default function Home() {
                           />
                         </div>
                         <div className={styles.testimonialInfo}>
-                          <h4>{testimonial.author}</h4>
+                          <h3>{testimonial.author}</h3>
                           <span>{testimonial.service}</span>
                         </div>
                       </div>
@@ -1150,16 +1177,16 @@ export default function Home() {
               </p>
               <div className={styles.contactLocations}>
                 <div className={styles.contactLocation}>
-                  <h4><Image src="/images/icons/location-pin.svg" alt="Location" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />Dubai, UAE</h4>
+                  <h3><Image src="/images/icons/location-pin.svg" alt="" width={16} height={16} className={styles.inlineLocationIcon} loading="lazy" />Dubai, UAE</h3>
                   <p>Business Bay, Dubai</p>
                 </div>
                 <div className={styles.contactLocation}>
-                  <h4><Image src="/images/icons/location-pin.svg" alt="Location" width={16} height={16} style={{ marginRight: '8px', display: 'inline' }} loading="lazy" />India</h4>
+                  <h3><Image src="/images/icons/location-pin.svg" alt="" width={16} height={16} className={styles.inlineLocationIcon} loading="lazy" />India</h3>
                   <p>Mohali, Punjab</p>
                 </div>
               </div>
               <div className={styles.contactChecklist}>
-                <h4>Why contact us</h4>
+                <h3>Why contact us</h3>
                 <ul>
                   <li className={styles.highlightItem}>Free 30-minute strategy call with senior consultants</li>
                   <li>Clear project timeline, scope, and delivery milestones</li>
@@ -1187,11 +1214,11 @@ export default function Home() {
                 <label>Project Description *</label>
                 <textarea rows={4} placeholder="Tell us about your project..." required></textarea>
               </div>
-              <button type="submit" className="btn btn-primary btn-ripple btn-bubble" style={{ width: "100%" }}>
+              <button type="submit" className={`btn btn-primary btn-ripple btn-bubble ${styles.fullWidthButton}`}>
                 Send Message
               </button>
               <div className={styles.formNote}>
-                <Image src="/images/icons/security.svg" alt="Security" width={14} height={14} style={{ marginRight: '6px', display: 'inline' }} loading="lazy" />Your information is secure. We sign NDAs for all projects.
+                <Image src="/images/icons/security.svg" alt="" width={14} height={14} className={styles.inlineSecurityIcon} loading="lazy" />Your information is secure. We sign NDAs for all projects.
               </div>
             </form>
           </div>

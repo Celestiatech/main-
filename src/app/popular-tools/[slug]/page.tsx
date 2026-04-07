@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
+import { FontAwesomeLoader } from "../../components/FontAwesomeLoader";
 import ToolPlayground from "./ToolPlayground";
 import styles from "./tool-detail.module.css";
 import { getToolBySlug } from "@/lib/tools-catalog";
@@ -24,6 +25,7 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
 
   return (
     <div className={styles.page}>
+      <FontAwesomeLoader />
       <Header />
       <div className={styles.headerGap} />
 

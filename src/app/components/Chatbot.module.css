@@ -165,7 +165,7 @@
 .supportGhostButton {
   border: 1px solid rgba(54, 154, 251, 0.16);
   background: #ffffff;
-  color: #369afb;
+  color: #1d4ed8;
 }
 
 .chatWindow {
@@ -716,7 +716,7 @@
 .disclaimer {
   text-align: center;
   font-size: 11px;
-  color: #9ca3af;
+  color: #4b5563;
   margin-top: 8px;
   margin-bottom: 0;
 }
