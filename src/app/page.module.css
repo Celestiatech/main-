@@ -12,7 +12,7 @@
   .main {
     flex: 1;
     width: 100%;
-    padding-top: 100px;
+    padding-top: 92px;
     margin-top: 0;
     outline: none;
   }
@@ -139,7 +139,7 @@
   }
 
   .logo {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 20px;
     font-weight: 800;
     color: var(--text-primary);
@@ -190,6 +190,17 @@
     font-weight: 600;
     color: var(--text-secondary);
     border-radius: 8px;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    border: 1px solid transparent;
+    white-space: nowrap;
+  }
+
   /* ===== CAREER APPLY SECTION ===== */
   .careerApplySection {
     padding: 86px 0;
@@ -206,18 +217,11 @@
     color: #475569;
     max-width: 56ch;
   }
-    transition: all var(--transition-fast);
-    display: flex;
-    align-items: center;
-    gap: 4px;
+
+  @media (max-width: 768px) {
     .careerApplySection {
       padding: 64px 0;
     }
-    position: relative;
-    text-decoration: none;
-    letter-spacing: 0.02em;
-    border: 1px solid transparent;
-    white-space: nowrap;
   }
 
   .navLink::before {
@@ -530,7 +534,7 @@
     text-decoration: none;
     color: var(--text-primary);
     font-weight: 800;
-    font-family: 'Syne', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 18px;
     transition: all var(--transition-fast);
   }
@@ -942,7 +946,7 @@
   }
 
   .statNumber {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 42px;
     font-weight: 800;
     background: var(--gradient-primary);
@@ -2335,7 +2339,7 @@
   }
 
   .upworkStatNumber {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 800;
     color: #369afb;
@@ -3178,7 +3182,7 @@
   .footerAbout .logo {
     color: var(--text-primary);
     margin-bottom: 20px;
-    font-family: 'Syne', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 800;
     letter-spacing: -1px;
   }
@@ -3264,6 +3268,253 @@
   }
 
   /* ===== RESPONSIVE ===== */
+  @media (min-width: 1025px) {
+    .container {
+      max-width: 1120px;
+      padding: 0 18px;
+    }
+
+    .main {
+      padding-top: 84px;
+    }
+
+    .heroRedesign {
+      padding: 84px 0 36px !important;
+    }
+
+    .heroRedesignInner {
+      max-width: 980px;
+    }
+
+    .heroRedesign h1 {
+      font-size: clamp(1.8rem, 3.6vw, 2.8rem) !important;
+      letter-spacing: -1px !important;
+    }
+
+    .heroFloatBadgeInner {
+      padding: 9px 12px;
+      font-size: 11px;
+    }
+
+    .heroFloatBadgeInner i {
+      width: 24px;
+      height: 24px;
+      font-size: 11px;
+    }
+
+    .heroOrangePill {
+      width: 58px;
+      height: 42px;
+    }
+
+    .heroOrangePillStar {
+      font-size: 1.45rem;
+    }
+
+    .heroArc {
+      width: 52px;
+      height: 40px;
+    }
+
+    .heroStatsRow {
+      max-width: 800px;
+      margin-top: 22px;
+      gap: 16px;
+    }
+
+    .heroMiniChart {
+      min-width: 184px;
+      padding: 10px 12px 9px;
+    }
+
+    .heroMiniChartSvg {
+      height: 58px;
+    }
+
+    .heroJoinBtn,
+    .heroContactBtn {
+      font-size: 13px;
+    }
+
+    .heroJoinBtn > span:first-child,
+    .heroContactBtn > span:first-child {
+      padding: 9px 16px;
+    }
+
+    .heroJoinBtnBox,
+    .heroContactBtnBox {
+      width: 38px;
+      height: 38px;
+      font-size: 15px;
+    }
+
+    .heroCarouselWrap {
+      margin-top: 26px;
+      width: min(100%, 980px);
+      padding: 0 58px;
+    }
+
+    .heroCarousel {
+      gap: 18px;
+      padding: 10px 0 16px;
+    }
+
+    .heroServiceCard {
+      flex: 0 0 148px;
+      height: 148px;
+      border-radius: 26px;
+    }
+
+    .heroCarouselArrow {
+      width: 38px;
+      height: 38px;
+      font-size: 16px;
+    }
+
+    .sectionHeader {
+      max-width: 640px;
+      margin-bottom: 48px;
+    }
+
+    .sectionHeader h2 {
+      font-size: clamp(1.8rem, 3vw, 2.45rem);
+      margin-bottom: 16px;
+    }
+
+    .sectionHeader p {
+      font-size: 14px;
+      line-height: 1.65;
+      margin-top: 26px;
+    }
+
+    .services,
+    .awards,
+    .trust,
+    .portfolio,
+    .process,
+    .upwork {
+      padding: 84px 0;
+    }
+
+    .industries,
+    .techStack,
+    .whyChooseUs,
+    .testimonials,
+    .contact {
+      padding: 96px 0;
+    }
+
+    .cta {
+      padding: 96px 48px;
+    }
+
+    .servicesGrid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .serviceCard {
+      padding: 32px 24px;
+      min-height: 430px;
+      border-radius: 20px;
+    }
+
+    .serviceIcon {
+      width: 68px;
+      height: 68px;
+      margin-bottom: 22px;
+    }
+
+    .serviceCard h3 {
+      font-size: 19px;
+    }
+
+    .industryShowcaseCard,
+    .industryCard {
+      border-radius: 20px;
+    }
+
+    .industryCard {
+      padding: 26px 18px;
+    }
+
+    .industryIcon {
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+    }
+
+    .portfolioTabs {
+      margin-bottom: 32px;
+    }
+
+    .portfolioGrid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .portfolioImage {
+      height: 196px;
+      font-size: 40px;
+    }
+
+    .portfolioContent {
+      padding: 22px;
+    }
+
+    .awardCard {
+      border-radius: 20px;
+      padding: 32px 22px;
+    }
+
+    .awardsHeader {
+      margin-bottom: 60px;
+    }
+
+    .processSteps {
+      gap: 18px;
+    }
+
+    .processIcon {
+      width: 68px;
+      height: 68px;
+      margin-bottom: 16px;
+      font-size: 28px;
+    }
+
+    .upworkContent {
+      gap: 44px;
+    }
+
+    .upworkContent h2 {
+      font-size: 36px;
+    }
+
+    .upworkContent p {
+      font-size: 16px;
+    }
+
+    .upworkStat {
+      padding: 18px;
+      width: min(100%, 144px);
+    }
+
+    .cta h2 {
+      font-size: 46px;
+    }
+
+    .cta p {
+      font-size: 17px;
+      margin-bottom: 36px;
+    }
+
+    .testimonialCard {
+      flex: 0 0 320px;
+      padding: 32px;
+      border-radius: 24px;
+    }
+  }
+
   /* ===== TABLET BEHAVIOR (Treat tablets like desktop - 3D on) ===== */
   @media (min-width: 1025px) and (max-width: 1366px) {
     /* Keep full desktop nav and features */
@@ -3349,12 +3600,351 @@
   }
 
   @media (max-width: 1024px) {
+    .main {
+      padding-top: 78px;
+    }
+
+    .heroRedesign {
+      padding: 86px 0 34px !important;
+    }
+
+    .heroRedesignInner {
+      max-width: 920px;
+      padding: 0 18px;
+    }
+
+    .heroRedesign h1 {
+      font-size: clamp(1.75rem, 4.5vw, 2.6rem) !important;
+      letter-spacing: -0.9px !important;
+    }
+
+    .heroStatsRow {
+      max-width: 760px;
+      margin-top: 20px;
+      gap: 14px;
+    }
+
+    .heroMiniChart {
+      min-width: 176px;
+      padding: 10px 12px 8px;
+    }
+
+    .heroCarouselWrap {
+      width: 100%;
+      padding: 0 48px;
+    }
+
+    .heroServiceCard {
+      flex: 0 0 138px;
+      height: 138px;
+      border-radius: 24px;
+    }
+
+    .heroCarouselArrow {
+      width: 36px;
+      height: 36px;
+      font-size: 15px;
+    }
+
+    .sectionHeader {
+      margin-bottom: 40px;
+    }
+
+    .sectionHeader h2 {
+      font-size: clamp(1.7rem, 4vw, 2.2rem);
+    }
+
+    .sectionHeader p {
+      font-size: 14px;
+      margin-top: 22px;
+    }
+
+    .services,
+    .awards,
+    .trust,
+    .portfolio,
+    .process,
+    .upwork {
+      padding: 74px 0;
+    }
+
+    .industries,
+    .techStack,
+    .whyChooseUs,
+    .testimonials,
+    .contact {
+      padding: 82px 0;
+    }
+
+    .cta {
+      padding: 78px 28px;
+    }
+
+    .serviceCard {
+      padding: 26px 20px;
+      min-height: 390px;
+    }
+
+    .serviceCard h3 {
+      font-size: 18px;
+    }
+
+    .serviceResult {
+      font-size: 14px;
+      margin-bottom: 14px;
+      padding: 14px 16px;
+    }
+
+    .serviceMetric {
+      gap: 10px;
+      font-size: 12px;
+      margin-bottom: 18px;
+      padding: 16px;
+    }
+
+    .serviceMetric span {
+      gap: 10px;
+      padding: 8px 0;
+    }
+
+    .serviceDescription {
+      font-size: 13px;
+      line-height: 1.65;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+    }
+
+    .industryCard {
+      padding: 22px 16px;
+    }
+
+    .industryShowcaseCard {
+      flex: 0 0 258px;
+      min-height: 320px;
+    }
+
+    .industryShowcaseContent {
+      padding: 18px 18px 20px;
+    }
+
+    .industryShowcaseContent h3 {
+      font-size: 19px;
+      margin-bottom: 12px;
+    }
+
+    .industryShowcaseList li {
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .industryIcon {
+      width: 56px;
+      height: 56px;
+      font-size: 22px;
+    }
+
+    .portfolioImage {
+      height: 184px;
+    }
+
+    .portfolioContent {
+      padding: 20px;
+    }
+
+    .portfolioContent h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .portfolioBadge,
+    .portfolioTag {
+      font-size: 10px;
+    }
+
+    .portfolioContact,
+    .portfolioActions button,
+    .portfolioActions a {
+      font-size: 11px;
+    }
+
+    .awardCard {
+      padding: 28px 20px;
+    }
+
+    .awardsHeader h3 {
+      font-size: clamp(1.55rem, 3vw, 2.1rem);
+    }
+
+    .awardsHeader p {
+      font-size: 14px;
+    }
+
+    .awardBadge {
+      padding: 8px 16px;
+      font-size: 11px;
+    }
+
+    .trustItem {
+      padding: 18px;
+    }
+
+    .trustLogo {
+      font-size: 16px;
+    }
+
+    .processIcon {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 14px;
+      font-size: 26px;
+    }
+
+    .processStep h4 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .processStep p {
+      font-size: 12px;
+    }
+
+    .upworkContent {
+      gap: 36px;
+    }
+
+    .upworkContent h2 {
+      font-size: 32px;
+    }
+
+    .upworkContent p {
+      font-size: 15px;
+    }
+
+    .upworkStat {
+      padding: 16px;
+      width: min(100%, 136px);
+    }
+
+    .upworkStatLabel {
+      font-size: 12px;
+    }
+
+    .techCategories {
+      gap: 24px;
+    }
+
+    .techCategory {
+      padding: 28px;
+      border-radius: 22px;
+    }
+
+    .techCategory h3 {
+      font-size: 19px;
+      margin-bottom: 22px;
+      gap: 12px;
+    }
+
+    .techCategory h3 span {
+      width: 42px;
+      height: 42px;
+      font-size: 20px;
+    }
+
+    .techTag {
+      padding: 10px 16px;
+      font-size: 13px;
+    }
+
+    .whyGrid {
+      gap: 22px;
+    }
+
+    .whyCard {
+      padding: 30px 24px;
+      border-radius: 22px;
+    }
+
+    .whyIcon {
+      width: 72px;
+      height: 72px;
+      margin-bottom: 18px;
+    }
+
+    .whyCard h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .whyCard p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .testimonialCard {
+      flex: 0 0 290px;
+      padding: 28px;
+    }
+
+    .testimonialGoogleBadge {
+      gap: 10px;
+      padding: 7px 12px 7px 9px;
+    }
+
+    .testimonialGoogleMeta strong {
+      font-size: 16px;
+    }
+
+    .testimonialGoogleMeta span {
+      font-size: 11px;
+    }
+
+    .testimonialCard p {
+      font-size: 14px;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .contactGrid {
+      gap: 32px;
+    }
+
+    .contactInfo h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .contactInfo > p {
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .contactLocations {
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .contactChecklist,
+    .contactLocation,
+    .contactForm {
+      padding: 18px;
+    }
+
+    .contactChecklist h4,
+    .contactLocation h4 {
+      font-size: 15px;
+    }
+
+    .contactChecklist ul,
+    .contactLocation p {
+      font-size: 13px;
+    }
+
     .hero h1 {
       font-size: 42px;
     }
 
     .servicesGrid {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
 
     .portfolioGrid {
@@ -3372,7 +3962,7 @@
 
     .trustGrid,
     .processSteps {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
 
     .processStep::after {
@@ -3380,7 +3970,7 @@
     }
 
     .awardsGrid {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
 
     .footerGrid {
@@ -3389,6 +3979,57 @@
   }
 
   @media (max-width: 900px) {
+    .main {
+      padding-top: 74px;
+    }
+
+    .heroRedesign {
+      padding: 78px 0 30px !important;
+    }
+
+    .heroRedesignInner {
+      padding: 0 16px;
+    }
+
+    .heroRedesign h1 {
+      font-size: clamp(1.6rem, 5vw, 2.25rem) !important;
+    }
+
+    .heroFloatBadgeInner {
+      padding: 8px 10px;
+      font-size: 10px;
+    }
+
+    .heroMiniChart {
+      min-width: 164px;
+    }
+
+    .heroJoinBtn,
+    .heroContactBtn {
+      font-size: 12px;
+    }
+
+    .heroJoinBtn > span:first-child,
+    .heroContactBtn > span:first-child {
+      padding: 8px 14px;
+    }
+
+    .heroJoinBtnBox,
+    .heroContactBtnBox {
+      width: 34px;
+      height: 34px;
+      font-size: 14px;
+    }
+
+    .heroCarouselWrap {
+      padding: 0 42px;
+    }
+
+    .heroServiceCard {
+      flex: 0 0 126px;
+      height: 126px;
+    }
+
     .headerActions {
       margin-left: 8px;
     }
@@ -3401,9 +4042,208 @@
     .navDropdown {
       min-width: 600px;
     }
+
+    .services,
+    .awards,
+    .trust,
+    .portfolio,
+    .process,
+    .upwork,
+    .industries,
+    .techStack,
+    .whyChooseUs,
+    .testimonials,
+    .contact {
+      padding-top: 68px;
+      padding-bottom: 68px;
+    }
+
+    .serviceCard {
+      min-height: 360px;
+      padding: 22px 18px;
+    }
+
+    .serviceIcon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 18px;
+    }
+
+    .serviceResult {
+      font-size: 13px;
+      padding: 12px 14px;
+    }
+
+    .serviceMetric {
+      padding: 14px;
+    }
+
+    .industryShowcaseCard {
+      flex: 0 0 236px;
+      min-height: 296px;
+    }
+
+    .industryShowcaseContent h3,
+    .industryCard h4 {
+      font-size: 17px;
+    }
+
+    .industryIcon {
+      width: 54px;
+      height: 54px;
+      font-size: 22px;
+    }
+
+    .portfolioGrid,
+    .servicesGrid,
+    .whyGrid {
+      gap: 18px;
+    }
+
+    .portfolioTabs {
+      margin-bottom: 24px;
+    }
+
+    .portfolioImage {
+      height: 170px;
+    }
+
+    .portfolioContent {
+      padding: 18px;
+    }
+
+    .awardCard {
+      padding: 24px 16px;
+    }
+
+    .awardBadge {
+      padding: 7px 14px;
+      font-size: 10px;
+    }
+
+    .trustItem {
+      padding: 16px;
+    }
+
+    .processIcon {
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+    }
+
+    .upworkStat {
+      padding: 16px;
+      width: min(100%, 132px);
+    }
+
+    .techCategory {
+      padding: 24px 20px;
+    }
+
+    .techCategory h3 {
+      font-size: 17px;
+      margin-bottom: 18px;
+    }
+
+    .techTag {
+      padding: 9px 14px;
+      font-size: 12px;
+    }
+
+    .whyCard {
+      padding: 24px 20px;
+    }
+
+    .whyIcon {
+      width: 64px;
+      height: 64px;
+    }
+
+    .testimonialCard {
+      flex: 0 0 270px;
+      padding: 24px;
+    }
+
+    .testimonialCard p {
+      font-size: 13px;
+    }
+
+    .contactGrid {
+      gap: 24px;
+    }
+
+    .contactInfo h2 {
+      font-size: 27px;
+    }
+
+    .contactChecklist,
+    .contactLocation,
+    .contactForm {
+      padding: 16px;
+    }
+  }
+
+  @media (max-width: 1440px) {
+    .main {
+      padding-top: 70px;
+    }
+
+    .heroRedesignInner {
+      max-width: 920px;
+      padding: 0 14px;
+    }
+
+    .services,
+    .awards,
+    .trust,
+    .portfolio,
+    .process,
+    .upwork,
+    .industries,
+    .techStack,
+    .whyChooseUs,
+    .testimonials,
+    .contact {
+      padding-top: 62px;
+      padding-bottom: 62px;
+    }
+
+    .cta {
+      padding: 68px 24px;
+    }
+
+    .sectionHeader {
+      margin-bottom: 34px;
+    }
+
+    .sectionHeader h2 {
+      font-size: clamp(1.55rem, 3.1vw, 2rem);
+    }
+
+    .sectionHeader p {
+      font-size: 13px;
+      margin-top: 18px;
+    }
+
+    .serviceCard,
+    .awardCard,
+    .whyCard,
+    .techCategory,
+    .testimonialCard {
+      transform: scale(0.94);
+      transform-origin: top center;
+    }
   }
 
   @media (max-width: 768px) {
+    .main {
+      padding-top: 66px;
+    }
+
+    .heroRedesignInner {
+      padding: 0 12px;
+    }
+
     .headerTop {
       display: none;
     }
@@ -3514,6 +4354,14 @@
   }
 
   @media (max-width: 480px) {
+    .main {
+      padding-top: 60px;
+    }
+
+    .heroRedesignInner {
+      padding: 0 10px;
+    }
+
     .heroStats {
       grid-template-columns: 1fr;
     }
@@ -5568,7 +6416,7 @@
   background: #fdfcff !important;
   background-image: none !important;
   min-height: auto !important;
-  padding: 120px 0 56px !important;
+  padding: 96px 0 44px !important;
   position: relative;
   overflow: hidden;
 }
@@ -5587,13 +6435,13 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 16px;
+  padding: 10px 14px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(59, 130, 246, 0.14);
   box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
   color: #0f172a;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   white-space: nowrap;
   transform: translate3d(var(--badge-shift-x, 0), var(--badge-shift-y, 0), 0) rotate(var(--badge-rotate, 0deg));
@@ -5601,15 +6449,15 @@
 }
 
 .heroFloatBadgeInner i {
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
   background: #eff6ff;
   color: #2563eb;
-  font-size: 14px;
+  font-size: 12px;
   flex-shrink: 0;
 }
 
@@ -5643,19 +6491,19 @@
 }
 
 .heroFloatBadge1 {
-  top: 12%;
+  top: 10%;
   left: 2%;
 }
 
 .heroFloatBadge2 {
-  top: 26%;
+  top: 24%;
   right: 3%;
   animation-delay: -2s;
   animation-duration: 16s;
 }
 
 .heroFloatBadge3 {
-  bottom: 14%;
+  bottom: 10%;
   left: 5%;
   animation-delay: -4s;
   animation-duration: 18s;
@@ -5663,7 +6511,7 @@
 
 .heroFloatBadge4 {
   right: 8%;
-  bottom: 12%;
+  bottom: 10%;
   animation-delay: -1s;
   animation-duration: 15s;
 }
@@ -5680,9 +6528,9 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1120px;
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -5699,11 +6547,11 @@
   font-style: normal;
   z-index: 1;
 }
-.sparkle1 { top: 28%;  left: 7%;   font-size: 26px; animation-delay: 0s;   }
-.sparkle2 { top: 15%;  right: 22%; font-size: 13px; animation-delay: 0.7s; }
-.sparkle3 { top: 48%;  left: 3%;   font-size: 18px; animation-delay: 1.3s; }
-.sparkle4 { bottom: 15%; right: 5%; font-size: 28px; animation-delay: 0.3s; }
-.sparkle5 { top: 20%;  right: 10%; font-size: 10px; animation-delay: 1.0s; }
+.sparkle1 { top: 28%;  left: 7%;   font-size: 22px; animation-delay: 0s;   }
+.sparkle2 { top: 15%;  right: 22%; font-size: 11px; animation-delay: 0.7s; }
+.sparkle3 { top: 48%;  left: 3%;   font-size: 15px; animation-delay: 1.3s; }
+.sparkle4 { bottom: 15%; right: 5%; font-size: 24px; animation-delay: 0.3s; }
+.sparkle5 { top: 20%;  right: 10%; font-size: 9px; animation-delay: 1.0s; }
 
 @keyframes sparklePulse {
   0%, 100% { opacity: 0.72; transform: scale(1) rotate(0deg); }
@@ -5723,8 +6571,8 @@
   background: #3B82F6;
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
-  font-size: 11px; font-weight: 700;
-  padding: 5px 15px;
+  font-size: 10px; font-weight: 700;
+  padding: 5px 13px;
   border-radius: 999px;
   letter-spacing: 0.4px;
   white-space: nowrap;
@@ -5733,8 +6581,8 @@
   background: #2563EB;
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
-  font-size: 11px; font-weight: 700;
-  padding: 5px 15px;
+  font-size: 10px; font-weight: 700;
+  padding: 5px 13px;
   border-radius: 999px;
   letter-spacing: 0.4px;
   white-space: nowrap;
@@ -5742,11 +6590,11 @@
 
 /* Override global .hero h1 (0,1,1) and .hero h1 span (0,1,2) */
 .heroRedesign h1 {
-  font-size: clamp(2.2rem, 4.8vw, 3.8rem) !important;
+  font-size: clamp(1.95rem, 4.1vw, 3.2rem) !important;
   font-weight: 900 !important;
-  line-height: 1.15 !important;
+  line-height: 1.12 !important;
   color: #18181b !important;
-  letter-spacing: -1.5px !important;
+  letter-spacing: -1.2px !important;
   margin: 0 !important;
   animation: none !important;
   background: none !important;
@@ -5799,9 +6647,9 @@
   background: rgba(54, 154, 251, 0.12) !important;
   background-image: none !important;
   border: 1px solid rgba(54, 154, 251, 0.26);
-  border-radius: 18px;
-  width: 76px;
-  height: 54px;
+  border-radius: 16px;
+  width: 64px;
+  height: 46px;
   flex-shrink: 0;
   box-shadow: 0 8px 20px rgba(54, 154, 251, 0.16);
   transition: transform 0.25s ease;
@@ -5812,14 +6660,14 @@
 .heroOrangePillStar {
   color: #369afb !important;
   -webkit-text-fill-color: #369afb !important;
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   line-height: 1;
   background: none !important;
 }
 
 .heroArc {
-  width: 70px;
-  height: 56px;
+  width: 58px;
+  height: 46px;
   flex-shrink: 0;
   overflow: visible;
 }
@@ -5829,26 +6677,26 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 920px;
-  margin-top: 32px;
-  gap: 22px;
+  max-width: 860px;
+  margin-top: 26px;
+  gap: 18px;
   flex-wrap: wrap;
 }
 .heroStatItem { display: flex; flex-direction: column; gap: 2px; }
-.heroStatLabel { font-size: 11px; font-weight: 600; color: #71717a; letter-spacing: 0.4px; line-height: 1.4; }
-.heroStatValue { font-size: 14px; font-weight: 900; color: #18181b; letter-spacing: 0.2px; line-height: 1.3; }
+.heroStatLabel { font-size: 10px; font-weight: 600; color: #71717a; letter-spacing: 0.4px; line-height: 1.35; }
+.heroStatValue { font-size: 13px; font-weight: 900; color: #18181b; letter-spacing: 0.2px; line-height: 1.25; }
 
 .heroButtonGroup {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
 .heroMiniChart {
-  min-width: 220px;
-  padding: 14px 16px 12px;
-  border-radius: 20px;
+  min-width: 200px;
+  padding: 12px 14px 10px;
+  border-radius: 18px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(239, 246, 255, 0.94) 100%);
   border: 1px solid rgba(59, 130, 246, 0.14);
   box-shadow: 0 10px 28px rgba(59, 130, 246, 0.1);
@@ -5871,7 +6719,7 @@
 }
 
 .heroMiniChartValue {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 900;
   color: #2563eb;
   line-height: 1;
@@ -5880,7 +6728,7 @@
 
 .heroMiniChartSvg {
   width: 100%;
-  height: 72px;
+  height: 64px;
   display: block;
 }
 
@@ -5913,7 +6761,7 @@
   gap: 8px;
   flex-wrap: wrap;
   margin-top: 6px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   color: #64748b;
 }
@@ -5957,7 +6805,7 @@
   align-items: center;
   gap: 0;
   border-radius: 999px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: #152c56;
   background: rgba(239, 248, 255, 0.92);
@@ -5967,7 +6815,7 @@
   transition: all 0.3s ease;
   white-space: nowrap;
   flex-shrink: 0;
-  box-shadow: 0 10px 26px rgba(54, 154, 251, 0.16);
+  box-shadow: 0 8px 22px rgba(54, 154, 251, 0.14);
   position: relative;
 }
 .heroJoinBtn::before,
@@ -5986,17 +6834,17 @@
 .heroContactBtn:hover::before {
   transform: translateX(130%);
 }
-.heroJoinBtn > span:first-child { padding: 11px 22px; color: #369afb; }
+.heroJoinBtn > span:first-child { padding: 10px 18px; color: #369afb; }
 .heroJoinBtnBox {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 46px; height: 46px;
+  width: 42px; height: 42px;
   background: linear-gradient(180deg, #5cb9fe 0%, #369afb 100%) !important;
   background-image: none !important;
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
-  font-size: 18px; font-weight: 900;
+  font-size: 16px; font-weight: 900;
   border-radius: 0 calc(999px - 2px) calc(999px - 2px) 0;
   flex-shrink: 0;
   transition: all 0.3s ease;
@@ -6009,7 +6857,7 @@
   align-items: center;
   gap: 0;
   border-radius: 999px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: #0f172a;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%);
@@ -6020,7 +6868,7 @@
   white-space: nowrap;
   flex-shrink: 0;
   position: relative;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
   backdrop-filter: blur(10px);
 }
 
@@ -6032,7 +6880,7 @@
 }
 
 .heroContactBtn > span:first-child {
-  padding: 11px 22px;
+  padding: 10px 18px;
   color: #0f172a;
   letter-spacing: 0.01em;
 }
@@ -6041,11 +6889,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
   background: linear-gradient(180deg, #f0f9ff 0%, #dbeafe 100%);
   color: #1d4ed8;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 900;
   border-left: 1px solid rgba(59, 130, 246, 0.16);
   border-radius: 0 calc(999px - 2px) calc(999px - 2px) 0;
@@ -6066,16 +6914,16 @@
 
 .heroCarouselWrap {
   position: relative;
-  margin-top: 40px;
-  width: min(100%, 1120px);
+  margin-top: 32px;
+  width: min(100%, 1040px);
   margin-left: auto;
   margin-right: auto;
-  padding: 0 84px;
+  padding: 0 70px;
   box-sizing: border-box;
 }
 .heroCarousel {
   display: flex;
-  gap: 28px;
+  gap: 22px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -6086,9 +6934,9 @@
 .heroCarousel::-webkit-scrollbar { display: none; }
 
 .heroServiceCard {
-  flex: 0 0 180px;
-  height: 180px;
-  border-radius: 36px;
+  flex: 0 0 164px;
+  height: 164px;
+  border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6105,7 +6953,7 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
-  width: 46px; height: 46px;
+  width: 42px; height: 42px;
   border-radius: 50%;
   border: none;
   background: #3B82F6;
@@ -6113,7 +6961,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 18px;
   cursor: pointer;
   transition: background 0.2s, transform 0.15s;
   line-height: 1;
@@ -6163,6 +7011,13 @@
   .heroMiniChart { width: 100%; min-width: 0; }
   .heroServiceCard { flex: 0 0 150px; height: 150px; border-radius: 28px; }
   .heroServiceCardImage { width: 100%; height: 100%; }
+  .heroMiniChartLine,
+  .heroMiniChartDot,
+  .heroMiniChartValue,
+  .heroJoinBtnBox,
+  .heroContactBtnBox {
+    animation: none !important;
+  }
   .heroCarouselArrow { width: 40px; height: 40px; font-size: 18px; }
   .heroCarouselWrap {
     margin-top: 36px;
@@ -6213,6 +7068,7 @@
   object-fit: cover;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.16));
   user-select: none;
+  will-change: transform;
 }
 
 /* ── Orange pill: must come AFTER the general ".heroRedesign h1 span" reset ──

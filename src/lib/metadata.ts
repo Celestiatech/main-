@@ -16,7 +16,7 @@ export const siteConfig = {
     primary: "/brand/logo.svg",
     dark: "/brand/logo-dark.svg",
     light: "/brand/logo-light.svg",
-    favicon: "/brand/favicon.ico",
+    favicon: "/favicon.ico",
     social: "/brand/social-logo.png",
   },
   contact: {
@@ -91,7 +91,19 @@ export function generateMetadata(page?: {
     metadataBase: new URL(siteConfig.url),
     title,
     description,
+    applicationName: siteConfig.name,
     keywords,
+    manifest: "/manifest.webmanifest",
+    icons: {
+      icon: [
+        { url: "/favicon.ico", sizes: "any" },
+        { url: "/icon.png", type: "image/png", sizes: "512x512" },
+      ],
+      apple: [
+        { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+      ],
+      shortcut: ["/favicon.ico"],
+    },
     alternates: {
       canonical: page?.path || "/",
     },

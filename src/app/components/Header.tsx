@@ -9,7 +9,7 @@ import { trackCTAClick } from "@/lib/analytics";
 import styles from "./Header.module.css";
 
 // Debug mode - set to false to disable all console logs
-const DEBUG = true;
+const DEBUG = false;
 
 const debugLog = (message: string, data?: any) => {
   if (DEBUG) {
@@ -487,9 +487,10 @@ export function Header() {
                 <Image
                   src="/logos/celethisia.png"
                   alt=""
-                  width={700}
-                  height={700}
+                  width={112}
+                  height={112}
                   className={styles.logoImage}
+                  sizes="(max-width: 768px) 56px, 102px"
                   priority
                 />
               </span>
@@ -1025,9 +1026,10 @@ export function Header() {
                   <Image
                     src="/logos/celethisia.png"
                     alt=""
-                    width={1024}
-                    height={1024}
+                    width={112}
+                    height={112}
                     className={styles.logoImage}
+                    sizes="56px"
                   />
                 </span>
                 <span>{siteConfig.shortName}</span>

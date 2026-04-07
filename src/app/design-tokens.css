@@ -91,10 +91,10 @@
   /* ===== TYPOGRAPHY ===== */
   
   /* Font Families */
-  --font-display: var(--font-syne), 'Syne', sans-serif;
-  --font-heading: var(--font-poppins), 'Poppins', sans-serif;
+  --font-display: var(--font-inter), 'Inter', sans-serif;
+  --font-heading: var(--font-inter), 'Inter', sans-serif;
   --font-body: var(--font-inter), 'Inter', sans-serif;
-  --font-ui: var(--font-jakarta), 'Plus Jakarta Sans', sans-serif;
+  --font-ui: var(--font-inter), 'Inter', sans-serif;
   
   /* Font Sizes */
   --font-size-xs: 0.75rem;    /* 12px */

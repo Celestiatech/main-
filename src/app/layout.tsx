@@ -1,33 +1,16 @@
 import type { Metadata, Viewport } from "next";
-import { Syne, Poppins, Inter, Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { generateMetadata as genMeta, siteConfig } from "@/lib/metadata";
+import { generateMetadata as genMeta } from "@/lib/metadata";
 import { getOrganizationSchema, getDubaiLocalBusinessSchema, getIndiaLocalBusinessSchema } from "@/lib/structured-data";
 import { SkipToContent } from "./components/SkipToContent";
 import { AnalyticsInit } from "./components/AnalyticsInit";
 
-const syne = Syne({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-syne",
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-poppins",
-});
-
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   variable: "--font-inter",
-});
-
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-jakarta",
 });
 
 export const metadata: Metadata = genMeta();
@@ -35,7 +18,6 @@ export const metadata: Metadata = genMeta();
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
   viewportFit: "cover",
 };
 
@@ -53,7 +35,33 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="" />
+        <link
+          rel="preload"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          as="style"
+          crossOrigin=""
+        />
+        <Script id="font-awesome-loader" strategy="afterInteractive">
+          {`
+            (function () {
+              if (document.querySelector('link[data-font-awesome="true"]')) return;
+              var link = document.createElement('link');
+              link.rel = 'stylesheet';
+              link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css';
+              link.crossOrigin = 'anonymous';
+              link.setAttribute('data-font-awesome', 'true');
+              document.head.appendChild(link);
+            })();
+          `}
+        </Script>
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            crossOrigin=""
+          />
+        </noscript>
         {structuredData.map((schema, index) => (
           <script
             key={index}
@@ -62,7 +70,7 @@ export default function RootLayout({
           />
         ))}
       </head>
-      <body className={`${syne.variable} ${poppins.variable} ${inter.variable} ${plusJakarta.variable}`}>
+      <body className={inter.variable}>
         <SkipToContent />
         <AnalyticsInit />
         {children}

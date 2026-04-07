@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, lazy, Suspense, type CSSProperties } from "react";
+import { useState, useEffect, useRef, lazy, Suspense, type MouseEvent as ReactMouseEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -19,9 +19,10 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("all");
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
   const [selectedIndustry, setSelectedIndustry] = useState("startup");
-  const [heroPointer, setHeroPointer] = useState({ x: 0, y: 0 });
   const [revenueCount, setRevenueCount] = useState(0);
   const industryCarouselRef = useRef<HTMLDivElement | null>(null);
+  const heroBadgeRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
+  const heroPointerFrame = useRef<number | null>(null);
 
   // Track scroll depth
   useScrollTracking(pathname || "/");
@@ -73,6 +74,14 @@ export default function Home() {
     frameId = window.requestAnimationFrame(tick);
 
     return () => window.cancelAnimationFrame(frameId);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (heroPointerFrame.current !== null) {
+        window.cancelAnimationFrame(heroPointerFrame.current);
+      }
+    };
   }, []);
 
   useEffect(() => {
@@ -455,6 +464,48 @@ export default function Home() {
     },
   ];
 
+  const updateHeroBadges = (pointerX: number, pointerY: number) => {
+    heroFloatingBadges.forEach((badge) => {
+      const badgeNode = heroBadgeRefs.current[badge.key];
+      if (!badgeNode) {
+        return;
+      }
+
+      const distanceX = pointerX - badge.originX;
+      const distanceY = pointerY - badge.originY;
+      const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+      const influence = Math.max(0, 1 - distance / 1.1);
+
+      badgeNode.style.setProperty("--badge-shift-x", `${pointerX * badge.offsetX * influence}px`);
+      badgeNode.style.setProperty("--badge-shift-y", `${pointerY * badge.offsetY * influence}px`);
+      badgeNode.style.setProperty("--badge-rotate", `${pointerX * badge.rotate * influence}deg`);
+    });
+  };
+
+  const handleHeroPointerMove = (event: ReactMouseEvent<HTMLElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+    const y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+
+    if (heroPointerFrame.current !== null) {
+      window.cancelAnimationFrame(heroPointerFrame.current);
+    }
+
+    heroPointerFrame.current = window.requestAnimationFrame(() => {
+      updateHeroBadges(x, y);
+      heroPointerFrame.current = null;
+    });
+  };
+
+  const resetHeroPointer = () => {
+    if (heroPointerFrame.current !== null) {
+      window.cancelAnimationFrame(heroPointerFrame.current);
+      heroPointerFrame.current = null;
+    }
+
+    updateHeroBadges(0, 0);
+  };
+
   const techStack = {
     frontend: [
       { name: "HTML5", icon: "/images/tech/html5.svg" },
@@ -557,41 +608,24 @@ export default function Home() {
       <section
         className={`${styles.hero} ${styles.heroRedesign}`}
         data-debug="hero-section"
-        onMouseMove={(event) => {
-          const rect = event.currentTarget.getBoundingClientRect();
-          const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
-          const y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
-          setHeroPointer({ x, y });
-        }}
-        onMouseLeave={() => setHeroPointer({ x: 0, y: 0 })}
+        onMouseMove={handleHeroPointerMove}
+        onMouseLeave={resetHeroPointer}
       >
         {heroFloatingBadges.map((badge) => (
-          (() => {
-            const distanceX = heroPointer.x - badge.originX;
-            const distanceY = heroPointer.y - badge.originY;
-            const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
-            const influence = Math.max(0, 1 - distance / 1.1);
-            const badgeStyle = {
-              "--badge-shift-x": `${heroPointer.x * badge.offsetX * influence}px`,
-              "--badge-shift-y": `${heroPointer.y * badge.offsetY * influence}px`,
-              "--badge-rotate": `${heroPointer.x * badge.rotate * influence}deg`,
-            } as CSSProperties;
-
-            return (
-              <Link
-                key={badge.key}
-                href={badge.href}
-                className={`${styles.heroFloatBadge} ${badge.className} ${badge.key === "whatsapp" ? styles.heroFloatBadgeWhatsapp : ""}`}
-                aria-label={badge.label}
-                style={badgeStyle}
-              >
-                <span className={styles.heroFloatBadgeInner}>
-                  <i className={badge.iconClass}></i>
-                  <span>{badge.label}</span>
-                </span>
-              </Link>
-            );
-          })()
+          <Link
+            key={badge.key}
+            href={badge.href}
+            ref={(node) => {
+              heroBadgeRefs.current[badge.key] = node;
+            }}
+            className={`${styles.heroFloatBadge} ${badge.className} ${badge.key === "whatsapp" ? styles.heroFloatBadgeWhatsapp : ""}`}
+            aria-label={badge.label}
+          >
+            <span className={styles.heroFloatBadgeInner}>
+              <i className={badge.iconClass}></i>
+              <span>{badge.label}</span>
+            </span>
+          </Link>
         ))}
         {/* Ambient sparkle decorations — matching reference image positions */}
         <span className={`${styles.sparkle} ${styles.sparkle1}`} aria-hidden="true">✦</span>
@@ -746,13 +780,15 @@ export default function Home() {
                 },
               ].map((card, i) => (
                 <div key={i} className={styles.heroServiceCard} style={{ background: card.bg }}>
-                  <img
+                  <Image
                     className={styles.heroServiceCardImage}
                     src={card.image}
                     alt={card.label}
-                    width={160}
-                    height={160}
+                    width={180}
+                    height={180}
                     loading="lazy"
+                    sizes="(max-width: 768px) 150px, 180px"
+                    quality={68}
                   />
                 </div>
               ))}
@@ -797,6 +833,8 @@ export default function Home() {
                       width={360}
                       height={240}
                       loading="lazy"
+                      sizes="(max-width: 768px) 82vw, (max-width: 1200px) 45vw, 360px"
+                      quality={70}
                     />
                   </div>
                   <div className={styles.industryShowcaseContent}>

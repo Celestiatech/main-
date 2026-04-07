@@ -1,6 +1,7 @@
-﻿"use client";
+"use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
+import Image from "next/image";
 import styles from "./Chatbot.module.css";
 import { PortfolioLeadPopup } from "../portfolio/PortfolioLeadPopup";
 
@@ -30,40 +31,48 @@ const QUICK_REPLIES: QuickReply[] = [
   { label: "Services", response: "What services do you offer?" },
   { label: "Portfolio", response: "Show me your portfolio" },
   { label: "Pricing", response: "What are your rates?" },
+  { label: "Timeline", response: "How long will my project take?" },
   { label: "Contact", response: "How can I contact you?" },
+];
+
+const STARTER_SUGGESTIONS: QuickReply[] = [
+  { label: "What can Celestiatech do?", response: "What services do you offer?" },
+  { label: "Help me with SEO strategy", response: "How can you help with SEO?" },
+  { label: "Explain your services", response: "Explain your different services" },
 ];
 
 const BOT_RESPONSES: Record<string, string> = {
   default: "Thanks for your message! A member of our team will get back to you shortly. In the meantime, feel free to explore our services or check out our portfolio.",
-  
-  greeting: "\u{1F44B} Hello! Welcome to Celestiatech! We're a premium IT & Software Development Company specializing in mobile apps, web development, AI solutions, blockchain, and game development. How can I help you today?",
-  
-  services: "We offer a wide range of services:\n\n\u{1F4F1} Mobile Development - Native & cross-platform apps for iOS/Android\n\u{1F310} Web Development - Scalable web applications\n\u{1F3AE} Game Development - 2D/3D games for all platforms\n\u{26D3}\u{FE0F} Blockchain - Web3 solutions & smart contracts\n\u{1F916} AI/ML - Machine learning solutions\n\u{1F3A8} UI/UX Design - Modern, user-friendly designs\n\u{2699}\u{FE0F} DevOps - Cloud infrastructure & automation\n\nWhich service interests you most?",
-  
-  portfolio: "Our portfolio includes 2,500+ successful projects across various industries:\n\n\u{2705} 2,000+ Mobile Apps Developed\n\u{2705} 1,000+ Games Delivered\n\u{2705} 500+ Web Applications\n\u{2705} 200+ Blockchain Solutions\n\nWould you like to see specific case studies?",
-  
-  pricing: "Our pricing varies based on project complexity, timeline, and requirements. We offer:\n\n\u{1F4B0} Fixed Price Projects\n\u{1F4B0} Time & Material Model\n\u{1F4B0} Dedicated Team Options\n\nWe provide a free initial consultation to understand your needs and provide a customized quote. Would you like to schedule a consultation?",
-  
-  contact: "\u{1F4CD} Our Locations:\nUAE - Dubai, Business Bay\nIndia - Mohali, Punjab\n\n\u{1F4DE} Phone:\nUAE: +971 50 000 0000\nIndia: +91 98765 43210\n\n\u{2709}\u{FE0F} Email: hello@celestiatech.in\n\nWould you like us to call you back?",
-  
-  timeline: "Project timelines depend on complexity:\n\n\u{23F1}\u{FE0F} Simple Apps: 2-3 months\n\u{23F1}\u{FE0F} Medium Projects: 3-6 months\n\u{23F1}\u{FE0F} Complex Solutions: 6-12 months\n\nWe follow agile methodology with regular updates. Want to discuss your timeline?",
-  
-  technology: "We use modern technologies:\n\nFrontend: React, Next.js, Vue, Angular\nBackend: Node.js, Python, Go, Java\nMobile: React Native, Flutter, Swift, Kotlin\nCloud: AWS, Azure, Google Cloud\nDatabase: PostgreSQL, MongoDB, Firebase\n\nAny specific tech stack you prefer?",
-  
-  company: "Celestiatech is a premium IT company with 12+ years of experience. We've helped 2,500+ clients worldwide deliver successful digital solutions. We're recognized as Top Rated Plus on Upwork and rated by Clutch, GoodFirms, and AppFutura.",
-  
-  blockchain: "Our blockchain services include:\n\n\u{26D3}\u{FE0F} Smart Contract Development\n\u{1F310} Web3 Application Development\n\u{1FA99} DeFi Solutions\n\u{1F3A8} NFT Marketplace Development\n\u{1F510} Decentralized Applications\n\nWe work with Ethereum, Solana, Polygon, and other chains.",
-  
-  mobile: "Mobile app development services:\n\n\u{1F4F1} iOS Development (Swift)\n\u{1F916} Android Development (Kotlin)\n\u{1F504} Cross-Platform (React Native, Flutter)\n\u{1F4D0} App UI/UX Design\n\u{1F527} App Maintenance & Support\n\nWe deliver apps that users love!",
-  
-  ai: "AI & Machine Learning solutions:\n\n\u{1F916} AI Chatbots\n\u{1F9E0} Machine Learning Models\n\u{1F4CA} Predictive Analytics\n\u{1F50D} NLP Applications\n\u{1F3AF} Computer Vision\n\nLet's make your business smarter!",
-  
-  game: "Game development expertise:\n\n\u{1F3AE} Unity Game Development\n\u{1F3AF} Unreal Engine Games\n\u{1F579}\u{FE0F} 2D & 3D Games\n\u{1F465} Multiplayer Games\n\u{1F3A8} Game Art & Animation\n\nReady to create your next game?",
+  greeting: "Hello! Welcome to Celestiatech. We build websites, mobile apps, AI solutions, redesigns, SEO systems, and growth-focused digital products. How can I help you today?",
+  services: "We offer a wide range of services:\n\nMobile development\nWeb development\nUI/UX design\nAI solutions\nSEO and performance optimization\nEcommerce development\nMaintenance and support\n\nTell me what you want to build and I can guide you.",
+  portfolio: "Our portfolio includes product launches, redesigns, custom business websites, mobile apps, AI features, and SEO-focused builds. If you want, I can point you toward the type of work most relevant to your project.",
+  pricing: "Our pricing depends on scope, timeline, and complexity. We work on fixed-price projects, time and material, and dedicated team models. If you share your goal and budget range, I can guide you to the right starting point.",
+  contact: "You can reach us by email at hello@celestiatech.in, or start a conversation here and our team can follow up. If you want, I can help you prepare the details to send.",
+  timeline: "Typical timelines depend on complexity:\n\nLanding page or brochure site: 2-4 weeks\nBusiness website: 4-8 weeks\nCustom web app: 8-16 weeks\nMobile app MVP: 10-18 weeks\n\nIf you tell me what you need, I can narrow it down.",
+  technology: "We work with modern stacks including Next.js, React, Node.js, TypeScript, Python, React Native, Flutter, PostgreSQL, Firebase, cloud infrastructure, and AI/API integrations.",
+  company: "Celestiatech is a digital product and development company focused on websites, apps, AI, and growth-ready digital experiences. We help clients go from idea to launch with design, development, SEO, and support.",
+  blockchain: "We can help with blockchain and Web3 products including smart contracts, wallets, NFT experiences, token-connected platforms, and custom Web3 integrations.",
+  mobile: "We build iOS, Android, and cross-platform mobile apps with product strategy, UX, development, QA, launch, and post-launch support.",
+  ai: "We build AI-powered features such as chat assistants, workflow automation, intelligent search, content systems, and custom integrations with modern AI APIs.",
+  game: "We can support game-focused product work too, including frontends, landing pages, support systems, and game-adjacent web/mobile experiences.",
+  ecommerce: "We build ecommerce stores and custom commerce platforms with product pages, checkout flows, payments, operations integrations, and conversion-focused UX.",
+  redesign: "Yes, we handle redesigns. That includes UX review, visual refresh, content structure improvement, performance fixes, SEO cleanup, and full rebuilds when needed.",
+  seo: "We help with technical SEO, content structure, metadata, schema, performance, internal linking, landing pages, and conversion-focused search growth.",
+  maintenance: "We provide maintenance, support, bug fixing, optimization, and ongoing feature work after launch as well.",
+  process: "Our process usually looks like this:\n\nDiscovery\nScope and estimate\nUX/UI planning\nDevelopment in milestones\nQA and review\nLaunch and support\n\nWe keep communication clear and structured throughout.",
+  hiring: "We offer fixed-price delivery, part-time support, and dedicated team models. If you tell me your timeline and level of involvement, I can suggest the best fit.",
+  support: "If something is already live and needs help, we can support bug fixes, UI improvements, performance work, API issues, and ongoing releases.",
+  nda: "Yes, we can work under NDA and handle confidential product discussions in a structured way.",
+  industries: "We work across SaaS, healthcare, real estate, education, ecommerce, fintech, startup products, and service businesses.",
+  integrations: "We can integrate payment gateways, CRMs, analytics tools, email systems, automation platforms, internal dashboards, and AI APIs.",
+  launch: "We can help with launch planning, QA, deployment, tracking setup, and post-launch support so the release goes smoothly.",
 };
 
+const matchesAny = (text: string, keywords: string[]) => keywords.some((keyword) => text.includes(keyword));
+
 export default function Chatbot() {
-  const [isOpen, setIsOpen] = useState(false);
-  // Use a function to initialize messages to avoid Date.now() during render
+  const [isChatOpen, setIsChatOpen] = useState(true);
+  const [isSupportOpen, setIsSupportOpen] = useState(true);
   const [messages, setMessages] = useState<Message[]>(() => [
     {
       id: "1",
@@ -79,6 +88,7 @@ export default function Chatbot() {
     qualified: false,
   });
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const messageIdRef = useRef(0);
 
   const getNextMessageId = useCallback(() => {
@@ -86,18 +96,19 @@ export default function Chatbot() {
     return messageIdRef.current.toString();
   }, []);
 
-  const scrollToBottom = () => {
+  useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  }, [messages, isChatOpen]);
 
   useEffect(() => {
-    scrollToBottom();
-  }, [messages, isOpen]);
+    if (isChatOpen) {
+      inputRef.current?.focus();
+    }
+  }, [isChatOpen]);
 
-  // Qualification flow functions
   const startQualification = () => {
-    setQualificationData(prev => ({ ...prev, currentStep: 1 }));
-    return "Great! I'd love to help you with your project. To provide the best recommendations, could you tell me about your budget range?\n\n\u{1F4B0} Under $10K\n\u{1F4B0} $10K - $50K\n\u{1F4B0} $50K - $100K\n\u{1F4B0} Over $100K\n\u{1F4B0} Not sure yet";
+    setQualificationData((prev) => ({ ...prev, currentStep: 1 }));
+    return "Great. To guide you properly, what is your approximate budget range?\n\nUnder $10K\n$10K - $50K\n$50K - $100K\nOver $100K\nNot sure yet";
   };
 
   const handleQualificationResponse = (userText: string): string => {
@@ -106,51 +117,45 @@ export default function Chatbot() {
     const nextStep = qualificationData.currentStep + 1;
 
     switch (qualificationData.currentStep) {
-      case 1: // Budget
-        if (lowerText.includes("$50k") || lowerText.includes("50k") || lowerText.includes("over") || lowerText.includes("100k")) {
+      case 1:
+        if (matchesAny(lowerText, ["50k", "100k", "over"])) {
           newScore += 30;
-          setQualificationData(prev => ({ ...prev, budget: "high", leadScore: newScore, currentStep: nextStep }));
-          return "Excellent! A substantial budget gives us flexibility to deliver premium solutions. What's your preferred timeline for the project?\n\n\u{23F1}\u{FE0F} ASAP (1-2 months)\n\u{23F1}\u{FE0F} 3-6 months\n\u{23F1}\u{FE0F} 6-12 months\n\u{23F1}\u{FE0F} Flexible";
-        } else if (lowerText.includes("$10k") || lowerText.includes("10k")) {
-          newScore += 20;
-          setQualificationData(prev => ({ ...prev, budget: "medium", leadScore: newScore, currentStep: nextStep }));
-          return "Good budget range! We can build something impactful. What's your timeline preference?\n\n\u{23F1}\u{FE0F} ASAP (1-2 months)\n\u{23F1}\u{FE0F} 3-6 months\n\u{23F1}\u{FE0F} 6-12 months\n\u{23F1}\u{FE0F} Flexible";
-        } else {
-          newScore += 10;
-          setQualificationData(prev => ({ ...prev, budget: "low", leadScore: newScore, currentStep: nextStep }));
-          return "No problem! We can start with an MVP approach. What's your timeline?\n\n\u{23F1}\u{FE0F} ASAP (1-2 months)\n\u{23F1}\u{FE0F} 3-6 months\n\u{23F1}\u{FE0F} 6-12 months\n\u{23F1}\u{FE0F} Flexible";
+          setQualificationData((prev) => ({ ...prev, budget: "high", leadScore: newScore, currentStep: nextStep }));
+          return "That gives us good flexibility. What is your preferred timeline?\n\nASAP\n3-6 months\n6-12 months\nFlexible";
         }
-
-      case 2: // Timeline
-        if (lowerText.includes("asap") || lowerText.includes("1-2")) {
+        if (matchesAny(lowerText, ["10k"])) {
           newScore += 20;
-          setQualificationData(prev => ({ ...prev, timeline: "urgent", leadScore: newScore, currentStep: nextStep }));
-          return "Urgent timeline noted! We specialize in fast delivery. What type of project are you looking to build?\n\n\u{1F4F1} Mobile App\n\u{1F310} Web Application\n\u{1F3AE} Game Development\n\u{1F916} AI Solution\n\u{26D3}\u{FE0F} Blockchain/Web3\n\u{1F4BB} Custom Software";
-        } else {
-          newScore += 10;
-          setQualificationData(prev => ({ ...prev, timeline: "standard", leadScore: newScore, currentStep: nextStep }));
-          return "Perfect! That gives us time for thorough development. What type of project interests you?\n\n\u{1F4F1} Mobile App\n\u{1F310} Web Application\n\u{1F3AE} Game Development\n\u{1F916} AI Solution\n\u{26D3}\u{FE0F} Blockchain/Web3\n\u{1F4BB} Custom Software";
+          setQualificationData((prev) => ({ ...prev, budget: "medium", leadScore: newScore, currentStep: nextStep }));
+          return "Good starting range. What timeline are you targeting?\n\nASAP\n3-6 months\n6-12 months\nFlexible";
         }
+        newScore += 10;
+        setQualificationData((prev) => ({ ...prev, budget: "early", leadScore: newScore, currentStep: nextStep }));
+        return "No problem, we can still shape the right approach. What timeline are you targeting?\n\nASAP\n3-6 months\n6-12 months\nFlexible";
 
-      case 3: // Project Type
+      case 2:
+        if (matchesAny(lowerText, ["asap", "urgent", "1-2"])) {
+          newScore += 20;
+          setQualificationData((prev) => ({ ...prev, timeline: "urgent", leadScore: newScore, currentStep: nextStep }));
+          return "Understood. What are you trying to build?\n\nWebsite\nWeb app\nMobile app\nAI feature\nSEO growth project\nRedesign";
+        }
+        newScore += 10;
+        setQualificationData((prev) => ({ ...prev, timeline: "standard", leadScore: newScore, currentStep: nextStep }));
+        return "That gives us room for planning properly. What are you trying to build?\n\nWebsite\nWeb app\nMobile app\nAI feature\nSEO growth project\nRedesign";
+
+      case 3:
         newScore += 15;
-        setQualificationData(prev => ({ ...prev, projectType: userText, leadScore: newScore, currentStep: nextStep }));
-        return "Great choice! Last question: What's your company size?\n\n\u{1F3E2} Startup (1-50 employees)\n\u{1F3E2} Small Business (51-200 employees)\n\u{1F3E2} Enterprise (200+ employees)\n\u{1F464} Individual/Founder";
+        setQualificationData((prev) => ({ ...prev, projectType: userText, leadScore: newScore, currentStep: nextStep }));
+        return "Last question: what type of company are you?\n\nStartup\nSmall business\nEnterprise\nIndividual founder";
 
-      case 4: // Company Size
-        if (lowerText.includes("enterprise") || lowerText.includes("200+")) {
+      case 4:
+        if (matchesAny(lowerText, ["enterprise"])) {
           newScore += 25;
-          setQualificationData(prev => ({ ...prev, companySize: "enterprise", leadScore: newScore, qualified: true }));
-          return "Perfect! Based on your responses, you're an ideal candidate for our Dedicated Team model. We have extensive experience with enterprise clients.\n\n\u{1F3AF} HIGH PRIORITY LEAD DETECTED\n\nWould you like me to:\n\u{1F4C5} Schedule a call with our Enterprise Solutions Director\n\u{1F4CB} Send you our enterprise case studies\n\u{1F4BC} Provide a custom proposal\n\nOr tell me more about your specific needs!";
-        } else if (lowerText.includes("startup") || lowerText.includes("small")) {
-          newScore += 20;
-          setQualificationData(prev => ({ ...prev, companySize: "startup", leadScore: newScore, qualified: true }));
-          return "Excellent! We love working with startups and have helped hundreds scale successfully.\n\n\u{1F680} Based on your profile, our Fixed Price or Dedicated Team models would work perfectly.\n\nWould you like to:\n\u{1F4C5} Book a free consultation call\n\u{1F4D6} See relevant case studies\n\u{1F4A1} Get a project estimate\n\nWhat's your biggest challenge right now?";
-        } else {
-          newScore += 15;
-          setQualificationData(prev => ({ ...prev, companySize: "individual", leadScore: newScore, qualified: true }));
-          return "Awesome! We work with individual founders and entrepreneurs regularly.\n\n\u{1F4A1} Many successful apps started just like yours!\n\nWould you like to:\n\u{1F4C5} Schedule a free strategy call\n\u{1F4DA} Check our founder success stories\n\u{1F4B0} See pricing options\n\nWhat's your vision for this project?";
+          setQualificationData((prev) => ({ ...prev, companySize: "enterprise", leadScore: newScore, qualified: true }));
+          return "You look like a strong fit for a high-touch delivery model. If you want, send me your core requirements and I’ll help shape the next step.";
         }
+        newScore += 20;
+        setQualificationData((prev) => ({ ...prev, companySize: "growth", leadScore: newScore, qualified: true }));
+        return "That sounds like a good fit. If you share your goal, target audience, and timeline, I can help you frame the best project path.";
 
       default:
         return BOT_RESPONSES.default;
@@ -161,83 +166,55 @@ export default function Chatbot() {
     const score = qualificationData.leadScore;
 
     if (score >= 70) {
-      // High-intent: Direct to Calendly booking
-      return "\u{1F3AF} EXCELLENT FIT DETECTED!\n\nBased on your requirements, you're a perfect match for our premium services. Our team would love to discuss your project in detail.\n\n\u{1F4C5} **Let's schedule a call right now!**\n\n[Book a free 30-min consultation](https://calendly.com/nexavibe-consultation)\n\nOr I can send you our detailed proposal first - which would you prefer?";
-    } else if (score >= 40) {
-      // Medium-intent: Show case studies
-      return "\u{1F4C8} GOOD POTENTIAL!\n\nYour project aligns well with our expertise. Let me show you some relevant success stories that might inspire you.\n\n\u{1F4D6} **Check out these case studies:**\n• [Similar Project Case Study 1](/work/case-study-1)\n• [Similar Project Case Study 2](/work/case-study-2)\n\nWould you like to see more examples or schedule a consultation?";
-    } else {
-      // Low-intent: Educational content
-      return "\u{1F914} GETTING STARTED?\n\nThat's completely fine! Many great projects start with exploring options.\n\n\u{1F4DA} **Helpful resources:**\n• [How to Choose the Right Development Partner](/blog/choosing-developer)\n• [MVP Development Guide](/blog/mvp-guide)\n• [Startup Tech Stack Guide](/blog/tech-stack)\n\nWhen you're ready to move forward, I'm here to help!";
+      return "You look like a strong fit for a premium build. The best next step is to share your key goals, features, and deadline so we can suggest the right execution path.";
     }
+
+    if (score >= 40) {
+      return "Your project sounds promising. If you tell me the type of product, audience, and target outcome, I can guide you toward the right structure and scope.";
+    }
+
+    return "You are still in the discovery stage, which is totally fine. Tell me what you want to build and what result you want, and I’ll help you shape the idea.";
   };
 
-  const getBotResponse = (userText: string): string | React.ReactElement => {
+  const getBotResponse = (userText: string): string => {
     const lowerText = userText.toLowerCase();
 
-    // Check if we're in qualification flow
     if (qualificationData.currentStep > 0 && qualificationData.currentStep < 5) {
       return handleQualificationResponse(userText);
     }
 
-    // Check if qualification is complete and route accordingly
     if (qualificationData.qualified) {
       return getRoutingResponse();
     }
 
-    // Start qualification for project-related queries
-    if (lowerText.includes("build") || lowerText.includes("develop") || lowerText.includes("create") ||
-        lowerText.includes("app") || lowerText.includes("website") || lowerText.includes("project") ||
-        lowerText.includes("mvp") || lowerText.includes("startup")) {
+    if (matchesAny(lowerText, ["build", "develop", "create", "project", "website", "app", "mvp", "startup"])) {
       return startQualification();
     }
-
-    // Standard responses
-    if (lowerText.includes("hello") || lowerText.includes("hi") || lowerText.includes("hey")) {
-      return BOT_RESPONSES.greeting;
-    }
-    if (lowerText.includes("service") || lowerText.includes("offer") || lowerText.includes("what do you do")) {
-      return BOT_RESPONSES.services;
-    }
-    if (lowerText.includes("portfolio") || lowerText.includes("work")) {
-      return BOT_RESPONSES.portfolio;
-    }
-    if (lowerText.includes("price") || lowerText.includes("cost") || lowerText.includes("rate") || lowerText.includes("quote")) {
-      return startQualification();
-    }
-    if (lowerText.includes("contact") || lowerText.includes("phone") || lowerText.includes("email") || lowerText.includes("location")) {
-      return BOT_RESPONSES.contact;
-    }
-    if (lowerText.includes("timeline") || lowerText.includes("time") || lowerText.includes("long") || lowerText.includes("duration")) {
-      return BOT_RESPONSES.timeline;
-    }
-    if (lowerText.includes("technology") || lowerText.includes("tech") || lowerText.includes("stack") || lowerText.includes("framework")) {
-      return BOT_RESPONSES.technology;
-    }
-    if (lowerText.includes("about") || lowerText.includes("company") || lowerText.includes("who") || lowerText.includes("year")) {
-      return BOT_RESPONSES.company;
-    }
-    if (lowerText.includes("blockchain") || lowerText.includes("crypto") || lowerText.includes("web3") || lowerText.includes("nft") || lowerText.includes("smart contract")) {
-      return BOT_RESPONSES.blockchain;
-    }
-    if (lowerText.includes("mobile") || lowerText.includes("app") || lowerText.includes("ios") || lowerText.includes("android")) {
-      return BOT_RESPONSES.mobile;
-    }
-    if (lowerText.includes("ai") || lowerText.includes("artificial") || lowerText.includes("machine learning") || lowerText.includes("ml")) {
-      return BOT_RESPONSES.ai;
-    }
-    if (lowerText.includes("game") || lowerText.includes("gaming") || lowerText.includes("unity")) {
-      return BOT_RESPONSES.game;
-    }
-    if (lowerText.includes("web") || lowerText.includes("website") || lowerText.includes("development")) {
-      return BOT_RESPONSES.services;
-    }
-    if (lowerText.includes("thank") || lowerText.includes("thanks")) {
-      return "You're welcome! Is there anything else I can help you with?";
-    }
-    if (lowerText.includes("schedule") || lowerText.includes("call") || lowerText.includes("consultation")) {
-      return "I'd be happy to help you schedule a consultation! Please fill out our contact form or request a call, and our team will get back to you within 24 hours.";
-    }
+    if (matchesAny(lowerText, ["hello", "hi", "hey"])) return BOT_RESPONSES.greeting;
+    if (matchesAny(lowerText, ["service", "offer", "what do you do"])) return BOT_RESPONSES.services;
+    if (matchesAny(lowerText, ["portfolio", "case study", "work"])) return BOT_RESPONSES.portfolio;
+    if (matchesAny(lowerText, ["price", "cost", "rate", "quote", "budget"])) return startQualification();
+    if (matchesAny(lowerText, ["contact", "email", "phone", "whatsapp"])) return BOT_RESPONSES.contact;
+    if (matchesAny(lowerText, ["timeline", "how long", "duration", "delivery"])) return BOT_RESPONSES.timeline;
+    if (matchesAny(lowerText, ["technology", "tech", "stack", "framework"])) return BOT_RESPONSES.technology;
+    if (matchesAny(lowerText, ["about", "company", "experience"])) return BOT_RESPONSES.company;
+    if (matchesAny(lowerText, ["blockchain", "crypto", "web3", "nft"])) return BOT_RESPONSES.blockchain;
+    if (matchesAny(lowerText, ["mobile", "ios", "android", "react native", "flutter"])) return BOT_RESPONSES.mobile;
+    if (matchesAny(lowerText, ["ai", "chatbot", "automation", "machine learning"])) return BOT_RESPONSES.ai;
+    if (matchesAny(lowerText, ["game", "gaming", "unity", "unreal"])) return BOT_RESPONSES.game;
+    if (matchesAny(lowerText, ["ecommerce", "shopify", "store", "checkout"])) return BOT_RESPONSES.ecommerce;
+    if (matchesAny(lowerText, ["redesign", "revamp", "refresh"])) return BOT_RESPONSES.redesign;
+    if (matchesAny(lowerText, ["seo", "ranking", "organic traffic"])) return BOT_RESPONSES.seo;
+    if (matchesAny(lowerText, ["maintenance", "retainer", "support plan"])) return BOT_RESPONSES.maintenance;
+    if (matchesAny(lowerText, ["process", "workflow", "steps", "milestone"])) return BOT_RESPONSES.process;
+    if (matchesAny(lowerText, ["dedicated developer", "dedicated team", "hire developers"])) return BOT_RESPONSES.hiring;
+    if (matchesAny(lowerText, ["bug", "fix", "issue", "problem"])) return BOT_RESPONSES.support;
+    if (matchesAny(lowerText, ["nda", "confidential", "security", "privacy"])) return BOT_RESPONSES.nda;
+    if (matchesAny(lowerText, ["industry", "healthcare", "real estate", "education", "saas", "fintech"])) return BOT_RESPONSES.industries;
+    if (matchesAny(lowerText, ["integration", "api", "crm", "payment gateway", "webhook"])) return BOT_RESPONSES.integrations;
+    if (matchesAny(lowerText, ["launch", "deploy", "go live", "release"])) return BOT_RESPONSES.launch;
+    if (matchesAny(lowerText, ["thank", "thanks"])) return "You’re welcome. If you want, ask me about scope, pricing, redesigns, or launch planning.";
+    if (matchesAny(lowerText, ["schedule", "call", "consultation", "meeting"])) return "If you want to move forward, send your project summary here or email hello@celestiatech.in and our team can follow up.";
 
     return BOT_RESPONSES.default;
   };
@@ -245,9 +222,10 @@ export default function Chatbot() {
   const handleSend = () => {
     if (!inputValue.trim()) return;
 
+    const currentInput = inputValue;
     const userMessage: Message = {
       id: getNextMessageId(),
-      text: inputValue,
+      text: currentInput,
       sender: "user",
       timestamp: new Date(),
     };
@@ -255,17 +233,15 @@ export default function Chatbot() {
     setMessages((prev) => [...prev, userMessage]);
     setInputValue("");
 
-    // Simulate bot typing delay
-    setTimeout(() => {
-      const botResponse = getBotResponse(inputValue);
+    window.setTimeout(() => {
       const botMessage: Message = {
         id: getNextMessageId(),
-        text: botResponse,
+        text: getBotResponse(currentInput),
         sender: "bot",
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, botMessage]);
-    }, 1000);
+    }, 700);
   };
 
   const handleQuickReply = (label: string, response: string) => {
@@ -278,34 +254,23 @@ export default function Chatbot() {
 
     setMessages((prev) => [...prev, userMessage]);
 
-    // Simulate bot typing delay
-    setTimeout(() => {
-      const botResponse = getBotResponse(response);
+    window.setTimeout(() => {
       const botMessage: Message = {
         id: getNextMessageId(),
-        text: botResponse,
+        text: getBotResponse(response),
         sender: "bot",
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, botMessage]);
-    }, 1000);
+    }, 700);
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
-      handleSend();
-    }
-  };
-
-  // Use stable time format for hydration
   const formatTime = (date: Date) => {
-    // Use fixed format to avoid hydration mismatch
     const hours = date.getHours();
     const minutes = date.getMinutes();
-    const period = hours >= 12 ? 'PM' : 'AM';
+    const period = hours >= 12 ? "PM" : "AM";
     const displayHours = hours % 12 || 12;
-    return `${displayHours}:${minutes.toString().padStart(2, '0')} ${period}`;
+    return `${displayHours}:${minutes.toString().padStart(2, "0")} ${period}`;
   };
 
   const openLeadPopup = () => {
@@ -314,125 +279,238 @@ export default function Chatbot() {
     }
   };
 
+  const hasConversationStarted = messages.some((message) => message.sender === "user");
+
   return (
     <div className={styles.chatbotContainer}>
       <PortfolioLeadPopup />
 
-      {/* Chat Window */}
-      <div className={`${styles.chatWindow} ${isOpen ? styles.open : ""}`}>
-        {/* Header */}
-        <div className={styles.chatHeader}>
-          <div className={styles.headerInfo}>
-            <div className={styles.botAvatar}>
-              <span>{"\u{1F916}"}</span>
-            </div>
-            <div className={styles.headerText}>
-              <h3>Celestiatech Assistant</h3>
-              <span className={styles.status}>
-                <span className={styles.statusDot}></span>
-                Online
-              </span>
-            </div>
-          </div>
-          <button 
-            className={styles.closeButton}
-            onClick={() => setIsOpen(false)}
-            aria-label="Close chat"
-          >
-            {"\u{2715}"}
-          </button>
-        </div>
-
-        {/* Messages */}
-        <div className={styles.messagesContainer}>
-          {messages.map((message) => (
-            <div
-              key={message.id}
-              className={`${styles.message} ${message.sender === "user" ? styles.userMessage : styles.botMessage}`}
-            >
-              <div className={styles.messageAvatar}>
-                {message.sender === "user" ? "\u{1F464}" : "\u{1F916}"}
-              </div>
-              <div className={styles.messageContent}>
-                <div className={styles.messageBubble}>
-                  {typeof message.text === 'string' ? message.text.split("\n").map((line: string, index: number) => (
-                    <p key={index}>{line}</p>
-                  )) : message.text}
-                </div>
-                <span className={styles.messageTime}>{formatTime(message.timestamp)}</span>
-              </div>
-            </div>
-          ))}
-          <div ref={messagesEndRef} />
-        </div>
-
-        {/* Quick Replies */}
-        {messages.length <= 2 && (
-          <div className={styles.quickReplies}>
-            {QUICK_REPLIES.map((reply, index) => (
-              <button
-                key={index}
-                className={styles.quickReplyButton}
-                onClick={() => handleQuickReply(reply.label, reply.response)}
-              >
-                {reply.label}
-              </button>
-            ))}
-          </div>
-        )}
-
-        {/* Input Area */}
-        <div className={styles.inputContainer}>
-          <div className={styles.inputWrapper}>
-            <textarea
-              className={styles.input}
-              placeholder="Type your message..."
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              onKeyPress={handleKeyPress}
-              rows={1}
+      {isSupportOpen && (
+        <aside className={styles.supportWindow}>
+        <div className={styles.supportHeader}>
+          <div className={styles.supportHeaderTop}>
+            <Image
+              src="/logos/celethisia.png"
+              alt="Celestiatech"
+              width={44}
+              height={44}
+              className={styles.supportLogo}
             />
-            <button 
-              className={styles.sendButton}
-              onClick={handleSend}
-              disabled={!inputValue.trim()}
-              aria-label="Send message"
+            <button
+              type="button"
+              className={styles.supportCloseButton}
+              onClick={() => setIsSupportOpen(false)}
+              aria-label="Minimize conversation widget"
             >
-              {"\u{27A4}"}
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M18 6 6 18"></path>
+                <path d="m6 6 12 12"></path>
+              </svg>
             </button>
           </div>
-          <p className={styles.disclaimer}>
-            Powered by Celestiatech AI
-          </p>
+          <h3>Hi 👋</h3>
+          <p>Ask us anything, or share your feedback</p>
         </div>
-      </div>
 
-      <div className={styles.floatingActions}>
+        <div className={styles.supportBody}>
+          <div className={styles.supportCard}>
+            <span className={styles.supportCardTitle}>Start a new conversation</span>
+            <span className={styles.supportCardText}>Our agents typically reply in a few minutes.</span>
+            <div className={styles.supportAgents}>
+              <span className={styles.supportAgent}>A</span>
+              <span className={styles.supportAgent}>C</span>
+            </div>
+            <button
+              type="button"
+              className={styles.supportPrimaryButton}
+              onClick={() => setIsChatOpen(true)}
+            >
+              <span className={styles.supportPrimaryIcon}>➤</span>
+              Send us a message
+            </button>
+          </div>
+
+          <div className={styles.supportCard}>
+            <span className={styles.supportCardTitle}>Send us an email</span>
+            <span className={styles.supportCardText}>If you're in a hurry, send us a message and we will get back to you asap.</span>
+            <a href="mailto:hello@celestiatech.in" className={styles.supportSecondaryButton}>
+              Send email
+            </a>
+          </div>
+
+          <button type="button" className={styles.supportGhostButton} onClick={openLeadPopup}>
+            Open project survey
+          </button>
+        </div>
+        </aside>
+      )}
+
+      {isChatOpen ? (
+        <section className={`${styles.chatWindow} ${styles.open}`}>
+          <header className={styles.chatHeader}>
+            <div className={styles.headerInfo}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className={styles.headerIcon}
+                aria-hidden="true"
+              >
+                <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
+                <path d="M20 3v4" />
+                <path d="M22 5h-4" />
+                <path d="M4 17v2" />
+                <path d="M5 18H3" />
+              </svg>
+              <div className={styles.headerText}>
+                <h3>Celestiatech Assistant</h3>
+                <p>AI-powered project guide</p>
+              </div>
+            </div>
+            <div className={styles.headerActions}>
+              <button className={styles.headerActionButton} disabled title="Email conversation summary" aria-label="Email conversation summary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </button>
+              <button className={styles.headerActionButton} onClick={() => setIsChatOpen(false)} aria-label="Minimize AI chat">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M18 6 6 18"></path>
+                  <path d="m6 6 12 12"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div className={styles.messagesContainer}>
+            {!hasConversationStarted ? (
+              <div className={styles.starterContainer}>
+                <div className={styles.welcomeHeader}>
+                  <div className={styles.welcomeIconWrapper}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.welcomeIcon} aria-hidden="true">
+                      <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
+                      <path d="M20 3v4" />
+                      <path d="M22 5h-4" />
+                      <path d="M4 17v2" />
+                      <path d="M5 18H3" />
+                    </svg>
+                  </div>
+                  <h2 className={styles.welcomeTitle}>How can I help you?</h2>
+                  <p className={styles.welcomeDescription}>
+                    I can help with websites, apps, SEO, redesigns, pricing, timelines, and the best way to start your project.
+                  </p>
+                </div>
+
+                <div className={styles.suggestionsGrid}>
+                  {STARTER_SUGGESTIONS.map((suggestion) => (
+                    <button
+                      key={suggestion.label}
+                      className={styles.suggestionCard}
+                      onClick={() => handleQuickReply(suggestion.label, suggestion.response)}
+                    >
+                      <span className={styles.suggestionIcon}>✦</span>
+                      <span className={styles.suggestionText}>{suggestion.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <>
+                {messages.map((message) => (
+                  <div
+                    key={message.id}
+                    className={`${styles.message} ${message.sender === "user" ? styles.userMessage : styles.botMessage}`}
+                  >
+                    <div className={styles.messageAvatar}>
+                      {message.sender === "user" ? "👤" : "✦"}
+                    </div>
+                    <div className={styles.messageContent}>
+                      <div className={styles.messageBubble}>
+                        {typeof message.text === "string"
+                          ? message.text.split("\n").map((line, index) => <p key={index}>{line}</p>)
+                          : message.text}
+                      </div>
+                      <span className={styles.messageTime}>{formatTime(message.timestamp)}</span>
+                    </div>
+                  </div>
+                ))}
+              </>
+            )}
+            <div ref={messagesEndRef} />
+          </div>
+
+          {hasConversationStarted && messages.length <= 3 && (
+            <div className={styles.quickReplies}>
+              {QUICK_REPLIES.map((reply) => (
+                <button
+                  key={reply.label}
+                  className={styles.quickReplyButton}
+                  onClick={() => handleQuickReply(reply.label, reply.response)}
+                >
+                  {reply.label}
+                </button>
+              ))}
+            </div>
+          )}
+
+          <div className={styles.inputContainer}>
+            <form
+              className={styles.inputWrapper}
+              onSubmit={(event) => {
+                event.preventDefault();
+                handleSend();
+              }}
+            >
+              <input
+                ref={inputRef}
+                className={styles.input}
+                placeholder="Ask me anything about your project..."
+                value={inputValue}
+                onChange={(event) => setInputValue(event.target.value)}
+              />
+              <button type="submit" className={styles.sendButton} disabled={!inputValue.trim()} aria-label="Send message">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path>
+                  <path d="m21.854 2.147-10.94 10.939"></path>
+                </svg>
+              </button>
+            </form>
+            <p className={styles.disclaimer}>Powered by Celestiatech AI</p>
+          </div>
+        </section>
+      ) : null}
+
+      {!isSupportOpen ? (
         <button
           type="button"
-          className={styles.leadButton}
-          onClick={openLeadPopup}
-          aria-label="Open project survey"
+          className={styles.reopenSupport}
+          onClick={() => setIsSupportOpen(true)}
+          aria-label="Open conversation"
+          title="Open conversation"
         >
-          <span className={styles.leadIcon}>✦</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+          </svg>
         </button>
+      ) : null}
 
-        {/* Toggle Button */}
+      {!isChatOpen ? (
         <button
-          className={styles.toggleButton}
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label={isOpen ? "Close chat" : "Open chat"}
+          type="button"
+          className={styles.reopenAssistant}
+          onClick={() => setIsChatOpen(true)}
+          aria-label="Open AI assistant"
+          title="Open AI assistant"
         >
-          {isOpen ? (
-            <span>{"\u{2715}"}</span>
-          ) : (
-            <span className={styles.chatIcon}>{"\u{1F4AC}"}</span>
-          )}
-          {!isOpen && messages.length === 1 && (
-            <span className={styles.notificationBadge}>1</span>
-          )}
+          <span className={styles.reopenAssistantLabel}>Chat With Assistant</span>
         </button>
-      </div>
+      ) : null}
     </div>
   );
 }

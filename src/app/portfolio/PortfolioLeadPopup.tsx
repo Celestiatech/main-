@@ -222,6 +222,7 @@ function getCurrencyConfig(region: string | null): CurrencyConfig {
 
 export function PortfolioLeadPopup() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showLauncher, setShowLauncher] = useState(true);
   const [currentStep, setCurrentStep] = useState<PopupStep>(1);
   const [formData, setFormData] = useState<LeadFormState>(initialState);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -270,6 +271,7 @@ export function PortfolioLeadPopup() {
             const lastMeaningfulSection = sectionOrder[sectionOrder.length - 1] as BehaviorKey | undefined;
             setBehaviorKey(lastMeaningfulSection || "default");
             window.sessionStorage.setItem(STORAGE_KEY, "opened");
+            setShowLauncher(true);
             setIsOpen(true);
             observer.disconnect();
           }
@@ -293,6 +295,7 @@ export function PortfolioLeadPopup() {
     const handleOpenRequest = () => {
       setBehaviorKey("manual");
       window.sessionStorage.setItem(STORAGE_KEY, "opened");
+      setShowLauncher(true);
       setIsOpen(true);
     };
 
@@ -409,7 +412,24 @@ export function PortfolioLeadPopup() {
   };
 
   if (!isOpen) {
-    return null;
+    return showLauncher ? (
+      <button
+        type="button"
+        className={styles.popupLauncher}
+        onClick={() => {
+          setBehaviorKey("manual");
+          setIsOpen(true);
+        }}
+        aria-label="Open survey"
+        title="Open survey"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M9 3h6"></path>
+          <path d="M10 17l2 2 4-4"></path>
+          <path d="M12 3a2 2 0 0 0-2 2v1H8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-2V5a2 2 0 0 0-2-2Z"></path>
+        </svg>
+      </button>
+    ) : null;
   }
 
   return (

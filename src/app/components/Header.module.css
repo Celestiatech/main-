@@ -28,7 +28,7 @@
 
 .headerTop {
   background: linear-gradient(135deg, var(--header-blue-500) 0%, var(--header-blue-900) 100%);
-  padding: 10px 0;
+  padding: 8px 0;
   font-size: var(--font-size-sm);
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
@@ -36,15 +36,15 @@
 .headerTopInner,
 .headerInner {
   width: 100%;
-  padding-inline: clamp(16px, 3vw, 40px);
+  padding-inline: clamp(14px, 2.5vw, 32px);
 }
 
 .headerTopContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 8px;
+  gap: 14px;
+  margin-bottom: 6px;
 }
 
 .headerPhones {
@@ -59,9 +59,9 @@
   align-items: center;
   gap: 8px;
   transition: all var(--transition-fast);
-  font-size: 12px;
+  font-size: 11px;
   text-decoration: none;
-  padding: 8px 12px;
+  padding: 7px 10px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -78,26 +78,26 @@
 }
 
 .headerPhones a i {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.18);
   color: #ffffff;
-  font-size: 11px;
+  font-size: 10px;
   flex-shrink: 0;
 }
 
 .headerTopMessage {
   color: #ffffff;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 9px 14px;
+  padding: 8px 12px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.22);
@@ -106,22 +106,22 @@
 }
 
 .headerTopMessage i {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.22);
   color: #ffffff;
-  font-size: 11px;
+  font-size: 10px;
 }
 
 .headerTicker {
   position: relative;
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding-top: 8px;
+  padding-top: 6px;
 }
 
 .headerTicker::after {
@@ -135,14 +135,14 @@
 .headerTickerTrack {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 22px;
   width: max-content;
   animation: headerTickerMove 26s linear infinite;
 }
 
 .headerTickerTrack span {
   position: relative;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -152,7 +152,7 @@
 
 .headerTickerTrack span::after {
   content: "•";
-  margin-left: 28px;
+  margin-left: 22px;
   color: #90d3ff;
 }
 
@@ -175,13 +175,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-3) 0;
-  gap: var(--spacing-3);
+  padding: 10px 0;
+  gap: 10px;
 }
 
 .logo {
   font-family: var(--font-display);
-  font-size: calc(var(--font-size-xl) + 4px);
+  font-size: calc(var(--font-size-lg) + 3px);
   font-weight: var(--font-weight-extrabold);
   color: var(--text-primary);
   display: flex;
@@ -198,8 +198,8 @@
 }
 
 .logoIcon {
-  width: 58px;
-  height: 56px;
+  width: 52px;
+  height: 50px;
   background: transparent;
   border-radius: 0;
   border: none;
@@ -1282,6 +1282,25 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .headerInner {
+    padding-inline: 12px;
+  }
+
+  .headerMain {
+    padding: 8px 0;
+    gap: 8px;
+  }
+
+  .logo {
+    font-size: 18px;
+    gap: 8px;
+  }
+
+  .logoIcon {
+    width: 46px;
+    height: 44px;
+  }
+
   .nav {
     display: none;
   }
@@ -1321,6 +1340,25 @@
   
   .categoriesGrid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .headerInner {
+    padding-inline: 10px;
+  }
+
+  .headerMain {
+    padding: 7px 0;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .logoIcon {
+    width: 42px;
+    height: 40px;
   }
 }
 
