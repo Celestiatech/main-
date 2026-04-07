@@ -1,18 +1,23 @@
 "use client";
 
 import { useState, useEffect, useRef, lazy, Suspense, type MouseEvent as ReactMouseEvent, type ReactNode } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { trackCTAClick, useScrollTracking } from "@/lib/analytics";
-import { CASE_STUDIES } from "@/lib/grocitoPortfolio";
-import { PortfolioShowcase } from "@/components/PortfolioShowcase";
+import { trackCTAClick } from "@/lib/analytics";
 import styles from "./page.module.css";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 
 // Lazy load Chatbot component
 const Chatbot = lazy(() => import("./components/Chatbot"));
+const PortfolioShowcase = dynamic(
+  () => import("@/components/PortfolioShowcase").then((module) => module.PortfolioShowcase),
+  {
+    ssr: false,
+    loading: () => <div className={styles.portfolioPlaceholder} aria-hidden="true" />,
+  }
+);
 
 function HeroBadgeIcon({ kind }: { kind: "whatsapp" | "call" | "revenue" | "seo" }) {
   const icons: Record<typeof kind, ReactNode> = {
@@ -46,17 +51,12 @@ function HeroBadgeIcon({ kind }: { kind: "whatsapp" | "call" | "revenue" | "seo"
 }
 
 export default function Home() {
-  const pathname = usePathname();
-  const [activeTab, setActiveTab] = useState("all");
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
-  const [selectedIndustry, setSelectedIndustry] = useState("startup");
   const [revenueCount, setRevenueCount] = useState(0);
+  const [shouldRenderChatbot, setShouldRenderChatbot] = useState(false);
   const industryCarouselRef = useRef<HTMLDivElement | null>(null);
   const heroBadgeRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
   const heroPointerFrame = useRef<number | null>(null);
-
-  // Track scroll depth
-  useScrollTracking(pathname || "/");
 
   // Scroll animation observer
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -111,6 +111,20 @@ export default function Home() {
     return () => {
       if (heroPointerFrame.current !== null) {
         window.cancelAnimationFrame(heroPointerFrame.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const idleCallback = "requestIdleCallback" in window
+      ? window.requestIdleCallback(() => setShouldRenderChatbot(true), { timeout: 2500 })
+      : window.setTimeout(() => setShouldRenderChatbot(true), 1800);
+
+    return () => {
+      if ("cancelIdleCallback" in window && typeof idleCallback === "number") {
+        window.cancelIdleCallback(idleCallback);
+      } else {
+        window.clearTimeout(idleCallback as number);
       }
     };
   }, []);
@@ -229,72 +243,6 @@ export default function Home() {
     };
   }, []);
 
-  const services = [
-    {
-      icon: "/images/icons/mobile-development.svg",
-      title: "Mobile App Development",
-      whoFor: "For startups & enterprise teams",
-      businessResult: "Launch in 60–90 days",
-      metric: "35% faster go-to-market | 42% higher retention",
-      description: "iOS & Android apps built for scale, analytics, and monetization.",
-      cta: "View Case Studies",
-    },
-    {
-      icon: "/images/icons/web-development.svg",
-      title: "Web Development",
-      whoFor: "For businesses & agencies",
-      businessResult: "Scalable platforms in 45–75 days",
-      metric: "300% faster load times | 40% lower infra cost",
-      description: "Modern web apps optimized for speed, security, and conversion.",
-      cta: "View Case Studies",
-    },
-    {
-      icon: "/images/icons/game-development.svg",
-      title: "Game Development",
-      whoFor: "For indie developers & studios",
-      businessResult: "Viral games in 90–120 days",
-      metric: "1M+ downloads | 4.8 rating on app stores",
-      description: "Engaging 2D/3D experiences built for retention and revenue.",
-      cta: "View Case Studies",
-    },
-    {
-      icon: "/images/icons/blockchain-development.svg",
-      title: "Blockchain Development",
-      whoFor: "For fintech & startups",
-      businessResult: "Secure solutions in 60–90 days",
-      metric: "Zero security breaches | $50M+ assets secured",
-      description: "Web3 apps, audited smart contracts, and DeFi platforms.",
-      cta: "View Case Studies",
-    },
-    {
-      icon: "/images/icons/devops-services.svg",
-      title: "DevOps Services",
-      whoFor: "For tech teams & enterprises",
-      businessResult: "50% faster deployments",
-      metric: "70% faster CI/CD | 60% fewer downtime incidents",
-      description: "CI/CD pipelines, infra automation, and reliability engineering.",
-      cta: "View Case Studies",
-    },
-    {
-      icon: "/images/icons/metaverse-development.svg",
-      title: "Metaverse Development",
-      whoFor: "For brands & innovators",
-      businessResult: "Immersive experiences in 90–120 days",
-      metric: "200% engagement increase | 85% user satisfaction",
-      description: "VR/AR worlds, 3D experiences, and immersive brand activations.",
-      cta: "View Case Studies",
-    },
-    {
-      icon: "/images/icons/quality-assurance.svg",
-      title: "Quality Assurance",
-      whoFor: "For all development projects",
-      businessResult: "Bug-free launches guaranteed",
-      metric: "99.9% bug-free releases | 100% compliance rate",
-      description: "Automation, regression, and performance testing across devices.",
-      cta: "View Case Studies",
-    },
-  ];
-
   const awards = [
     { name: "Upwork", badge: "Top Rated Plus", logo: "/images/awards/upwork.png" },
     { name: "Clutch", badge: "B2B Leader 2024", logo: "/images/awards/clutch.png" },
@@ -367,43 +315,6 @@ export default function Home() {
   ];
 
   const industryCarouselItems = [...industryHighlights, ...industryHighlights];
-
-  // Transform CASE_STUDIES for homepage display
-  const portfolio = CASE_STUDIES.map((study) => {
-    // Format impacts as HTML result string
-    const resultHtml = study.impacts
-      .map((impact) => {
-        const iconMap: Record<string, string> = {
-          "Increased user retention by": "/images/icons/chart-growth.svg",
-          "Generated revenue in 6 months": "/images/icons/chart-growth.svg",
-          "300% faster load times": "/images/icons/launch.svg",
-          "Served students": "/images/icons/tailored-solutions.svg",
-          Downloads: "/images/icons/mobile-development.svg",
-          "Rating on app stores": "/images/icons/expertise.svg",
-          "Zero security breaches": "/images/icons/security.svg",
-          "Assets secured": "/images/icons/chart-growth.svg",
-          "70% faster responses": "/images/icons/launch.svg",
-          "Saved annually": "/images/icons/chart-growth.svg",
-          "Increase in brand recognition": "/images/icons/chart-growth.svg",
-          "Design awards won": "/images/icons/concept.svg",
-        };
-        const icon = iconMap[impact.label] || "/images/icons/chart-growth.svg";
-        return `<img src='${icon}' alt='${impact.label}' style='width:14px;height:14px;margin-right:4px;display:inline-block;vertical-align:middle;' />${impact.label} ${impact.value}`;
-      })
-      .join(" | ");
-
-    return {
-      category: study.category,
-      title: study.title,
-      clientGoal: study.subtitle,
-      problem: study.problem,
-      solution: study.solution,
-      techStack: study.techStack,
-      result: resultHtml,
-      beforeAfter: [study.beforeImage, study.afterImage],
-      tags: study.techStack.slice(0, 3),
-    };
-  });
 
   const processSteps = [
     {
@@ -577,21 +488,18 @@ export default function Home() {
       author: "CTO, US-based HealthTech Startup",
       service: "DevOps Services",
       stars: 5,
-      avatar: "/images/testimonials/healthtech-cto.svg",
     },
     {
       quote: "From MVP to 100K users in 6 months. Celestiatech's mobile app development delivered exactly what we needed.",
       author: "Founder, EduTech Platform",
       service: "Mobile App Development",
       stars: 5,
-      avatar: "/images/testimonials/edutech-founder.svg",
     },
     {
       quote: "Their blockchain team secured $50M+ in assets. Zero breaches, full compliance. Highly professional.",
       author: "CEO, FinTech Company",
       service: "Blockchain Development",
       stars: 5,
-      avatar: "/images/testimonials/fintech-ceo.svg",
     },
   ];
 
@@ -755,7 +663,7 @@ export default function Home() {
               <Link
                 href="/proposal"
                 className={styles.heroJoinBtn}
-                onClick={() => trackCTAClick("Get Started Today", "hero", pathname || "/")}
+                onClick={() => trackCTAClick("Get Started Today", "hero")}
               >
                 <span>Get Started Today!</span>
                 <span className={styles.heroJoinBtnBox} aria-hidden="true">↗</span>
@@ -763,7 +671,7 @@ export default function Home() {
               <Link
                 href="/contact"
                 className={styles.heroContactBtn}
-                onClick={() => trackCTAClick("Contact Now", "hero", pathname || "/")}
+                onClick={() => trackCTAClick("Contact Now", "hero")}
               >
                 <span>Contact Now</span>
                 <span className={styles.heroContactBtnBox} aria-hidden="true">→</span>
@@ -1230,9 +1138,11 @@ export default function Home() {
       <Footer />
 
       {/* ===== CHATBOT ===== */}
-      <Suspense fallback={null}>
-        <Chatbot />
-      </Suspense>
+      {shouldRenderChatbot ? (
+        <Suspense fallback={null}>
+          <Chatbot />
+        </Suspense>
+      ) : null}
     </div>
   );
 }
