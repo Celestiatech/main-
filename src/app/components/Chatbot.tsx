@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import styles from "./Chatbot.module.css";
+import { PortfolioLeadPopup } from "../portfolio/PortfolioLeadPopup";
 
 interface Message {
   id: string;
@@ -35,29 +36,29 @@ const QUICK_REPLIES: QuickReply[] = [
 const BOT_RESPONSES: Record<string, string> = {
   default: "Thanks for your message! A member of our team will get back to you shortly. In the meantime, feel free to explore our services or check out our portfolio.",
   
-  greeting: "ðŸ‘‹ Hello! Welcome to Celestiatech! We're a premium IT & Software Development Company specializing in mobile apps, web development, AI solutions, blockchain, and game development. How can I help you today?",
+  greeting: "\u{1F44B} Hello! Welcome to Celestiatech! We're a premium IT & Software Development Company specializing in mobile apps, web development, AI solutions, blockchain, and game development. How can I help you today?",
   
-  services: "We offer a wide range of services:\n\nðŸ“± Mobile Development - Native & cross-platform apps for iOS/Android\nðŸŒ Web Development - Scalable web applications\nðŸŽ® Game Development - 2D/3D games for all platforms\nâ›“ï¸ Blockchain - Web3 solutions & smart contracts\nðŸ¤– AI/ML - Machine learning solutions\nðŸŽ¨ UI/UX Design - Modern, user-friendly designs\nâš™ï¸ DevOps - Cloud infrastructure & automation\n\nWhich service interests you most?",
+  services: "We offer a wide range of services:\n\n\u{1F4F1} Mobile Development - Native & cross-platform apps for iOS/Android\n\u{1F310} Web Development - Scalable web applications\n\u{1F3AE} Game Development - 2D/3D games for all platforms\n\u{26D3}\u{FE0F} Blockchain - Web3 solutions & smart contracts\n\u{1F916} AI/ML - Machine learning solutions\n\u{1F3A8} UI/UX Design - Modern, user-friendly designs\n\u{2699}\u{FE0F} DevOps - Cloud infrastructure & automation\n\nWhich service interests you most?",
   
-  portfolio: "Our portfolio includes 2,500+ successful projects across various industries:\n\nâœ… 2,000+ Mobile Apps Developed\nâœ… 1,000+ Games Delivered\nâœ… 500+ Web Applications\nâœ… 200+ Blockchain Solutions\n\nWould you like to see specific case studies?",
+  portfolio: "Our portfolio includes 2,500+ successful projects across various industries:\n\n\u{2705} 2,000+ Mobile Apps Developed\n\u{2705} 1,000+ Games Delivered\n\u{2705} 500+ Web Applications\n\u{2705} 200+ Blockchain Solutions\n\nWould you like to see specific case studies?",
   
-  pricing: "Our pricing varies based on project complexity, timeline, and requirements. We offer:\n\nðŸ’° Fixed Price Projects\nðŸ’° Time & Material Model\nðŸ’° Dedicated Team Options\n\nWe provide a free initial consultation to understand your needs and provide a customized quote. Would you like to schedule a consultation?",
+  pricing: "Our pricing varies based on project complexity, timeline, and requirements. We offer:\n\n\u{1F4B0} Fixed Price Projects\n\u{1F4B0} Time & Material Model\n\u{1F4B0} Dedicated Team Options\n\nWe provide a free initial consultation to understand your needs and provide a customized quote. Would you like to schedule a consultation?",
   
-  contact: "ðŸ“ Our Locations:\nðŸ‡¦ðŸ‡ª Dubai, UAE - Business Bay\nðŸ‡®ðŸ‡³ Mohali, India - Punjab\n\nðŸ“ž Phone:\nðŸ‡¦ðŸ‡ª +971 50 000 0000\nðŸ‡®ðŸ‡³ +91 98765 43210\n\nâœ‰ï¸ Email: hello@celestiatech.in\n\nWould you like us to call you back?",
+  contact: "\u{1F4CD} Our Locations:\nUAE - Dubai, Business Bay\nIndia - Mohali, Punjab\n\n\u{1F4DE} Phone:\nUAE: +971 50 000 0000\nIndia: +91 98765 43210\n\n\u{2709}\u{FE0F} Email: hello@celestiatech.in\n\nWould you like us to call you back?",
   
-  timeline: "Project timelines depend on complexity:\n\nâ±ï¸ Simple Apps: 2-3 months\nâ±ï¸ Medium Projects: 3-6 months\nâ±ï¸ Complex Solutions: 6-12 months\n\nWe follow agile methodology with regular updates. Want to discuss your timeline?",
+  timeline: "Project timelines depend on complexity:\n\n\u{23F1}\u{FE0F} Simple Apps: 2-3 months\n\u{23F1}\u{FE0F} Medium Projects: 3-6 months\n\u{23F1}\u{FE0F} Complex Solutions: 6-12 months\n\nWe follow agile methodology with regular updates. Want to discuss your timeline?",
   
   technology: "We use modern technologies:\n\nFrontend: React, Next.js, Vue, Angular\nBackend: Node.js, Python, Go, Java\nMobile: React Native, Flutter, Swift, Kotlin\nCloud: AWS, Azure, Google Cloud\nDatabase: PostgreSQL, MongoDB, Firebase\n\nAny specific tech stack you prefer?",
   
   company: "Celestiatech is a premium IT company with 12+ years of experience. We've helped 2,500+ clients worldwide deliver successful digital solutions. We're recognized as Top Rated Plus on Upwork and rated by Clutch, GoodFirms, and AppFutura.",
   
-  blockchain: "Our blockchain services include:\n\nâ›“ï¸ Smart Contract Development\nðŸŒ Web3 Application Development\nðŸª™ DeFi Solutions\nðŸŽ¨ NFT Marketplace Development\nðŸ” Decentralized Applications\n\nWe work with Ethereum, Solana, Polygon, and other chains.",
+  blockchain: "Our blockchain services include:\n\n\u{26D3}\u{FE0F} Smart Contract Development\n\u{1F310} Web3 Application Development\n\u{1FA99} DeFi Solutions\n\u{1F3A8} NFT Marketplace Development\n\u{1F510} Decentralized Applications\n\nWe work with Ethereum, Solana, Polygon, and other chains.",
   
-  mobile: "Mobile app development services:\n\nðŸ“± iOS Development (Swift)\nðŸ¤– Android Development (Kotlin)\nðŸ”„ Cross-Platform (React Native, Flutter)\nðŸ“ App UI/UX Design\nðŸ”§ App Maintenance & Support\n\nWe deliver apps that users love!",
+  mobile: "Mobile app development services:\n\n\u{1F4F1} iOS Development (Swift)\n\u{1F916} Android Development (Kotlin)\n\u{1F504} Cross-Platform (React Native, Flutter)\n\u{1F4D0} App UI/UX Design\n\u{1F527} App Maintenance & Support\n\nWe deliver apps that users love!",
   
-  ai: "AI & Machine Learning solutions:\n\nðŸ¤– AI Chatbots\nðŸ§  Machine Learning Models\nðŸ“Š Predictive Analytics\nðŸ” NLP Applications\nðŸŽ¯ Computer Vision\n\nLet'sæ™ºèƒ½åŒ– your business!",
+  ai: "AI & Machine Learning solutions:\n\n\u{1F916} AI Chatbots\n\u{1F9E0} Machine Learning Models\n\u{1F4CA} Predictive Analytics\n\u{1F50D} NLP Applications\n\u{1F3AF} Computer Vision\n\nLet's make your business smarter!",
   
-  game: "Game development expertise:\n\nðŸŽ® Unity Game Development\nðŸŽ¯ Unreal Engine Games\nðŸ•¹ï¸ 2D & 3D Games\nðŸ‘¥ Multiplayer Games\nðŸŽ¨ Game Art & Animation\n\nReady to create your next game?",
+  game: "Game development expertise:\n\n\u{1F3AE} Unity Game Development\n\u{1F3AF} Unreal Engine Games\n\u{1F579}\u{FE0F} 2D & 3D Games\n\u{1F465} Multiplayer Games\n\u{1F3A8} Game Art & Animation\n\nReady to create your next game?",
 };
 
 export default function Chatbot() {
@@ -96,7 +97,7 @@ export default function Chatbot() {
   // Qualification flow functions
   const startQualification = () => {
     setQualificationData(prev => ({ ...prev, currentStep: 1 }));
-    return "Great! I'd love to help you with your project. To provide the best recommendations, could you tell me about your budget range?\n\nðŸ’° Under $10K\nðŸ’° $10K - $50K\nðŸ’° $50K - $100K\nðŸ’° Over $100K\nðŸ’° Not sure yet";
+    return "Great! I'd love to help you with your project. To provide the best recommendations, could you tell me about your budget range?\n\n\u{1F4B0} Under $10K\n\u{1F4B0} $10K - $50K\n\u{1F4B0} $50K - $100K\n\u{1F4B0} Over $100K\n\u{1F4B0} Not sure yet";
   };
 
   const handleQualificationResponse = (userText: string): string => {
@@ -109,46 +110,46 @@ export default function Chatbot() {
         if (lowerText.includes("$50k") || lowerText.includes("50k") || lowerText.includes("over") || lowerText.includes("100k")) {
           newScore += 30;
           setQualificationData(prev => ({ ...prev, budget: "high", leadScore: newScore, currentStep: nextStep }));
-          return "Excellent! A substantial budget gives us flexibility to deliver premium solutions. What's your preferred timeline for the project?\n\nâ±ï¸ ASAP (1-2 months)\nâ±ï¸ 3-6 months\nâ±ï¸ 6-12 months\nâ±ï¸ Flexible";
+          return "Excellent! A substantial budget gives us flexibility to deliver premium solutions. What's your preferred timeline for the project?\n\n\u{23F1}\u{FE0F} ASAP (1-2 months)\n\u{23F1}\u{FE0F} 3-6 months\n\u{23F1}\u{FE0F} 6-12 months\n\u{23F1}\u{FE0F} Flexible";
         } else if (lowerText.includes("$10k") || lowerText.includes("10k")) {
           newScore += 20;
           setQualificationData(prev => ({ ...prev, budget: "medium", leadScore: newScore, currentStep: nextStep }));
-          return "Good budget range! We can build something impactful. What's your timeline preference?\n\nâ±ï¸ ASAP (1-2 months)\nâ±ï¸ 3-6 months\nâ±ï¸ 6-12 months\nâ±ï¸ Flexible";
+          return "Good budget range! We can build something impactful. What's your timeline preference?\n\n\u{23F1}\u{FE0F} ASAP (1-2 months)\n\u{23F1}\u{FE0F} 3-6 months\n\u{23F1}\u{FE0F} 6-12 months\n\u{23F1}\u{FE0F} Flexible";
         } else {
           newScore += 10;
           setQualificationData(prev => ({ ...prev, budget: "low", leadScore: newScore, currentStep: nextStep }));
-          return "No problem! We can start with an MVP approach. What's your timeline?\n\nâ±ï¸ ASAP (1-2 months)\nâ±ï¸ 3-6 months\nâ±ï¸ 6-12 months\nâ±ï¸ Flexible";
+          return "No problem! We can start with an MVP approach. What's your timeline?\n\n\u{23F1}\u{FE0F} ASAP (1-2 months)\n\u{23F1}\u{FE0F} 3-6 months\n\u{23F1}\u{FE0F} 6-12 months\n\u{23F1}\u{FE0F} Flexible";
         }
 
       case 2: // Timeline
         if (lowerText.includes("asap") || lowerText.includes("1-2")) {
           newScore += 20;
           setQualificationData(prev => ({ ...prev, timeline: "urgent", leadScore: newScore, currentStep: nextStep }));
-          return "Urgent timeline noted! We specialize in fast delivery. What type of project are you looking to build?\n\nðŸ“± Mobile App\nðŸŒ Web Application\nðŸŽ® Game Development\nðŸ¤– AI Solution\nâ›“ï¸ Blockchain/Web3\nðŸ’» Custom Software";
+          return "Urgent timeline noted! We specialize in fast delivery. What type of project are you looking to build?\n\n\u{1F4F1} Mobile App\n\u{1F310} Web Application\n\u{1F3AE} Game Development\n\u{1F916} AI Solution\n\u{26D3}\u{FE0F} Blockchain/Web3\n\u{1F4BB} Custom Software";
         } else {
           newScore += 10;
           setQualificationData(prev => ({ ...prev, timeline: "standard", leadScore: newScore, currentStep: nextStep }));
-          return "Perfect! That gives us time for thorough development. What type of project interests you?\n\nðŸ“± Mobile App\nðŸŒ Web Application\nðŸŽ® Game Development\nðŸ¤– AI Solution\nâ›“ï¸ Blockchain/Web3\nðŸ’» Custom Software";
+          return "Perfect! That gives us time for thorough development. What type of project interests you?\n\n\u{1F4F1} Mobile App\n\u{1F310} Web Application\n\u{1F3AE} Game Development\n\u{1F916} AI Solution\n\u{26D3}\u{FE0F} Blockchain/Web3\n\u{1F4BB} Custom Software";
         }
 
       case 3: // Project Type
         newScore += 15;
         setQualificationData(prev => ({ ...prev, projectType: userText, leadScore: newScore, currentStep: nextStep }));
-        return "Great choice! Last question: What's your company size?\n\nðŸ¢ Startup (1-50 employees)\nðŸ¢ Small Business (51-200 employees)\nðŸ¢ Enterprise (200+ employees)\nðŸ‘¤ Individual/Founder";
+        return "Great choice! Last question: What's your company size?\n\n\u{1F3E2} Startup (1-50 employees)\n\u{1F3E2} Small Business (51-200 employees)\n\u{1F3E2} Enterprise (200+ employees)\n\u{1F464} Individual/Founder";
 
       case 4: // Company Size
         if (lowerText.includes("enterprise") || lowerText.includes("200+")) {
           newScore += 25;
           setQualificationData(prev => ({ ...prev, companySize: "enterprise", leadScore: newScore, qualified: true }));
-          return "Perfect! Based on your responses, you're an ideal candidate for our Dedicated Team model. We have extensive experience with enterprise clients.\n\nðŸŽ¯ HIGH PRIORITY LEAD DETECTED\n\nWould you like me to:\nðŸ“… Schedule a call with our Enterprise Solutions Director\nðŸ“‹ Send you our enterprise case studies\nðŸ’¼ Provide a custom proposal\n\nOr tell me more about your specific needs!";
+          return "Perfect! Based on your responses, you're an ideal candidate for our Dedicated Team model. We have extensive experience with enterprise clients.\n\n\u{1F3AF} HIGH PRIORITY LEAD DETECTED\n\nWould you like me to:\n\u{1F4C5} Schedule a call with our Enterprise Solutions Director\n\u{1F4CB} Send you our enterprise case studies\n\u{1F4BC} Provide a custom proposal\n\nOr tell me more about your specific needs!";
         } else if (lowerText.includes("startup") || lowerText.includes("small")) {
           newScore += 20;
           setQualificationData(prev => ({ ...prev, companySize: "startup", leadScore: newScore, qualified: true }));
-          return "Excellent! We love working with startups and have helped hundreds scale successfully.\n\nðŸš€ Based on your profile, our Fixed Price or Dedicated Team models would work perfectly.\n\nWould you like to:\nðŸ“… Book a free consultation call\nðŸ“– See relevant case studies\nðŸ’¡ Get a project estimate\n\nWhat's your biggest challenge right now?";
+          return "Excellent! We love working with startups and have helped hundreds scale successfully.\n\n\u{1F680} Based on your profile, our Fixed Price or Dedicated Team models would work perfectly.\n\nWould you like to:\n\u{1F4C5} Book a free consultation call\n\u{1F4D6} See relevant case studies\n\u{1F4A1} Get a project estimate\n\nWhat's your biggest challenge right now?";
         } else {
           newScore += 15;
           setQualificationData(prev => ({ ...prev, companySize: "individual", leadScore: newScore, qualified: true }));
-          return "Awesome! We work with individual founders and entrepreneurs regularly.\n\nðŸ’¡ Many successful apps started just like yours!\n\nWould you like to:\nðŸ“… Schedule a free strategy call\nðŸ“š Check our founder success stories\nðŸ’° See pricing options\n\nWhat's your vision for this project?";
+          return "Awesome! We work with individual founders and entrepreneurs regularly.\n\n\u{1F4A1} Many successful apps started just like yours!\n\nWould you like to:\n\u{1F4C5} Schedule a free strategy call\n\u{1F4DA} Check our founder success stories\n\u{1F4B0} See pricing options\n\nWhat's your vision for this project?";
         }
 
       default:
@@ -161,13 +162,13 @@ export default function Chatbot() {
 
     if (score >= 70) {
       // High-intent: Direct to Calendly booking
-      return "ðŸŽ¯ EXCELLENT FIT DETECTED!\n\nBased on your requirements, you're a perfect match for our premium services. Our team would love to discuss your project in detail.\n\nðŸ“… **Let's schedule a call right now!**\n\n[Book a free 30-min consultation](https://calendly.com/nexavibe-consultation)\n\nOr I can send you our detailed proposal first - which would you prefer?";
+      return "\u{1F3AF} EXCELLENT FIT DETECTED!\n\nBased on your requirements, you're a perfect match for our premium services. Our team would love to discuss your project in detail.\n\n\u{1F4C5} **Let's schedule a call right now!**\n\n[Book a free 30-min consultation](https://calendly.com/nexavibe-consultation)\n\nOr I can send you our detailed proposal first - which would you prefer?";
     } else if (score >= 40) {
       // Medium-intent: Show case studies
-      return "ðŸ“ˆ GOOD POTENTIAL!\n\nYour project aligns well with our expertise. Let me show you some relevant success stories that might inspire you.\n\nðŸ“– **Check out these case studies:**\nâ€¢ [Similar Project Case Study 1](/work/case-study-1)\nâ€¢ [Similar Project Case Study 2](/work/case-study-2)\n\nWould you like to see more examples or schedule a consultation?";
+      return "\u{1F4C8} GOOD POTENTIAL!\n\nYour project aligns well with our expertise. Let me show you some relevant success stories that might inspire you.\n\n\u{1F4D6} **Check out these case studies:**\n• [Similar Project Case Study 1](/work/case-study-1)\n• [Similar Project Case Study 2](/work/case-study-2)\n\nWould you like to see more examples or schedule a consultation?";
     } else {
       // Low-intent: Educational content
-      return "ðŸ¤” GETTING STARTED?\n\nThat's completely fine! Many great projects start with exploring options.\n\nðŸ“š **Helpful resources:**\nâ€¢ [How to Choose the Right Development Partner](/blog/choosing-developer)\nâ€¢ [MVP Development Guide](/blog/mvp-guide)\nâ€¢ [Startup Tech Stack Guide](/blog/tech-stack)\n\nWhen you're ready to move forward, I'm here to help!";
+      return "\u{1F914} GETTING STARTED?\n\nThat's completely fine! Many great projects start with exploring options.\n\n\u{1F4DA} **Helpful resources:**\n• [How to Choose the Right Development Partner](/blog/choosing-developer)\n• [MVP Development Guide](/blog/mvp-guide)\n• [Startup Tech Stack Guide](/blog/tech-stack)\n\nWhen you're ready to move forward, I'm here to help!";
     }
   };
 
@@ -307,15 +308,23 @@ export default function Chatbot() {
     return `${displayHours}:${minutes.toString().padStart(2, '0')} ${period}`;
   };
 
+  const openLeadPopup = () => {
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new Event("portfolio-lead-popup:open"));
+    }
+  };
+
   return (
     <div className={styles.chatbotContainer}>
+      <PortfolioLeadPopup />
+
       {/* Chat Window */}
       <div className={`${styles.chatWindow} ${isOpen ? styles.open : ""}`}>
         {/* Header */}
         <div className={styles.chatHeader}>
           <div className={styles.headerInfo}>
             <div className={styles.botAvatar}>
-              <span>ðŸ¤–</span>
+              <span>{"\u{1F916}"}</span>
             </div>
             <div className={styles.headerText}>
               <h3>Celestiatech Assistant</h3>
@@ -330,7 +339,7 @@ export default function Chatbot() {
             onClick={() => setIsOpen(false)}
             aria-label="Close chat"
           >
-            âœ•
+            {"\u{2715}"}
           </button>
         </div>
 
@@ -342,7 +351,7 @@ export default function Chatbot() {
               className={`${styles.message} ${message.sender === "user" ? styles.userMessage : styles.botMessage}`}
             >
               <div className={styles.messageAvatar}>
-                {message.sender === "user" ? "ðŸ‘¤" : "ðŸ¤–"}
+                {message.sender === "user" ? "\u{1F464}" : "\u{1F916}"}
               </div>
               <div className={styles.messageContent}>
                 <div className={styles.messageBubble}>
@@ -389,7 +398,7 @@ export default function Chatbot() {
               disabled={!inputValue.trim()}
               aria-label="Send message"
             >
-              âž¤
+              {"\u{27A4}"}
             </button>
           </div>
           <p className={styles.disclaimer}>
@@ -398,22 +407,32 @@ export default function Chatbot() {
         </div>
       </div>
 
-      {/* Toggle Button */}
-      <button
-        className={styles.toggleButton}
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label={isOpen ? "Close chat" : "Open chat"}
-      >
-        {isOpen ? (
-          <span>âœ•</span>
-        ) : (
-          <span className={styles.chatIcon}>ðŸ’¬</span>
-        )}
-        {!isOpen && messages.length === 1 && (
-          <span className={styles.notificationBadge}>1</span>
-        )}
-      </button>
+      <div className={styles.floatingActions}>
+        <button
+          type="button"
+          className={styles.leadButton}
+          onClick={openLeadPopup}
+          aria-label="Open project survey"
+        >
+          <span className={styles.leadIcon}>✦</span>
+        </button>
+
+        {/* Toggle Button */}
+        <button
+          className={styles.toggleButton}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close chat" : "Open chat"}
+        >
+          {isOpen ? (
+            <span>{"\u{2715}"}</span>
+          ) : (
+            <span className={styles.chatIcon}>{"\u{1F4AC}"}</span>
+          )}
+          {!isOpen && messages.length === 1 && (
+            <span className={styles.notificationBadge}>1</span>
+          )}
+        </button>
+      </div>
     </div>
   );
 }
-

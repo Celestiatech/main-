@@ -4,6 +4,7 @@ import Database from 'better-sqlite3';
 import { Message, DashboardStats, MessageStatus } from './types';
 
 const DB_FILE = path.join(process.cwd(), 'data', 'messages.db');
+const JSON_FILE = path.join(process.cwd(), 'data', 'messages.json');
 
 type MessageRow = {
   id: string;
@@ -31,34 +32,65 @@ export function ensureDataDir() {
 }
 
 let db: Database.Database | null = null;
+let databaseUnavailable = false;
+
+function readJsonMessages(): Message[] {
+  ensureDataDir();
+
+  if (!fs.existsSync(JSON_FILE)) {
+    fs.writeFileSync(JSON_FILE, '[]', 'utf8');
+    return [];
+  }
+
+  try {
+    const raw = fs.readFileSync(JSON_FILE, 'utf8');
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? (parsed as Message[]) : [];
+  } catch (error) {
+    console.error('Failed to read JSON message store:', error);
+    return [];
+  }
+}
+
+function writeJsonMessages(messages: Message[]) {
+  ensureDataDir();
+  fs.writeFileSync(JSON_FILE, JSON.stringify(messages, null, 2), 'utf8');
+}
 
 function getDb() {
   if (db) return db;
+  if (databaseUnavailable) return null;
 
   ensureDataDir();
-  db = new Database(DB_FILE);
-  db.pragma('journal_mode = WAL');
+  try {
+    db = new Database(DB_FILE);
+    db.pragma('journal_mode = WAL');
 
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS messages (
-      id TEXT PRIMARY KEY,
-      type TEXT NOT NULL,
-      name TEXT NOT NULL,
-      email TEXT NOT NULL,
-      phone TEXT,
-      company TEXT,
-      message TEXT NOT NULL,
-      status TEXT NOT NULL,
-      createdAt TEXT NOT NULL,
-      updatedAt TEXT NOT NULL,
-      projectType TEXT,
-      budget TEXT,
-      position TEXT,
-      experience TEXT
-    );
-  `);
+    db.exec(`
+      CREATE TABLE IF NOT EXISTS messages (
+        id TEXT PRIMARY KEY,
+        type TEXT NOT NULL,
+        name TEXT NOT NULL,
+        email TEXT NOT NULL,
+        phone TEXT,
+        company TEXT,
+        message TEXT NOT NULL,
+        status TEXT NOT NULL,
+        createdAt TEXT NOT NULL,
+        updatedAt TEXT NOT NULL,
+        projectType TEXT,
+        budget TEXT,
+        position TEXT,
+        experience TEXT
+      );
+    `);
 
-  return db;
+    return db;
+  } catch (error) {
+    databaseUnavailable = true;
+    console.error('SQLite unavailable, falling back to JSON storage:', error);
+    return null;
+  }
 }
 
 function toMessage(row: MessageRow): Message {
@@ -86,6 +118,9 @@ function toMessage(row: MessageRow): Message {
 // Kept for compatibility with existing imports.
 export function ensureMessagesFile() {
   getDb();
+  if (databaseUnavailable) {
+    readJsonMessages();
+  }
 }
 
 // Generate unique ID
@@ -96,6 +131,10 @@ export function generateId(): string {
 // Read all messages
 export function getAllMessages(): Message[] {
   const database = getDb();
+  if (!database) {
+    return readJsonMessages().sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+  }
+
   const rows = database
     .prepare('SELECT * FROM messages ORDER BY datetime(createdAt) DESC')
     .all() as MessageRow[];
@@ -106,6 +145,10 @@ export function getAllMessages(): Message[] {
 // Get messages by type
 export function getMessagesByType(type: 'contact' | 'career'): Message[] {
   const database = getDb();
+  if (!database) {
+    return getAllMessages().filter((message) => message.type === type);
+  }
+
   const rows = database
     .prepare('SELECT * FROM messages WHERE type = ? ORDER BY datetime(createdAt) DESC')
     .all(type) as MessageRow[];
@@ -116,6 +159,10 @@ export function getMessagesByType(type: 'contact' | 'career'): Message[] {
 // Get single message by ID
 export function getMessageById(id: string): Message | null {
   const database = getDb();
+  if (!database) {
+    return readJsonMessages().find((message) => message.id === id) || null;
+  }
+
   const row = database.prepare('SELECT * FROM messages WHERE id = ?').get(id) as MessageRow | undefined;
   return row ? toMessage(row) : null;
 }
@@ -125,6 +172,20 @@ export function addMessage(message: Omit<Message, 'id' | 'createdAt' | 'updatedA
   const database = getDb();
   const id = generateId();
   const now = new Date().toISOString();
+
+  const savedMessage: Message = {
+    ...message,
+    id,
+    createdAt: now,
+    updatedAt: now,
+  };
+
+  if (!database) {
+    const messages = readJsonMessages();
+    messages.push(savedMessage);
+    writeJsonMessages(messages);
+    return savedMessage;
+  }
 
   database
     .prepare(`
@@ -153,18 +214,29 @@ export function addMessage(message: Omit<Message, 'id' | 'createdAt' | 'updatedA
       experience: message.extra?.experience || null,
     });
 
-  return {
-    ...message,
-    id,
-    createdAt: now,
-    updatedAt: now,
-  };
+  return savedMessage;
 }
 
 // Update message status
 export function updateMessageStatus(id: string, status: MessageStatus): Message | null {
   const database = getDb();
   const now = new Date().toISOString();
+
+  if (!database) {
+    const messages = readJsonMessages();
+    const index = messages.findIndex((message) => message.id === id);
+
+    if (index === -1) return null;
+
+    messages[index] = {
+      ...messages[index],
+      status,
+      updatedAt: now,
+    };
+
+    writeJsonMessages(messages);
+    return messages[index];
+  }
 
   const result = database
     .prepare('UPDATE messages SET status = ?, updatedAt = ? WHERE id = ?')
@@ -177,6 +249,14 @@ export function updateMessageStatus(id: string, status: MessageStatus): Message 
 // Delete message
 export function deleteMessage(id: string): boolean {
   const database = getDb();
+  if (!database) {
+    const messages = readJsonMessages();
+    const filtered = messages.filter((message) => message.id !== id);
+    if (filtered.length === messages.length) return false;
+    writeJsonMessages(filtered);
+    return true;
+  }
+
   const result = database.prepare('DELETE FROM messages WHERE id = ?').run(id);
   return result.changes > 0;
 }
@@ -184,6 +264,22 @@ export function deleteMessage(id: string): boolean {
 // Get dashboard stats
 export function getDashboardStats(): DashboardStats {
   const database = getDb();
+  if (!database) {
+    const messages = readJsonMessages();
+    const lastUpdated = messages.length
+      ? messages.reduce((latest, message) => (message.updatedAt > latest ? message.updatedAt : latest), messages[0].updatedAt)
+      : new Date().toISOString();
+
+    return {
+      totalMessages: messages.length,
+      newMessages: messages.filter((message) => message.status === 'new').length,
+      contactMessages: messages.filter((message) => message.type === 'contact').length,
+      careerMessages: messages.filter((message) => message.type === 'career').length,
+      repliedMessages: messages.filter((message) => message.status === 'replied').length,
+      lastUpdated,
+    };
+  }
+
   const stats = database
     .prepare(`
       SELECT
@@ -217,6 +313,16 @@ export function getDashboardStats(): DashboardStats {
 // Search messages
 export function searchMessages(query: string): Message[] {
   const database = getDb();
+  if (!database) {
+    const q = query.toLowerCase();
+    return getAllMessages().filter(
+      (message) =>
+        message.name.toLowerCase().includes(q) ||
+        message.email.toLowerCase().includes(q) ||
+        message.message.toLowerCase().includes(q)
+    );
+  }
+
   const q = `%${query}%`;
   const rows = database
     .prepare(`

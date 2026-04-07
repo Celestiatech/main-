@@ -19,12 +19,24 @@
 }
 
 :root {
+  --mariner-50: #eff8ff;
+  --mariner-100: #daefff;
+  --mariner-200: #bde3ff;
+  --mariner-300: #90d3ff;
+  --mariner-400: #5cb9fe;
+  --mariner-500: #369afb;
+  --mariner-600: #1f7cf1;
+  --mariner-700: #1866e0;
+  --mariner-800: #1a51b3;
+  --mariner-900: #1b478d;
+  --mariner-950: #152c56;
+
   /* Legacy aliases used by shared page.module.css */
-  --primary: #3b82f6;
-  --secondary: #1e3a8a;
+  --primary: var(--mariner-600);
+  --secondary: var(--mariner-900);
 
   /* Primary Gradient */
-  --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #000000 100%);
+  --primary-gradient: linear-gradient(135deg, var(--mariner-500) 0%, var(--mariner-950) 100%);
 
   /* Colors: Only White and Black */
   --white: #FFFFFF;
@@ -43,9 +55,9 @@
   --text-light: var(--white);
 
   /* Action Color */
-  --action-color: #3b82f6;
-  --action-color-light: #3b82f6;
-  --action-color-dark: #000000;
+  --action-color: var(--mariner-600);
+  --action-color-light: var(--mariner-400);
+  --action-color-dark: var(--mariner-950);
 
   /* Accent */
   --accent-silver: var(--white);
@@ -53,57 +65,57 @@
   --accent-silver-light: var(--white);
 
   /* Gradient Purple (using the primary gradient) */
-  --gradient-purple: #3b82f6;
-  --gradient-purple-dark: #000000;
+  --gradient-purple: var(--mariner-500);
+  --gradient-purple-dark: var(--mariner-950);
 
   /* Additional Colors for Consistency */
   --color-slate-800: var(--black);
   --color-slate-500: var(--black);
-  --color-blue-500: #3b82f6;
-  --color-blue-400: #3b82f6;
-  --color-violet-500: #1e3a8a;
+  --color-blue-500: var(--mariner-500);
+  --color-blue-400: var(--mariner-400);
+  --color-violet-500: var(--mariner-900);
   --color-slate-200: var(--white);
   --color-slate-50: var(--white);
   --color-slate-100: var(--white);
   --color-gray-600: var(--black);
-  --color-green-500: #3b82f6;
-  --color-amber-600: #1e3a8a;
-  --color-cyan-600: #3b82f6;
-  --color-violet-600: #1e3a8a;
-  --color-blue-600: #1e3a8a;
+  --color-green-500: var(--mariner-500);
+  --color-amber-600: var(--mariner-800);
+  --color-cyan-600: var(--mariner-600);
+  --color-violet-600: var(--mariner-800);
+  --color-blue-600: var(--mariner-700);
 
   /* RGB versions for rgba() */
-  --color-blue-500-rgb: 59, 130, 246;
-  --color-violet-500-rgb: 30, 58, 138;
+  --color-blue-500-rgb: 54, 154, 251;
+  --color-violet-500-rgb: 27, 71, 141;
   --color-slate-50-rgb: 255, 255, 255;
   
   /* Premium Neo-Glassmorphism */
-  --glass-bg: rgba(59, 130, 246, 0.1);
-  --glass-border: rgba(59, 130, 246, 0.3);
-  --glass-shadow: 0 8px 32px rgba(59, 130, 246, 0.1);
+  --glass-bg: rgba(54, 154, 251, 0.1);
+  --glass-border: rgba(54, 154, 251, 0.3);
+  --glass-shadow: 0 8px 32px rgba(54, 154, 251, 0.12);
 
   /* Glowing Effects - Neon */
-  --glow-primary: 0 0 40px rgba(59, 130, 246, 0.5);
+  --glow-primary: 0 0 40px rgba(54, 154, 251, 0.45);
   --glow-secondary: 0 0 40px rgba(0, 255, 102, 0.4);
-  --glow-subtle: 0 0 20px rgba(59, 130, 246, 0.25);
+  --glow-subtle: 0 0 20px rgba(54, 154, 251, 0.25);
 
   /* 3D Shadows - Deep and Premium */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 25px rgba(59, 130, 246, 0.08);
-  --shadow-xl: 0 15px 40px rgba(59, 130, 246, 0.1);
-  --shadow-2xl: 0 25px 60px rgba(59, 130, 246, 0.12);
+  --shadow-lg: 0 10px 25px rgba(54, 154, 251, 0.08);
+  --shadow-xl: 0 15px 40px rgba(54, 154, 251, 0.1);
+  --shadow-2xl: 0 25px 60px rgba(54, 154, 251, 0.12);
   
   /* Mesh Gradient Backgrounds */
-  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 50%, #0A0E27 100%);
-  --gradient-accent: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-  --gradient-mesh: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 80%, rgba(30, 58, 138, 0.1) 0%, transparent 50%);
+  --gradient-primary: linear-gradient(135deg, var(--mariner-500) 0%, var(--mariner-800) 50%, var(--mariner-950) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--mariner-900) 0%, var(--mariner-500) 100%);
+  --gradient-mesh: radial-gradient(circle at 20% 50%, rgba(54, 154, 251, 0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 80%, rgba(27, 71, 141, 0.12) 0%, transparent 50%);
 
   /* Borders */
-  --border-light: rgba(59, 130, 246, 0.1);
-  --border-medium: rgba(59, 130, 246, 0.2);
-  --border-glow: rgba(59, 130, 246, 0.4);
+  --border-light: rgba(54, 154, 251, 0.12);
+  --border-medium: rgba(54, 154, 251, 0.22);
+  --border-glow: rgba(31, 124, 241, 0.38);
   
   /* Border Radius */
   --radius-sm: 6px;
@@ -147,7 +159,7 @@ body {
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: rgba(37, 99, 235, 0.75) rgba(219, 234, 254, 0.65);
+  scrollbar-color: rgba(31, 124, 241, 0.78) rgba(218, 239, 255, 0.75);
 }
 
 html::-webkit-scrollbar {
@@ -156,18 +168,18 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-track {
-  background: linear-gradient(180deg, rgba(239, 246, 255, 0.95) 0%, rgba(219, 234, 254, 0.9) 100%);
+  background: linear-gradient(180deg, rgba(239, 248, 255, 0.96) 0%, rgba(218, 239, 255, 0.92) 100%);
   border-radius: 999px;
 }
 
 html::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(59, 130, 246, 0.95) 0%, rgba(29, 78, 216, 0.95) 100%);
-  border: 2px solid rgba(239, 246, 255, 0.95);
+  background: linear-gradient(180deg, rgba(54, 154, 251, 0.95) 0%, rgba(24, 102, 224, 0.95) 100%);
+  border: 2px solid rgba(239, 248, 255, 0.95);
   border-radius: 999px;
 }
 
 html::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(37, 99, 235, 1) 0%, rgba(30, 64, 175, 1) 100%);
+  background: linear-gradient(180deg, rgba(31, 124, 241, 1) 0%, rgba(26, 81, 179, 1) 100%);
 }
 
 /* ===== TYPOGRAPHY SYSTEM ===== */

@@ -79,7 +79,7 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-        <section className={styles.recentSection}>
+        <section className={styles.recentSection} data-portfolio-engagement="recent-work">
           <div className="container">
             <div className={styles.sectionIntro}>
               <h2>Our Most Recent Works</h2>
@@ -113,7 +113,7 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-        <section className={styles.featuresSection}>
+        <section className={styles.featuresSection} data-portfolio-engagement="features">
           <div className="container">
             <div className={styles.sectionIntro}>
               <h2>Key Features We Build In</h2>
@@ -130,7 +130,7 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-        <section className={styles.reasonsSection}>
+        <section className={styles.reasonsSection} data-portfolio-engagement="trust-signals">
           <div className="container">
             <div className={styles.sectionIntro}>
               <h2>Trusted by Top Companies</h2>
@@ -158,7 +158,7 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-        <section className={styles.faqSection}>
+        <section className={styles.faqSection} data-portfolio-engagement="faq">
           <div className="container">
             <div className={styles.sectionIntro}>
               <h2>Frequently Asked Questions</h2>

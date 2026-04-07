@@ -9,17 +9,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'primary': '#3b82f6',
-        'primary-dark': '#1e3a8a',
-        'primary-light': '#60a5fa',
+        'primary': '#1f7cf1',
+        'primary-dark': '#1b478d',
+        'primary-light': '#5cb9fe',
         'secondary': '#000000',
         'secondary-light': '#ffffff',
-        'accent': '#06b6d4',
-        'accent-dark': '#0891b2',
+        'accent': '#369afb',
+        'accent-dark': '#1a51b3',
+        'mariner-50': '#eff8ff',
+        'mariner-100': '#daefff',
+        'mariner-200': '#bde3ff',
+        'mariner-300': '#90d3ff',
+        'mariner-400': '#5cb9fe',
+        'mariner-500': '#369afb',
+        'mariner-600': '#1f7cf1',
+        'mariner-700': '#1866e0',
+        'mariner-800': '#1a51b3',
+        'mariner-900': '#1b478d',
+        'mariner-950': '#152c56',
       },
       backgroundImage: {
-        'gradient-primary': 'linear-gradient(135deg, #3b82f6 0%, #000000 100%)',
-        'gradient-secondary': 'linear-gradient(135deg, #000000 0%, #3b82f6 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #369afb 0%, #152c56 100%)',
+        'gradient-secondary': 'linear-gradient(135deg, #152c56 0%, #369afb 100%)',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',
@@ -57,8 +68,8 @@ const config: Config = {
           '50%': { opacity: '0.7', transform: 'scale(1.1)' },
         },
         borderGlow: {
-          '0%, 100%': { borderColor: 'rgba(59, 130, 246, 0.5)' },
-          '50%': { borderColor: 'rgba(59, 130, 246, 1)' },
+          '0%, 100%': { borderColor: 'rgba(54, 154, 251, 0.5)' },
+          '50%': { borderColor: 'rgba(54, 154, 251, 1)' },
         },
         shimmer: {
           '0%': { backgroundPosition: '-1000px 0' },

@@ -358,6 +358,235 @@
   padding: 0 0 92px;
 }
 
+.popupOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px 24px 20px 20px;
+  background: rgba(15, 23, 42, 0.58);
+  backdrop-filter: blur(10px);
+}
+
+.popupCard {
+  position: relative;
+  width: min(30vw, 520px);
+  min-width: 360px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 22px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top right, rgba(147, 197, 253, 0.34), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid rgba(191, 219, 254, 0.9);
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.25);
+}
+
+.popupClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  color: #0f172a;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.popupHeader {
+  margin-bottom: 16px;
+  padding-right: 44px;
+}
+
+.popupEyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.1);
+  color: #1d4ed8;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.popupProgress {
+  margin: 12px 0 6px;
+  color: #2563eb;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.popupHeader h2,
+.popupSuccess h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  line-height: 1.12;
+  color: #0f172a;
+}
+
+.popupIntro,
+.popupSuccess p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.55;
+  font-size: 0.82rem;
+}
+
+.popupForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.popupStep h3 {
+  margin: 0 0 12px;
+  font-size: 0.94rem;
+  color: #0f172a;
+}
+
+.optionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.optionButton {
+  min-height: 52px;
+  padding: 12px 14px;
+  border: 1px solid rgba(96, 165, 250, 0.32);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.optionButton:hover,
+.optionButtonActive {
+  transform: translateY(-1px);
+  border-color: rgba(37, 99, 235, 0.8);
+  box-shadow: 0 16px 30px rgba(37, 99, 235, 0.12);
+}
+
+.optionButtonActive {
+  background: linear-gradient(180deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.popupFieldGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.popupField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.popupField:last-child {
+  grid-column: 1 / -1;
+}
+
+.popupField input {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 12px;
+  background: #ffffff;
+  color: #0f172a;
+  font: inherit;
+}
+
+.popupField input:focus {
+  outline: 2px solid rgba(37, 99, 235, 0.2);
+  border-color: #2563eb;
+}
+
+.popupError {
+  margin: 0;
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.popupFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.popupGhostButton,
+.popupPrimaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 0;
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.popupGhostButton {
+  background: rgba(37, 99, 235, 0.08);
+  color: #1d4ed8;
+}
+
+.popupPrimaryButton {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
+  box-shadow: 0 16px 28px rgba(37, 99, 235, 0.22);
+}
+
+.popupPrimaryButton:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+.popupSuccess {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popupSummary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.popupSummary span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  color: #1d4ed8;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
 .bottomCtaInner {
   display: flex;
   align-items: center;
@@ -488,5 +717,32 @@
 
   .bottomCtaInner {
     padding: 24px;
+  }
+
+  .popupCard {
+    width: min(100%, 560px);
+    min-width: 0;
+    max-height: calc(100vh - 24px);
+    padding: 18px 16px 16px;
+    border-radius: 24px;
+  }
+
+  .popupHeader {
+    padding-right: 34px;
+  }
+
+  .optionGrid,
+  .popupFieldGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .popupFooter {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .popupGhostButton,
+  .popupPrimaryButton {
+    width: 100%;
   }
 }

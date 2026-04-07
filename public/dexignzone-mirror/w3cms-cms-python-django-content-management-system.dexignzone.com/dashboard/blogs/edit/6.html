@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+  
+
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+	<meta name="robots" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="W3CMS  : Django CMS With Dashboard &amp; FrontEnd Template" />
+	<meta property="og:title" content="W3CMS  : Django CMS With Dashboard &amp; FrontEnd Template" />
+	<meta property="og:description" content="W3CMS  : Django CMS With Dashboard &amp; FrontEnd Template" />
+	<meta property="og:image" content="https://w3cms.dexignzone.com/django/social-image.png" />
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- PAGE TITLE HERE -->
+	<title>W3CMS  : Django CMS With Dashboard &amp; FrontEnd Template</title>
+	
+	<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="/static/dashboard/images/favicon.png" />
+
+    
+    
+    <link rel="stylesheet" href="/static/dashboard/vendor/jquery-nice-select/css/nice-select.css">
+	
+    <link rel="stylesheet" href="/static/dashboard/css/style.css">
+	
+	
+    
+    
+
+</head>
+
+
+<body class="body  h-100" style="background-image: url(/static/dashboard/images/bg-1.jpg); background-size:cover;">
+    <div class="container h-100">
+		<div class="row h-100 align-items-center justify-contain-center">
+			<div class="col-xl-12 mt-3">
+				<div class="card">
+					<div class="card-body p-0">
+						<div class="row m-0">
+							<div class="col-xl-6 col-md-6 sign text-center">
+								<div class="my-5">
+									<a href="/en/dashboard/index/" class="brand-logo login-logo mt-5">
+										<img src="/static/dashboard/images/logo-full.png">
+								   </a>
+								   <div class="col-xl-12 col-md-12 text-center my-5">
+										<a class="mx-2" target="_blank" href="https://w3cms.dexignzone.com/django/doc">
+											<img class="round-img my-2" src="/static/dashboard/images/doc.jpg">
+										</a>
+										<a class="mx-2"  target="_blank" href="https://www.youtube.com/watch?v=iKqUIxyctGc">
+											<img class="round-img my-2" src="/static/dashboard/images/video.jpg">
+										</a>
+									</div>
+									<img src="/static/dashboard/images/log.png" class="education-img"></img>
+								</div>	
+							</div>
+
+
+							<div class="col-xl-6 col-md-6">
+								<div class="sign-in-your">
+									<h4 class="fs-20 font-w800 text-black">Sign in your account</h4>
+									<span>Welcome back! Login with your data that you entered<br> during registration</span>
+									<div class="login-social">
+										<a href="javascript:void(0);" class="btn font-w800 d-block my-4"><i class="fab fa-google me-2 text-primary"></i>Login with Google</a>
+										<a href="javascript:void(0);" class="btn font-w800 d-block my-4"><i class="fab fa-facebook-f me-2 facebook-log"></i>Login with Facebook</a>
+									</div>
+
+                  
+
+
+
+
+ 
+
+									<form method="post"><input type="hidden" name="csrfmiddlewaretoken" value="gMszLydcsPM1JHamZMJeHCdOlR1RDa6tiBG8Cl4yl2LLonG15k3Q6rqCsGQZKnWh">
+										<div class="mb-3">
+											<label class="mb-1"><strong>Email</strong></label>
+                      <input type="email" name="email" placeholder="Email" class="form-control" required id="id_email">
+                      <div class="text-danger w-100 d-block mt-1">
+                        
+                      </div>
+										</div>
+										<div class="mb-3">
+											<label class="mb-1"><strong>Password</strong></label>
+                      <input type="password" name="password" id="dz-password" placeholder="Password" class="form-control" required>
+                      <div class="text-danger w-100 d-block mt-1">
+                        
+                      </div>
+										</div>
+										<div class="row d-flex justify-content-between mt-4 mb-2">
+											<div class="mb-3">
+											   <div class="form-check custom-checkbox ms-1">
+													<input type="checkbox" class="form-check-input" id="basic_checkbox_1">
+													<label class="form-check-label" for="basic_checkbox_1">Remember my preference</label>
+												</div>
+											</div>
+											<div class="mb-3">
+												<a href="/en/dashboard/password_reset/">Forgot Password?</a>
+											</div>
+										</div>
+										<div class="text-center">
+											<button type="submit" class="btn btn-primary btn-block">Sign Me In</button>
+										</div>
+									</form>
+
+
+                  <div class="new-account mt-2">
+                    <p> Don't have an account? <a class="text-secondary" href="/en/dashboard/signup/"> Sign up </a>
+                    </p>
+                  </div>
+
+				  <div class="row">
+					<div class="d-flex justify-content-center col p-0 mb-4">
+					  <button type="button" id="Admin" class="btn btn-success    btn-sm">Admin</button>
+					</div>
+					<div class="d-flex justify-content-center col p-0 mb-4">
+					  <button type="button" id="Manager" class="btn btn-warning  btn-sm">Manager</button>
+					</div>
+					<div class="d-flex justify-content-center col p-0 mb-4">
+					  <button type="button" id="Customer" class="btn btn-secondary   btn-sm">Customer</button>
+					</div>
+				  </div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    
+    <script src="/static/dashboard/vendor/global/global.min.js"></script>
+    
+    <script src="/static/dashboard/vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    
+    
+    
+    
+    
+    <script src="/static/dashboard/js/utils.js"></script>
+    
+    <script src="/static/dashboard/js/custom.js"></script>
+    
+    <script src="/static/dashboard/js/dlabnav-init.js"></script>
+    
+    <script src="/static/dashboard/js/demo.js"></script>
+    
+    <script src="/static/dashboard/js/styleSwitcher.js"></script>
+    
+    
+    
+	<script>
+		$("#Admin").click(function() {
+		  let email = document.getElementById("id_email");
+		  email.value = "admin@example.com";
+		  let password = document.getElementById("dz-password")
+		  password.value = "asdf@1234";
+		});
+		$("#Manager").click(function() {
+		  let email = document.getElementById("id_email").value = "manager@example.com";
+		  let password = document.getElementById("dz-password").value = "asdf@1234";
+		});
+		$("#Customer").click(function() {
+		  let email = document.getElementById("id_email").value = "customer@example.com";
+		  let password = document.getElementById("dz-password").value = "asdf@1234";
+		});
+	  </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
