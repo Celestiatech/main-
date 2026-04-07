@@ -20,10 +20,10 @@ export default function NotFound() {
               The page you&apos;re looking for doesn&apos;t exist or has been moved. Let&apos;s get you back on track.
             </p>
             <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
-              <Link href="/" className="btn btn-primary">
+              <Link href="/" className="btn btn-primary btn-bubble">
                 Go to Homepage
               </Link>
-              <Link href="/contact" className="btn btn-secondary">
+              <Link href="/contact" className="btn btn-secondary btn-bubble">
                 Contact Support
               </Link>
             </div>

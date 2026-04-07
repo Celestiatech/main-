@@ -212,7 +212,7 @@ export default function CareerPage() {
                   {job.description}
                 </p>
                 <button 
-                  className="btn btn-primary"
+                  className="btn btn-primary btn-bubble"
                   style={{ width: "100%", padding: "10px 20px", fontSize: "14px" }}
                   onClick={() => setSelectedJob(selectedJob === index ? null : index)}
                 >
@@ -228,7 +228,7 @@ export default function CareerPage() {
                     </ul>
                     <Link 
                       href="#career-application-form"
-                      className="btn btn-accent"
+                      className="btn btn-accent btn-bubble"
                       style={{ width: "100%", marginTop: "16px", padding: "10px 20px", fontSize: "14px", display: "inline-flex" }}
                       onClick={(e) => {
                         e.preventDefault();
@@ -345,7 +345,7 @@ export default function CareerPage() {
                 />
               </div>
 
-              <button type="submit" className="btn btn-primary" style={{ width: "100%" }} disabled={isSubmitting}>
+              <button type="submit" className="btn btn-primary btn-bubble" style={{ width: "100%" }} disabled={isSubmitting}>
                 {isSubmitting ? "Submitting..." : "Submit Application"}
               </button>
 
@@ -367,7 +367,7 @@ export default function CareerPage() {
         <div className="container">
           <h2>Don&apos;t See Your Role?</h2>
           <p>We&apos;re always interested in hearing from talented individuals. Send us your resume!</p>
-          <Link href="/contact" className="btn btn-accent">
+          <Link href="/contact" className="btn btn-accent btn-bubble">
             Get In Touch
           </Link>
         </div>

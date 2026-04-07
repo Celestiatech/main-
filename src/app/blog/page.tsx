@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "../page.module.css";
 import Breadcrumb from "../components/Breadcrumb";
 import { Header } from "../components/Header";
@@ -55,7 +56,13 @@ export default function BlogPage() {
                 <Link key={blog.id} href={`/blog/${blog.slug}`} className={styles.blogCardLink}>
                   <div className={styles.blogCard}>
                     <div className={styles.blogCardImage}>
-                      <span>{blog.category.charAt(0)}</span>
+                      <Image
+                        src={blog.image}
+                        alt={blog.imageAlt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className={styles.blogCardImageMedia}
+                      />
                     </div>
                     <div className={styles.blogCardContent}>
                       <span className={styles.blogCardCategory}>{blog.category}</span>
@@ -100,8 +107,14 @@ export default function BlogPage() {
             {filteredBlogs.map((blog) => (
               <Link key={blog.id} href={`/blog/${blog.slug}`} className={styles.blogArticleCardLink}>
                 <div className={styles.blogArticleCard}>
-                  <div className={styles.blogArticleIcon}>
-                    {blog.category.charAt(0)}
+                  <div className={styles.blogArticleImage}>
+                    <Image
+                      src={blog.image}
+                      alt={blog.imageAlt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className={styles.blogArticleImageMedia}
+                    />
                   </div>
                   <div style={{ padding: "0 20px 0" }}>
                     <div className={styles.blogArticleCategory}>

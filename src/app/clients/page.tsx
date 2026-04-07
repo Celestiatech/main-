@@ -119,7 +119,7 @@ export default function ClientsPage() {
         <div className="container">
           <h2>Need Immediate Assistance?</h2>
           <p>Our support team is here to help</p>
-          <Link href="/contact" className="btn btn-accent">
+          <Link href="/contact" className="btn btn-accent btn-bubble">
             Contact Support
           </Link>
         </div>

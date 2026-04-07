@@ -72,7 +72,7 @@ export default function ProposalPage() {
         <div className="container">
           <h2>Prefer to Discuss First?</h2>
           <p>Schedule a free 30-minute consultation call</p>
-          <Link href="/request-a-call" className="btn btn-accent">
+          <Link href="/request-a-call" className="btn btn-accent btn-bubble">
             Schedule a Call
           </Link>
         </div>

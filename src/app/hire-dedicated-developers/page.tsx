@@ -247,10 +247,10 @@ export default function HireDedicatedDevelopersPage() {
           <h2>Ready to Build Your Development Team?</h2>
           <p>Get started with dedicated developers in 1-2 weeks</p>
           <div className={styles.ctaButtons}>
-            <Link href="/contact" className="btn btn-primary">
+            <Link href="/contact" className="btn btn-primary btn-bubble">
               Hire Developers Now
             </Link>
-            <Link href="/proposal" className="btn btn-secondary">
+            <Link href="/proposal" className="btn btn-secondary btn-bubble">
               Get Team Proposal
             </Link>
           </div>

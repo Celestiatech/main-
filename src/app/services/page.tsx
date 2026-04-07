@@ -222,7 +222,7 @@ export default function ServicesPage() {
         <div className="container">
           <h2>Ready to Start Your Project?</h2>
           <p>Let&apos;s discuss your requirements and find the perfect solution</p>
-          <Link href="/contact" className="btn btn-accent">
+          <Link href="/contact" className="btn btn-accent btn-bubble">
             Get Free Consultation
           </Link>
         </div>

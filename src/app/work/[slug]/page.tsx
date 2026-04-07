@@ -143,7 +143,7 @@ export default function CaseStudyPage() {
           <div className="container">
             <h1>Case Study Not Found</h1>
             <p>The case study you&apos;re looking for doesn&apos;t exist.</p>
-            <Link href="/work" className="btn btn-primary">
+            <Link href="/work" className="btn btn-primary btn-bubble">
               View All Case Studies
             </Link>
           </div>
@@ -401,10 +401,10 @@ export default function CaseStudyPage() {
             <h2>Ready to Create Your Success Story?</h2>
             <p>Let&apos;s discuss how we can help transform your business with custom software solutions</p>
             <div className={styles.ctaButtons}>
-              <Link href="/contact" className="btn btn-accent btn-lg">
+              <Link href="/contact" className="btn btn-accent btn-lg btn-bubble">
                 Start Your Project
               </Link>
-              <Link href="/work" className="btn btn-secondary btn-lg">
+              <Link href="/work" className="btn btn-secondary btn-lg btn-bubble">
                 View More Case Studies
               </Link>
             </div>
@@ -420,4 +420,3 @@ export default function CaseStudyPage() {
     </div>
   );
 }
-

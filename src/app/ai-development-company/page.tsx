@@ -215,10 +215,10 @@ export default function AIDevelopmentCompanyPage() {
           <h2>Ready to Build Your AI Solution?</h2>
           <p>Let&apos;s discuss how AI can transform your business</p>
           <div className={styles.ctaButtons}>
-            <Link href="/contact" className="btn btn-primary">
+            <Link href="/contact" className="btn btn-primary btn-bubble">
               Get Free AI Consultation
             </Link>
-            <Link href="/proposal" className="btn btn-secondary">
+            <Link href="/proposal" className="btn btn-secondary btn-bubble">
               Request Proposal
             </Link>
           </div>

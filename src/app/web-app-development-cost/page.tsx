@@ -48,10 +48,10 @@ export default function WebAppDevelopmentCostPage() {
                 <h1>Web App Development Cost Guide</h1>
                 <p>Understand web app development pricing and get accurate cost estimates for your project</p>
                 <div className={styles.heroActions}>
-                  <Link href="/contact" className="btn btn-primary btn-lg">
+                  <Link href="/contact" className="btn btn-primary btn-lg btn-bubble">
                     Get Free Quote
                   </Link>
-                  <Link href="/pricing" className="btn btn-secondary btn-lg">
+                  <Link href="/pricing" className="btn btn-secondary btn-lg btn-bubble">
                     View Pricing
                   </Link>
                 </div>
@@ -105,7 +105,7 @@ export default function WebAppDevelopmentCostPage() {
                     <li>Basic database</li>
                     <li>2-3 months timeline</li>
                   </ul>
-                  <Link href="/contact" className="btn btn-primary">Get Quote</Link>
+                  <Link href="/contact" className="btn btn-primary btn-bubble">Get Quote</Link>
                 </div>
                 <div className={styles.pricingCard} style={{ border: "2px solid var(--color-primary)" }}>
                   <h3>Medium Complexity</h3>
@@ -117,7 +117,7 @@ export default function WebAppDevelopmentCostPage() {
                     <li>Admin dashboard</li>
                     <li>3-5 months timeline</li>
                   </ul>
-                  <Link href="/contact" className="btn btn-primary">Get Quote</Link>
+                  <Link href="/contact" className="btn btn-primary btn-bubble">Get Quote</Link>
                 </div>
                 <div className={styles.pricingCard}>
                   <h3>Complex Web App</h3>
@@ -129,7 +129,7 @@ export default function WebAppDevelopmentCostPage() {
                     <li>Real-time features</li>
                     <li>6-12 months timeline</li>
                   </ul>
-                  <Link href="/contact" className="btn btn-primary">Get Quote</Link>
+                  <Link href="/contact" className="btn btn-primary btn-bubble">Get Quote</Link>
                 </div>
               </div>
             </div>
@@ -186,10 +186,10 @@ export default function WebAppDevelopmentCostPage() {
               <h2>Get an Accurate Cost Estimate</h2>
               <p>Share your project requirements and get a detailed, transparent quote with no hidden costs</p>
               <div className={styles.heroActions}>
-                <Link href="/contact" className="btn btn-accent btn-lg">
+                <Link href="/contact" className="btn btn-accent btn-lg btn-bubble">
                   Get Free Quote
                 </Link>
-                <Link href="/proposal" className="btn btn-secondary btn-lg">
+                <Link href="/proposal" className="btn btn-secondary btn-lg btn-bubble">
                   Request Detailed Proposal
                 </Link>
               </div>

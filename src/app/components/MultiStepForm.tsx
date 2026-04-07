@@ -167,7 +167,7 @@ export function MultiStepForm({ onSubmit, showTrustReinforcements = true }: Mult
               </select>
             </div>
             <div className={styles.formActions}>
-              <button type="button" onClick={handleNext} className="btn btn-primary" disabled={!isStepValid()}>
+              <button type="button" onClick={handleNext} className="btn btn-primary btn-bubble" disabled={!isStepValid()}>
                 Next Step
               </button>
             </div>
@@ -229,10 +229,10 @@ export function MultiStepForm({ onSubmit, showTrustReinforcements = true }: Mult
               </div>
             </div>
             <div className={styles.formActions}>
-              <button type="button" onClick={handleBack} className="btn btn-secondary">
+              <button type="button" onClick={handleBack} className="btn btn-secondary btn-bubble">
                 Back
               </button>
-              <button type="button" onClick={handleNext} className="btn btn-primary" disabled={!isStepValid()}>
+              <button type="button" onClick={handleNext} className="btn btn-primary btn-bubble" disabled={!isStepValid()}>
                 Next Step
               </button>
             </div>
@@ -282,10 +282,10 @@ export function MultiStepForm({ onSubmit, showTrustReinforcements = true }: Mult
               />
             </div>
             <div className={styles.formActions}>
-              <button type="button" onClick={handleBack} className="btn btn-secondary">
+              <button type="button" onClick={handleBack} className="btn btn-secondary btn-bubble">
                 Back
               </button>
-              <button type="submit" className="btn btn-primary btn-lg">
+              <button type="submit" className="btn btn-primary btn-lg btn-bubble">
                 Submit Request
               </button>
             </div>

@@ -2246,9 +2246,9 @@
   /* ===== UPWORK SECTION ===== */
   .upwork {
     padding: 100px 0;
-    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    background: linear-gradient(135deg, #369afb 0%, #152c56 100%);
     position: relative;
-    box-shadow: 0 0 60px rgba(59, 130, 246, 0.25);
+    box-shadow: 0 0 60px rgba(54, 154, 251, 0.22);
     overflow: hidden;
   }
 
@@ -2271,7 +2271,7 @@
     left: -5%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(54, 154, 251, 0.16) 0%, transparent 70%);
     border-radius: 50%;
     z-index: 0;
   }
@@ -2306,9 +2306,10 @@
 
   .upworkStats {
     display: flex;
-    gap: 60px;
+    gap: 20px;
     flex: 1;
     justify-content: flex-end;
+    flex-wrap: wrap;
   }
 
   .upworkStat {
@@ -2318,28 +2319,32 @@
     background: rgba(255, 255, 255, 0.88);
     border-radius: 16px;
     border: 1px solid rgba(191, 219, 254, 0.9);
-    backdrop-filter: blur(10px);
     transition: all 0.3s ease;
-    min-width: 140px;
+    min-width: 0;
+    width: min(100%, 160px);
+    flex: 1 1 150px;
     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+    overflow-wrap: anywhere;
   }
 
   .upworkStat:hover {
     background: #ffffff;
-    border-color: rgba(37, 99, 235, 0.35);
+    border-color: rgba(54, 154, 251, 0.35);
     transform: translateY(-4px);
-    box-shadow: 0 18px 36px rgba(37, 99, 235, 0.14);
+    box-shadow: 0 18px 36px rgba(54, 154, 251, 0.14);
   }
 
   .upworkStatNumber {
     font-family: 'Syne', sans-serif;
-    font-size: 48px;
+    font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 800;
-    color: #1d4ed8;
+    color: #369afb;
     margin: 0 0 8px 0;
-    letter-spacing: -1.5px;
+    letter-spacing: -1px;
     display: block;
     animation: countUp 2s ease-out;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
   }
 
   .upworkStatLabel {
@@ -4657,12 +4662,17 @@
   .blogCardImage {
     height: 200px;
     background: var(--gradient-primary);
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     font-size: 48px;
     font-weight: 700;
+  }
+
+  .blogCardImageMedia {
+    object-fit: cover;
   }
 
   .blogCardContent {
@@ -4775,20 +4785,16 @@
     box-shadow: 0 12px 24px rgba(37, 99, 235, 0.12);
   }
 
-  .blogArticleIcon {
-    font-size: 40px;
-    text-align: center;
-    margin: 20px 0;
-    background: rgba(37, 99, 235, 0.1);
-    padding: 20px;
-    border-radius: 50%;
-    color: var(--primary);
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto;
+  .blogArticleImage {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-light);
+    background: #eff6ff;
+  }
+
+  .blogArticleImageMedia {
+    object-fit: cover;
   }
 
   .blogArticleCategory {
@@ -5617,6 +5623,25 @@
   background: #ffffff;
 }
 
+.heroFloatBadgeWhatsapp .heroFloatBadgeInner {
+  background: rgba(37, 211, 102, 0.12);
+  border-color: rgba(37, 211, 102, 0.3);
+  box-shadow: 0 16px 36px rgba(37, 211, 102, 0.2);
+  color: #128c7e;
+}
+
+.heroFloatBadgeWhatsapp .heroFloatBadgeInner i {
+  background: #25d366;
+  color: #ffffff;
+}
+
+.heroRedesign:hover .heroFloatBadgeWhatsapp .heroFloatBadgeInner,
+.heroFloatBadgeWhatsapp:hover .heroFloatBadgeInner {
+  background: rgba(37, 211, 102, 0.18);
+  border-color: rgba(37, 211, 102, 0.42);
+  box-shadow: 0 20px 44px rgba(37, 211, 102, 0.24);
+}
+
 .heroFloatBadge1 {
   top: 12%;
   left: 2%;
@@ -5771,21 +5796,22 @@
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  background: #3B82F6 !important;
+  background: rgba(54, 154, 251, 0.12) !important;
   background-image: none !important;
+  border: 1px solid rgba(54, 154, 251, 0.26);
   border-radius: 18px;
   width: 76px;
   height: 54px;
   flex-shrink: 0;
-  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.38);
+  box-shadow: 0 8px 20px rgba(54, 154, 251, 0.16);
   transition: transform 0.25s ease;
-  -webkit-text-fill-color: #fff !important;
+  -webkit-text-fill-color: initial !important;
 }
 .heroOrangePill:hover { transform: scale(1.07); }
 
 .heroOrangePillStar {
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
+  color: #369afb !important;
+  -webkit-text-fill-color: #369afb !important;
   font-size: 1.9rem;
   line-height: 1;
   background: none !important;
@@ -5933,15 +5959,15 @@
   border-radius: 999px;
   font-size: 15px;
   font-weight: 700;
-  color: #1d4ed8;
-  background: rgba(255, 255, 255, 0.72);
+  color: #152c56;
+  background: rgba(239, 248, 255, 0.92);
   text-decoration: none;
-  border: 1px solid rgba(59, 130, 246, 0.38);
+  border: 1px solid rgba(54, 154, 251, 0.34);
   overflow: hidden;
   transition: all 0.3s ease;
   white-space: nowrap;
   flex-shrink: 0;
-  box-shadow: 0 8px 22px rgba(59, 130, 246, 0.12);
+  box-shadow: 0 10px 26px rgba(54, 154, 251, 0.16);
   position: relative;
 }
 .heroJoinBtn::before,
@@ -5955,18 +5981,18 @@
   pointer-events: none;
 }
 
-.heroJoinBtn:hover { background: #EFF6FF; transform: translateY(-3px); box-shadow: 0 14px 30px rgba(59, 130, 246, 0.16); }
+.heroJoinBtn:hover { background: #ffffff; transform: translateY(-3px); box-shadow: 0 14px 30px rgba(54, 154, 251, 0.2); }
 .heroJoinBtn:hover::before,
 .heroContactBtn:hover::before {
   transform: translateX(130%);
 }
-.heroJoinBtn > span:first-child { padding: 11px 22px; color: #1d4ed8; }
+.heroJoinBtn > span:first-child { padding: 11px 22px; color: #369afb; }
 .heroJoinBtnBox {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 46px; height: 46px;
-  background: linear-gradient(180deg, #60A5FA 0%, #3B82F6 100%) !important;
+  background: linear-gradient(180deg, #5cb9fe 0%, #369afb 100%) !important;
   background-image: none !important;
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
@@ -5976,7 +6002,7 @@
   transition: all 0.3s ease;
   animation: heroButtonPulse 2.8s ease-in-out infinite;
 }
-.heroJoinBtn:hover .heroJoinBtnBox { background: linear-gradient(180deg, #3B82F6 0%, #2563EB 100%) !important; }
+.heroJoinBtn:hover .heroJoinBtnBox { background: linear-gradient(180deg, #369afb 0%, #152c56 100%) !important; }
 
 .heroContactBtn {
   display: inline-flex;
@@ -6041,15 +6067,15 @@
 .heroCarouselWrap {
   position: relative;
   margin-top: 40px;
-  width: 100vw;
-  max-width: none;
-  margin-left: calc(50% - 50vw);
-  padding: 0 72px;
+  width: min(100%, 1120px);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 84px;
   box-sizing: border-box;
 }
 .heroCarousel {
   display: flex;
-  gap: 18px;
+  gap: 28px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -6140,7 +6166,8 @@
   .heroCarouselArrow { width: 40px; height: 40px; font-size: 18px; }
   .heroCarouselWrap {
     margin-top: 36px;
-    padding: 0 56px;
+    width: 100%;
+    padding: 0 54px;
   }
   .heroCarousel { gap: 18px; }
   .heroCarouselArrow:first-child { left: 8px; }
@@ -6192,14 +6219,14 @@
    Specificity: .heroRedesign(C) + h1(E) + .heroOrangePill(C) = (0,2,1)
    beats .heroRedesign(C) + h1(E) + span(E) = (0,1,2), so this wins. ── */
 .heroRedesign h1 .heroOrangePill {
-  background: #3B82F6 !important;
-  background-color: #3B82F6 !important;
+  background: rgba(54, 154, 251, 0.12) !important;
+  background-color: rgba(54, 154, 251, 0.12) !important;
   background-image: none !important;
   -webkit-text-fill-color: initial !important;
 }
 .heroRedesign h1 .heroOrangePill .heroOrangePillStar {
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
+  color: #369afb !important;
+  -webkit-text-fill-color: #369afb !important;
   background: none !important;
   background-image: none !important;
 }

@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import Breadcrumb from "../../components/Breadcrumb";
+import { StructuredData } from "@/components/StructuredData";
 import styles from "./page.module.css";
 import { BLOG_POSTS, getBlogBySlug } from "@/lib/blogs";
+import { generateMetadata as genMeta } from "@/lib/metadata";
+import { getArticleSchema } from "@/lib/structured-data";
 
 type BlogDetailPageProps = {
   params: Promise<{
@@ -27,10 +31,25 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
     };
   }
 
-  return {
-    title: `${post.title} | Celestiatech Blog`,
+  const publishedTime = new Date(post.date).toISOString();
+
+  return genMeta({
+    title: post.title,
     description: post.excerpt,
-  };
+    path: `/blog/${post.slug}`,
+    ogImage: post.image,
+    type: "article",
+    publishedTime,
+    modifiedTime: publishedTime,
+    authors: [post.author],
+    keywords: [
+      post.category,
+      post.title,
+      "software development blog",
+      "technology articles",
+      "Celestiatech blog",
+    ],
+  });
 }
 
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
@@ -42,6 +61,14 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   }
 
   const relatedPosts = BLOG_POSTS.filter((item) => item.slug !== post.slug && item.category === post.category).slice(0, 3);
+  const articleSchema = getArticleSchema({
+    headline: post.title,
+    description: post.excerpt,
+    image: post.image,
+    datePublished: new Date(post.date).toISOString(),
+    dateModified: new Date(post.date).toISOString(),
+    author: post.author,
+  });
   const breadcrumbItems = [
     { label: "Home", href: "/" },
     { label: "Blogs", href: "/blog" },
@@ -51,6 +78,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   return (
     <div className={styles.page}>
       <Header />
+      <StructuredData data={articleSchema} />
       <Breadcrumb items={breadcrumbItems} />
 
       <section className={styles.hero}>
@@ -64,6 +92,17 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
               <span>{post.author}</span>
               <span>{post.date}</span>
               <span>{post.readTime}</span>
+            </div>
+
+            <div className={styles.heroImage}>
+              <Image
+                src={post.image}
+                alt={post.imageAlt}
+                fill
+                priority
+                sizes="(max-width: 960px) 100vw, 860px"
+                className={styles.heroImageMedia}
+              />
             </div>
           </div>
         </div>

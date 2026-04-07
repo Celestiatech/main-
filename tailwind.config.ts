@@ -9,13 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'primary': '#1f7cf1',
-        'primary-dark': '#1b478d',
+        'primary': '#369afb',
+        'primary-dark': '#152c56',
         'primary-light': '#5cb9fe',
         'secondary': '#000000',
         'secondary-light': '#ffffff',
         'accent': '#369afb',
-        'accent-dark': '#1a51b3',
+        'accent-dark': '#152c56',
         'mariner-50': '#eff8ff',
         'mariner-100': '#daefff',
         'mariner-200': '#bde3ff',

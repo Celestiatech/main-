@@ -38,6 +38,41 @@ export function Header() {
   const justClickedBackServices = useRef(false);
   const justClickedBackCompany = useRef(false);
 
+  const popularToolsButton = (
+    <>
+      <span className={styles.gooFilter} aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <defs>
+            <filter id="header-goo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                result="goo"
+              />
+              <feComposite in="SourceGraphic" in2="goo" />
+            </filter>
+          </defs>
+        </svg>
+      </span>
+      <span className={styles.popularToolsWrap}>
+        <Link href="/popular-tools" className={`btn btn-sm ${styles.popularToolsButton}`}>
+          See Popular Tools
+        </Link>
+        <span className={styles.popularToolsEffect} aria-hidden="true">
+          <span className={`${styles.bubbleCircle} ${styles.bubbleTopLeft}`}></span>
+          <span className={`${styles.bubbleCircle} ${styles.bubbleTopLeft}`}></span>
+          <span className={`${styles.bubbleCircle} ${styles.bubbleTopLeft}`}></span>
+          <span className={styles.popularToolsBlob}></span>
+          <span className={`${styles.bubbleCircle} ${styles.bubbleBottomRight}`}></span>
+          <span className={`${styles.bubbleCircle} ${styles.bubbleBottomRight}`}></span>
+          <span className={`${styles.bubbleCircle} ${styles.bubbleBottomRight}`}></span>
+        </span>
+      </span>
+    </>
+  );
+
   // Helper function to check if a path is active
   const isActive = (path: string) => {
     if (path === "/") {
@@ -962,9 +997,7 @@ export function Header() {
 
             {/* CTA Buttons */}
             <div className={styles.headerActions}>
-              <Link href="/popular-tools" className="btn btn-primary btn-water btn-sm">
-                See Popular Tools
-              </Link>
+              {popularToolsButton}
             </div>
 
             {/* Mobile Menu Button */}
@@ -1161,19 +1194,30 @@ export function Header() {
               </Link>
             </nav>
             <div className={styles.mobileMenuActions}>
-              <Link 
-                href="/popular-tools" 
-                className="btn btn-primary btn-water" 
-                onClick={(e) => {
-                  trackCTAClick("See Popular Tools", "mobile_menu", pathname);
-                  closeMobileMenu();
-                }}
-              >
-                See Popular Tools
-              </Link>
+              <span className={styles.popularToolsWrap}>
+                <Link 
+                  href="/popular-tools" 
+                  className={`btn ${styles.popularToolsButton}`} 
+                  onClick={(e) => {
+                    trackCTAClick("See Popular Tools", "mobile_menu", pathname);
+                    closeMobileMenu();
+                  }}
+                >
+                  See Popular Tools
+                </Link>
+                <span className={styles.popularToolsEffect} aria-hidden="true">
+                  <span className={`${styles.bubbleCircle} ${styles.bubbleTopLeft}`}></span>
+                  <span className={`${styles.bubbleCircle} ${styles.bubbleTopLeft}`}></span>
+                  <span className={`${styles.bubbleCircle} ${styles.bubbleTopLeft}`}></span>
+                  <span className={styles.popularToolsBlob}></span>
+                  <span className={`${styles.bubbleCircle} ${styles.bubbleBottomRight}`}></span>
+                  <span className={`${styles.bubbleCircle} ${styles.bubbleBottomRight}`}></span>
+                  <span className={`${styles.bubbleCircle} ${styles.bubbleBottomRight}`}></span>
+                </span>
+              </span>
               <Link 
                 href="/request-a-call" 
-                className="btn btn-secondary" 
+                className="btn btn-secondary btn-bubble" 
                 onClick={(e) => {
                   trackCTAClick("Schedule a Call", "mobile_menu", pathname);
                   closeMobileMenu();

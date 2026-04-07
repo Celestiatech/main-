@@ -4,11 +4,13 @@ import "../globals.css";
 import styles from "../page.module.css";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { generateMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | Celestiatech",
+export const metadata: Metadata = generateMetadata({
+  title: "Privacy Policy",
   description: "Read Celestiatech's Privacy Policy to understand how we collect, use, and protect your personal information.",
-};
+  path: "/privacy-policy",
+});
 
 export default function PrivacyPolicy() {
   return (
@@ -196,7 +198,7 @@ export default function PrivacyPolicy() {
         <div className="container">
           <h2>Ready to Work Together?</h2>
           <p>Let's discuss your project and turn your vision into reality</p>
-          <Link href="/proposal" className="btn btn-accent">
+          <Link href="/proposal" className="btn btn-accent btn-bubble">
             Get Free Consultation
           </Link>
         </div>
@@ -207,7 +209,5 @@ export default function PrivacyPolicy() {
     </div>
   );
 }
-
-
 
 

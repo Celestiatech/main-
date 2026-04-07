@@ -32,7 +32,7 @@
   --mariner-950: #152c56;
 
   /* Legacy aliases used by shared page.module.css */
-  --primary: var(--mariner-600);
+  --primary: var(--mariner-500);
   --secondary: var(--mariner-900);
 
   /* Primary Gradient */
@@ -55,7 +55,7 @@
   --text-light: var(--white);
 
   /* Action Color */
-  --action-color: var(--mariner-600);
+  --action-color: var(--mariner-500);
   --action-color-light: var(--mariner-400);
   --action-color-dark: var(--mariner-950);
 
@@ -80,7 +80,7 @@
   --color-gray-600: var(--black);
   --color-green-500: var(--mariner-500);
   --color-amber-600: var(--mariner-800);
-  --color-cyan-600: var(--mariner-600);
+  --color-cyan-600: var(--mariner-500);
   --color-violet-600: var(--mariner-800);
   --color-blue-600: var(--mariner-700);
 
@@ -108,14 +108,14 @@
   
   /* Mesh Gradient Backgrounds */
   --gradient-primary: linear-gradient(135deg, var(--mariner-500) 0%, var(--mariner-800) 50%, var(--mariner-950) 100%);
-  --gradient-accent: linear-gradient(135deg, var(--mariner-900) 0%, var(--mariner-500) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--mariner-950) 0%, var(--mariner-500) 100%);
   --gradient-mesh: radial-gradient(circle at 20% 50%, rgba(54, 154, 251, 0.15) 0%, transparent 50%),
                     radial-gradient(circle at 80% 80%, rgba(27, 71, 141, 0.12) 0%, transparent 50%);
 
   /* Borders */
   --border-light: rgba(54, 154, 251, 0.12);
   --border-medium: rgba(54, 154, 251, 0.22);
-  --border-glow: rgba(31, 124, 241, 0.38);
+  --border-glow: rgba(54, 154, 251, 0.38);
   
   /* Border Radius */
   --radius-sm: 6px;
@@ -159,7 +159,7 @@ body {
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: rgba(31, 124, 241, 0.78) rgba(218, 239, 255, 0.75);
+  scrollbar-color: rgba(54, 154, 251, 0.78) rgba(218, 239, 255, 0.75);
 }
 
 html::-webkit-scrollbar {
@@ -173,13 +173,13 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(54, 154, 251, 0.95) 0%, rgba(24, 102, 224, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(54, 154, 251, 0.95) 0%, rgba(31, 124, 241, 0.95) 100%);
   border: 2px solid rgba(239, 248, 255, 0.95);
   border-radius: 999px;
 }
 
 html::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(31, 124, 241, 1) 0%, rgba(26, 81, 179, 1) 100%);
+  background: linear-gradient(180deg, rgba(54, 154, 251, 1) 0%, rgba(21, 44, 86, 1) 100%);
 }
 
 /* ===== TYPOGRAPHY SYSTEM ===== */
@@ -847,33 +847,52 @@ ul, ol {
 }
 
 /* ===== BUBBLE FLOAT BUTTON ===== */
+.btn:not(.btn-water):not(.btn-shine):not(.btn-glow):not(.btn-border-fill):not(.btn-ripple):not(.btn-slide-up):not(.btn-underline):not(.btn-gradient-shift):not(.btn-3d-premium),
 .btn-bubble {
   position: relative;
+  isolation: isolate;
 }
 
+.btn:not(.btn-water):not(.btn-shine):not(.btn-glow):not(.btn-border-fill):not(.btn-ripple):not(.btn-slide-up):not(.btn-underline):not(.btn-gradient-shift):not(.btn-3d-premium)::before,
+.btn:not(.btn-water):not(.btn-shine):not(.btn-glow):not(.btn-border-fill):not(.btn-ripple):not(.btn-slide-up):not(.btn-underline):not(.btn-gradient-shift):not(.btn-3d-premium)::after,
 .btn-bubble::before,
 .btn-bubble::after {
   content: '';
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  animation: bubbleFloat 2s ease-in-out infinite;
+  background: rgba(255, 255, 255, 0.28);
+  pointer-events: none;
+  opacity: 0;
 }
 
+.btn:not(.btn-water):not(.btn-shine):not(.btn-glow):not(.btn-border-fill):not(.btn-ripple):not(.btn-slide-up):not(.btn-underline):not(.btn-gradient-shift):not(.btn-3d-premium)::before,
 .btn-bubble::before {
-  width: 10px;
-  height: 10px;
-  top: -5px;
-  left: 20%;
-  animation-delay: 0s;
+  width: 20px;
+  height: 20px;
+  top: 22%;
+  left: 18%;
 }
 
+.btn:not(.btn-water):not(.btn-shine):not(.btn-glow):not(.btn-border-fill):not(.btn-ripple):not(.btn-slide-up):not(.btn-underline):not(.btn-gradient-shift):not(.btn-3d-premium)::after,
 .btn-bubble::after {
-  width: 6px;
-  height: 6px;
-  top: -8px;
-  left: 60%;
-  animation-delay: 0.5s;
+  width: 14px;
+  height: 14px;
+  right: 18%;
+  bottom: 22%;
+}
+
+.btn:not(.btn-water):not(.btn-shine):not(.btn-glow):not(.btn-border-fill):not(.btn-ripple):not(.btn-slide-up):not(.btn-underline):not(.btn-gradient-shift):not(.btn-3d-premium):hover::before,
+.btn:not(.btn-water):not(.btn-shine):not(.btn-glow):not(.btn-border-fill):not(.btn-ripple):not(.btn-slide-up):not(.btn-underline):not(.btn-gradient-shift):not(.btn-3d-premium):focus-visible::before,
+.btn-bubble:hover::before,
+.btn-bubble:focus-visible::before {
+  animation: bubbleScatterLeft 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn:not(.btn-water):not(.btn-shine):not(.btn-glow):not(.btn-border-fill):not(.btn-ripple):not(.btn-slide-up):not(.btn-underline):not(.btn-gradient-shift):not(.btn-3d-premium):hover::after,
+.btn:not(.btn-water):not(.btn-shine):not(.btn-glow):not(.btn-border-fill):not(.btn-ripple):not(.btn-slide-up):not(.btn-underline):not(.btn-gradient-shift):not(.btn-3d-premium):focus-visible::after,
+.btn-bubble:hover::after,
+.btn-bubble:focus-visible::after {
+  animation: bubbleScatterRight 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.06s;
 }
 
 @keyframes bubbleFloat {
@@ -884,6 +903,34 @@ ul, ol {
   50% {
     transform: translateY(-20px) scale(1.2);
     opacity: 1;
+  }
+}
+
+@keyframes bubbleScatterLeft {
+  0% {
+    transform: translate(0, 0) scale(0.3);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(-34px, -28px) scale(1.15);
+    opacity: 0;
+  }
+}
+
+@keyframes bubbleScatterRight {
+  0% {
+    transform: translate(0, 0) scale(0.3);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(34px, 30px) scale(0.95);
+    opacity: 0;
   }
 }
 

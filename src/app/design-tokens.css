@@ -20,11 +20,11 @@
   --color-mariner-950: #152c56;
   
   /* Primary Colors */
-  --color-primary: var(--color-mariner-600);
-  --color-primary-dark: var(--color-mariner-900);
+  --color-primary: var(--color-mariner-500);
+  --color-primary-dark: var(--color-mariner-950);
   --color-primary-light: var(--color-mariner-400);
-  --color-primary-lighter: var(--color-mariner-300);
-  --color-primary-lightest: var(--color-mariner-100);
+  --color-primary-lighter: var(--color-mariner-200);
+  --color-primary-lightest: var(--color-mariner-50);
   
   /* Secondary Colors */
   --color-secondary: #000000;
@@ -79,8 +79,8 @@
   --text-tertiary: #6b7280;
   --text-muted: #9ca3af;
   --text-inverse: #ffffff;
-  --text-link: var(--color-mariner-600);
-  --text-link-hover: var(--color-mariner-900);
+  --text-link: var(--color-mariner-500);
+  --text-link-hover: var(--color-mariner-700);
   
   /* Border Colors */
   --border-light: #e5e7eb;
@@ -164,7 +164,7 @@
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
   --shadow-primary: 0 0 20px rgba(54, 154, 251, 0.3);
-  --shadow-primary-lg: 0 0 40px rgba(31, 124, 241, 0.4);
+  --shadow-primary-lg: 0 0 40px rgba(54, 154, 251, 0.4);
   
   /* ===== TRANSITIONS ===== */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);

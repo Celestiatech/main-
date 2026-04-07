@@ -318,7 +318,7 @@ export default function Pricing() {
                   </div>
                 </div>
 
-                <Link href="/contact" className={`btn ${model.popular ? 'btn-accent' : 'btn-primary'} btn-block`}>
+                <Link href="/contact" className={`btn ${model.popular ? 'btn-accent' : 'btn-primary'} btn-block btn-bubble`}>
                   {model.cta}
                 </Link>
               </div>
@@ -382,10 +382,10 @@ export default function Pricing() {
               <h3>Ready to Get Started?</h3>
               <p>Get a personalized quote based on your specific requirements</p>
               <div className={styles.ctaButtons}>
-                <Link href="/proposal" className="btn btn-primary btn-lg">
+                <Link href="/proposal" className="btn btn-primary btn-lg btn-bubble">
                   Get Free Consultation
                 </Link>
-                <Link href="/request-a-call" className="btn btn-secondary btn-lg">
+                <Link href="/request-a-call" className="btn btn-secondary btn-lg btn-bubble">
                   Schedule a Call
                 </Link>
               </div>
@@ -513,10 +513,10 @@ export default function Pricing() {
             <h2>Transform Your Ideas Into Reality</h2>
             <p>Join 2,500+ satisfied clients who chose Celestiatech for their development needs</p>
             <div className={styles.finalCtaButtons}>
-              <Link href="/contact" className="btn btn-accent btn-3d">
+              <Link href="/contact" className="btn btn-accent btn-3d btn-bubble">
                 Start Your Project Today
               </Link>
-              <Link href="/work" className="btn btn-secondary btn-3d">
+              <Link href="/work" className="btn btn-secondary btn-3d btn-bubble">
                 View Our Portfolio
               </Link>
             </div>

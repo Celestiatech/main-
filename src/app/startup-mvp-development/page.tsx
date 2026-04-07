@@ -48,10 +48,10 @@ export default function StartupMVPDevelopmentPage() {
                 <h1>Startup MVP Development Services</h1>
                 <p>Launch your product in 60-90 days with our proven MVP development process</p>
                 <div className={styles.heroActions}>
-                  <Link href="/contact" className="btn btn-primary btn-lg">
+                  <Link href="/contact" className="btn btn-primary btn-lg btn-bubble">
                     Get Free Consultation
                   </Link>
-                  <Link href="/pricing" className="btn btn-secondary btn-lg">
+                  <Link href="/pricing" className="btn btn-secondary btn-lg btn-bubble">
                     View Pricing
                   </Link>
                 </div>
@@ -171,7 +171,7 @@ export default function StartupMVPDevelopmentPage() {
                     <li>Single platform (web or mobile)</li>
                     <li>60-day timeline</li>
                   </ul>
-                  <Link href="/contact" className="btn btn-primary">Get Started</Link>
+                  <Link href="/contact" className="btn btn-primary btn-bubble">Get Started</Link>
                 </div>
                 <div className={styles.pricingCard} style={{ border: "2px solid var(--color-primary)" }}>
                   <h3>Standard MVP</h3>
@@ -182,7 +182,7 @@ export default function StartupMVPDevelopmentPage() {
                     <li>Cross-platform (web + mobile)</li>
                     <li>75-day timeline</li>
                   </ul>
-                  <Link href="/contact" className="btn btn-primary">Get Started</Link>
+                  <Link href="/contact" className="btn btn-primary btn-bubble">Get Started</Link>
                 </div>
                 <div className={styles.pricingCard}>
                   <h3>Premium MVP</h3>
@@ -193,7 +193,7 @@ export default function StartupMVPDevelopmentPage() {
                     <li>Multi-platform</li>
                     <li>90-day timeline</li>
                   </ul>
-                  <Link href="/contact" className="btn btn-primary">Get Started</Link>
+                  <Link href="/contact" className="btn btn-primary btn-bubble">Get Started</Link>
                 </div>
               </div>
             </div>
@@ -222,10 +222,10 @@ export default function StartupMVPDevelopmentPage() {
               <h2>Ready to Build Your MVP?</h2>
               <p>Let&apos;s discuss your startup idea and create a plan to get you to market in 60-90 days</p>
               <div className={styles.heroActions}>
-                <Link href="/contact" className="btn btn-accent btn-lg">
+                <Link href="/contact" className="btn btn-accent btn-lg btn-bubble">
                   Get Free Consultation
                 </Link>
-                <Link href="/proposal" className="btn btn-secondary btn-lg">
+                <Link href="/proposal" className="btn btn-secondary btn-lg btn-bubble">
                   Request Proposal
                 </Link>
               </div>

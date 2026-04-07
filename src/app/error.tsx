@@ -34,13 +34,13 @@ export default function Error({
               We&apos;re experiencing a technical issue. Our team has been notified and is working to fix it.
             </p>
             <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
-              <button onClick={reset} className="btn btn-primary">
+              <button onClick={reset} className="btn btn-primary btn-bubble">
                 Try Again
               </button>
-              <Link href="/" className="btn btn-secondary">
+              <Link href="/" className="btn btn-secondary btn-bubble">
                 Go to Homepage
               </Link>
-              <Link href="/contact" className="btn btn-outline">
+              <Link href="/contact" className="btn btn-outline btn-bubble">
                 Contact Support
               </Link>
             </div>

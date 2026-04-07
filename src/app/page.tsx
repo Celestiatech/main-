@@ -581,7 +581,7 @@ export default function Home() {
               <Link
                 key={badge.key}
                 href={badge.href}
-                className={`${styles.heroFloatBadge} ${badge.className}`}
+                className={`${styles.heroFloatBadge} ${badge.className} ${badge.key === "whatsapp" ? styles.heroFloatBadgeWhatsapp : ""}`}
                 aria-label={badge.label}
                 style={badgeStyle}
               >
@@ -717,7 +717,7 @@ export default function Home() {
               aria-label="Previous"
               onClick={() => {
                 const el = document.getElementById("heroCarousel");
-                if (el) el.scrollBy({ left: -178, behavior: "smooth" });
+                if (el) el.scrollBy({ left: -208, behavior: "smooth" });
               }}
             >
               ←
@@ -762,7 +762,7 @@ export default function Home() {
               aria-label="Next"
               onClick={() => {
                 const el = document.getElementById("heroCarousel");
-                if (el) el.scrollBy({ left: 178, behavior: "smooth" });
+                if (el) el.scrollBy({ left: 208, behavior: "smooth" });
               }}
             >
               →
@@ -1007,7 +1007,7 @@ export default function Home() {
             <p>Let&apos;s discuss your project and turn your vision into reality</p>
             <Link 
               href="/proposal" 
-              className="btn btn-accent btn-3d"
+              className="btn btn-accent btn-3d btn-bubble"
               onClick={() => trackCTAClick("Get Free Consultation", "cta_section")}
             >
               Get Free Consultation
@@ -1149,7 +1149,7 @@ export default function Home() {
                 <label>Project Description *</label>
                 <textarea rows={4} placeholder="Tell us about your project..." required></textarea>
               </div>
-              <button type="submit" className="btn btn-primary btn-ripple" style={{ width: "100%" }}>
+              <button type="submit" className="btn btn-primary btn-ripple btn-bubble" style={{ width: "100%" }}>
                 Send Message
               </button>
               <div className={styles.formNote}>

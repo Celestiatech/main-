@@ -206,8 +206,8 @@ export function getArticleSchema({
     datePublished,
     dateModified: dateModified || datePublished,
     author: {
-      "@type": "Organization",
-      name: siteConfig.name,
+      "@type": author ? "Person" : "Organization",
+      name: author || siteConfig.name,
     },
     publisher: {
       "@type": "Organization",

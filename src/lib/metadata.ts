@@ -63,6 +63,12 @@ export function generateMetadata(page?: {
   description?: string;
   path?: string;
   ogImage?: string;
+  keywords?: string[];
+  type?: "website" | "article";
+  publishedTime?: string;
+  modifiedTime?: string;
+  authors?: string[];
+  noIndex?: boolean;
 }): Metadata {
   const title = page?.title
     ? `${page.title} | ${siteConfig.name}`
@@ -71,11 +77,47 @@ export function generateMetadata(page?: {
   const description = page?.description || siteConfig.description;
   const url = page?.path ? `${siteConfig.url}${page.path}` : siteConfig.url;
   const ogImage = page?.ogImage || siteConfig.ogImage;
+  const type = page?.type || "website";
+  const keywords = page?.keywords || [
+    "software development company",
+    "web development",
+    "mobile app development",
+    "AI development",
+    "blockchain development",
+    "UI UX design",
+  ];
 
   return {
     metadataBase: new URL(siteConfig.url),
     title,
     description,
+    keywords,
+    alternates: {
+      canonical: page?.path || "/",
+    },
+    robots: page?.noIndex
+      ? {
+          index: false,
+          follow: false,
+          googleBot: {
+            index: false,
+            follow: false,
+            "max-snippet": -1,
+            "max-image-preview": "large",
+            "max-video-preview": -1,
+          },
+        }
+      : {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-snippet": -1,
+            "max-image-preview": "large",
+            "max-video-preview": -1,
+          },
+        },
     openGraph: {
       title,
       description,
@@ -89,7 +131,14 @@ export function generateMetadata(page?: {
         },
       ],
       locale: "en_US",
-      type: "website",
+      type,
+      ...(type === "article"
+        ? {
+            publishedTime: page?.publishedTime,
+            modifiedTime: page?.modifiedTime || page?.publishedTime,
+            authors: page?.authors,
+          }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",
@@ -97,5 +146,6 @@ export function generateMetadata(page?: {
       description,
       images: [ogImage],
     },
+    category: type === "article" ? "technology" : "business",
   };
 }

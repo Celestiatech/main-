@@ -313,7 +313,7 @@ export default function CookiePolicy() {
         <div className="container">
           <h2>Ready to Work Together?</h2>
           <p>Let's discuss your project and turn your vision into reality</p>
-          <Link href="/proposal" className="btn btn-accent">
+          <Link href="/proposal" className="btn btn-accent btn-bubble">
             Get Free Consultation
           </Link>
         </div>

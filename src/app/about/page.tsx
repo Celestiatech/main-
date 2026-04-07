@@ -174,7 +174,7 @@ export default function AboutPage() {
         <div className="container">
           <h2>Ready to Work With Us?</h2>
           <p>Let&apos;s discuss how we can help transform your business</p>
-          <Link href="/contact" className="btn btn-accent">
+          <Link href="/contact" className="btn btn-accent btn-bubble">
             Get In Touch
           </Link>
         </div>

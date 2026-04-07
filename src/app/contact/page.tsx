@@ -221,7 +221,7 @@ export default function ContactPage() {
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-primary" style={{ width: "100%" }} disabled={isSubmitting}>
+              <button type="submit" className="btn btn-primary btn-bubble" style={{ width: "100%" }} disabled={isSubmitting}>
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
               {submitMessage && (
@@ -270,7 +270,7 @@ export default function ContactPage() {
         <div className="container">
           <h2>Prefer to talk?</h2>
           <p>Schedule a free 30-minute consultation call</p>
-          <Link href="/request-a-call" className="btn btn-accent">
+          <Link href="/request-a-call" className="btn btn-accent btn-bubble">
             Schedule a Call
           </Link>
         </div>

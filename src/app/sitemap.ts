@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 import { siteConfig } from '@/lib/metadata';
+import { BLOG_POSTS } from '@/lib/blogs';
+import { TOOLS } from '@/lib/tools-catalog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
@@ -15,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/blog',
     '/career',
-    '/testimonials',
+    '/popular-tools',
     '/proposal',
     '/request-a-call',
     '/privacy-policy',
@@ -44,6 +46,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/work/${slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
+      priority: 0.7,
+    });
+  });
+
+  BLOG_POSTS.forEach((post) => {
+    routes.push({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    });
+  });
+
+  TOOLS.forEach((tool) => {
+    routes.push({
+      url: `${baseUrl}/popular-tools/${tool.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
       priority: 0.7,
     });
   });

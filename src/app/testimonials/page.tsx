@@ -141,7 +141,7 @@ export default function TestimonialsPage() {
         <div className="container">
           <h2>Ready to Become Our Next Success Story?</h2>
           <p>Let's discuss your project and create something amazing together</p>
-          <Link href="/contact" className="btn btn-accent">
+          <Link href="/contact" className="btn btn-accent btn-bubble">
             Get Free Consultation
           </Link>
         </div>
