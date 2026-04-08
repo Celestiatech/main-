@@ -1326,10 +1326,16 @@
     user-select: none;
   }
 
+  .industryCarouselFullBleed {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-top: 10px;
+  }
+
   .industryCarouselTrack {
     display: flex;
     gap: 22px;
-    padding: 12px 4px 18px;
+    padding: 12px max(20px, calc((100vw - 1120px) / 2)) 18px;
     width: max-content;
   }
 

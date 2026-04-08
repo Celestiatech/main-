@@ -13,9 +13,10 @@ const FILTERS: Array<{ label: string; value: Category }> = [
   { label: "Mobile", value: "mobile" },
   { label: "Web", value: "web" },
   { label: "Game", value: "game" },
+  { label: "Design", value: "design" },
   { label: "Blockchain", value: "blockchain" },
   { label: "AI", value: "ai" },
-  { label: "Design", value: "design" },
+  { label: "No-Code", value: "nocode" },
 ];
 
 export function PortfolioShowcase() {
@@ -33,12 +34,6 @@ export function PortfolioShowcase() {
     }
 
     return CASE_STUDIES.filter((study) => study.category === activeFilter);
-  }, [activeFilter]);
-
-  useEffect(() => {
-    progressRef.current = 0;
-    targetProgressRef.current = 0;
-    setScrollProgress(0);
   }, [activeFilter]);
 
   useEffect(() => {
@@ -72,8 +67,8 @@ export function PortfolioShowcase() {
       }
 
       const rect = section.getBoundingClientRect();
-      const stickyTop = 112;
-      const isPinnedZone = rect.top <= stickyTop + 20 && rect.bottom >= stickyTop + 320;
+      const stickyTop = 108;
+      const isPinnedZone = rect.top <= stickyTop + 20 && rect.bottom >= stickyTop + 360;
       const isReverseAligned = rect.top >= stickyTop - 28;
 
       if (!isPinnedZone) {
@@ -86,8 +81,7 @@ export function PortfolioShowcase() {
 
       if (direction > 0 && currentProgress < 1) {
         event.preventDefault();
-        const nextProgress = Math.min(1, currentProgress + step);
-        targetProgressRef.current = nextProgress;
+        targetProgressRef.current = Math.min(1, currentProgress + step);
         if (animationFrameRef.current === null) {
           animationFrameRef.current = window.requestAnimationFrame(animateProgress);
         }
@@ -100,8 +94,7 @@ export function PortfolioShowcase() {
         }
 
         event.preventDefault();
-        const nextProgress = Math.max(0, currentProgress - step);
-        targetProgressRef.current = nextProgress;
+        targetProgressRef.current = Math.max(0, currentProgress - step);
         if (animationFrameRef.current === null) {
           animationFrameRef.current = window.requestAnimationFrame(animateProgress);
         }
@@ -127,7 +120,8 @@ export function PortfolioShowcase() {
         <div className={styles.intro}>
           <h2 className={styles.title}>Featured Case Studies</h2>
           <p className={styles.subtitle}>
-            Filter through selected launches to see the challenge, the build direction, and the measurable outcome.
+            A smoother layered showcase inspired by the stacked ChicMic feel, rebuilt here with local assets and a
+            cleaner product-led presentation.
           </p>
         </div>
 
@@ -140,7 +134,12 @@ export function PortfolioShowcase() {
                 role="tab"
                 aria-selected={activeFilter === filter.value}
                 className={`${styles.filterBtn} ${activeFilter === filter.value ? styles.filterBtnActive : ""}`}
-                onClick={() => setActiveFilter(filter.value)}
+                onClick={() => {
+                  progressRef.current = 0;
+                  targetProgressRef.current = 0;
+                  setScrollProgress(0);
+                  setActiveFilter(filter.value);
+                }}
               >
                 {filter.label}
               </button>
@@ -151,102 +150,60 @@ export function PortfolioShowcase() {
         {filteredStudies.length === 0 ? (
           <div className={styles.empty}>No case studies available for this category yet.</div>
         ) : (
-          <div
-            className={styles.cardsContainer}
-            style={
-              {
-                "--stack-count": filteredStudies.length,
-              } as CSSProperties
-            }
-          >
+          <div className={styles.cardsContainer}>
             <div ref={viewportRef} className={styles.cardsViewport}>
               {filteredStudies.map((study, index) => (
                 <article
                   key={study.title}
                   className={styles.caseCard}
                   style={
-                  {
-                    "--card-translate-y": `${getCardTranslateY(index, activeIndex)}px`,
-                    "--card-scale": getCardScale(index, activeIndex).toString(),
-                    "--card-opacity": "1",
-                    zIndex: getCardZIndex(index, activeIndex, filteredStudies.length),
-                    pointerEvents: Math.abs(index - activeIndex) < 0.85 ? "auto" : "none",
-                  } as CSSProperties
-                }
-              >
+                    {
+                      "--card-translate-y": `${getCardTranslateY(index, activeIndex)}px`,
+                      "--card-scale": getCardScale(index, activeIndex).toString(),
+                      "--card-opacity": getCardOpacity(index, activeIndex).toString(),
+                      zIndex: getCardZIndex(index, activeIndex, filteredStudies.length),
+                      pointerEvents: Math.abs(index - activeIndex) < 0.85 ? "auto" : "none",
+                    } as CSSProperties
+                  }
+                >
                   <div className={styles.cardInner}>
-                    <div className={styles.beforeAfterSection}>
-                      <div className={styles.beforeAfterGrid}>
-                        <div className={styles.beforeBlock}>
-                          <span className={styles.blockLabel}>Before</span>
-                          <div className={styles.imageWrapper}>
-                            <Image
-                              src={study.beforeImage}
-                              alt={`${study.title} before redesign`}
-                              fill
-                              className={styles.image}
-                              sizes="(max-width: 768px) 44vw, (max-width: 1200px) 36vw, 320px"
-                            />
-                          </div>
-                        </div>
-
-                        <div className={styles.afterBlock}>
-                          <span className={styles.blockLabel}>After</span>
-                          <div className={styles.imageWrapper}>
-                            <Image
-                              src={study.afterImage}
-                              alt={`${study.title} after launch`}
-                              fill
-                              className={styles.image}
-                              sizes="(max-width: 768px) 44vw, (max-width: 1200px) 36vw, 320px"
-                            />
-                          </div>
-                        </div>
-                      </div>
+                    <div className={styles.panelMedia}>
+                      <Image
+                        src={study.panelImage}
+                        alt={study.title}
+                        fill
+                        className={styles.panelImage}
+                        sizes="(max-width: 768px) 100vw, 1120px"
+                        priority={index === 0}
+                      />
+                      <div className={styles.panelOverlay} />
                     </div>
 
-                    <div className={styles.contentSection}>
-                      <div>
-                        <div className={styles.header}>
-                          <span className={styles.badge}>{study.categoryBadge}</span>
-                          <span className={styles.tech}>{study.mainTech}</span>
-                        </div>
-
-                        <h3 className={styles.caseTitle}>{study.title}</h3>
-                        <p className={styles.caseSubtitle}>{study.subtitle}</p>
-
-                        <div className={styles.problemSolution}>
-                          <div className={styles.item}>
-                            <h4>Problem</h4>
-                            <p>{study.problem}</p>
-                          </div>
-                          <div className={styles.item}>
-                            <h4>Solution</h4>
-                            <p>{study.solution}</p>
-                          </div>
-                        </div>
-
-                        <div className={styles.impacts}>
-                          {study.impacts.map((impact) => (
-                            <div key={`${study.title}-${impact.label}`} className={styles.impactItem}>
-                              <div className={styles.impactLabel}>{impact.label}</div>
-                              <div className={styles.impactValue}>{impact.value}</div>
-                            </div>
-                          ))}
-                        </div>
-
-                        <div className={styles.techStack}>
-                          {study.techStack.map((tech) => (
-                            <span key={`${study.title}-${tech}`} className={styles.techTag}>
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
+                    <div className={styles.panelContent}>
+                      <div className={styles.panelTop}>
+                        <span className={styles.badge}>{study.categoryBadge}</span>
+                        <span className={styles.accent}>{study.accent}</span>
                       </div>
 
-                      <Link href={study.url} className={styles.ctaButton}>
-                        Start a Similar Project
-                      </Link>
+                      <div className={styles.panelBody}>
+                        <div className={styles.copyBlock}>
+                          <p className={styles.kicker}>Selected Capability</p>
+                          <h3 className={styles.caseTitle}>{study.title}</h3>
+                          <p className={styles.caseSubtitle}>{study.subtitle}</p>
+                          <p className={styles.summary}>{study.summary}</p>
+                        </div>
+
+                        <div className={styles.panelFooter}>
+                          <div className={styles.progressMeta}>
+                            <span>{String(index + 1).padStart(2, "0")}</span>
+                            <span>{String(filteredStudies.length).padStart(2, "0")}</span>
+                          </div>
+
+                          <Link href={study.url} className={styles.ctaButton}>
+                            {study.ctaLabel}
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </article>
@@ -263,36 +220,41 @@ function getCardTranslateY(index: number, activeIndex: number) {
   const distance = index - activeIndex;
 
   if (distance <= -1) {
-    return -42 - (Math.abs(distance) - 1) * 18;
+    return -48 - (Math.abs(distance) - 1) * 20;
   }
 
   if (distance <= 0) {
-    return distance * 34;
+    return distance * 36;
   }
 
   if (distance <= 1) {
-    return distance * 180;
+    return distance * 136;
   }
 
-  return 180 + (distance - 1) * 56;
+  return 136 + (distance - 1) * 52;
 }
 
 function getCardScale(index: number, activeIndex: number) {
   const distance = index - activeIndex;
 
   if (distance <= -1) {
-    return 0.93;
+    return 0.95;
   }
 
   if (distance <= 0) {
-    return 1 + distance * 0.04;
+    return 1 + distance * 0.03;
   }
 
   if (distance <= 1) {
-    return 0.88 + (1 - distance) * 0.1;
+    return 0.9 + (1 - distance) * 0.08;
   }
 
-  return Math.max(0.8, 0.9 - (distance - 1) * 0.04);
+  return Math.max(0.84, 0.9 - (distance - 1) * 0.03);
+}
+
+function getCardOpacity(index: number, activeIndex: number) {
+  const distance = Math.abs(index - activeIndex);
+  return Math.max(0.6, 1 - distance * 0.08);
 }
 
 function getCardZIndex(index: number, activeIndex: number, total: number) {

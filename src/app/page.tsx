@@ -116,15 +116,22 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const idleCallback = "requestIdleCallback" in window
-      ? window.requestIdleCallback(() => setShouldRenderChatbot(true), { timeout: 2500 })
-      : window.setTimeout(() => setShouldRenderChatbot(true), 1800);
+    let idleCallbackId: number | null = null;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+
+    if ("requestIdleCallback" in window) {
+      idleCallbackId = window.requestIdleCallback(() => setShouldRenderChatbot(true), { timeout: 2500 });
+    } else {
+      timeoutId = setTimeout(() => setShouldRenderChatbot(true), 1800);
+    }
 
     return () => {
-      if ("cancelIdleCallback" in window && typeof idleCallback === "number") {
-        window.cancelIdleCallback(idleCallback);
-      } else {
-        window.clearTimeout(idleCallback as number);
+      if ("cancelIdleCallback" in window && idleCallbackId !== null) {
+        window.cancelIdleCallback(idleCallbackId);
+      }
+
+      if (timeoutId !== null) {
+        clearTimeout(timeoutId);
       }
     };
   }, []);
@@ -753,6 +760,8 @@ export default function Home() {
               so the product feels relevant, conversion-ready, and built for growth.
             </p>
           </div>
+        </div>
+        <div className={styles.industryCarouselFullBleed}>
           <div ref={industryCarouselRef} className={styles.industryCarouselWrapper}>
             <div id="industryShowcaseCarousel" className={styles.industryCarouselTrack}>
               {industryCarouselItems.map((industry, index) => (
@@ -1047,7 +1056,7 @@ export default function Home() {
                         <span className={styles.testimonialScore}>4.5</span>
                         {"★".repeat(testimonial.stars)}
                       </div>
-                      <p>"{testimonial.quote}"</p>
+                      <p>&ldquo;{testimonial.quote}&rdquo;</p>
                       <div className={styles.testimonialAuthor}>
                         <div className={styles.testimonialAvatar}>
                           <Image
@@ -1078,9 +1087,9 @@ export default function Home() {
         <div className="container">
           <div className={styles.contactGrid}>
             <div className={`${styles.contactInfo} animate-slide-left`}>
-              <h2>Let's Work Together</h2>
+              <h2>Let&apos;s Work Together</h2>
               <p>
-                Tell us about your project and we'll help bring your ideas to life.
+                Tell us about your project and we&apos;ll help bring your ideas to life.
                 Fill out the form and our team will get back to you within 24 hours.
               </p>
               <div className={styles.contactLocations}>
