@@ -245,7 +245,7 @@
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
   pointer-events: auto;
   max-width: 200px;
-  position: relative;
+  position: absolute;
   animation: slideIn 0.3s ease-out;
 }
 
@@ -457,8 +457,9 @@
   }
 
   .typingBubble {
-    bottom: -14px;
-    right: -52px;
+    bottom: -11px;
+    right: 60px;
+    width: 100%;
   }
 
   .chatHeader {
@@ -814,6 +815,8 @@
     min-height: 40px;
     padding: 0 14px;
     font-size: 11px;
+    bottom: -15px;
+    right: -53px;
   }
 
   .reopenSupport {
