@@ -24,7 +24,6 @@ const fallback = {
     padding: '1.5rem',
     background: '#ffffff',
     borderRight: '1px solid #dbeafe',
-    boxShadow: '0 10px 30px rgba(30, 58, 138, 0.08)',
   } as const,
   nav: {
     display: 'grid',

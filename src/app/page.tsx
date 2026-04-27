@@ -51,7 +51,6 @@ function HeroBadgeIcon({ kind }: { kind: "whatsapp" | "call" | "revenue" | "seo"
 }
 
 export default function Home() {
-  const [hoveredStep, setHoveredStep] = useState<number | null>(null);
   const [revenueCount, setRevenueCount] = useState(0);
   const [shouldRenderChatbot, setShouldRenderChatbot] = useState(false);
   const industryCarouselRef = useRef<HTMLDivElement | null>(null);
@@ -286,37 +285,37 @@ export default function Home() {
     {
       name: "Healthcare & Wellness",
       image: "/images/industry-showcase/healthcare_n_wellness.png",
-      tint: "rgba(72, 219, 251, 0.08)",
+      tint: "rgba(255, 255, 255, 0.95)",
       points: ["Trust-Centered Design", "Booking Systems", "Mobile-Optimized"],
     },
     {
       name: "Food & Restaurant",
       image: "/images/industry-showcase/food_n_restourant.png",
-      tint: "rgba(255, 159, 67, 0.08)",
+      tint: "rgba(255, 255, 255, 0.95)",
       points: ["Visuals & Engaging UX", "Ordering Systems", "Local SEO & Reviews"],
     },
     {
       name: "Education & E-Learning",
       image: "/images/industry-showcase/eduction_n_elearning.png",
-      tint: "rgba(46, 213, 115, 0.08)",
+      tint: "rgba(255, 255, 255, 0.95)",
       points: ["Interactive Interfaces", "LMS & User Management", "Scalable & Accessible"],
     },
     {
       name: "Startups & SMEs",
       image: "/images/industry-showcase/startup_n_smes.png",
-      tint: "rgba(255, 71, 167, 0.08)",
+      tint: "rgba(255, 255, 255, 0.95)",
       points: ["Growth & Scalable Design", "Conversion Friendly", "Fast Ongoing Support"],
     },
     {
       name: "Real Estate",
       image: "/images/industry-showcase/realstate.png",
-      tint: "rgba(78, 45, 218, 0.08)",
+      tint: "rgba(255, 255, 255, 0.95)",
       points: ["Industry-Specific Design", "SEO & Local Optimization", "Mobile-First & Performance"],
     },
     {
       name: "E-commerce & Retail",
       image: "/images/industry-showcase/ecommerce_n_retail.png",
-      tint: "rgba(255, 107, 107, 0.08)",
+      tint: "rgba(255, 255, 255, 0.95)",
       points: ["Conversion-Focused Design", "Seamless Experience", "Scalable Custom Features"],
     },
   ];
@@ -550,6 +549,7 @@ export default function Home() {
       <section
         className={`${styles.hero} ${styles.heroRedesign}`}
         data-debug="hero-section"
+        data-section="hero"
         onMouseMove={handleHeroPointerMove}
         onMouseLeave={resetHeroPointer}
       >
@@ -751,7 +751,7 @@ export default function Home() {
       </section>
 
       {/* ===== INDUSTRY SHOWCASE SECTION ===== */}
-      <section className={styles.services} id="services">
+      <section className={styles.services} id="services" data-section="services">
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Industries We Serve</h2>
@@ -797,7 +797,7 @@ export default function Home() {
       </section>
 
       {/* ===== AWARDS SECTION ===== */}
-      <section className={styles.awards}>
+      <section className={styles.awards} data-section="awards">
         <div className="container">
           <div className={`${styles.awardsHeader} animate-on-scroll`}>
             <h3>Ranked Among the Top Web & App Development Companies</h3>
@@ -817,7 +817,7 @@ export default function Home() {
       </section>
 
       {/* ===== TRUST/PARTNERS SECTION ===== */}
-      <section className={styles.trust}>
+      <section className={styles.trust} data-section="partners">
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h3>Our Esteemed Partners</h3>
@@ -835,7 +835,7 @@ export default function Home() {
       </section>
 
       {/* ===== INDUSTRIES SECTION ===== */}
-      <section className={styles.industries}>
+      <section className={styles.industries} data-section="industries">
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Blogs We Cater To</h2>
@@ -855,12 +855,12 @@ export default function Home() {
       </section>
 
       {/* ===== PORTFOLIO SECTION ===== */}
-      <section className={styles.portfolio}>
+      <section className={styles.portfolio} data-section="portfolio">
         <PortfolioShowcase />
       </section>
 
       {/* ===== PROCESS SECTION ===== */}
-      <section className={styles.process}>
+      <section className={styles.process} data-section="process">
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>How It Works</h2>
@@ -871,19 +871,15 @@ export default function Home() {
               <div
                 key={index}
                 className={`${styles.processStep} animate-on-scroll stagger-${(index % 6) + 1}`}
-                onMouseEnter={() => setHoveredStep(index)}
-                onMouseLeave={() => setHoveredStep(null)}
               >
                 <div className={styles.processIcon}>
                   <Image src={step.icon} alt={step.title} width={70} height={70} loading="lazy" />
                 </div>
                 <h3>{step.title}</h3>
                 <p>{step.desc}</p>
-                {hoveredStep === index && (
-                  <div className={`${styles.processDetails} ${styles.visible}`}>
-                    <p>{step.details}</p>
-                  </div>
-                )}
+                <div className={styles.processDetails}>
+                  <p>{step.details}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -891,7 +887,7 @@ export default function Home() {
       </section>
 
       {/* ===== UPWORK SECTION ===== */}
-      <section className={styles.upwork}>
+      <section className={styles.upwork} data-section="upwork">
         <div className="container">
           <div className={`${styles.upworkContent} animate-on-scroll`}>
             <div>
@@ -921,7 +917,7 @@ export default function Home() {
       </section>
 
       {/* ===== TECH STACK SECTION ===== */}
-      <section className={styles.techStack}>
+      <section className={styles.techStack} data-section="technology">
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Technology Stack</h2>
@@ -981,7 +977,7 @@ export default function Home() {
       </section>
 
       {/* ===== CTA SECTION ===== */}
-      <section className={styles.cta}>
+      <section className={styles.cta} data-section="cta">
 
         <div className="container">
           <div className="animate-on-scroll">
@@ -999,7 +995,7 @@ export default function Home() {
       </section>
 
       {/* ===== WHY CHOOSE US SECTION ===== */}
-      <section className={styles.whyChooseUs}>
+      <section className={styles.whyChooseUs} data-section="whychoose">
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Why Choose Celestiatech?</h2>
@@ -1020,7 +1016,7 @@ export default function Home() {
       </section>
 
       {/* ===== TESTIMONIALS SECTION ===== */}
-      <section className={styles.testimonials}>
+      <section className={styles.testimonials} data-section="testimonials">
 
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
@@ -1083,7 +1079,7 @@ export default function Home() {
       </section>
 
       {/* ===== CONTACT SECTION ===== */}
-      <section className={styles.contact}>
+      <section className={styles.contact} data-section="contact">
         <div className="container">
           <div className={styles.contactGrid}>
             <div className={`${styles.contactInfo} animate-slide-left`}>

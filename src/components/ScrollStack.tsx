@@ -2,15 +2,24 @@
 import React, { useEffect, useRef, useState } from "react";
 
 export interface ScrollStackCard {
-  title: string;
+  title?: string;
   subtitle?: string;
   badge?: string;
   backgroundImage?: string;
   content?: React.ReactNode;
 }
 
+export interface ScrollStackItemProps {
+  title?: string;
+  subtitle?: string;
+  badge?: string;
+  backgroundImage?: string;
+  children: React.ReactNode;
+}
+
 interface ScrollStackProps {
-  cards: ScrollStackCard[];
+  cards?: ScrollStackCard[];
+  children?: React.ReactNode;
   backgroundColor?: string;
   cardHeight?: string;
   animationDuration?: string;
@@ -27,6 +36,7 @@ const defaultBackgrounds = [
 
 const ScrollStack: React.FC<ScrollStackProps> = ({
   cards,
+  children,
   backgroundColor = "bg-background",
   cardHeight = "60vh",
   animationDuration = "0.5s",
@@ -43,7 +53,24 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
   const [hasCompletedScroll, setHasCompletedScroll] = useState(false);
   const scrollPositionRef = useRef(0);
   const ticking = useRef(false);
-  const cardCount = Math.min(cards.length, 5);
+
+  const childCards = React.Children.toArray(children)
+    .map((child) => {
+      if (!React.isValidElement(child)) return null;
+      const element = child as React.ReactElement<ScrollStackItemProps>;
+      const { title, subtitle, badge, backgroundImage } = element.props;
+      return {
+        title,
+        subtitle,
+        badge,
+        backgroundImage,
+        content: element.props.children,
+      } as ScrollStackCard;
+    })
+    .filter((card): card is ScrollStackCard => card !== null);
+
+  const effectiveCards = cards && cards.length > 0 ? cards : childCards;
+  const cardCount = Math.min(effectiveCards.length, 5);
 
   const cardStyle = {
     height: cardHeight,
@@ -272,7 +299,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
               className="relative w-full max-w-5xl mx-auto flex-shrink-0"
               style={{ height: cardHeight }}
             >
-              {cards.slice(0, 5).map((card, index) => {
+              {effectiveCards.slice(0, 5).map((card, index) => {
                 const cardTransform = getCardTransform(index);
                 const backgroundImage =
                   card.backgroundImage ||
@@ -281,7 +308,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
                 return (
                   <div
                     key={index}
-                    className={`absolute z-50 overflow-hidden shadow-xl 
+                    className={`absolute z-50 overflow-hidden 
                       transition-all duration-300`}
                     style={{
                       ...cardStyle,
@@ -297,12 +324,12 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
                     }}
                   >
                     <div
-                      className="absolute inset-0 z-0 bg-gradient-to-b from-black/40 to-black/80"
+                      className="absolute inset-0 z-0 bg-black/10"
                       style={{
                         backgroundImage: `url('${backgroundImage}')`,
-                        backgroundSize: "cover",
+                        backgroundSize: "contain",
+                        backgroundRepeat: "no-repeat",
                         backgroundPosition: "center",
-                        backgroundBlendMode: "overlay",
                       }}
                     />
 
@@ -342,5 +369,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     </section>
   );
 };
+
+export const ScrollStackItem: React.FC<ScrollStackItemProps> = () => null;
 
 export default ScrollStack;

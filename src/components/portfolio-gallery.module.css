@@ -37,14 +37,14 @@
   padding: 28px;
   border-radius: 32px;
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(191, 219, 254, 0.9);
-  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.06);
+  /* border: 1px solid rgba(191, 219, 254, 0.9); */
+
 }
 
 .filterBtn {
   padding: 8px 20px;
   border-radius: 999px;
-  border: 2px solid rgba(191, 219, 254, 0.6);
+  border-bottom: 2px solid rgba(191, 219, 254, 0.6);
   background: rgba(255, 255, 255, 0.5);
   color: #475569;
   font-size: 0.95rem;
@@ -55,7 +55,7 @@
 
 .filterBtn:hover {
   border-color: #2563eb;
-  background: rgba(37, 99, 235, 0.05);
+  background: rgba(255, 255, 255, 0.8);
   color: #1d4ed8;
 }
 
@@ -92,7 +92,7 @@
   overflow: hidden;
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(191, 219, 254, 0.9);
-  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.08);
+
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transform: translateY(calc(var(--index) * 8px)) rotateX(calc(var(--index) * 2deg)) scale(calc(1 - var(--index) * 0.02));
   opacity: calc(1 - var(--index) * 0.1);

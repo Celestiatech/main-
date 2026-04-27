@@ -71,7 +71,13 @@ const BOT_RESPONSES: Record<string, string> = {
 const matchesAny = (text: string, keywords: string[]) => keywords.some((keyword) => text.includes(keyword));
 
 export default function Chatbot() {
-  const [isChatOpen, setIsChatOpen] = useState(true);
+  const [isChatOpen, setIsChatOpen] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('chatbotOpen');
+      return saved ? JSON.parse(saved) : false;
+    }
+    return false;
+  });
   const [isSupportOpen, setIsSupportOpen] = useState(true);
   const [messages, setMessages] = useState<Message[]>(() => [
     {
@@ -87,9 +93,69 @@ export default function Chatbot() {
     leadScore: 0,
     qualified: false,
   });
+  const [typingText, setTypingText] = useState("Hi there, how may I help?");
+  const [displayedText, setDisplayedText] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const messageIdRef = useRef(0);
+  const typingIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const charIndexRef = useRef(0);
+
+  const sectionMessages: Record<string, string> = {
+    hero: "Typing: Hi there, how may I help?",
+    services: "Typing: Tell me about services",
+    portfolio: "Typing: Show me your work",
+    pricing: "Typing: What's your pricing?",
+    testimonials: "Typing: What do clients say?",
+    faq: "Typing: Common questions answered",
+    contact: "Typing: Let's get in touch",
+    default: "Typing: How can I assist?"
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('[data-section]');
+      let currentSection = 'hero';
+      
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2) {
+          currentSection = section.getAttribute('data-section') || 'hero';
+        }
+      });
+
+      const newMessage = sectionMessages[currentSection] || sectionMessages.default;
+      if (newMessage !== typingText) {
+        setTypingText(newMessage);
+        charIndexRef.current = 0;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [typingText]);
+
+  useEffect(() => {
+    if (typingIntervalRef.current) {
+      clearInterval(typingIntervalRef.current);
+    }
+
+    if (charIndexRef.current < typingText.length) {
+      typingIntervalRef.current = setInterval(() => {
+        setDisplayedText(prev => {
+          const nextIndex = charIndexRef.current + 1;
+          charIndexRef.current = nextIndex;
+          return typingText.substring(0, nextIndex);
+        });
+      }, 30);
+    }
+
+    return () => {
+      if (typingIntervalRef.current) {
+        clearInterval(typingIntervalRef.current);
+      }
+    };
+  }, [typingText]);
 
   const getNextMessageId = useCallback(() => {
     messageIdRef.current += 1;
@@ -103,6 +169,12 @@ export default function Chatbot() {
   useEffect(() => {
     if (isChatOpen) {
       inputRef.current?.focus();
+    }
+  }, [isChatOpen]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('chatbotOpen', JSON.stringify(isChatOpen));
     }
   }, [isChatOpen]);
 
@@ -501,15 +573,27 @@ export default function Chatbot() {
       ) : null}
 
       {!isChatOpen ? (
-        <button
-          type="button"
-          className={styles.reopenAssistant}
-          onClick={() => setIsChatOpen(true)}
-          aria-label="Open AI assistant"
-          title="Open AI assistant"
-        >
-          <span className={styles.reopenAssistantLabel}>Chat With Assistant</span>
-        </button>
+        <div className={styles.assistantIconWrapper}>
+          <button
+            type="button"
+            className={styles.reopenAssistant}
+            onClick={() => setIsChatOpen(true)}
+            aria-label="Open AI assistant"
+            title="Open AI assistant"
+          >
+            <Image
+              src="/logos/cropped_circle_image.png"
+              alt="Chat Assistant"
+              width={48}
+              height={48}
+              priority
+              className={styles.assistantIcon}
+            />
+          </button>
+          <div className={styles.typingBubble}>
+            <p>{displayedText}<span className={styles.cursor}>|</span></p>
+          </div>
+        </div>
       ) : null}
     </div>
   );
