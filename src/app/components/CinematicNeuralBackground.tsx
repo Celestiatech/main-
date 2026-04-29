@@ -147,7 +147,7 @@ function NeuralNetwork({ particleCount = 80, connectionDistance = 3 }: { particl
         </bufferGeometry>
         <PointMaterial
           size={0.08}
-          color="#60a5fa"
+          color="#ffb347"
           transparent
           opacity={0.8}
           sizeAttenuation
@@ -164,7 +164,7 @@ function NeuralNetwork({ particleCount = 80, connectionDistance = 3 }: { particl
           />
         </bufferGeometry>
         <lineBasicMaterial
-          color="#3b82f6"
+          color="#ff8c00"
           transparent
           opacity={0.15}
           depthWrite={false}
@@ -192,7 +192,7 @@ function FloatingAccents() {
       {/* Subtle geometric shapes in corners */}
       <mesh position={[-6, -3, -2]} rotation={[0, 0, Math.PI / 4]}>
         <icosahedronGeometry args={[0.5, 0]} />
-        <meshBasicMaterial color="#3b82f6" transparent opacity={0.15} wireframe />
+        <meshBasicMaterial color="#ff8c00" transparent opacity={0.15} wireframe />
       </mesh>
       <mesh position={[5, 2, -3]} rotation={[Math.PI / 3, Math.PI / 4, 0]}>
         <octahedronGeometry args={[0.4, 0]} />

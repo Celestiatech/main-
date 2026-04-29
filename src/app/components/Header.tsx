@@ -64,6 +64,7 @@ export function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false);
   const [activeServiceCategory, setActiveServiceCategory] = useState<string | null>(null);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [activeCompanyCategory, setActiveCompanyCategory] = useState<string | null>(null);
@@ -182,13 +183,14 @@ export function Header() {
         debugLog("Click outside dropdown - closing all dropdowns");
         setIsServicesDropdownOpen(false);
         setIsCompanyDropdownOpen(false);
+        setIsMoreMenuOpen(false);
         setActiveServiceCategory(null);
         setActiveCompanyCategory(null);
         setHoveredServiceItem(null);
       }
     };
 
-    if (isServicesDropdownOpen || isCompanyDropdownOpen) {
+    if (isServicesDropdownOpen || isCompanyDropdownOpen || isMoreMenuOpen) {
       debugLog("Adding click outside listener");
       document.addEventListener('mousedown', handleClickOutside);
     }
@@ -197,7 +199,7 @@ export function Header() {
       debugLog("Removing click outside listener");
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isServicesDropdownOpen, isCompanyDropdownOpen]);
+  }, [isServicesDropdownOpen, isCompanyDropdownOpen, isMoreMenuOpen]);
 
   const toggleMobileMenu = () => {
     const newState = !isMobileMenuOpen;
@@ -498,25 +500,25 @@ export function Header() {
                   <span aria-label={siteConfig.contact.email.general}>Email us</span>
                 </a>
               </div>
+              <div className={`${styles.headerTicker} ${styles.headerTickerInline}`} aria-label="Announcements">
+                <div className={styles.headerTickerTrack}>
+                  <span>Custom Websites</span>
+                  <span>Mobile Apps</span>
+                  <span>UI/UX Design</span>
+                  <span>SEO Growth</span>
+                  <span>Fast Delivery</span>
+                  <span>Free Consultation</span>
+                  <span>Custom Websites</span>
+                  <span>Mobile Apps</span>
+                  <span>UI/UX Design</span>
+                  <span>SEO Growth</span>
+                  <span>Fast Delivery</span>
+                  <span>Free Consultation</span>
+                </div>
+              </div>
               <div className={styles.headerTopMessage}>
                 <HeaderInlineIcon><BoltIcon /></HeaderInlineIcon>
                 Get a free consultation today!
-              </div>
-            </div>
-            <div className={styles.headerTicker} aria-label="Announcements">
-              <div className={styles.headerTickerTrack}>
-                <span>Custom Websites</span>
-                <span>Mobile Apps</span>
-                <span>UI/UX Design</span>
-                <span>SEO Growth</span>
-                <span>Fast Delivery</span>
-                <span>Free Consultation</span>
-                <span>Custom Websites</span>
-                <span>Mobile Apps</span>
-                <span>UI/UX Design</span>
-                <span>SEO Growth</span>
-                <span>Fast Delivery</span>
-                <span>Free Consultation</span>
               </div>
             </div>
           </div>
@@ -542,6 +544,66 @@ export function Header() {
 
             {/* Desktop Navigation */}
             <nav className={styles.nav} role="navigation" aria-label="Main navigation">
+              <div
+                className={styles.navItem}
+                onMouseEnter={() => {
+                  setIsServicesDropdownOpen(false);
+                  setIsCompanyDropdownOpen(false);
+                  setActiveServiceCategory(null);
+                  setActiveCompanyCategory(null);
+                  setHoveredServiceItem(null);
+                  setHoveredCompanyItem(null);
+                  setIsMoreMenuOpen(true);
+                }}
+                onMouseLeave={(e) => {
+                  const relatedTarget = e.relatedTarget as HTMLElement | null;
+                  const isHTMLElement = relatedTarget && typeof relatedTarget.closest === "function";
+                  if (
+                    !isHTMLElement ||
+                    (!relatedTarget.closest(`.${styles.navItem}`) && !relatedTarget.closest(`.${styles.navDropdown}`))
+                  ) {
+                    setTimeout(() => {
+                      if (!document.querySelector(`.${styles.navItem}:hover`) && !document.querySelector(`.${styles.navDropdown}:hover`)) {
+                        setIsMoreMenuOpen(false);
+                      }
+                    }, 100);
+                  }
+                }}
+              >
+                <button
+                  className={`${styles.navLink} ${styles.moreButton}`}
+                  aria-label="More menu"
+                  aria-expanded={isMoreMenuOpen}
+                  onClick={() => {
+                    const newState = !isMoreMenuOpen;
+                    setIsServicesDropdownOpen(false);
+                    setIsCompanyDropdownOpen(false);
+                    setActiveServiceCategory(null);
+                    setActiveCompanyCategory(null);
+                    setHoveredServiceItem(null);
+                    setHoveredCompanyItem(null);
+                    setIsMoreMenuOpen(newState);
+                  }}
+                >
+                  More <span aria-hidden="true">▼</span>
+                </button>
+                {isMoreMenuOpen && (
+                  <div className={`${styles.navDropdown} ${styles.moreDropdown}`} role="menu">
+                    <div className={styles.moreMenu}>
+                      <Link href="/pricing" className={styles.moreMenuItem} onClick={() => setIsMoreMenuOpen(false)}>
+                        Pricing
+                      </Link>
+                      <Link href="/portfolio" className={styles.moreMenuItem} onClick={() => setIsMoreMenuOpen(false)}>
+                        Portfolio
+                      </Link>
+                      <Link href="/blog" className={styles.moreMenuItem} onClick={() => setIsMoreMenuOpen(false)}>
+                        Blog
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
+
               <Link href="/" className={`${styles.navLink} ${isActive("/") ? styles.active : ""}`}>
                 Home
               </Link>
@@ -551,6 +613,7 @@ export function Header() {
                 className={styles.navItem}
                 onMouseEnter={() => {
                   debugLog("Mouse enter Services navItem");
+                  setIsMoreMenuOpen(false);
                   // Close Company dropdown when opening Services
                   setIsCompanyDropdownOpen(false);
                   setActiveCompanyCategory(null);
@@ -587,6 +650,7 @@ export function Header() {
                   onClick={() => {
                     const newState = !isServicesDropdownOpen;
                     debugLog("Click Solutions button", { newState });
+                    setIsMoreMenuOpen(false);
                     // Close Company when opening Services
                     if (newState) {
                       setIsCompanyDropdownOpen(false);
@@ -792,6 +856,7 @@ export function Header() {
                 className={styles.navItem}
                 onMouseEnter={() => {
                   debugLog("Mouse enter Company navItem");
+                  setIsMoreMenuOpen(false);
                   // Close Services dropdown when opening Company
                   setIsServicesDropdownOpen(false);
                   setActiveServiceCategory(null);
@@ -827,6 +892,7 @@ export function Header() {
                   onClick={() => {
                     const newState = !isCompanyDropdownOpen;
                     debugLog("Click Company button", { newState });
+                    setIsMoreMenuOpen(false);
                     // Close Services when opening Company
                     if (newState) {
                       setIsServicesDropdownOpen(false);
@@ -1025,15 +1091,6 @@ export function Header() {
                 )}
               </div>
 
-              <Link href="/pricing" className={`${styles.navLink} ${isActive("/pricing") ? styles.active : ""}`}>
-                Pricing
-              </Link>
-              <Link href="/portfolio" className={`${styles.navLink} ${isActive("/portfolio") ? styles.active : ""}`}>
-                Portfolio
-              </Link>
-              <Link href="/blog" className={`${styles.navLink} ${isActive("/blog") ? styles.active : ""}`}>
-                Blog
-              </Link>
               <Link href="/contact" className={`${styles.navLink} ${isActive("/contact") ? styles.active : ""}`}>
                 Contact
               </Link>

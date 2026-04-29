@@ -68,9 +68,9 @@ function InteractiveCube() {
     >
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial
-        color={hovered ? "#60a5fa" : "#3b82f6"}
+        color={hovered ? "#ffb347" : "#ff8c00"}
         wireframe={hovered}
-        emissive={hovered ? "#60a5fa" : "#3b82f6"}
+        emissive={hovered ? "#ffb347" : "#ff8c00"}
         emissiveIntensity={hovered ? 0.5 : 0.2}
         transparent
         opacity={0.9}
@@ -212,14 +212,14 @@ export default function Hero3DScene() {
         {/* Lighting */}
         <ambientLight intensity={0.3} />
         <pointLight position={[10, 10, 10]} intensity={1} color="#ffffff" />
-        <pointLight position={[-10, -10, -10]} intensity={0.5} color="#3b82f6" />
-        <pointLight position={[0, 0, 5]} intensity={0.8} color="#60a5fa" />
+        <pointLight position={[-10, -10, -10]} intensity={0.5} color="#ff8c00" />
+        <pointLight position={[0, 0, 5]} intensity={0.8} color="#ffb347" />
         
         {/* Stars background */}
         <Stars radius={100} depth={50} count={1000} factor={4} saturation={0} fade speed={1} />
         
         {/* Sparkles effect */}
-        <Sparkles count={80} scale={12} size={4} speed={0.4} opacity={0.5} color="#60a5fa" />
+        <Sparkles count={80} scale={12} size={4} speed={0.4} opacity={0.5} color="#ffb347" />
         
         {/* Morphing blob */}
         <MorphingBlob />
@@ -229,7 +229,7 @@ export default function Hero3DScene() {
         <FloatingTorusKnot />
         
         {/* Glowing spheres */}
-        <GlowingSphere position={[4, -2, -4]} color="#3b82f6" size={0.6} offset={0} />
+        <GlowingSphere position={[4, -2, -4]} color="#ff8c00" size={0.6} offset={0} />
         <GlowingSphere position={[-4, 3, -3]} color="#f97316" size={0.5} offset={1} />
         <GlowingSphere position={[2, 4, -5]} color="#8b5cf6" size={0.4} offset={2} />
         <GlowingSphere position={[-3, -3, -4]} color="#06b6d4" size={0.55} offset={3} />

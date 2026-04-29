@@ -1,16 +1,16 @@
 /**
- * Celestiatech - Metadata Configuration
+ * W3Tech - Metadata Configuration
  * Single source of truth for all brand metadata
  */
 
 import type { Metadata } from "next";
 
 export const siteConfig = {
-  name: "Celestiatech",
-  shortName: "Celestiatech",
+  name: "W3Tech",
+  shortName: "W3Tech",
   tagline: "Premium IT & Software Development Company",
   description: "Premium web, mobile, AI, and blockchain development services backed by 12+ years of experience and 2,500+ successful client engagements worldwide.",
-  url: "https://www.celestiatechco.in",
+  url: "https://www.w3tech.in",
   ogImage: "/brand/og-image.png",
   logo: {
     primary: "/brand/logo.svg",
@@ -21,10 +21,10 @@ export const siteConfig = {
   },
   contact: {
     email: {
-      general: "hello@celestiatech.in",
-      legal: "legal@celestiatech.in",
-      privacy: "privacy@celestiatech.in",
-      support: "support@celestiatech.in",
+      general: "hello@w3tech.in",
+      legal: "legal@w3tech.in",
+      privacy: "privacy@w3tech.in",
+      support: "support@w3tech.in",
     },
     phone: {
       uae: "+971 50 000 0000",
@@ -44,10 +44,10 @@ export const siteConfig = {
     },
   },
   social: {
-    linkedin: "https://linkedin.com/company/nexavibe",
-    twitter: "https://twitter.com/nexavibe",
-    facebook: "https://facebook.com/nexavibe",
-    instagram: "https://instagram.com/nexavibe",
+    linkedin: "https://linkedin.com/company/w3tech",
+    twitter: "https://twitter.com/w3tech",
+    facebook: "https://facebook.com/w3tech",
+    instagram: "https://instagram.com/w3tech",
   },
   company: {
     founded: "2012",
@@ -108,7 +108,7 @@ export function generateMetadata(page?: {
       ],
       shortcut: ["/favicon.ico", "/favicon-32x32.png"],
       other: [
-        { rel: "mask-icon", url: "/favicon.svg", color: "#369afb" },
+        { rel: "mask-icon", url: "/favicon.svg", color: "#ff8c00" },
       ],
     },
     alternates: {

@@ -32,8 +32,8 @@ function ServiceCard3D({ title, description, icon, index }: {
         <mesh position={[0, 0, 0]}>
           <boxGeometry args={[3, 4, 0.2]} />
           <meshStandardMaterial
-            color={hovered ? "#60a5fa" : "#1e293b"}
-            emissive={hovered ? "#60a5fa" : "#000000"}
+            color={hovered ? "#ffb347" : "#1e293b"}
+            emissive={hovered ? "#ffb347" : "#000000"}
             emissiveIntensity={hovered ? 0.2 : 0}
             metalness={0.7}
             roughness={0.3}
@@ -46,7 +46,7 @@ function ServiceCard3D({ title, description, icon, index }: {
         <Text
           position={[0, 1.5, 0.11]}
           fontSize={0.8}
-          color="#60a5fa"
+          color="#ffb347"
           anchorX="center"
           anchorY="middle"
         >
@@ -100,7 +100,7 @@ export default function ServiceCard({ title, description, icon, index }: {
         style={{ background: "transparent" }}
       >
         <ambientLight intensity={0.4} />
-        <pointLight position={[3, 3, 3]} intensity={0.8} color="#60a5fa" />
+        <pointLight position={[3, 3, 3]} intensity={0.8} color="#ffb347" />
 
         <ServiceCard3D
           title={title}

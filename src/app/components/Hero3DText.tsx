@@ -6,7 +6,7 @@ import { Text, Float } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import * as THREE from "three";
 
-function Animated3DText({ text, position, color = "#60a5fa", size = 1 }: {
+function Animated3DText({ text, position, color = "#ffb347", size = 1 }: {
   text: string;
   position: [number, number, number];
   color?: string;
@@ -68,12 +68,12 @@ export default function Hero3DText({ headline, subheadline }: {
         style={{ background: "transparent" }}
       >
         <ambientLight intensity={0.5} />
-        <pointLight position={[5, 5, 5]} intensity={1} color="#60a5fa" />
+        <pointLight position={[5, 5, 5]} intensity={1} color="#ffb347" />
 
         <Animated3DText
           text={headline}
           position={[0, 1, 0]}
-          color="#60a5fa"
+          color="#ffb347"
           size={1.5}
         />
 

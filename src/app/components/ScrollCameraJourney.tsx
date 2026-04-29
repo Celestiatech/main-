@@ -94,11 +94,11 @@ function ParallaxElements() {
     <group ref={groupRef}>
       <mesh position={[-viewport.width / 3, 0, -5]}>
         <sphereGeometry args={[2, 32, 32]} />
-        <meshBasicMaterial color="#1e3a8a" transparent opacity={0.1} />
+        <meshBasicMaterial color="#664000" transparent opacity={0.1} />
       </mesh>
       <mesh position={[viewport.width / 3, -10, -8]}>
         <sphereGeometry args={[3, 32, 32]} />
-        <meshBasicMaterial color="#3b82f6" transparent opacity={0.08} />
+        <meshBasicMaterial color="#ff8c00" transparent opacity={0.08} />
       </mesh>
     </group>
   );

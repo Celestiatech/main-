@@ -55,12 +55,12 @@
 
 .top {
   transform: rotateX(90deg) translateZ(calc(var(--size) / 2));
-  background: linear-gradient(135deg, #60a5fa 0%, var(--icon-color) 100%);
+  background: linear-gradient(135deg, #ffb347 0%, var(--icon-color) 100%);
 }
 
 .bottom {
   transform: rotateX(-90deg) translateZ(calc(var(--size) / 2));
-  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #664000 100%);
 }
 
 .accentSphere {

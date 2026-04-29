@@ -46,7 +46,7 @@ const fallback = {
     gap: '0.4rem',
   } as const,
   backLink: {
-    color: '#1e3a8a',
+    color: '#664000',
     textDecoration: 'none',
     fontSize: '0.9rem',
   } as const,

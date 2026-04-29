@@ -27,11 +27,11 @@ export function buildOutreachHtml(options: OutreachEmailOptions): string {
   <table width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;padding:40px 16px;">
     <tr>
       <td align="center">
-        <table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(30,58,138,0.10);border:1px solid #dbeafe;">
+        <table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(204,85,0,0.10);border:1px solid #fed7aa;">
           <!-- Header -->
           <tr>
-            <td style="background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:32px 40px;text-align:center;">
-              <p style="margin:0;color:#bfdbfe;font-size:12px;text-transform:uppercase;letter-spacing:0.15em;font-weight:700;">Celestiatech</p>
+            <td style="background:linear-gradient(135deg,#cc5500 0%,#ff8c00 100%);padding:32px 40px;text-align:center;">
+              <p style="margin:0;color:#ffedd5;font-size:12px;text-transform:uppercase;letter-spacing:0.15em;font-weight:700;">W3Tech</p>
               <h1 style="margin:10px 0 0;color:#ffffff;font-size:24px;font-weight:700;line-height:1.3;">${subject}</h1>
             </td>
           </tr>
@@ -40,14 +40,14 @@ export function buildOutreachHtml(options: OutreachEmailOptions): string {
             <td style="padding:36px 40px;">
               <p style="margin:0 0 20px;color:#334155;font-size:15px;line-height:1.7;">${escapedBody}</p>
               <hr style="border:none;border-top:1px solid #e2e8f0;margin:28px 0;" />
-              <p style="margin:0;color:#64748b;font-size:13px;">Best regards,<br /><strong style="color:#1e3a8a;">${senderName}</strong><br />Celestiatech</p>
+              <p style="margin:0;color:#64748b;font-size:13px;">Best regards,<br /><strong style="color:#cc5500;">${senderName}</strong><br />W3Tech</p>
             </td>
           </tr>
           <!-- Footer -->
           <tr>
-            <td style="background:#f8fbff;border-top:1px solid #dbeafe;padding:20px 40px;text-align:center;">
+            <td style="background:#fff7ed;border-top:1px solid #fed7aa;padding:20px 40px;text-align:center;">
               <p style="margin:0;color:#94a3b8;font-size:12px;">
-                &copy; ${new Date().getFullYear()} Celestiatech. All rights reserved.<br />
+                &copy; ${new Date().getFullYear()} W3Tech. All rights reserved.<br />
                 You received this email because of your interest in our services.
               </p>
             </td>

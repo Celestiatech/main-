@@ -41,7 +41,7 @@ function CardMesh({ hovered, color }: { hovered: boolean; color?: string }) {
       {hovered && (
         <mesh position={[0, 0, 0]}>
           <boxGeometry args={[2.25, 3.05, 0.08]} />
-          <meshBasicMaterial color="#3b82f6" transparent opacity={0.3} />
+          <meshBasicMaterial color="#ff8c00" transparent opacity={0.3} />
         </mesh>
       )}
       
@@ -49,7 +49,7 @@ function CardMesh({ hovered, color }: { hovered: boolean; color?: string }) {
       <Float speed={3} rotationIntensity={0.2} floatIntensity={0.5}>
         <mesh position={[1, 1.2, 0.2]}>
           <sphereGeometry args={[0.02, 8, 8]} />
-          <meshBasicMaterial color="#3b82f6" />
+          <meshBasicMaterial color="#ff8c00" />
         </mesh>
       </Float>
       <Float speed={2} rotationIntensity={0.3} floatIntensity={0.3}>
@@ -95,7 +95,7 @@ export default function ThreeDCard({ children, color = "#ffffff", height = 300 }
           <Canvas camera={{ position: [0, 0, 4], fov: 50 }}>
             <ambientLight intensity={0.5} />
             <pointLight position={[5, 5, 5]} intensity={0.8} />
-            <pointLight position={[-5, -5, 5]} intensity={0.5} color="#60a5fa" />
+            <pointLight position={[-5, -5, 5]} intensity={0.5} color="#ffb347" />
             <CardMesh hovered={hovered} color={color} />
           </Canvas>
         </div>

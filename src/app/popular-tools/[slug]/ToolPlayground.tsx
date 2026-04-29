@@ -197,7 +197,7 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
   const [ogImage, setOgImage] = useState("https://example.com/preview.jpg");
   const [qrText, setQrText] = useState("https://example.com");
   const [paletteCount, setPaletteCount] = useState(5);
-  const [gradientA, setGradientA] = useState("#2563eb");
+  const [gradientA, setGradientA] = useState("#e67e00");
   const [gradientB, setGradientB] = useState("#16a34a");
   const [gradientAngle, setGradientAngle] = useState(135);
   const [fakeUserCount, setFakeUserCount] = useState(3);

@@ -17,7 +17,7 @@ interface SparklesBackgroundProps {
 }
 
 function SparklesContent({ 
-  color = "#60a5fa", 
+  color = "#ffb347", 
   count = 100,
   scale = 10,
   size = 3,
@@ -59,7 +59,7 @@ function SparklesContent({
 }
 
 export default function SparklesBackground({
-  color = "#60a5fa",
+  color = "#ffb347",
   count = 100,
   scale = 10,
   size = 3,

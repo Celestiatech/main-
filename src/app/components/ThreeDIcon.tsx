@@ -10,7 +10,7 @@ interface ThreeDIconProps {
 }
 
 export default function ThreeDIcon({ 
-  color = "#3b82f6", 
+  color = "#ff8c00", 
   secondaryColor = "#f97316",
   size = 60 
 }: ThreeDIconProps) {

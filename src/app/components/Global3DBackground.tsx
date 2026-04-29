@@ -35,8 +35,8 @@ function RotatingRing() {
       <mesh>
         <torusGeometry args={[3, 0.3, 16, 32]} />
         <meshStandardMaterial
-          color="#3b82f6"
-          emissive="#60a5fa"
+          color="#ff8c00"
+          emissive="#ffb347"
           emissiveIntensity={0.2}
           metalness={0.9}
           roughness={0.1}
@@ -169,7 +169,7 @@ function RotatingRings() {
       <group ref={group1Ref} position={[0, 0, -8]}>
         <mesh>
           <torusGeometry args={[4, 0.4, 32, 64]} />
-          <meshStandardMaterial color="#3b82f6" emissive="#60a5fa" emissiveIntensity={0.4} metalness={0.95} roughness={0.05} />
+          <meshStandardMaterial color="#ff8c00" emissive="#ffb347" emissiveIntensity={0.4} metalness={0.95} roughness={0.05} />
         </mesh>
         <mesh rotation={[0, 0, Math.PI / 4]}>
           <torusGeometry args={[4.5, 0.35, 32, 64]} />
@@ -294,14 +294,14 @@ export default function Global3DBackground() {
 
         {/* Intense Lighting Setup */}
         <ambientLight intensity={0.7} />
-        <pointLight position={[20, 20, 20]} intensity={1.8} color="#2563eb" decay={1.5} />
+        <pointLight position={[20, 20, 20]} intensity={1.8} color="#e67e00" decay={1.5} />
         <pointLight position={[-20, -20, -20]} intensity={1.5} color="#7c3aed" decay={1.5} />
         <pointLight position={[0, 0, 20]} intensity={1.6} color="#0891b2" decay={1.5} />
         <pointLight position={[20, -20, 0]} intensity={1.2} color="#d97706" decay={1.5} />
         <pointLight position={[-20, 20, 0]} intensity={1.2} color="#059669" decay={1.5} />
         <pointLight position={[0, -20, 10]} intensity={1.2} color="#db2777" decay={1.5} />
         <spotLight position={[0, 25, 10]} angle={0.6} penumbra={1} intensity={1.2} color="#ffffff" />
-        <spotLight position={[0, -25, 10]} angle={0.6} penumbra={1} intensity={1.0} color="#2563eb" />
+        <spotLight position={[0, -25, 10]} angle={0.6} penumbra={1} intensity={1.0} color="#e67e00" />
         <directionalLight position={[15, 15, 15]} intensity={1.2} color="#ffffff" />
 
         {/* Extreme Background */}
@@ -313,9 +313,9 @@ export default function Global3DBackground() {
 
         {/* 30+ Floating Shapes for Maximum Impact */}
         {/* Blue Palette */}
-        <FloatingShape position={[-15, 5, -10]} color="#2563eb" shape="sphere" size={1.3} />
-        <FloatingShape position={[15, -5, -15]} color="#60a5fa" shape="cube" size={1.5} />
-        <FloatingShape position={[0, 10, -18]} color="#1e3a8a" shape="torus" size={1.8} />
+        <FloatingShape position={[-15, 5, -10]} color="#e67e00" shape="sphere" size={1.3} />
+        <FloatingShape position={[15, -5, -15]} color="#ffb347" shape="cube" size={1.5} />
+        <FloatingShape position={[0, 10, -18]} color="#664000" shape="torus" size={1.8} />
         
         {/* Purple Palette */}
         <FloatingShape position={[-10, -8, -12]} color="#7c3aed" shape="octahedron" size={1.4} />
@@ -356,7 +356,7 @@ export default function Global3DBackground() {
         <FloatingShape position={[-14, -14, -9]} color="#0891b2" shape="icosahedron" size={1.0} />
 
         {/* Massive Sparkles */}
-        <Sparkles count={300} scale={40} size={4} speed={0.7} opacity={0.8} color="#2563eb" />
+        <Sparkles count={300} scale={40} size={4} speed={0.7} opacity={0.8} color="#e67e00" />
         <Sparkles count={250} scale={45} size={3.5} speed={0.5} opacity={0.7} color="#7c3aed" />
         <Sparkles count={200} scale={35} size={3} speed={0.3} opacity={0.6} color="#0891b2" />
         <Sparkles count={150} scale={50} size={2.5} speed={0.4} opacity={0.5} color="#d97706" />
@@ -366,7 +366,7 @@ export default function Global3DBackground() {
         <FloatingShape position={[6, -10, -10]} color="#6366f1" shape="torus" size={1.1} />
         <FloatingShape position={[0, -3, -16]} color="#14b8a6" shape="octahedron" size={1.2} />
         <FloatingShape position={[10, 10, -12]} color="#a855f7" shape="icosahedron" size={0.8} />
-        <FloatingShape position={[-10, -10, -11]} color="#0ea5e9" shape="dodecahedron" size={0.9} />
+        <FloatingShape position={[-10, -10, -11]} color="#ff9f47" shape="dodecahedron" size={0.9} />
 
         {/* Enhanced Fog for atmospheric depth */}
         <fog attach="fog" args={["#f0f9ff", 30, 120]} />

@@ -18,17 +18,17 @@
 }
 
 :root {
-  --mariner-50: #eff8ff;
-  --mariner-100: #daefff;
-  --mariner-200: #bde3ff;
-  --mariner-300: #90d3ff;
-  --mariner-400: #5cb9fe;
-  --mariner-500: #369afb;
-  --mariner-600: #1f7cf1;
-  --mariner-700: #1866e0;
-  --mariner-800: #1a51b3;
-  --mariner-900: #1b478d;
-  --mariner-950: #152c56;
+  --mariner-50: #fff5e6;
+  --mariner-100: #ffe6cc;
+  --mariner-200: #ffcc99;
+  --mariner-300: #ffb366;
+  --mariner-400: #ffb347;
+  --mariner-500: #ff8c00;
+  --mariner-600: #e67e00;
+  --mariner-700: #cc7000;
+  --mariner-800: #b25d00;
+  --mariner-900: #994900;
+  --mariner-950: #664000;
 
   /* Legacy aliases used by shared page.module.css */
   --primary: var(--mariner-500);
@@ -84,37 +84,36 @@
   --color-blue-600: var(--mariner-700);
 
   /* RGB versions for rgba() */
-  --color-blue-500-rgb: 54, 154, 251;
-  --color-violet-500-rgb: 27, 71, 141;
+  --color-blue-500-rgb: 255, 140, 0;
+  --color-violet-500-rgb: 153, 73, 0;
   --color-slate-50-rgb: 255, 255, 255;
   
   /* Premium Neo-Glassmorphism */
-  --glass-bg: rgba(54, 154, 251, 0.1);
-  --glass-border: rgba(54, 154, 251, 0.3);
-  --glass-shadow: 0 8px 32px rgba(54, 154, 251, 0.12);
+  --glass-bg: rgba(255, 140, 0, 0.1);
+  --glass-border: rgba(255, 140, 0, 0.3);
+  --glass-shadow: 0 8px 32px rgba(255, 140, 0, 0.12);
 
   /* Glowing Effects - Neon */
-  --glow-primary: 0 0 40px rgba(54, 154, 251, 0.45);
+  --glow-primary: 0 0 40px rgba(255, 140, 0, 0.45);
   --glow-secondary: 0 0 40px rgba(0, 255, 102, 0.4);
-  --glow-subtle: 0 0 20px rgba(54, 154, 251, 0.25);
+  --glow-subtle: 0 0 20px rgba(255, 140, 0, 0.25);
 
   /* 3D Shadows - Deep and Premium */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 25px rgba(54, 154, 251, 0.08);
-  --shadow-xl: 0 15px 40px rgba(54, 154, 251, 0.1);
-  --shadow-2xl: 0 25px 60px rgba(54, 154, 251, 0.12);
+  --shadow-lg: 0 10px 25px rgba(255, 140, 0, 0.08);
+  --shadow-xl: 0 15px 40px rgba(255, 140, 0, 0.1);
+  --shadow-2xl: 0 25px 60px rgba(255, 140, 0, 0.12);
   
   /* Mesh Gradient Backgrounds */
   --gradient-primary: linear-gradient(135deg, var(--mariner-500) 0%, var(--mariner-800) 50%, var(--mariner-950) 100%);
   --gradient-accent: linear-gradient(135deg, var(--mariner-950) 0%, var(--mariner-500) 100%);
-  --gradient-mesh: radial-gradient(circle at 20% 50%, rgba(54, 154, 251, 0.15) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 80%, rgba(27, 71, 141, 0.12) 0%, transparent 50%);
+  --gradient-mesh: none;
 
   /* Borders */
-  --border-light: rgba(54, 154, 251, 0.12);
-  --border-medium: rgba(54, 154, 251, 0.22);
-  --border-glow: rgba(54, 154, 251, 0.38);
+  --border-light: rgba(255, 140, 0, 0.12);
+  --border-medium: rgba(255, 140, 0, 0.22);
+  --border-glow: rgba(255, 140, 0, 0.38);
   
   /* Border Radius */
   --radius-sm: 6px;
@@ -158,7 +157,7 @@ body {
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: rgba(54, 154, 251, 0.78) rgba(218, 239, 255, 0.75);
+  scrollbar-color: rgba(255, 140, 0, 0.78) rgba(218, 239, 255, 0.75);
 }
 
 html::-webkit-scrollbar {
@@ -172,13 +171,13 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(54, 154, 251, 0.95) 0%, rgba(31, 124, 241, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(255, 140, 0, 0.95) 0%, rgba(31, 124, 241, 0.95) 100%);
   border: 2px solid rgba(239, 248, 255, 0.95);
   border-radius: 999px;
 }
 
 html::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(54, 154, 251, 1) 0%, rgba(21, 44, 86, 1) 100%);
+  background: linear-gradient(180deg, rgba(255, 140, 0, 1) 0%, rgba(21, 44, 86, 1) 100%);
 }
 
 /* ===== TYPOGRAPHY SYSTEM ===== */
@@ -1289,7 +1288,7 @@ body {
 }
 
 .btn-3d-enhanced {
-  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  background: linear-gradient(135deg, #ff8c00 0%, #ffb347 100%);
   border: none;
   border-radius: 12px;
   color: white;
@@ -1442,7 +1441,7 @@ body {
 
 /* 3D Button Premium */
 .btn-3d-premium {
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
+  background: linear-gradient(135deg, #ff8c00 0%, #8b5cf6 50%, #06b6d4 100%);
   color: white;
   border: none;
   border-radius: 12px;
@@ -1500,7 +1499,7 @@ body {
 
 /* 3D Text Glow */
 .text-3d-glow {
-  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #22d3ee 100%);
+  background: linear-gradient(135deg, #ffb347 0%, #a78bfa 50%, #22d3ee 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1589,11 +1588,11 @@ body {
 /* 3D Neon Effect */
 .neon-3d {
   position: relative;
-  color: #60a5fa;
+  color: #ffb347;
   text-shadow: 
-    0 0 10px #3b82f6,
-    0 0 20px #3b82f6,
-    0 0 30px #3b82f6,
+    0 0 10px #ff8c00,
+    0 0 20px #ff8c00,
+    0 0 30px #ff8c00,
     0 0 40px #8b5cf6;
   box-shadow: 
     0 0 10px rgba(59, 130, 246, 0.5),
@@ -1602,9 +1601,9 @@ body {
 
 .neon-3d:hover {
   text-shadow: 
-    0 0 20px #3b82f6,
-    0 0 30px #3b82f6,
-    0 0 40px #3b82f6,
+    0 0 20px #ff8c00,
+    0 0 30px #ff8c00,
+    0 0 40px #ff8c00,
     0 0 60px #8b5cf6,
     0 0 80px #06b6d4;
   box-shadow: 
@@ -1675,13 +1674,13 @@ body {
 
 /* Rainbow color shifting */
 @keyframes rainbow-shift-god {
-  0% { color: #2563eb; }
+  0% { color: #e67e00; }
   16% { color: #7c3aed; }
   33% { color: #db2777; }
   50% { color: #d97706; }
   66% { color: #059669; }
   83% { color: #0891b2; }
-  100% { color: #2563eb; }
+  100% { color: #e67e00; }
 }
 
 /* Extreme text glow */
@@ -1847,7 +1846,7 @@ body {
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 2px;
-  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #0891b2 100%);
+  background: linear-gradient(135deg, #e67e00 0%, #7c3aed 50%, #0891b2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1874,7 +1873,7 @@ body {
   inset: 0;
   border-radius: 12px;
   padding: 2px;
-  background: conic-gradient(from 0deg, #2563eb, #7c3aed, #0891b2, #d97706, #2563eb);
+  background: conic-gradient(from 0deg, #e67e00, #7c3aed, #0891b2, #d97706, #e67e00);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   animation: rotate-glow-ring 8s linear infinite;
@@ -1905,7 +1904,7 @@ body {
 }
 
 .neon-text-god-mode {
-  color: #2563eb;
+  color: #e67e00;
   text-shadow:
     0 0 7px rgba(37, 99, 235, 0.6),
     0 0 14px rgba(37, 99, 235, 0.4),
@@ -1972,9 +1971,9 @@ body {
 
 /* Ultra-intense neon */
 .ultra-neon-god {
-  color: #2563eb;
+  color: #e67e00;
   background: rgba(37, 99, 235, 0.08);
-  border: 2px solid #2563eb;
+  border: 2px solid #e67e00;
   border-radius: 8px;
   padding: 12px 24px;
   font-weight: 700;

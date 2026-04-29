@@ -39,169 +39,161 @@ function InstagramIcon() {
   );
 }
 
+function FeatureIcon({ children }: { children: ReactNode }) {
+  return <span className={styles.featureIcon} aria-hidden="true">{children}</span>;
+}
+
+function CheckIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20 6 9 17l-5-5" />
+    </svg>
+  );
+}
+
+function ShieldIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+      <path d="M9 12l2 2 4-4" />
+    </svg>
+  );
+}
+
+function HeadsetIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 12a8 8 0 0 1 16 0" />
+      <path d="M4 12v5a2 2 0 0 0 2 2h1v-7H6a2 2 0 0 0-2 2Z" />
+      <path d="M20 12v5a2 2 0 0 1-2 2h-1v-7h1a2 2 0 0 1 2 2Z" />
+      <path d="M12 19a2 2 0 0 0 2-2v-1" />
+    </svg>
+  );
+}
+
+function SparkIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2l1.2 5.1L18 9l-4.8 1.9L12 16l-1.2-5.1L6 9l4.8-1.9L12 2Z" />
+      <path d="M19 14l.7 3 2.3.8-2.3.8-.7 3-.7-3-2.3-.8 2.3-.8.7-3Z" />
+    </svg>
+  );
+}
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className={styles.footer}>
       <div className="container">
-        <div className={styles.footerGrid}>
-          {/* Company Info */}
-          <div className={styles.footerAbout}>
-            <Link href="/" className={styles.logo} aria-label={`${siteConfig.name} Home`}>
-              <div className={styles.logoIcon}>N</div>
-              {siteConfig.shortName}
-            </Link>
-            <p className={styles.footerDescription}>
-              Premium IT development company delivering innovative solutions 
-              in mobile apps, web development, AI, and blockchain technologies.
-            </p>
-            <div className={styles.footerSocial}>
-              <a 
-                href={siteConfig.social.linkedin} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <SocialIcon><LinkedInIcon /></SocialIcon>
-              </a>
-              <a 
-                href={siteConfig.social.twitter} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-              >
-                <SocialIcon><TwitterIcon /></SocialIcon>
-              </a>
-              <a 
-                href={siteConfig.social.facebook} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-              >
-                <SocialIcon><FacebookIcon /></SocialIcon>
-              </a>
-              <a 
-                href={siteConfig.social.instagram} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <SocialIcon><InstagramIcon /></SocialIcon>
-              </a>
+        <div className={styles.footerFeatures} aria-label="Highlights">
+          <div className={styles.featureItem}>
+            <FeatureIcon><ShieldIcon /></FeatureIcon>
+            <div>
+              <h3>Reliable Delivery</h3>
+              <p>Clear milestones, quality checks, and predictable releases.</p>
             </div>
           </div>
-
-          {/* Services */}
-          <div className={styles.footerColumn}>
-            <h4>Services</h4>
-            <ul>
-              <li><Link href="/services">Mobile Development</Link></li>
-              <li><Link href="/services">Web Development</Link></li>
-              <li><Link href="/services">Game Development</Link></li>
-              <li><Link href="/services">AI Solutions</Link></li>
-              <li><Link href="/services">Blockchain</Link></li>
-            </ul>
+          <div className={styles.featureItem}>
+            <FeatureIcon><SparkIcon /></FeatureIcon>
+            <div>
+              <h3>{siteConfig.company.experience} Experience</h3>
+              <p>Trusted by teams across {siteConfig.company.countries}+ countries.</p>
+            </div>
           </div>
-
-          {/* Company */}
-          <div className={styles.footerColumn}>
-            <h4>Company</h4>
-            <ul>
-              <li><Link href="/about">About Us</Link></li>
-              <li><Link href="/career">Careers</Link></li>
-              <li><Link href="/blog">Blog</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
-            </ul>
+          <div className={styles.featureItem}>
+            <FeatureIcon><HeadsetIcon /></FeatureIcon>
+            <div>
+              <h3>5‑Star Support</h3>
+              <p>Fast responses, proactive updates, and dedicated assistance.</p>
+            </div>
           </div>
-
-          {/* Resources */}
-          <div className={styles.footerColumn}>
-            <h4>Resources</h4>
-            <ul>
-              <li><Link href="/portfolio">Case Studies</Link></li>
-              <li><Link href="/testimonials">Testimonials</Link></li>
-              <li><Link href="/pricing">Pricing</Link></li>
-              <li><Link href="/blog">Blog & Articles</Link></li>
-            </ul>
-          </div>
-
-          {/* Legal & Support */}
-          <div className={styles.footerColumn}>
-            <h4>Legal & Support</h4>
-            <ul>
-              <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-              <li><Link href="/terms-of-service">Terms of Service</Link></li>
-              <li><Link href="/cookie-policy">Cookie Policy</Link></li>
-              <li><Link href="/accessibility">Accessibility Statement</Link></li>
-              <li><Link href="/contact">Help Center</Link></li>
-            </ul>
+          <div className={styles.featureItem}>
+            <FeatureIcon><CheckIcon /></FeatureIcon>
+            <div>
+              <h3>Customer‑First</h3>
+              <p>We listen, iterate, and improve based on real feedback.</p>
+            </div>
           </div>
         </div>
 
-        <div className={styles.footerRowTwo}>
-          {/* Offices */}
-          <div className={styles.footerColumn}>
-            <h4>Our Offices</h4>
-            <div className={styles.officeLocation}>
-              <h5>{siteConfig.contact.offices.uae.name}</h5>
-              <p>{siteConfig.contact.offices.uae.fullAddress}</p>
-              <p>
-                <a href={`tel:${siteConfig.contact.phone.uae.replace(/\s/g, "")}`}>
-                  {siteConfig.contact.phone.uae}
-                </a>
-              </p>
-            </div>
-            <div className={styles.officeLocation}>
-              <h5>{siteConfig.contact.offices.india.name}</h5>
-              <p>{siteConfig.contact.offices.india.fullAddress}</p>
-              <p>
-                <a href={`tel:${siteConfig.contact.phone.india.replace(/\s/g, "")}`}>
-                  {siteConfig.contact.phone.india}
-                </a>
-              </p>
-            </div>
-            <p className={styles.footerEmail}>
-              <a href={`mailto:${siteConfig.contact.email.general}`}>
-                <span aria-label={siteConfig.contact.email.general}>Email us</span>
-              </a>
+        <div className={styles.footerDivider} role="separator" />
+
+        <div className={styles.footerCta}>
+          <div className={styles.ctaLeft}>
+            <p className={styles.ctaKicker}>Start now</p>
+            <h2>Get your project right now<br />and launch faster.</h2>
+            <p className={styles.ctaSubtext}>
+              Fixed scope or ongoing support — choose what fits your team.
             </p>
-          </div>
 
-          {/* Map 1 */}
-          <div className={styles.footerColumn}>
-            <h4>Dubai</h4>
-            <div className={styles.officeMap}>
-              <iframe
-                title="Business Bay, Dubai"
-                src="https://www.google.com/maps?q=Business%20Bay%2C%20Dubai%2C%20UAE&z=13&output=embed"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+            <div className={styles.packageGrid} aria-label="Included in package">
+              <div className={styles.packageItem}>Strategy & Planning</div>
+              <div className={styles.packageItem}>UI/UX Design</div>
+              <div className={styles.packageItem}>Development & QA</div>
+              <div className={styles.packageItem}>Performance & SEO</div>
+              <div className={styles.packageItem}>Deployment Support</div>
+              <div className={styles.packageItem}>Post‑launch Maintenance</div>
             </div>
           </div>
 
-          {/* Map 2 */}
-          <div className={styles.footerColumn}>
-            <h4>India</h4>
-            <div className={styles.officeMap}>
-              <iframe
-                title="Mohali, Punjab"
-                src="https://www.google.com/maps?q=Mohali%2C%20Punjab%2C%20India&z=12&output=embed"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+          <div className={styles.ctaMiddle} aria-label="One-time payment badge">
+            <div className={styles.badge}>
+              <div className={styles.badgeRing} aria-hidden="true" />
+              <div className={styles.badgeLabel}>ONE‑TIME PAYMENT</div>
+              <div className={styles.badgeCenter}>
+                <div className={styles.badgeIcon} aria-hidden="true">₹</div>
+                <div className={styles.badgeTitle}>Lifetime Updates</div>
+                <div className={styles.badgeLine} />
+                <div className={styles.badgeCaption}>Free improvements & fixes</div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.ctaRight} aria-label="Plans">
+            <div className={styles.planCard}>
+              <div className={styles.planLabel}>Starter</div>
+              <div className={styles.planPrice}>Request Quote</div>
+              <Link href="/contact" className={styles.planButton}>Get Started</Link>
+            </div>
+            <div className={styles.planCard}>
+              <div className={styles.planLabel}>Dedicated Team</div>
+              <div className={styles.planPrice}>From Monthly</div>
+              <Link href="/hire-dedicated-developers" className={styles.planButton}>
+                Hire Now
+              </Link>
             </div>
           </div>
         </div>
 
         {/* Footer Bottom */}
         <div className={styles.footerBottom}>
-          <p>© {currentYear} {siteConfig.name}. All rights reserved.</p>
+          <div className={styles.footerBottomLeft}>
+            <Link href="/" className={styles.bottomLogo} aria-label={`${siteConfig.name} Home`}>
+              {siteConfig.shortName}
+            </Link>
+            <div className={styles.footerSocial}>
+              <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <SocialIcon><LinkedInIcon /></SocialIcon>
+              </a>
+              <a href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <SocialIcon><TwitterIcon /></SocialIcon>
+              </a>
+              <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <SocialIcon><FacebookIcon /></SocialIcon>
+              </a>
+              <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <SocialIcon><InstagramIcon /></SocialIcon>
+              </a>
+            </div>
+          </div>
+
+          <p className={styles.footerCopy}>© {currentYear} {siteConfig.name}. All rights reserved.</p>
+
           <div className={styles.footerLegal}>
-            <Link href="/privacy-policy">Privacy Policy</Link>
-            <Link href="/terms-of-service">Terms of Service</Link>
-            <Link href="/cookie-policy">Cookie Policy</Link>
+            <Link href="/privacy-policy">Privacy</Link>
+            <Link href="/terms-of-service">Terms</Link>
+            <Link href="/cookie-policy">Cookies</Link>
           </div>
         </div>
       </div>

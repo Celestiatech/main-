@@ -145,7 +145,7 @@ function TechCoreScene({
     <>
       <ambientLight intensity={0.4} />
       <pointLight position={[10, 10, 10]} intensity={1} />
-      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#3b82f6" />
+      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#ff8c00" />
       
       {/* Central glowing core */}
       <Float speed={1} rotationIntensity={0.2} floatIntensity={0.3}>
@@ -230,7 +230,7 @@ function CentralCore() {
           distortion={0.2}
           distortionScale={0.2}
           temporalDistortion={0.1}
-          color="#3b82f6"
+          color="#ff8c00"
           roughness={0.1}
           metalness={0.3}
         />
@@ -240,7 +240,7 @@ function CentralCore() {
       <mesh ref={glowRef}>
         <sphereGeometry args={[1.2, 32, 32]} />
         <meshBasicMaterial
-          color="#3b82f6"
+          color="#ff8c00"
           transparent
           opacity={0.1}
           side={THREE.BackSide}
@@ -250,7 +250,7 @@ function CentralCore() {
       {/* Rotating ring */}
       <mesh ref={ringRef}>
         <torusGeometry args={[1.3, 0.02, 16, 100]} />
-        <meshBasicMaterial color="#60a5fa" transparent opacity={0.4} />
+        <meshBasicMaterial color="#ffb347" transparent opacity={0.4} />
       </mesh>
       
       {/* Horizontal ring */}

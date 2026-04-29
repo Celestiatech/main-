@@ -1,8 +1,6 @@
 .page {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, rgba(59, 130, 246, 0.14), transparent 24%),
-    linear-gradient(180deg, #f8fbff 0%, #eff6ff 100%);
+  background: #ffffff;
   color: #0f172a;
 }
 
@@ -22,7 +20,7 @@
   padding: 0 14px;
   border-radius: 999px;
   background: rgba(37, 99, 235, 0.1);
-  color: #1d4ed8;
+  color: #cc5500;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.05em;
@@ -71,7 +69,7 @@
   border-radius: 999px;
   background: #ffffff;
   border: 1px solid #bfdbfe;
-  color: #1d4ed8;
+  color: #cc5500;
   font-weight: 800;
 }
 
@@ -112,7 +110,7 @@
 }
 
 .domain {
-  color: #2563eb;
+  color: #e67e00;
   font-size: 12px;
   font-weight: 800;
   text-transform: uppercase;
@@ -149,13 +147,13 @@
 }
 
 .primaryButton {
-  background: #2563eb;
+  background: #e67e00;
   color: #ffffff;
 }
 
 .secondaryButton {
-  background: #eff6ff;
-  color: #1d4ed8;
+  background: #ffffff;
+  color: #cc5500;
   border: 1px solid #bfdbfe;
 }
 

@@ -914,15 +914,15 @@
   }
 
   .industryBtn:hover {
-    border-color: #2563eb;
+    border-color: #e67e00;
     color: white;
-    background: #2563eb;
+    background: #e67e00;
   }
 
   .industryBtn.active {
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(124, 58, 237, 0.1));
-    border-color: #2563eb;
-    color: #2563eb;
+    border-color: #e67e00;
+    color: #e67e00;
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
   }
 
@@ -1138,7 +1138,7 @@
     padding: 6px 10px;
     border-radius: 999px;
     background: #eef2ff;
-    color: #1e3a8a;
+    color: #664000;
     border: 1px solid rgba(30, 58, 138, 0.18);
     flex-shrink: 0;
   }
@@ -1402,7 +1402,7 @@
     width: 8px;
     height: 8px;
     border-radius: 999px;
-    background: #3b82f6;
+    background: #ff8c00;
   }
 
   .sectionHeader {
@@ -1888,7 +1888,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto 16px;
-    color: #3b82f6;
+    color: #ff8c00;
     font-size: 28px;
     transition: all 0.3s ease;
     position: relative;
@@ -1965,8 +1965,8 @@
 
   .portfolioTabActive,
   .portfolioTab:hover {
-    background: #eff6ff;
-    color: #1d4ed8;
+    background: #ffffff;
+    color: #cc5500;
     border-color: #bfdbfe;
     box-shadow: none;
     transform: none;
@@ -2074,7 +2074,7 @@
   padding: 10px 14px;
   border-radius: 10px;
   background: rgba(37, 99, 235, 0.08);
-  color: #1e3a8a;
+  color: #664000;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.2px;
@@ -2270,7 +2270,7 @@
     padding: 100px 0;
     background: var(--primary-bg);
     position: relative;
-    box-shadow: 0 0 60px rgba(54, 154, 251, 0.22);
+    box-shadow: 0 0 60px rgba(255, 140, 0, 0.22);
     overflow: hidden;
   }
 
@@ -2293,7 +2293,7 @@
     left: -5%;
     width: 600px;
     height: 600px;
-    /* background: radial-gradient(circle, rgba(54, 154, 251, 0.16) 0%, transparent 70%); */
+    /* background: radial-gradient(circle, rgba(255, 140, 0, 0.16) 0%, transparent 70%); */
     border-radius: 50%;
     z-index: 0;
   }
@@ -2351,16 +2351,16 @@
 
   .upworkStat:hover {
     background: #ffffff;
-    border-color: rgba(54, 154, 251, 0.35);
+    border-color: rgba(255, 140, 0, 0.35);
     transform: translateY(-4px);
-    box-shadow: 0 18px 36px rgba(54, 154, 251, 0.14);
+    box-shadow: 0 18px 36px rgba(255, 140, 0, 0.14);
   }
 
   .upworkStatNumber {
     font-family: 'Inter', sans-serif;
     font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 800;
-    color: #369afb;
+    color: #ff8c00;
     margin: 0 0 8px 0;
     letter-spacing: -1px;
     display: block;
@@ -2473,7 +2473,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #3b82f6;
+    color: #ff8c00;
     font-size: 24px;
     box-shadow: 0 8px 20px rgba(59, 130, 246, 0.1);
     transition: all 0.3s ease;
@@ -2517,7 +2517,7 @@
 
   .techTag:hover {
     border-color: rgba(59, 130, 246, 0.6);
-    color: #3b82f6;
+    color: #ff8c00;
     background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.1) 100%);
     box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
     transform: translateY(-2px);
@@ -2585,14 +2585,14 @@
 
   .cta :global(.btn) {
     animation: slideUp 0.8s ease-out 0.2s both;
-    background: #2563eb;
+    background: #e67e00;
     color: #ffffff !important;
-    border: 1px solid #1d4ed8;
+    border: 1px solid #cc5500;
     box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18);
   }
 
   .cta :global(.btn:hover) {
-    background: #1d4ed8;
+    background: #cc5500;
     color: #ffffff !important;
     border-color: #1e40af;
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.22);
@@ -2697,7 +2697,7 @@
     justify-content: center;
     margin: 0 auto 24px;
     font-size: 40px;
-    color: #3b82f6;
+    color: #ff8c00;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -2927,7 +2927,7 @@
     justify-content: center;
     padding: 5px 10px;
     border-radius: 999px;
-    background: #fff7ed;
+    background: #ffffff;
     border: 1px solid #fed7aa;
     color: #c2410c;
     font-size: 13px;
@@ -2955,7 +2955,7 @@
   .testimonialService {
     font-size: 13px;
     font-weight: 700;
-    color: #3b82f6;
+    color: #ff8c00;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -3085,7 +3085,7 @@
 
   .highlightItem {
     font-weight: 700;
-    color: #1e3a8a;
+    color: #664000;
   }
 
   .contactLocation {
@@ -3108,7 +3108,7 @@
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 8px;
-    color: #1e3a8a;
+    color: #664000;
   }
 
   .contactLocation p {
@@ -5458,7 +5458,7 @@
   }
 
   .breadcrumbLink:hover {
-    color: #2563eb !important;
+    color: #e67e00 !important;
   }
 
   .breadcrumbSeparator {
@@ -5691,7 +5691,7 @@
     height: 200px;
     overflow: hidden;
     border-bottom: 1px solid var(--border-light);
-    background: #eff6ff;
+    background: #ffffff;
   }
 
   .blogArticleImageMedia {
@@ -5737,7 +5737,7 @@
 
   .blogNewsletter {
     padding: 80px 0;
-    background: #eff6ff;
+    background: #ffffff;
     border-top: 1px solid #dbeafe;
     text-align: center;
     color: #0f172a;
@@ -5784,7 +5784,7 @@
 
   .blogNewsletterButton {
     padding: 14px 32px;
-    background: #2563eb;
+    background: #e67e00;
     color: #ffffff;
     border: none;
     border-radius: 25px;
@@ -5795,7 +5795,7 @@
   }
 
   .blogNewsletterButton:hover {
-    background: #1d4ed8;
+    background: #cc5500;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(37, 99, 235, 0.24);
   }
@@ -6027,7 +6027,7 @@
     position: relative;
     height: 230px;
     overflow: hidden;
-    background: #eff6ff;
+    background: #ffffff;
     border-radius: 0;
   }
 
@@ -6063,7 +6063,7 @@
     border-radius: 999px;
     background: #f8fbff;
     border: 1px solid #dbeafe;
-    color: #2563eb;
+    color: #e67e00;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -6103,7 +6103,7 @@
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #2563eb;
+    color: #e67e00;
   }
 
   .portfolioSummaryText {
@@ -6144,7 +6144,7 @@
     padding: 7px 12px;
     border-radius: 999px;
     background: #eef4ff;
-    color: #1d4ed8;
+    color: #cc5500;
     font-size: 12px;
     font-weight: 600;
     border: 1px solid #dbeafe;
@@ -6508,8 +6508,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  background: #eff6ff;
-  color: #2563eb;
+  background: #ffffff;
+  color: #e67e00;
   flex-shrink: 0;
 }
 
@@ -6591,7 +6591,7 @@
 
 .sparkle {
   position: absolute;
-  color: #2563EB;
+  color: #e67e00;
   pointer-events: none;
   user-select: none;
   line-height: 1;
@@ -6630,7 +6630,7 @@
   white-space: nowrap;
 }
 .heroBadgeBottom {
-  background: #2563EB;
+  background: #e67e00;
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
   font-size: 10px; font-weight: 700;
@@ -6685,8 +6685,8 @@
 .heroSparkleSmall {
   display: inline-flex;
   align-items: center;
-  color: #2563EB !important;
-  -webkit-text-fill-color: #2563EB !important;
+  color: #e67e00 !important;
+  -webkit-text-fill-color: #e67e00 !important;
   font-size: 0.45em;
   line-height: 1;
   flex-shrink: 0;
@@ -6696,22 +6696,22 @@
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  background: rgba(54, 154, 251, 0.12) !important;
+  background: rgba(255, 140, 0, 0.12) !important;
   background-image: none !important;
-  border: 1px solid rgba(54, 154, 251, 0.26);
+  border: 1px solid rgba(255, 140, 0, 0.26);
   border-radius: 16px;
   width: 64px;
   height: 46px;
   flex-shrink: 0;
-  box-shadow: 0 8px 20px rgba(54, 154, 251, 0.16);
+  box-shadow: 0 8px 20px rgba(255, 140, 0, 0.16);
   transition: transform 0.25s ease;
   -webkit-text-fill-color: initial !important;
 }
 .heroOrangePill:hover { transform: scale(1.07); }
 
 .heroOrangePillStar {
-  color: #369afb !important;
-  -webkit-text-fill-color: #369afb !important;
+  color: #ff8c00 !important;
+  -webkit-text-fill-color: #ff8c00 !important;
   font-size: 1.6rem;
   line-height: 1;
   background: none !important;
@@ -6773,7 +6773,7 @@
 .heroMiniChartValue {
   font-size: 16px;
   font-weight: 900;
-  color: #2563eb;
+  color: #e67e00;
   line-height: 1;
   animation: heroMiniValuePulse 3.2s ease-in-out infinite;
 }
@@ -6793,7 +6793,7 @@
 
 .heroMiniChartLine {
   fill: none;
-  stroke: #3b82f6;
+  stroke: #ff8c00;
   stroke-width: 3;
   stroke-linecap: round;
   stroke-dasharray: 220;
@@ -6802,7 +6802,7 @@
 }
 
 .heroMiniChartDot {
-  fill: #2563eb;
+  fill: #e67e00;
   animation: heroMiniDotPulse 2.8s ease-in-out infinite;
 }
 
@@ -6859,15 +6859,15 @@
   border-radius: 999px;
   font-size: 14px;
   font-weight: 700;
-  color: #152c56;
+  color: #664000;
   /* background: rgba(239, 248, 255, 0.92); */
   text-decoration: none;
-  border: 1px solid rgba(54, 154, 251, 0.34);
+  border: 1px solid rgba(255, 140, 0, 0.34);
   overflow: hidden;
   transition: all 0.3s ease;
   white-space: nowrap;
   flex-shrink: 0;
-  box-shadow: 0 8px 22px rgba(54, 154, 251, 0.14);
+  box-shadow: 0 8px 22px rgba(255, 140, 0, 0.14);
   position: relative;
 }
 .heroJoinBtn::before,
@@ -6881,18 +6881,18 @@
   pointer-events: none;
 }
 
-.heroJoinBtn:hover { background: #ffffff; transform: translateY(-3px); box-shadow: 0 14px 30px rgba(54, 154, 251, 0.2); }
+.heroJoinBtn:hover { background: #ffffff; transform: translateY(-3px); box-shadow: 0 14px 30px rgba(255, 140, 0, 0.2); }
 .heroJoinBtn:hover::before,
 .heroContactBtn:hover::before {
   transform: translateX(130%);
 }
-.heroJoinBtn > span:first-child { padding: 10px 18px; color: #369afb; }
+.heroJoinBtn > span:first-child { padding: 10px 18px; color: #ff8c00; }
 .heroJoinBtnBox {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 42px; height: 42px;
-  background: linear-gradient(180deg, #5cb9fe 0%, #369afb 100%) !important;
+  background: linear-gradient(180deg, #ffb347 0%, #ff8c00 100%) !important;
   background-image: none !important;
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
@@ -6902,7 +6902,7 @@
   transition: all 0.3s ease;
   animation: heroButtonPulse 2.8s ease-in-out infinite;
 }
-.heroJoinBtn:hover .heroJoinBtnBox { background: linear-gradient(180deg, #369afb 0%, #152c56 100%) !important; }
+.heroJoinBtn:hover .heroJoinBtnBox { background: linear-gradient(180deg, #ff8c00 0%, #664000 100%) !important; }
 
 .heroContactBtn {
   display: inline-flex;
@@ -6925,7 +6925,7 @@
 }
 
 .heroContactBtn:hover {
-  background: linear-gradient(180deg, #ffffff 0%, #eff6ff 100%);
+  background: #ffffff;
   border-color: rgba(59, 130, 246, 0.32);
   transform: translateY(-3px);
   box-shadow: 0 16px 32px rgba(59, 130, 246, 0.12);
@@ -6944,7 +6944,7 @@
   width: 42px;
   height: 42px;
   background: linear-gradient(180deg, #f0f9ff 0%, #dbeafe 100%);
-  color: #1d4ed8;
+  color: #cc5500;
   font-size: 16px;
   font-weight: 900;
   border-left: 1px solid rgba(59, 130, 246, 0.16);
@@ -7008,7 +7008,7 @@
   width: 42px; height: 42px;
   border-radius: 50%;
   border: none;
-  background: #3B82F6;
+  background: #ff8c00;
   color: #fff;
   display: flex;
   align-items: center;
@@ -7019,7 +7019,7 @@
   line-height: 1;
   box-shadow: 0 4px 16px rgba(59,130,246,0.38);
 }
-.heroCarouselArrow:hover { background: #2563EB; transform: translateY(-50%) scale(1.1); }
+.heroCarouselArrow:hover { background: #e67e00; transform: translateY(-50%) scale(1.1); }
 .heroCarouselArrow:first-child { left: 14px; }
 .heroCarouselArrow:last-child { right: 14px; }
 
@@ -7126,14 +7126,14 @@
    Specificity: .heroRedesign(C) + h1(E) + .heroOrangePill(C) = (0,2,1)
    beats .heroRedesign(C) + h1(E) + span(E) = (0,1,2), so this wins. ── */
 .heroRedesign h1 .heroOrangePill {
-  background: rgba(54, 154, 251, 0.12) !important;
-  background-color: rgba(54, 154, 251, 0.12) !important;
+  background: rgba(255, 140, 0, 0.12) !important;
+  background-color: rgba(255, 140, 0, 0.12) !important;
   background-image: none !important;
   -webkit-text-fill-color: initial !important;
 }
 .heroRedesign h1 .heroOrangePill .heroOrangePillStar {
-  color: #369afb !important;
-  -webkit-text-fill-color: #369afb !important;
+  color: #ff8c00 !important;
+  -webkit-text-fill-color: #ff8c00 !important;
   background: none !important;
   background-image: none !important;
 }

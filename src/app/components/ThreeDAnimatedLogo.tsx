@@ -34,7 +34,7 @@ function LogoMesh({ hovered }: { hovered: boolean }) {
             distortion={0.3}
             distortionScale={0.3}
             temporalDistortion={0.1}
-            color="#3b82f6"
+            color="#ff8c00"
             roughness={0.1}
             metalness={0.1}
           />
@@ -44,7 +44,7 @@ function LogoMesh({ hovered }: { hovered: boolean }) {
       {/* Inner glowing core */}
       <mesh position={[0, 0, 0]} scale={0.5}>
         <boxGeometry args={[1, 1, 1]} />
-        <meshBasicMaterial color="#60a5fa" transparent opacity={0.8} />
+        <meshBasicMaterial color="#ffb347" transparent opacity={0.8} />
       </mesh>
       
       {/* Corner accents */}
@@ -70,7 +70,7 @@ export default function ThreeDAnimatedLogo({ size = 60 }: { size?: number }) {
       <Canvas camera={{ position: [0, 0, 3], fov: 50 }}>
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1} />
-        <pointLight position={[-10, -10, -10]} intensity={0.5} color="#60a5fa" />
+        <pointLight position={[-10, -10, -10]} intensity={0.5} color="#ffb347" />
         <LogoMesh hovered={hovered} />
       </Canvas>
     </div>

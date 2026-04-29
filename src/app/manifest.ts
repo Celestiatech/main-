@@ -2,14 +2,14 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Celestiatech",
-    short_name: "Celestiatech",
+    name: "W3Tech",
+    short_name: "W3Tech",
     description:
       "Premium IT and software development company for web, mobile, AI, and growth-focused digital products.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
-    theme_color: "#369afb",
+    theme_color: "#ff8c00",
     icons: [
       {
         src: "/favicon-192.png",
