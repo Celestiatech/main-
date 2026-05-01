@@ -64,6 +64,7 @@ export function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [suppressHeaderMotion, setSuppressHeaderMotion] = useState(false);
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false);
   const [activeServiceCategory, setActiveServiceCategory] = useState<string | null>(null);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
@@ -77,6 +78,8 @@ export function Header() {
   // Refs to track when we just clicked back (to prevent immediate reopening)
   const justClickedBackServices = useRef(false);
   const justClickedBackCompany = useRef(false);
+  const lastScrollYRef = useRef(0);
+  const scrollTickingRef = useRef(false);
 
   const popularToolsButton = (
     <>
@@ -150,13 +153,23 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.scrollY > 20;
-      if (scrolled !== isScrolled) {
-        debugLog("Scroll state changed", { scrolled, scrollY: window.scrollY });
-        setIsScrolled(scrolled);
-      }
+      if (scrollTickingRef.current) return;
+      scrollTickingRef.current = true;
+
+      window.requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
+        const scrolled = currentScrollY > 20;
+        if (scrolled !== isScrolled) {
+          debugLog("Scroll state changed", { scrolled, scrollY: currentScrollY });
+          setIsScrolled(scrolled);
+        }
+
+        lastScrollYRef.current = currentScrollY;
+        scrollTickingRef.current = false;
+      });
     };
 
+    lastScrollYRef.current = window.scrollY;
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isScrolled]);
@@ -200,6 +213,13 @@ export function Header() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isServicesDropdownOpen, isCompanyDropdownOpen, isMoreMenuOpen]);
+
+  useEffect(() => {
+    // When the header switches between states, avoid showing intermediate transitions.
+    setSuppressHeaderMotion(true);
+    const t = window.setTimeout(() => setSuppressHeaderMotion(false), 220);
+    return () => window.clearTimeout(t);
+  }, [isScrolled]);
 
   const toggleMobileMenu = () => {
     const newState = !isMobileMenuOpen;
@@ -481,7 +501,9 @@ export function Header() {
 
   return (
     <>
-      <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
+      <header
+        className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${suppressHeaderMotion ? styles.motionOff : ""}`}
+      >
         {/* Top Bar */}
         <div className={styles.headerTop}>
           <div className={styles.headerTopInner}>

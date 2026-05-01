@@ -189,7 +189,7 @@ export default function ServicesPage() {
       <section className={styles.whyChooseUs}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>Why Choose Celestiatech?</h2>
+            <h2>Why Choose W3Tech?</h2>
             <p>Partner with a team committed to your success</p>
           </div>
           <div className={styles.whyGrid}>

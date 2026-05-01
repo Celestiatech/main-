@@ -185,7 +185,7 @@ export default function PrivacyPolicy() {
                   ðŸ“ India: Mohali, Punjab
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)" }}>
-                  ðŸ“§ <Link href="mailto:privacy@celestiatech.in" style={{ color: "var(--primary)" }}>privacy@celestiatech.in</Link>
+                  ðŸ“§ <Link href="mailto:privacy@w3tech.in" style={{ color: "var(--primary)" }}>privacy@w3tech.in</Link>
                 </p>
               </div>
             </div>
@@ -209,5 +209,4 @@ export default function PrivacyPolicy() {
     </div>
   );
 }
-
 

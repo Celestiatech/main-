@@ -166,6 +166,63 @@ export function Footer() {
           </div>
         </div>
 
+        <div className={styles.footerDivider} role="separator" />
+
+        <div className={styles.footerNav} aria-label="Footer navigation">
+          <div className={styles.brandBlock}>
+            <Link href="/" className={styles.brandName} aria-label={`${siteConfig.name} Home`}>
+              {siteConfig.name}
+            </Link>
+            <p className={styles.brandTagline}>{siteConfig.tagline}</p>
+            <p className={styles.brandText}>{siteConfig.description}</p>
+            <div className={styles.brandActions}>
+              <Link href="/contact" className={styles.brandPrimaryCta}>Talk to an expert</Link>
+              <a href={`mailto:${siteConfig.contact.email.general}`} className={styles.brandSecondaryCta}>
+                Email us
+              </a>
+            </div>
+          </div>
+
+          <div className={styles.navColumn} aria-label="Company">
+            <h3 className={styles.navTitle}>Company</h3>
+            <Link href="/about" className={styles.navLink}>About</Link>
+            <Link href="/work" className={styles.navLink}>Work</Link>
+            <Link href="/clients" className={styles.navLink}>Clients</Link>
+            <Link href="/career" className={styles.navLink}>Careers</Link>
+          </div>
+
+          <div className={styles.navColumn} aria-label="Services">
+            <h3 className={styles.navTitle}>Services</h3>
+            <Link href="/services" className={styles.navLink}>All services</Link>
+            <Link href="/seo-services" className={styles.navLink}>SEO</Link>
+            <Link href="/ai-development-company" className={styles.navLink}>AI development</Link>
+            <Link href="/hire-dedicated-developers" className={styles.navLink}>Dedicated team</Link>
+          </div>
+
+          <div className={styles.navColumn} aria-label="Resources">
+            <h3 className={styles.navTitle}>Resources</h3>
+            <Link href="/blog" className={styles.navLink}>Blog</Link>
+            <Link href="/pricing" className={styles.navLink}>Pricing</Link>
+            <Link href="/proposal" className={styles.navLink}>Get a proposal</Link>
+            <Link href="/popular-tools" className={styles.navLink}>Popular tools</Link>
+          </div>
+
+          <div className={styles.navColumn} aria-label="Contact details">
+            <h3 className={styles.navTitle}>Contact</h3>
+            <a className={styles.navLink} href={`mailto:${siteConfig.contact.email.general}`}>
+              {siteConfig.contact.email.general}
+            </a>
+            <a className={styles.navLink} href={`tel:${siteConfig.contact.phone.india.replace(/\\s+/g, "")}`}>
+              {siteConfig.contact.phone.india}
+            </a>
+            <div className={styles.navMeta}>
+              <p className={styles.navMetaLabel}>Offices</p>
+              <p className={styles.navMetaValue}>{siteConfig.contact.offices.uae.address}</p>
+              <p className={styles.navMetaValue}>{siteConfig.contact.offices.india.address}</p>
+            </div>
+          </div>
+        </div>
+
         {/* Footer Bottom */}
         <div className={styles.footerBottom}>
           <div className={styles.footerBottomLeft}>

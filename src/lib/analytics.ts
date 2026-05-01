@@ -1,5 +1,5 @@
 /**
- * Celestiatech - Analytics & Tracking
+ * W3Tech - Analytics & Tracking
  * Centralized analytics implementation
  */
 

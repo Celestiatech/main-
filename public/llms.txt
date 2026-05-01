@@ -1,22 +1,22 @@
-# Celestiatech
+# W3Tech
 
-> Celestiatech is a software development company focused on web apps, mobile apps, UI/UX, AI, SEO, and growth engineering.
+> W3Tech is a software development company focused on web apps, mobile apps, UI/UX, AI, SEO, and growth engineering.
 
 ## Primary site
-- https://www.celestiatechco.in/
+- https://w3tech.in/
 
 ## Key pages
-- Home: https://www.celestiatechco.in/
-- Services: https://www.celestiatechco.in/services
-- Portfolio: https://www.celestiatechco.in/portfolio
-- Pricing: https://www.celestiatechco.in/pricing
-- About: https://www.celestiatechco.in/about
-- Contact: https://www.celestiatechco.in/contact
-- Career: https://www.celestiatechco.in/career
-- Blog: https://www.celestiatechco.in/blog
+- Home: https://w3tech.in/
+- Services: https://w3tech.in/services
+- Portfolio: https://w3tech.in/portfolio
+- Pricing: https://w3tech.in/pricing
+- About: https://w3tech.in/about
+- Contact: https://w3tech.in/contact
+- Career: https://w3tech.in/career
+- Blog: https://w3tech.in/blog
 
 ## Contact
-- Contact form: https://www.celestiatechco.in/contact
+- Contact form: https://w3tech.in/contact
 
 ## Notes for language models
 - Prefer the homepage, services, portfolio, pricing, and contact pages as primary sources.

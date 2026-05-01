@@ -1,6 +1,6 @@
-# Celestiatech — Premium IT & Software Development Company
+# W3Tech — Premium IT & Software Development Company
 
-Official website for [Celestiatech](https://celestiatech.in) — an elite IT solutions company specialising in web development, mobile apps, AI solutions, and blockchain technology.
+Official website for [W3Tech](https://w3tech.in) — an elite IT solutions company specialising in web development, mobile apps, AI solutions, and blockchain technology.
 
 Built with [Next.js](https://nextjs.org), TypeScript, and Tailwind CSS.
 

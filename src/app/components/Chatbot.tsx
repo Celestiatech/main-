@@ -36,21 +36,21 @@ const QUICK_REPLIES: QuickReply[] = [
 ];
 
 const STARTER_SUGGESTIONS: QuickReply[] = [
-  { label: "What can Celestiatech do?", response: "What services do you offer?" },
+  { label: "What can W3Tech do?", response: "What services do you offer?" },
   { label: "Help me with SEO strategy", response: "How can you help with SEO?" },
   { label: "Explain your services", response: "Explain your different services" },
 ];
 
 const BOT_RESPONSES: Record<string, string> = {
   default: "Thanks for your message! A member of our team will get back to you shortly. In the meantime, feel free to explore our services or check out our portfolio.",
-  greeting: "Hello! Welcome to Celestiatech. We build websites, mobile apps, AI solutions, redesigns, SEO systems, and growth-focused digital products. How can I help you today?",
+  greeting: "Hello! Welcome to W3Tech. We build websites, mobile apps, AI solutions, redesigns, SEO systems, and growth-focused digital products. How can I help you today?",
   services: "We offer a wide range of services:\n\nMobile development\nWeb development\nUI/UX design\nAI solutions\nSEO and performance optimization\nEcommerce development\nMaintenance and support\n\nTell me what you want to build and I can guide you.",
   portfolio: "Our portfolio includes product launches, redesigns, custom business websites, mobile apps, AI features, and SEO-focused builds. If you want, I can point you toward the type of work most relevant to your project.",
   pricing: "Our pricing depends on scope, timeline, and complexity. We work on fixed-price projects, time and material, and dedicated team models. If you share your goal and budget range, I can guide you to the right starting point.",
-  contact: "You can reach us by email at hello@celestiatech.in, or start a conversation here and our team can follow up. If you want, I can help you prepare the details to send.",
+  contact: "You can reach us by email at hello@w3tech.in, or start a conversation here and our team can follow up. If you want, I can help you prepare the details to send.",
   timeline: "Typical timelines depend on complexity:\n\nLanding page or brochure site: 2-4 weeks\nBusiness website: 4-8 weeks\nCustom web app: 8-16 weeks\nMobile app MVP: 10-18 weeks\n\nIf you tell me what you need, I can narrow it down.",
   technology: "We work with modern stacks including Next.js, React, Node.js, TypeScript, Python, React Native, Flutter, PostgreSQL, Firebase, cloud infrastructure, and AI/API integrations.",
-  company: "Celestiatech is a digital product and development company focused on websites, apps, AI, and growth-ready digital experiences. We help clients go from idea to launch with design, development, SEO, and support.",
+  company: "W3Tech is a digital product and development company focused on websites, apps, AI, and growth-ready digital experiences. We help clients go from idea to launch with design, development, SEO, and support.",
   blockchain: "We can help with blockchain and Web3 products including smart contracts, wallets, NFT experiences, token-connected platforms, and custom Web3 integrations.",
   mobile: "We build iOS, Android, and cross-platform mobile apps with product strategy, UX, development, QA, launch, and post-launch support.",
   ai: "We build AI-powered features such as chat assistants, workflow automation, intelligent search, content systems, and custom integrations with modern AI APIs.",
@@ -286,7 +286,7 @@ export default function Chatbot() {
     if (matchesAny(lowerText, ["integration", "api", "crm", "payment gateway", "webhook"])) return BOT_RESPONSES.integrations;
     if (matchesAny(lowerText, ["launch", "deploy", "go live", "release"])) return BOT_RESPONSES.launch;
     if (matchesAny(lowerText, ["thank", "thanks"])) return "You’re welcome. If you want, ask me about scope, pricing, redesigns, or launch planning.";
-    if (matchesAny(lowerText, ["schedule", "call", "consultation", "meeting"])) return "If you want to move forward, send your project summary here or email hello@celestiatech.in and our team can follow up.";
+    if (matchesAny(lowerText, ["schedule", "call", "consultation", "meeting"])) return "If you want to move forward, send your project summary here or email hello@w3tech.in and our team can follow up.";
 
     return BOT_RESPONSES.default;
   };
@@ -363,7 +363,7 @@ export default function Chatbot() {
           <div className={styles.supportHeaderTop}>
             <Image
               src="/logos/celethisia.png"
-              alt="Celestiatech"
+              alt="W3Tech"
               width={44}
               height={44}
               className={styles.supportLogo}
@@ -405,7 +405,7 @@ export default function Chatbot() {
           <div className={styles.supportCard}>
             <span className={styles.supportCardTitle}>Send us an email</span>
             <span className={styles.supportCardText}>If you're in a hurry, send us a message and we will get back to you asap.</span>
-            <a href="mailto:hello@celestiatech.in" className={styles.supportSecondaryButton}>
+            <a href="mailto:hello@w3tech.in" className={styles.supportSecondaryButton}>
               Send email
             </a>
           </div>
@@ -441,7 +441,7 @@ export default function Chatbot() {
                 <path d="M5 18H3" />
               </svg>
               <div className={styles.headerText}>
-                <h3>Celestiatech Assistant</h3>
+                <h3>W3Tech Assistant</h3>
                 <p>AI-powered project guide</p>
               </div>
             </div>
@@ -553,7 +553,7 @@ export default function Chatbot() {
                 </svg>
               </button>
             </form>
-            <p className={styles.disclaimer}>Powered by Celestiatech AI</p>
+            <p className={styles.disclaimer}>Powered by W3Tech AI</p>
           </div>
         </section>
       ) : null}

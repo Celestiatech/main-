@@ -1,5 +1,5 @@
 /**
- * Celestiatech - Structured Data (JSON-LD)
+ * W3Tech - Structured Data (JSON-LD)
  * Implements schema.org markup for SEO
  */
 

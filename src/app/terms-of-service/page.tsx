@@ -40,7 +40,7 @@ export default function TermsOfService() {
                 1. Acceptance of Terms
               </h2>
               <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
-                By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by these terms, please do not use this website. Celestiatech reserves the right to change these terms from time to time without notice.
+                By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by these terms, please do not use this website. W3Tech reserves the right to change these terms from time to time without notice.
               </p>
 
               <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "var(--text-primary)" }}>
@@ -54,14 +54,14 @@ export default function TermsOfService() {
                 <li style={{ marginBottom: "8px" }}>Use our services only for lawful purposes and in accordance with these terms</li>
                 <li style={{ marginBottom: "8px" }}>Not attempt to gain unauthorized access to any part of our website or systems</li>
                 <li style={{ marginBottom: "8px" }}>Not use our services in any way that could damage, disable, or impair our website</li>
-                <li style={{ marginBottom: "8px" }}>Respect the intellectual property rights of Celestiatech and third parties</li>
+                <li style={{ marginBottom: "8px" }}>Respect the intellectual property rights of W3Tech and third parties</li>
               </ul>
 
               <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "var(--text-primary)" }}>
                 3. Intellectual Property Rights
               </h2>
               <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "16px", lineHeight: "1.7" }}>
-                The content, features, and functionality of this website, including but not limited to text, graphics, logos, icons, images, audio clips, and software, are owned by Celestiatech or its licensors and are protected by copyright, trademark, and other intellectual property laws.
+                The content, features, and functionality of this website, including but not limited to text, graphics, logos, icons, images, audio clips, and software, are owned by W3Tech or its licensors and are protected by copyright, trademark, and other intellectual property laws.
               </p>
               <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
                 You may not reproduce, distribute, modify, create derivative works of, publicly display, or exploit any content from this website without our prior written consent. You may print copies of materials for personal, non-commercial use only.
@@ -91,7 +91,7 @@ export default function TermsOfService() {
                 6. Limitation of Liability
               </h2>
               <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "16px", lineHeight: "1.7" }}>
-                To the maximum extent permitted by applicable law, Celestiatech shall not be liable for:
+                To the maximum extent permitted by applicable law, W3Tech shall not be liable for:
               </p>
               <ul style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.8", paddingLeft: "20px" }}>
                 <li style={{ marginBottom: "8px" }}>Any indirect, incidental, special, consequential, or punitive damages</li>
@@ -117,7 +117,7 @@ export default function TermsOfService() {
                 8. Indemnification
               </h2>
               <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
-                You agree to indemnify, defend, and hold harmless Celestiatech, its officers, directors, employees, and agents from and against any and all claims, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or relating to your use of our services or your breach of these Terms of Service.
+                You agree to indemnify, defend, and hold harmless W3Tech, its officers, directors, employees, and agents from and against any and all claims, damages, losses, costs, and expenses (including reasonable attorneys&apos; fees) arising out of or relating to your use of our services or your breach of these Terms of Service.
               </p>
 
               <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "var(--text-primary)" }}>
@@ -137,7 +137,7 @@ export default function TermsOfService() {
                 10. Third-Party Links
               </h2>
               <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
-                Our website may contain links to third-party websites, services, or resources that are not owned or controlled by Celestiatech. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party websites. You acknowledge and agree that Celestiatech shall not be responsible or liable for any damage or loss caused by or in connection with your use of any third-party content.
+                Our website may contain links to third-party websites, services, or resources that are not owned or controlled by W3Tech. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party websites. You acknowledge and agree that W3Tech shall not be responsible or liable for any damage or loss caused by or in connection with your use of any third-party content.
               </p>
 
               <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "var(--text-primary)" }}>
@@ -220,7 +220,7 @@ export default function TermsOfService() {
                   ðŸ“ India: Mohali, Punjab
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)" }}>
-                  ðŸ“§ <Link href="mailto:legal@celestiatech.in" style={{ color: "var(--primary)" }}>legal@celestiatech.in</Link>
+                  ðŸ“§ <Link href="mailto:legal@w3tech.in" style={{ color: "var(--primary)" }}>legal@w3tech.in</Link>
                 </p>
               </div>
             </div>
@@ -244,5 +244,3 @@ export default function TermsOfService() {
     </div>
   );
 }
-
-

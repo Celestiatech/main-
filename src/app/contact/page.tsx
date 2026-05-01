@@ -113,7 +113,7 @@ export default function ContactPage() {
                   <div className={styles.contactDetailIcon}>📧</div>
                   <div>
                     <h4>Email</h4>
-                    <p>hello@celestiatech.in</p>
+                    <p>hello@w3tech.in</p>
                   </div>
                 </div>
                 <div className={styles.contactDetailItem}>
