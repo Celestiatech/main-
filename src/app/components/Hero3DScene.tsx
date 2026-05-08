@@ -104,8 +104,8 @@ function FloatingTorusKnot() {
       >
         <torusKnotGeometry args={[0.6, 0.2, 64, 8]} />
         <meshStandardMaterial
-          color={hovered ? "#f97316" : "#ea580c"}
-          emissive={hovered ? "#f97316" : "#ea580c"}
+          color={hovered ? "#ff8c00" : "#cc5500"}
+          emissive={hovered ? "#ff8c00" : "#cc5500"}
           emissiveIntensity={0.5}
           metalness={0.8}
           roughness={0.2}
@@ -230,7 +230,7 @@ export default function Hero3DScene() {
         
         {/* Glowing spheres */}
         <GlowingSphere position={[4, -2, -4]} color="#ff8c00" size={0.6} offset={0} />
-        <GlowingSphere position={[-4, 3, -3]} color="#f97316" size={0.5} offset={1} />
+        <GlowingSphere position={[-4, 3, -3]} color="#ff8c00" size={0.5} offset={1} />
         <GlowingSphere position={[2, 4, -5]} color="#8b5cf6" size={0.4} offset={2} />
         <GlowingSphere position={[-3, -3, -4]} color="#06b6d4" size={0.55} offset={3} />
         
@@ -248,4 +248,3 @@ export default function Hero3DScene() {
     </div>
   );
 }
-

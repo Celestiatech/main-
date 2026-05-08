@@ -32,7 +32,7 @@
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 0.72rem;
-  color: #e67e00;
+  color: #cc5500;
   font-weight: 700;
 }
 
@@ -172,9 +172,9 @@
 }
 
 .searchBtn {
-  border: 1px solid #e67e00;
+  border: 1px solid #cc5500;
   border-radius: 12px;
-  background: #e67e00;
+  background: #cc5500;
   color: #ffffff;
   padding: 0.64rem 1rem;
   font-weight: 700;
@@ -202,7 +202,7 @@
 }
 
 .filterChipAllActive {
-  background: #e67e00;
+  background: #cc5500;
   color: #ffffff;
 }
 
@@ -212,7 +212,7 @@
 }
 
 .filterChipCareerActive {
-  background: #ea580c;
+  background: #cc5500;
   color: #ffffff;
 }
 
@@ -342,7 +342,7 @@
 }
 
 .viewBtn {
-  background: #e67e00;
+  background: #cc5500;
 }
 
 .deleteBtn {

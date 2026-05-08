@@ -225,7 +225,7 @@ export default function ContactPage() {
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
               {submitMessage && (
-                <div className={styles.formNote} style={{ marginTop: '16px', color: submitMessage.includes('Thank you') ? '#22c55e' : '#ef4444' }}>
+                <div className={styles.formNote} style={{ marginTop: '16px', color: submitMessage.includes('Thank you') ? '#ff8c00' : '#ef4444' }}>
                   {submitMessage}
                 </div>
               )}

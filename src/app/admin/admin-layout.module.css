@@ -57,7 +57,7 @@
 }
 
 .navLink:hover {
-  color: #664000;
+  color: #5a3a00;
   border-color: #93c5fd;
   background: #ffffff;
 }
@@ -70,13 +70,13 @@
 }
 
 .backLink {
-  color: #664000;
+  color: #5a3a00;
   text-decoration: none;
   font-size: 0.9rem;
 }
 
 .backLink:hover {
-  color: #ff8c00;
+  color: #e67e00;
 }
 
 .logout {
@@ -128,7 +128,7 @@
   display: grid;
   place-items: center;
   background: #ffffff;
-  color: #664000;
+  color: #5a3a00;
   font-weight: 600;
 }
 

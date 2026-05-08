@@ -18,17 +18,24 @@
 }
 
 :root {
-  --mariner-50: #fff5e6;
-  --mariner-100: #ffe6cc;
-  --mariner-200: #ffcc99;
-  --mariner-300: #ffb366;
+  /* Typography aliases (safety net for CSS-module usage) */
+  --font-display: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-heading: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-ui: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+
+  /* Primary palette (Orange) */
+  --mariner-50: #fff7ed;
+  --mariner-100: #ffedd5;
+  --mariner-200: #fed7aa;
+  --mariner-300: #fdba74;
   --mariner-400: #ffb347;
   --mariner-500: #ff8c00;
   --mariner-600: #e67e00;
-  --mariner-700: #cc7000;
-  --mariner-800: #b25d00;
-  --mariner-900: #994900;
-  --mariner-950: #664000;
+  --mariner-700: #cc5500;
+  --mariner-800: #664000;
+  --mariner-900: #5a3a00;
+  --mariner-950: #3b1f00;
 
   /* Legacy aliases used by shared page.module.css */
   --primary: var(--mariner-500);
@@ -37,21 +44,21 @@
   /* Primary Gradient */
   --primary-gradient: linear-gradient(135deg, var(--mariner-500) 0%, var(--mariner-950) 100%);
 
-  /* Colors: Only White and Black */
-  --white: #FFFFFF;
-  --black: #000000;
+  /* Premium Neutrals */
+  --white: #ffffff;
+  --black: #0b1220;
 
   /* Background Variants */
-  --bg-primary: var(--white);
-  --bg-secondary: var(--black);
-  --bg-tertiary: var(--white);
-  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #eef2ff;
+  --bg-card: rgba(255, 255, 255, 0.78);
 
   /* Text Colors */
-  --text-primary: var(--black);
-  --text-secondary: var(--black);
-  --text-muted: var(--black);
-  --text-light: var(--white);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-light: #f8fafc;
 
   /* Action Color */
   --action-color: var(--mariner-500);
@@ -68,15 +75,15 @@
   --gradient-purple-dark: var(--mariner-950);
 
   /* Additional Colors for Consistency */
-  --color-slate-800: var(--black);
-  --color-slate-500: var(--black);
+  --color-slate-800: #0f172a;
+  --color-slate-500: #64748b;
   --color-blue-500: var(--mariner-500);
   --color-blue-400: var(--mariner-400);
   --color-violet-500: var(--mariner-900);
-  --color-slate-200: var(--white);
-  --color-slate-50: var(--white);
-  --color-slate-100: var(--white);
-  --color-gray-600: var(--black);
+  --color-slate-200: #e2e8f0;
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-gray-600: #475569;
   --color-green-500: var(--mariner-500);
   --color-amber-600: var(--mariner-800);
   --color-cyan-600: var(--mariner-500);
@@ -84,36 +91,38 @@
   --color-blue-600: var(--mariner-700);
 
   /* RGB versions for rgba() */
-  --color-blue-500-rgb: 255, 140, 0;
-  --color-violet-500-rgb: 153, 73, 0;
-  --color-slate-50-rgb: 255, 255, 255;
+  --color-blue-500-rgb: 34, 197, 94;
+  --color-violet-500-rgb: 20, 83, 45;
+  --color-slate-50-rgb: 248, 250, 252;
   
   /* Premium Neo-Glassmorphism */
-  --glass-bg: rgba(255, 140, 0, 0.1);
-  --glass-border: rgba(255, 140, 0, 0.3);
-  --glass-shadow: 0 8px 32px rgba(255, 140, 0, 0.12);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(15, 23, 42, 0.08);
+  --glass-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
 
   /* Glowing Effects - Neon */
-  --glow-primary: 0 0 40px rgba(255, 140, 0, 0.45);
+  --glow-primary: 0 0 40px rgba(34, 197, 94, 0.35);
   --glow-secondary: 0 0 40px rgba(0, 255, 102, 0.4);
-  --glow-subtle: 0 0 20px rgba(255, 140, 0, 0.25);
+  --glow-subtle: 0 0 20px rgba(34, 197, 94, 0.18);
 
   /* 3D Shadows - Deep and Premium */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 25px rgba(255, 140, 0, 0.08);
-  --shadow-xl: 0 15px 40px rgba(255, 140, 0, 0.1);
-  --shadow-2xl: 0 25px 60px rgba(255, 140, 0, 0.12);
+  --shadow-lg: 0 10px 25px rgba(15, 23, 42, 0.08);
+  --shadow-xl: 0 15px 40px rgba(15, 23, 42, 0.1);
+  --shadow-2xl: 0 25px 60px rgba(15, 23, 42, 0.12);
   
-  /* Mesh Gradient Backgrounds */
-  --gradient-primary: linear-gradient(135deg, var(--mariner-500) 0%, var(--mariner-800) 50%, var(--mariner-950) 100%);
-  --gradient-accent: linear-gradient(135deg, var(--mariner-950) 0%, var(--mariner-500) 100%);
-  --gradient-mesh: none;
+  /* Mesh Gradient Backgrounds (no orange tint) */
+  --gradient-primary: linear-gradient(135deg, rgba(34, 197, 94, 0.12) 0%, rgba(59, 130, 246, 0.08) 55%, rgba(20, 83, 45, 0.1) 100%);
+  --gradient-accent: linear-gradient(135deg, rgba(15, 23, 42, 0.04) 0%, rgba(34, 197, 94, 0.12) 100%);
+  --gradient-mesh: radial-gradient(900px circle at 10% 10%, rgba(34, 197, 94, 0.14), transparent 60%),
+    radial-gradient(900px circle at 90% 20%, rgba(59, 130, 246, 0.12), transparent 55%),
+    radial-gradient(1100px circle at 60% 95%, rgba(20, 83, 45, 0.1), transparent 55%);
 
   /* Borders */
-  --border-light: rgba(255, 140, 0, 0.12);
-  --border-medium: rgba(255, 140, 0, 0.22);
-  --border-glow: rgba(255, 140, 0, 0.38);
+  --border-light: rgba(15, 23, 42, 0.08);
+  --border-medium: rgba(15, 23, 42, 0.12);
+  --border-glow: rgba(34, 197, 94, 0.28);
   
   /* Border Radius */
   --radius-sm: 6px;
@@ -134,21 +143,37 @@
   box-sizing: border-box;
 }
 
+/* ===== GLOBAL STYLE OVERRIDE: NO BORDERS ===== */
+*,
+*::before,
+*::after {
+  border-width: 0 !important;
+}
+
 
 html {
   scroll-behavior: smooth;
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  font-size: 16px;
 }
 
 body {
+  /* Define font tokens on <body> so next/font variables resolve correctly */
+  --font-display: var(--font-changa-one), var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-heading: var(--font-changa-one), var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-body: var(--font-fjalla-one), var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-ui: var(--font-fjalla-one), var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+
   font-family: var(--font-body);
-  background: #ffffff;
+  font-size: var(--font-size-base);
+  background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   position: relative;
   width: 100%;
   max-width: 100%;
@@ -157,7 +182,7 @@ body {
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 140, 0, 0.78) rgba(218, 239, 255, 0.75);
+  scrollbar-color: rgba(34, 197, 94, 0.65) rgba(218, 239, 255, 0.75);
 }
 
 html::-webkit-scrollbar {
@@ -171,7 +196,7 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(255, 140, 0, 0.95) 0%, rgba(31, 124, 241, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.92) 0%, rgba(37, 99, 235, 0.9) 100%);
   border: 2px solid rgba(239, 248, 255, 0.95);
   border-radius: 999px;
 }
@@ -189,6 +214,17 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: var(--letter-spacing-tight);
   color: var(--text-primary);
   margin: 0;
+}
+
+h1 strong,
+h2 strong,
+h3 strong,
+h4 strong,
+h5 strong,
+h6 strong,
+strong,
+b {
+  font-weight: var(--font-weight-bold);
 }
 
 h1 {
@@ -505,7 +541,7 @@ ul, ol {
   padding: 14px 28px;
   border-radius: var(--radius-full);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   font-family: inherit;
   transition: all var(--transition-base);
   position: relative;
@@ -518,7 +554,6 @@ ul, ol {
   color: white;
   box-shadow: none;
   border: 1px solid rgba(59, 130, 246, 0.4);
-  font-weight: 700;
 }
 
 .btn-primary:hover {
@@ -529,31 +564,29 @@ ul, ol {
 }
 
 .btn-secondary {
-  background: transparent;
-  color: white;
-  border: 1px solid white;
+  background: rgba(15, 23, 42, 0.04);
+  color: var(--text-primary);
+  border: 1px solid rgba(15, 23, 42, 0.14);
   backdrop-filter: blur(10px);
-  font-weight: 700;
 }
 
 .btn-secondary:hover {
-  border-color: white;
-  color: white;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 140, 0, 0.3);
+  background: rgba(255, 140, 0, 0.08);
+  box-shadow: none;
 }
 
 .btn-accent {
-  background: linear-gradient(135deg, #FF8C42, #FF6B35);
+  background: linear-gradient(135deg, #e67e00, #ff8c00);
   color: white;
-  box-shadow: 0 0 20px rgba(255, 107, 53, 0.2);
-  border: 1px solid rgba(229, 231, 235, 0.2);
+  box-shadow: none;
+  border: 1px solid rgba(255, 140, 0, 0.28);
 }
 
 .btn-accent:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(255, 107, 53, 0.4);
-  border-color: rgba(229, 231, 235, 0.4);
+  box-shadow: none;
+  border-color: rgba(255, 140, 0, 0.42);
 }
 
 /* ===== WATER FILL BUTTON ANIMATION ===== */
@@ -969,7 +1002,7 @@ ul, ol {
   background: rgba(59, 130, 246, 0.1);
   color: var(--primary);
   border-radius: var(--radius-full);
-  font-size: 13px;
+  font-size: var(--font-size-sm);
   font-weight: 500;
 }
 
@@ -1006,7 +1039,7 @@ ul, ol {
 /* Responsive */
 @media (max-width: 1600px) {
   html {
-    font-size: 91%;
+    font-size: 100%;
   }
 
   .container {
@@ -1016,7 +1049,7 @@ ul, ol {
 
 @media (max-width: 1366px) {
   html {
-    font-size: 88%;
+    font-size: 100%;
   }
 
   .container {
@@ -1288,7 +1321,7 @@ body {
 }
 
 .btn-3d-enhanced {
-  background: linear-gradient(135deg, #ff8c00 0%, #ffb347 100%);
+  background: linear-gradient(135deg, #ff8c00 0%, #fdba74 100%);
   border: none;
   border-radius: 12px;
   color: white;
@@ -1499,7 +1532,7 @@ body {
 
 /* 3D Text Glow */
 .text-3d-glow {
-  background: linear-gradient(135deg, #ffb347 0%, #a78bfa 50%, #22d3ee 100%);
+  background: linear-gradient(135deg, #fdba74 0%, #a78bfa 50%, #22d3ee 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1588,7 +1621,7 @@ body {
 /* 3D Neon Effect */
 .neon-3d {
   position: relative;
-  color: #ffb347;
+  color: #fdba74;
   text-shadow: 
     0 0 10px #ff8c00,
     0 0 20px #ff8c00,
@@ -1674,13 +1707,13 @@ body {
 
 /* Rainbow color shifting */
 @keyframes rainbow-shift-god {
-  0% { color: #e67e00; }
+  0% { color: #ff8c00; }
   16% { color: #7c3aed; }
   33% { color: #db2777; }
-  50% { color: #d97706; }
+  50% { color: #e67e00; }
   66% { color: #059669; }
   83% { color: #0891b2; }
-  100% { color: #e67e00; }
+  100% { color: #ff8c00; }
 }
 
 /* Extreme text glow */
@@ -1846,7 +1879,7 @@ body {
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 2px;
-  background: linear-gradient(135deg, #e67e00 0%, #7c3aed 50%, #0891b2 100%);
+  background: linear-gradient(135deg, #ff8c00 0%, #7c3aed 50%, #0891b2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1873,7 +1906,7 @@ body {
   inset: 0;
   border-radius: 12px;
   padding: 2px;
-  background: conic-gradient(from 0deg, #e67e00, #7c3aed, #0891b2, #d97706, #e67e00);
+  background: conic-gradient(from 0deg, #ff8c00, #7c3aed, #0891b2, #e67e00, #ff8c00);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   animation: rotate-glow-ring 8s linear infinite;
@@ -1904,7 +1937,7 @@ body {
 }
 
 .neon-text-god-mode {
-  color: #e67e00;
+  color: #ff8c00;
   text-shadow:
     0 0 7px rgba(37, 99, 235, 0.6),
     0 0 14px rgba(37, 99, 235, 0.4),
@@ -1957,7 +1990,7 @@ body {
     rgba(37, 99, 235, 0.08),
     rgba(124, 58, 237, 0.06),
     rgba(8, 145, 178, 0.05),
-    rgba(217, 119, 6, 0.04)
+    rgba(34, 197, 94, 0.06)
   );
   background-size: 400% 400%;
   animation: gradient-shift 15s ease infinite;
@@ -1971,9 +2004,9 @@ body {
 
 /* Ultra-intense neon */
 .ultra-neon-god {
-  color: #e67e00;
+  color: #ff8c00;
   background: rgba(37, 99, 235, 0.08);
-  border: 2px solid #e67e00;
+  border: 2px solid #ff8c00;
   border-radius: 8px;
   padding: 12px 24px;
   font-weight: 700;

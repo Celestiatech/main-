@@ -20,7 +20,7 @@
   padding: 8px 14px;
   border-radius: 999px;
   background: #dbeafe;
-  color: #cc5500;
+  color: #664000;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -193,13 +193,13 @@
 }
 
 .primaryButton {
-  background: #e67e00;
+  background: #cc5500;
   color: #ffffff;
 }
 
 .secondaryButton {
   background: #ffffff;
-  color: #cc5500;
+  color: #664000;
   border: 1px solid #bfdbfe;
 }
 
@@ -232,7 +232,7 @@
 }
 
 .relatedCategory {
-  color: #e67e00;
+  color: #cc5500;
   font-size: 12px;
   font-weight: 800;
   text-transform: uppercase;

@@ -24,7 +24,7 @@
   border-radius: 999px;
   background: #ffffff;
   border: 1px solid #dbeafe;
-  color: #e67e00;
+  color: #cc5500;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -36,7 +36,7 @@
   width: 8px;
   height: 8px;
   border-radius: 999px;
-  background: #ff8c00;
+  background: #e67e00;
 }
 
 .heroContent h1 {
@@ -148,7 +148,7 @@
   right: 16px;
   padding: 6px 12px;
   border-radius: 999px;
-  background: #e67e00;
+  background: #cc5500;
   color: #ffffff;
   font-size: 11px;
   font-weight: 700;
@@ -317,7 +317,7 @@
 .detailRange {
   font-size: 15px;
   font-weight: 800;
-  color: #e67e00;
+  color: #cc5500;
 }
 
 .ctaButtons {
@@ -375,7 +375,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  background: #e67e00;
+  background: #cc5500;
   color: #ffffff;
   font-size: 13px;
   font-weight: 900;
@@ -434,7 +434,7 @@
 .packagePrice {
   font-size: 24px;
   font-weight: 800;
-  color: #e67e00;
+  color: #cc5500;
   margin-bottom: 4px;
 }
 
@@ -456,7 +456,7 @@
   min-height: 42px;
   padding: 0 16px;
   border-radius: 999px;
-  background: #e67e00;
+  background: #cc5500;
   color: #ffffff;
   text-decoration: none;
   font-weight: 800;
@@ -500,7 +500,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #e67e00;
+  background: #cc5500;
   color: #ffffff;
   font-weight: 800;
   flex-shrink: 0;
@@ -522,7 +522,7 @@
   padding: 5px 10px;
   border-radius: 999px;
   background: #ffffff;
-  color: #e67e00;
+  color: #cc5500;
   font-size: 11px;
   font-weight: 700;
 }

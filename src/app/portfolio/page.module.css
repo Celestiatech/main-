@@ -27,7 +27,7 @@
   padding: 0 14px;
   border-radius: 999px;
   background: rgba(37, 99, 235, 0.1);
-  color: #cc5500;
+  color: #664000;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.05em;
@@ -238,7 +238,7 @@
   min-height: 42px;
   padding: 0 18px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #e67e00 0%, #ff8c00 100%);
+  background: linear-gradient(135deg, #cc5500 0%, #e67e00 100%);
   color: #ffffff;
   font-size: 0.92rem;
   font-weight: 700;
@@ -279,7 +279,7 @@
   padding: 0 14px;
   border-radius: 999px;
   background: rgba(37, 99, 235, 0.1);
-  color: #cc5500;
+  color: #664000;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -317,7 +317,7 @@
   display: block;
   margin-bottom: 6px;
   font-size: 1.05rem;
-  color: #e67e00;
+  color: #cc5500;
 }
 
 .featureStat span {
@@ -363,7 +363,7 @@
   padding: 0 13px;
   border-radius: 999px;
   background: rgba(37, 99, 235, 0.1);
-  color: #cc5500;
+  color: #664000;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -402,7 +402,7 @@
   padding: 0 13px;
   border-radius: 999px;
   background: rgba(37, 99, 235, 0.1);
-  color: #cc5500;
+  color: #664000;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -469,7 +469,7 @@
   padding: 0 10px;
   border-radius: 999px;
   background: rgba(37, 99, 235, 0.08);
-  color: #cc5500;
+  color: #664000;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -493,7 +493,7 @@
   width: 12px;
   height: 12px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #ffb347 0%, #e67e00 100%);
+  background: linear-gradient(135deg, #ffb347 0%, #cc5500 100%);
   flex-shrink: 0;
   box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.08);
 }
@@ -528,7 +528,7 @@
   padding: 0 10px;
   border-radius: 999px;
   background: rgba(37, 99, 235, 0.08);
-  color: #cc5500;
+  color: #664000;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -578,7 +578,7 @@
   padding: 0 10px;
   border-radius: 999px;
   background: rgba(37, 99, 235, 0.08);
-  color: #cc5500;
+  color: #664000;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -630,7 +630,7 @@
 }
 
 .recentSection .secondaryAction {
-  background: linear-gradient(135deg, #e67e00 0%, #cc5500 100%);
+  background: linear-gradient(135deg, #cc5500 0%, #664000 100%);
   color: #ffffff;
   border: 1px solid transparent;
   box-shadow: 0 14px 28px rgba(37, 99, 235, 0.22);
@@ -743,7 +743,7 @@
   padding: 0 14px;
   border-radius: 999px;
   background: rgba(37, 99, 235, 0.1);
-  color: #cc5500;
+  color: #664000;
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -752,7 +752,7 @@
 
 .popupProgress {
   margin: 12px 0 6px;
-  color: #e67e00;
+  color: #cc5500;
   font-size: 0.78rem;
   font-weight: 700;
 }
@@ -847,7 +847,7 @@
 
 .popupField input:focus {
   outline: 2px solid rgba(37, 99, 235, 0.2);
-  border-color: #e67e00;
+  border-color: #cc5500;
 }
 
 .popupError {
@@ -880,11 +880,11 @@
 
 .popupGhostButton {
   background: rgba(37, 99, 235, 0.08);
-  color: #cc5500;
+  color: #664000;
 }
 
 .popupPrimaryButton {
-  background: linear-gradient(135deg, #e67e00 0%, #cc5500 100%);
+  background: linear-gradient(135deg, #cc5500 0%, #664000 100%);
   color: #ffffff;
   box-shadow: 0 16px 28px rgba(37, 99, 235, 0.22);
 }
@@ -913,7 +913,7 @@
   padding: 0 12px;
   border-radius: 999px;
   background: rgba(37, 99, 235, 0.08);
-  color: #cc5500;
+  color: #664000;
   font-size: 0.74rem;
   font-weight: 700;
 }
@@ -945,7 +945,7 @@
   padding: 0 14px;
   border-radius: 999px;
   background: rgba(37, 99, 235, 0.1);
-  color: #cc5500;
+  color: #664000;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -982,7 +982,7 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(37, 99, 235, 0.12);
-  color: #cc5500;
+  color: #664000;
   font-size: 0.8rem;
   font-weight: 700;
 }
@@ -1007,14 +1007,14 @@
 }
 
 .primaryAction {
-  background: linear-gradient(135deg, #e67e00 0%, #cc5500 100%);
+  background: linear-gradient(135deg, #cc5500 0%, #664000 100%);
   color: #ffffff;
   box-shadow: 0 14px 28px rgba(37, 99, 235, 0.18);
 }
 
 .secondaryAction {
   background: rgba(255, 255, 255, 0.7);
-  color: #cc5500;
+  color: #664000;
   border: 1px solid rgba(37, 99, 235, 0.16);
 }
 

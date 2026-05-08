@@ -94,7 +94,7 @@ function ParallaxElements() {
     <group ref={groupRef}>
       <mesh position={[-viewport.width / 3, 0, -5]}>
         <sphereGeometry args={[2, 32, 32]} />
-        <meshBasicMaterial color="#664000" transparent opacity={0.1} />
+        <meshBasicMaterial color="#5a3a00" transparent opacity={0.1} />
       </mesh>
       <mesh position={[viewport.width / 3, -10, -8]}>
         <sphereGeometry args={[3, 32, 32]} />
@@ -138,4 +138,3 @@ export default function ScrollCameraJourney({
 export function useScrollCamera() {
   return useScroll();
 }
-

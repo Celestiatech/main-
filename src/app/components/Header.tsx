@@ -551,8 +551,8 @@ export function Header() {
           <div className={styles.headerMain}>
             <Link href="/" className={styles.logo} aria-label={`${siteConfig.name} Home`}>
               <span className={styles.logoIcon} aria-hidden="true">
-                <Image
-                  src="/logos/celethisia.png"
+                  <Image
+                  src="/logos/w3tech.png"
                   alt=""
                   width={112}
                   height={112}
@@ -1145,14 +1145,14 @@ export function Header() {
             <div className={styles.mobileMenuHeader}>
               <Link href="/" className={styles.mobileLogo} onClick={closeMobileMenu}>
                 <span className={styles.logoIcon} aria-hidden="true">
-                  <Image
-                    src="/logos/celethisia.png"
-                    alt=""
-                    width={112}
-                    height={112}
-                    className={styles.logoImage}
-                    sizes="56px"
-                  />
+	                  <Image
+	                    src="/logos/w3tech.png"
+	                    alt=""
+	                    width={112}
+	                    height={112}
+	                    className={styles.logoImage}
+	                    sizes="56px"
+	                  />
                 </span>
                 <span>{siteConfig.shortName}</span>
               </Link>

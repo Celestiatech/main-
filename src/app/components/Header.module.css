@@ -1,22 +1,24 @@
 /* ===== HEADER STYLES ===== */
 .header {
-  --header-blue-50: #fff5e6;
-  --header-blue-100: #ffe6cc;
-  --header-blue-200: #ffcc99;
-  --header-blue-300: #ffb366;
+  --header-blue-50: #fff7ed;
+  --header-blue-100: #ffedd5;
+  --header-blue-200: #fed7aa;
+  --header-blue-300: #fdba74;
   --header-blue-500: #ff8c00;
-  --header-blue-600: #cc5500;
-  --header-blue-700: #b25d00;
-  --header-blue-900: #664000;
+  --header-blue-600: #e67e00;
+  --header-blue-700: #cc5500;
+  --header-blue-900: #5a3a00;
   --header-translate-x: 0px;
   --header-translate-y: 0px;
+  font-family: var(--font-ui);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: var(--z-fixed);
-  background: white;
-  backdrop-filter: blur(30px);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   transition:
     width var(--transition-base),
@@ -29,7 +31,7 @@
     background var(--transition-base),
     border-color var(--transition-base);
   box-shadow: none;
-  transform: translate(var(--header-translate-x), var(--header-translate-y));
+  transform: translate3d(var(--header-translate-x), var(--header-translate-y), 0);
   will-change: transform;
 }
 
@@ -96,7 +98,7 @@
 
 .headerTop {
   background: #ffffff;
-  padding: 8px 0;
+  padding: 0px 0;
   font-size: var(--font-size-sm);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -187,7 +189,10 @@
   align-items: center;
   gap: 8px;
   transition: all var(--transition-fast);
-  font-size: 11px;
+  font-size: var(--font-size-xs);
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
   text-decoration: none;
   padding: 7px 10px;
   border-radius: 999px;
@@ -219,8 +224,11 @@
 
 .headerTopMessage {
   color: #1f2937;
-  font-size: 11px;
+  font-size: var(--font-size-xs);
   font-weight: 700;
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -235,8 +243,9 @@
 
 .headerTickerTrack span {
   position: relative;
-  font-size: 10px;
+  font-size: var(--font-size-xs);
   font-weight: 700;
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #374151;
@@ -268,12 +277,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0;
+  /* padding: 10px 0; */
   gap: 10px;
 }
 
 .logo {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: calc(var(--font-size-lg) + 3px);
   font-weight: var(--font-weight-extrabold);
   color: var(--text-primary);
@@ -406,7 +415,7 @@
 }
 
 .navLink span {
-  font-size: 9px;
+  font-size: var(--font-size-xs);
   transition: transform var(--transition-fast);
 }
 
@@ -637,7 +646,7 @@
 }
 
 .categoryTitle {
-  font-size: 15px;
+  font-size: var(--font-size-sm);
   font-weight: 800;
   color: #1f2937;
   margin-bottom: 8px;
@@ -646,7 +655,7 @@
 }
 
 .categoryCount {
-  font-size: 12px;
+  font-size: var(--font-size-xs);
   color: #475569;
   margin-top: auto;
   padding-top: 10px;
@@ -654,7 +663,7 @@
 }
 
 .categoryArrow {
-  font-size: 20px;
+  font-size: var(--font-size-lg);
   color: var(--color-primary);
   opacity: 0;
   transition: all 0.25s ease;
@@ -680,7 +689,7 @@
   border: 1px solid rgba(59, 130, 246, 0.1);
   border-radius: 10px;
   color: var(--color-primary);
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -758,7 +767,7 @@
 }
 
 .descriptionText {
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   line-height: 1.8;
   color: #334155;
   margin: 0;
@@ -780,7 +789,7 @@
 }
 
 .dropdownTitle {
-  font-size: 11px;
+  font-size: var(--font-size-xs);
   font-weight: 700;
   color: var(--color-primary);
   text-transform: uppercase;
@@ -808,7 +817,7 @@
 
 .dropdownSubLink {
   padding: 14px 18px;
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   font-weight: 600;
   color: #1f2937;
   border-radius: 14px;
@@ -896,10 +905,11 @@
   position: relative;
   display: inline-flex;
   isolation: isolate;
+  margin-block: 6px;
 }
 
 .popularToolsButton {
-  background: linear-gradient(135deg, #ffb347 0%, #cc5500 55%, #664000 100%) !important;
+  background: linear-gradient(135deg, #fdba74 0%, #e67e00 55%, #5a3a00 100%) !important;
   color: #ffffff !important;
   border: 1px solid rgba(255, 140, 0, 0.35) !important;
   border-radius: 999px !important;
@@ -910,13 +920,13 @@
 }
 
 .popularToolsButton:hover {
-  background: linear-gradient(135deg, #ffb347 0%, #ff8c00 50%, #664000 100%) !important;
+  background: linear-gradient(135deg, #fdba74 0%, #ff8c00 50%, #5a3a00 100%) !important;
   color: #ffffff !important;
   border-color: rgba(255, 140, 0, 0.45) !important;
   box-shadow:
-    0 18px 42px rgba(255, 140, 0, 0.36),
+    0 18px 42px rgba(255, 140, 0, 0.26),
     inset 0 1px 0 rgba(255, 255, 255, 0.3),
-    0 0 36px rgba(255, 140, 0, 0.3) !important;
+    0 0 36px rgba(255, 140, 0, 0.22) !important;
   transform: translateY(-4px) scale(1.04) !important;
 }
 
@@ -944,7 +954,7 @@
   height: 25%;
   transform: translateY(-50%) scale(1);
   border-radius: 999px;
-  background: #664000;
+  background: #5a3a00;
   opacity: 0;
   transition: background 0.2s ease;
 }
@@ -954,7 +964,7 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #664000;
+  background: #5a3a00;
   opacity: 0;
 }
 
@@ -1197,7 +1207,7 @@
   text-decoration: none;
   color: var(--text-primary);
   font-weight: var(--font-weight-extrabold);
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: calc(var(--font-size-lg) + 3px);
   transition: all var(--transition-fast);
 }
@@ -1327,7 +1337,7 @@
   border: 1px solid rgba(59, 130, 246, 0.15);
   border-radius: 8px;
   color: #1f2937;
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   font-weight: 600;
   text-align: left;
   cursor: pointer;
@@ -1350,7 +1360,7 @@
   border: 1px solid rgba(59, 130, 246, 0.15);
   border-radius: 8px;
   color: #374151;
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   text-decoration: none;
   transition: all 0.2s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
@@ -1429,7 +1439,7 @@
   }
 
   .logo {
-    font-size: 18px;
+    font-size: var(--font-size-base);
     gap: 8px;
   }
 
@@ -1490,7 +1500,7 @@
   }
 
   .logo {
-    font-size: 16px;
+    font-size: var(--font-size-sm);
   }
 
   .logoIcon {

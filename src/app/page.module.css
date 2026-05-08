@@ -166,7 +166,7 @@
   }
 
   .logo {
-    font-family: var(--font-display);
+    font-family: var(--font-heading);
     font-size: 20px;
     font-weight: 800;
     color: var(--text-primary);
@@ -553,7 +553,7 @@
     text-decoration: none;
     color: var(--text-primary);
     font-weight: 800;
-    font-family: var(--font-display);
+    font-family: var(--font-heading);
     font-size: 18px;
     transition: all var(--transition-fast);
   }
@@ -914,15 +914,15 @@
   }
 
   .industryBtn:hover {
-    border-color: #e67e00;
+    border-color: #cc5500;
     color: white;
-    background: #e67e00;
+    background: #cc5500;
   }
 
   .industryBtn.active {
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(124, 58, 237, 0.1));
-    border-color: #e67e00;
-    color: #e67e00;
+    border-color: #cc5500;
+    color: #cc5500;
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
   }
 
@@ -963,7 +963,7 @@
   }
 
   .statNumber {
-    font-family: var(--font-display);
+    font-family: var(--font-heading);
     font-size: 42px;
     font-weight: 800;
     background: var(--gradient-primary);
@@ -1138,7 +1138,7 @@
     padding: 6px 10px;
     border-radius: 999px;
     background: #eef2ff;
-    color: #664000;
+    color: #5a3a00;
     border: 1px solid rgba(30, 58, 138, 0.18);
     flex-shrink: 0;
   }
@@ -1398,7 +1398,7 @@
     width: 8px;
     height: 8px;
     border-radius: 999px;
-    background: #ff8c00;
+    background: #e67e00;
   }
 
   .sectionHeader {
@@ -1884,7 +1884,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto 16px;
-    color: #ff8c00;
+    color: #e67e00;
     font-size: 28px;
     transition: all 0.3s ease;
     position: relative;
@@ -1962,7 +1962,7 @@
   .portfolioTabActive,
   .portfolioTab:hover {
     background: #ffffff;
-    color: #cc5500;
+    color: #664000;
     border-color: #bfdbfe;
     box-shadow: none;
     transform: none;
@@ -2070,7 +2070,7 @@
   padding: 10px 14px;
   border-radius: 10px;
   background: rgba(37, 99, 235, 0.08);
-  color: #664000;
+  color: #5a3a00;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.2px;
@@ -2353,10 +2353,10 @@
   }
 
   .upworkStatNumber {
-    font-family: var(--font-display);
+    font-family: var(--font-heading);
     font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 800;
-    color: #ff8c00;
+    color: #e67e00;
     margin: 0 0 8px 0;
     letter-spacing: -1px;
     display: block;
@@ -2469,7 +2469,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ff8c00;
+    color: #e67e00;
     font-size: 24px;
     box-shadow: 0 8px 20px rgba(59, 130, 246, 0.1);
     transition: all 0.3s ease;
@@ -2513,7 +2513,7 @@
 
   .techTag:hover {
     border-color: rgba(59, 130, 246, 0.6);
-    color: #ff8c00;
+    color: #e67e00;
     background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.1) 100%);
     box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
     transform: translateY(-2px);
@@ -2581,14 +2581,14 @@
 
   .cta :global(.btn) {
     animation: slideUp 0.8s ease-out 0.2s both;
-    background: #e67e00;
+    background: #cc5500;
     color: #ffffff !important;
-    border: 1px solid #cc5500;
+    border: 1px solid #664000;
     box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18);
   }
 
   .cta :global(.btn:hover) {
-    background: #cc5500;
+    background: #664000;
     color: #ffffff !important;
     border-color: #1e40af;
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.22);
@@ -2693,7 +2693,7 @@
     justify-content: center;
     margin: 0 auto 24px;
     font-size: 40px;
-    color: #ff8c00;
+    color: #e67e00;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -2925,7 +2925,7 @@
     border-radius: 999px;
     background: #ffffff;
     border: 1px solid #fed7aa;
-    color: #c2410c;
+    color: #664000;
     font-size: 13px;
     font-weight: 800;
     letter-spacing: 0;
@@ -2951,7 +2951,7 @@
   .testimonialService {
     font-size: 13px;
     font-weight: 700;
-    color: #ff8c00;
+    color: #e67e00;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -3081,7 +3081,7 @@
 
   .highlightItem {
     font-weight: 700;
-    color: #664000;
+    color: #5a3a00;
   }
 
   .contactLocation {
@@ -3104,7 +3104,7 @@
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 8px;
-    color: #664000;
+    color: #5a3a00;
   }
 
   .contactLocation p {
@@ -3196,7 +3196,7 @@
   .footerAbout .logo {
     color: var(--text-primary);
     margin-bottom: 20px;
-    font-family: var(--font-display);
+    font-family: var(--font-heading);
     font-weight: 800;
     letter-spacing: -1px;
   }
@@ -4651,7 +4651,7 @@
   /* ===== CONTACT SECTION (inner pages) ===== */
   .contactSection {
     padding: 80px 0;
-    background: var(--bg-primary);
+    background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 70%);
   }
 
   .contactSection .contactDetails {
@@ -4664,7 +4664,7 @@
     gap: 16px;
     margin-bottom: 20px;
     padding: 16px;
-    background: white;
+    background: rgba(255, 255, 255, 0.92);
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-light);
   }
@@ -4672,7 +4672,7 @@
   .contactSection .contactDetailIcon {
     width: 48px;
     height: 48px;
-    background: rgba(59, 130, 246, 0.1);
+    background: rgba(22, 163, 74, 0.12);
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
@@ -4707,7 +4707,7 @@
   .contactSection .socialIcon {
     width: 40px;
     height: 40px;
-    background: white;
+    background: rgba(255, 255, 255, 0.92);
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
@@ -5095,7 +5095,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #22c55e;
+    color: #ff8c00;
     font-size: 12px;
   }
 
@@ -5454,7 +5454,7 @@
   }
 
   .breadcrumbLink:hover {
-    color: #e67e00 !important;
+    color: #cc5500 !important;
   }
 
   .breadcrumbSeparator {
@@ -5780,7 +5780,7 @@
 
   .blogNewsletterButton {
     padding: 14px 32px;
-    background: #e67e00;
+    background: #cc5500;
     color: #ffffff;
     border: none;
     border-radius: 25px;
@@ -5791,7 +5791,7 @@
   }
 
   .blogNewsletterButton:hover {
-    background: #cc5500;
+    background: #664000;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(37, 99, 235, 0.24);
   }
@@ -6059,7 +6059,7 @@
     border-radius: 999px;
     background: #f8fbff;
     border: 1px solid #dbeafe;
-    color: #e67e00;
+    color: #cc5500;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -6099,7 +6099,7 @@
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #e67e00;
+    color: #cc5500;
   }
 
   .portfolioSummaryText {
@@ -6123,7 +6123,7 @@
     padding: 16px 18px;
     border-radius: 18px;
     background: linear-gradient(180deg, #effcf6 0%, #ecfdf5 100%);
-    border: 1px solid #bbf7d0;
+    border: 1px solid #fed7aa;
     color: #047857;
     font-weight: 600;
     font-size: 14px;
@@ -6140,7 +6140,7 @@
     padding: 7px 12px;
     border-radius: 999px;
     background: #eef4ff;
-    color: #cc5500;
+    color: #664000;
     font-size: 12px;
     font-weight: 600;
     border: 1px solid #dbeafe;
@@ -6336,8 +6336,8 @@
 
   /* Contact Form Premium */
   .contactForm {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.92) 100%);
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    background: linear-gradient(135deg, rgba(240, 253, 244, 0.98) 0%, rgba(255, 255, 255, 0.94) 100%);
+    border: 1px solid rgba(22, 163, 74, 0.18);
     border-radius: 24px;
     padding: 40px;
     backdrop-filter: blur(20px);
@@ -6347,7 +6347,7 @@
   .formGroup input,
   .formGroup textarea {
     background: rgba(255, 255, 255, 0.5) !important;
-    border: 1px solid rgba(59, 130, 246, 0.2) !important;
+    border: 1px solid rgba(22, 163, 74, 0.18) !important;
     border-radius: 12px !important;
     transition: all 0.3s ease !important;
     padding: 14px 16px !important;
@@ -6356,8 +6356,8 @@
   .formGroup input:focus,
   .formGroup textarea:focus {
     background: rgba(255, 255, 255, 0.9) !important;
-    border-color: rgba(59, 130, 246, 0.6) !important;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+    border-color: rgba(22, 163, 74, 0.55) !important;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12) !important;
   }
 
   /* Section Backgrounds Premium */
@@ -6505,7 +6505,7 @@
   justify-content: center;
   border-radius: 999px;
   background: #ffffff;
-  color: #e67e00;
+  color: #cc5500;
   flex-shrink: 0;
 }
 
@@ -6587,7 +6587,7 @@
 
 .sparkle {
   position: absolute;
-  color: #e67e00;
+  color: #cc5500;
   pointer-events: none;
   user-select: none;
   line-height: 1;
@@ -6626,7 +6626,7 @@
   white-space: nowrap;
 }
 .heroBadgeBottom {
-  background: #e67e00;
+  background: #cc5500;
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
   font-size: 10px; font-weight: 700;
@@ -6681,8 +6681,8 @@
 .heroSparkleSmall {
   display: inline-flex;
   align-items: center;
-  color: #e67e00 !important;
-  -webkit-text-fill-color: #e67e00 !important;
+  color: #cc5500 !important;
+  -webkit-text-fill-color: #cc5500 !important;
   font-size: 0.45em;
   line-height: 1;
   flex-shrink: 0;
@@ -6706,8 +6706,8 @@
 .heroOrangePill:hover { transform: scale(1.07); }
 
 .heroOrangePillStar {
-  color: #ff8c00 !important;
-  -webkit-text-fill-color: #ff8c00 !important;
+  color: #e67e00 !important;
+  -webkit-text-fill-color: #e67e00 !important;
   font-size: 1.6rem;
   line-height: 1;
   background: none !important;
@@ -6769,7 +6769,7 @@
 .heroMiniChartValue {
   font-size: 16px;
   font-weight: 900;
-  color: #e67e00;
+  color: #cc5500;
   line-height: 1;
   animation: heroMiniValuePulse 3.2s ease-in-out infinite;
 }
@@ -6789,7 +6789,7 @@
 
 .heroMiniChartLine {
   fill: none;
-  stroke: #ff8c00;
+  stroke: #e67e00;
   stroke-width: 3;
   stroke-linecap: round;
   stroke-dasharray: 220;
@@ -6798,7 +6798,7 @@
 }
 
 .heroMiniChartDot {
-  fill: #e67e00;
+  fill: #cc5500;
   animation: heroMiniDotPulse 2.8s ease-in-out infinite;
 }
 
@@ -6855,7 +6855,7 @@
   border-radius: 999px;
   font-size: 14px;
   font-weight: 700;
-  color: #664000;
+  color: #5a3a00;
   /* background: rgba(239, 248, 255, 0.92); */
   text-decoration: none;
   border: 1px solid rgba(255, 140, 0, 0.34);
@@ -6882,13 +6882,13 @@
 .heroContactBtn:hover::before {
   transform: translateX(130%);
 }
-.heroJoinBtn > span:first-child { padding: 10px 18px; color: #ff8c00; }
+.heroJoinBtn > span:first-child { padding: 10px 18px; color: #e67e00; }
 .heroJoinBtnBox {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 42px; height: 42px;
-  background: linear-gradient(180deg, #ffb347 0%, #ff8c00 100%) !important;
+  background: linear-gradient(180deg, #ffb347 0%, #e67e00 100%) !important;
   background-image: none !important;
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
@@ -6898,7 +6898,7 @@
   transition: all 0.3s ease;
   animation: heroButtonPulse 2.8s ease-in-out infinite;
 }
-.heroJoinBtn:hover .heroJoinBtnBox { background: linear-gradient(180deg, #ff8c00 0%, #664000 100%) !important; }
+.heroJoinBtn:hover .heroJoinBtnBox { background: linear-gradient(180deg, #e67e00 0%, #5a3a00 100%) !important; }
 
 .heroContactBtn {
   display: inline-flex;
@@ -6940,7 +6940,7 @@
   width: 42px;
   height: 42px;
   background: linear-gradient(180deg, #f0f9ff 0%, #dbeafe 100%);
-  color: #cc5500;
+  color: #664000;
   font-size: 16px;
   font-weight: 900;
   border-left: 1px solid rgba(59, 130, 246, 0.16);
@@ -7004,7 +7004,7 @@
   width: 42px; height: 42px;
   border-radius: 50%;
   border: none;
-  background: #ff8c00;
+  background: #e67e00;
   color: #fff;
   display: flex;
   align-items: center;
@@ -7015,7 +7015,7 @@
   line-height: 1;
   box-shadow: 0 4px 16px rgba(59,130,246,0.38);
 }
-.heroCarouselArrow:hover { background: #e67e00; transform: translateY(-50%) scale(1.1); }
+.heroCarouselArrow:hover { background: #cc5500; transform: translateY(-50%) scale(1.1); }
 .heroCarouselArrow:first-child { left: 14px; }
 .heroCarouselArrow:last-child { right: 14px; }
 
@@ -7128,8 +7128,8 @@
   -webkit-text-fill-color: initial !important;
 }
 .heroRedesign h1 .heroOrangePill .heroOrangePillStar {
-  color: #ff8c00 !important;
-  -webkit-text-fill-color: #ff8c00 !important;
+  color: #e67e00 !important;
+  -webkit-text-fill-color: #e67e00 !important;
   background: none !important;
   background-image: none !important;
 }

@@ -21,7 +21,7 @@
 
 .eyebrow {
   margin: 0 0 12px;
-  color: #cc5500;
+  color: #664000;
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -74,7 +74,7 @@
   min-height: 46px;
   padding: 0 18px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #e67e00 0%, #cc5500 100%);
+  background: linear-gradient(135deg, #cc5500 0%, #664000 100%);
   color: #ffffff;
   text-decoration: none;
   font-weight: 700;

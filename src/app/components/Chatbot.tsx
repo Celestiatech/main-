@@ -362,7 +362,7 @@ export default function Chatbot() {
         <div className={styles.supportHeader}>
           <div className={styles.supportHeaderTop}>
             <Image
-              src="/logos/celethisia.png"
+              src="/logos/w3tech.png"
               alt="W3Tech"
               width={44}
               height={44}

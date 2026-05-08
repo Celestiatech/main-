@@ -81,8 +81,8 @@ function AnimatedCube() {
     <mesh ref={meshRef} position={[5, 5, -3]}>
       <boxGeometry args={[1.5, 1.5, 1.5]} />
       <meshStandardMaterial
-        color="#f97316"
-        emissive="#fb923c"
+        color="#ff8c00"
+        emissive="#ffb347"
         emissiveIntensity={0.3}
         metalness={0.8}
         roughness={0.2}
@@ -169,7 +169,7 @@ function RotatingRings() {
       <group ref={group1Ref} position={[0, 0, -8]}>
         <mesh>
           <torusGeometry args={[4, 0.4, 32, 64]} />
-          <meshStandardMaterial color="#ff8c00" emissive="#ffb347" emissiveIntensity={0.4} metalness={0.95} roughness={0.05} />
+          <meshStandardMaterial color="#ff8c00" emissive="#ffb347" emissiveIntensity={0.35} metalness={0.95} roughness={0.05} />
         </mesh>
         <mesh rotation={[0, 0, Math.PI / 4]}>
           <torusGeometry args={[4.5, 0.35, 32, 64]} />
@@ -183,13 +183,13 @@ function RotatingRings() {
         </mesh>
         <mesh rotation={[Math.PI / 3, 0, 0]}>
           <torusGeometry args={[4.2, 0.3, 32, 64]} />
-          <meshStandardMaterial color="#f97316" emissive="#fb923c" emissiveIntensity={0.4} metalness={0.95} roughness={0.05} />
+          <meshStandardMaterial color="#ff8c00" emissive="#ffb347" emissiveIntensity={0.4} metalness={0.95} roughness={0.05} />
         </mesh>
       </group>
       <group ref={group3Ref} position={[-5, -3, -10]}>
         <mesh>
           <torusGeometry args={[3.5, 0.3, 32, 64]} />
-          <meshStandardMaterial color="#10b981" emissive="#34d399" emissiveIntensity={0.4} metalness={0.95} roughness={0.05} />
+          <meshStandardMaterial color="#10b981" emissive="#f59e0b" emissiveIntensity={0.4} metalness={0.95} roughness={0.05} />
         </mesh>
         <mesh rotation={[0, Math.PI / 2, Math.PI / 4]}>
           <torusGeometry args={[3.8, 0.32, 32, 64]} />
@@ -294,10 +294,10 @@ export default function Global3DBackground() {
 
         {/* Intense Lighting Setup */}
         <ambientLight intensity={0.7} />
-        <pointLight position={[20, 20, 20]} intensity={1.8} color="#e67e00" decay={1.5} />
+        <pointLight position={[20, 20, 20]} intensity={1.8} color="#ff8c00" decay={1.5} />
         <pointLight position={[-20, -20, -20]} intensity={1.5} color="#7c3aed" decay={1.5} />
         <pointLight position={[0, 0, 20]} intensity={1.6} color="#0891b2" decay={1.5} />
-        <pointLight position={[20, -20, 0]} intensity={1.2} color="#d97706" decay={1.5} />
+        <pointLight position={[20, -20, 0]} intensity={1.2} color="#e67e00" decay={1.5} />
         <pointLight position={[-20, 20, 0]} intensity={1.2} color="#059669" decay={1.5} />
         <pointLight position={[0, -20, 10]} intensity={1.2} color="#db2777" decay={1.5} />
         <spotLight position={[0, 25, 10]} angle={0.6} penumbra={1} intensity={1.2} color="#ffffff" />
@@ -313,9 +313,9 @@ export default function Global3DBackground() {
 
         {/* 30+ Floating Shapes for Maximum Impact */}
         {/* Blue Palette */}
-        <FloatingShape position={[-15, 5, -10]} color="#e67e00" shape="sphere" size={1.3} />
+        <FloatingShape position={[-15, 5, -10]} color="#ff8c00" shape="sphere" size={1.3} />
         <FloatingShape position={[15, -5, -15]} color="#ffb347" shape="cube" size={1.5} />
-        <FloatingShape position={[0, 10, -18]} color="#664000" shape="torus" size={1.8} />
+        <FloatingShape position={[0, 10, -18]} color="#5a3a00" shape="torus" size={1.8} />
         
         {/* Purple Palette */}
         <FloatingShape position={[-10, -8, -12]} color="#7c3aed" shape="octahedron" size={1.4} />
@@ -328,7 +328,7 @@ export default function Global3DBackground() {
         <FloatingShape position={[14, -8, -8]} color="#06b6d4" shape="cube" size={1.4} />
         
         {/* Orange/Warm Palette */}
-        <FloatingShape position={[-8, 10, -15]} color="#d97706" shape="torus" size={1.2} />
+        <FloatingShape position={[-8, 10, -15]} color="#e67e00" shape="torus" size={1.2} />
         <FloatingShape position={[10, -3, -17]} color="#f59e0b" shape="octahedron" size={1.1} />
         <FloatingShape position={[18, 12, -12]} color="#fbbf24" shape="icosahedron" size={0.9} />
         
@@ -349,17 +349,17 @@ export default function Global3DBackground() {
         
         {/* Additional Mix */}
         <FloatingShape position={[0, -12, -8]} color="#14b8a6" shape="tetrahedron" size={1.4} />
-        <FloatingShape position={[-18, 10, -20]} color="#d97706" shape="sphere" size={1.0} />
+        <FloatingShape position={[-18, 10, -20]} color="#e67e00" shape="sphere" size={1.0} />
         <FloatingShape position={[18, -12, -15]} color="#7c3aed" shape="cube" size={1.2} />
         <FloatingShape position={[-4, 16, -11]} color="#059669" shape="torus" size={1.3} />
         <FloatingShape position={[14, 14, -18]} color="#db2777" shape="octahedron" size={1.1} />
         <FloatingShape position={[-14, -14, -9]} color="#0891b2" shape="icosahedron" size={1.0} />
 
         {/* Massive Sparkles */}
-        <Sparkles count={300} scale={40} size={4} speed={0.7} opacity={0.8} color="#e67e00" />
+        <Sparkles count={300} scale={40} size={4} speed={0.7} opacity={0.8} color="#ff8c00" />
         <Sparkles count={250} scale={45} size={3.5} speed={0.5} opacity={0.7} color="#7c3aed" />
         <Sparkles count={200} scale={35} size={3} speed={0.3} opacity={0.6} color="#0891b2" />
-        <Sparkles count={150} scale={50} size={2.5} speed={0.4} opacity={0.5} color="#d97706" />
+        <Sparkles count={150} scale={50} size={2.5} speed={0.4} opacity={0.5} color="#e67e00" />
         <FloatingShape position={[-4, 10, -9]} color="#ec4899" shape="dodecahedron" size={1.0} />
         <FloatingShape position={[14, -8, -7]} color="#84cc16" shape="sphere" size={0.9} />
         <FloatingShape position={[-14, 3, -15]} color="#f59e0b" shape="cube" size={1.5} />

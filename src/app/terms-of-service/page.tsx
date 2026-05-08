@@ -1,7 +1,6 @@
 ﻿"use client";
 
 import Link from "next/link";
-import "../globals.css";
 import styles from "../page.module.css";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
@@ -25,7 +24,7 @@ export default function TermsOfService() {
         <div className="container">
           <div className={styles.breadcrumbContent}>
             <Link href="/" className={styles.breadcrumbLink}>Home</Link>
-            <span className={styles.breadcrumbSeparator}>â€º</span>
+            <span className={styles.breadcrumbSeparator}>›</span>
             <span className={styles.breadcrumbCurrent}>Terms of Service</span>
           </div>
         </div>
@@ -214,13 +213,13 @@ export default function TermsOfService() {
                   <strong>Celestiatech</strong>
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "8px" }}>
-                  ðŸ“ Dubai, UAE: Business Bay, Dubai
+                  📍 Dubai, UAE: Business Bay, Dubai
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "8px" }}>
-                  ðŸ“ India: Mohali, Punjab
+                  📍 India: Mohali, Punjab
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)" }}>
-                  ðŸ“§ <Link href="mailto:legal@w3tech.in" style={{ color: "var(--primary)" }}>legal@w3tech.in</Link>
+                  ✉️ <Link href="mailto:legal@w3tech.in" style={{ color: "var(--primary)" }}>legal@w3tech.in</Link>
                 </p>
               </div>
             </div>

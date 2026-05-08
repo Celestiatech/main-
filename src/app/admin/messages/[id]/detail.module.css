@@ -23,7 +23,7 @@
 }
 
 .backLink {
-  color: #e67e00;
+  color: #cc5500;
   text-decoration: none;
   font-weight: 600;
 }
@@ -57,7 +57,7 @@
 }
 
 .primaryBtn {
-  background: #e67e00;
+  background: #cc5500;
 }
 
 .deleteBtnTop {
@@ -118,7 +118,7 @@
 }
 
 .linkText {
-  color: #cc5500;
+  color: #664000;
   text-decoration: none;
   font-weight: 600;
 }
@@ -212,7 +212,7 @@
 }
 
 .btnRead {
-  background: #d97706;
+  background: #e67e00;
 }
 
 .btnReplied {
@@ -220,7 +220,7 @@
 }
 
 .btnEmail {
-  background: #e67e00;
+  background: #cc5500;
 }
 
 .btnReply {

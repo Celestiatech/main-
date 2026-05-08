@@ -51,7 +51,7 @@ function LogoMesh({ hovered }: { hovered: boolean }) {
       {[[0.5, 0.5, 0.5], [-0.5, -0.5, -0.5], [0.5, -0.5, 0.5], [-0.5, 0.5, -0.5]].map((pos, i) => (
         <mesh key={i} position={pos as [number, number, number]}>
           <sphereGeometry args={[0.08, 16, 16]} />
-          <meshBasicMaterial color="#f97316" />
+          <meshBasicMaterial color="#ff8c00" />
         </mesh>
       ))}
     </group>
@@ -76,4 +76,3 @@ export default function ThreeDAnimatedLogo({ size = 60 }: { size?: number }) {
     </div>
   );
 }
-

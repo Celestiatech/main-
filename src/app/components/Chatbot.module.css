@@ -62,7 +62,7 @@
 
 .supportCloseButton:hover {
   background: #ffffff;
-  color: #664000;
+  color: #5a3a00;
   transform: translateY(-1px);
 }
 
@@ -163,7 +163,7 @@
 }
 
 .supportGhostButton {
-  border: 1px solid rgba(255, 140, 0, 0.16);
+  border: 1px solid rgba(34, 197, 94, 0.16);
   background: #ffffff;
   color: #cc5500;
 }
@@ -292,7 +292,7 @@
   border: 1px solid rgba(110, 231, 183, 0.4);
   background:
     radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.34), transparent 42%),
-    linear-gradient(135deg, #34d399 0%, #10b981 52%, #059669 100%);
+    linear-gradient(135deg, #f59e0b 0%, #10b981 52%, #059669 100%);
   color: #ffffff;
   box-shadow:
     0 12px 24px rgba(5, 150, 105, 0.2),
@@ -336,7 +336,7 @@
   justify-content: space-between;
   padding: 18px 20px 16px;
   background: #ffffff;
-  color: #664000;
+  color: #5a3a00;
   border-bottom: 1px solid rgba(148, 163, 184, 0.18);
 }
 
@@ -347,7 +347,7 @@
 }
 
 .headerIcon {
-  color: #ff8c00;
+  color: #e67e00;
   flex-shrink: 0;
 }
 
@@ -386,7 +386,7 @@
 
 .headerActionButton:hover:not(:disabled) {
   background: #ffffff;
-  color: #664000;
+  color: #5a3a00;
 }
 
 .headerActionButton:disabled {
@@ -541,7 +541,7 @@
   justify-content: center;
   border-radius: 20px;
   background: #ffffff;
-  color: #ff8c00;
+  color: #e67e00;
 }
 
 .welcomeTitle {
@@ -580,8 +580,8 @@
 
 .suggestionCard:hover {
   transform: translateY(-2px);
-  border-color: rgba(255, 140, 0, 0.28);
-  box-shadow: 0 14px 28px rgba(255, 140, 0, 0.12);
+  border-color: rgba(34, 197, 94, 0.28);
+  box-shadow: 0 14px 28px rgba(34, 197, 94, 0.12);
 }
 
 .suggestionIcon {
@@ -593,7 +593,7 @@
   justify-content: center;
   border-radius: 999px;
   background: #ffffff;
-  color: #ff8c00;
+  color: #e67e00;
   font-size: 14px;
   font-weight: 700;
 }
@@ -632,7 +632,7 @@
   font-size: 14px;
   flex-shrink: 0;
   background: #ffffff;
-  color: #ff8c00;
+  color: #e67e00;
 }
 
 .userMessage {
@@ -666,7 +666,7 @@
 }
 
 .userMessage .messageBubble {
-  background: linear-gradient(135deg, #ff8c00 0%, #664000 100%);
+  background: linear-gradient(135deg, #e67e00 0%, #5a3a00 100%);
   color: #ffffff;
   border-bottom-right-radius: 4px;
 }
@@ -708,15 +708,15 @@
   border-radius: 20px;
   font-size: 13px;
   font-weight: 500;
-  color: #ff8c00;
+  color: #e67e00;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .quickReplyButton:hover {
-  background: #ff8c00;
+  background: #e67e00;
   color: #ffffff;
-  border-color: #ff8c00;
+  border-color: #e67e00;
 }
 
 .inputContainer {
@@ -737,7 +737,7 @@
 }
 
 .inputWrapper:focus-within {
-  border-color: #ff8c00;
+  border-color: #e67e00;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 

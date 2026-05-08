@@ -138,7 +138,7 @@ export default function DashboardClient() {
         <section
           style={{
             marginBottom: '12px',
-            border: '1px dashed #e67e00',
+            border: '1px dashed #cc5500',
             background: '#ffffff',
             borderRadius: '12px',
             padding: '12px',

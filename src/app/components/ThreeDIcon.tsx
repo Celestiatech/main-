@@ -11,7 +11,7 @@ interface ThreeDIconProps {
 
 export default function ThreeDIcon({ 
   color = "#ff8c00", 
-  secondaryColor = "#f97316",
+  secondaryColor = "#ff8c00",
   size = 60 
 }: ThreeDIconProps) {
   const [isHovered, setIsHovered] = useState(false);
@@ -48,4 +48,3 @@ export default function ThreeDIcon({
     </div>
   );
 }
-

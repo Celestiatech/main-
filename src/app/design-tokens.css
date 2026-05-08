@@ -7,17 +7,17 @@
   /* ===== COLOR SYSTEM ===== */
 
   /* Orange Palette */
-  --color-mariner-50: #fff5e6;
-  --color-mariner-100: #ffe6cc;
-  --color-mariner-200: #ffcc99;
-  --color-mariner-300: #ffb366;
-  --color-mariner-400: #ff9f47;
+  --color-mariner-50: #fff7ed;
+  --color-mariner-100: #ffedd5;
+  --color-mariner-200: #fed7aa;
+  --color-mariner-300: #fdba74;
+  --color-mariner-400: #ffb347;
   --color-mariner-500: #ff8c00;
   --color-mariner-600: #e67e00;
-  --color-mariner-700: #cc7000;
-  --color-mariner-800: #b25d00;
-  --color-mariner-900: #994900;
-  --color-mariner-950: #664000;
+  --color-mariner-700: #cc5500;
+  --color-mariner-800: #664000;
+  --color-mariner-900: #5a3a00;
+  --color-mariner-950: #3b1f00;
   
   /* Primary Colors */
   --color-primary: var(--color-mariner-500);
@@ -51,7 +51,7 @@
   /* Semantic Colors */
   --color-success: #10b981;
   --color-success-dark: #059669;
-  --color-success-light: #34d399;
+  --color-success-light: #f59e0b;
   
   --color-error: #ef4444;
   --color-error-dark: #dc2626;
@@ -91,10 +91,12 @@
   /* ===== TYPOGRAPHY ===== */
   
   /* Font Families */
-  --font-display: var(--font-futura), var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-  --font-heading: var(--font-futura), var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-  --font-body: var(--font-futura), var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-  --font-ui: var(--font-futura), var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  /* Font Families */
+  /* Default fallback stacks (overridden on <body> where next/font vars exist) */
+  --font-display: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-heading: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-ui: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
   
   /* Font Sizes */
   --font-size-xs: 0.75rem;    /* 12px */
@@ -113,9 +115,10 @@
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
+  /* Keep weights <= 500 for consistent rendering */
+  --font-weight-semibold: 500;
+  --font-weight-bold: 500;
+  --font-weight-extrabold: 500;
   
   /* Line Heights */
   --line-height-tight: 1.25;
@@ -163,8 +166,8 @@
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-  --shadow-primary: 0 0 20px rgba(255, 140, 0, 0.3);
-  --shadow-primary-lg: 0 0 40px rgba(255, 140, 0, 0.4);
+  --shadow-primary: 0 0 20px rgba(34, 197, 94, 0.22);
+  --shadow-primary-lg: 0 0 40px rgba(34, 197, 94, 0.28);
   
   /* ===== TRANSITIONS ===== */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);

@@ -20,6 +20,16 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['@react-three/fiber', '@react-three/drei'],
   },
+  async redirects() {
+    return [
+      // Old URL kept for backward compatibility
+      {
+        source: "/terms-and-conditions",
+        destination: "/terms-of-service",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

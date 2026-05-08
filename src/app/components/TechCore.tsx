@@ -250,7 +250,7 @@ function CentralCore() {
       {/* Rotating ring */}
       <mesh ref={ringRef}>
         <torusGeometry args={[1.3, 0.02, 16, 100]} />
-        <meshBasicMaterial color="#ffb347" transparent opacity={0.4} />
+        <meshBasicMaterial color="#ffb347" transparent opacity={0.35} />
       </mesh>
       
       {/* Horizontal ring */}
@@ -366,4 +366,3 @@ export default function TechCore({
     </div>
   );
 }
-

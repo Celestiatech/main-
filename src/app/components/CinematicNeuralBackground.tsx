@@ -192,7 +192,7 @@ function FloatingAccents() {
       {/* Subtle geometric shapes in corners */}
       <mesh position={[-6, -3, -2]} rotation={[0, 0, Math.PI / 4]}>
         <icosahedronGeometry args={[0.5, 0]} />
-        <meshBasicMaterial color="#ff8c00" transparent opacity={0.15} wireframe />
+        <meshBasicMaterial color="#ff8c00" transparent opacity={0.14} wireframe />
       </mesh>
       <mesh position={[5, 2, -3]} rotation={[Math.PI / 3, Math.PI / 4, 0]}>
         <octahedronGeometry args={[0.4, 0]} />
@@ -332,4 +332,3 @@ export default function CinematicNeuralBackground({
     </div>
   );
 }
-

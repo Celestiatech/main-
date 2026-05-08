@@ -27,7 +27,7 @@
   font-size: 0.74rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #664000;
+  color: #5a3a00;
   font-weight: 700;
 }
 
@@ -69,7 +69,7 @@
 .refreshBtn {
   border: 1px solid rgba(59, 130, 246, 0.35);
   background: #ffffff;
-  color: #664000;
+  color: #5a3a00;
   border-radius: 10px;
   padding: 0.56rem 0.9rem;
   cursor: pointer;
@@ -126,7 +126,7 @@
   border-radius: 999px;
   font-size: 0.7rem;
   font-weight: 700;
-  color: #cc5500;
+  color: #664000;
 }
 
 .kpiCard h2 {
@@ -155,7 +155,7 @@
   display: block;
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(135deg, #cc5500, #ff8c00);
+  background: linear-gradient(135deg, #664000, #e67e00);
 }
 
 .toneBlue {
@@ -223,7 +223,7 @@
 }
 
 .funnelRow strong {
-  color: #664000;
+  color: #5a3a00;
   font-size: 1.02rem;
 }
 
@@ -243,7 +243,7 @@
 
 .rateCard h4 {
   margin: 0.35rem 0 0;
-  color: #664000;
+  color: #5a3a00;
   font-size: 1.55rem;
 }
 
@@ -297,7 +297,7 @@
 }
 
 .meterLabel strong {
-  color: #664000;
+  color: #5a3a00;
 }
 
 .meter {
@@ -310,7 +310,7 @@
 .meter span {
   display: block;
   height: 100%;
-  background: linear-gradient(135deg, #cc5500, #ff8c00);
+  background: linear-gradient(135deg, #664000, #e67e00);
 }
 
 .footerNote {
@@ -324,7 +324,7 @@
 
 .footerNote h4 {
   margin: 0;
-  color: #664000;
+  color: #5a3a00;
   font-size: 0.95rem;
 }
 

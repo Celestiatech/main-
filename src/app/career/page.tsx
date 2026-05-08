@@ -352,7 +352,7 @@ export default function CareerPage() {
               {submitMessage && (
                 <div
                   className={styles.formNote}
-                  style={{ marginTop: "16px", color: submitMessage.includes("successfully") ? "#16a34a" : "#dc2626" }}
+                  style={{ marginTop: "16px", color: submitMessage.includes("successfully") ? "#e67e00" : "#dc2626" }}
                 >
                   {submitMessage}
                 </div>
