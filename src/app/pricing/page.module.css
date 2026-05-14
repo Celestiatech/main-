@@ -26,7 +26,7 @@
   border: 1px solid #dbeafe;
   color: #cc5500;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -70,7 +70,7 @@
 
 .heroStatNumber {
   font-size: 28px;
-  font-weight: 800;
+  font-weight: 500;
   color: #0f172a;
   margin-bottom: 6px;
 }
@@ -78,7 +78,7 @@
 .heroStatLabel {
   font-size: 13px;
   color: #64748b;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .pricing {
@@ -151,7 +151,7 @@
   background: #cc5500;
   color: #ffffff;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -194,7 +194,7 @@
 
 .priceAmount {
   font-size: 28px;
-  font-weight: 800;
+  font-weight: 500;
   color: #0f172a;
   margin-bottom: 4px;
 }
@@ -202,7 +202,7 @@
 .priceTimeline {
   color: #64748b;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .pricingWhoFor {
@@ -216,7 +216,7 @@
 .pricingCons h5 {
   margin: 0 0 12px;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 500;
   color: #0f172a;
 }
 
@@ -316,7 +316,7 @@
 
 .detailRange {
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 500;
   color: #cc5500;
 }
 
@@ -330,7 +330,7 @@
   margin-top: 18px;
   color: #475569;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .packageSection {
@@ -356,7 +356,7 @@
   border: 1px solid #dbeafe;
   background: #ffffff;
   color: #0f172a;
-  font-weight: 800;
+  font-weight: 500;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
@@ -378,7 +378,7 @@
   background: #cc5500;
   color: #ffffff;
   font-size: 13px;
-  font-weight: 900;
+  font-weight: 500;
 }
 
 .packagePanel {
@@ -418,7 +418,7 @@
 .packageTable th:first-child,
 .packageTable td:first-child {
   text-align: left;
-  font-weight: 700;
+  font-weight: 500;
   color: #0f172a;
   background: #f8fbff;
   position: sticky;
@@ -433,14 +433,14 @@
 
 .packagePrice {
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 500;
   color: #cc5500;
   margin-bottom: 4px;
 }
 
 .packageName {
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 500;
   color: #475569;
 }
 
@@ -459,7 +459,7 @@
   background: #cc5500;
   color: #ffffff;
   text-decoration: none;
-  font-weight: 800;
+  font-weight: 500;
 }
 
 .testimonials {
@@ -502,7 +502,7 @@
   justify-content: center;
   background: #cc5500;
   color: #ffffff;
-  font-weight: 800;
+  font-weight: 500;
   flex-shrink: 0;
 }
 
@@ -524,7 +524,7 @@
   background: #ffffff;
   color: #cc5500;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .faq {
@@ -598,7 +598,7 @@
   margin-top: 20px;
   color: #475569;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 @media (max-width: 1024px) {

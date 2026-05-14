@@ -30,7 +30,7 @@
   font-size: 1.1rem;
   margin: 0;
   color: #000000;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .brand p {
@@ -110,7 +110,7 @@
   margin: 0;
   color: #000000;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .header p {
@@ -129,7 +129,7 @@
   place-items: center;
   background: #ffffff;
   color: #5a3a00;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 @media (max-width: 900px) {

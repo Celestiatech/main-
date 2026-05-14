@@ -31,8 +31,8 @@ export function buildOutreachHtml(options: OutreachEmailOptions): string {
           <!-- Header -->
           <tr>
             <td style="background:linear-gradient(135deg,#cc5500 0%,#ff8c00 100%);padding:32px 40px;text-align:center;">
-              <p style="margin:0;color:#ffedd5;font-size:12px;text-transform:uppercase;letter-spacing:0.15em;font-weight:700;">W3Tech</p>
-              <h1 style="margin:10px 0 0;color:#ffffff;font-size:24px;font-weight:700;line-height:1.3;">${subject}</h1>
+              <p style="margin:0;color:#ffedd5;font-size:12px;text-transform:uppercase;letter-spacing:0.15em;font-weight:500;">W3Tech</p>
+              <h1 style="margin:10px 0 0;color:#ffffff;font-size:24px;font-weight:500;line-height:1.3;">${subject}</h1>
             </td>
           </tr>
           <!-- Body -->

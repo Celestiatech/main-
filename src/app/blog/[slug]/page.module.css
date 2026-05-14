@@ -22,7 +22,7 @@
   background: #dbeafe;
   color: #664000;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-bottom: 18px;
@@ -59,7 +59,7 @@
   border: 1px solid #dbeafe;
   color: #475569;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .heroImage {
@@ -188,7 +188,7 @@
   padding: 12px 18px;
   border-radius: 14px;
   text-decoration: none;
-  font-weight: 800;
+  font-weight: 500;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
@@ -234,7 +234,7 @@
 .relatedCategory {
   color: #cc5500;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -242,7 +242,7 @@
 .relatedMeta {
   color: #64748b;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 @media (max-width: 960px) {

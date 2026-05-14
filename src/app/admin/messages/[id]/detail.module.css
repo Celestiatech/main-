@@ -25,7 +25,7 @@
 .backLink {
   color: #cc5500;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .title {
@@ -48,7 +48,7 @@
   border-radius: 10px;
   padding: 0.55rem 0.85rem;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 500;
   color: #ffffff;
   cursor: pointer;
   display: inline-flex;
@@ -110,7 +110,7 @@
 .valueLarge {
   margin: 0.25rem 0 0;
   color: #0f172a;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .valueLarge {
@@ -120,7 +120,7 @@
 .linkText {
   color: #664000;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .extraGrid {
@@ -151,7 +151,7 @@
 
 .timeline span {
   color: #334155;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .currentStatus {
@@ -164,7 +164,7 @@
   border-radius: 999px;
   padding: 0.35rem 0.65rem;
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 500;
   border: 1px solid;
 }
 

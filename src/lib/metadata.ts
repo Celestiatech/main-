@@ -10,7 +10,7 @@ export const siteConfig = {
   shortName: "W3Tech",
   tagline: "Premium IT & Software Development Company",
   description: "Premium web, mobile, AI, and blockchain development services backed by 12+ years of experience and 2,500+ successful client engagements worldwide.",
-  url: "https://w3tech.in",
+  url: "https://www.w3tech.co.in",
   ogImage: "/brand/og-image.png",
   logo: {
     primary: "/brand/logo.svg",

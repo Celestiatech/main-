@@ -27,7 +27,7 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #664000;
-  font-weight: 600;
+  font-weight: 500;
   margin: 0 0 14px;
 }
 
@@ -40,7 +40,7 @@
   border-radius: 999px;
   background: rgba(255, 140, 0, 0.12);
   color: #cc5500;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .title {
@@ -115,7 +115,7 @@
 .itemTitle {
   margin: 0 0 6px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   color: #0f172a;
 }
 

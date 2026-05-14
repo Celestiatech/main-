@@ -24,7 +24,7 @@
   display: inline-flex;
   margin-bottom: 1rem;
   color: #1859d1;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -86,7 +86,7 @@
   margin: 0;
   text-transform: capitalize;
   letter-spacing: 0.04em;
-  font-weight: 700;
+  font-weight: 500;
   color: #4a6078;
 }
 
@@ -96,7 +96,7 @@
   padding: 0.35rem 0.7rem;
   border-radius: 999px;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .live {
@@ -154,7 +154,7 @@
   display: block;
   margin: 0 0 0.5rem;
   color: #1e293b;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .input,
@@ -187,7 +187,7 @@
   background: #1758f3;
   color: #fff;
   padding: 0.6rem 0.95rem;
-  font-weight: 700;
+  font-weight: 500;
   cursor: pointer;
 }
 
@@ -202,7 +202,7 @@
   background: #ffffff;
   color: #664000;
   padding: 0.6rem 0.95rem;
-  font-weight: 700;
+  font-weight: 500;
   cursor: pointer;
 }
 
@@ -252,7 +252,7 @@
   margin-top: 0.75rem;
   padding: 0.55rem 0.8rem;
   border-radius: 10px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .ok {
@@ -325,7 +325,7 @@
 
 .auditLoadingTop span {
   color: #334155;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .auditLoadingTrack {
@@ -356,7 +356,7 @@
   color: #64748b;
   padding: 0.25rem 0.65rem;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .auditLoadingStepActive {
@@ -400,7 +400,7 @@
   margin: 0 0 0.2rem;
   color: #1758f3;
   font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -436,13 +436,13 @@
 
 .auditPrioritySummary span {
   color: #334155;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .auditPrioritySummary p {
   margin: 0.35rem 0 0;
   color: #664000;
-  font-weight: 800;
+  font-weight: 500;
 }
 
 .auditPriorityGrid {
@@ -485,7 +485,7 @@
   border-radius: 999px;
   padding: 0.3rem 0.7rem;
   font-size: 0.78rem;
-  font-weight: 800;
+  font-weight: 500;
 }
 
 .auditSeverityHigh {
@@ -518,7 +518,7 @@
 .auditPriorityMeta span {
   color: #334155;
   font-size: 0.84rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .auditExecutiveGrid {
@@ -554,7 +554,7 @@
   margin: 0;
   color: #1758f3;
   font-size: 0.78rem;
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -576,7 +576,7 @@
   display: block;
   color: #5b6f86;
   font-size: 0.84rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .auditExecutiveStat strong {
@@ -610,7 +610,7 @@
   margin: 0;
   color: #a9c8ff;
   font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -671,7 +671,7 @@
   min-width: max-content;
   border-radius: 999px;
   padding: 0 1rem;
-  font-weight: 700;
+  font-weight: 500;
   color: #0f172a;
   transition: width 0.35s ease;
 }
@@ -718,7 +718,7 @@
   margin: 0;
   color: #334155;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 500;
   text-align: center;
 }
 
@@ -767,7 +767,7 @@
 
 .auditRingCenter span {
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .auditGraphCard {
@@ -792,7 +792,7 @@
 .auditGraphRow span {
   color: #334155;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .auditGraphTrack {
@@ -837,7 +837,7 @@
 
 .auditPsiScore {
   font-size: 2.4rem;
-  font-weight: 800;
+  font-weight: 500;
   color: #1758f3;
   line-height: 1;
 }
@@ -885,7 +885,7 @@
   display: inline-block;
   color: #5b6f86;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -893,14 +893,14 @@
 .auditScoreValue {
   margin-top: 0.5rem;
   font-size: clamp(2.3rem, 2rem + 1vw, 3.25rem);
-  font-weight: 800;
+  font-weight: 500;
   line-height: 1;
 }
 
 .auditScoreLabel {
   margin: 0.45rem 0 0;
   color: #475569;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .auditScoreStrong {
@@ -929,7 +929,7 @@
 .auditTarget {
   margin: 0;
   color: #d4e5ff;
-  font-weight: 600;
+  font-weight: 500;
   word-break: break-word;
 }
 
@@ -1045,7 +1045,7 @@
   color: #991b1b;
   padding: 0.45rem 0.8rem;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .auditScreenshotCard {
@@ -1113,7 +1113,7 @@
   border-radius: 999px;
   padding: 0.45rem 0.8rem;
   text-align: center;
-  font-weight: 800;
+  font-weight: 500;
   background: #fff;
 }
 
@@ -1143,7 +1143,7 @@
   border-radius: 999px;
   padding: 0.3rem 0.65rem;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .auditPass {
@@ -1206,7 +1206,7 @@
 .auditMetaItem span {
   color: #5b6f86;
   font-size: 0.86rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 @media (max-width: 900px) {
@@ -1248,7 +1248,7 @@
   gap: 0.45rem;
   align-items: center;
   color: #0f172a;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .ogCard {
@@ -1349,7 +1349,7 @@
   color: #664000;
   padding: 0.2rem 0.55rem;
   font-size: 0.76rem;
-  font-weight: 700;
+  font-weight: 500;
   cursor: pointer;
   line-height: 1.4;
 }

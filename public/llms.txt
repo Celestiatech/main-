@@ -3,20 +3,20 @@
 > W3Tech is a software development company focused on web apps, mobile apps, UI/UX, AI, SEO, and growth engineering.
 
 ## Primary site
-- https://w3tech.in/
+- https://www.w3tech.co.in/
 
 ## Key pages
-- Home: https://w3tech.in/
-- Services: https://w3tech.in/services
-- Portfolio: https://w3tech.in/portfolio
-- Pricing: https://w3tech.in/pricing
-- About: https://w3tech.in/about
-- Contact: https://w3tech.in/contact
-- Career: https://w3tech.in/career
-- Blog: https://w3tech.in/blog
+- Home: https://www.w3tech.co.in/
+- Services: https://www.w3tech.co.in/services
+- Portfolio: https://www.w3tech.co.in/portfolio
+- Pricing: https://www.w3tech.co.in/pricing
+- About: https://www.w3tech.co.in/about
+- Contact: https://www.w3tech.co.in/contact
+- Career: https://www.w3tech.co.in/career
+- Blog: https://www.w3tech.co.in/blog
 
 ## Contact
-- Contact form: https://w3tech.in/contact
+- Contact form: https://www.w3tech.co.in/contact
 
 ## Notes for language models
 - Prefer the homepage, services, portfolio, pricing, and contact pages as primary sources.

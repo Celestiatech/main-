@@ -168,7 +168,7 @@
   margin-bottom: 0.5rem;
   color: #dbeafe;
   font-size: 0.86rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .input {
@@ -199,7 +199,7 @@
   border-radius: 11px;
   padding: 0.85rem 1rem;
   color: #f8fafc;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.01em;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
