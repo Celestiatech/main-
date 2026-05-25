@@ -64,7 +64,7 @@ export function PortfolioShowcase() {
         ) : (
           <div className={styles.cardsGrid}>
             {filteredStudies.map((study, index) => (
-              <Link href={study.url} key={study.title}>
+              <Link href={`/portfolio/case-studies/${study.category}`} key={study.title}>
                 <article className={styles.gridCard}>
                   <div className={styles.cardImageWrapper}>
                     <Image

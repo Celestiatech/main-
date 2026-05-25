@@ -6,7 +6,7 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import { GROCITO_PORTFOLIO_ITEMS } from "@/lib/grocitoPortfolio";
+import { GROCITO_PORTFOLIO_ITEMS, getPortfolioItemSlug } from "@/lib/grocitoPortfolio";
 
 export default function WorkPage() {
   return (
@@ -43,11 +43,11 @@ export default function WorkPage() {
                     </div>
                     <h3>{item.title}</h3>
                     <div className={styles.actions}>
-                      <Link href={item.url} target="_blank" rel="noreferrer" className={styles.primaryButton}>
-                        Open Site
+                      <Link href={`/portfolio/${getPortfolioItemSlug(item)}`} className={styles.primaryButton}>
+                        View Details
                       </Link>
-                      <Link href="/contact" className={styles.secondaryButton}>
-                        Build Similar
+                      <Link href={item.url} target="_blank" rel="noreferrer" className={styles.secondaryButton}>
+                        Open Live Site
                       </Link>
                     </div>
                   </div>

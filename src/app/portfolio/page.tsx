@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import { GROCITO_PORTFOLIO_ITEMS } from "@/lib/grocitoPortfolio";
+import { GROCITO_PORTFOLIO_ITEMS, getPortfolioItemSlug } from "@/lib/grocitoPortfolio";
 
 export default function PortfolioPage() {
   const hiddenRecentTitles = new Set([
@@ -118,12 +118,14 @@ export default function PortfolioPage() {
             <div className={styles.recentGrid}>
               {recentWorks.map((item) => (
                 <article key={item.title} className={styles.recentCard}>
-                  <div className={styles.recentImageWrap}>
-                    <Image src={item.image} alt={item.title} fill className={styles.recentImage} sizes="(max-width: 768px) 100vw, 33vw" />
-                  </div>
-                  <div className={styles.recentBody}>
-                    <h3>{item.title}</h3>
-                  </div>
+                  <Link href={`/portfolio/${getPortfolioItemSlug(item)}`} className={styles.recentCardLink}>
+                    <div className={styles.recentImageWrap}>
+                      <Image src={item.image} alt={item.title} fill className={styles.recentImage} sizes="(max-width: 768px) 100vw, 33vw" />
+                    </div>
+                    <div className={styles.recentBody}>
+                      <h3>{item.title}</h3>
+                    </div>
+                  </Link>
                 </article>
               ))}
             </div>

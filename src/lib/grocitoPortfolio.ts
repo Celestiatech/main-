@@ -5,6 +5,23 @@ export type GrocitoPortfolioItem = {
   category: "web" | "mobile" | "game" | "blockchain" | "ai" | "design";
 };
 
+export function portfolioItemSlug(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/['’]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+export function getPortfolioItemSlug(item: Pick<GrocitoPortfolioItem, "title">) {
+  return portfolioItemSlug(item.title);
+}
+
+export function getPortfolioItemBySlug(slug: string) {
+  return GROCITO_PORTFOLIO_ITEMS.find((item) => getPortfolioItemSlug(item) === slug) ?? null;
+}
+
 export type CaseStudy = {
   title: string;
   subtitle: string;

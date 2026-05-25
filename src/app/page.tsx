@@ -194,6 +194,58 @@ export default function Home() {
     { name: "Netflix", logo: "/images/partners/netflix.svg" },
   ];
 
+  const platforms = [
+    {
+      name: "Shopify",
+      icon: "/images/platforms/shopify.svg",
+      color: "#95BF47",
+      description: "Store setup, theme customization, apps, and performance improvements.",
+      tags: ["Ecommerce", "Payments", "Storefront"],
+    },
+    {
+      name: "Mailchimp",
+      icon: "/images/platforms/mailchimp.svg",
+      color: "#FFE01B",
+      description: "Email automation, audience segmentation, and campaign-ready landing pages.",
+      tags: ["CRM", "Email", "Automation"],
+    },
+    {
+      name: "Shipday",
+      icon: "/images/platforms/delivery.svg",
+      color: "#2563eb",
+      description: "Delivery management integration for tracking, dispatching, and order updates.",
+      tags: ["Logistics", "Tracking", "Ops"],
+    },
+    {
+      name: "WordPress",
+      icon: "/images/platforms/wordpress.svg",
+      color: "#21759B",
+      description: "Custom themes, speed optimization, and SEO-ready content structure.",
+      tags: ["CMS", "SEO", "Content"],
+    },
+    {
+      name: "Joomla",
+      icon: "/images/platforms/joomla.svg",
+      color: "#0B63CE",
+      description: "Template customization, extensions, and secure content management setups.",
+      tags: ["CMS", "Security", "Extensions"],
+    },
+    {
+      name: "CRM Integrations",
+      icon: "/images/platforms/crm.svg",
+      color: "#cc5500",
+      description: "Connect forms, leads, and pipelines with your preferred CRM tools.",
+      tags: ["Leads", "Pipelines", "Reporting"],
+    },
+    {
+      name: "HubSpot",
+      icon: "/images/platforms/hubspot.svg",
+      color: "#FF7A59",
+      description: "CRM setup, tracking, forms, pipelines, and marketing automation touchpoints.",
+      tags: ["CRM", "Leads", "Automation"],
+    },
+  ];
+
   const industries = [
     { icon: "education.svg", name: "Education" },
     { icon: "travel.svg", name: "Travel" },
@@ -785,6 +837,57 @@ export default function Home() {
       {/* ===== PORTFOLIO SECTION ===== */}
       <section className={styles.portfolio} data-section="portfolio">
         <PortfolioShowcase />
+      </section>
+
+      {/* ===== PLATFORMS / CRM SECTION ===== */}
+      <section className={styles.platforms} data-section="platforms">
+        <div className="container">
+          <div className={`${styles.sectionHeader} animate-on-scroll`}>
+            <h2>Platforms We Work With</h2>
+            <p>Shopify, CRM tools, CMS platforms, and integrations that keep your workflow connected.</p>
+          </div>
+
+          <div className={styles.platformsGrid}>
+            {platforms.map((platform, index) => (
+              <article key={platform.name} className={`${styles.platformCard} animate-on-scroll stagger-${(index % 6) + 1}`}>
+                <div className={styles.platformCardTop}>
+                  <div
+                    className={styles.platformIcon}
+                    aria-hidden="true"
+                    style={
+                      {
+                        ["--platform-color" as any]: platform.color,
+                        ["--platform-icon" as any]: `url(${platform.icon})`,
+                      } as React.CSSProperties
+                    }
+                  >
+                    <span className={styles.platformLogoMask} />
+                  </div>
+                  <h3 className={styles.platformTitle}>{platform.name}</h3>
+                </div>
+                <p className={styles.platformDesc}>{platform.description}</p>
+                <div className={styles.platformTags} aria-label={`${platform.name} tags`}>
+                  {platform.tags.map((tag) => (
+                    <span key={tag} className={styles.platformTag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className={styles.platformActions}>
+                  <Link
+                    href="/contact"
+                    className={styles.platformCta}
+                    onClick={() => {
+                      trackCTAClick("Talk to Us", "platforms");
+                    }}
+                  >
+                    Talk to Us
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ===== PROCESS SECTION ===== */}
