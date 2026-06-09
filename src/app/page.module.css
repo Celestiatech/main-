@@ -7343,3 +7343,125 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== CLIENT TESTIMONIAL VIDEOS SECTION ===== */
+.clientVideos {
+  padding: 100px 0;
+  background: var(--primary-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.clientVideos::before {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(230, 126, 0, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.clientVideos > * {
+  position: relative;
+  z-index: 1;
+}
+
+.clientVideosGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.clientVideoCard {
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1.5px solid rgba(59, 130, 246, 0.15);
+  position: relative;
+}
+
+.clientVideoCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.clientVideoWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: #f0f0f0;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.clientVideoWrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.clientVideoPlayBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(230, 126, 0, 0.9);
+  border: none;
+  color: #ffffff;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(230, 126, 0, 0.4);
+  z-index: 2;
+  opacity: 1;
+}
+
+.clientVideoCard:hover .clientVideoPlayBtn {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: rgba(230, 126, 0, 1);
+}
+
+.clientVideoCard.isPlaying .clientVideoPlayBtn {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.clientVideoName {
+  padding: 16px 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+}
+
+@media (max-width: 768px) {
+  .clientVideos {
+    padding: 64px 0;
+  }
+
+  .clientVideosGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .clientVideoPlayBtn {
+    width: 52px;
+    height: 52px;
+    font-size: 22px;
+  }
+}

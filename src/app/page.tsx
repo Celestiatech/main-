@@ -1109,6 +1109,53 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== CLIENT TESTIMONIAL VIDEOS ===== */}
+      <section className={styles.clientVideos} data-section="client-videos">
+        <div className="container">
+          <div className={`${styles.sectionHeader} animate-on-scroll`}>
+            <h2>Client Testimonials</h2>
+            <p>Hear from our clients about their experience working with us</p>
+          </div>
+          <div className={styles.clientVideosGrid}>
+            {[
+              { name: "Aisha", file: "Aisha 0607.mp4" },
+              { name: "Anastasia", file: "Anastasia 0607.mp4" },
+              { name: "Camila", file: "Camila 0607.mp4" },
+              { name: "Henri", file: "Henri Study 0607.mp4" },
+              { name: "Poly", file: "Poly In Car 0607.mp4" },
+            ].map((video, index) => (
+              <div
+                key={index}
+                className={`${styles.clientVideoCard} animate-on-scroll stagger-${(index % 5) + 1}`}
+                data-playing="false"
+              >
+                <div className={styles.clientVideoWrapper}>
+                  <video
+                    src={`/clientvideos/${encodeURIComponent(video.file)}`}
+                    playsInline
+                    preload="metadata"
+                    onMouseEnter={(e) => { e.currentTarget.play(); e.currentTarget.closest(`.${styles.clientVideoCard}`)?.classList.add(styles.isPlaying); }}
+                    onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; e.currentTarget.closest(`.${styles.clientVideoCard}`)?.classList.remove(styles.isPlaying); }}
+                  />
+                  <button
+                    className={styles.clientVideoPlayBtn}
+                    onClick={(e) => {
+                      const video = e.currentTarget.previousElementSibling as HTMLVideoElement;
+                      if (video.paused) { video.play(); video.closest(`.${styles.clientVideoCard}`)?.classList.add(styles.isPlaying); }
+                      else { video.pause(); video.closest(`.${styles.clientVideoCard}`)?.classList.remove(styles.isPlaying); }
+                    }}
+                    aria-label={`Play ${video.name}'s testimonial`}
+                  >
+                    ▶
+                  </button>
+                </div>
+                <div className={styles.clientVideoName}>{video.name}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== CONTACT SECTION ===== */}
       <section className={styles.contact} data-section="contact">
         <div className="container">
