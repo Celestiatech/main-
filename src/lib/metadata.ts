@@ -47,7 +47,7 @@ export const siteConfig = {
     linkedin: "https://linkedin.com/company/w3tech",
     twitter: "https://twitter.com/w3tech",
     facebook: "https://facebook.com/w3tech",
-    instagram: "https://instagram.com/w3tech",
+    instagram: "https://www.instagram.com/w3tech.co.in/",
   },
   company: {
     founded: "2012",

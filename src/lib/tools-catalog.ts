@@ -92,6 +92,7 @@ export const TOOLS: ToolItem[] = [
   { slug: "screenshot-to-image", title: "Screenshot to Image", category: "image-tools", description: "Convert screenshots into optimized images.", status: "live" },
   { slug: "blur-image-tool", title: "Blur Image Tool", category: "image-tools", description: "Apply blur effects to selected image areas.", status: "live" },
   { slug: "watermark-tool", title: "Watermark Tool", category: "image-tools", description: "Add text or logo watermark to images.", status: "live" },
+  { slug: "meta-video-downloader", title: "Meta Video Downloader", category: "image-tools", description: "Download videos from Meta platforms (Facebook, Instagram).", status: "live" },
 
   { slug: "pdf-to-word", title: "PDF to Word", category: "pdf-tools", description: "Convert PDF documents to editable Word files.", status: "live" },
   { slug: "word-to-pdf", title: "Word to PDF", category: "pdf-tools", description: "Convert Word docs into PDF format.", status: "live" },

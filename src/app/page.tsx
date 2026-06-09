@@ -1132,6 +1132,8 @@ export default function Home() {
                 data-playing="false"
               >
                 <div className={styles.clientVideoWrapper}>
+                  <Image src="/logos/w3tech.png" alt="W3Tech" width={28} height={28} className={styles.clientVideoOverlayLogo} loading="lazy" />
+                  <span className={styles.clientVideoOverlayText}>w3tech.co.in</span>
                   <video
                     src={`/clientvideos/${encodeURIComponent(video.file)}`}
                     playsInline

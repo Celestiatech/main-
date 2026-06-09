@@ -769,8 +769,7 @@
     display: flex;
     align-items: center;
     padding: 120px 0 60px;
-    background: var(--primary-bg);
-    background-image: var(--gradient-mesh);
+    background: linear-gradient(180deg, #fafbfc 0%, #f4f6f9 100%);
     overflow: hidden;
   }
 
@@ -984,7 +983,7 @@
   /* ===== SERVICES SECTION ===== */
   .services {
     padding: 100px 0;
-    background: var(--primary-bg);
+    background: linear-gradient(180deg, #fafbfc 0%, #f4f6f9 100%);
     position: relative;
   }
 
@@ -1440,7 +1439,7 @@
   /* ===== AWARDS SECTION ===== */
   .awards {
     padding: 100px 0;
-    background: var(--primary-bg);
+    background: linear-gradient(180deg, #fafbfc 0%, #f4f6f9 100%);
     position: relative;
     border-top: 1px solid rgba(59, 130, 246, 0.1);
     border-bottom: 1px solid rgba(59, 130, 246, 0.1);
@@ -1653,7 +1652,7 @@
   /* ===== TRUST SECTION ===== */
   .trust {
     padding: 100px 0;
-    background: var(--primary-bg);
+    background: linear-gradient(180deg, #fafbfc 0%, #f4f6f9 100%);
     position: relative;
   }
 
@@ -1808,7 +1807,7 @@
   /* ===== INDUSTRIES SECTION ===== */
   .industries {
     padding: 120px 0;
-    background: var(--primary-bg);
+    background: linear-gradient(180deg, #fafbfc 0%, #f4f6f9 100%);
     position: relative;
     overflow: hidden;
   }
@@ -1933,7 +1932,7 @@
   /* ===== PORTFOLIO SECTION ===== */
   .portfolio {
     padding: 100px 0;
-    background: var(--primary-bg);
+    background: linear-gradient(180deg, #fafbfc 0%, #f4f6f9 100%);
     position: relative;
     border-top: 1px solid #dbeafe;
   }
@@ -2112,7 +2111,7 @@
   /* ===== PROCESS SECTION ===== */
   .process {
     padding: 100px 0;
-    background: var(--primary-bg);
+    background: linear-gradient(180deg, #fafbfc 0%, #f4f6f9 100%);
     position: relative;
   }
 
@@ -2264,7 +2263,7 @@
   /* ===== UPWORK SECTION ===== */
   .upwork {
     padding: 100px 0;
-    background: var(--primary-bg);
+    background: linear-gradient(180deg, #fafbfc 0%, #f4f6f9 100%);
     position: relative;
     box-shadow: 0 0 60px rgba(255, 140, 0, 0.22);
     overflow: hidden;
@@ -2387,7 +2386,7 @@
   /* ===== TECH STACK SECTION ===== */
   .techStack {
     padding: 120px 0;
-    background: var(--primary-bg);
+    background: linear-gradient(180deg, #fafbfc 0%, #f4f6f9 100%);
     position: relative;
     overflow: hidden;
   }
@@ -2522,7 +2521,7 @@
   /* ===== CTA SECTION ===== */
   .cta {
     padding: 120px 60px;
-    background: var(--primary-bg);
+    background: linear-gradient(180deg, #fafbfc 0%, #f4f6f9 100%);
     text-align: center;
     position: relative;
     box-shadow: 0 26px 70px rgba(37, 99, 235, 0.18);
@@ -2619,7 +2618,7 @@
   /* ===== WHY CHOOSE US SECTION ===== */
   .whyChooseUs {
     padding: 120px 0;
-    background: var(--primary-bg);
+    background: linear-gradient(180deg, #fafbfc 0%, #f4f6f9 100%);
     position: relative;
     overflow: hidden;
   }
@@ -2752,7 +2751,7 @@
   /* ===== TESTIMONIALS SECTION ===== */
   .testimonials {
     padding: 120px 0;
-    background: var(--primary-bg);
+    background: linear-gradient(180deg, #fafbfc 0%, #f4f6f9 100%);
     position: relative;
     overflow: hidden;
   }
@@ -3022,7 +3021,7 @@
   /* ===== CONTACT SECTION ===== */
   .contact {
     padding: 100px 0;
-    background: var(--primary-bg);
+    background: linear-gradient(180deg, #fafbfc 0%, #f4f6f9 100%);
     position: relative;
   }
 
@@ -6361,20 +6360,11 @@
   }
 
   /* Section Backgrounds Premium */
-  .services {
-    background: linear-gradient(135deg, #f9fafb 0%, #f0f9ff 100%);
-  }
-
-  .portfolio {
-    background: linear-gradient(135deg, #ffffff 0%, #f5f8ff 100%);
-  }
-
-  .whyChooseUs {
-    background: linear-gradient(135deg, #f8faff 0%, #eef6ff 100%);
-  }
-
+  .services,
+  .portfolio,
+  .whyChooseUs,
   .testimonials {
-    background: linear-gradient(135deg, #f0f4ff 0%, #f9faff 100%);
+    background: linear-gradient(180deg, #fafbfc 0%, #f4f6f9 100%);
   }
 
   /* Card Animations */
@@ -6462,8 +6452,7 @@
    =================================================================== */
 
 .heroRedesign {
-  background: #fdfcff !important;
-  background-image: none !important;
+  background: linear-gradient(180deg, #fafbfc 0%, #f4f6f9 100%) !important;
   min-height: auto !important;
   padding: 96px 0 44px !important;
   position: relative;
@@ -7134,10 +7123,7 @@
   background-image: none !important;
 }
 
-/* Force clean white section backgrounds (per request) */
-.page section {
-  background: #ffffff !important;
-}
+/* Section backgrounds use global gradient */
 
 /* ===== Platforms / CRM Section ===== */
 .platforms {
@@ -7347,7 +7333,7 @@
 /* ===== CLIENT TESTIMONIAL VIDEOS SECTION ===== */
 .clientVideos {
   padding: 100px 0;
-  background: var(--primary-bg);
+  background: linear-gradient(180deg, #fafbfc 0%, #f4f6f9 100%);
   position: relative;
   overflow: hidden;
 }
@@ -7460,8 +7446,57 @@
   }
 
   .clientVideoPlayBtn {
-    width: 52px;
-    height: 52px;
-    font-size: 22px;
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
   }
 }
+
+.clientVideoWrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20%;
+  background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.20) 50%, transparent 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.clientVideoOverlayLogo {
+  position: absolute;
+  top: 52px;
+  left: 32px;
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  border-radius: 50%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.clientVideoOverlayText {
+  position: absolute;
+  top: 45px;
+  left: 24px;
+  background: #ffffff;
+  padding: 6px 14px 6px 36px;
+  border-radius: 15px;
+  color: #1e293b;
+  font-size: 26px;
+  font-weight: 600;
+  z-index: 4;
+  pointer-events: none;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.clientVideoPlayBtn {
+  width: 52px;
+  height: 52px;
+  font-size: 22px;
+}
+

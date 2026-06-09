@@ -217,6 +217,10 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
   const [fromUnit, setFromUnit] = useState("meter");
   const [toUnit, setToUnit] = useState("kilometer");
   const [unitValue, setUnitValue] = useState(1000);
+  const [dlUrl, setDlUrl] = useState("");
+  const [dlLoading, setDlLoading] = useState(false);
+  const [dlError, setDlError] = useState("");
+  const [dlQuality, setDlQuality] = useState("standard");
 
   const [imageSource, setImageSource] = useState("");
   const [imageOutput, setImageOutput] = useState("");
@@ -1431,6 +1435,110 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
         <div className={styles.copyWrapper}>
           <pre className={styles.output}>{unitResult}</pre>
           {unitResult && <button type="button" className={styles.copyBtn} onClick={() => copyToClipboard(unitResult, "unit")}>{(copiedKey === "unit" ? "Copied!" : copiedKey === "unit-fail" ? "Failed!" : "Copy")}</button>}
+        </div>
+      </div>
+    );
+  }
+
+  if (slug === "meta-video-downloader") {
+    const isFb = dlUrl.toLowerCase().includes("facebook.com") || dlUrl.toLowerCase().includes("fb.com") || dlUrl.toLowerCase().includes("fb.watch");
+    const isIg = dlUrl.toLowerCase().includes("instagram.com") || dlUrl.toLowerCase().includes("instagr.am");
+    const isMa = dlUrl.toLowerCase().includes("meta.ai");
+    const detectedPlatform = dlUrl ? (isFb ? "Facebook" : isIg ? "Instagram" : isMa ? "Meta AI" : null) : null;
+
+    const handleDownload = async () => {
+      if (!dlUrl.trim()) return;
+      setDlLoading(true);
+      setDlError("");
+
+      try {
+        const res = await fetch("/api/tools/meta-video-downloader", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ url: dlUrl.trim(), quality: dlQuality }),
+        });
+
+        if (!res.ok) {
+          const data = await res.json().catch(() => ({}));
+          throw new Error(data.error || `Server error (${res.status})`);
+        }
+
+        const blob = await res.blob();
+        downloadBlob(blob, `meta-video-${Date.now()}.mp4`);
+      } catch (err: unknown) {
+        setDlError(err instanceof Error ? err.message : "Download failed");
+      } finally {
+        setDlLoading(false);
+      }
+    };
+
+    return (
+      <div className={styles.metaVideoCard}>
+        <div className={styles.metaVideoHeader}>
+          <div className={styles.metaVideoBrand}>
+            <span className={styles.metaVideoBrandIcon}>▶</span>
+            <div>
+              <strong>Meta Video Downloader</strong>
+              <span>Download videos from Facebook, Instagram & Meta AI</span>
+            </div>
+          </div>
+          <div className={styles.metaVideoPlatforms}>
+            <span className={`${styles.metaPlatformBadge} ${styles.metaPlatformFb}`}>Facebook</span>
+            <span className={`${styles.metaPlatformBadge} ${styles.metaPlatformIg}`}>Instagram</span>
+            <span className={`${styles.metaPlatformBadge} ${styles.metaPlatformMa}`}>Meta AI</span>
+          </div>
+        </div>
+
+        <div className={styles.metaVideoBody}>
+          <div className={styles.metaVideoInputGroup}>
+            <label className={styles.metaVideoLabel}>Paste video URL</label>
+            <input
+              className={styles.metaVideoInput}
+              type="url"
+              placeholder="https://www.facebook.com/watch/... https://www.instagram.com/reel/... https://meta.ai/media-share/..."
+              value={dlUrl}
+              onChange={(e) => { setDlUrl(e.target.value); setDlError(""); }}
+            />
+            {detectedPlatform && (
+              <div className={styles.metaVideoDetected}>
+                <span className={styles.metaVideoDetectedIcon}>✓</span>
+                <span>{detectedPlatform} video detected</span>
+              </div>
+            )}
+          </div>
+
+          <div className={styles.metaVideoOptions}>
+            <label className={styles.metaVideoLabel}>Quality</label>
+            <select className={styles.metaVideoSelect} value={dlQuality} onChange={(e) => setDlQuality(e.target.value)}>
+              <option value="hd">HD (1080p)</option>
+              <option value="sd">SD (720p)</option>
+              <option value="standard">Standard (480p)</option>
+            </select>
+          </div>
+
+          {dlError && (
+            <div className={styles.metaVideoError}>
+              <span>{dlError}</span>
+            </div>
+          )}
+
+          <button
+            type="button"
+            className={styles.metaVideoBtn}
+            disabled={!dlUrl || dlLoading}
+            onClick={handleDownload}
+          >
+            <span className={styles.metaVideoBtnIcon}>
+              {dlLoading ? "⏳" : "⬇"}
+            </span>
+            {dlLoading ? "Downloading..." : "Download Video"}
+          </button>
+
+          {!dlUrl && !dlError && (
+            <div className={styles.metaVideoHint}>
+              Paste a Facebook, Instagram, or Meta AI video URL above to get started
+            </div>
+          )}
         </div>
       </div>
     );

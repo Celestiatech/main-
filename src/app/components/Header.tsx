@@ -52,6 +52,25 @@ function MailIcon() {
   );
 }
 
+function GoogleIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1Z" fill="#4285F4"/>
+      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23Z" fill="#34A853"/>
+      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62Z" fill="#FBBC05"/>
+      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53Z" fill="#EA4335"/>
+    </svg>
+  );
+}
+
+function WhatsAppIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+    </svg>
+  );
+}
+
 function BoltIcon() {
   return (
     <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
@@ -74,12 +93,27 @@ export function Header() {
   const [hoveredCompanyItem, setHoveredCompanyItem] = useState<string | null>(null);
   const [mobileServiceCategory, setMobileServiceCategory] = useState<string | null>(null);
   const [mobileCompanyCategory, setMobileCompanyCategory] = useState<string | null>(null);
+  const [navIndicatorStyle, setNavIndicatorStyle] = useState<{ left: number; width: number } | null>(null);
+  const navRef = useRef<HTMLElement>(null);
   
   // Refs to track when we just clicked back (to prevent immediate reopening)
   const justClickedBackServices = useRef(false);
   const justClickedBackCompany = useRef(false);
   const lastScrollYRef = useRef(0);
   const scrollTickingRef = useRef(false);
+
+  const updateNavIndicator = (el: HTMLElement | null) => {
+    if (!el || !navRef.current) {
+      setNavIndicatorStyle(null);
+      return;
+    }
+    const navRect = navRef.current.getBoundingClientRect();
+    const elRect = el.getBoundingClientRect();
+    setNavIndicatorStyle({
+      left: elRect.left - navRect.left,
+      width: elRect.width,
+    });
+  };
 
   const popularToolsButton = (
     <>
@@ -508,39 +542,25 @@ export function Header() {
         <div className={styles.headerTop}>
           <div className={styles.headerTopInner}>
             <div className={styles.headerTopContent}>
-              <div className={styles.headerPhones}>
-                <a href={`tel:${siteConfig.contact.phone.uae.replace(/\s/g, "")}`}>
-                  <HeaderInlineIcon><PhoneIcon /></HeaderInlineIcon>
-                  {siteConfig.contact.phone.uae}
+              <div className={styles.headerTopBadge}>
+                🏆 Digital Agency of the Year 2024, 25
+                <span className={styles.headerTopBadgeSep}>|</span>
+                Free Website &amp; SEO Audit
+              </div>
+              <div className={styles.headerTopContact}>
+                <a href={`mailto:${siteConfig.contact.email.general}`}>
+                  <HeaderInlineIcon><MailIcon /></HeaderInlineIcon>
+                  {siteConfig.contact.email.general}
                 </a>
+                <span className={styles.headerTopSep}>|</span>
                 <a href={`tel:${siteConfig.contact.phone.india.replace(/\s/g, "")}`}>
                   <HeaderInlineIcon><SmartphoneIcon /></HeaderInlineIcon>
                   {siteConfig.contact.phone.india}
                 </a>
-                <a href={`mailto:${siteConfig.contact.email.general}`}>
-                  <HeaderInlineIcon><MailIcon /></HeaderInlineIcon>
-                  <span aria-label={siteConfig.contact.email.general}>Email us</span>
+                <a href={`https://wa.me/${siteConfig.contact.phone.uae.replace(/[\s+]/g, "")}`} target="_blank" rel="noopener noreferrer" className={styles.headerTopWhatsapp}>
+                  <HeaderInlineIcon><WhatsAppIcon /></HeaderInlineIcon>
+                  Chat on WhatsApp
                 </a>
-              </div>
-              <div className={`${styles.headerTicker} ${styles.headerTickerInline}`} aria-label="Announcements">
-                <div className={styles.headerTickerTrack}>
-                  <span>Custom Websites</span>
-                  <span>Mobile Apps</span>
-                  <span>UI/UX Design</span>
-                  <span>SEO Growth</span>
-                  <span>Fast Delivery</span>
-                  <span>Free Consultation</span>
-                  <span>Custom Websites</span>
-                  <span>Mobile Apps</span>
-                  <span>UI/UX Design</span>
-                  <span>SEO Growth</span>
-                  <span>Fast Delivery</span>
-                  <span>Free Consultation</span>
-                </div>
-              </div>
-              <div className={styles.headerTopMessage}>
-                <HeaderInlineIcon><BoltIcon /></HeaderInlineIcon>
-                Get a free consultation today!
               </div>
             </div>
           </div>
@@ -561,102 +581,51 @@ export function Header() {
                   priority
                 />
               </span>
-              {siteConfig.shortName}
+              <span className={styles.logoText}>
+                <span className={styles.logoName}>W3TECH</span>
+                <span className={styles.logoSub}>
+                  <GoogleIcon />
+                  Google Partner
+                </span>
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className={styles.nav} role="navigation" aria-label="Main navigation">
-              <div
-                className={styles.navItem}
-                onMouseEnter={() => {
-                  setIsServicesDropdownOpen(false);
-                  setIsCompanyDropdownOpen(false);
-                  setActiveServiceCategory(null);
-                  setActiveCompanyCategory(null);
-                  setHoveredServiceItem(null);
-                  setHoveredCompanyItem(null);
-                  setIsMoreMenuOpen(true);
-                }}
-                onMouseLeave={(e) => {
-                  const relatedTarget = e.relatedTarget as HTMLElement | null;
-                  const isHTMLElement = relatedTarget && typeof relatedTarget.closest === "function";
-                  if (
-                    !isHTMLElement ||
-                    (!relatedTarget.closest(`.${styles.navItem}`) && !relatedTarget.closest(`.${styles.navDropdown}`))
-                  ) {
-                    setTimeout(() => {
-                      if (!document.querySelector(`.${styles.navItem}:hover`) && !document.querySelector(`.${styles.navDropdown}:hover`)) {
-                        setIsMoreMenuOpen(false);
-                      }
-                    }, 100);
-                  }
-                }}
-              >
-                <button
-                  className={`${styles.navLink} ${styles.moreButton}`}
-                  aria-label="More menu"
-                  aria-expanded={isMoreMenuOpen}
-                  onClick={() => {
-                    const newState = !isMoreMenuOpen;
-                    setIsServicesDropdownOpen(false);
-                    setIsCompanyDropdownOpen(false);
-                    setActiveServiceCategory(null);
-                    setActiveCompanyCategory(null);
-                    setHoveredServiceItem(null);
-                    setHoveredCompanyItem(null);
-                    setIsMoreMenuOpen(newState);
-                  }}
-                >
-                  More <span aria-hidden="true">▼</span>
-                </button>
-                {isMoreMenuOpen && (
-                  <div className={`${styles.navDropdown} ${styles.moreDropdown}`} role="menu">
-                    <div className={styles.moreMenu}>
-                      <Link href="/pricing" className={styles.moreMenuItem} onClick={() => setIsMoreMenuOpen(false)}>
-                        Pricing
-                      </Link>
-                      <Link href="/portfolio" className={styles.moreMenuItem} onClick={() => setIsMoreMenuOpen(false)}>
-                        Portfolio
-                      </Link>
-                      <Link href="/blog" className={styles.moreMenuItem} onClick={() => setIsMoreMenuOpen(false)}>
-                        Blog
-                      </Link>
-                    </div>
-                  </div>
-                )}
-              </div>
+            <nav className={styles.nav} ref={navRef} role="navigation" aria-label="Main navigation"
+              onMouseLeave={() => {
+                const activeEl = navRef.current?.querySelector(`.${styles.navLink}.${styles.active}`) as HTMLElement | null;
+                updateNavIndicator(activeEl || null);
+              }}
+            >
+              {navIndicatorStyle && (
+                <span className={styles.navIndicator} style={{ left: navIndicatorStyle.left, width: navIndicatorStyle.width }} aria-hidden="true" />
+              )}
 
-              <Link href="/" className={`${styles.navLink} ${isActive("/") ? styles.active : ""}`}>
+              <Link href="/" className={`${styles.navLink} ${isActive("/") ? styles.active : ""}`} onMouseEnter={(e) => updateNavIndicator(e.currentTarget)}>
                 Home
               </Link>
 
-              {/* Services Dropdown - Two Level System */}
-              <div 
-                className={styles.navItem}
+              <Link href="/portfolio" className={`${styles.navLink} ${isActive("/portfolio") ? styles.active : ""}`} onMouseEnter={(e) => updateNavIndicator(e.currentTarget)}>
+                Case Studies
+              </Link>
+
+              <Link href="/about" className={`${styles.navLink} ${isActive("/about") ? styles.active : ""}`} onMouseEnter={(e) => updateNavIndicator(e.currentTarget)}>
+                Who We Are
+              </Link>
+
+              {/* Services Dropdown */}
+              <div className={styles.navItem}
                 onMouseEnter={() => {
-                  debugLog("Mouse enter Services navItem");
-                  setIsMoreMenuOpen(false);
-                  // Close Company dropdown when opening Services
-                  setIsCompanyDropdownOpen(false);
-                  setActiveCompanyCategory(null);
-                  setHoveredCompanyItem(null);
                   setIsServicesDropdownOpen(true);
+                  const btn = (document.querySelector(`.${styles.navItem} .${styles.navLink}`) as HTMLElement) || null;
+                  if (btn) updateNavIndicator(btn);
                 }}
                 onMouseLeave={(e) => {
-                  // Only close if we're actually leaving the navItem area
                   const relatedTarget = e.relatedTarget as HTMLElement | null;
                   const isHTMLElement = relatedTarget && typeof relatedTarget.closest === 'function';
-                  debugLog("Mouse leave Services navItem", {
-                    relatedTarget: relatedTarget?.tagName || 'null',
-                    isHTMLElement,
-                    stillInNavItem: isHTMLElement ? !!relatedTarget.closest(`.${styles.navItem}`) : false,
-                    stillInDropdown: isHTMLElement ? !!relatedTarget.closest(`.${styles.navDropdown}`) : false,
-                  });
                   if (!isHTMLElement || (!relatedTarget.closest(`.${styles.navItem}`) && !relatedTarget.closest(`.${styles.navDropdown}`))) {
-                    // Add small delay to prevent accidental closes
                     setTimeout(() => {
                       if (!document.querySelector(`.${styles.navItem}:hover`) && !document.querySelector(`.${styles.navDropdown}:hover`)) {
-                        debugLog("Actually leaving Services area - closing dropdown");
                         setIsServicesDropdownOpen(false);
                         setActiveServiceCategory(null);
                         setHoveredServiceItem(null);
@@ -665,201 +634,83 @@ export function Header() {
                   }
                 }}
               >
-                <button 
-                  className={`${styles.navLink} ${isActive("/services") || isActive("/portfolio") || isActive("/work") ? styles.active : ""}`}
-                  aria-label="Services and solutions" 
+                <button
+                  className={`${styles.navLink} ${isActive("/services") || isActive("/work") ? styles.active : ""}`}
+                  onMouseEnter={(e) => updateNavIndicator(e.currentTarget)}
                   aria-expanded={isServicesDropdownOpen}
                   onClick={() => {
                     const newState = !isServicesDropdownOpen;
-                    debugLog("Click Solutions button", { newState });
-                    setIsMoreMenuOpen(false);
-                    // Close Company when opening Services
-                    if (newState) {
-                      setIsCompanyDropdownOpen(false);
-                      setActiveCompanyCategory(null);
-                      setHoveredCompanyItem(null);
-                    }
                     setIsServicesDropdownOpen(newState);
                   }}
                 >
-                  Solutions <span aria-hidden="true">▼</span>
+                  Services <span aria-hidden="true">▼</span>
                 </button>
                 {isServicesDropdownOpen && (
-                  <div 
-                    className={styles.navDropdown} 
-                    role="menu"
-                    onMouseEnter={() => {
-                      debugLog("Mouse enter Services dropdown");
-                      setIsServicesDropdownOpen(true);
-                    }}
+                  <div className={styles.navDropdown} role="menu"
+                    onMouseEnter={() => setIsServicesDropdownOpen(true)}
                     onMouseLeave={() => {
-                      debugLog("Mouse leave Services dropdown - closing");
                       setIsServicesDropdownOpen(false);
                       setActiveServiceCategory(null);
                       setHoveredServiceItem(null);
                     }}
                   >
                     {activeServiceCategory ? (
-                      /* Show selected category items */
                       <div className={styles.dropdownContent}>
-                        <button 
-                          type="button"
-                          className={styles.backButton}
+                        <button type="button" className={styles.backButton}
                           onClick={(e) => {
-                            debugLog("Click Back to Categories button", {
-                              currentCategory: activeServiceCategory,
-                              hoveredItem: hoveredServiceItem,
-                            });
-                            e.preventDefault();
-                            e.stopPropagation();
+                            e.preventDefault(); e.stopPropagation();
                             setActiveServiceCategory(null);
                             setHoveredServiceItem(null);
-                            // Set flag to prevent immediate reopening
                             justClickedBackServices.current = true;
-                            setTimeout(() => {
-                              justClickedBackServices.current = false;
-                              debugLog("Back button cooldown expired");
-                            }, 300);
-                            debugLog("Back button clicked - reset category and hover");
+                            setTimeout(() => { justClickedBackServices.current = false; }, 300);
                           }}
                           aria-label="Back to categories"
-                        >
-                          ← Back to Categories
-                        </button>
+                        >← Back to Categories</button>
                         <div className={styles.dropdownWithDescription}>
                           <div className={styles.dropdownGroup}>
                             <div className={styles.dropdownTitle}>
                               {servicesCategories.find(c => c.id === activeServiceCategory)?.title}
                             </div>
-                            {servicesCategories
-                              .find(c => c.id === activeServiceCategory)
-                              ?.items.map((item, index) => {
-                                // Use :: separator to avoid issues with category IDs containing hyphens
-                                const itemKey = `${activeServiceCategory}::${index}`;
-                                const isHovered = hoveredServiceItem === itemKey;
-                                return (
-                                  <Link 
-                                    key={index}
-                                    href={item.href} 
-                                    className={`${styles.dropdownSubLink} ${isHovered ? styles.hovered : ""}`}
-                                    onMouseEnter={() => {
-                                      debugLog("Mouse enter service item", { itemKey, label: item.label });
-                                      // Clear any pending timeout
-                                      if ((window as any).hoverTimeout) {
-                                        clearTimeout((window as any).hoverTimeout);
-                                        (window as any).hoverTimeout = null;
-                                      }
-                                      setHoveredServiceItem(itemKey);
-                                    }}
-                                    onMouseLeave={() => {
-                                      debugLog("Mouse leave service item", { itemKey, label: item.label });
-                                      // Only clear if not moving to description panel - give more time to move to panel
-                                      const timeout = setTimeout(() => {
-                                        // Double check if mouse is still not on description panel
-                                        if (!document.querySelector(`.${styles.descriptionPanel}:hover`)) {
-                                          debugLog("Timeout: clearing hovered item", { itemKey });
-                                          setHoveredServiceItem(null);
-                                        }
-                                      }, 300);
-                                      // Store timeout to clear if needed
-                                      (window as any).hoverTimeout = timeout;
-                                    }}
-                                    onClick={() => {
-                                      debugLog("Click service item", { itemKey, label: item.label });
-                                      setIsServicesDropdownOpen(false);
-                                      setActiveServiceCategory(null);
-                                      setHoveredServiceItem(null);
-                                    }}
-                                  >
-                                    {item.label}
-                                  </Link>
-                                );
-                              })}
+                            {servicesCategories.find(c => c.id === activeServiceCategory)?.items.map((item, index) => {
+                              const itemKey = `${activeServiceCategory}::${index}`;
+                              return (
+                                <Link key={index} href={item.href}
+                                  className={`${styles.dropdownSubLink} ${hoveredServiceItem === itemKey ? styles.hovered : ""}`}
+                                  onMouseEnter={() => setHoveredServiceItem(itemKey)}
+                                  onMouseLeave={() => {
+                                    setTimeout(() => {
+                                      if (!document.querySelector(`.${styles.descriptionPanel}:hover`)) setHoveredServiceItem(null);
+                                    }, 300);
+                                  }}
+                                  onClick={() => { setIsServicesDropdownOpen(false); setActiveServiceCategory(null); setHoveredServiceItem(null); }}
+                                >{item.label}</Link>
+                              );
+                            })}
                           </div>
-                          {/* Description Panel */}
                           {hoveredServiceItem && (() => {
-                            // Use :: separator to properly parse category IDs with hyphens
                             const parts = hoveredServiceItem.split('::');
-                            const categoryId = parts[0];
-                            const itemIndex = parseInt(parts[1] || '0');
-                            const category = servicesCategories.find(c => c.id === categoryId);
-                            const item = category?.items[itemIndex];
-                            debugLog("Rendering description panel", {
-                              hoveredServiceItem,
-                              parts,
-                              categoryId,
-                              itemIndex,
-                              hasCategory: !!category,
-                              categoryTitle: category?.title,
-                              hasItem: !!item,
-                              itemLabel: item?.label,
-                              hasDescription: !!item?.description,
-                            });
+                            const category = servicesCategories.find(c => c.id === parts[0]);
+                            const item = category?.items[parseInt(parts[1] || '0')];
                             return item?.description ? (
-                              <div 
-                                className={styles.descriptionPanel}
-                                onMouseEnter={() => {
-                                  debugLog("Mouse enter description panel", { hoveredServiceItem });
-                                  // Clear any pending timeout to keep description open
-                                  if ((window as any).hoverTimeout) {
-                                    clearTimeout((window as any).hoverTimeout);
-                                    (window as any).hoverTimeout = null;
-                                    debugLog("Cleared hover timeout - keeping description open");
-                                  }
-                                  // Ensure the hovered item stays set
-                                  if (hoveredServiceItem) {
-                                    setHoveredServiceItem(hoveredServiceItem);
-                                  }
-                                }}
-                                onMouseLeave={() => {
-                                  debugLog("Mouse leave description panel");
-                                  // Clear any pending timeout
-                                  if ((window as any).hoverTimeout) {
-                                    clearTimeout((window as any).hoverTimeout);
-                                    (window as any).hoverTimeout = null;
-                                  }
-                                  setHoveredServiceItem(null);
-                                }}
+                              <div className={styles.descriptionPanel}
+                                onMouseEnter={() => { if ((window as any).hoverTimeout) clearTimeout((window as any).hoverTimeout); setHoveredServiceItem(hoveredServiceItem); }}
+                                onMouseLeave={() => setHoveredServiceItem(null)}
                               >
                                 <div className={styles.descriptionContent}>
-                                  <p className={styles.descriptionText}>
-                                    {item.description}
-                                  </p>
+                                  <p className={styles.descriptionText}>{item.description}</p>
                                 </div>
                               </div>
-                            ) : (
-                              <div style={{ padding: '20px', color: 'red', background: '#fee', borderRadius: '8px' }}>
-                                <strong>DEBUG:</strong> No description found<br/>
-                                hoveredServiceItem: {hoveredServiceItem}<br/>
-                                categoryId: {categoryId}<br/>
-                                itemIndex: {itemIndex}<br/>
-                                found category: {category ? 'yes' : 'no'}<br/>
-                                found item: {item ? 'yes' : 'no'}
-                              </div>
-                            );
+                            ) : null;
                           })()}
                         </div>
                       </div>
                     ) : (
-                      /* Show all categories */
                       <div className={styles.dropdownContent}>
                         <div className={styles.categoriesGrid}>
                           {servicesCategories.map((category) => (
-                            <button
-                              key={category.id}
-                              className={`${styles.categoryButton} ${
-                                activeServiceCategory === category.id ? styles.active : ""
-                              }`}
-                              aria-label={`${category.title} category`}
-                              onClick={() => {
-                                // Ignore click if we just clicked back
-                                if (justClickedBackServices.current) {
-                                  debugLog("Ignoring category click - just clicked back", { categoryId: category.id });
-                                  return;
-                                }
-                                debugLog("Click service category", { categoryId: category.id, title: category.title });
-                                setActiveServiceCategory(category.id);
-                              }}
+                            <button key={category.id}
+                              className={`${styles.categoryButton} ${activeServiceCategory === category.id ? styles.active : ""}`}
+                              onClick={() => { if (justClickedBackServices.current) return; setActiveServiceCategory(category.id); }}
                             >
                               <div className={styles.categoryTitle}>{category.title}</div>
                               <div className={styles.categoryCount}>{category.items.length} Services</div>
@@ -873,253 +724,31 @@ export function Header() {
                 )}
               </div>
 
-              {/* Company Dropdown - Two Level System */}
-              <div 
-                className={styles.navItem}
-                onMouseEnter={() => {
-                  debugLog("Mouse enter Company navItem");
-                  setIsMoreMenuOpen(false);
-                  // Close Services dropdown when opening Company
-                  setIsServicesDropdownOpen(false);
-                  setActiveServiceCategory(null);
-                  setHoveredServiceItem(null);
-                  setIsCompanyDropdownOpen(true);
-                }}
-                onMouseLeave={(e) => {
-                  const relatedTarget = e.relatedTarget as HTMLElement | null;
-                  const isHTMLElement = relatedTarget && typeof relatedTarget.closest === 'function';
-                  debugLog("Mouse leave Company navItem", {
-                    relatedTarget: relatedTarget?.tagName || 'null',
-                    isHTMLElement,
-                    stillInNavItem: isHTMLElement ? !!relatedTarget.closest(`.${styles.navItem}`) : false,
-                    stillInDropdown: isHTMLElement ? !!relatedTarget.closest(`.${styles.navDropdown}`) : false,
-                  });
-                  if (!isHTMLElement || (!relatedTarget.closest(`.${styles.navItem}`) && !relatedTarget.closest(`.${styles.navDropdown}`))) {
-                    setTimeout(() => {
-                      if (!document.querySelector(`.${styles.navItem}:hover`) && !document.querySelector(`.${styles.navDropdown}:hover`)) {
-                        debugLog("Actually leaving Company area - closing dropdown");
-                        setIsCompanyDropdownOpen(false);
-                        setActiveCompanyCategory(null);
-                        setHoveredCompanyItem(null);
-                      }
-                    }, 100);
-                  }
-                }}
-              >
-                <button 
-                  className={`${styles.navLink} ${isActive("/about") || isActive("/career") || isActive("/testimonials") || isActive("/blog") || isActive("/privacy-policy") || isActive("/terms-of-service") || isActive("/cookie-policy") ? styles.active : ""}`}
-                  aria-label="Company information" 
-                  aria-expanded={isCompanyDropdownOpen}
-                  aria-haspopup="true"
-                  onClick={() => {
-                    const newState = !isCompanyDropdownOpen;
-                    debugLog("Click Company button", { newState });
-                    setIsMoreMenuOpen(false);
-                    // Close Services when opening Company
-                    if (newState) {
-                      setIsServicesDropdownOpen(false);
-                      setActiveServiceCategory(null);
-                      setHoveredServiceItem(null);
-                    }
-                    setIsCompanyDropdownOpen(newState);
-                  }}
-                >
-                  Company <span aria-hidden="true">▼</span>
-                </button>
-                {isCompanyDropdownOpen && (
-                  <div 
-                    className={styles.navDropdown} 
-                    style={{ width: "400px" }} 
-                    role="menu"
-                    onMouseEnter={() => setIsCompanyDropdownOpen(true)}
-                    onMouseLeave={(e) => {
-                      const relatedTarget = e.relatedTarget as HTMLElement | null;
-                      const isHTMLElement = relatedTarget && typeof relatedTarget.closest === 'function';
-                      debugLog("Mouse leave Company dropdown", {
-                        relatedTarget: relatedTarget?.tagName || 'null',
-                        isHTMLElement,
-                      });
-                      setTimeout(() => {
-                        if (!document.querySelector(`.${styles.navItem}:hover`) && !document.querySelector(`.${styles.navDropdown}:hover`)) {
-                          debugLog("Mouse leave Company dropdown - closing");
-                        setIsCompanyDropdownOpen(false);
-                        setActiveCompanyCategory(null);
-                        setHoveredCompanyItem(null);
-                      }
-                      }, 150);
-                    }}
-                  >
-                    {activeCompanyCategory ? (
-                      /* Show selected category items */
-                      <div className={styles.dropdownContent}>
-                        <button 
-                          type="button"
-                          className={styles.backButton}
-                          onClick={(e) => {
-                            debugLog("Click Company Back to Categories button", {
-                              currentCategory: activeCompanyCategory,
-                            });
-                            e.preventDefault();
-                            e.stopPropagation();
-                            setActiveCompanyCategory(null);
-                            setHoveredCompanyItem(null);
-                            // Set flag to prevent immediate reopening
-                            justClickedBackCompany.current = true;
-                            setTimeout(() => {
-                              justClickedBackCompany.current = false;
-                              debugLog("Company back button cooldown expired");
-                            }, 300);
-                            debugLog("Company back button clicked - reset category and hover");
-                          }}
-                          aria-label="Back to categories"
-                        >
-                          ← Back to Categories
-                        </button>
-                        <div className={styles.dropdownWithDescription}>
-                          <div className={styles.dropdownGroup}>
-                            <div className={styles.dropdownTitle}>
-                              {companyCategories.find(c => c.id === activeCompanyCategory)?.title}
-                            </div>
-                            {companyCategories
-                              .find(c => c.id === activeCompanyCategory)
-                              ?.items.map((item, index) => {
-                                // Use :: separator to avoid issues with category IDs containing hyphens
-                                const itemKey = `${activeCompanyCategory}::${index}`;
-                                const isHovered = hoveredCompanyItem === itemKey;
-                                return (
-                                  <Link 
-                                    key={index}
-                                    href={item.href} 
-                                    className={`${styles.dropdownSubLink} ${isHovered ? styles.hovered : ""}`}
-                                    aria-label={item.label}
-                                    onMouseEnter={() => {
-                                      debugLog("Mouse enter company item", { itemKey, label: item.label });
-                                      // Clear any pending timeout
-                                      if ((window as any).companyHoverTimeout) {
-                                        clearTimeout((window as any).companyHoverTimeout);
-                                        (window as any).companyHoverTimeout = null;
-                                      }
-                                      setHoveredCompanyItem(itemKey);
-                                    }}
-                                    onMouseLeave={() => {
-                                      debugLog("Mouse leave company item", { itemKey, label: item.label });
-                                      // Only clear if not moving to description panel - give more time to move to panel
-                                      const timeout = setTimeout(() => {
-                                        // Double check if mouse is still not on description panel
-                                        if (!document.querySelector(`.${styles.descriptionPanel}:hover`)) {
-                                          debugLog("Timeout: clearing hovered company item", { itemKey });
-                                          setHoveredCompanyItem(null);
-                                        }
-                                      }, 300);
-                                      // Store timeout to clear if needed
-                                      (window as any).companyHoverTimeout = timeout;
-                                    }}
-                                    onClick={() => {
-                                      debugLog("Click company item", { itemKey, label: item.label });
-                                      setIsCompanyDropdownOpen(false);
-                                      setActiveCompanyCategory(null);
-                                      setHoveredCompanyItem(null);
-                                    }}
-                                  >
-                                    {item.label}
-                                  </Link>
-                                );
-                              })}
-                          </div>
-                          {/* Description Panel */}
-                          {hoveredCompanyItem && (() => {
-                            // Use :: separator to properly parse category IDs with hyphens
-                            const parts = hoveredCompanyItem.split('::');
-                            const categoryId = parts[0];
-                            const itemIndex = parseInt(parts[1] || '0');
-                            const category = companyCategories.find(c => c.id === categoryId);
-                            const item = category?.items[itemIndex];
-                            debugLog("Rendering company description panel", {
-                              hoveredCompanyItem,
-                              parts,
-                              categoryId,
-                              itemIndex,
-                              hasCategory: !!category,
-                              categoryTitle: category?.title,
-                              hasItem: !!item,
-                              itemLabel: item?.label,
-                              hasDescription: !!item?.description,
-                            });
-                            return item?.description ? (
-                              <div 
-                                className={styles.descriptionPanel}
-                                onMouseEnter={() => {
-                                  debugLog("Mouse enter company description panel", { hoveredCompanyItem });
-                                  // Clear any pending timeout to keep description open
-                                  if ((window as any).companyHoverTimeout) {
-                                    clearTimeout((window as any).companyHoverTimeout);
-                                    (window as any).companyHoverTimeout = null;
-                                    debugLog("Cleared company hover timeout - keeping description open");
-                                  }
-                                  // Ensure the hovered item stays set
-                                  if (hoveredCompanyItem) {
-                                    setHoveredCompanyItem(hoveredCompanyItem);
-                                  }
-                                }}
-                                onMouseLeave={() => {
-                                  debugLog("Mouse leave company description panel");
-                                  // Clear any pending timeout
-                                  if ((window as any).companyHoverTimeout) {
-                                    clearTimeout((window as any).companyHoverTimeout);
-                                    (window as any).companyHoverTimeout = null;
-                                  }
-                                  setHoveredCompanyItem(null);
-                                }}
-                              >
-                                <div className={styles.descriptionContent}>
-                                  <p className={styles.descriptionText}>
-                                    {item.description}
-                                  </p>
-                                </div>
-                              </div>
-                            ) : null;
-                          })()}
-                        </div>
-                      </div>
-                    ) : (
-                      /* Show all categories */
-                      <div className={styles.dropdownContent}>
-                        <div className={styles.categoriesGrid}>
-                          {companyCategories.map((category) => (
-                            <button
-                              key={category.id}
-                              className={`${styles.categoryButton} ${
-                                activeCompanyCategory === category.id ? styles.active : ""
-                              }`}
-                              aria-label={`${category.title} category`}
-                              onClick={() => {
-                                // Ignore click if we just clicked back
-                                if (justClickedBackCompany.current) {
-                                  debugLog("Ignoring Company category click - just clicked back", { categoryId: category.id });
-                                  return;
-                                }
-                                setActiveCompanyCategory(category.id);
-                              }}
-                            >
-                              <div className={styles.categoryTitle}>{category.title}</div>
-                              <div className={styles.categoryCount}>{category.items.length} Items</div>
-                              <div className={styles.categoryArrow}>→</div>
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
+              <Link href="/blog" className={`${styles.navLink} ${isActive("/blog") ? styles.active : ""}`} onMouseEnter={(e) => updateNavIndicator(e.currentTarget)}>
+                Blog
+              </Link>
 
-              <Link href="/contact" className={`${styles.navLink} ${isActive("/contact") ? styles.active : ""}`}>
-                Contact
+              <Link href="/contact" className={`${styles.navLink} ${isActive("/contact") ? styles.active : ""}`} onMouseEnter={(e) => updateNavIndicator(e.currentTarget)}>
+                Contact Us
               </Link>
             </nav>
 
             {/* CTA Buttons */}
             <div className={styles.headerActions}>
+              <span className={`${styles.popularToolsWrap} ${isScrolled ? styles.hideQuote : ""}`}>
+                <Link href="/contact" className={`btn btn-sm ${styles.popularToolsButton}`}>
+                  Get a Quote
+                </Link>
+                <span className={styles.popularToolsEffect} aria-hidden="true">
+                  <span className={`${styles.bubbleCircle} ${styles.bubbleTopLeft}`}></span>
+                  <span className={`${styles.bubbleCircle} ${styles.bubbleTopLeft}`}></span>
+                  <span className={`${styles.bubbleCircle} ${styles.bubbleTopLeft}`}></span>
+                  <span className={styles.popularToolsBlob}></span>
+                  <span className={`${styles.bubbleCircle} ${styles.bubbleBottomRight}`}></span>
+                  <span className={`${styles.bubbleCircle} ${styles.bubbleBottomRight}`}></span>
+                  <span className={`${styles.bubbleCircle} ${styles.bubbleBottomRight}`}></span>
+                </span>
+              </span>
               {popularToolsButton}
             </div>
 
@@ -1169,21 +798,19 @@ export function Header() {
                 Home
               </Link>
               
-              {/* Mobile Solutions Dropdown */}
+              {/* Mobile Services Dropdown */}
               <div className={styles.mobileNavItem}>
                 <button
                   className={`${styles.mobileNavLink} ${isActive("/services") || isActive("/portfolio") || isActive("/work") ? styles.active : ""}`}
                   onClick={() => {
                     const newState = mobileServiceCategory ? null : "categories";
-                    debugLog("Click mobile Solutions button", { newState, currentState: mobileServiceCategory });
-                    // Close mobile Company when opening Services
                     if (newState) {
                       setMobileCompanyCategory(null);
                     }
                     setMobileServiceCategory(newState);
                   }}
                 >
-                  Solutions {mobileServiceCategory ? "▲" : "▼"}
+                  Services {mobileServiceCategory ? "▲" : "▼"}
                 </button>
                 {mobileServiceCategory && (
                   <div className={styles.mobileDropdown}>
@@ -1193,20 +820,14 @@ export function Header() {
                           <button
                             key={category.id}
                             className={styles.mobileCategoryButton}
-                            onClick={() => {
-                              debugLog("Click mobile service category", { categoryId: category.id, title: category.title });
-                              setMobileServiceCategory(category.id);
-                            }}
+                            onClick={() => setMobileServiceCategory(category.id)}
                           >
                             {category.title} →
                           </button>
                         ))}
                         <button
                           className={styles.mobileBackButton}
-                          onClick={() => {
-                            debugLog("Click mobile Close button");
-                            setMobileServiceCategory(null);
-                          }}
+                          onClick={() => setMobileServiceCategory(null)}
                         >
                           ← Close
                         </button>
@@ -1215,10 +836,7 @@ export function Header() {
                       <div className={styles.mobileServicesList}>
                         <button
                           className={styles.mobileBackButton}
-                          onClick={() => {
-                            debugLog("Click mobile Back button", { currentCategory: mobileServiceCategory });
-                            setMobileServiceCategory("categories");
-                          }}
+                          onClick={() => setMobileServiceCategory("categories")}
                         >
                           ← Back
                         </button>
@@ -1241,113 +859,29 @@ export function Header() {
               </div>
 
               <Link href="/portfolio" className={`${styles.mobileNavLink} ${isActive("/portfolio") ? styles.active : ""}`} onClick={closeMobileMenu}>
-                Portfolio
+                Case Studies
               </Link>
-              <Link href="/pricing" className={`${styles.mobileNavLink} ${isActive("/pricing") ? styles.active : ""}`} onClick={closeMobileMenu}>
-                Pricing
+              <Link href="/about" className={`${styles.mobileNavLink} ${isActive("/about") ? styles.active : ""}`} onClick={closeMobileMenu}>
+                Who We Are
               </Link>
-              
-              {/* Mobile Company Dropdown */}
-              <div className={styles.mobileNavItem}>
-                <button
-                  className={`${styles.mobileNavLink} ${isActive("/about") || isActive("/career") || isActive("/testimonials") || isActive("/blog") || isActive("/privacy-policy") || isActive("/terms-of-service") || isActive("/cookie-policy") ? styles.active : ""}`}
-                  onClick={() => {
-                    const newState = mobileCompanyCategory ? null : "categories";
-                    debugLog("Click mobile Company button", { newState, currentState: mobileCompanyCategory });
-                    // Close mobile Services when opening Company
-                    if (newState) {
-                      setMobileServiceCategory(null);
-                    }
-                    setMobileCompanyCategory(newState);
-                  }}
-                >
-                  Company {mobileCompanyCategory ? "▲" : "▼"}
-                </button>
-                {mobileCompanyCategory && (
-                  <div className={styles.mobileDropdown}>
-                    {mobileCompanyCategory === "categories" ? (
-                      <div className={styles.mobileCategoriesList}>
-                        {companyCategories.map((category) => (
-                          <button
-                            key={category.id}
-                            className={styles.mobileCategoryButton}
-                            aria-label={`${category.title} category`}
-                            onClick={() => setMobileCompanyCategory(category.id)}
-                          >
-                            {category.title} →
-                          </button>
-                        ))}
-                        <button
-                          className={styles.mobileBackButton}
-                          onClick={() => setMobileCompanyCategory(null)}
-                        >
-                          ← Close
-                        </button>
-                      </div>
-                    ) : (
-                      <div className={styles.mobileServicesList}>
-                        <button
-                          className={styles.mobileBackButton}
-                          onClick={() => setMobileCompanyCategory("categories")}
-                        >
-                          ← Back
-                        </button>
-                        {companyCategories
-                          .find(c => c.id === mobileCompanyCategory)
-                          ?.items.map((item, index) => (
-                            <Link
-                              key={index}
-                              href={item.href}
-                              className={styles.mobileServiceLink}
-                              onClick={closeMobileMenu}
-                            >
-                              {item.label}
-                            </Link>
-                          ))}
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-
               <Link href="/blog" className={`${styles.mobileNavLink} ${isActive("/blog") ? styles.active : ""}`} onClick={closeMobileMenu}>
                 Blog
               </Link>
               <Link href="/contact" className={`${styles.mobileNavLink} ${isActive("/contact") ? styles.active : ""}`} onClick={closeMobileMenu}>
-                Contact
+                Contact Us
               </Link>
             </nav>
             <div className={styles.mobileMenuActions}>
-              <span className={styles.popularToolsWrap}>
-                <Link 
-                  href="/popular-tools" 
-                  className={`btn ${styles.popularToolsButton}`} 
-                  onClick={(e) => {
-                    trackCTAClick("See Popular Tools", "mobile_menu", pathname);
-                    closeMobileMenu();
-                  }}
-                >
-                  See Popular Tools
-                </Link>
-                <span className={styles.popularToolsEffect} aria-hidden="true">
-                  <span className={`${styles.bubbleCircle} ${styles.bubbleTopLeft}`}></span>
-                  <span className={`${styles.bubbleCircle} ${styles.bubbleTopLeft}`}></span>
-                  <span className={`${styles.bubbleCircle} ${styles.bubbleTopLeft}`}></span>
-                  <span className={styles.popularToolsBlob}></span>
-                  <span className={`${styles.bubbleCircle} ${styles.bubbleBottomRight}`}></span>
-                  <span className={`${styles.bubbleCircle} ${styles.bubbleBottomRight}`}></span>
-                  <span className={`${styles.bubbleCircle} ${styles.bubbleBottomRight}`}></span>
-                </span>
-              </span>
               <Link 
-                href="/request-a-call" 
-                className="btn btn-secondary btn-bubble" 
+                href="/contact" 
+                className="btn" 
+                style={{ background: '#ff8c00', color: '#fff', border: 'none', borderRadius: '999px', fontWeight: 600, padding: '10px 24px' }}
                 onClick={(e) => {
-                  trackCTAClick("Schedule a Call", "mobile_menu", pathname);
+                  trackCTAClick("Get a Quote", "mobile_menu", pathname);
                   closeMobileMenu();
                 }}
               >
-                Schedule a Call
+                Get a Quote
               </Link>
             </div>
             <div className={styles.mobileMenuFooter}>

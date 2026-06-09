@@ -14,6 +14,7 @@ type CategoryFilter = "all" | ToolCategoryId;
 
 export default function PopularToolsClient({ categories, tools }: PopularToolsClientProps) {
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>("all");
+  const [searchQuery, setSearchQuery] = useState("");
   const categoryTitleById = useMemo(() => {
     const map = new Map<string, string>();
     categories.forEach((category) => map.set(category.id, category.title));
@@ -21,11 +22,14 @@ export default function PopularToolsClient({ categories, tools }: PopularToolsCl
   }, [categories]);
 
   const visibleTools = useMemo(() => {
+    const q = searchQuery.toLowerCase().trim();
     return tools.filter((tool) => {
       const matchesCategory = activeCategory === "all" || tool.category === activeCategory;
-      return matchesCategory;
+      if (!q) return matchesCategory;
+      return matchesCategory &&
+        (tool.title.toLowerCase().includes(q) || tool.description.toLowerCase().includes(q));
     });
-  }, [activeCategory, tools]);
+  }, [activeCategory, searchQuery, tools]);
 
   return (
     <div className="container">
@@ -67,6 +71,16 @@ export default function PopularToolsClient({ categories, tools }: PopularToolsCl
               {category.title}
             </button>
           ))}
+        </div>
+
+        <div className={styles.searchWrapper}>
+          <input
+            type="search"
+            className={styles.searchInput}
+            placeholder="Search tools by name or description..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
         </div>
       </section>
 
