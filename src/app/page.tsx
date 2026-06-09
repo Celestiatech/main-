@@ -816,6 +816,9 @@ export default function Home() {
 
       {/* ===== INDUSTRIES SECTION ===== */}
       <section className={styles.industries} data-section="industries">
+        <div className={`${styles.industriesGlowOrb} ${styles.industriesGlowOrb1}`} aria-hidden="true" />
+        <div className={`${styles.industriesGlowOrb} ${styles.industriesGlowOrb2}`} aria-hidden="true" />
+        <div className={`${styles.industriesGlowOrb} ${styles.industriesGlowOrb3}`} aria-hidden="true" />
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Blogs We Cater To</h2>
@@ -824,8 +827,9 @@ export default function Home() {
           <div className={styles.industriesGrid}>
             {industries.map((industry, index) => (
               <div key={index} className={`${styles.industryCard} animate-on-scroll stagger-${(index % 6) + 1}`}>
+                <div className={styles.industryCardBorder} aria-hidden="true" />
                 <div className={styles.industryIcon}>
-                  <Image src={`/images/icons/${industry.icon || 'default.svg'}`} alt={industry.name} width={60} height={60} loading="lazy" />
+                  <Image src={`/images/icons/${industry.icon || 'default.svg'}`} alt={industry.name} width={60} height={60} className={styles.iconImage} loading="lazy" />
                 </div>
                 <h3>{industry.name}</h3>
               </div>
@@ -835,9 +839,7 @@ export default function Home() {
       </section>
 
       {/* ===== PORTFOLIO SECTION ===== */}
-      <section className={styles.portfolio} data-section="portfolio">
-        <PortfolioShowcase />
-      </section>
+      <PortfolioShowcase />
 
       {/* ===== PLATFORMS / CRM SECTION ===== */}
       <section className={styles.platforms} data-section="platforms">
