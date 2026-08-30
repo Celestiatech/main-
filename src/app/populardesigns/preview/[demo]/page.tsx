@@ -35,7 +35,7 @@ export default async function PopularDesignPreviewPage({ params, searchParams }:
     <main className={styles.page}>
       <div className={styles.topBar}>
         <div>
-          <p className={styles.eyebrow}>Celestiatech Preview</p>
+          <p className={styles.eyebrow}>W3Tech Preview</p>
           <h1>{demo}</h1>
         </div>
         <a href="/populardesigns" className={styles.backLink}>

@@ -16,7 +16,7 @@ export default function TestimonialsPage() {
 
   const testimonials = [
     {
-      quote: "Celestiatech delivered our mobile app ahead of schedule with exceptional quality. Their team understood our vision and executed it perfectly. The app has received outstanding reviews from our users.",
+      quote: "W3Tech delivered our mobile app ahead of schedule with exceptional quality. Their team understood our vision and executed it perfectly. The app has received outstanding reviews from our users.",
       author: "Sarah Johnson",
       role: "CEO, TechStart Inc.",
       company: "TechStart Inc.",
@@ -24,7 +24,7 @@ export default function TestimonialsPage() {
       project: "Mobile App Development",
     },
     {
-      quote: "Working with Celestiatech was a game-changer for our business. Their expertise in blockchain development helped us launch our DeFi platform successfully. Highly recommended!",
+      quote: "Working with W3Tech was a game-changer for our business. Their expertise in blockchain development helped us launch our DeFi platform successfully. Highly recommended!",
       author: "Michael Chen",
       role: "Founder",
       company: "CryptoVault",
@@ -32,7 +32,7 @@ export default function TestimonialsPage() {
       project: "Blockchain Development",
     },
     {
-      quote: "The team at Celestiatech demonstrated exceptional professionalism and technical expertise. They became our trusted development partner for all our digital initiatives.",
+      quote: "The team at W3Tech demonstrated exceptional professionalism and technical expertise. They became our trusted development partner for all our digital initiatives.",
       author: "Emily Davis",
       role: "Director of Technology",
       company: "EduCorp Global",
@@ -40,7 +40,7 @@ export default function TestimonialsPage() {
       project: "Web Platform Development",
     },
     {
-      quote: "From concept to launch, Celestiatech provided outstanding support. Their UI/UX design transformed our vision into a beautiful, user-friendly application.",
+      quote: "From concept to launch, W3Tech provided outstanding support. Their UI/UX design transformed our vision into a beautiful, user-friendly application.",
       author: "James Wilson",
       role: "Product Manager",
       company: "HealthTech Solutions",
@@ -48,7 +48,7 @@ export default function TestimonialsPage() {
       project: "Healthcare App",
     },
     {
-      quote: "We've worked with many development teams, but Celestiatech stands out for their communication, expertise, and commitment to quality. They truly care about our success.",
+      quote: "We've worked with many development teams, but W3Tech stands out for their communication, expertise, and commitment to quality. They truly care about our success.",
       author: "Lisa Anderson",
       role: "COO",
       company: "LogiTech Solutions",

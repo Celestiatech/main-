@@ -142,3 +142,8 @@ export function getToolBySlug(slug: string) {
 export function getToolsByCategory(category: ToolCategoryId) {
   return TOOLS.filter((tool) => tool.category === category);
 }
+
+/** The category record for an id, used for page titles and breadcrumbs. */
+export function getToolCategory(id: ToolCategoryId): ToolCategory | undefined {
+  return TOOL_CATEGORIES.find((category) => category.id === id);
+}

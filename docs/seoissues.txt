@@ -1,0 +1,2943 @@
+New
+AI-powered SEO - Perplexity, SearchGPT & ChatGPT optimization is here
+→
+Services
+DIGITAL SERVICES
+AI Services
+AI Chatbot, AI App, AI Business
+Web Development
+React, Next.js, WordPress & more
+Web Design
+UI/UX, Graphic, Logo Design
+Mobile Apps
+iOS, Android, Flutter
+SEO Services
+Technical, Local, AI SEO
+Digital Marketing
+PPC, SMM, Email Marketing
+Solutions
+By Need
+All Packages
+Professional Solutions
+Hire Developers
+Dedicated expert teams
+All Industries
+30+ verticals covered
+About
+Portfolio
+Blog
+Contact
+Free SEO Tools
+Home
+/
+Free SEO Tools
+/
+SEO Audit Tool
+FREE
+SEO AUDIT TOOL
+100% Free Professional
+SEO Audit Tool
+Get a full, accurate report of your website in 30 seconds with our Free SEO audit tool. No account needed, just enter your URL and see exactly how to rank higher. No Login Required.
+
+Trusted by 25,000+ Websites Worldwide
+The go-to SEO analyzer for agencies, startups, bloggers, and developers who want to dominate search results.
+
+https://www.w3tech.co.in/
+Run Audit →
+This Page Only
+Full Website
+Custom List
+Scans up to 20 main pages.
+✔ No Sign-up ✔ Instant PDF Download ✔ 100% Accurate ✔ 100% Free
+Add a focus keyword (optional)
+SEO ANALYSIS Report
+Audit Results for https://www.w3tech.co.in/
+Get Report in Mail
+89
+/ 100
+Overall Score
+w3tech.co.in
+Website screenshot of w3tech.co.in
+Mobile screenshot of w3tech.co.in
+
+
+88
+Full-Site Audit
+20 pages
+Discovered via navbar · overall score
+SEO
+80
+Technical
+95
+Performance
+80
+Usability
+80
+● 0 good
+● 20 warn
+● 0 critical
+
+80
+SEO
+GOOD
+
+80
+Performance
+GOOD
+
+95
+Social
+GOOD
+
+80
+Usability
+GOOD
+All
+Pages 20
+On-Page SEO 2
+Technical ✓
+Performance 1
+Security ✓
+Usability 1
+Social ✓
+Site-wide Pages (20)
+20
+Pages scanned
+0
+Good pages
+20
+Warnings
+0
+Critical
+1510
+Avg. words
+24
+Missing alts
+1
+Missing titles
+1
+Missing meta desc
+● 0 good
+● 20 warnings
+● 0 critical
+All (20)
+Good (0)
+Warn (20)
+Critical (0)
+Page
+↕
+Title
+↕
+Words
+↕
+H1
+↕
+Alt missing
+↕
+Score
+↕
+Status
+↕
+▶
+w3tech.co.in
+W3Tech - Premium IT & Software Development Company(50)	2088	1	7/125	88	WARNING
+3 issues
+Detailed checks
+w3tech.co.in
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in
+Desktop screenshot of w3tech.co.in
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+146 chars
+Premium web, mobile, AI, and blockchain development services backed by 12+ years of experience and 2,500+ successful client engagements worldwide.
+
+!
+On-Page SEO
+Warning
+✓
+Meta Title
+50 chars
+✓
+Meta Description
+146 chars
+✓
+H1 Tag
+1 found
+!
+Image Alt Text
+7/125 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+!
+Performance
+Warning
+✓
+PageSpeed (Mobile)
+94
+!
+PageSpeed (Desktop)
+74
+Google PageSpeed Insights performance score (desktop).
+Fix: Reduce unused CSS/JS, optimize images, and enable effective caching.
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+!
+Mobile
+Warning
+✓
+Viewport Meta
+Present
+!
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+✓
+Social
+Pass
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+✓
+Structured Data
+Found
+▶
+w3tech.co.in/work
+Case Studies | W3Tech(21)	992	1	1/24	73	WARNING
+4 issues
+Detailed checks
+w3tech.co.in/work
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in/work
+Desktop screenshot of w3tech.co.in/work
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/work
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+172 chars
+Detailed case studies showcasing our development process, technical solutions, and measurable results. Learn how we've transformed businesses through innovative technology.
+
+!
+On-Page SEO
+Warning
+!
+Meta Title
+21 chars
+The meta title tag is the clickable blue headline in Google search results.
+Fix: Add a unique meta title (ideally 50–70 characters) and include your primary keyword.
+!
+Meta Description
+172 chars
+The meta description appears below your title in search results.
+Fix: Write a helpful meta description (ideally 120–170 characters) that matches the page intent.
+✓
+H1 Tag
+1 found
+!
+Image Alt Text
+1/24 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+✓
+Performance
+Pass
+✓
+PageSpeed (Mobile)
+90
+✓
+PageSpeed (Desktop)
+100
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+!
+Mobile
+Warning
+✓
+Viewport Meta
+Present
+!
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+✓
+Social
+Pass
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+✓
+Structured Data
+Found
+▶
+w3tech.co.in/blog
+Blog | W3Tech(13)	2585	1	1/84	80	WARNING
+3 issues
+Detailed checks
+w3tech.co.in/blog
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in/blog
+Desktop screenshot of w3tech.co.in/blog
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/blog
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+138 chars
+Latest insights on mobile app development, web development, AI, blockchain, and technology trends. Expert articles from Celestiatech team.
+
+!
+On-Page SEO
+Warning
+!
+Meta Title
+13 chars
+The meta title tag is the clickable blue headline in Google search results.
+Fix: Add a unique meta title (ideally 50–70 characters) and include your primary keyword.
+✓
+Meta Description
+138 chars
+✓
+H1 Tag
+1 found
+!
+Image Alt Text
+1/84 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+✓
+Performance
+Pass
+✓
+PageSpeed (Mobile)
+96
+✓
+PageSpeed (Desktop)
+100
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+!
+Mobile
+Warning
+✓
+Viewport Meta
+Present
+!
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+✓
+Social
+Pass
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+✓
+Structured Data
+Found
+▶
+w3tech.co.in/about
+About Us | W3Tech(17)	1016	1	1/1	73	WARNING
+3 issues
+Detailed checks
+w3tech.co.in/about
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in/about
+Desktop screenshot of w3tech.co.in/about
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/about
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+160 chars
+Learn about W3Tech - a premium IT development company with 12+ years of experience, serving 2,500+ clients worldwide. Discover our team, mission, and expertise.
+
+✗
+On-Page SEO
+Critical
+!
+Meta Title
+17 chars
+The meta title tag is the clickable blue headline in Google search results.
+Fix: Add a unique meta title (ideally 50–70 characters) and include your primary keyword.
+✓
+Meta Description
+160 chars
+✓
+H1 Tag
+1 found
+✗
+Image Alt Text
+1/1 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+✓
+Performance
+Pass
+✓
+PageSpeed (Mobile)
+91
+✓
+PageSpeed (Desktop)
+100
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+!
+Mobile
+Warning
+✓
+Viewport Meta
+Present
+!
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+✓
+Social
+Pass
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+✓
+Structured Data
+Found
+▶
+w3tech.co.in/career
+Careers | W3Tech(16)	1096	1	1/1	73	WARNING
+4 issues
+Detailed checks
+w3tech.co.in/career
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in/career
+Desktop screenshot of w3tech.co.in/career
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/career
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+148 chars
+Join Celestiatech - a premium IT development company. Explore career opportunities in mobile development, web development, AI, blockchain, and more.
+
+✗
+On-Page SEO
+Critical
+!
+Meta Title
+16 chars
+The meta title tag is the clickable blue headline in Google search results.
+Fix: Add a unique meta title (ideally 50–70 characters) and include your primary keyword.
+✓
+Meta Description
+148 chars
+✓
+H1 Tag
+1 found
+✗
+Image Alt Text
+1/1 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+!
+Performance
+Warning
+!
+PageSpeed (Mobile)
+89
+Google PageSpeed Insights performance score (mobile).
+Fix: Follow Lighthouse “Opportunities” (compress images, reduce JS, improve caching).
+✓
+PageSpeed (Desktop)
+100
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+!
+Mobile
+Warning
+✓
+Viewport Meta
+Present
+!
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+✓
+Social
+Pass
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+✓
+Structured Data
+Found
+▶
+w3tech.co.in/pricing
+Pricing & Plans | W3Tech(24)	1439	1	1/1	73	WARNING
+3 issues
+Detailed checks
+w3tech.co.in/pricing
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in/pricing
+Desktop screenshot of w3tech.co.in/pricing
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/pricing
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+158 chars
+Transparent pricing for mobile app development, web development, and custom software solutions. Fixed-price and dedicated team models. Get a free quote today.
+
+✗
+On-Page SEO
+Critical
+!
+Meta Title
+24 chars
+The meta title tag is the clickable blue headline in Google search results.
+Fix: Add a unique meta title (ideally 50–70 characters) and include your primary keyword.
+✓
+Meta Description
+158 chars
+✓
+H1 Tag
+1 found
+✗
+Image Alt Text
+1/1 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+✓
+Performance
+Pass
+✓
+PageSpeed (Mobile)
+91
+✓
+PageSpeed (Desktop)
+100
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+!
+Mobile
+Warning
+✓
+Viewport Meta
+Present
+!
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+✓
+Social
+Pass
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+✓
+Structured Data
+Found
+▶
+w3tech.co.in/contact
+Missing	-	-	-	-	WARNING
+Detailed checks
+w3tech.co.in/contact
+Warning
+Audit failed: Failed to fetch
+Screenshots
+Click a device to view full size
+w3tech.co.in/contact
+Desktop screenshot of w3tech.co.in/contact
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/contact
+MOBILE SCREENSHOT
+480 × 800
+✗
+Meta description
+Meta description missing
+
+No per-page check data available.
+▶
+w3tech.co.in/clients
+W3Tech - Premium IT & Software Development Company(50)	999	1	1/1	80	WARNING
+2 issues
+Detailed checks
+w3tech.co.in/clients
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in/clients
+Desktop screenshot of w3tech.co.in/clients
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/clients
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+146 chars
+Premium web, mobile, AI, and blockchain development services backed by 12+ years of experience and 2,500+ successful client engagements worldwide.
+
+✗
+On-Page SEO
+Critical
+✓
+Meta Title
+50 chars
+✓
+Meta Description
+146 chars
+✓
+H1 Tag
+1 found
+✗
+Image Alt Text
+1/1 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+✓
+Performance
+Pass
+✓
+PageSpeed (Mobile)
+91
+✓
+PageSpeed (Desktop)
+100
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+!
+Mobile
+Warning
+✓
+Viewport Meta
+Present
+!
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+✓
+Social
+Pass
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+✓
+Structured Data
+Found
+▶
+w3tech.co.in/services
+Our Services | W3Tech(21)	1046	1	1/1	65	WARNING
+5 issues
+Detailed checks
+w3tech.co.in/services
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in/services
+Desktop screenshot of w3tech.co.in/services
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/services
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+174 chars
+Comprehensive IT services including mobile app development, web development, game development, AI solutions, blockchain, and DevOps. Expert team delivering premium solutions.
+
+✗
+On-Page SEO
+Critical
+!
+Meta Title
+21 chars
+The meta title tag is the clickable blue headline in Google search results.
+Fix: Add a unique meta title (ideally 50–70 characters) and include your primary keyword.
+!
+Meta Description
+174 chars
+The meta description appears below your title in search results.
+Fix: Write a helpful meta description (ideally 120–170 characters) that matches the page intent.
+✓
+H1 Tag
+1 found
+✗
+Image Alt Text
+1/1 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+!
+Performance
+Warning
+!
+PageSpeed (Mobile)
+89
+Google PageSpeed Insights performance score (mobile).
+Fix: Follow Lighthouse “Opportunities” (compress images, reduce JS, improve caching).
+✓
+PageSpeed (Desktop)
+100
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+!
+Mobile
+Warning
+✓
+Viewport Meta
+Present
+!
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+✓
+Social
+Pass
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+✓
+Structured Data
+Found
+▶
+w3tech.co.in/proposal
+W3Tech - Premium IT & Software Development Company(50)	994	1	1/3	80	WARNING
+3 issues
+Detailed checks
+w3tech.co.in/proposal
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in/proposal
+Desktop screenshot of w3tech.co.in/proposal
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/proposal
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+146 chars
+Premium web, mobile, AI, and blockchain development services backed by 12+ years of experience and 2,500+ successful client engagements worldwide.
+
+✗
+On-Page SEO
+Critical
+✓
+Meta Title
+50 chars
+✓
+Meta Description
+146 chars
+✓
+H1 Tag
+1 found
+✗
+Image Alt Text
+1/3 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+!
+Performance
+Warning
+!
+PageSpeed (Mobile)
+89
+Google PageSpeed Insights performance score (mobile).
+Fix: Follow Lighthouse “Opportunities” (compress images, reduce JS, improve caching).
+✓
+PageSpeed (Desktop)
+100
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+!
+Mobile
+Warning
+✓
+Viewport Meta
+Present
+!
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+✓
+Social
+Pass
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+✓
+Structured Data
+Found
+▶
+w3tech.co.in/portfolio
+Portfolio | W3Tech(18)	2291	0	1/8	65	WARNING
+5 issues
+Detailed checks
+w3tech.co.in/portfolio
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in/portfolio
+Desktop screenshot of w3tech.co.in/portfolio
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/portfolio
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+167 chars
+Explore our portfolio of successful projects - mobile apps, web applications, games, and enterprise solutions. See how we've helped 2,500+ clients achieve their goals.
+
+✗
+On-Page SEO
+Critical
+!
+Meta Title
+18 chars
+The meta title tag is the clickable blue headline in Google search results.
+Fix: Add a unique meta title (ideally 50–70 characters) and include your primary keyword.
+✓
+Meta Description
+167 chars
+✗
+H1 Tag
+0 found
+Each page should have a clear H1 to describe the main topic.
+Fix: Use exactly one descriptive H1 on the page.
+!
+Image Alt Text
+1/8 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+!
+Performance
+Warning
+!
+PageSpeed (Mobile)
+89
+Google PageSpeed Insights performance score (mobile).
+Fix: Follow Lighthouse “Opportunities” (compress images, reduce JS, improve caching).
+✓
+PageSpeed (Desktop)
+100
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+!
+Mobile
+Warning
+✓
+Viewport Meta
+Present
+!
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+✓
+Social
+Pass
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+✓
+Structured Data
+Found
+▶
+w3tech.co.in/seo-services
+W3Tech - Premium IT & Software Development Company(50)	524	0	0/0	73	WARNING
+4 issues
+Detailed checks
+w3tech.co.in/seo-services
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in/seo-services
+Desktop screenshot of w3tech.co.in/seo-services
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/seo-services
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+146 chars
+Premium web, mobile, AI, and blockchain development services backed by 12+ years of experience and 2,500+ successful client engagements worldwide.
+
+✗
+On-Page SEO
+Critical
+✓
+Meta Title
+50 chars
+✓
+Meta Description
+146 chars
+✗
+H1 Tag
+0 found
+Each page should have a clear H1 to describe the main topic.
+Fix: Use exactly one descriptive H1 on the page.
+!
+Image Alt Text
+0/0 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+✓
+Performance
+Pass
+✓
+PageSpeed (Mobile)
+91
+✓
+PageSpeed (Desktop)
+100
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+!
+Mobile
+Warning
+✓
+Viewport Meta
+Present
+!
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+!
+Social
+Warning
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+!
+Structured Data
+Missing
+Schema markup enables rich results.
+Fix: Add relevant Schema.org JSON-LD (Organization, Article, FAQ, etc.).
+▶
+w3tech.co.in/testimonials
+Client Testimonials | W3Tech(28)	1043	1	1/1	73	WARNING
+4 issues
+Detailed checks
+w3tech.co.in/testimonials
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in/testimonials
+Desktop screenshot of w3tech.co.in/testimonials
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/testimonials
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+146 chars
+Read testimonials from our satisfied clients. 98% client satisfaction rate. See what CEOs, CTOs, and founders say about working with Celestiatech.
+
+✗
+On-Page SEO
+Critical
+!
+Meta Title
+28 chars
+The meta title tag is the clickable blue headline in Google search results.
+Fix: Add a unique meta title (ideally 50–70 characters) and include your primary keyword.
+✓
+Meta Description
+146 chars
+✓
+H1 Tag
+1 found
+✗
+Image Alt Text
+1/1 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+!
+Performance
+Warning
+!
+PageSpeed (Mobile)
+89
+Google PageSpeed Insights performance score (mobile).
+Fix: Follow Lighthouse “Opportunities” (compress images, reduce JS, improve caching).
+✓
+PageSpeed (Desktop)
+99
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+!
+Mobile
+Warning
+✓
+Viewport Meta
+Present
+!
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+✓
+Social
+Pass
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+✓
+Structured Data
+Found
+▶
+w3tech.co.in/popular-tools
+Popular Tools | W3Tech(22)	2778	1	1/1	65	WARNING
+5 issues
+Detailed checks
+w3tech.co.in/popular-tools
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in/popular-tools
+Desktop screenshot of w3tech.co.in/popular-tools
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/popular-tools
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+100 chars
+Free online tools for developers, SEO, text editing, PDFs, images, and quick productivity workflows.
+
+✗
+On-Page SEO
+Critical
+!
+Meta Title
+22 chars
+The meta title tag is the clickable blue headline in Google search results.
+Fix: Add a unique meta title (ideally 50–70 characters) and include your primary keyword.
+!
+Meta Description
+100 chars
+The meta description appears below your title in search results.
+Fix: Write a helpful meta description (ideally 120–170 characters) that matches the page intent.
+✓
+H1 Tag
+1 found
+✗
+Image Alt Text
+1/1 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+!
+Performance
+Warning
+!
+PageSpeed (Mobile)
+83
+Google PageSpeed Insights performance score (mobile).
+Fix: Follow Lighthouse “Opportunities” (compress images, reduce JS, improve caching).
+✓
+PageSpeed (Desktop)
+100
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+✗
+Mobile
+Critical
+✓
+Viewport Meta
+Present
+✗
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+✓
+Social
+Pass
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+✓
+Structured Data
+Found
+▶
+w3tech.co.in/accessibility
+Accessibility Statement | W3Tech(32)	1659	1	1/1	73	WARNING
+3 issues
+Detailed checks
+w3tech.co.in/accessibility
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in/accessibility
+Desktop screenshot of w3tech.co.in/accessibility
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/accessibility
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+153 chars
+Celestiatech is committed to ensuring digital accessibility for people with disabilities. Learn about our accessibility efforts and how to report issues.
+
+✗
+On-Page SEO
+Critical
+!
+Meta Title
+32 chars
+The meta title tag is the clickable blue headline in Google search results.
+Fix: Add a unique meta title (ideally 50–70 characters) and include your primary keyword.
+✓
+Meta Description
+153 chars
+✓
+H1 Tag
+1 found
+✗
+Image Alt Text
+1/1 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+✓
+Performance
+Pass
+✓
+PageSpeed (Mobile)
+91
+✓
+PageSpeed (Desktop)
+100
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+!
+Mobile
+Warning
+✓
+Viewport Meta
+Present
+!
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+✓
+Social
+Pass
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+✓
+Structured Data
+Found
+▶
+w3tech.co.in/populardesigns
+W3Tech - Premium IT & Software Development Company(50)	2214	1	1/55	88	WARNING
+3 issues
+Detailed checks
+w3tech.co.in/populardesigns
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in/populardesigns
+Desktop screenshot of w3tech.co.in/populardesigns
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/populardesigns
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+146 chars
+Premium web, mobile, AI, and blockchain development services backed by 12+ years of experience and 2,500+ successful client engagements worldwide.
+
+!
+On-Page SEO
+Warning
+✓
+Meta Title
+50 chars
+✓
+Meta Description
+146 chars
+✓
+H1 Tag
+1 found
+!
+Image Alt Text
+1/55 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+!
+Performance
+Warning
+!
+PageSpeed (Mobile)
+71
+Google PageSpeed Insights performance score (mobile).
+Fix: Follow Lighthouse “Opportunities” (compress images, reduce JS, improve caching).
+✓
+PageSpeed (Desktop)
+100
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+✗
+Mobile
+Critical
+✓
+Viewport Meta
+Present
+✗
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+✓
+Social
+Pass
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+✓
+Structured Data
+Found
+▶
+w3tech.co.in/request-a-call
+W3Tech - Premium IT & Software Development Company(50)	966	1	1/1	80	WARNING
+2 issues
+Detailed checks
+w3tech.co.in/request-a-call
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in/request-a-call
+Desktop screenshot of w3tech.co.in/request-a-call
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/request-a-call
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+146 chars
+Premium web, mobile, AI, and blockchain development services backed by 12+ years of experience and 2,500+ successful client engagements worldwide.
+
+✗
+On-Page SEO
+Critical
+✓
+Meta Title
+50 chars
+✓
+Meta Description
+146 chars
+✓
+H1 Tag
+1 found
+✗
+Image Alt Text
+1/1 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+✓
+Performance
+Pass
+✓
+PageSpeed (Mobile)
+91
+✓
+PageSpeed (Desktop)
+100
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+!
+Mobile
+Warning
+✓
+Viewport Meta
+Present
+!
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+✓
+Social
+Pass
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+✓
+Structured Data
+Found
+▶
+w3tech.co.in/ai-development-company
+AI Development Company - Custom AI Solutions | W3Tech(53)	2239	1	1/1	73	WARNING
+4 issues
+Detailed checks
+w3tech.co.in/ai-development-company
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in/ai-development-company
+Desktop screenshot of w3tech.co.in/ai-development-company
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/ai-development-company
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+174 chars
+Expert AI development services including machine learning, NLP, computer vision, and chatbots. Build intelligent solutions with our AI development team. 12+ years experience.
+
+✗
+On-Page SEO
+Critical
+✓
+Meta Title
+53 chars
+!
+Meta Description
+174 chars
+The meta description appears below your title in search results.
+Fix: Write a helpful meta description (ideally 120–170 characters) that matches the page intent.
+✓
+H1 Tag
+1 found
+✗
+Image Alt Text
+1/1 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+!
+Performance
+Warning
+!
+PageSpeed (Mobile)
+89
+Google PageSpeed Insights performance score (mobile).
+Fix: Follow Lighthouse “Opportunities” (compress images, reduce JS, improve caching).
+✓
+PageSpeed (Desktop)
+100
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+!
+Mobile
+Warning
+✓
+Viewport Meta
+Present
+!
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+✓
+Social
+Pass
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+✓
+Structured Data
+Found
+▶
+w3tech.co.in/startup-mvp-development
+Startup MVP Development Services | W3Tech(41)	2156	1	1/5	88	WARNING
+3 issues
+Detailed checks
+w3tech.co.in/startup-mvp-development
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in/startup-mvp-development
+Desktop screenshot of w3tech.co.in/startup-mvp-development
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/startup-mvp-development
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+163 chars
+Build your MVP in 60-90 days with our startup development services. Expert team, proven process, and 2,500+ successful launches. Get your product to market faster.
+
+!
+On-Page SEO
+Warning
+✓
+Meta Title
+41 chars
+✓
+Meta Description
+163 chars
+✓
+H1 Tag
+1 found
+!
+Image Alt Text
+1/5 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+!
+Performance
+Warning
+!
+PageSpeed (Mobile)
+88
+Google PageSpeed Insights performance score (mobile).
+Fix: Follow Lighthouse “Opportunities” (compress images, reduce JS, improve caching).
+✓
+PageSpeed (Desktop)
+100
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+!
+Mobile
+Warning
+✓
+Viewport Meta
+Present
+!
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+✓
+Social
+Pass
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+✓
+Structured Data
+Found
+▶
+w3tech.co.in/web-app-development-cost
+Web App Development Cost - Pricing Guide 2024 | W3Tech(54)	2080	1	1/1	80	WARNING
+3 issues
+Detailed checks
+w3tech.co.in/web-app-development-cost
+Warning
+Screenshots
+Click a device to view full size
+w3tech.co.in/web-app-development-cost
+Desktop screenshot of w3tech.co.in/web-app-development-cost
+DESKTOP SCREENSHOT
+1365 × 768
+Mobile screenshot of w3tech.co.in/web-app-development-cost
+MOBILE SCREENSHOT
+480 × 800
+✓
+Meta description
+164 chars
+Complete guide to web app development costs. Learn pricing factors, get cost estimates for different project types, and understand what affects development pricing.
+
+✗
+On-Page SEO
+Critical
+✓
+Meta Title
+54 chars
+✓
+Meta Description
+164 chars
+✓
+H1 Tag
+1 found
+✗
+Image Alt Text
+1/1 missing
+Alt text helps search engines understand images and improves accessibility.
+Fix: Add descriptive alt attributes to important images.
+✓
+Technical
+Pass
+✓
+Canonical Tag
+Set
+✓
+robots.txt
+Found
+✓
+XML Sitemap
+Found
+!
+Performance
+Warning
+!
+PageSpeed (Mobile)
+88
+Google PageSpeed Insights performance score (mobile).
+Fix: Follow Lighthouse “Opportunities” (compress images, reduce JS, improve caching).
+✓
+PageSpeed (Desktop)
+100
+✓
+Security
+Pass
+✓
+HTTPS / SSL
+Secure
+!
+Mobile
+Warning
+✓
+Viewport Meta
+Present
+!
+Core Web Vitals
+Needs work
+Core Web Vitals reflect real user experience.
+Fix: Improve LCP, reduce layout shift (CLS), and avoid long main-thread tasks.
+✓
+Social
+Pass
+✓
+Open Graph Tags
+Present
+✓
+Twitter Card
+Present
+✓
+Structured Data
+Found
+Discovered via navbar · limited to 20 pages.
+On-Page SEO
+2 issues
+Site-wide check
+·
+20 pages scanned · discovered via navbar
+✓
+Meta Title
+19/20 pages
+▼
+✓
+Meta Description
+19/20 pages
+▼
+!
+H1 Tag
+17 pages with 1 H1
+▼
+!
+Image Alt Text
+24/315 missing
+▼
+Usability
+80
+/100
+Your usability looks good
+Improve mobile friendliness, viewport configuration, and Core Web Vitals to enhance user experience and rankings.
+Need help with your site? →
+Device Rendering
+Test how your pages render on different devices. A responsive layout improves user engagement and helps with mobile-first indexing.
+Mobile screenshot
+MOBILE SCREENSHOT
+375 × 812
+w3tech.co.in
+Desktop screenshot
+DESKTOP SCREENSHOT
+1365 × 768
+Google’s Core Web Vitals
+Core Web Vitals are performance signals that affect real user experience. Aim for “Good” results across all metrics.
+FIRST CONTENTFUL PAINT
+1.2s
+Good • Needs improvement • Poor
+LARGEST CONTENTFUL PAINT
+2.9s
+Good • Needs improvement • Poor
+CUMULATIVE LAYOUT SHIFT
+0.008
+Good • Needs improvement • Poor
+First Contentful Paint
+1.2s
+Largest Contentful Paint
+2.9s
+Cumulative Layout Shift
+0.008
+Total Blocking Time
+20ms
+Speed Index
+3.4s
+Time to Interactive
+3.8s
+Good
+Needs improvement
+Poor
+Improve images, reduce JavaScript, and avoid layout shifts to boost UX and improve your Lighthouse / CrUX scores.
+Use of Mobile Viewports
+Viewport meta controls mobile scaling.
+Site Performance
+Google PageSpeed Insights data - mobile and desktop. Powered by Lighthouse.
+94
+Google’s PageSpeed Insights - Mobile
+Google is indicating that your page is scoring well on their PageSpeed Insights evaluation.
+Lab data
+Value
+First Contentful Paint
+1.2 s
+Speed Index
+3.4 s
+Largest Contentful Paint
+2.9 s
+Time to Interactive
+3.8 s
+Total Blocking Time
+20 ms
+Cumulative Layout Shift
+0.008
+Opportunities
+Estimated savings
+
+Reduce unused JavaScript
+0.45 s
+▼
+
+Reduce unused CSS
+0.15 s
+▼
+
+Initial server response time was short
+0.00 s
+▼
+
+Minify JavaScript
+0.00 s
+▼
+
+Avoid multiple page redirects
+0.00 s
+▼
+
+Minify CSS
+0.00 s
+▼
+PageSpeed Insights is a tool from Google that evaluates a website’s performance on both mobile and desktop, giving suggestions for how to improve it.
+74
+Google’s PageSpeed Insights - Desktop
+Google is indicating that your page is scoring well on their PageSpeed Insights evaluation.
+Lab data
+Value
+First Contentful Paint
+0.6 s
+Speed Index
+2.0 s
+Largest Contentful Paint
+0.7 s
+Time to Interactive
+2.4 s
+Total Blocking Time
+510 ms
+Cumulative Layout Shift
+0
+Opportunities
+Estimated savings
+
+Minify CSS
+0.00 s
+▼
+
+Avoid multiple page redirects
+0.00 s
+▼
+
+Minify JavaScript
+0.00 s
+▼
+
+Reduce unused CSS
+0.00 s
+▼
+
+Reduce unused JavaScript
+0.00 s
+▼
+
+Initial server response time was short
+0.00 s
+▼
+Review the “Opportunities” section and implement Lighthouse recommendations to improve loading speed and user experience.
+PageSpeed Insights — main pages
+20 pages
+Page	Mobile	Desktop
+▶
+www.w3tech.co.in/work
+90	100
+Core Web Vitals — www.w3tech.co.in/work
+Metric	Mobile	Desktop
+First Contentful Paint	1.2 s	0.4 s
+Speed Index	2.0 s	0.4 s
+Largest Contentful Paint	3.6 s	0.7 s
+Time to Interactive	3.6 s	0.7 s
+Total Blocking Time	0 ms	10 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~750 ms saved
+Reduce unused JavaScript
+Low
+~600 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+28 KB
+Reduce unused CSS
+Low
+~150 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+▶
+www.w3tech.co.in/about
+91	100
+Core Web Vitals — www.w3tech.co.in/about
+Metric	Mobile	Desktop
+First Contentful Paint	1.7 s	0.4 s
+Speed Index	2.7 s	0.4 s
+Largest Contentful Paint	3.3 s	0.7 s
+Time to Interactive	3.3 s	0.7 s
+Total Blocking Time	3 ms	43 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~900 ms saved
+Reduce unused JavaScript
+Low
+~600 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+29 KB
+Reduce unused CSS
+Low
+~300 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://www.w3tech.co.in/_next/static/chunks/c6dc3e213e1b5f0f.css
+19 KB
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+▶
+www.w3tech.co.in/blog
+96	100
+Core Web Vitals — www.w3tech.co.in/blog
+Metric	Mobile	Desktop
+First Contentful Paint	1.7 s	0.3 s
+Speed Index	1.7 s	0.7 s
+Largest Contentful Paint	2.6 s	0.7 s
+Time to Interactive	2.7 s	0.7 s
+Total Blocking Time	5 ms	2 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~410 ms saved
+Reduce unused CSS
+Low
+~300 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://www.w3tech.co.in/_next/static/chunks/c6dc3e213e1b5f0f.css
+20 KB
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+Reduce unused JavaScript
+Low
+~110 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+26 KB
+▶
+www.w3tech.co.in/career
+89	100
+Core Web Vitals — www.w3tech.co.in/career
+Metric	Mobile	Desktop
+First Contentful Paint	1.7 s	0.4 s
+Speed Index	3.0 s	0.4 s
+Largest Contentful Paint	3.6 s	0.8 s
+Time to Interactive	3.6 s	0.8 s
+Total Blocking Time	61 ms	15 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~900 ms saved
+Reduce unused JavaScript
+Low
+~600 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+28 KB
+Reduce unused CSS
+Low
+~300 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://www.w3tech.co.in/_next/static/chunks/c6dc3e213e1b5f0f.css
+20 KB
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+▶
+www.w3tech.co.in/contact
+91	100
+Core Web Vitals — www.w3tech.co.in/contact
+Metric	Mobile	Desktop
+First Contentful Paint	1.7 s	0.4 s
+Speed Index	1.7 s	0.5 s
+Largest Contentful Paint	3.5 s	0.6 s
+Time to Interactive	3.5 s	0.6 s
+Total Blocking Time	0 ms	0 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~900 ms saved
+Reduce unused JavaScript
+Low
+~600 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+28 KB
+Reduce unused CSS
+Low
+~300 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://www.w3tech.co.in/_next/static/chunks/c6dc3e213e1b5f0f.css
+20 KB
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+▶
+www.w3tech.co.in/pricing
+91	100
+Core Web Vitals — www.w3tech.co.in/pricing
+Metric	Mobile	Desktop
+First Contentful Paint	1.7 s	0.4 s
+Speed Index	2.7 s	0.5 s
+Largest Contentful Paint	3.3 s	0.6 s
+Time to Interactive	3.3 s	0.7 s
+Total Blocking Time	28 ms	7 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~750 ms saved
+Reduce unused JavaScript
+Low
+~600 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+29 KB
+Reduce unused CSS
+Low
+~150 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+▶
+www.w3tech.co.in/clients
+91	100
+Core Web Vitals — www.w3tech.co.in/clients
+Metric	Mobile	Desktop
+First Contentful Paint	1.5 s	0.4 s
+Speed Index	2.7 s	0.4 s
+Largest Contentful Paint	3.4 s	0.7 s
+Time to Interactive	3.4 s	0.7 s
+Total Blocking Time	26 ms	3 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~600 ms saved
+Reduce unused JavaScript
+Low
+~450 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+29 KB
+Reduce unused CSS
+Low
+~150 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://www.w3tech.co.in/_next/static/chunks/c6dc3e213e1b5f0f.css
+20 KB
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+▶
+www.w3tech.co.in/proposal
+89	100
+Core Web Vitals — www.w3tech.co.in/proposal
+Metric	Mobile	Desktop
+First Contentful Paint	1.7 s	0.4 s
+Speed Index	2.8 s	0.5 s
+Largest Contentful Paint	3.6 s	0.6 s
+Time to Interactive	3.6 s	0.6 s
+Total Blocking Time	0 ms	4 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~900 ms saved
+Reduce unused JavaScript
+Low
+~600 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+28 KB
+Reduce unused CSS
+Low
+~300 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://www.w3tech.co.in/_next/static/chunks/c6dc3e213e1b5f0f.css
+21 KB
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+▶
+www.w3tech.co.in/services
+89	100
+Core Web Vitals — www.w3tech.co.in/services
+Metric	Mobile	Desktop
+First Contentful Paint	1.7 s	0.4 s
+Speed Index	3.0 s	0.5 s
+Largest Contentful Paint	3.6 s	0.7 s
+Time to Interactive	3.6 s	0.7 s
+Total Blocking Time	31 ms	45 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~900 ms saved
+Reduce unused JavaScript
+Low
+~600 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+27 KB
+Reduce unused CSS
+Low
+~300 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://www.w3tech.co.in/_next/static/chunks/c6dc3e213e1b5f0f.css
+19 KB
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+▶
+www.w3tech.co.in/portfolio
+89	100
+Core Web Vitals — www.w3tech.co.in/portfolio
+Metric	Mobile	Desktop
+First Contentful Paint	1.7 s	0.4 s
+Speed Index	2.9 s	0.5 s
+Largest Contentful Paint	3.6 s	0.8 s
+Time to Interactive	3.6 s	0.8 s
+Total Blocking Time	67 ms	46 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~600 ms saved
+Reduce unused JavaScript
+Low
+~450 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+28 KB
+Reduce unused CSS
+Low
+~150 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+15 KB
+▶
+www.w3tech.co.in/seo-services
+91	100
+Core Web Vitals — www.w3tech.co.in/seo-services
+Metric	Mobile	Desktop
+First Contentful Paint	2.4 s	0.5 s
+Speed Index	2.4 s	0.6 s
+Largest Contentful Paint	3.1 s	0.7 s
+Time to Interactive	4.5 s	0.9 s
+Total Blocking Time	7 ms	5 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~794 ms saved
+Avoid multiple page redirects
+Low
+~754 ms
+Redirects introduce additional delays before the page can be loaded. Learn how to avoid page redirects.
+https://www.w3tech.co.in/seo-services
+https://www.w3tech.co.in/popular-tools
+Reduce unused CSS
+Low
+~40 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
+21 KB
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+Reduce unused JavaScript
+Low
+~116 KB
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+28 KB
+▶
+www.w3tech.co.in/testimonials
+89	99
+Core Web Vitals — www.w3tech.co.in/testimonials
+Metric	Mobile	Desktop
+First Contentful Paint	1.7 s	0.4 s
+Speed Index	2.8 s	0.5 s
+Largest Contentful Paint	3.6 s	0.6 s
+Time to Interactive	3.6 s	0.7 s
+Total Blocking Time	19 ms	86 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~900 ms saved
+Reduce unused JavaScript
+Low
+~600 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+27 KB
+Reduce unused CSS
+Low
+~300 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://www.w3tech.co.in/_next/static/chunks/c6dc3e213e1b5f0f.css
+20 KB
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+▶
+www.w3tech.co.in/accessibility
+91	100
+Core Web Vitals — www.w3tech.co.in/accessibility
+Metric	Mobile	Desktop
+First Contentful Paint	1.7 s	0.4 s
+Speed Index	2.9 s	0.4 s
+Largest Contentful Paint	3.3 s	0.6 s
+Time to Interactive	3.3 s	0.6 s
+Total Blocking Time	20 ms	18 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~750 ms saved
+Reduce unused JavaScript
+Low
+~450 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+29 KB
+Reduce unused CSS
+Low
+~300 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://www.w3tech.co.in/_next/static/chunks/c6dc3e213e1b5f0f.css
+21 KB
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+▶
+www.w3tech.co.in/popular-tools
+83	100
+Core Web Vitals — www.w3tech.co.in/popular-tools
+Metric	Mobile	Desktop
+First Contentful Paint	2.3 s	0.5 s
+Speed Index	3.0 s	0.7 s
+Largest Contentful Paint	4.2 s	0.5 s
+Time to Interactive	4.2 s	0.7 s
+Total Blocking Time	13 ms	32 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~750 ms saved
+Reduce unused JavaScript
+Low
+~600 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+28 KB
+Reduce unused CSS
+Low
+~150 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
+21 KB
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+▶
+www.w3tech.co.in/request-a-call
+91	100
+Core Web Vitals — www.w3tech.co.in/request-a-call
+Metric	Mobile	Desktop
+First Contentful Paint	1.5 s	0.4 s
+Speed Index	2.7 s	0.4 s
+Largest Contentful Paint	3.4 s	0.7 s
+Time to Interactive	3.4 s	0.7 s
+Total Blocking Time	14 ms	0 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~750 ms saved
+Reduce unused JavaScript
+Low
+~600 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+28 KB
+Reduce unused CSS
+Low
+~150 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://www.w3tech.co.in/_next/static/chunks/c6dc3e213e1b5f0f.css
+20 KB
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+▶
+www.w3tech.co.in/populardesigns
+71	100
+Core Web Vitals — www.w3tech.co.in/populardesigns
+Metric	Mobile	Desktop
+First Contentful Paint	2.3 s	0.4 s
+Speed Index	4.6 s	0.4 s
+Largest Contentful Paint	7.0 s	0.7 s
+Time to Interactive	7.3 s	0.7 s
+Total Blocking Time	6 ms	58 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~630 ms saved
+Reduce unused JavaScript
+Low
+~590 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+28 KB
+Reduce unused CSS
+Low
+~40 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+▶
+www.w3tech.co.in/ai-development-company
+89	100
+Core Web Vitals — www.w3tech.co.in/ai-development-company
+Metric	Mobile	Desktop
+First Contentful Paint	1.7 s	0.4 s
+Speed Index	2.8 s	0.4 s
+Largest Contentful Paint	3.6 s	0.6 s
+Time to Interactive	3.6 s	0.7 s
+Total Blocking Time	45 ms	50 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~750 ms saved
+Reduce unused JavaScript
+Low
+~450 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+29 KB
+Reduce unused CSS
+Low
+~300 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://www.w3tech.co.in/_next/static/chunks/c6dc3e213e1b5f0f.css
+21 KB
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+▶
+www.w3tech.co.in/startup-mvp-development
+88	100
+Core Web Vitals — www.w3tech.co.in/startup-mvp-development
+Metric	Mobile	Desktop
+First Contentful Paint	1.7 s	0.4 s
+Speed Index	1.7 s	0.4 s
+Largest Contentful Paint	3.8 s	0.8 s
+Time to Interactive	3.8 s	0.8 s
+Total Blocking Time	0 ms	2 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~900 ms saved
+Reduce unused JavaScript
+Low
+~600 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+28 KB
+Reduce unused CSS
+Low
+~300 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://www.w3tech.co.in/_next/static/chunks/c6dc3e213e1b5f0f.css
+20 KB
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+▶
+www.w3tech.co.in/web-app-development-cost
+88	100
+Core Web Vitals — www.w3tech.co.in/web-app-development-cost
+Metric	Mobile	Desktop
+First Contentful Paint	1.7 s	0.4 s
+Speed Index	2.9 s	0.6 s
+Largest Contentful Paint	3.8 s	0.8 s
+Time to Interactive	3.8 s	0.8 s
+Total Blocking Time	19 ms	40 ms
+Cumulative Layout Shift	0.000	0.000
+How to improve
+up to ~900 ms saved
+Reduce unused JavaScript
+Low
+~600 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+28 KB
+Reduce unused CSS
+Low
+~300 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://www.w3tech.co.in/_next/static/chunks/c6dc3e213e1b5f0f.css
+21 KB
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+▶
+www.w3tech.co.in
+94	74
+Core Web Vitals — www.w3tech.co.in
+Metric	Mobile	Desktop
+First Contentful Paint	1.2 s	0.6 s
+Speed Index	3.4 s	2.0 s
+Largest Contentful Paint	2.9 s	0.7 s
+Time to Interactive	3.8 s	2.4 s
+Total Blocking Time	20 ms	514 ms
+Cumulative Layout Shift	0.008	0.000
+How to improve
+up to ~600 ms saved
+Reduce unused JavaScript
+Low
+~450 ms
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.
+https://www.w3tech.co.in/_next/static/chunks/59965fb843515d5e.js
+88 KB
+https://www.w3tech.co.in/_next/static/chunks/74a7f2e5d3db2ed4.js
+21 KB
+Reduce unused CSS
+Low
+~150 ms
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.
+https://www.w3tech.co.in/_next/static/chunks/a0ab0298cfddd142.css
+17 KB
+https://www.w3tech.co.in/_next/static/chunks/c6dc3e213e1b5f0f.css
+13 KB
+Priority Action Plan - Fix These First
+2 issues found
+
+1
+H1 Tag
+On-Page SEO
+Medium
+▼
+
+2
+Image Alt Text
+On-Page SEO
+Medium
+▼
+Want to Save Your Report?
+After clicking Run Audit, you will see "Get Report in Mail" at the top right of your results page. Simply click on it. Our SEO audit report generator will create a professional PDF for you to keep, print, or send to your developer, completely FREE.
+
+Download Your Report
+BUILT DIFFERENTLY
+Why TEQTOP SEO Analyzer is Different
+We don't believe in Email Gates or Free Trials. We believe in providing the best data instantly so you can fix your website.
+
+No Login, Never: Most tools want your email to send you spam. TEQTOP wants to give you results. Skip the login and get straight to the data.
+Truly 100% Free: No locked rows. "No Daily Limits" You get the same deep-scan analysis as a paid tool, for $0 every time.
+Professional Accuracy: Our engine scans your site’s code, speed, and mobile-friendliness with 100% precision.
+Instant PDF Download: Need to show your developer or your client? Download the full, professional report as a PDF immediately.
+FAST & EASY PROCESS
+How to Get Your Free SEO Audit in 3 Steps
+Getting your professional report is easy. No accounts, no credit cards, and no waiting.
+
+1
+Enter Your URL
+Paste your website address into the search box above and hit the "Check" button.
+
+2
+Wait Few Seconds
+Our SEO analyzer will perform a deep scan of your site’s speed, tags, and security in real-time.
+
+3
+Get Your Report
+View your 100% accurate results instantly on your screen. No email required!
+
+FREE DOWNLOAD
+
+Want to Save Your Report?
+After clicking Run Audit, you will see “Get Report in Mail” at the top right of your results page. Simply click on it. Our SEO audit report generator will create a professional PDF for you to keep, print, or send to your developer, completely FREE.
+
+INSIDE THE REPORT
+What's Inside Your Website SEO Audit?
+See exactly what's holding your site back with our professional-grade breakdown:
+
+01.
+SEO Score (0–100)
+An instant snapshot of your site's overall health.
+
+02.
+Critical Errors Highlighted
+Find the "deal-breakers" that stop Google from ranking you.
+
+03.
+Fix Priority Levels
+We tell you what to fix first for the biggest impact.
+
+04.
+Core Web Vitals
+A deep dive into speed and how fast your site actually loads.
+
+05.
+On-Page & Security
+Verification of meta tags, H1-H6 structure, and SSL safety.
+
+06.
+Broken Links Detection
+Identify links that hurt user experience & waste crawl budget.
+
+WHY USE TEQTOP'S FREE SEO AUDIT TOOL
+TEQTOP Website SEO Audit Tool vs. Other website SEO Audit Tools
+Feature	Other Big Tools	TEQTOP
+Cost	Free Trial, then $$$	Always Free
+Login Required	Yes	No
+Data Quality	Professional	Professional
+Search Limits	Limited	Unlimited
+PDF Download	Often Paid	Instant & Free
+USE CASES
+Who Is Our SEO Audit Tool For?
+Website Owners:
+Stop guessing and start growing your organic traffic.
+SEO Agencies:
+Use our SEO audit report generator to create fast reports for prospects.
+Freelancers & Devs:
+Ensure every site you build is technically perfect.
+Bloggers:
+Optimize your content to reach the first page of Google.
+KNOW WHAT'S HOLDING YOU BACK
+What is an SEO Audit?
+Think of an SEO audit as a full-body scan for your website. Right now, your site might look great on the outside, but underneath the hood, there could be technical landmines stopping Google from sending you traffic. An SEO audit digs into the code, the speed, and the content to find exactly what’s broken.
+
+It’s the difference between guessing and knowing.
+
+Most people guess why they aren't ranking. They change a few words or add a new blog post and hope for the best. An SEO audit tool stops the guesswork by showing you:
+
+The Deal-Breakers: Technical glitches like broken links or slow load times that make Google ignore you.
+The Missed Wins: Small tweaks to your titles and tags that could jump you from page 3 to page 1.
+The Competitor Gap: Why other sites are beating you and what they have that you don’t.
+An SEO audit isn't just a list of errors, it is a roadmap. It takes a messy, complicated website and turns it into a clear, step by step checklist. You fix the issues, Google trusts your site more, and your rankings go up.
+
+EVERY RANKING STARTS HERE
+Why Does Your Site Need an SEO Audit?
+You need an SEO audit because you can't fix what you can't see. It turns a mysterious lack of traffic into a simple, solvable checklist. Think of your website as a digital storefront. You can have the best products in the world, but if the front door is locked and the signs are facing the wrong way, nobody is coming in.
+
+An SEO audit is how you find out why people are walking past your door without looking in. Here is the real-world reason you actually need one:
+
+1.
+Google is Blind
+Google doesn't see your beautiful images or your sleek logo. It sees code. If your code is messy or your site structure is a maze, Google's crawlers get frustrated and leave. An SEO audit shows you exactly where Google is getting stuck so you can clear the path.
+
+2.
+You're Leaking Money
+Every "404 Error" or slow-loading page is a lost customer. If a page takes more than 3 seconds to load, half your visitors will bounce before they even see what you offer. An SEO site checkup pinpoints these leaks so you can plug them and keep the traffic you've already worked hard to get.
+
+3.
+Your Competitors are Playing Dirty
+SEO is not a static goal, it is a race. Your competitors are constantly updating their sites to outrank you. If you have not checked your site's health in six months, you are likely falling behind simply because you aren't keeping up with the latest search rules.
+
+4.
+Stop the Guessing Game
+Most people waste hours tweaking things on their site that don't actually matter for rankings. They change a font or rewrite a paragraph and wonder why nothing happens. An audit gives you a priority list. It tells you: "Don't worry about those minor things, fix these 3 technical errors first."
+
+5.
+Future-Proofing
+Google changes its algorithm hundreds of times a year. What worked in 2023 might get you penalized in 2026. A regular audit ensures your site stays safe and doesn't get buried on page 10 because of an outdated tactic you didn't know was hurting you.
+
+6.
+Your Site Isn't Mobile-Friendly
+Most searches happen on phones now, and Google judges your site by its mobile version first. Slow loading, tiny buttons, or text that doesn't fit the screen quietly tanks your rankings. An audit catches this before it costs you.
+
+Behind The Analysis
+How We Generate Your Results
+Our system follows a strict 4 step sequence to ensure your data is accurate. We pull raw data directly from your site's live environment.
+
+Step 1
+The Technical Crawl
+First, our engine pings your server to see if it responds. We check your SSL, robots.txt, and sitemap. If Google can't find you, nobody can, so we start by making sure your site is actually crawlable.
+
+Step 2
+Code & On-Page Analysis
+Once inside, we scan the HTML. We look at your H1-H6 hierarchy, meta titles, and descriptions. We are checking to see if your code tells a clear story to search engines or if it's just a mess of tags.
+
+Step 3
+Performance & Speed Stress-Test
+Next, we measure the heavy lifting. We load your site to check Core Web Vitals, things like how long it takes for the first image to appear and if the page jumps around while loading. We identify the specific scripts or images slowing you down.
+
+Step 4
+Scoring & Prioritization
+Finally, we weigh these factors against Google's current ranking signals. We don't just give you a random score; we categorize every finding into a Fix-First list. This gives you a clear path: fix the critical errors first, then move on to the minor optimizations.
+
+FAQs
+Everything You Need to Know Before You Hit Scan
+Is it really a free website SEO audit tool?
++
+Do I need technical knowledge to use this SEO analyzer?
++
+Will this SEO site checkup affect my website performance?
++
+How accurate is the report?
++
+How often should I audit my site?
++
+How long does a website SEO audit take?
++
+What are the SEO tools?
++
+Is SEO dead or evolving in 2026?
++
+What are the 4 types of SEO?
++
+Which SEO tool is best for beginners?
++
+Want to Talk to an Expert Instead?
+Sometimes a report isn't enough. Our SEO team can review your results and tell you exactly what to fix, and why.
+
+Talk to an Expert →
+View SEO Packages
+🍪
+Region
+🇮🇳 India / USA
+🇬🇧 United Kingdom
+🇨🇦 Canada
+🇦🇺 Australia
+Services
+SEO Services
+Digital Marketing
+E-Commerce SEO
+Website Maintenance
+Mobile Apps
+Web Design
+AI Services
+AI Chatbot Development
+AI App Development
+AI Business Automation
+AI Website Personalization
+AI Recommendation Engine
+AI Analytics Dashboard
+AI SEO Services
+See Full Service List
+→
+SEO Services
+Link Building
+Guest Post Services
+On-Page SEO
+International SEO
+GMB Service
+Local SEO
+Enterprise SEO
+Small Business SEO
+Company
+Career
+Training
+News
+About Us
+Blog
+Privacy Policy
+Terms & Conditions
+Technologies
+Vue.JS Development
+WordPress Development
+Shopify Development
+Nextjs Development
+Node.JS Development
+Reactjs Development
+Laravel Development
+Browse All Technologies
+→
+Industries We Serve
+Astrology SEO Company
+E-commerce SEO
+Spa
+Healthcare
+Education
+Dentist
+Cryptocurrency
+Healthcare Doctors
+SEO for Real Estate
+SEO for Florists
+Automotive
+SEO for Restaurants
+Pharmaceutical
+Law Firms
+Beauty & Salon
+Non-Profit
+See All Sectors We Serve
+→
+Hire Developers & Experts
+Hire Laravel Developers
+Hire ReactJS Developers
+Hire Shopify Developers
+Hire WordPress Developers
+Hire Brochure Designers
+Hire Logo Designers
+Hire Email Marketing Experts
+Hire Android App Developers
+Hire Webflow Developers
+Hire iOS App Developers
+Hire SEO Experts
+Hire Joomla Developers
+Hire Graphic Designers
+Hire Wix Developers
+Hire NodeJS Developers
+See Who Else You Can Hire
+→
+Free SEO Tools
+AI Content Detector
+AI Text Humanizer
+Plagiarism Checker
+Keyword Density Checker
+Content Analysis
+DA PA Checker
+Meta Length Checker
+SEO Cost Calculator
+Audit Site
+Sitemap Generator
+Redirect Checker
+Slug Generator
+Robots.txt Generator
+Case Converter
+Word Counter
+View All Free Tools
+→
+USA Location Pages
+Arizona
+▲
+California
+▲
+Colorado
+▲
+Florida
+▲
+Indiana
+▲
+Iowa
+▲
+Nebraska
+▲
+New York
+▲
+Texas
+▲
+Virginia
+▲
+Washington
+▲
+A full-service digital agency delivering world-class web design, development, SEO, and marketing solutions globally.
+
+© 2026 TEQTOP. All rights reserved.
+Privacy Policy · Terms and Conditions · Cookie Policy · Refund Policy
+
+Free SEO Audit Tool | Check Website SEO Score & Fix Errors

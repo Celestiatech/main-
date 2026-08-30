@@ -27,10 +27,10 @@ function readReferenceHtml() {
 
 function normalizeBranding(value: string) {
   return value
-    .replace(/DexignZone/gi, "Celestiatech")
-    .replace(/DexignLab/gi, "Celestiatech")
-    .replace(/W3itexperts/gi, "Celestiatech")
-    .replace(/TemplateLelo/gi, "Celestiatech");
+    .replace(/DexignZone/gi, "W3Tech")
+    .replace(/DexignLab/gi, "W3Tech")
+    .replace(/W3itexperts/gi, "W3Tech")
+    .replace(/TemplateLelo/gi, "W3Tech");
 }
 
 function parseCategories(source: string): Category[] {

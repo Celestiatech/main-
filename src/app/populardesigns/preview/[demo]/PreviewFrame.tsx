@@ -31,11 +31,11 @@ export function PreviewFrame({ src, title }: PreviewFrameProps) {
       return;
     }
 
-    const existingStyle = doc.getElementById("celestiatech-preview-cleanup");
+    const existingStyle = doc.getElementById("W3Tech-preview-cleanup");
 
     if (!existingStyle) {
       const style = doc.createElement("style");
-      style.id = "celestiatech-preview-cleanup";
+      style.id = "W3Tech-preview-cleanup";
       style.textContent = `
         ${BLOCKED_SELECTORS.join(",\n")} {
           display: none !important;

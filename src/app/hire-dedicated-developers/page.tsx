@@ -9,8 +9,8 @@ import { getFAQSchema } from "@/lib/structured-data";
 import styles from "../page.module.css";
 
 export const metadata: Metadata = genMeta({
-  title: "Hire Dedicated Developers - Remote Development Team",
-  description: "Hire dedicated developers for your project. Expert remote teams in React, Node.js, mobile development, AI, and blockchain. Flexible engagement models, 12+ years experience.",
+  title: "Hire Dedicated Developers — Remote Engineering Teams",
+  description: "Hire dedicated developers who join your team and your standup, not a ticket queue. React, Node.js, Python and mobile engineers, available full or part time.",
   path: "/hire-dedicated-developers",
 });
 

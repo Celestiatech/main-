@@ -9,8 +9,8 @@ import { getFAQSchema } from "@/lib/structured-data";
 import styles from "../page.module.css";
 
 export const metadata: Metadata = genMeta({
-  title: "AI Development Company - Custom AI Solutions",
-  description: "Expert AI development services including machine learning, NLP, computer vision, and chatbots. Build intelligent solutions with our AI development team. 12+ years experience.",
+  title: "AI Development Company — Custom AI Solutions",
+  description: "AI development services covering machine learning, NLP, computer vision and chatbots. Models trained on your data and shipped into systems you already run.",
   path: "/ai-development-company",
 });
 

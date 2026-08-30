@@ -57,7 +57,7 @@ export default function PortfolioPage() {
 
   const faqs = [
     {
-      question: "What kind of websites can CelestiaTech build?",
+      question: "What kind of websites can W3Tech build?",
       answer: "We build ecommerce stores, company websites, landing pages, service websites, and custom digital platforms designed for performance and growth.",
     },
     {
@@ -84,7 +84,14 @@ export default function PortfolioPage() {
         <section className={styles.hero}>
           <div className="container">
             <div className={styles.heroInner}>
-              <div className={styles.heroEyebrow}>CelestiaTech Portfolio</div>
+              <div className={styles.heroEyebrow}>W3Tech Portfolio</div>
+              <h1 className={styles.heroTitle}>
+                Web, Mobile &amp; AI Projects We Have Built
+              </h1>
+              <p className={styles.heroLead}>
+                A selection of delivered work across web applications, mobile apps and AI products —
+                the problem each client brought us, what we built, and what changed afterwards.
+              </p>
             </div>
           </div>
         </section>
@@ -189,7 +196,7 @@ export default function PortfolioPage() {
             </div>
 
             <div className={styles.sectionIntro}>
-              <h2>Why Should You Consider Choosing CelestiaTech?</h2>
+              <h2>Why Should You Consider Choosing W3Tech?</h2>
               <p>We focus on speed, usability, customization, and practical growth features instead of generic theme-only output.</p>
             </div>
             <div className={styles.reasonShowcase}>

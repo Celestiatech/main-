@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { useParams } from "next/navigation";
@@ -105,7 +105,7 @@ const caseStudies = {
       "/images/case-studies/healthtrack-4.jpg"
     ],
     testimonial: {
-      quote: "HealthTrack Pro transformed our business. The AI-powered personalization and gamification features increased our user retention by 42% and generated â‚¹3.2 Cr in revenue within 6 months. Celestiatech delivered exactly what we needed.",
+      quote: "HealthTrack Pro transformed our business. The AI-powered personalization and gamification features increased our user retention by 42% and generated â‚¹3.2 Cr in revenue within 6 months. W3Tech delivered exactly what we needed.",
       author: "Sarah Johnson",
       role: "CEO, FitLife Inc.",
       avatar: "/images/testimonials/sarah.jpg"

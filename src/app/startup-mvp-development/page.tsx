@@ -9,8 +9,8 @@ import { getFAQSchema } from "@/lib/structured-data";
 import styles from "../page.module.css";
 
 export const metadata: Metadata = genMeta({
-  title: "Startup MVP Development Services",
-  description: "Build your MVP in 60-90 days with our startup development services. Expert team, proven process, and 2,500+ successful launches. Get your product to market faster.",
+  title: "Startup MVP Development Services in 60–90 Days",
+  description: "Build a production-ready MVP in 60 to 90 days. Fixed scope, senior engineers and code you own, so your first version can survive its own success.",
   path: "/startup-mvp-development",
 });
 
@@ -131,7 +131,7 @@ export default function StartupMVPDevelopmentPage() {
           <section className={styles.section}>
             <div className="container">
               <div className={styles.sectionHeader}>
-                <h2>Why Choose Celestiatech for Your MVP?</h2>
+                <h2>Why Choose W3Tech for Your MVP?</h2>
               </div>
               <div className={styles.benefitsGrid}>
                 <div className={styles.benefitCard}>

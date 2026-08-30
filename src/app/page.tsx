@@ -470,13 +470,13 @@ export default function Home() {
 
   const testimonials = [
     {
-      quote: "Celestiatech rebuilt our SaaS backend and cut infra cost by 38%. Their DevOps expertise is unmatched.",
+      quote: "W3Tech rebuilt our SaaS backend and cut infra cost by 38%. Their DevOps expertise is unmatched.",
       author: "CTO, US-based HealthTech Startup",
       service: "DevOps Services",
       stars: 5,
     },
     {
-      quote: "From MVP to 100K users in 6 months. Celestiatech's mobile app development delivered exactly what we needed.",
+      quote: "From MVP to 100K users in 6 months. W3Tech's mobile app development delivered exactly what we needed.",
       author: "Founder, EduTech Platform",
       service: "Mobile App Development",
       stars: 5,
@@ -736,7 +736,7 @@ export default function Home() {
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
             <h2>Industries We Serve</h2>
             <p>
-              At CelestiaTech, we shape each solution around the way your industry actually works,
+              At W3Tech, we shape each solution around the way your industry actually works,
               so the product feels relevant, conversion-ready, and built for growth.
             </p>
           </div>
@@ -1031,7 +1031,7 @@ export default function Home() {
       <section className={styles.whyChooseUs} data-section="whychoose">
         <div className="container">
           <div className={`${styles.sectionHeader} animate-on-scroll`}>
-            <h2>Why Choose Celestiatech?</h2>
+            <h2>Why Choose W3Tech?</h2>
             <p>Partner with a team committed to your success</p>
           </div>
           <div className={styles.whyGrid}>
@@ -1173,11 +1173,11 @@ export default function Home() {
               <div className={styles.contactLocations}>
                 <div className={styles.contactLocation}>
                   <h3><Image src="/images/icons/location-pin.svg" alt="" width={16} height={16} className={styles.inlineLocationIcon} loading="lazy" />Dubai, UAE</h3>
-                  <p>Business Bay, Dubai</p>
+                  <p>Gharnot, Himachal Pradesh 176063, India</p>
                 </div>
                 <div className={styles.contactLocation}>
                   <h3><Image src="/images/icons/location-pin.svg" alt="" width={16} height={16} className={styles.inlineLocationIcon} loading="lazy" />India</h3>
-                  <p>Mohali, Punjab</p>
+                  <p>Gharnot, Himachal Pradesh 176063, India</p>
                 </div>
               </div>
               <div className={styles.contactChecklist}>

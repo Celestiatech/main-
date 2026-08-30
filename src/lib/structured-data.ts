@@ -25,6 +25,7 @@ export interface OrganizationSchema {
     addressCountry: string;
     addressLocality: string;
     addressRegion: string;
+    postalCode?: string;
   }[];
 }
 
@@ -73,12 +74,6 @@ export function getOrganizationSchema(): OrganizationSchema {
     contactPoint: [
       {
         "@type": "ContactPoint",
-        telephone: siteConfig.contact.phone.uae,
-        contactType: "Customer Service",
-        areaServed: "AE",
-      },
-      {
-        "@type": "ContactPoint",
         telephone: siteConfig.contact.phone.india,
         contactType: "Customer Service",
         areaServed: "IN",
@@ -93,80 +88,41 @@ export function getOrganizationSchema(): OrganizationSchema {
     address: [
       {
         "@type": "PostalAddress",
-        addressCountry: "AE",
-        addressLocality: "Dubai",
-        addressRegion: "Dubai",
-      },
-      {
-        "@type": "PostalAddress",
-        addressCountry: "IN",
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
+        addressCountry: siteConfig.contact.offices.india.country,
+        addressLocality: siteConfig.contact.offices.india.locality,
+        addressRegion: siteConfig.contact.offices.india.region,
+        postalCode: siteConfig.contact.offices.india.postalCode,
       },
     ],
   };
 }
 
 /**
- * Generate LocalBusiness schema for Dubai office
- */
-export function getDubaiLocalBusinessSchema(): LocalBusinessSchema {
-  return {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: `${siteConfig.name} - Dubai Office`,
-    image: `${siteConfig.url}${siteConfig.logo.primary}`,
-    "@id": `${siteConfig.url}#dubai-office`,
-    url: `${siteConfig.url}/contact`,
-    telephone: siteConfig.contact.phone.uae,
-    priceRange: "$$",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Dubai",
-      addressRegion: "Dubai",
-      addressCountry: "AE",
-      streetAddress: siteConfig.contact.offices.uae.fullAddress,
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: "25.2048",
-      longitude: "55.2708",
-    },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "18:00",
-      },
-    ],
-  };
-}
-
-/**
- * Generate LocalBusiness schema for India office
+ * LocalBusiness schema for the registered office.
+ *
+ * Only one office is declared because only one exists. Location schema is a
+ * factual claim to Google, and listing an office that is not real is a
+ * spam-policy violation rather than an SEO tactic.
  */
 export function getIndiaLocalBusinessSchema(): LocalBusinessSchema {
+  const office = siteConfig.contact.offices.india;
+
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: `${siteConfig.name} - India Office`,
+    name: siteConfig.name,
     image: `${siteConfig.url}${siteConfig.logo.primary}`,
-    "@id": `${siteConfig.url}#india-office`,
+    "@id": `${siteConfig.url}#office`,
     url: `${siteConfig.url}/contact`,
     telephone: siteConfig.contact.phone.india,
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Mohali",
-      addressRegion: "Punjab",
-      addressCountry: "IN",
-      streetAddress: siteConfig.contact.offices.india.fullAddress,
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: "30.7046",
-      longitude: "76.7179",
+      addressLocality: office.locality,
+      addressRegion: office.region,
+      postalCode: office.postalCode,
+      addressCountry: office.country,
+      streetAddress: office.fullAddress,
     },
     openingHoursSpecification: [
       {

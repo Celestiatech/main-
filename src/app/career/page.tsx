@@ -170,7 +170,7 @@ export default function CareerPage() {
         <div className="container">
           <div className={styles.pageHeroContent}>
             <h1>Join Our Team</h1>
-            <p>Build the future of technology with Celestiatech. We&apos;re always looking for talented individuals.</p>
+            <p>Build the future of technology with W3Tech. We&apos;re always looking for talented individuals.</p>
           </div>
         </div>
       </section>

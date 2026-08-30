@@ -6,8 +6,8 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | W3Tech",
-  description: "Learn how W3Tech uses cookies and similar technologies on our website.",
+  title: "Cookie Policy — How We Use Cookies & Your Choices | W3Tech",
+  description: "How W3Tech uses cookies and similar technologies, what each category does, how long they last, and how to control or withdraw your consent at any time.",
 };
 
 export default function CookiePolicy() {
@@ -294,10 +294,10 @@ export default function CookiePolicy() {
                   <strong>W3Tech</strong>
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "8px" }}>
-                  📍 Dubai, UAE: Business Bay, Dubai
+                  📍 Dubai, UAE: Gharnot, Himachal Pradesh 176063, India
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "8px" }}>
-                  📍 India: Mohali, Punjab
+                  📍 India: Gharnot, Himachal Pradesh 176063, India
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)" }}>
                   📧 <Link href="mailto:privacy@w3tech.in" style={{ color: "var(--primary)" }}>privacy@w3tech.in</Link>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { generateMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = generateMetadata({
-  title: "Client Testimonials",
-  description: "Read testimonials from our satisfied clients. 98% client satisfaction rate. See what CEOs, CTOs, and founders say about working with Celestiatech.",
+  title: "Client Testimonials & Reviews of Our Work",
+  description: "Read what founders, CTOs and marketing leads say about working with W3Tech, in their own words, after their projects went live.",
   path: "/testimonials",
 });

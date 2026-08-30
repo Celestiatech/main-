@@ -8,8 +8,8 @@ import PopularToolsClient from "./PopularToolsClient";
 import { generateMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = generateMetadata({
-  title: "Popular Tools",
-  description: "Free online tools for developers, SEO, text editing, PDFs, images, and quick productivity workflows.",
+  title: "Free Online Tools for Developers, SEO & Content",
+  description: "Free online tools for developers, SEO, text editing, PDF and image work. No login, no trial and no credit card — open a tool and get a usable result.",
   path: "/popular-tools",
   keywords: [
     "free online tools",

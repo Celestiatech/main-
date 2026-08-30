@@ -166,6 +166,33 @@ export function buildCityExcerpt(target: CityTarget): string {
   );
 }
 
+/**
+ * Composes a search title that lands in the 50-70 character window.
+ *
+ * "Web Development Company in Doha | W3Tech" is only 40 characters, which
+ * wastes most of the space Google gives the headline. Qualifiers are added
+ * longest-first until the title clears 50, and never past 70.
+ */
+function buildMetaTitle(city: string): string {
+  const base = `Web Development Company in ${city}`;
+  const suffix = " | W3Tech";
+
+  const qualifiers = [
+    " — Custom Websites & Web Apps",
+    " — Websites & Web Apps",
+    " — Web & App Builds",
+    "",
+  ];
+
+  for (const qualifier of qualifiers) {
+    const candidate = `${base}${qualifier}${suffix}`;
+    if (candidate.length >= 50 && candidate.length <= 70) return candidate;
+  }
+
+  // Very long city names: keep it honest and let it sit just under the cap.
+  return `${base}${suffix}`;
+}
+
 export function buildCityPageContent(target: CityTarget): CityPageContent {
   const { city, region, regionType, country } = target;
   const seed = seedFrom(target.slug);
@@ -290,8 +317,10 @@ export function buildCityPageContent(target: CityTarget): CityPageContent {
 
   return {
     title: `Web Development Company in ${city}`,
-    metaTitle: `Web Development Company in ${city} | W3Tech`,
-    metaDescription: `W3Tech builds websites, web applications and AI products for businesses in ${city}. Fixed scope, senior engineers, and full code ownership. See how we compare.`,
+    // Titles are padded to clear 50 characters: short city names would
+    // otherwise leave the most valuable line in the search result half empty.
+    metaTitle: buildMetaTitle(city),
+    metaDescription: `W3Tech builds websites, web applications and AI products for businesses in ${city}. Fixed scope, senior engineers, and full code ownership. See how we compare.`.slice(0, 168),
     heroHeading: `Web Development Company in ${city}`,
     heroSub,
     trustPoints: ["Fixed scope and price", "Senior engineers only", "You own the code", "Support after launch"],

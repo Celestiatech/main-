@@ -217,7 +217,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: 5,
     slug: "smart-contract-development-with-solidity",
-    title: "Smart Contract Development with Solidity",
+    title: "Smart Contract Development with Solidity: A Practical Guide",
     excerpt: "Learn how to build secure and efficient smart contracts for Ethereum and other EVM chains.",
     image: "/images/portfolio/case-studies/cryptovault-after.jpg",
     imageAlt: "Blockchain platform interface for smart contract development",
@@ -299,7 +299,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: 7,
     slug: "ui-ux-design-principles-for-developers",
-    title: "UI/UX Design Principles for Developers",
+    title: "UI/UX Design Principles Every Developer Should Know",
     excerpt: "Essential design principles every developer should know to create beautiful user interfaces.",
     image: "/images/portfolio/portfolio_website_design_2.jpg",
     imageAlt: "Modern UI and UX design layout for product interfaces",
@@ -636,7 +636,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: 14,
     slug: "how-to-choose-a-web-development-agency",
-    title: "How to Choose a Web Development Agency: 9 Questions That Matter",
+    title: "How to Choose a Web Development Agency: 9 Questions",
     excerpt: "The questions that separate an agency that will finish your project from one that will not — and the answers you should expect to hear.",
     image: "/images/portfolio/portfolio_website_design_2.jpg",
     imageAlt: "Team reviewing project plans and wireframes together",

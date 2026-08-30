@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import "../globals.css";
 import styles from "../page.module.css";
@@ -7,8 +7,8 @@ import { Footer } from "../components/Footer";
 import { generateMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = generateMetadata({
-  title: "Privacy Policy",
-  description: "Read Celestiatech's Privacy Policy to understand how we collect, use, and protect your personal information.",
+  title: "Privacy Policy — How We Handle Your Personal Data",
+  description: "How W3Tech collects, uses, stores and protects your personal information, who we share it with, how long we keep it, and the rights you have over your data.",
   path: "/privacy-policy",
 });
 
@@ -45,7 +45,7 @@ export default function PrivacyPolicy() {
                 1. Introduction
               </h2>
               <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
-                Welcome to Celestiatech (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
+                Welcome to W3Tech (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
               </p>
 
               <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "var(--text-primary)" }}>
@@ -176,13 +176,13 @@ export default function PrivacyPolicy() {
                 marginBottom: "24px"
               }}>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "12px" }}>
-                  <strong>Celestiatech</strong>
+                  <strong>W3Tech</strong>
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "8px" }}>
-                  ðŸ“ Dubai, UAE: Business Bay, Dubai
+                  ðŸ“ Dubai, UAE: Gharnot, Himachal Pradesh 176063, India
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "8px" }}>
-                  ðŸ“ India: Mohali, Punjab
+                  ðŸ“ India: Gharnot, Himachal Pradesh 176063, India
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)" }}>
                   ðŸ“§ <Link href="mailto:privacy@w3tech.in" style={{ color: "var(--primary)" }}>privacy@w3tech.in</Link>

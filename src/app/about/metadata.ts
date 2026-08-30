@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { generateMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = generateMetadata({
-  title: "About Us",
-  description: "Learn about W3Tech - a premium IT development company with 12+ years of experience, serving 2,500+ clients worldwide. Discover our team, mission, and expertise.",
+  title: "About Us — The Team Behind Your Next Build",
+  description: "Learn about W3Tech, a development company building websites, web applications and AI products. Meet the team, our process, and how we work with clients.",
   path: "/about",
 });

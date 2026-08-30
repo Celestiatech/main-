@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { generateMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = generateMetadata({
-  title: "Our Services",
-  description: "Comprehensive IT services including mobile app development, web development, game development, AI solutions, blockchain, and DevOps. Expert team delivering premium solutions.",
+  title: "Our Services — Web, Mobile, AI & Cloud Development",
+  description: "Full-service development covering web applications, mobile apps, AI solutions, cloud infrastructure and design, delivered by senior engineers.",
   path: "/services",
 });

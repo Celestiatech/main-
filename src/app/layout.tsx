@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { generateMetadata as genMeta } from "@/lib/metadata";
 import { siteConfig } from "@/lib/metadata";
-import { getOrganizationSchema, getDubaiLocalBusinessSchema, getIndiaLocalBusinessSchema } from "@/lib/structured-data";
+import { getOrganizationSchema, getIndiaLocalBusinessSchema } from "@/lib/structured-data";
 import { SkipToContent } from "./components/SkipToContent";
 import { AnalyticsInit } from "./components/AnalyticsInit";
 import { AnimatedTabTitle } from "./components/AnimatedTabTitle";
@@ -32,7 +32,6 @@ export default function RootLayout({
 }>) {
   const structuredData = [
     getOrganizationSchema(),
-    getDubaiLocalBusinessSchema(),
     getIndiaLocalBusinessSchema(),
   ];
 

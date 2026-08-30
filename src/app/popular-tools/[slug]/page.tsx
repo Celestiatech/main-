@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Header } from "../../components/Header";
@@ -6,13 +7,100 @@ import { FontAwesomeLoader } from "../../components/FontAwesomeLoader";
 import ToolPlayground from "./ToolPlayground";
 import ToolInsightSections from "./ToolInsightSections";
 import styles from "./tool-detail.module.css";
-import { getToolBySlug } from "@/lib/tools-catalog";
+import { getToolBySlug, getToolCategory } from "@/lib/tools-catalog";
+import { getToolInsights } from "@/lib/tool-insights";
+import { siteConfig } from "@/lib/metadata";
+import { generateMetadata as genToolMeta } from "@/lib/metadata";
+import { StructuredData } from "@/components/StructuredData";
 
 type ToolDetailPageProps = {
   params: Promise<{
     slug: string;
   }>;
 };
+
+const truncate = (text: string, max: number) => (text.length > max ? `${text.slice(0, max - 1)}…` : text);
+
+export async function generateMetadata({ params }: ToolDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const tool = getToolBySlug(slug);
+
+  if (!tool) {
+    return {};
+  }
+
+  const { insights } = getToolInsights(tool);
+  const category = getToolCategory(tool.category);
+
+  return genToolMeta({
+    title: `Free ${tool.title} - 100% Free Online Tool`,
+    description: truncate(insights.whatIs[0] || tool.description, 158),
+    path: `/popular-tools/${tool.slug}`,
+    keywords: [
+      tool.title,
+      `free ${tool.title}`,
+      `online ${tool.title}`,
+      category?.title ?? tool.category.replaceAll("-", " "),
+      "free online tools",
+      "no sign-up tool",
+      "w3tech tool",
+    ],
+  });
+}
+
+function buildToolSchemas(slug: string) {
+  const tool = getToolBySlug(slug);
+  if (!tool) {
+    return [];
+  }
+
+  const { insights } = getToolInsights(tool);
+  const url = `${siteConfig.url}/popular-tools/${tool.slug}`;
+
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      name: tool.title,
+      url,
+      description: tool.description,
+      applicationCategory: "UtilitiesApplication",
+      operatingSystem: "Web",
+      genre: tool.category.replaceAll("-", " "),
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+      },
+      provider: {
+        "@type": "Organization",
+        name: siteConfig.name,
+        url: siteConfig.url,
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+        { "@type": "ListItem", position: 2, name: "Popular Tools", item: `${siteConfig.url}/popular-tools` },
+        { "@type": "ListItem", position: 3, name: tool.title, item: url },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: insights.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.a,
+        },
+      })),
+    },
+  ];
+}
 
 export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
   const { slug } = await params;
@@ -22,16 +110,18 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
     notFound();
   }
 
-  const isAuditTool = tool.slug === "website-audit-tool";
+const isAuditTool = tool.slug === "website-audit-tool";
   const toolLimit = tool.slug === "da-pa-checker"
     ? "Bulk check up to 10 URLs"
     : tool.slug === "shopify-theme-generator"
       ? "Convert one authorized URL"
       : "Free to use";
+  const toolSchemas = buildToolSchemas(tool.slug);
 
   return (
     <div className={styles.page}>
       <FontAwesomeLoader />
+      <StructuredData data={toolSchemas} />
       <Header />
       <div className={styles.headerGap} />
 

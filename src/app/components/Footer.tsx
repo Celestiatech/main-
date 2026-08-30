@@ -216,9 +216,8 @@ export function Footer() {
               {siteConfig.contact.phone.india}
             </a>
             <div className={styles.navMeta}>
-              <p className={styles.navMetaLabel}>Offices</p>
-              <p className={styles.navMetaValue}>{siteConfig.contact.offices.uae.address}</p>
-              <p className={styles.navMetaValue}>{siteConfig.contact.offices.india.address}</p>
+              <p className={styles.navMetaLabel}>Office</p>
+              <p className={styles.navMetaValue}>{siteConfig.contact.offices.india.fullAddress}</p>
             </div>
           </div>
         </div>

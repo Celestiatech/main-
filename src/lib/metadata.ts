@@ -27,19 +27,17 @@ export const siteConfig = {
       support: "support@w3tech.in",
     },
     phone: {
-      uae: "+971 50 000 0000",
       india: "+91 98055 59015",
     },
     offices: {
-      uae: {
-        name: "Dubai Office",
-        address: "Business Bay, Dubai, UAE",
-        fullAddress: "Business Bay, Dubai, United Arab Emirates",
-      },
       india: {
         name: "India Office",
-        address: "Mohali, Punjab, India",
-        fullAddress: "Mohali, Punjab, India",
+        address: "Gharnot, Himachal Pradesh",
+        fullAddress: "Gharnot, Himachal Pradesh 176063, India",
+        locality: "Gharnot",
+        region: "Himachal Pradesh",
+        postalCode: "176063",
+        country: "IN",
       },
     },
   },

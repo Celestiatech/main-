@@ -110,7 +110,7 @@ export default function Pricing() {
 
   const testimonials = [
     {
-      quote: "Celestiatech's fixed-price model helped us launch our MVP in 8 weeks within budget. Highly recommend for startups!",
+      quote: "W3Tech's fixed-price model helped us launch our MVP in 8 weeks within budget. Highly recommend for startups!",
       author: "Sarah Chen",
       role: "CEO, HealthTech Startup",
       avatar: "/images/testimonials/sarah.jpg",
@@ -511,7 +511,7 @@ export default function Pricing() {
         <div className="container">
           <div className={styles.finalCtaContent}>
             <h2>Transform Your Ideas Into Reality</h2>
-            <p>Join 2,500+ satisfied clients who chose Celestiatech for their development needs</p>
+            <p>Join 2,500+ satisfied clients who chose W3Tech for their development needs</p>
             <div className={styles.finalCtaButtons}>
               <Link href="/contact" className="btn btn-accent btn-3d btn-bubble">
                 Start Your Project Today

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import styles from "../page.module.css";
@@ -165,7 +165,7 @@ export default function TermsOfService() {
                 13. Force Majeure
               </h2>
               <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
-                Celestiatech shall not be liable for any failure or delay in performing our obligations under these Terms if such failure or delay results from circumstances beyond our reasonable control, including but not limited to acts of God, natural disasters, war, terrorism, riots, embargoes, acts of civil or military authorities, fire, floods, accidents, strikes, or shortages of transportation, facilities, fuel, energy, labor, or materials.
+                W3Tech shall not be liable for any failure or delay in performing our obligations under these Terms if such failure or delay results from circumstances beyond our reasonable control, including but not limited to acts of God, natural disasters, war, terrorism, riots, embargoes, acts of civil or military authorities, fire, floods, accidents, strikes, or shortages of transportation, facilities, fuel, energy, labor, or materials.
               </p>
 
               <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "var(--text-primary)" }}>
@@ -210,13 +210,13 @@ export default function TermsOfService() {
                 marginBottom: "24px"
               }}>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "12px" }}>
-                  <strong>Celestiatech</strong>
+                  <strong>W3Tech</strong>
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "8px" }}>
-                  📍 Dubai, UAE: Business Bay, Dubai
+                  📍 Dubai, UAE: Gharnot, Himachal Pradesh 176063, India
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "8px" }}>
-                  📍 India: Mohali, Punjab
+                  📍 India: Gharnot, Himachal Pradesh 176063, India
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)" }}>
                   ✉️ <Link href="mailto:legal@w3tech.in" style={{ color: "var(--primary)" }}>legal@w3tech.in</Link>

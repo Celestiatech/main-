@@ -564,10 +564,6 @@ export function Header() {
             <div className={styles.mobileMenuFooter}>
               <div className={styles.mobileContactInfo}>
                 <p>
-                  <HeaderInlineIcon><PhoneIcon /></HeaderInlineIcon>
-                  {siteConfig.contact.phone.uae}
-                </p>
-                <p>
                   <HeaderInlineIcon><SmartphoneIcon /></HeaderInlineIcon>
                   {siteConfig.contact.phone.india}
                 </p>

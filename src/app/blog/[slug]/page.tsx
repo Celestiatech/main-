@@ -21,13 +21,35 @@ export async function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({ slug: post.slug }));
 }
 
+/**
+ * Search descriptions want roughly 120-170 characters. Several excerpts are
+ * shorter than that, so the opening of the intro is borrowed to fill the gap,
+ * trimmed at a sentence or word boundary rather than mid-word.
+ */
+function buildMetaDescription(excerpt: string, intro: string): string {
+  const MAX = 168;
+
+  if (excerpt.length >= 120) {
+    return excerpt.length <= MAX ? excerpt : `${excerpt.slice(0, MAX - 1).trimEnd()}…`;
+  }
+
+  const combined = `${excerpt} ${intro}`.replace(/\s+/g, " ").trim();
+  if (combined.length <= MAX) return combined;
+
+  const clipped = combined.slice(0, MAX);
+  const lastStop = Math.max(clipped.lastIndexOf(". "), clipped.lastIndexOf("? "));
+
+  if (lastStop > 120) return clipped.slice(0, lastStop + 1);
+  return `${clipped.slice(0, clipped.lastIndexOf(" ")).trimEnd()}…`;
+}
+
 export async function generateMetadata({ params }: BlogDetailPageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogBySlug(slug);
 
   if (!post) {
     return {
-      title: "Blog Not Found | Celestiatech",
+      title: "Blog Not Found | W3Tech",
     };
   }
 
@@ -35,7 +57,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
 
   return genMeta({
     title: post.title,
-    description: post.excerpt,
+    description: buildMetaDescription(post.excerpt, post.intro),
     path: `/blog/${post.slug}`,
     ogImage: post.image,
     type: "article",
@@ -47,7 +69,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
       post.title,
       "software development blog",
       "technology articles",
-      "Celestiatech blog",
+      "W3Tech blog",
     ],
   });
 }

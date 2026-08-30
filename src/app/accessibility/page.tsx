@@ -6,8 +6,8 @@ import { Footer } from "../components/Footer";
 import styles from "../page.module.css";
 
 export const metadata: Metadata = genMeta({
-  title: "Accessibility Statement",
-  description: "Celestiatech is committed to ensuring digital accessibility for people with disabilities. Learn about our accessibility efforts and how to report issues.",
+  title: "Accessibility Statement & WCAG Commitment",
+  description: "W3Tech is committed to ensuring digital accessibility for people with disabilities. Learn about our accessibility efforts and how to report issues.",
   path: "/accessibility",
 });
 
@@ -34,7 +34,7 @@ export default function AccessibilityPage() {
                   Commitment to Accessibility
                 </h2>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
-                  Celestiatech is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards to achieve WCAG 2.1 Level AA compliance.
+                  W3Tech is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards to achieve WCAG 2.1 Level AA compliance.
                 </p>
 
                 <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "var(--text-primary)" }}>
@@ -44,7 +44,7 @@ export default function AccessibilityPage() {
                   The Web Content Accessibility Guidelines (WCAG) defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA.
                 </p>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
-                  Celestiatech is partially conformant with WCAG 2.1 Level AA. Partially conformant means that some parts of the content do not fully conform to the accessibility standard.
+                  W3Tech is partially conformant with WCAG 2.1 Level AA. Partially conformant means that some parts of the content do not fully conform to the accessibility standard.
                 </p>
 
                 <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "var(--text-primary)" }}>
@@ -72,12 +72,12 @@ export default function AccessibilityPage() {
                   Feedback
                 </h2>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "16px", lineHeight: "1.7" }}>
-                  We welcome your feedback on the accessibility of Celestiatech website. If you encounter accessibility barriers, please contact us:
+                  We welcome your feedback on the accessibility of W3Tech website. If you encounter accessibility barriers, please contact us:
                 </p>
                 <ul style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.8", paddingLeft: "20px" }}>
                   <li style={{ marginBottom: "8px" }}>Email: <a href="mailto:accessibility@w3tech.in" style={{ color: "var(--color-primary)" }}>accessibility@w3tech.in</a></li>
-                  <li style={{ marginBottom: "8px" }}>Phone: +971 50 000 0000 (UAE) or +91 98055 59015 (India)</li>
-                  <li style={{ marginBottom: "8px" }}>Postal Address: Business Bay, Dubai, UAE</li>
+                  <li style={{ marginBottom: "8px" }}>Phone: +91 98055 59015 (India)</li>
+                  <li style={{ marginBottom: "8px" }}>Postal Address: Gharnot, Himachal Pradesh 176063, India</li>
                 </ul>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
                   We aim to respond to accessibility feedback within 5 business days.
@@ -87,7 +87,7 @@ export default function AccessibilityPage() {
                   Assessment Approach
                 </h2>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
-                  Celestiatech assessed the accessibility of this website through self-evaluation and automated testing tools. This statement was created on January 25, 2026, and will be reviewed and updated regularly.
+                  W3Tech assessed the accessibility of this website through self-evaluation and automated testing tools. This statement was created on January 25, 2026, and will be reviewed and updated regularly.
                 </p>
 
                 <div style={{ marginTop: "32px", padding: "20px", background: "var(--color-gray-50)", borderRadius: "12px" }}>

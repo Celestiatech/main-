@@ -153,7 +153,8 @@ export default function WebsiteDevelopmentServicesPage() {
       <main className={styles.main}>
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
-            <h2>Website Development Services</h2>
+            {/* Primary heading: the page previously opened at h2, leaving no H1. */}
+            <h1>Website Development Services</h1>
             <p>Professional website development using modern technologies and best practices.</p>
           </div>
           <div className={styles.cardsGrid}>

@@ -9,8 +9,8 @@ import { getFAQSchema } from "@/lib/structured-data";
 import styles from "../page.module.css";
 
 export const metadata: Metadata = genMeta({
-  title: "Web App Development Cost - Pricing Guide 2024",
-  description: "Complete guide to web app development costs. Learn pricing factors, get cost estimates for different project types, and understand what affects development pricing.",
+  title: "Web App Development Cost — A Realistic Pricing Guide",
+  description: "What a web application actually costs to build, the factors that move the number, and honest estimates by project type — with no obligation to talk to us.",
   path: "/web-app-development-cost",
 });
 

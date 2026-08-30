@@ -98,15 +98,8 @@ export default function ContactPage() {
                 <div className={styles.contactDetailItem}>
                   <div className={styles.contactDetailIcon}>📍</div>
                   <div>
-                    <h4>Our UAE Office</h4>
-                    <p>Business Bay, Dubai, UAE</p>
-                  </div>
-                </div>
-                <div className={styles.contactDetailItem}>
-                  <div className={styles.contactDetailIcon}>📍</div>
-                  <div>
-                    <h4>Our India Office</h4>
-                    <p>Mohali, Punjab, India</p>
+                    <h4>Our Office</h4>
+                    <p>Gharnot, Himachal Pradesh 176063, India</p>
                   </div>
                 </div>
                 <div className={styles.contactDetailItem}>
@@ -120,7 +113,7 @@ export default function ContactPage() {
                   <div className={styles.contactDetailIcon}>📞</div>
                   <div>
                     <h4>Phone</h4>
-                    <p>+971 50 000 0000</p>
+                    <p>+91 98055 59015</p>
                   </div>
                 </div>
               </div>

@@ -1,11 +1,4 @@
-import type { Metadata } from "next";
-import { generateMetadata } from "@/lib/metadata";
-
-export const metadata: Metadata = generateMetadata({
-  title: "Contact Us",
-  description: "Get in touch with Celestiatech. Offices in Dubai, UAE and Mohali, India. Contact us for mobile app development, web development, and custom software solutions.",
-  path: "/contact",
-});
+export { metadata } from "./metadata";
 
 export default function ContactLayout({
   children,
