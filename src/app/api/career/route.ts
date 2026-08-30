@@ -1,37 +1,47 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { addMessage } from '@/lib/messages';
+import { sendSubmissionEmail } from '@/lib/email';
 
 export async function POST(request: NextRequest) {
+  const payload = await request.json().catch(() => null);
+
+  if (!payload) {
+    return NextResponse.json(
+      { success: false, error: 'Invalid request body' },
+      { status: 400 }
+    );
+  }
+
+  const { name, email, phone, position, experience, message } = payload;
+
+  // Validate required fields
+  if (!name || !email || !phone || !position || !message) {
+    return NextResponse.json(
+      { success: false, error: 'All fields are required' },
+      { status: 400 }
+    );
+  }
+
   try {
-    const { name, email, phone, position, experience, message } = await request.json();
-
-    // Validate required fields
-    if (!name || !email || !phone || !position || !message) {
-      return NextResponse.json(
-        { success: false, error: 'All fields are required' },
-        { status: 400 }
-      );
-    }
-
-    // Save application to database
-    const savedMessage = addMessage({
-      type: 'career',
-      name,
-      email,
-      phone,
+    await sendSubmissionEmail({
+      subject: `New job application: ${position} - ${name}`,
+      heading: 'New job application',
+      replyTo: email,
       message,
-      status: 'new',
-      extra: {
-        position,
-        experience,
-      },
+      fields: [
+        { label: 'Name', value: name },
+        { label: 'Email', value: email },
+        { label: 'Phone', value: phone },
+        { label: 'Position', value: position },
+        { label: 'Experience', value: experience },
+      ],
     });
 
-    return NextResponse.json({ success: true, messageId: savedMessage.id });
+    return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Career application error:', error);
+    // Nothing is persisted, so log the application to avoid losing the candidate.
+    console.error('Career application email failed:', error, { name, email, phone, position, experience, message });
     return NextResponse.json(
-      { success: false, error: 'Failed to save application' },
+      { success: false, error: 'Failed to send application' },
       { status: 500 }
     );
   }

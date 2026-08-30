@@ -76,7 +76,7 @@ export default function AccessibilityPage() {
                 </p>
                 <ul style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.8", paddingLeft: "20px" }}>
                   <li style={{ marginBottom: "8px" }}>Email: <a href="mailto:accessibility@w3tech.in" style={{ color: "var(--color-primary)" }}>accessibility@w3tech.in</a></li>
-                  <li style={{ marginBottom: "8px" }}>Phone: +971 50 000 0000 (UAE) or +91 98765 43210 (India)</li>
+                  <li style={{ marginBottom: "8px" }}>Phone: +971 50 000 0000 (UAE) or +91 98055 59015 (India)</li>
                   <li style={{ marginBottom: "8px" }}>Postal Address: Business Bay, Dubai, UAE</li>
                 </ul>
                 <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>

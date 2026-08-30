@@ -1,0 +1,402 @@
+/* W3Tech tool insights — orange (#cc5500 / #ff8c00) palette throughout.
+   Structure mirrors the Teqtop tool pages; palette is W3Tech's own. */
+
+.section {
+  margin-top: 28px;
+  padding: clamp(24px, 4vw, 44px);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.07);
+  scroll-margin-top: 90px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  color: #cc5500;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 20px;
+  height: 2px;
+  border-radius: 4px;
+  background: #ff8c00;
+}
+
+.title {
+  margin: 0 0 16px;
+  color: #0f172a;
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+}
+
+.title em {
+  color: #cc5500;
+  font-style: normal;
+}
+
+.lead {
+  margin: 0 0 8px;
+  max-width: 720px;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.prose {
+  display: grid;
+  gap: 12px;
+  max-width: 860px;
+}
+
+.prose p {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.blockTitle {
+  margin: 34px 0 16px;
+  padding-top: 26px;
+  border-top: 1px solid #eef2f7;
+  color: #0f172a;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.section > .blockTitle:first-of-type {
+  margin-top: 28px;
+}
+
+/* --- How to use (numbered steps) --- */
+.stepsGrid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stepCard {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.stepCard:hover {
+  border-color: rgba(255, 140, 0, 0.45);
+  box-shadow: 0 8px 26px rgba(204, 85, 0, 0.09);
+  transform: translateY(-3px);
+}
+
+.stepNum {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #cc5500 0%, #ff8c00 100%);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.stepCard strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.stepCard p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* --- Results checklist --- */
+.checkList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.checkList li {
+  position: relative;
+  padding: 16px 18px 16px 44px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fffaf4;
+  color: #334155;
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.checkList li::before {
+  content: "✓";
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #cc5500 0%, #ff8c00 100%);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* --- Why professionals trust --- */
+.trustList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.trustList li {
+  display: grid;
+  gap: 4px;
+  padding: 16px 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.trustList strong {
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+.trustList p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* --- Feature cards with accent top bar --- */
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.featureCard {
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.featureCard::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, #cc5500 0%, #ff8c00 100%);
+}
+
+.featureCard:hover {
+  border-color: rgba(255, 140, 0, 0.4);
+  box-shadow: 0 6px 24px rgba(204, 85, 0, 0.08);
+  transform: translateY(-4px);
+}
+
+.featureCard h4 {
+  margin: 4px 0 6px;
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.featureCard p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* --- Speed & scale --- */
+.speedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.speedCard {
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff 0%, #fffaf4 100%);
+}
+
+.speedNum {
+  display: block;
+  margin-bottom: 12px;
+  color: #cc5500;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.speedCard h4 {
+  margin: 0 0 6px;
+  color: #0f172a;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+.speedCard p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* --- Technical & creative factors --- */
+.factorBlock {
+  display: grid;
+}
+
+.factorTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 34px 0 14px;
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+.factorTitle::before {
+  content: "";
+  width: 8px;
+  height: 20px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #ff8c00 0%, #cc5500 100%);
+}
+
+.factorBlock:first-of-type .factorTitle {
+  margin-top: 6px;
+}
+
+/* --- FAQ accordion --- */
+.faqGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.faqItem {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.faqItem[open] {
+  border-color: rgba(255, 140, 0, 0.6);
+}
+
+.faqItem summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 17px;
+  color: #0f172a;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faqItem summary:hover {
+  background: #fffaf4;
+}
+
+.faqItem summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqItem summary span {
+  color: #cc5500;
+  font-size: 21px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.faqItem[open] summary span {
+  transform: rotate(45deg);
+}
+
+.faqItem p {
+  margin: 0;
+  padding: 0 17px 17px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+@media (max-width: 900px) {
+  .stepsGrid,
+  .featureGrid,
+  .speedGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .faqGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 22px;
+  }
+
+  .stepsGrid,
+  .featureGrid,
+  .speedGrid,
+  .checkList,
+  .trustList {
+    grid-template-columns: 1fr;
+  }
+}

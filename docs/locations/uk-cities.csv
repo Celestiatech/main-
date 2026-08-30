@@ -1,0 +1,50 @@
+﻿country,region,region_type,city,city_slug,region_slug,country_slug
+United Kingdom,England,nation,London,london,england,united-kingdom
+United Kingdom,England,nation,Birmingham,birmingham,england,united-kingdom
+United Kingdom,England,nation,Manchester,manchester,england,united-kingdom
+United Kingdom,England,nation,Leeds,leeds,england,united-kingdom
+United Kingdom,England,nation,Liverpool,liverpool,england,united-kingdom
+United Kingdom,England,nation,Sheffield,sheffield,england,united-kingdom
+United Kingdom,England,nation,Bristol,bristol,england,united-kingdom
+United Kingdom,England,nation,Newcastle upon Tyne,newcastle-upon-tyne,england,united-kingdom
+United Kingdom,England,nation,Nottingham,nottingham,england,united-kingdom
+United Kingdom,England,nation,Leicester,leicester,england,united-kingdom
+United Kingdom,England,nation,Coventry,coventry,england,united-kingdom
+United Kingdom,England,nation,Bradford,bradford,england,united-kingdom
+United Kingdom,England,nation,Southampton,southampton,england,united-kingdom
+United Kingdom,England,nation,Portsmouth,portsmouth,england,united-kingdom
+United Kingdom,England,nation,Brighton,brighton,england,united-kingdom
+United Kingdom,England,nation,Plymouth,plymouth,england,united-kingdom
+United Kingdom,England,nation,Reading,reading,england,united-kingdom
+United Kingdom,England,nation,Milton Keynes,milton-keynes,england,united-kingdom
+United Kingdom,England,nation,Derby,derby,england,united-kingdom
+United Kingdom,England,nation,Stoke-on-Trent,stoke-on-trent,england,united-kingdom
+United Kingdom,England,nation,Wolverhampton,wolverhampton,england,united-kingdom
+United Kingdom,England,nation,Norwich,norwich,england,united-kingdom
+United Kingdom,England,nation,Luton,luton,england,united-kingdom
+United Kingdom,England,nation,Oxford,oxford,england,united-kingdom
+United Kingdom,England,nation,Cambridge,cambridge,england,united-kingdom
+United Kingdom,England,nation,York,york,england,united-kingdom
+United Kingdom,England,nation,Exeter,exeter,england,united-kingdom
+United Kingdom,England,nation,Sunderland,sunderland,england,united-kingdom
+United Kingdom,England,nation,Hull,hull,england,united-kingdom
+United Kingdom,England,nation,Preston,preston,england,united-kingdom
+United Kingdom,Scotland,nation,Glasgow,glasgow,scotland,united-kingdom
+United Kingdom,Scotland,nation,Edinburgh,edinburgh,scotland,united-kingdom
+United Kingdom,Scotland,nation,Aberdeen,aberdeen,scotland,united-kingdom
+United Kingdom,Scotland,nation,Dundee,dundee,scotland,united-kingdom
+United Kingdom,Scotland,nation,Inverness,inverness,scotland,united-kingdom
+United Kingdom,Scotland,nation,Perth,perth,scotland,united-kingdom
+United Kingdom,Scotland,nation,Stirling,stirling,scotland,united-kingdom
+United Kingdom,Scotland,nation,Paisley,paisley,scotland,united-kingdom
+United Kingdom,Wales,nation,Cardiff,cardiff,wales,united-kingdom
+United Kingdom,Wales,nation,Swansea,swansea,wales,united-kingdom
+United Kingdom,Wales,nation,Newport,newport,wales,united-kingdom
+United Kingdom,Wales,nation,Wrexham,wrexham,wales,united-kingdom
+United Kingdom,Wales,nation,Bangor,bangor,wales,united-kingdom
+United Kingdom,Wales,nation,St Davids,st-davids,wales,united-kingdom
+United Kingdom,Northern Ireland,nation,Belfast,belfast,northern-ireland,united-kingdom
+United Kingdom,Northern Ireland,nation,Londonderry,londonderry,northern-ireland,united-kingdom
+United Kingdom,Northern Ireland,nation,Lisburn,lisburn,northern-ireland,united-kingdom
+United Kingdom,Northern Ireland,nation,Newry,newry,northern-ireland,united-kingdom
+United Kingdom,Northern Ireland,nation,Armagh,armagh,northern-ireland,united-kingdom

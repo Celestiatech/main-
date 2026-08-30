@@ -1,0 +1,435 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Single-field entry: one centred column, so the eye runs straight down
+   URL → permission → action. The gradient comes from the shared .workspaceCard
+   frame around it, so this block stays transparent. */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 8px 30px;
+  text-align: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 540px;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.input {
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-size: 15.5px;
+  font-family: inherit;
+  background: #ffffff;
+  color: #1f2937;
+  box-shadow: 0 6px 16px -6px rgba(90, 35, 0, 0.45);
+  transition: box-shadow 0.15s ease;
+}
+
+.input::placeholder {
+  color: #b9ada3;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow:
+    0 6px 16px -6px rgba(90, 35, 0, 0.45),
+    0 0 0 3px rgba(255, 255, 255, 0.75);
+}
+
+/* Checkbox stays beside the first line of text, while the text itself is
+   left-aligned — centred body copy is hard to read at this length. */
+.consent {
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+  max-width: 540px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.94);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.consent:hover {
+  border-color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.consent input {
+  width: 17px;
+  height: 17px;
+  margin: 1px 0 0;
+  flex-shrink: 0;
+  accent-color: #ffffff;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.form .actions {
+  justify-content: center;
+}
+
+.primaryBtn {
+  padding: 14px 32px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #cc5500 0%, #ff8c00 100%);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(204, 85, 0, 0.24);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.primaryBtn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(204, 85, 0, 0.3);
+}
+
+.primaryBtn:disabled {
+  opacity: 0.45;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryBtn,
+  .primaryBtn:hover:not(:disabled) {
+    transform: none;
+    transition: none;
+  }
+}
+
+.secondaryBtn {
+  padding: 13px 26px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #cc5500 0%, #ff8c00 100%);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* The gradient button would vanish against the gradient card, so inside the
+   form the action inverts: solid white, brand-coloured label. */
+.form .primaryBtn {
+  background: #ffffff;
+  color: #cc5500;
+  box-shadow: 0 8px 22px -8px rgba(90, 35, 0, 0.6);
+}
+
+.form .primaryBtn:hover:not(:disabled) {
+  background: #fffaf5;
+  box-shadow: 0 12px 28px -8px rgba(90, 35, 0, 0.7);
+}
+
+.form .primaryBtn:disabled {
+  background: rgba(255, 255, 255, 0.45);
+  color: rgba(122, 45, 10, 0.7);
+  opacity: 1;
+}
+
+.formHint {
+  margin: -4px 0 0;
+  max-width: 460px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.error {
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  font-size: 14px;
+  text-align: center;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.panel {
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 20px 22px;
+  background: #ffffff;
+}
+
+.panelTitle {
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.sectionList {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+
+.sectionRow {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.statusDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.found {
+  background: #16a34a;
+}
+
+.missing {
+  background: #cbd5e1;
+}
+
+.sectionName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 2px;
+}
+
+.sectionMeta {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.warnings {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.warnings li {
+  font-size: 13px;
+  color: #92400e;
+  line-height: 1.6;
+}
+
+.fileTree {
+  margin: 0;
+  padding: 14px 16px;
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 10px;
+  font-size: 12.5px;
+  line-height: 1.7;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.previewHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.deviceToggle {
+  display: inline-flex;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.deviceBtn,
+.deviceActive {
+  padding: 7px 16px;
+  border: none;
+  background: #ffffff;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.deviceActive {
+  background: #cc5500;
+  color: #ffffff;
+}
+
+.previewDesktop,
+.previewMobile {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.previewDesktop {
+  width: 100%;
+}
+
+.previewMobile {
+  width: 390px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.previewFrame {
+  width: 100%;
+  height: 560px;
+  border: none;
+  display: block;
+}
+
+/* Deep panel so the closing call to action separates from the white result
+   cards instead of blending into the gradient behind them. */
+.cta {
+  border: 1px solid rgba(15, 23, 42, 0.35);
+  border-radius: 14px;
+  padding: 26px;
+  background: #0f172a;
+}
+
+.cta h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.cta p {
+  margin: 0 0 18px;
+  font-size: 14px;
+  color: #cbd5e1;
+  line-height: 1.65;
+}
+
+@media (min-width: 720px) {
+  .sectionList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.infoSection,
+.faqSection {
+  padding: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background: #f9fafb;
+}
+
+.faqSection { background: #ffffff; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #6b7280;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before { content: ""; width: 18px; height: 2px; border-radius: 4px; background: #ff8c00; }
+
+.infoSection h2,
+.faqSection h2 {
+  margin: 12px 0 24px;
+  color: #0f172a;
+  font-size: clamp(23px, 3vw, 34px);
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: 1.1;
+}
+
+.infoSection h2 em { color: #cc5500; font-style: normal; }
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.stepsGrid article,
+.faqGrid details {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.stepsGrid article { padding: 18px; }
+.stepsGrid article > span { display: inline-grid; width: 30px; height: 30px; place-items: center; border-radius: 50%; background: #ff8c00; color: #0f172a; font-size: 13px; font-weight: 800; }
+.stepsGrid h3 { margin: 14px 0 6px; color: #0f172a; font-size: 15px; }.stepsGrid p,.splitGrid p,.checkList p { margin: 0; color: #64748b; font-size: 14px; line-height: 1.65; }
+
+.splitGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; align-items: start; }.splitGrid h2 { margin-bottom: 12px; }.checkList { display: grid; gap: 11px; }.checkList p { display: flex; gap: 10px; padding: 13px 15px; border: 1px solid #e5e7eb; border-radius: 10px; background: #fff; }.checkList b { color: #cc5500; }
+
+.faqGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }.faqGrid details[open] { border-color: rgba(255, 140, 0, .75); }.faqGrid summary { display: flex; justify-content: space-between; gap: 12px; padding: 17px; color: #0f172a; cursor: pointer; font-size: 14px; font-weight: 700; list-style: none; }.faqGrid summary::-webkit-details-marker { display: none; }.faqGrid summary span { color: #cc5500; font-size: 21px; transition: transform .2s ease; }.faqGrid details[open] summary span { transform: rotate(45deg); }.faqGrid details p { margin: 0; padding: 0 17px 17px; color: #64748b; font-size: 13.5px; line-height: 1.7; }
+
+@media (max-width: 850px) { .stepsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.splitGrid,.faqGrid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .infoSection,.faqSection { padding: 22px 18px; }.stepsGrid { grid-template-columns: 1fr; } }
+
+/* W3Tech palette override */
+.eyebrow::before,.stepsGrid article > span { background:#ff8c00; }.infoSection h2,.faqSection h2,.stepsGrid h3,.faqGrid summary { color:#111; }.faqGrid details[open] { border-color:rgba(255,140,0,.65); }

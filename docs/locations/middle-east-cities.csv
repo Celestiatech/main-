@@ -1,0 +1,108 @@
+﻿country,region,region_type,city,city_slug,region_slug,country_slug
+United Arab Emirates,Dubai,emirate,Dubai,dubai,dubai,united-arab-emirates
+United Arab Emirates,Dubai,emirate,Jebel Ali,jebel-ali,dubai,united-arab-emirates
+United Arab Emirates,Dubai,emirate,Hatta,hatta,dubai,united-arab-emirates
+United Arab Emirates,Abu Dhabi,emirate,Abu Dhabi,abu-dhabi,abu-dhabi,united-arab-emirates
+United Arab Emirates,Abu Dhabi,emirate,Al Ain,al-ain,abu-dhabi,united-arab-emirates
+United Arab Emirates,Abu Dhabi,emirate,Ruwais,ruwais,abu-dhabi,united-arab-emirates
+United Arab Emirates,Sharjah,emirate,Sharjah,sharjah,sharjah,united-arab-emirates
+United Arab Emirates,Sharjah,emirate,Khor Fakkan,khor-fakkan,sharjah,united-arab-emirates
+United Arab Emirates,Sharjah,emirate,Kalba,kalba,sharjah,united-arab-emirates
+United Arab Emirates,Ajman,emirate,Ajman,ajman,ajman,united-arab-emirates
+United Arab Emirates,Fujairah,emirate,Fujairah,fujairah,fujairah,united-arab-emirates
+United Arab Emirates,Ras Al Khaimah,emirate,Ras Al Khaimah,ras-al-khaimah,ras-al-khaimah,united-arab-emirates
+United Arab Emirates,Umm Al Quwain,emirate,Umm Al Quwain,umm-al-quwain,umm-al-quwain,united-arab-emirates
+Saudi Arabia,Riyadh,province,Riyadh,riyadh,riyadh,saudi-arabia
+Saudi Arabia,Riyadh,province,Al Kharj,al-kharj,riyadh,saudi-arabia
+Saudi Arabia,Riyadh,province,Diriyah,diriyah,riyadh,saudi-arabia
+Saudi Arabia,Makkah,province,Jeddah,jeddah,makkah,saudi-arabia
+Saudi Arabia,Makkah,province,Mecca,mecca,makkah,saudi-arabia
+Saudi Arabia,Makkah,province,Taif,taif,makkah,saudi-arabia
+Saudi Arabia,Madinah,province,Medina,medina,madinah,saudi-arabia
+Saudi Arabia,Madinah,province,Yanbu,yanbu,madinah,saudi-arabia
+Saudi Arabia,Eastern,province,Dammam,dammam,eastern,saudi-arabia
+Saudi Arabia,Eastern,province,Khobar,khobar,eastern,saudi-arabia
+Saudi Arabia,Eastern,province,Dhahran,dhahran,eastern,saudi-arabia
+Saudi Arabia,Eastern,province,Jubail,jubail,eastern,saudi-arabia
+Saudi Arabia,Eastern,province,Hofuf,hofuf,eastern,saudi-arabia
+Saudi Arabia,Asir,province,Abha,abha,asir,saudi-arabia
+Saudi Arabia,Asir,province,Khamis Mushait,khamis-mushait,asir,saudi-arabia
+Saudi Arabia,Tabuk,province,Tabuk,tabuk,tabuk,saudi-arabia
+Saudi Arabia,Tabuk,province,NEOM,neom,tabuk,saudi-arabia
+Saudi Arabia,Qassim,province,Buraidah,buraidah,qassim,saudi-arabia
+Saudi Arabia,Qassim,province,Unaizah,unaizah,qassim,saudi-arabia
+Qatar,Doha,municipality,Doha,doha,doha,qatar
+Qatar,Al Rayyan,municipality,Al Rayyan,al-rayyan,al-rayyan,qatar
+Qatar,Al Rayyan,municipality,Education City,education-city,al-rayyan,qatar
+Qatar,Al Wakrah,municipality,Al Wakrah,al-wakrah,al-wakrah,qatar
+Qatar,Al Khor,municipality,Al Khor,al-khor,al-khor,qatar
+Qatar,Umm Salal,municipality,Umm Salal,umm-salal,umm-salal,qatar
+Qatar,Al Daayen,municipality,Lusail,lusail,al-daayen,qatar
+Kuwait,Al Asimah,governorate,Kuwait City,kuwait-city,al-asimah,kuwait
+Kuwait,Hawalli,governorate,Hawalli,hawalli,hawalli,kuwait
+Kuwait,Hawalli,governorate,Salmiya,salmiya,hawalli,kuwait
+Kuwait,Farwaniya,governorate,Farwaniya,farwaniya,farwaniya,kuwait
+Kuwait,Ahmadi,governorate,Ahmadi,ahmadi,ahmadi,kuwait
+Kuwait,Ahmadi,governorate,Fahaheel,fahaheel,ahmadi,kuwait
+Kuwait,Jahra,governorate,Jahra,jahra,jahra,kuwait
+Kuwait,Mubarak,governorate,Mubarak Al-Kabeer,mubarak-al-kabeer,mubarak,kuwait
+Bahrain,Capital,governorate,Manama,manama,capital,bahrain
+Bahrain,Muharraq,governorate,Muharraq,muharraq,muharraq,bahrain
+Bahrain,Northern,governorate,Hamad Town,hamad-town,northern,bahrain
+Bahrain,Northern,governorate,Budaiya,budaiya,northern,bahrain
+Bahrain,Southern,governorate,Riffa,riffa,southern,bahrain
+Bahrain,Southern,governorate,Isa Town,isa-town,southern,bahrain
+Oman,Muscat,governorate,Muscat,muscat,muscat,oman
+Oman,Muscat,governorate,Muttrah,muttrah,muscat,oman
+Oman,Muscat,governorate,Seeb,seeb,muscat,oman
+Oman,Dhofar,governorate,Salalah,salalah,dhofar,oman
+Oman,Al Batinah North,governorate,Sohar,sohar,al-batinah-north,oman
+Oman,Al Batinah South,governorate,Barka,barka,al-batinah-south,oman
+Oman,Ad Dakhiliyah,governorate,Nizwa,nizwa,ad-dakhiliyah,oman
+Oman,Al Buraimi,governorate,Al Buraimi,al-buraimi,al-buraimi,oman
+Jordan,Amman,governorate,Amman,amman,amman,jordan
+Jordan,Zarqa,governorate,Zarqa,zarqa,zarqa,jordan
+Jordan,Irbid,governorate,Irbid,irbid,irbid,jordan
+Jordan,Aqaba,governorate,Aqaba,aqaba,aqaba,jordan
+Jordan,Balqa,governorate,Salt,salt,balqa,jordan
+Jordan,Madaba,governorate,Madaba,madaba,madaba,jordan
+Lebanon,Beirut,governorate,Beirut,beirut,beirut,lebanon
+Lebanon,Mount Lebanon,governorate,Jounieh,jounieh,mount-lebanon,lebanon
+Lebanon,Mount Lebanon,governorate,Baabda,baabda,mount-lebanon,lebanon
+Lebanon,North,governorate,Tripoli,tripoli,north,lebanon
+Lebanon,South,governorate,Sidon,sidon,south,lebanon
+Lebanon,South,governorate,Tyre,tyre,south,lebanon
+Lebanon,Beqaa,governorate,Zahle,zahle,beqaa,lebanon
+Israel,Tel Aviv,district,Tel Aviv,tel-aviv,tel-aviv,israel
+Israel,Jerusalem,district,Jerusalem,jerusalem,jerusalem,israel
+Israel,Haifa,district,Haifa,haifa,haifa,israel
+Israel,Central,district,Rishon LeZion,rishon-lezion,central,israel
+Israel,Central,district,Petah Tikva,petah-tikva,central,israel
+Israel,Central,district,Netanya,netanya,central,israel
+Israel,Central,district,Herzliya,herzliya,central,israel
+Israel,Southern,district,Beersheba,beersheba,southern,israel
+Israel,Southern,district,Ashdod,ashdod,southern,israel
+Israel,Southern,district,Eilat,eilat,southern,israel
+Egypt,Cairo,governorate,Cairo,cairo,cairo,egypt
+Egypt,Cairo,governorate,New Cairo,new-cairo,cairo,egypt
+Egypt,Giza,governorate,Giza,giza,giza,egypt
+Egypt,Giza,governorate,6th of October City,6th-of-october-city,giza,egypt
+Egypt,Alexandria,governorate,Alexandria,alexandria,alexandria,egypt
+Egypt,Port Said,governorate,Port Said,port-said,port-said,egypt
+Egypt,Luxor,governorate,Luxor,luxor,luxor,egypt
+Egypt,Aswan,governorate,Aswan,aswan,aswan,egypt
+Egypt,Red Sea,governorate,Hurghada,hurghada,red-sea,egypt
+Egypt,South Sinai,governorate,Sharm El Sheikh,sharm-el-sheikh,south-sinai,egypt
+Iraq,Baghdad,governorate,Baghdad,baghdad,baghdad,iraq
+Iraq,Basra,governorate,Basra,basra,basra,iraq
+Iraq,Erbil,governorate,Erbil,erbil,erbil,iraq
+Iraq,Sulaymaniyah,governorate,Sulaymaniyah,sulaymaniyah,sulaymaniyah,iraq
+Iraq,Nineveh,governorate,Mosul,mosul,nineveh,iraq
+Iraq,Najaf,governorate,Najaf,najaf,najaf,iraq
+Iraq,Karbala,governorate,Karbala,karbala,karbala,iraq
+Turkey,Istanbul,province,Istanbul,istanbul,istanbul,turkey
+Turkey,Ankara,province,Ankara,ankara,ankara,turkey
+Turkey,Izmir,province,Izmir,izmir,izmir,turkey
+Turkey,Antalya,province,Antalya,antalya,antalya,turkey
+Turkey,Bursa,province,Bursa,bursa,bursa,turkey
+Turkey,Adana,province,Adana,adana,adana,turkey

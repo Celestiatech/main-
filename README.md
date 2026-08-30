@@ -12,6 +12,15 @@ Install dependencies:
 npm install
 ```
 
+Configure the environment:
+
+```bash
+cp .env.example .env
+```
+
+Fill in the SMTP values — the contact and career forms deliver by email and
+this project keeps no database, so they need a working mailbox.
+
 Run the development server:
 
 ```bash
@@ -26,8 +35,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS v4
 - **3D / Animation**: Three.js, React Three Fiber, GSAP, Lenis
-- **Database**: better-sqlite3 (admin/messages)
-- **Email**: Nodemailer
+- **Storage**: none — the site is stateless
+- **Email**: Nodemailer (form submissions are emailed, not stored)
 
 ## Scripts
 
@@ -44,7 +53,20 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 src/
 ├── app/          # Next.js App Router pages and API routes
 ├── components/   # Shared React components
+├── fonts/        # Self-hosted font files
+├── hooks/        # Shared React hooks
 └── lib/          # Utilities, metadata, structured data, types
+docs/
+├── getting-started/  # Setup and first-run guides
+├── design/           # Brand guidelines and design summaries
+├── styling/          # Tailwind and CSS references
+├── images/           # Pixabay / image pipeline guides
+├── planning/         # Roadmaps, TODOs, page inventory
+├── status/           # Build verification and completion reports
+└── archive/          # Docs for features no longer in the project
+legacy/           # Standalone reference code, not part of the build
+public/           # Static assets served at the site root
+scripts/          # Python helpers for image downloads
 ```
 
 ## Deploy on Vercel

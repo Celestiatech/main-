@@ -47,7 +47,7 @@ const BOT_RESPONSES: Record<string, string> = {
   services: "We offer a wide range of services:\n\nMobile development\nWeb development\nUI/UX design\nAI solutions\nSEO and performance optimization\nEcommerce development\nMaintenance and support\n\nTell me what you want to build and I can guide you.",
   portfolio: "Our portfolio includes product launches, redesigns, custom business websites, mobile apps, AI features, and SEO-focused builds. If you want, I can point you toward the type of work most relevant to your project.",
   pricing: "Our pricing depends on scope, timeline, and complexity. We work on fixed-price projects, time and material, and dedicated team models. If you share your goal and budget range, I can guide you to the right starting point.",
-  contact: "You can reach us by email at hello@w3tech.in, or start a conversation here and our team can follow up. If you want, I can help you prepare the details to send.",
+  contact: "You can reach us by email at vdvishalwebdev@gmail.com, or start a conversation here and our team can follow up. If you want, I can help you prepare the details to send.",
   timeline: "Typical timelines depend on complexity:\n\nLanding page or brochure site: 2-4 weeks\nBusiness website: 4-8 weeks\nCustom web app: 8-16 weeks\nMobile app MVP: 10-18 weeks\n\nIf you tell me what you need, I can narrow it down.",
   technology: "We work with modern stacks including Next.js, React, Node.js, TypeScript, Python, React Native, Flutter, PostgreSQL, Firebase, cloud infrastructure, and AI/API integrations.",
   company: "W3Tech is a digital product and development company focused on websites, apps, AI, and growth-ready digital experiences. We help clients go from idea to launch with design, development, SEO, and support.",
@@ -66,6 +66,18 @@ const BOT_RESPONSES: Record<string, string> = {
   industries: "We work across SaaS, healthcare, real estate, education, ecommerce, fintech, startup products, and service businesses.",
   integrations: "We can integrate payment gateways, CRMs, analytics tools, email systems, automation platforms, internal dashboards, and AI APIs.",
   launch: "We can help with launch planning, QA, deployment, tracking setup, and post-launch support so the release goes smoothly.",
+};
+
+// Module scope: constant between renders, so the scroll effect needs no dependency on it.
+const SECTION_MESSAGES: Record<string, string> = {
+  hero: "Typing: Hi there, how may I help?",
+  services: "Typing: Tell me about services",
+  portfolio: "Typing: Show me your work",
+  pricing: "Typing: What's your pricing?",
+  testimonials: "Typing: What do clients say?",
+  faq: "Typing: Common questions answered",
+  contact: "Typing: Let's get in touch",
+  default: "Typing: How can I assist?",
 };
 
 const matchesAny = (text: string, keywords: string[]) => keywords.some((keyword) => text.includes(keyword));
@@ -101,17 +113,6 @@ export default function Chatbot() {
   const typingIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const charIndexRef = useRef(0);
 
-  const sectionMessages: Record<string, string> = {
-    hero: "Typing: Hi there, how may I help?",
-    services: "Typing: Tell me about services",
-    portfolio: "Typing: Show me your work",
-    pricing: "Typing: What's your pricing?",
-    testimonials: "Typing: What do clients say?",
-    faq: "Typing: Common questions answered",
-    contact: "Typing: Let's get in touch",
-    default: "Typing: How can I assist?"
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll('[data-section]');
@@ -124,7 +125,7 @@ export default function Chatbot() {
         }
       });
 
-      const newMessage = sectionMessages[currentSection] || sectionMessages.default;
+      const newMessage = SECTION_MESSAGES[currentSection] || SECTION_MESSAGES.default;
       if (newMessage !== typingText) {
         setTypingText(newMessage);
         charIndexRef.current = 0;
@@ -142,7 +143,7 @@ export default function Chatbot() {
 
     if (charIndexRef.current < typingText.length) {
       typingIntervalRef.current = setInterval(() => {
-        setDisplayedText(prev => {
+        setDisplayedText(() => {
           const nextIndex = charIndexRef.current + 1;
           charIndexRef.current = nextIndex;
           return typingText.substring(0, nextIndex);
@@ -286,7 +287,7 @@ export default function Chatbot() {
     if (matchesAny(lowerText, ["integration", "api", "crm", "payment gateway", "webhook"])) return BOT_RESPONSES.integrations;
     if (matchesAny(lowerText, ["launch", "deploy", "go live", "release"])) return BOT_RESPONSES.launch;
     if (matchesAny(lowerText, ["thank", "thanks"])) return "You’re welcome. If you want, ask me about scope, pricing, redesigns, or launch planning.";
-    if (matchesAny(lowerText, ["schedule", "call", "consultation", "meeting"])) return "If you want to move forward, send your project summary here or email hello@w3tech.in and our team can follow up.";
+    if (matchesAny(lowerText, ["schedule", "call", "consultation", "meeting"])) return "If you want to move forward, send your project summary here or email vdvishalwebdev@gmail.com and our team can follow up.";
 
     return BOT_RESPONSES.default;
   };
@@ -404,8 +405,8 @@ export default function Chatbot() {
 
           <div className={styles.supportCard}>
             <span className={styles.supportCardTitle}>Send us an email</span>
-            <span className={styles.supportCardText}>If you're in a hurry, send us a message and we will get back to you asap.</span>
-            <a href="mailto:hello@w3tech.in" className={styles.supportSecondaryButton}>
+            <span className={styles.supportCardText}>If you&apos;re in a hurry, send us a message and we will get back to you asap.</span>
+            <a href="mailto:vdvishalwebdev@gmail.com" className={styles.supportSecondaryButton}>
               Send email
             </a>
           </div>

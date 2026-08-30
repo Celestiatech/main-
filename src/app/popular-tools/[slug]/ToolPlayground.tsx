@@ -3,6 +3,16 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import styles from "./tool-detail.module.css";
 import WebsiteAuditTool from "./WebsiteAuditTool";
+import ShopifyThemeGenerator from "./ShopifyThemeGenerator";
+import DaPaChecker from "./DaPaChecker";
+import SlugGenerator from "./SlugGenerator";
+import SeoCostCalculator from "./SeoCostCalculator";
+import AltTagChecker from "./AltTagChecker";
+import ContentAnalysis from "./ContentAnalysis";
+import UrlRedirectChecker from "./UrlRedirectChecker";
+import AiTextHumanizer from "./AiTextHumanizer";
+import AiContentDetector from "./AiContentDetector";
+import PagespeedChecker from "./PagespeedChecker";
 
 interface ToolPlaygroundProps {
   slug: string;
@@ -548,6 +558,46 @@ export default function ToolPlayground({ slug }: ToolPlaygroundProps) {
 
   if (slug === "website-audit-tool") {
     return <WebsiteAuditTool />;
+  }
+
+  if (slug === "shopify-theme-generator") {
+    return <ShopifyThemeGenerator />;
+  }
+
+if (slug === "da-pa-checker") {
+    return <DaPaChecker />;
+  }
+
+  if (slug === "slug-generator") {
+    return <SlugGenerator />;
+  }
+
+  if (slug === "seo-cost-calculator") {
+    return <SeoCostCalculator />;
+  }
+
+  if (slug === "alt-tag-checker") {
+    return <AltTagChecker />;
+  }
+
+  if (slug === "content-analysis") {
+    return <ContentAnalysis />;
+  }
+
+  if (slug === "url-redirect-checker") {
+    return <UrlRedirectChecker />;
+  }
+
+  if (slug === "ai-text-humanizer") {
+    return <AiTextHumanizer />;
+  }
+
+  if (slug === "ai-content-detector") {
+    return <AiContentDetector />;
+  }
+
+  if (slug === "pagespeed-insights") {
+    return <PagespeedChecker />;
   }
 
   if (slug === "word-counter") {

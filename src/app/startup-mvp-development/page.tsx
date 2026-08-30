@@ -81,7 +81,7 @@ export default function StartupMVPDevelopmentPage() {
                 </div>
                 <div className={styles.problemCard}>
                   <h3>Market Validation</h3>
-                  <p>You need to test your idea quickly without overbuilding features users don't want.</p>
+                  <p>You need to test your idea quickly without overbuilding features users don&apos;t want.</p>
                 </div>
               </div>
             </div>
@@ -140,7 +140,7 @@ export default function StartupMVPDevelopmentPage() {
                 </div>
                 <div className={styles.benefitCard}>
                   <h3>Scalable Architecture</h3>
-                  <p>Built to grow. Your MVP won't need a complete rebuild as you scale.</p>
+                  <p>Built to grow. Your MVP won&apos;t need a complete rebuild as you scale.</p>
                 </div>
                 <div className={styles.benefitCard}>
                   <h3>Expert Team</h3>
@@ -148,7 +148,7 @@ export default function StartupMVPDevelopmentPage() {
                 </div>
                 <div className={styles.benefitCard}>
                   <h3>Fixed-Price Options</h3>
-                  <p>Transparent pricing with no hidden costs. Know exactly what you're paying.</p>
+                  <p>Transparent pricing with no hidden costs. Know exactly what you&apos;re paying.</p>
                 </div>
               </div>
             </div>

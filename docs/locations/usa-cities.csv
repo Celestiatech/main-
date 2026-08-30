@@ -1,0 +1,282 @@
+﻿country,region,region_type,city,city_slug,region_slug,country_slug
+United States,Alabama,state,Birmingham,birmingham,alabama,united-states
+United States,Alabama,state,Montgomery,montgomery,alabama,united-states
+United States,Alabama,state,Huntsville,huntsville,alabama,united-states
+United States,Alabama,state,Mobile,mobile,alabama,united-states
+United States,Alabama,state,Tuscaloosa,tuscaloosa,alabama,united-states
+United States,Alaska,state,Anchorage,anchorage,alaska,united-states
+United States,Alaska,state,Fairbanks,fairbanks,alaska,united-states
+United States,Alaska,state,Juneau,juneau,alaska,united-states
+United States,Arizona,state,Phoenix,phoenix,arizona,united-states
+United States,Arizona,state,Tucson,tucson,arizona,united-states
+United States,Arizona,state,Mesa,mesa,arizona,united-states
+United States,Arizona,state,Chandler,chandler,arizona,united-states
+United States,Arizona,state,Scottsdale,scottsdale,arizona,united-states
+United States,Arizona,state,Glendale,glendale,arizona,united-states
+United States,Arizona,state,Gilbert,gilbert,arizona,united-states
+United States,Arizona,state,Tempe,tempe,arizona,united-states
+United States,Arkansas,state,Little Rock,little-rock,arkansas,united-states
+United States,Arkansas,state,Fayetteville,fayetteville,arkansas,united-states
+United States,Arkansas,state,Fort Smith,fort-smith,arkansas,united-states
+United States,Arkansas,state,Springdale,springdale,arkansas,united-states
+United States,California,state,Los Angeles,los-angeles,california,united-states
+United States,California,state,San Diego,san-diego,california,united-states
+United States,California,state,San Jose,san-jose,california,united-states
+United States,California,state,San Francisco,san-francisco,california,united-states
+United States,California,state,Fresno,fresno,california,united-states
+United States,California,state,Sacramento,sacramento,california,united-states
+United States,California,state,Long Beach,long-beach,california,united-states
+United States,California,state,Oakland,oakland,california,united-states
+United States,California,state,Bakersfield,bakersfield,california,united-states
+United States,California,state,Anaheim,anaheim,california,united-states
+United States,California,state,Santa Ana,santa-ana,california,united-states
+United States,California,state,Riverside,riverside,california,united-states
+United States,California,state,Irvine,irvine,california,united-states
+United States,California,state,San Bernardino,san-bernardino,california,united-states
+United States,California,state,Palo Alto,palo-alto,california,united-states
+United States,Colorado,state,Denver,denver,colorado,united-states
+United States,Colorado,state,Colorado Springs,colorado-springs,colorado,united-states
+United States,Colorado,state,Aurora,aurora,colorado,united-states
+United States,Colorado,state,Fort Collins,fort-collins,colorado,united-states
+United States,Colorado,state,Lakewood,lakewood,colorado,united-states
+United States,Colorado,state,Boulder,boulder,colorado,united-states
+United States,Connecticut,state,Bridgeport,bridgeport,connecticut,united-states
+United States,Connecticut,state,New Haven,new-haven,connecticut,united-states
+United States,Connecticut,state,Hartford,hartford,connecticut,united-states
+United States,Connecticut,state,Stamford,stamford,connecticut,united-states
+United States,Connecticut,state,Waterbury,waterbury,connecticut,united-states
+United States,Delaware,state,Wilmington,wilmington,delaware,united-states
+United States,Delaware,state,Dover,dover,delaware,united-states
+United States,Delaware,state,Newark,newark,delaware,united-states
+United States,Florida,state,Jacksonville,jacksonville,florida,united-states
+United States,Florida,state,Miami,miami,florida,united-states
+United States,Florida,state,Tampa,tampa,florida,united-states
+United States,Florida,state,Orlando,orlando,florida,united-states
+United States,Florida,state,St. Petersburg,st-petersburg,florida,united-states
+United States,Florida,state,Hialeah,hialeah,florida,united-states
+United States,Florida,state,Tallahassee,tallahassee,florida,united-states
+United States,Florida,state,Fort Lauderdale,fort-lauderdale,florida,united-states
+United States,Florida,state,Cape Coral,cape-coral,florida,united-states
+United States,Florida,state,Port St. Lucie,port-st-lucie,florida,united-states
+United States,Georgia,state,Atlanta,atlanta,georgia,united-states
+United States,Georgia,state,Augusta,augusta,georgia,united-states
+United States,Georgia,state,Columbus,columbus,georgia,united-states
+United States,Georgia,state,Savannah,savannah,georgia,united-states
+United States,Georgia,state,Athens,athens,georgia,united-states
+United States,Georgia,state,Macon,macon,georgia,united-states
+United States,Hawaii,state,Honolulu,honolulu,hawaii,united-states
+United States,Hawaii,state,Hilo,hilo,hawaii,united-states
+United States,Hawaii,state,Kailua,kailua,hawaii,united-states
+United States,Idaho,state,Boise,boise,idaho,united-states
+United States,Idaho,state,Meridian,meridian,idaho,united-states
+United States,Idaho,state,Nampa,nampa,idaho,united-states
+United States,Idaho,state,Idaho Falls,idaho-falls,idaho,united-states
+United States,Illinois,state,Chicago,chicago,illinois,united-states
+United States,Illinois,state,Aurora,aurora,illinois,united-states
+United States,Illinois,state,Naperville,naperville,illinois,united-states
+United States,Illinois,state,Joliet,joliet,illinois,united-states
+United States,Illinois,state,Rockford,rockford,illinois,united-states
+United States,Illinois,state,Springfield,springfield,illinois,united-states
+United States,Illinois,state,Peoria,peoria,illinois,united-states
+United States,Indiana,state,Indianapolis,indianapolis,indiana,united-states
+United States,Indiana,state,Fort Wayne,fort-wayne,indiana,united-states
+United States,Indiana,state,Evansville,evansville,indiana,united-states
+United States,Indiana,state,South Bend,south-bend,indiana,united-states
+United States,Indiana,state,Carmel,carmel,indiana,united-states
+United States,Indiana,state,Bloomington,bloomington,indiana,united-states
+United States,Iowa,state,Des Moines,des-moines,iowa,united-states
+United States,Iowa,state,Cedar Rapids,cedar-rapids,iowa,united-states
+United States,Iowa,state,Davenport,davenport,iowa,united-states
+United States,Iowa,state,Sioux City,sioux-city,iowa,united-states
+United States,Iowa,state,Iowa City,iowa-city,iowa,united-states
+United States,Kansas,state,Wichita,wichita,kansas,united-states
+United States,Kansas,state,Overland Park,overland-park,kansas,united-states
+United States,Kansas,state,Kansas City,kansas-city,kansas,united-states
+United States,Kansas,state,Topeka,topeka,kansas,united-states
+United States,Kansas,state,Olathe,olathe,kansas,united-states
+United States,Kentucky,state,Louisville,louisville,kentucky,united-states
+United States,Kentucky,state,Lexington,lexington,kentucky,united-states
+United States,Kentucky,state,Bowling Green,bowling-green,kentucky,united-states
+United States,Kentucky,state,Owensboro,owensboro,kentucky,united-states
+United States,Louisiana,state,New Orleans,new-orleans,louisiana,united-states
+United States,Louisiana,state,Baton Rouge,baton-rouge,louisiana,united-states
+United States,Louisiana,state,Shreveport,shreveport,louisiana,united-states
+United States,Louisiana,state,Lafayette,lafayette,louisiana,united-states
+United States,Louisiana,state,Lake Charles,lake-charles,louisiana,united-states
+United States,Maine,state,Portland,portland,maine,united-states
+United States,Maine,state,Lewiston,lewiston,maine,united-states
+United States,Maine,state,Bangor,bangor,maine,united-states
+United States,Maine,state,Augusta,augusta,maine,united-states
+United States,Maryland,state,Baltimore,baltimore,maryland,united-states
+United States,Maryland,state,Columbia,columbia,maryland,united-states
+United States,Maryland,state,Germantown,germantown,maryland,united-states
+United States,Maryland,state,Silver Spring,silver-spring,maryland,united-states
+United States,Maryland,state,Annapolis,annapolis,maryland,united-states
+United States,Maryland,state,Rockville,rockville,maryland,united-states
+United States,Massachusetts,state,Boston,boston,massachusetts,united-states
+United States,Massachusetts,state,Worcester,worcester,massachusetts,united-states
+United States,Massachusetts,state,Springfield,springfield,massachusetts,united-states
+United States,Massachusetts,state,Cambridge,cambridge,massachusetts,united-states
+United States,Massachusetts,state,Lowell,lowell,massachusetts,united-states
+United States,Massachusetts,state,Somerville,somerville,massachusetts,united-states
+United States,Michigan,state,Detroit,detroit,michigan,united-states
+United States,Michigan,state,Grand Rapids,grand-rapids,michigan,united-states
+United States,Michigan,state,Ann Arbor,ann-arbor,michigan,united-states
+United States,Michigan,state,Lansing,lansing,michigan,united-states
+United States,Michigan,state,Flint,flint,michigan,united-states
+United States,Michigan,state,Sterling Heights,sterling-heights,michigan,united-states
+United States,Minnesota,state,Minneapolis,minneapolis,minnesota,united-states
+United States,Minnesota,state,St. Paul,st-paul,minnesota,united-states
+United States,Minnesota,state,Rochester,rochester,minnesota,united-states
+United States,Minnesota,state,Duluth,duluth,minnesota,united-states
+United States,Minnesota,state,Bloomington,bloomington,minnesota,united-states
+United States,Mississippi,state,Jackson,jackson,mississippi,united-states
+United States,Mississippi,state,Gulfport,gulfport,mississippi,united-states
+United States,Mississippi,state,Southaven,southaven,mississippi,united-states
+United States,Mississippi,state,Hattiesburg,hattiesburg,mississippi,united-states
+United States,Missouri,state,Kansas City,kansas-city,missouri,united-states
+United States,Missouri,state,St. Louis,st-louis,missouri,united-states
+United States,Missouri,state,Springfield,springfield,missouri,united-states
+United States,Missouri,state,Columbia,columbia,missouri,united-states
+United States,Missouri,state,Independence,independence,missouri,united-states
+United States,Montana,state,Billings,billings,montana,united-states
+United States,Montana,state,Missoula,missoula,montana,united-states
+United States,Montana,state,Great Falls,great-falls,montana,united-states
+United States,Montana,state,Bozeman,bozeman,montana,united-states
+United States,Montana,state,Helena,helena,montana,united-states
+United States,Nebraska,state,Omaha,omaha,nebraska,united-states
+United States,Nebraska,state,Lincoln,lincoln,nebraska,united-states
+United States,Nebraska,state,Bellevue,bellevue,nebraska,united-states
+United States,Nebraska,state,Grand Island,grand-island,nebraska,united-states
+United States,Nevada,state,Las Vegas,las-vegas,nevada,united-states
+United States,Nevada,state,Henderson,henderson,nevada,united-states
+United States,Nevada,state,Reno,reno,nevada,united-states
+United States,Nevada,state,North Las Vegas,north-las-vegas,nevada,united-states
+United States,Nevada,state,Carson City,carson-city,nevada,united-states
+United States,New Hampshire,state,Manchester,manchester,new-hampshire,united-states
+United States,New Hampshire,state,Nashua,nashua,new-hampshire,united-states
+United States,New Hampshire,state,Concord,concord,new-hampshire,united-states
+United States,New Hampshire,state,Portsmouth,portsmouth,new-hampshire,united-states
+United States,New Jersey,state,Newark,newark,new-jersey,united-states
+United States,New Jersey,state,Jersey City,jersey-city,new-jersey,united-states
+United States,New Jersey,state,Paterson,paterson,new-jersey,united-states
+United States,New Jersey,state,Elizabeth,elizabeth,new-jersey,united-states
+United States,New Jersey,state,Trenton,trenton,new-jersey,united-states
+United States,New Jersey,state,Princeton,princeton,new-jersey,united-states
+United States,New Mexico,state,Albuquerque,albuquerque,new-mexico,united-states
+United States,New Mexico,state,Las Cruces,las-cruces,new-mexico,united-states
+United States,New Mexico,state,Santa Fe,santa-fe,new-mexico,united-states
+United States,New Mexico,state,Rio Rancho,rio-rancho,new-mexico,united-states
+United States,New York,state,New York City,new-york-city,new-york,united-states
+United States,New York,state,Buffalo,buffalo,new-york,united-states
+United States,New York,state,Rochester,rochester,new-york,united-states
+United States,New York,state,Yonkers,yonkers,new-york,united-states
+United States,New York,state,Syracuse,syracuse,new-york,united-states
+United States,New York,state,Albany,albany,new-york,united-states
+United States,New York,state,Brooklyn,brooklyn,new-york,united-states
+United States,New York,state,Queens,queens,new-york,united-states
+United States,New York,state,White Plains,white-plains,new-york,united-states
+United States,North Carolina,state,Charlotte,charlotte,north-carolina,united-states
+United States,North Carolina,state,Raleigh,raleigh,north-carolina,united-states
+United States,North Carolina,state,Greensboro,greensboro,north-carolina,united-states
+United States,North Carolina,state,Durham,durham,north-carolina,united-states
+United States,North Carolina,state,Winston-Salem,winston-salem,north-carolina,united-states
+United States,North Carolina,state,Fayetteville,fayetteville,north-carolina,united-states
+United States,North Carolina,state,Cary,cary,north-carolina,united-states
+United States,North Dakota,state,Fargo,fargo,north-dakota,united-states
+United States,North Dakota,state,Bismarck,bismarck,north-dakota,united-states
+United States,North Dakota,state,Grand Forks,grand-forks,north-dakota,united-states
+United States,North Dakota,state,Minot,minot,north-dakota,united-states
+United States,Ohio,state,Columbus,columbus,ohio,united-states
+United States,Ohio,state,Cleveland,cleveland,ohio,united-states
+United States,Ohio,state,Cincinnati,cincinnati,ohio,united-states
+United States,Ohio,state,Toledo,toledo,ohio,united-states
+United States,Ohio,state,Akron,akron,ohio,united-states
+United States,Ohio,state,Dayton,dayton,ohio,united-states
+United States,Oklahoma,state,Oklahoma City,oklahoma-city,oklahoma,united-states
+United States,Oklahoma,state,Tulsa,tulsa,oklahoma,united-states
+United States,Oklahoma,state,Norman,norman,oklahoma,united-states
+United States,Oklahoma,state,Broken Arrow,broken-arrow,oklahoma,united-states
+United States,Oklahoma,state,Edmond,edmond,oklahoma,united-states
+United States,Oregon,state,Portland,portland,oregon,united-states
+United States,Oregon,state,Salem,salem,oregon,united-states
+United States,Oregon,state,Eugene,eugene,oregon,united-states
+United States,Oregon,state,Gresham,gresham,oregon,united-states
+United States,Oregon,state,Beaverton,beaverton,oregon,united-states
+United States,Oregon,state,Bend,bend,oregon,united-states
+United States,Pennsylvania,state,Philadelphia,philadelphia,pennsylvania,united-states
+United States,Pennsylvania,state,Pittsburgh,pittsburgh,pennsylvania,united-states
+United States,Pennsylvania,state,Allentown,allentown,pennsylvania,united-states
+United States,Pennsylvania,state,Erie,erie,pennsylvania,united-states
+United States,Pennsylvania,state,Reading,reading,pennsylvania,united-states
+United States,Pennsylvania,state,Scranton,scranton,pennsylvania,united-states
+United States,Pennsylvania,state,Harrisburg,harrisburg,pennsylvania,united-states
+United States,Rhode Island,state,Providence,providence,rhode-island,united-states
+United States,Rhode Island,state,Warwick,warwick,rhode-island,united-states
+United States,Rhode Island,state,Cranston,cranston,rhode-island,united-states
+United States,Rhode Island,state,Newport,newport,rhode-island,united-states
+United States,South Carolina,state,Charleston,charleston,south-carolina,united-states
+United States,South Carolina,state,Columbia,columbia,south-carolina,united-states
+United States,South Carolina,state,North Charleston,north-charleston,south-carolina,united-states
+United States,South Carolina,state,Greenville,greenville,south-carolina,united-states
+United States,South Carolina,state,Myrtle Beach,myrtle-beach,south-carolina,united-states
+United States,South Dakota,state,Sioux Falls,sioux-falls,south-dakota,united-states
+United States,South Dakota,state,Rapid City,rapid-city,south-dakota,united-states
+United States,South Dakota,state,Aberdeen,aberdeen,south-dakota,united-states
+United States,South Dakota,state,Pierre,pierre,south-dakota,united-states
+United States,Tennessee,state,Nashville,nashville,tennessee,united-states
+United States,Tennessee,state,Memphis,memphis,tennessee,united-states
+United States,Tennessee,state,Knoxville,knoxville,tennessee,united-states
+United States,Tennessee,state,Chattanooga,chattanooga,tennessee,united-states
+United States,Tennessee,state,Clarksville,clarksville,tennessee,united-states
+United States,Tennessee,state,Franklin,franklin,tennessee,united-states
+United States,Texas,state,Houston,houston,texas,united-states
+United States,Texas,state,San Antonio,san-antonio,texas,united-states
+United States,Texas,state,Dallas,dallas,texas,united-states
+United States,Texas,state,Austin,austin,texas,united-states
+United States,Texas,state,Fort Worth,fort-worth,texas,united-states
+United States,Texas,state,El Paso,el-paso,texas,united-states
+United States,Texas,state,Arlington,arlington,texas,united-states
+United States,Texas,state,Corpus Christi,corpus-christi,texas,united-states
+United States,Texas,state,Plano,plano,texas,united-states
+United States,Texas,state,Lubbock,lubbock,texas,united-states
+United States,Texas,state,Irving,irving,texas,united-states
+United States,Texas,state,Frisco,frisco,texas,united-states
+United States,Utah,state,Salt Lake City,salt-lake-city,utah,united-states
+United States,Utah,state,West Valley City,west-valley-city,utah,united-states
+United States,Utah,state,Provo,provo,utah,united-states
+United States,Utah,state,Ogden,ogden,utah,united-states
+United States,Utah,state,St. George,st-george,utah,united-states
+United States,Utah,state,Lehi,lehi,utah,united-states
+United States,Vermont,state,Burlington,burlington,vermont,united-states
+United States,Vermont,state,Montpelier,montpelier,vermont,united-states
+United States,Vermont,state,Rutland,rutland,vermont,united-states
+United States,Virginia,state,Virginia Beach,virginia-beach,virginia,united-states
+United States,Virginia,state,Richmond,richmond,virginia,united-states
+United States,Virginia,state,Norfolk,norfolk,virginia,united-states
+United States,Virginia,state,Chesapeake,chesapeake,virginia,united-states
+United States,Virginia,state,Arlington,arlington,virginia,united-states
+United States,Virginia,state,Alexandria,alexandria,virginia,united-states
+United States,Virginia,state,Charlottesville,charlottesville,virginia,united-states
+United States,Washington,state,Seattle,seattle,washington,united-states
+United States,Washington,state,Spokane,spokane,washington,united-states
+United States,Washington,state,Tacoma,tacoma,washington,united-states
+United States,Washington,state,Vancouver,vancouver,washington,united-states
+United States,Washington,state,Bellevue,bellevue,washington,united-states
+United States,Washington,state,Everett,everett,washington,united-states
+United States,Washington,state,Olympia,olympia,washington,united-states
+United States,Washington,state,Redmond,redmond,washington,united-states
+United States,West Virginia,state,Charleston,charleston,west-virginia,united-states
+United States,West Virginia,state,Huntington,huntington,west-virginia,united-states
+United States,West Virginia,state,Morgantown,morgantown,west-virginia,united-states
+United States,West Virginia,state,Parkersburg,parkersburg,west-virginia,united-states
+United States,Wisconsin,state,Milwaukee,milwaukee,wisconsin,united-states
+United States,Wisconsin,state,Madison,madison,wisconsin,united-states
+United States,Wisconsin,state,Green Bay,green-bay,wisconsin,united-states
+United States,Wisconsin,state,Kenosha,kenosha,wisconsin,united-states
+United States,Wisconsin,state,Appleton,appleton,wisconsin,united-states
+United States,Wyoming,state,Cheyenne,cheyenne,wyoming,united-states
+United States,Wyoming,state,Casper,casper,wyoming,united-states
+United States,Wyoming,state,Laramie,laramie,wyoming,united-states
+United States,Wyoming,state,Jackson,jackson,wyoming,united-states
+United States,District of Columbia,state,Washington,washington,district-of-columbia,united-states

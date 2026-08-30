@@ -4,6 +4,7 @@ import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { FontAwesomeLoader } from "../../components/FontAwesomeLoader";
 import ToolPlayground from "./ToolPlayground";
+import ToolInsightSections from "./ToolInsightSections";
 import styles from "./tool-detail.module.css";
 import { getToolBySlug } from "@/lib/tools-catalog";
 
@@ -22,6 +23,11 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
   }
 
   const isAuditTool = tool.slug === "website-audit-tool";
+  const toolLimit = tool.slug === "da-pa-checker"
+    ? "Bulk check up to 10 URLs"
+    : tool.slug === "shopify-theme-generator"
+      ? "Convert one authorized URL"
+      : "Free to use";
 
   return (
     <div className={styles.page}>
@@ -30,22 +36,177 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
       <div className={styles.headerGap} />
 
       <main className={`${styles.main} ${isAuditTool ? styles.auditMain : ""}`}>
-        <Link className={`${styles.backLink} ${isAuditTool ? styles.auditBackLink : ""}`} href="/popular-tools">
-          Back to All Tools
-        </Link>
-
-        <section className={`${styles.heroCard} ${isAuditTool ? styles.auditHeroCard : ""}`}>
-          <p className={styles.categoryLabel}>{tool.category.replaceAll("-", " ")}</p>
-          <h1>{tool.title}</h1>
-          <p>{tool.description}</p>
-          <span className={`${styles.badge} ${tool.status === "live" ? styles.live : styles.soon}`}>
-            {tool.status === "live" ? "Live Tool" : "Coming Soon"}
-          </span>
+        <section className={styles.toolHero}>
+          <nav className={styles.toolBreadcrumb} aria-label="Breadcrumb">
+            <Link href="/">Home</Link><span>/</span><Link href="/popular-tools">Popular Tools</Link><span>/</span><strong>{tool.title}</strong>
+          </nav>
+          <p className={styles.toolCategory}>{tool.category.replaceAll("-", " ")}</p>
+          <h1>Free <em>{tool.title}</em></h1>
+          <p className={styles.toolDescription}>{tool.description}</p>
+          <div className={styles.toolTrust}>
+            <span>Instant results</span>
+            <span>No sign-up required</span>
+            <span>{toolLimit}</span>
+            <span>{tool.status === "live" ? "100% free" : "Coming soon"}</span>
+          </div>
         </section>
 
         <section className={`${styles.workspaceCard} ${isAuditTool ? styles.auditWorkspaceCard : ""}`}>
           <ToolPlayground slug={tool.slug} />
         </section>
+
+        {tool.slug !== "website-audit-tool" && tool.slug !== "meta-video-downloader" && (
+          <ToolInsightSections tool={tool} />
+        )}
+
+        {tool.slug === "website-audit-tool" && (
+          <>
+            <section className={`${styles.contentSection} ${styles.auditCenter}`}>
+              <div className={`${styles.auditEyebrow} ${styles.auditEyebrowCenter}`}>Inside the report</div>
+              <h2 className={styles.auditSectionTitle}>
+                What&apos;s inside your website <em>SEO audit?</em>
+              </h2>
+              <p className={styles.auditSectionLead}>
+                See exactly what is holding your site back, with every finding tied to a fix.
+              </p>
+
+              <div className={styles.auditReportGrid}>
+                {[
+                  { icon: "◎", title: "Overall score (0–100)", desc: "An instant snapshot of your page's technical and SEO health, weighted across six categories." },
+                  { icon: "⚠", title: "Priority fixes first", desc: "Failing checks are ranked by impact, so you always know what to change before anything else." },
+                  { icon: "⚡", title: "Core Web Vitals", desc: "Live Lighthouse data for LCP, CLS, Speed Index, and Total Blocking Time on mobile and desktop." },
+                  { icon: "◧", title: "On-page structure", desc: "Title, meta description, canonical, heading hierarchy, word count, and structured data blocks." },
+                  { icon: "⛨", title: "Technical & security", desc: "HTTPS, robots.txt, sitemap.xml, indexability, favicon, and viewport configuration." },
+                  { icon: "⇗", title: "Links & social", desc: "Internal, external, and social link counts, plus Open Graph tags that control how you share." },
+                ].map((item, index) => (
+                  <article key={item.title} className={styles.auditReportCard}>
+                    <div className={styles.auditReportCardTop}>
+                      <span className={styles.auditReportNum}>{String(index + 1).padStart(2, "0")}.</span>
+                      <span className={styles.auditReportIcon} aria-hidden="true">{item.icon}</span>
+                    </div>
+                    <h3>{item.title}</h3>
+                    <p>{item.desc}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <section className={styles.contentSection}>
+              <div className={styles.auditEyebrow}>Behind the analysis</div>
+              <h2 className={styles.auditSectionTitle}>
+                How we generate <em>your results</em>
+              </h2>
+              <p className={styles.auditSectionLead}>
+                Four steps, run against your site&apos;s live environment. Nothing is cached and nothing is guessed.
+              </p>
+
+              <div className={styles.auditStepList}>
+                {[
+                  { step: "Step 1", title: "The technical crawl", desc: "We request your page with a real browser user-agent, following redirects and retrying the www variant if the apex domain refuses us. Then we probe robots.txt and sitemap.xml — if search engines cannot reach you, nothing else matters." },
+                  { step: "Step 2", title: "Code and on-page analysis", desc: "We parse the returned HTML for title, meta description, canonical, heading hierarchy, image alt coverage, structured data, and link structure — checking whether your markup tells search engines a clear story." },
+                  { step: "Step 3", title: "Performance stress-test", desc: "We run your URL through Google PageSpeed Insights on both mobile and desktop, pulling live Core Web Vitals rather than estimates, and flag the metrics outside Google's own thresholds." },
+                  { step: "Step 4", title: "Scoring and prioritisation", desc: "Every check is scored per category and rolled into one number. Failing checks are sorted into a fix-first list, so the report ends with an action plan instead of a wall of data." },
+                ].map((item) => (
+                  <article key={item.step} className={styles.auditStepRow}>
+                    <span className={styles.auditStepBadge}>{item.step}</span>
+                    <div>
+                      <h3>{item.title}</h3>
+                      <p>{item.desc}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <section className={styles.contentSection}>
+              <div className={styles.auditEyebrow}>Why use this tool</div>
+              <h2 className={styles.auditSectionTitle}>
+                Everything you need to <em>improve your rankings.</em>
+              </h2>
+              <p className={styles.auditSectionLead}>
+                Built by the team that ships and maintains production sites for clients every week.
+              </p>
+
+              <div className={styles.auditFeatureGrid}>
+                {[
+                  { title: "Instant free analysis", desc: "A full report in seconds. No registration, no credit card, no trial that expires. Enter a URL and run it." },
+                  { title: "Six category scores", desc: "SEO, Technical, Social, Performance, Usability, and Google PageSpeed — so you know which area needs attention first." },
+                  { title: "Fix recommendations", desc: "Every failing check explains why it matters and what to change, not just that something is wrong." },
+                  { title: "Live PageSpeed data", desc: "Core Web Vitals come from Google's own API on both mobile and desktop, not from a local approximation." },
+                  { title: "PDF report", desc: "Export the full audit as a branded PDF you can send to a client or keep as a before-and-after record." },
+                  { title: "Emailed to you", desc: "Send the report to your inbox in one click, so the findings are still there when you sit down to fix them." },
+                ].map((item) => (
+                  <article key={item.title} className={styles.auditFeatureCard}>
+                    <h3>{item.title}</h3>
+                    <p>{item.desc}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <section className={styles.contentSection}>
+              <div className={styles.auditEyebrow}>Honest comparison</div>
+              <h2 className={styles.auditSectionTitle}>
+                W3Tech audit tool vs. <em>other audit tools</em>
+              </h2>
+
+              <div className={styles.auditCompare}>
+                <div className={styles.auditCompareScroll}>
+                  <table className={styles.auditCompareTable}>
+                    <thead>
+                      <tr>
+                        <th>Feature</th>
+                        <th>Other big tools</th>
+                        <th className={styles.auditCompareOurs}>W3Tech</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { feature: "Cost", other: "Free trial, then paid", ours: "Always free" },
+                        { feature: "Login required", other: "Yes", ours: "No" },
+                        { feature: "Audit limits", other: "Limited per month", ours: "Unlimited" },
+                        { feature: "PDF report", other: "Often paid", ours: "Instant and free" },
+                        { feature: "Core Web Vitals", other: "Sometimes estimated", ours: "Live Google PageSpeed data" },
+                      ].map((row) => (
+                        <tr key={row.feature}>
+                          <td>{row.feature}</td>
+                          <td>{row.other}</td>
+                          <td className={styles.auditCompareWin}>{row.ours}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            <section className={styles.contentSection}>
+              <div className={styles.auditEyebrow}>Questions</div>
+              <h2 className={styles.auditSectionTitle}>
+                Frequently asked <em>questions</em>
+              </h2>
+
+              <div className={styles.auditFaqGrid}>
+                {[
+                  { q: "Is this audit really free?", a: "Yes. There is no account, no trial, and no cap on how many pages you audit." },
+                  { q: "Which page does it audit?", a: "The exact URL you enter. Audit your homepage first, then run the pages that matter most to you individually." },
+                  { q: "Why is my score lower than another tool's?", a: "Every tool weights checks differently. Use the score to track your own progress over time rather than to compare against another tool's number." },
+                  { q: "Do you store my results?", a: "No. The audit runs on request and nothing is saved. Export the PDF or email it to yourself to keep a copy." },
+                  { q: "Why did the audit fail on my site?", a: "Some hosts block automated requests, and pages that build their content with JavaScript return very little HTML to analyse. Both show up as a fetch error or an unusually low word count." },
+                  { q: "Can you fix these issues for us?", a: "Yes — that is our day job. Send us the report from the contact page and we will scope the work." },
+                ].map((item) => (
+                  <details key={item.q} className={styles.auditFaqItem}>
+                    <summary>
+                      {item.q}
+                      <span aria-hidden="true">+</span>
+                    </summary>
+                    <p>{item.a}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          </>
+        )}
 
         {tool.slug === "meta-video-downloader" && (
           <>

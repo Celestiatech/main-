@@ -54,7 +54,7 @@ export default function CookiePolicy() {
                 Cookies are small text files that are stored on your device (computer, tablet, or mobile phone) when you visit a website. Cookies are widely used by website owners to make their websites work more efficiently and to provide reporting information.
               </p>
               <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
-                Cookies can be "first-party" (set by the website you are visiting) or "third-party" (set by a domain other than the one you are visiting). First-party cookies are placed directly by us, while third-party cookies are placed by our partners and service providers.
+                Cookies can be &quot;first-party&quot; (set by the website you are visiting) or &quot;third-party&quot; (set by a domain other than the one you are visiting). First-party cookies are placed directly by us, while third-party cookies are placed by our partners and service providers.
               </p>
 
               <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "var(--text-primary)" }}>
@@ -198,8 +198,8 @@ export default function CookiePolicy() {
                 Besides cookies, we may use other similar technologies:
               </p>
               <ul style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.8", paddingLeft: "20px" }}>
-                <li style={{ marginBottom: "12px" }}><strong>Web Beacons:</strong> Small graphic images (also called "pixels" or "tags") that help us understand how users navigate our website and measure the effectiveness of campaigns.</li>
-                <li style={{ marginBottom: "12px" }}><strong>Local Storage:</strong> Data stored in your browser's local storage mechanism to remember your preferences and settings.</li>
+                <li style={{ marginBottom: "12px" }}><strong>Web Beacons:</strong> Small graphic images (also called &quot;pixels&quot; or &quot;tags&quot;) that help us understand how users navigate our website and measure the effectiveness of campaigns.</li>
+                <li style={{ marginBottom: "12px" }}><strong>Local Storage:</strong> Data stored in your browser&apos;s local storage mechanism to remember your preferences and settings.</li>
                 <li style={{ marginBottom: "12px" }}><strong>IP Addresses:</strong> We may collect your IP address for security purposes and to understand website traffic patterns.</li>
               </ul>
 
@@ -223,7 +223,7 @@ export default function CookiePolicy() {
                 <li style={{ marginBottom: "8px" }}>Set preferences for first-party and third-party cookies</li>
               </ul>
               <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
-                To manage cookies in your browser, look for "Settings," "Privacy," or "Cookies" in your browser options.
+                To manage cookies in your browser, look for &quot;Settings,&quot; &quot;Privacy,&quot; or &quot;Cookies&quot; in your browser options.
               </p>
 
               <h3 style={{ fontSize: "18px", marginBottom: "16px", color: "var(--text-primary)", marginTop: "24px" }}>
@@ -255,7 +255,7 @@ export default function CookiePolicy() {
                 8. Do Not Track
               </h2>
               <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
-                Some browsers have a "Do Not Track" (DNT) feature that signals to websites that you do not want to be tracked. Currently, there is no industry standard for handling DNT signals, so our website does not respond to DNT signals at this time.
+                Some browsers have a &quot;Do Not Track&quot; (DNT) feature that signals to websites that you do not want to be tracked. Currently, there is no industry standard for handling DNT signals, so our website does not respond to DNT signals at this time.
               </p>
 
               <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "var(--text-primary)" }}>
@@ -275,7 +275,7 @@ export default function CookiePolicy() {
                 10. Updates to This Policy
               </h2>
               <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
-                We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our business practices. We will notify you of any material changes by posting the new Cookie Policy on this page and updating the "Last updated" date.
+                We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our business practices. We will notify you of any material changes by posting the new Cookie Policy on this page and updating the &quot;Last updated&quot; date.
               </p>
 
               <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "var(--text-primary)" }}>
@@ -312,7 +312,7 @@ export default function CookiePolicy() {
       <section className={styles.cta}>
         <div className="container">
           <h2>Ready to Work Together?</h2>
-          <p>Let's discuss your project and turn your vision into reality</p>
+          <p>Let&apos;s discuss your project and turn your vision into reality</p>
           <Link href="/proposal" className="btn btn-accent btn-bubble">
             Get Free Consultation
           </Link>

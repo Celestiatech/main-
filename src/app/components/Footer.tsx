@@ -212,7 +212,7 @@ export function Footer() {
             <a className={styles.navLink} href={`mailto:${siteConfig.contact.email.general}`}>
               {siteConfig.contact.email.general}
             </a>
-            <a className={styles.navLink} href={`tel:${siteConfig.contact.phone.india.replace(/\\s+/g, "")}`}>
+            <a className={styles.navLink} href={`tel:${siteConfig.contact.phone.india.replace(/\s+/g, "")}`}>
               {siteConfig.contact.phone.india}
             </a>
             <div className={styles.navMeta}>

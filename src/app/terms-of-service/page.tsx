@@ -109,7 +109,7 @@ export default function TermsOfService() {
                 <strong>Our Warranty:</strong> We warrant that our services will be performed in a professional manner consistent with industry standards. If you are not satisfied with our work, we will make reasonable efforts to address your concerns.
               </p>
               <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "16px", lineHeight: "1.7" }}>
-                <strong>Disclaimer:</strong> The website and its content are provided "as is" and "as available" without any warranties of any kind, either express or implied. We do not warrant that the website will be uninterrupted, timely, secure, or error-free.
+                <strong>Disclaimer:</strong> The website and its content are provided &quot;as is&quot; and &quot;as available&quot; without any warranties of any kind, either express or implied. We do not warrant that the website will be uninterrupted, timely, secure, or error-free.
               </p>
 
               <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "var(--text-primary)" }}>
@@ -231,7 +231,7 @@ export default function TermsOfService() {
       <section className={styles.cta}>
         <div className="container">
           <h2>Ready to Work Together?</h2>
-          <p>Let's discuss your project and turn your vision into reality</p>
+          <p>Let&apos;s discuss your project and turn your vision into reality</p>
           <Link href="/proposal" className="btn btn-accent btn-bubble">
             Get Free Consultation
           </Link>

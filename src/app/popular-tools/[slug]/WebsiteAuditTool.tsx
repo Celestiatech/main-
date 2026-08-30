@@ -253,6 +253,57 @@ export default function WebsiteAuditTool() {
   const [progressLabel, setProgressLabel] = useState("Preparing audit");
   const [error, setError] = useState("");
   const [result, setResult] = useState<AuditResult | null>(null);
+  const [reportEmail, setReportEmail] = useState("");
+  const [emailState, setEmailState] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [emailMessage, setEmailMessage] = useState("");
+
+  // Posts the result to the report route and opens the printable document,
+  // where the browser's own "Save as PDF" produces the file.
+  const openReport = async () => {
+    if (!result) return;
+
+    const response = await fetch("/api/tools/website-audit/report", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ result }),
+    });
+
+    if (!response.ok) return;
+
+    const blobUrl = URL.createObjectURL(await response.blob());
+    window.open(blobUrl, "_blank", "noopener");
+    // Give the new tab time to load before releasing the object URL.
+    window.setTimeout(() => URL.revokeObjectURL(blobUrl), 60_000);
+  };
+
+  const emailReport = async () => {
+    if (!result || !reportEmail) return;
+
+    setEmailState("sending");
+    setEmailMessage("");
+
+    try {
+      const response = await fetch("/api/tools/website-audit/email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: reportEmail, result }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        setEmailState("error");
+        setEmailMessage(data.error || "Could not send the report.");
+        return;
+      }
+
+      setEmailState("sent");
+      setEmailMessage(`Report sent to ${reportEmail}.`);
+    } catch {
+      setEmailState("error");
+      setEmailMessage("Network error. Please try again.");
+    }
+  };
 
   const overallTone = useMemo(() => scoreTone(result?.overallScore ?? 0), [result]);
   const onPageScore = useMemo(() => sectionScore(result, "seo"), [result]);
@@ -435,6 +486,37 @@ export default function WebsiteAuditTool() {
             <p className={styles.auditReportEyebrow}>SEO Analysis Report</p>
             <h2 className={styles.auditReportTitle}>Detailed website audit and reporting</h2>
             <p className={styles.auditTarget}>{result.normalizedUrl}</p>
+
+            <div className={styles.auditExport}>
+              <button type="button" className={styles.auditExportBtn} onClick={openReport}>
+                Download PDF report
+              </button>
+
+              <div className={styles.auditEmailRow}>
+                <input
+                  className={styles.auditEmailInput}
+                  type="email"
+                  placeholder="you@company.com"
+                  value={reportEmail}
+                  onChange={(event) => setReportEmail(event.target.value)}
+                  aria-label="Email address for the audit report"
+                />
+                <button
+                  type="button"
+                  className={styles.auditEmailBtn}
+                  onClick={emailReport}
+                  disabled={!reportEmail || emailState === "sending"}
+                >
+                  {emailState === "sending" ? "Sending…" : "Email me the report"}
+                </button>
+              </div>
+
+              {emailMessage ? (
+                <p className={emailState === "error" ? styles.auditEmailError : styles.auditEmailOk}>
+                  {emailMessage}
+                </p>
+              ) : null}
+            </div>
           </section>
 
           <section className={styles.auditPrioritySection}>

@@ -252,7 +252,7 @@ export default function CareerPage() {
             <div className={styles.contactInfo}>
               <h2>Apply For A Role</h2>
               <p>
-                Submit your application directly from this page. Select any open role or choose "Other" if your role is not listed.
+                Submit your application directly from this page. Select any open role or choose &quot;Other&quot; if your role is not listed.
               </p>
               <div className={styles.contactLocations}>
                 <div className={styles.contactLocation}>

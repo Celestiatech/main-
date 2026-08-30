@@ -1,0 +1,509 @@
+﻿country,region,region_type,city,city_slug,region_slug,country_slug
+India,Andaman and Nicobar Islands,union territory,Port Blair,port-blair,andaman-and-nicobar-islands,india
+India,Andhra Pradesh,state,Adoni,adoni,andhra-pradesh,india
+India,Andhra Pradesh,state,Amaravati,amaravati,andhra-pradesh,india
+India,Andhra Pradesh,state,Anantapur,anantapur,andhra-pradesh,india
+India,Andhra Pradesh,state,Chandragiri,chandragiri,andhra-pradesh,india
+India,Andhra Pradesh,state,Chittoor,chittoor,andhra-pradesh,india
+India,Andhra Pradesh,state,Dowlaiswaram,dowlaiswaram,andhra-pradesh,india
+India,Andhra Pradesh,state,Eluru,eluru,andhra-pradesh,india
+India,Andhra Pradesh,state,Guntur,guntur,andhra-pradesh,india
+India,Andhra Pradesh,state,Kadapa,kadapa,andhra-pradesh,india
+India,Andhra Pradesh,state,Kakinada,kakinada,andhra-pradesh,india
+India,Andhra Pradesh,state,Kurnool,kurnool,andhra-pradesh,india
+India,Andhra Pradesh,state,Machilipatnam,machilipatnam,andhra-pradesh,india
+India,Andhra Pradesh,state,Nagarjunakoṇḍa,nagarjunakonda,andhra-pradesh,india
+India,Andhra Pradesh,state,Rajahmundry,rajahmundry,andhra-pradesh,india
+India,Andhra Pradesh,state,Srikakulam,srikakulam,andhra-pradesh,india
+India,Andhra Pradesh,state,Tirupati,tirupati,andhra-pradesh,india
+India,Andhra Pradesh,state,Vijayawada,vijayawada,andhra-pradesh,india
+India,Andhra Pradesh,state,Visakhapatnam,visakhapatnam,andhra-pradesh,india
+India,Andhra Pradesh,state,Vizianagaram,vizianagaram,andhra-pradesh,india
+India,Andhra Pradesh,state,Yemmiganur,yemmiganur,andhra-pradesh,india
+India,Arunachal Pradesh,state,Itanagar,itanagar,arunachal-pradesh,india
+India,Assam,state,Dhuburi,dhuburi,assam,india
+India,Assam,state,Dibrugarh,dibrugarh,assam,india
+India,Assam,state,Dispur,dispur,assam,india
+India,Assam,state,Guwahati,guwahati,assam,india
+India,Assam,state,Jorhat,jorhat,assam,india
+India,Assam,state,Nagaon,nagaon,assam,india
+India,Assam,state,Sivasagar,sivasagar,assam,india
+India,Assam,state,Silchar,silchar,assam,india
+India,Assam,state,Tezpur,tezpur,assam,india
+India,Assam,state,Tinsukia,tinsukia,assam,india
+India,Bihar,state,Ara,ara,bihar,india
+India,Bihar,state,Barauni,barauni,bihar,india
+India,Bihar,state,Begusarai,begusarai,bihar,india
+India,Bihar,state,Bettiah,bettiah,bihar,india
+India,Bihar,state,Bhagalpur,bhagalpur,bihar,india
+India,Bihar,state,Bihar Sharif,bihar-sharif,bihar,india
+India,Bihar,state,Bodh Gaya,bodh-gaya,bihar,india
+India,Bihar,state,Buxar,buxar,bihar,india
+India,Bihar,state,Chapra,chapra,bihar,india
+India,Bihar,state,Darbhanga,darbhanga,bihar,india
+India,Bihar,state,Dehri,dehri,bihar,india
+India,Bihar,state,Dinapur Nizamat,dinapur-nizamat,bihar,india
+India,Bihar,state,Gaya,gaya,bihar,india
+India,Bihar,state,Hajipur,hajipur,bihar,india
+India,Bihar,state,Jamalpur,jamalpur,bihar,india
+India,Bihar,state,Katihar,katihar,bihar,india
+India,Bihar,state,Madhubani,madhubani,bihar,india
+India,Bihar,state,Motihari,motihari,bihar,india
+India,Bihar,state,Munger,munger,bihar,india
+India,Bihar,state,Muzaffarpur,muzaffarpur,bihar,india
+India,Bihar,state,Patna,patna,bihar,india
+India,Bihar,state,Purnia,purnia,bihar,india
+India,Bihar,state,Pusa,pusa,bihar,india
+India,Bihar,state,Saharsa,saharsa,bihar,india
+India,Bihar,state,Samastipur,samastipur,bihar,india
+India,Bihar,state,Sasaram,sasaram,bihar,india
+India,Bihar,state,Sitamarhi,sitamarhi,bihar,india
+India,Bihar,state,Siwan,siwan,bihar,india
+India,Chandigarh,union territory,Chandigarh,chandigarh,chandigarh,india
+India,Chhattisgarh,state,Ambikapur,ambikapur,chhattisgarh,india
+India,Chhattisgarh,state,Bhilai,bhilai,chhattisgarh,india
+India,Chhattisgarh,state,Bilaspur,bilaspur,chhattisgarh,india
+India,Chhattisgarh,state,Dhamtari,dhamtari,chhattisgarh,india
+India,Chhattisgarh,state,Durg,durg,chhattisgarh,india
+India,Chhattisgarh,state,Jagdalpur,jagdalpur,chhattisgarh,india
+India,Chhattisgarh,state,Raipur,raipur,chhattisgarh,india
+India,Chhattisgarh,state,Rajnandgaon,rajnandgaon,chhattisgarh,india
+India,Dadra and Nagar Haveli and Daman and Diu,union territory,Daman,daman,dadra-and-nagar-haveli-and-daman-and-diu,india
+India,Dadra and Nagar Haveli and Daman and Diu,union territory,Diu,diu,dadra-and-nagar-haveli-and-daman-and-diu,india
+India,Dadra and Nagar Haveli and Daman and Diu,union territory,Silvassa,silvassa,dadra-and-nagar-haveli-and-daman-and-diu,india
+India,Delhi,national capital territory,Delhi,delhi,delhi,india
+India,Delhi,national capital territory,New Delhi,new-delhi,delhi,india
+India,Goa,state,Madgaon,madgaon,goa,india
+India,Goa,state,Panaji,panaji,goa,india
+India,Gujarat,state,Ahmadabad,ahmadabad,gujarat,india
+India,Gujarat,state,Amreli,amreli,gujarat,india
+India,Gujarat,state,Bharuch,bharuch,gujarat,india
+India,Gujarat,state,Bhavnagar,bhavnagar,gujarat,india
+India,Gujarat,state,Bhuj,bhuj,gujarat,india
+India,Gujarat,state,Dwarka,dwarka,gujarat,india
+India,Gujarat,state,Gandhinagar,gandhinagar,gujarat,india
+India,Gujarat,state,Godhra,godhra,gujarat,india
+India,Gujarat,state,Jamnagar,jamnagar,gujarat,india
+India,Gujarat,state,Junagadh,junagadh,gujarat,india
+India,Gujarat,state,Kandla,kandla,gujarat,india
+India,Gujarat,state,Khambhat,khambhat,gujarat,india
+India,Gujarat,state,Kheda,kheda,gujarat,india
+India,Gujarat,state,Mahesana,mahesana,gujarat,india
+India,Gujarat,state,Morbi,morbi,gujarat,india
+India,Gujarat,state,Nadiad,nadiad,gujarat,india
+India,Gujarat,state,Navsari,navsari,gujarat,india
+India,Gujarat,state,Okha,okha,gujarat,india
+India,Gujarat,state,Palanpur,palanpur,gujarat,india
+India,Gujarat,state,Patan,patan,gujarat,india
+India,Gujarat,state,Porbandar,porbandar,gujarat,india
+India,Gujarat,state,Rajkot,rajkot,gujarat,india
+India,Gujarat,state,Surat,surat,gujarat,india
+India,Gujarat,state,Surendranagar,surendranagar,gujarat,india
+India,Gujarat,state,Valsad,valsad,gujarat,india
+India,Gujarat,state,Veraval,veraval,gujarat,india
+India,Haryana,state,Ambala,ambala,haryana,india
+India,Haryana,state,Bhiwani,bhiwani,haryana,india
+India,Haryana,state,Chandigarh,chandigarh,haryana,india
+India,Haryana,state,Faridabad,faridabad,haryana,india
+India,Haryana,state,Firozpur Jhirka,firozpur-jhirka,haryana,india
+India,Haryana,state,Gurugram,gurugram,haryana,india
+India,Haryana,state,Hansi,hansi,haryana,india
+India,Haryana,state,Hisar,hisar,haryana,india
+India,Haryana,state,Jind,jind,haryana,india
+India,Haryana,state,Kaithal,kaithal,haryana,india
+India,Haryana,state,Karnal,karnal,haryana,india
+India,Haryana,state,Kurukshetra,kurukshetra,haryana,india
+India,Haryana,state,Panipat,panipat,haryana,india
+India,Haryana,state,Pehowa,pehowa,haryana,india
+India,Haryana,state,Rewari,rewari,haryana,india
+India,Haryana,state,Rohtak,rohtak,haryana,india
+India,Haryana,state,Sirsa,sirsa,haryana,india
+India,Haryana,state,Sonipat,sonipat,haryana,india
+India,Himachal Pradesh,state,Bilaspur,bilaspur,himachal-pradesh,india
+India,Himachal Pradesh,state,Chamba,chamba,himachal-pradesh,india
+India,Himachal Pradesh,state,Dalhousie,dalhousie,himachal-pradesh,india
+India,Himachal Pradesh,state,Dharmshala,dharmshala,himachal-pradesh,india
+India,Himachal Pradesh,state,Hamirpur,hamirpur,himachal-pradesh,india
+India,Himachal Pradesh,state,Kangra,kangra,himachal-pradesh,india
+India,Himachal Pradesh,state,Kullu,kullu,himachal-pradesh,india
+India,Himachal Pradesh,state,Mandi,mandi,himachal-pradesh,india
+India,Himachal Pradesh,state,Nahan,nahan,himachal-pradesh,india
+India,Himachal Pradesh,state,Shimla,shimla,himachal-pradesh,india
+India,Himachal Pradesh,state,Una,una,himachal-pradesh,india
+India,Jammu and Kashmir,union territory,Anantnag,anantnag,jammu-and-kashmir,india
+India,Jammu and Kashmir,union territory,Baramula,baramula,jammu-and-kashmir,india
+India,Jammu and Kashmir,union territory,Doda,doda,jammu-and-kashmir,india
+India,Jammu and Kashmir,union territory,Gulmarg,gulmarg,jammu-and-kashmir,india
+India,Jammu and Kashmir,union territory,Jammu,jammu,jammu-and-kashmir,india
+India,Jammu and Kashmir,union territory,Kathua,kathua,jammu-and-kashmir,india
+India,Jammu and Kashmir,union territory,Punch,punch,jammu-and-kashmir,india
+India,Jammu and Kashmir,union territory,Rajouri,rajouri,jammu-and-kashmir,india
+India,Jammu and Kashmir,union territory,Srinagar,srinagar,jammu-and-kashmir,india
+India,Jammu and Kashmir,union territory,Udhampur,udhampur,jammu-and-kashmir,india
+India,Jharkhand,state,Bokaro,bokaro,jharkhand,india
+India,Jharkhand,state,Chaibasa,chaibasa,jharkhand,india
+India,Jharkhand,state,Deoghar,deoghar,jharkhand,india
+India,Jharkhand,state,Dhanbad,dhanbad,jharkhand,india
+India,Jharkhand,state,Dumka,dumka,jharkhand,india
+India,Jharkhand,state,Giridih,giridih,jharkhand,india
+India,Jharkhand,state,Hazaribag,hazaribag,jharkhand,india
+India,Jharkhand,state,Jamshedpur,jamshedpur,jharkhand,india
+India,Jharkhand,state,Jharia,jharia,jharkhand,india
+India,Jharkhand,state,Rajmahal,rajmahal,jharkhand,india
+India,Jharkhand,state,Ranchi,ranchi,jharkhand,india
+India,Jharkhand,state,Saraikela,saraikela,jharkhand,india
+India,Karnataka,state,Badami,badami,karnataka,india
+India,Karnataka,state,Ballari,ballari,karnataka,india
+India,Karnataka,state,Bengaluru,bengaluru,karnataka,india
+India,Karnataka,state,Belagavi,belagavi,karnataka,india
+India,Karnataka,state,Bhadravati,bhadravati,karnataka,india
+India,Karnataka,state,Bidar,bidar,karnataka,india
+India,Karnataka,state,Chikkamagaluru,chikkamagaluru,karnataka,india
+India,Karnataka,state,Chitradurga,chitradurga,karnataka,india
+India,Karnataka,state,Davangere,davangere,karnataka,india
+India,Karnataka,state,Halebid,halebid,karnataka,india
+India,Karnataka,state,Hassan,hassan,karnataka,india
+India,Karnataka,state,Hubballi-Dharwad,hubballi-dharwad,karnataka,india
+India,Karnataka,state,Kalaburagi,kalaburagi,karnataka,india
+India,Karnataka,state,Kolar,kolar,karnataka,india
+India,Karnataka,state,Madikeri,madikeri,karnataka,india
+India,Karnataka,state,Mandya,mandya,karnataka,india
+India,Karnataka,state,Mangaluru,mangaluru,karnataka,india
+India,Karnataka,state,Mysuru,mysuru,karnataka,india
+India,Karnataka,state,Raichur,raichur,karnataka,india
+India,Karnataka,state,Shivamogga,shivamogga,karnataka,india
+India,Karnataka,state,Shravanabelagola,shravanabelagola,karnataka,india
+India,Karnataka,state,Shrirangapattana,shrirangapattana,karnataka,india
+India,Karnataka,state,Tumakuru,tumakuru,karnataka,india
+India,Karnataka,state,Vijayapura,vijayapura,karnataka,india
+India,Kerala,state,Alappuzha,alappuzha,kerala,india
+India,Kerala,state,Vatakara,vatakara,kerala,india
+India,Kerala,state,Idukki,idukki,kerala,india
+India,Kerala,state,Kannur,kannur,kerala,india
+India,Kerala,state,Kochi,kochi,kerala,india
+India,Kerala,state,Kollam,kollam,kerala,india
+India,Kerala,state,Kottayam,kottayam,kerala,india
+India,Kerala,state,Kozhikode,kozhikode,kerala,india
+India,Kerala,state,Mattancheri,mattancheri,kerala,india
+India,Kerala,state,Palakkad,palakkad,kerala,india
+India,Kerala,state,Thalassery,thalassery,kerala,india
+India,Kerala,state,Thiruvananthapuram,thiruvananthapuram,kerala,india
+India,Kerala,state,Thrissur,thrissur,kerala,india
+India,Ladakh,union territory,Kargil,kargil,ladakh,india
+India,Ladakh,union territory,Leh,leh,ladakh,india
+India,Madhya Pradesh,state,Balaghat,balaghat,madhya-pradesh,india
+India,Madhya Pradesh,state,Barwani,barwani,madhya-pradesh,india
+India,Madhya Pradesh,state,Betul,betul,madhya-pradesh,india
+India,Madhya Pradesh,state,Bharhut,bharhut,madhya-pradesh,india
+India,Madhya Pradesh,state,Bhind,bhind,madhya-pradesh,india
+India,Madhya Pradesh,state,Bhojpur,bhojpur,madhya-pradesh,india
+India,Madhya Pradesh,state,Bhopal,bhopal,madhya-pradesh,india
+India,Madhya Pradesh,state,Burhanpur,burhanpur,madhya-pradesh,india
+India,Madhya Pradesh,state,Chhatarpur,chhatarpur,madhya-pradesh,india
+India,Madhya Pradesh,state,Chhindwara,chhindwara,madhya-pradesh,india
+India,Madhya Pradesh,state,Damoh,damoh,madhya-pradesh,india
+India,Madhya Pradesh,state,Datia,datia,madhya-pradesh,india
+India,Madhya Pradesh,state,Dewas,dewas,madhya-pradesh,india
+India,Madhya Pradesh,state,Dhar,dhar,madhya-pradesh,india
+India,Madhya Pradesh,state,Dr. Ambedkar Nagar,dr-ambedkar-nagar,madhya-pradesh,india
+India,Madhya Pradesh,state,Guna,guna,madhya-pradesh,india
+India,Madhya Pradesh,state,Gwalior,gwalior,madhya-pradesh,india
+India,Madhya Pradesh,state,Hoshangabad,hoshangabad,madhya-pradesh,india
+India,Madhya Pradesh,state,Indore,indore,madhya-pradesh,india
+India,Madhya Pradesh,state,Itarsi,itarsi,madhya-pradesh,india
+India,Madhya Pradesh,state,Jabalpur,jabalpur,madhya-pradesh,india
+India,Madhya Pradesh,state,Jhabua,jhabua,madhya-pradesh,india
+India,Madhya Pradesh,state,Khajuraho,khajuraho,madhya-pradesh,india
+India,Madhya Pradesh,state,Khandwa,khandwa,madhya-pradesh,india
+India,Madhya Pradesh,state,Khargone,khargone,madhya-pradesh,india
+India,Madhya Pradesh,state,Maheshwar,maheshwar,madhya-pradesh,india
+India,Madhya Pradesh,state,Mandla,mandla,madhya-pradesh,india
+India,Madhya Pradesh,state,Mandsaur,mandsaur,madhya-pradesh,india
+India,Madhya Pradesh,state,Morena,morena,madhya-pradesh,india
+India,Madhya Pradesh,state,Murwara,murwara,madhya-pradesh,india
+India,Madhya Pradesh,state,Narsimhapur,narsimhapur,madhya-pradesh,india
+India,Madhya Pradesh,state,Narsinghgarh,narsinghgarh,madhya-pradesh,india
+India,Madhya Pradesh,state,Narwar,narwar,madhya-pradesh,india
+India,Madhya Pradesh,state,Neemuch,neemuch,madhya-pradesh,india
+India,Madhya Pradesh,state,Nowgong,nowgong,madhya-pradesh,india
+India,Madhya Pradesh,state,Orchha,orchha,madhya-pradesh,india
+India,Madhya Pradesh,state,Panna,panna,madhya-pradesh,india
+India,Madhya Pradesh,state,Raisen,raisen,madhya-pradesh,india
+India,Madhya Pradesh,state,Rajgarh,rajgarh,madhya-pradesh,india
+India,Madhya Pradesh,state,Ratlam,ratlam,madhya-pradesh,india
+India,Madhya Pradesh,state,Rewa,rewa,madhya-pradesh,india
+India,Madhya Pradesh,state,Sagar,sagar,madhya-pradesh,india
+India,Madhya Pradesh,state,Sarangpur,sarangpur,madhya-pradesh,india
+India,Madhya Pradesh,state,Satna,satna,madhya-pradesh,india
+India,Madhya Pradesh,state,Sehore,sehore,madhya-pradesh,india
+India,Madhya Pradesh,state,Seoni,seoni,madhya-pradesh,india
+India,Madhya Pradesh,state,Shahdol,shahdol,madhya-pradesh,india
+India,Madhya Pradesh,state,Shajapur,shajapur,madhya-pradesh,india
+India,Madhya Pradesh,state,Sheopur,sheopur,madhya-pradesh,india
+India,Madhya Pradesh,state,Shivpuri,shivpuri,madhya-pradesh,india
+India,Madhya Pradesh,state,Ujjain,ujjain,madhya-pradesh,india
+India,Madhya Pradesh,state,Vidisha,vidisha,madhya-pradesh,india
+India,Maharashtra,state,Ahmadnagar,ahmadnagar,maharashtra,india
+India,Maharashtra,state,Akola,akola,maharashtra,india
+India,Maharashtra,state,Amravati,amravati,maharashtra,india
+India,Maharashtra,state,Aurangabad,aurangabad,maharashtra,india
+India,Maharashtra,state,Bhandara,bhandara,maharashtra,india
+India,Maharashtra,state,Bhusawal,bhusawal,maharashtra,india
+India,Maharashtra,state,Bid,bid,maharashtra,india
+India,Maharashtra,state,Buldhana,buldhana,maharashtra,india
+India,Maharashtra,state,Chandrapur,chandrapur,maharashtra,india
+India,Maharashtra,state,Daulatabad,daulatabad,maharashtra,india
+India,Maharashtra,state,Dhule,dhule,maharashtra,india
+India,Maharashtra,state,Jalgaon,jalgaon,maharashtra,india
+India,Maharashtra,state,Kalyan,kalyan,maharashtra,india
+India,Maharashtra,state,Karli,karli,maharashtra,india
+India,Maharashtra,state,Kolhapur,kolhapur,maharashtra,india
+India,Maharashtra,state,Mahabaleshwar,mahabaleshwar,maharashtra,india
+India,Maharashtra,state,Malegaon,malegaon,maharashtra,india
+India,Maharashtra,state,Matheran,matheran,maharashtra,india
+India,Maharashtra,state,Mumbai,mumbai,maharashtra,india
+India,Maharashtra,state,Nagpur,nagpur,maharashtra,india
+India,Maharashtra,state,Nanded,nanded,maharashtra,india
+India,Maharashtra,state,Nashik,nashik,maharashtra,india
+India,Maharashtra,state,Osmanabad,osmanabad,maharashtra,india
+India,Maharashtra,state,Pandharpur,pandharpur,maharashtra,india
+India,Maharashtra,state,Parbhani,parbhani,maharashtra,india
+India,Maharashtra,state,Pune,pune,maharashtra,india
+India,Maharashtra,state,Ratnagiri,ratnagiri,maharashtra,india
+India,Maharashtra,state,Sangli,sangli,maharashtra,india
+India,Maharashtra,state,Satara,satara,maharashtra,india
+India,Maharashtra,state,Sevagram,sevagram,maharashtra,india
+India,Maharashtra,state,Solapur,solapur,maharashtra,india
+India,Maharashtra,state,Thane,thane,maharashtra,india
+India,Maharashtra,state,Ulhasnagar,ulhasnagar,maharashtra,india
+India,Maharashtra,state,Vasai-Virar,vasai-virar,maharashtra,india
+India,Maharashtra,state,Wardha,wardha,maharashtra,india
+India,Maharashtra,state,Yavatmal,yavatmal,maharashtra,india
+India,Manipur,state,Imphal,imphal,manipur,india
+India,Meghalaya,state,Cherrapunji,cherrapunji,meghalaya,india
+India,Meghalaya,state,Shillong,shillong,meghalaya,india
+India,Mizoram,state,Aizawl,aizawl,mizoram,india
+India,Mizoram,state,Lunglei,lunglei,mizoram,india
+India,Nagaland,state,Kohima,kohima,nagaland,india
+India,Nagaland,state,Mon,mon,nagaland,india
+India,Nagaland,state,Phek,phek,nagaland,india
+India,Nagaland,state,Wokha,wokha,nagaland,india
+India,Nagaland,state,Zunheboto,zunheboto,nagaland,india
+India,Odisha,state,Balangir,balangir,odisha,india
+India,Odisha,state,Baleshwar,baleshwar,odisha,india
+India,Odisha,state,Baripada,baripada,odisha,india
+India,Odisha,state,Bhubaneshwar,bhubaneshwar,odisha,india
+India,Odisha,state,Brahmapur,brahmapur,odisha,india
+India,Odisha,state,Cuttack,cuttack,odisha,india
+India,Odisha,state,Dhenkanal,dhenkanal,odisha,india
+India,Odisha,state,Kendujhar,kendujhar,odisha,india
+India,Odisha,state,Konark,konark,odisha,india
+India,Odisha,state,Koraput,koraput,odisha,india
+India,Odisha,state,Paradip,paradip,odisha,india
+India,Odisha,state,Phulabani,phulabani,odisha,india
+India,Odisha,state,Puri,puri,odisha,india
+India,Odisha,state,Sambalpur,sambalpur,odisha,india
+India,Odisha,state,Udayagiri,udayagiri,odisha,india
+India,Puducherry,union territory,Karaikal,karaikal,puducherry,india
+India,Puducherry,union territory,Mahe,mahe,puducherry,india
+India,Puducherry,union territory,Puducherry,puducherry,puducherry,india
+India,Puducherry,union territory,Yanam,yanam,puducherry,india
+India,Punjab,state,Amritsar,amritsar,punjab,india
+India,Punjab,state,Batala,batala,punjab,india
+India,Punjab,state,Chandigarh,chandigarh,punjab,india
+India,Punjab,state,Faridkot,faridkot,punjab,india
+India,Punjab,state,Firozpur,firozpur,punjab,india
+India,Punjab,state,Gurdaspur,gurdaspur,punjab,india
+India,Punjab,state,Hoshiarpur,hoshiarpur,punjab,india
+India,Punjab,state,Jalandhar,jalandhar,punjab,india
+India,Punjab,state,Kapurthala,kapurthala,punjab,india
+India,Punjab,state,Ludhiana,ludhiana,punjab,india
+India,Punjab,state,Nabha,nabha,punjab,india
+India,Punjab,state,Patiala,patiala,punjab,india
+India,Punjab,state,Rupnagar,rupnagar,punjab,india
+India,Punjab,state,Sangrur,sangrur,punjab,india
+India,Rajasthan,state,Abu,abu,rajasthan,india
+India,Rajasthan,state,Ajmer,ajmer,rajasthan,india
+India,Rajasthan,state,Alwar,alwar,rajasthan,india
+India,Rajasthan,state,Amer,amer,rajasthan,india
+India,Rajasthan,state,Barmer,barmer,rajasthan,india
+India,Rajasthan,state,Beawar,beawar,rajasthan,india
+India,Rajasthan,state,Bharatpur,bharatpur,rajasthan,india
+India,Rajasthan,state,Bhilwara,bhilwara,rajasthan,india
+India,Rajasthan,state,Bikaner,bikaner,rajasthan,india
+India,Rajasthan,state,Bundi,bundi,rajasthan,india
+India,Rajasthan,state,Chittaurgarh,chittaurgarh,rajasthan,india
+India,Rajasthan,state,Churu,churu,rajasthan,india
+India,Rajasthan,state,Dhaulpur,dhaulpur,rajasthan,india
+India,Rajasthan,state,Dungarpur,dungarpur,rajasthan,india
+India,Rajasthan,state,Ganganagar,ganganagar,rajasthan,india
+India,Rajasthan,state,Hanumangarh,hanumangarh,rajasthan,india
+India,Rajasthan,state,Jaipur,jaipur,rajasthan,india
+India,Rajasthan,state,Jaisalmer,jaisalmer,rajasthan,india
+India,Rajasthan,state,Jalor,jalor,rajasthan,india
+India,Rajasthan,state,Jhalawar,jhalawar,rajasthan,india
+India,Rajasthan,state,Jhunjhunu,jhunjhunu,rajasthan,india
+India,Rajasthan,state,Jodhpur,jodhpur,rajasthan,india
+India,Rajasthan,state,Kishangarh,kishangarh,rajasthan,india
+India,Rajasthan,state,Kota,kota,rajasthan,india
+India,Rajasthan,state,Merta,merta,rajasthan,india
+India,Rajasthan,state,Nagaur,nagaur,rajasthan,india
+India,Rajasthan,state,Nathdwara,nathdwara,rajasthan,india
+India,Rajasthan,state,Pali,pali,rajasthan,india
+India,Rajasthan,state,Phalodi,phalodi,rajasthan,india
+India,Rajasthan,state,Pushkar,pushkar,rajasthan,india
+India,Rajasthan,state,Sawai Madhopur,sawai-madhopur,rajasthan,india
+India,Rajasthan,state,Shahpura,shahpura,rajasthan,india
+India,Rajasthan,state,Sikar,sikar,rajasthan,india
+India,Rajasthan,state,Sirohi,sirohi,rajasthan,india
+India,Rajasthan,state,Tonk,tonk,rajasthan,india
+India,Rajasthan,state,Udaipur,udaipur,rajasthan,india
+India,Sikkim,state,Gangtok,gangtok,sikkim,india
+India,Sikkim,state,Gyalshing,gyalshing,sikkim,india
+India,Sikkim,state,Lachung,lachung,sikkim,india
+India,Sikkim,state,Mangan,mangan,sikkim,india
+India,Tamil Nadu,state,Arcot,arcot,tamil-nadu,india
+India,Tamil Nadu,state,Chengalpattu,chengalpattu,tamil-nadu,india
+India,Tamil Nadu,state,Chennai,chennai,tamil-nadu,india
+India,Tamil Nadu,state,Chidambaram,chidambaram,tamil-nadu,india
+India,Tamil Nadu,state,Coimbatore,coimbatore,tamil-nadu,india
+India,Tamil Nadu,state,Cuddalore,cuddalore,tamil-nadu,india
+India,Tamil Nadu,state,Dharmapuri,dharmapuri,tamil-nadu,india
+India,Tamil Nadu,state,Dindigul,dindigul,tamil-nadu,india
+India,Tamil Nadu,state,Erode,erode,tamil-nadu,india
+India,Tamil Nadu,state,Kanchipuram,kanchipuram,tamil-nadu,india
+India,Tamil Nadu,state,Kanniyakumari,kanniyakumari,tamil-nadu,india
+India,Tamil Nadu,state,Kodaikanal,kodaikanal,tamil-nadu,india
+India,Tamil Nadu,state,Kumbakonam,kumbakonam,tamil-nadu,india
+India,Tamil Nadu,state,Madurai,madurai,tamil-nadu,india
+India,Tamil Nadu,state,Mamallapuram,mamallapuram,tamil-nadu,india
+India,Tamil Nadu,state,Nagappattinam,nagappattinam,tamil-nadu,india
+India,Tamil Nadu,state,Nagercoil,nagercoil,tamil-nadu,india
+India,Tamil Nadu,state,Palayamkottai,palayamkottai,tamil-nadu,india
+India,Tamil Nadu,state,Pudukkottai,pudukkottai,tamil-nadu,india
+India,Tamil Nadu,state,Rajapalayam,rajapalayam,tamil-nadu,india
+India,Tamil Nadu,state,Ramanathapuram,ramanathapuram,tamil-nadu,india
+India,Tamil Nadu,state,Salem,salem,tamil-nadu,india
+India,Tamil Nadu,state,Thanjavur,thanjavur,tamil-nadu,india
+India,Tamil Nadu,state,Tiruchchirappalli,tiruchchirappalli,tamil-nadu,india
+India,Tamil Nadu,state,Tirunelveli,tirunelveli,tamil-nadu,india
+India,Tamil Nadu,state,Tiruppur,tiruppur,tamil-nadu,india
+India,Tamil Nadu,state,Thoothukudi,thoothukudi,tamil-nadu,india
+India,Tamil Nadu,state,Udhagamandalam,udhagamandalam,tamil-nadu,india
+India,Tamil Nadu,state,Vellore,vellore,tamil-nadu,india
+India,Telangana,state,Hyderabad,hyderabad,telangana,india
+India,Telangana,state,Karimnagar,karimnagar,telangana,india
+India,Telangana,state,Khammam,khammam,telangana,india
+India,Telangana,state,Mahbubnagar,mahbubnagar,telangana,india
+India,Telangana,state,Nizamabad,nizamabad,telangana,india
+India,Telangana,state,Sangareddi,sangareddi,telangana,india
+India,Telangana,state,Warangal,warangal,telangana,india
+India,Tripura,state,Agartala,agartala,tripura,india
+India,Uttar Pradesh,state,Agra,agra,uttar-pradesh,india
+India,Uttar Pradesh,state,Aligarh,aligarh,uttar-pradesh,india
+India,Uttar Pradesh,state,Amroha,amroha,uttar-pradesh,india
+India,Uttar Pradesh,state,Ayodhya,ayodhya,uttar-pradesh,india
+India,Uttar Pradesh,state,Azamgarh,azamgarh,uttar-pradesh,india
+India,Uttar Pradesh,state,Bahraich,bahraich,uttar-pradesh,india
+India,Uttar Pradesh,state,Ballia,ballia,uttar-pradesh,india
+India,Uttar Pradesh,state,Banda,banda,uttar-pradesh,india
+India,Uttar Pradesh,state,Bara Banki,bara-banki,uttar-pradesh,india
+India,Uttar Pradesh,state,Bareilly,bareilly,uttar-pradesh,india
+India,Uttar Pradesh,state,Basti,basti,uttar-pradesh,india
+India,Uttar Pradesh,state,Bijnor,bijnor,uttar-pradesh,india
+India,Uttar Pradesh,state,Bithur,bithur,uttar-pradesh,india
+India,Uttar Pradesh,state,Budaun,budaun,uttar-pradesh,india
+India,Uttar Pradesh,state,Bulandshahr,bulandshahr,uttar-pradesh,india
+India,Uttar Pradesh,state,Deoria,deoria,uttar-pradesh,india
+India,Uttar Pradesh,state,Etah,etah,uttar-pradesh,india
+India,Uttar Pradesh,state,Etawah,etawah,uttar-pradesh,india
+India,Uttar Pradesh,state,Faizabad,faizabad,uttar-pradesh,india
+India,Uttar Pradesh,state,Farrukhabad-cum-Fatehgarh,farrukhabad-cum-fatehgarh,uttar-pradesh,india
+India,Uttar Pradesh,state,Fatehpur,fatehpur,uttar-pradesh,india
+India,Uttar Pradesh,state,Fatehpur Sikri,fatehpur-sikri,uttar-pradesh,india
+India,Uttar Pradesh,state,Ghaziabad,ghaziabad,uttar-pradesh,india
+India,Uttar Pradesh,state,Ghazipur,ghazipur,uttar-pradesh,india
+India,Uttar Pradesh,state,Gonda,gonda,uttar-pradesh,india
+India,Uttar Pradesh,state,Gorakhpur,gorakhpur,uttar-pradesh,india
+India,Uttar Pradesh,state,Hamirpur,hamirpur,uttar-pradesh,india
+India,Uttar Pradesh,state,Hardoi,hardoi,uttar-pradesh,india
+India,Uttar Pradesh,state,Hathras,hathras,uttar-pradesh,india
+India,Uttar Pradesh,state,Jalaun,jalaun,uttar-pradesh,india
+India,Uttar Pradesh,state,Jaunpur,jaunpur,uttar-pradesh,india
+India,Uttar Pradesh,state,Jhansi,jhansi,uttar-pradesh,india
+India,Uttar Pradesh,state,Kannauj,kannauj,uttar-pradesh,india
+India,Uttar Pradesh,state,Kanpur,kanpur,uttar-pradesh,india
+India,Uttar Pradesh,state,Lakhimpur,lakhimpur,uttar-pradesh,india
+India,Uttar Pradesh,state,Lalitpur,lalitpur,uttar-pradesh,india
+India,Uttar Pradesh,state,Lucknow,lucknow,uttar-pradesh,india
+India,Uttar Pradesh,state,Mainpuri,mainpuri,uttar-pradesh,india
+India,Uttar Pradesh,state,Mathura,mathura,uttar-pradesh,india
+India,Uttar Pradesh,state,Meerut,meerut,uttar-pradesh,india
+India,Uttar Pradesh,state,Mirzapur-Vindhyachal,mirzapur-vindhyachal,uttar-pradesh,india
+India,Uttar Pradesh,state,Moradabad,moradabad,uttar-pradesh,india
+India,Uttar Pradesh,state,Muzaffarnagar,muzaffarnagar,uttar-pradesh,india
+India,Uttar Pradesh,state,Partapgarh,partapgarh,uttar-pradesh,india
+India,Uttar Pradesh,state,Pilibhit,pilibhit,uttar-pradesh,india
+India,Uttar Pradesh,state,Prayagraj,prayagraj,uttar-pradesh,india
+India,Uttar Pradesh,state,Rae Bareli,rae-bareli,uttar-pradesh,india
+India,Uttar Pradesh,state,Rampur,rampur,uttar-pradesh,india
+India,Uttar Pradesh,state,Saharanpur,saharanpur,uttar-pradesh,india
+India,Uttar Pradesh,state,Sambhal,sambhal,uttar-pradesh,india
+India,Uttar Pradesh,state,Shahjahanpur,shahjahanpur,uttar-pradesh,india
+India,Uttar Pradesh,state,Sitapur,sitapur,uttar-pradesh,india
+India,Uttar Pradesh,state,Sultanpur,sultanpur,uttar-pradesh,india
+India,Uttar Pradesh,state,Tehri,tehri,uttar-pradesh,india
+India,Uttar Pradesh,state,Varanasi,varanasi,uttar-pradesh,india
+India,Uttarakhand,state,Almora,almora,uttarakhand,india
+India,Uttarakhand,state,Dehra Dun,dehra-dun,uttarakhand,india
+India,Uttarakhand,state,Haridwar,haridwar,uttarakhand,india
+India,Uttarakhand,state,Mussoorie,mussoorie,uttarakhand,india
+India,Uttarakhand,state,Nainital,nainital,uttarakhand,india
+India,Uttarakhand,state,Pithoragarh,pithoragarh,uttarakhand,india
+India,West Bengal,state,Alipore,alipore,west-bengal,india
+India,West Bengal,state,Alipur Duar,alipur-duar,west-bengal,india
+India,West Bengal,state,Asansol,asansol,west-bengal,india
+India,West Bengal,state,Baharampur,baharampur,west-bengal,india
+India,West Bengal,state,Bally,bally,west-bengal,india
+India,West Bengal,state,Balurghat,balurghat,west-bengal,india
+India,West Bengal,state,Bankura,bankura,west-bengal,india
+India,West Bengal,state,Baranagar,baranagar,west-bengal,india
+India,West Bengal,state,Barasat,barasat,west-bengal,india
+India,West Bengal,state,Barrackpore,barrackpore,west-bengal,india
+India,West Bengal,state,Basirhat,basirhat,west-bengal,india
+India,West Bengal,state,Bhatpara,bhatpara,west-bengal,india
+India,West Bengal,state,Bishnupur,bishnupur,west-bengal,india
+India,West Bengal,state,Budge Budge,budge-budge,west-bengal,india
+India,West Bengal,state,Burdwan,burdwan,west-bengal,india
+India,West Bengal,state,Chandernagore,chandernagore,west-bengal,india
+India,West Bengal,state,Darjeeling,darjeeling,west-bengal,india
+India,West Bengal,state,Diamond Harbour,diamond-harbour,west-bengal,india
+India,West Bengal,state,Dum Dum,dum-dum,west-bengal,india
+India,West Bengal,state,Durgapur,durgapur,west-bengal,india
+India,West Bengal,state,Halisahar,halisahar,west-bengal,india
+India,West Bengal,state,Haora,haora,west-bengal,india
+India,West Bengal,state,Hugli,hugli,west-bengal,india
+India,West Bengal,state,Ingraj Bazar,ingraj-bazar,west-bengal,india
+India,West Bengal,state,Jalpaiguri,jalpaiguri,west-bengal,india
+India,West Bengal,state,Kalimpong,kalimpong,west-bengal,india
+India,West Bengal,state,Kamarhati,kamarhati,west-bengal,india
+India,West Bengal,state,Kanchrapara,kanchrapara,west-bengal,india
+India,West Bengal,state,Kharagpur,kharagpur,west-bengal,india
+India,West Bengal,state,Cooch Behar,cooch-behar,west-bengal,india
+India,West Bengal,state,Kolkata,kolkata,west-bengal,india
+India,West Bengal,state,Krishnanagar,krishnanagar,west-bengal,india
+India,West Bengal,state,Malda,malda,west-bengal,india
+India,West Bengal,state,Midnapore,midnapore,west-bengal,india
+India,West Bengal,state,Murshidabad,murshidabad,west-bengal,india
+India,West Bengal,state,Nabadwip,nabadwip,west-bengal,india
+India,West Bengal,state,Palashi,palashi,west-bengal,india
+India,West Bengal,state,Panihati,panihati,west-bengal,india
+India,West Bengal,state,Purulia,purulia,west-bengal,india
+India,West Bengal,state,Raiganj,raiganj,west-bengal,india
+India,West Bengal,state,Santipur,santipur,west-bengal,india
+India,West Bengal,state,Shantiniketan,shantiniketan,west-bengal,india
+India,West Bengal,state,Shrirampur,shrirampur,west-bengal,india
+India,West Bengal,state,Siliguri,siliguri,west-bengal,india
+India,West Bengal,state,Siuri,siuri,west-bengal,india
+India,West Bengal,state,Tamluk,tamluk,west-bengal,india
+India,West Bengal,state,Titagarh,titagarh,west-bengal,india

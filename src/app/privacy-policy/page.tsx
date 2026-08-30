@@ -143,7 +143,7 @@ export default function PrivacyPolicy() {
               </p>
 
               <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "var(--text-primary)" }}>
-                10. Children's Privacy
+                10. Children&apos;s Privacy
               </h2>
               <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
                 Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children. If you believe we have collected information from a child, please contact us immediately.
@@ -160,7 +160,7 @@ export default function PrivacyPolicy() {
                 12. Changes to This Policy
               </h2>
               <p style={{ fontSize: "15px", color: "var(--text-secondary)", marginBottom: "24px", lineHeight: "1.7" }}>
-                We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new Privacy Policy on this page and updating the "Last updated" date at the top of this policy. We encourage you to review this Privacy Policy periodically.
+                We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date at the top of this policy. We encourage you to review this Privacy Policy periodically.
               </p>
 
               <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "var(--text-primary)" }}>
@@ -197,7 +197,7 @@ export default function PrivacyPolicy() {
       <section className={styles.cta}>
         <div className="container">
           <h2>Ready to Work Together?</h2>
-          <p>Let's discuss your project and turn your vision into reality</p>
+          <p>Let&apos;s discuss your project and turn your vision into reality</p>
           <Link href="/proposal" className="btn btn-accent btn-bubble">
             Get Free Consultation
           </Link>

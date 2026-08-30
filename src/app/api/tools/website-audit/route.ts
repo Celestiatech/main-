@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { fetchPageWithFallback, fetchText, slowFetchDispatcher } from "@/lib/http-fetch";
 
 type AuditCheck = {
   id: string;
@@ -32,7 +33,7 @@ type AuditSectionWithInclusion = AuditSection & {
   includeInOverall?: boolean;
 };
 
-const GOOGLE_PAGESPEED_KEY = "AIzaSyDT9H1dgnuNDk0E7iEwm0rzj503moPrI0Y";
+const GOOGLE_PAGESPEED_KEY = process.env.PAGESPEED_API_KEY || process.env.GOOGLE_PAGESPEED_KEY || "";
 
 function normalizeUrl(input: string) {
   const trimmed = input.trim();
@@ -208,20 +209,24 @@ async function fetchPageSpeed(url: string, strategy: "mobile" | "desktop"): Prom
     const apiUrl = new URL("https://www.googleapis.com/pagespeedonline/v5/runPagespeed");
     apiUrl.searchParams.set("url", url);
     apiUrl.searchParams.set("strategy", strategy);
-    apiUrl.searchParams.set("key", GOOGLE_PAGESPEED_KEY);
+    // The API also answers unauthenticated requests, at a much lower quota.
+    if (GOOGLE_PAGESPEED_KEY) {
+      apiUrl.searchParams.set("key", GOOGLE_PAGESPEED_KEY);
+    }
 
-    const response = await fetch(apiUrl.toString(), {
-      cache: "no-store",
-      headers: {
-        accept: "application/json",
-      },
+    // PageSpeed runs a live Lighthouse audit before responding, so it needs the
+    // long-timeout dispatcher — the default header timeout cuts it off mid-run.
+    const response = await fetchText(apiUrl.toString(), {
+      headers: { accept: "application/json" },
+      dispatcher: slowFetchDispatcher,
+      timeoutMs: 90_000,
     });
 
-    if (!response.ok) {
+    if (!response.ok || !response.html) {
       return null;
     }
 
-    const data = (await response.json()) as {
+    const data = JSON.parse(response.html) as {
       lighthouseResult?: {
         categories?: {
           performance?: { score?: number };
@@ -318,15 +323,7 @@ function classifyLinks(baseUrl: string, html: string) {
 
 async function exists(url: string) {
   try {
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        "user-agent": "Mozilla/5.0 (compatible; WebsiteAuditTool/1.0; +https://localhost)",
-      },
-      redirect: "follow",
-      cache: "no-store",
-    });
-
+    const response = await fetchText(url, { timeoutMs: 8_000 });
     return response.ok;
   } catch {
     return false;
@@ -347,28 +344,23 @@ export async function POST(request: NextRequest) {
     const body = (await request.json()) as { url?: string };
     const normalizedUrl = normalizeUrl(body.url ?? "");
 
-    const start = Date.now();
-    const response = await fetch(normalizedUrl, {
-      headers: {
-        "user-agent": "Mozilla/5.0 (compatible; WebsiteAuditTool/1.0; +https://localhost)",
-        accept: "text/html,application/xhtml+xml",
-      },
-      redirect: "follow",
-      cache: "no-store",
-    });
-    const responseTimeMs = Date.now() - start;
+    // Retries once against the www variant: hosts that reject the apex domain
+    // are the most common cause of an audit failing on a site that loads fine
+    // in a browser.
+    const response = await fetchPageWithFallback(normalizedUrl, { timeoutMs: 20_000 });
+    const responseTimeMs = response.elapsedMs;
 
     if (!response.ok) {
       return NextResponse.json(
         {
           success: false,
-          error: `Target URL returned ${response.status} ${response.statusText}.`,
+          error: `Target URL returned HTTP ${response.status}.`,
         },
         { status: 400 }
       );
     }
 
-    const html = await response.text();
+    const html = response.html;
     const finalUrl = response.url || normalizedUrl;
     const pageSizeBytes = Buffer.byteLength(html, "utf8");
     const title = getTitle(html);

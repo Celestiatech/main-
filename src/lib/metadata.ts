@@ -21,14 +21,14 @@ export const siteConfig = {
   },
   contact: {
     email: {
-      general: "hello@w3tech.in",
+      general: "vdvishalwebdev@gmail.com",
       legal: "legal@w3tech.in",
       privacy: "privacy@w3tech.in",
       support: "support@w3tech.in",
     },
     phone: {
       uae: "+971 50 000 0000",
-      india: "+91 98765 43210",
+      india: "+91 98055 59015",
     },
     offices: {
       uae: {

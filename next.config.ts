@@ -16,10 +16,6 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   // Performance optimizations
   poweredByHeader: false,
-  // Experimental features for better performance
-  experimental: {
-    optimizePackageImports: ['@react-three/fiber', '@react-three/drei'],
-  },
   async redirects() {
     return [
       // Old URL kept for backward compatibility

@@ -1,0 +1,58 @@
+﻿country,region,region_type,city,city_slug,region_slug,country_slug
+Australia,New South Wales,state,Sydney,sydney,new-south-wales,australia
+Australia,New South Wales,state,Newcastle,newcastle,new-south-wales,australia
+Australia,New South Wales,state,Wollongong,wollongong,new-south-wales,australia
+Australia,New South Wales,state,Central Coast,central-coast,new-south-wales,australia
+Australia,New South Wales,state,Maitland,maitland,new-south-wales,australia
+Australia,New South Wales,state,Wagga Wagga,wagga-wagga,new-south-wales,australia
+Australia,New South Wales,state,Albury,albury,new-south-wales,australia
+Australia,New South Wales,state,Port Macquarie,port-macquarie,new-south-wales,australia
+Australia,New South Wales,state,Tamworth,tamworth,new-south-wales,australia
+Australia,New South Wales,state,Orange,orange,new-south-wales,australia
+Australia,New South Wales,state,Dubbo,dubbo,new-south-wales,australia
+Australia,New South Wales,state,Coffs Harbour,coffs-harbour,new-south-wales,australia
+Australia,Victoria,state,Melbourne,melbourne,victoria,australia
+Australia,Victoria,state,Geelong,geelong,victoria,australia
+Australia,Victoria,state,Ballarat,ballarat,victoria,australia
+Australia,Victoria,state,Bendigo,bendigo,victoria,australia
+Australia,Victoria,state,Shepparton,shepparton,victoria,australia
+Australia,Victoria,state,Melton,melton,victoria,australia
+Australia,Victoria,state,Mildura,mildura,victoria,australia
+Australia,Victoria,state,Warrnambool,warrnambool,victoria,australia
+Australia,Victoria,state,Traralgon,traralgon,victoria,australia
+Australia,Victoria,state,Wodonga,wodonga,victoria,australia
+Australia,Queensland,state,Brisbane,brisbane,queensland,australia
+Australia,Queensland,state,Gold Coast,gold-coast,queensland,australia
+Australia,Queensland,state,Sunshine Coast,sunshine-coast,queensland,australia
+Australia,Queensland,state,Townsville,townsville,queensland,australia
+Australia,Queensland,state,Cairns,cairns,queensland,australia
+Australia,Queensland,state,Toowoomba,toowoomba,queensland,australia
+Australia,Queensland,state,Mackay,mackay,queensland,australia
+Australia,Queensland,state,Rockhampton,rockhampton,queensland,australia
+Australia,Queensland,state,Bundaberg,bundaberg,queensland,australia
+Australia,Queensland,state,Hervey Bay,hervey-bay,queensland,australia
+Australia,Queensland,state,Gladstone,gladstone,queensland,australia
+Australia,Western Australia,state,Perth,perth,western-australia,australia
+Australia,Western Australia,state,Mandurah,mandurah,western-australia,australia
+Australia,Western Australia,state,Bunbury,bunbury,western-australia,australia
+Australia,Western Australia,state,Geraldton,geraldton,western-australia,australia
+Australia,Western Australia,state,Kalgoorlie,kalgoorlie,western-australia,australia
+Australia,Western Australia,state,Albany,albany,western-australia,australia
+Australia,Western Australia,state,Busselton,busselton,western-australia,australia
+Australia,Western Australia,state,Broome,broome,western-australia,australia
+Australia,South Australia,state,Adelaide,adelaide,south-australia,australia
+Australia,South Australia,state,Mount Gambier,mount-gambier,south-australia,australia
+Australia,South Australia,state,Whyalla,whyalla,south-australia,australia
+Australia,South Australia,state,Murray Bridge,murray-bridge,south-australia,australia
+Australia,South Australia,state,Port Lincoln,port-lincoln,south-australia,australia
+Australia,South Australia,state,Port Pirie,port-pirie,south-australia,australia
+Australia,South Australia,state,Port Augusta,port-augusta,south-australia,australia
+Australia,Tasmania,state,Hobart,hobart,tasmania,australia
+Australia,Tasmania,state,Launceston,launceston,tasmania,australia
+Australia,Tasmania,state,Devonport,devonport,tasmania,australia
+Australia,Tasmania,state,Burnie,burnie,tasmania,australia
+Australia,Australian Capital Territory,state,Canberra,canberra,australian-capital-territory,australia
+Australia,Northern Territory,state,Darwin,darwin,northern-territory,australia
+Australia,Northern Territory,state,Alice Springs,alice-springs,northern-territory,australia
+Australia,Northern Territory,state,Palmerston,palmerston,northern-territory,australia
+Australia,Northern Territory,state,Katherine,katherine,northern-territory,australia

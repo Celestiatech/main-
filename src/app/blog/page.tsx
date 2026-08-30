@@ -8,12 +8,29 @@ import Breadcrumb from "../components/Breadcrumb";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { BLOG_CATEGORIES, BLOG_POSTS } from "@/lib/blogs";
+import { CITY_TARGETS } from "@/lib/city-pages";
+import { getCityImage } from "@/lib/city-images.generated";
+import { buildCityExcerpt } from "@/lib/city-page-content";
+import { siteConfig } from "@/lib/metadata";
+import locationStyles from "./blog-locations.module.css";
 
 export default function BlogPage() {
   const breadcrumbItems = [
     { label: "Home", href: "/" },
     { label: "Blogs" },
   ];
+
+  // City guides live at /web-development-company/[city] rather than /blog/[slug],
+  // so they get their own section instead of being faked into the article grid
+  // with an author and a read time they do not have.
+  const citiesByCountry = CITY_TARGETS.reduce<Record<string, typeof CITY_TARGETS>>((groups, target) => {
+    (groups[target.country] ||= []).push(target);
+    return groups;
+  }, {});
+
+  const cityCountries = Object.keys(citiesByCountry).sort(
+    (a, b) => citiesByCountry[b].length - citiesByCountry[a].length || a.localeCompare(b)
+  );
 
   const blogs = BLOG_POSTS;
   const categories = BLOG_CATEGORIES.map((name) => ({
@@ -38,7 +55,7 @@ export default function BlogPage() {
       <section className={styles.blogHero}>
         <div className="container">
           <div className={styles.blogHeroContent}>
-            <h1>Celestiatech Blog</h1>
+            <h1>{siteConfig.name} Blog</h1>
             <p>Latest insights, tutorials, and trends in software development, AI, and technology</p>
           </div>
         </div>
@@ -131,6 +148,67 @@ export default function BlogPage() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className={locationStyles.locations}>
+        <div className="container">
+          <div className={locationStyles.head}>
+            <p className={locationStyles.eyebrow}>By location</p>
+            <h2>Web development guides by city</h2>
+            <p>
+              How we work in each market, what a project costs and runs like, and an honest comparison
+              against the other ways to get a build done there.
+            </p>
+          </div>
+
+          {cityCountries.map((country) => (
+            <div key={country} className={locationStyles.country}>
+              <h3 className={locationStyles.countryName}>
+                {country}
+                <small>{citiesByCountry[country].length}</small>
+              </h3>
+              <div className={locationStyles.grid}>
+                {citiesByCountry[country]
+                  .slice()
+                  .sort((a, b) => a.city.localeCompare(b.city))
+                  .map((target) => {
+                    const image = getCityImage(target.slug);
+                    return (
+                      <Link
+                        key={target.slug}
+                        href={`/web-development-company/${target.slug}`}
+                        className={locationStyles.card}
+                      >
+                        {image && (
+                          <span className={locationStyles.thumb}>
+                            <Image
+                              src={image.src}
+                              alt={image.alt}
+                              fill
+                              sizes="(max-width: 700px) 50vw, (max-width: 980px) 33vw, 25vw"
+                              className={locationStyles.thumbImage}
+                            />
+                            <span className={locationStyles.thumbMark} aria-hidden="true">
+                              W3<em>TECH</em>
+                            </span>
+                          </span>
+                        )}
+                        <strong>{target.city}</strong>
+                        <span className={locationStyles.cardMeta}>
+                          {target.region === target.city ? target.country : target.region}
+                        </span>
+                        <span className={locationStyles.cardExcerpt}>{buildCityExcerpt(target)}</span>
+                      </Link>
+                    );
+                  })}
+              </div>
+            </div>
+          ))}
+
+          <Link href="/web-development-company" className={locationStyles.allLink}>
+            See every location we work in →
+          </Link>
         </div>
       </section>
 

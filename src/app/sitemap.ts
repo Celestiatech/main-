@@ -2,34 +2,15 @@ import { MetadataRoute } from 'next';
 import { siteConfig } from '@/lib/metadata';
 import { BLOG_POSTS } from '@/lib/blogs';
 import { TOOLS } from '@/lib/tools-catalog';
+import { PUBLIC_ROUTES } from '@/lib/site-navigation';
+import { CITY_TARGETS } from '@/lib/city-pages';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
 
-  // Static pages
-  const staticPages = [
-    '',
-    '/about',
-    '/services',
-    '/pricing',
-    '/portfolio',
-    '/work',
-    '/contact',
-    '/blog',
-    '/career',
-    '/popular-tools',
-    '/proposal',
-    '/request-a-call',
-    '/privacy-policy',
-    '/terms-of-service',
-    '/cookie-policy',
-    '/accessibility',
-    // SEO landing pages
-    '/startup-mvp-development',
-    '/ai-development-company',
-    '/hire-dedicated-developers',
-    '/web-app-development-cost',
-  ];
+  // Same list the header renders, so the sitemap cannot drift out of sync
+  // with the site's own navigation.
+  const staticPages = PUBLIC_ROUTES;
 
   // Generate sitemap entries
   const routes: MetadataRoute.Sitemap = staticPages.map((path) => ({
@@ -54,6 +35,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     routes.push({
       url: `${baseUrl}/blog/${post.slug}`,
       lastModified: new Date(post.date),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    });
+  });
+
+  // Location landing pages, plus the index that links them together.
+  routes.push({
+    url: `${baseUrl}/web-development-company`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  });
+
+  CITY_TARGETS.forEach((target) => {
+    routes.push({
+      url: `${baseUrl}/web-development-company/${target.slug}`,
+      lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     });

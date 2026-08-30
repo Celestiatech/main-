@@ -109,7 +109,7 @@ export default function TestimonialsPage() {
         <div className="container">
           <div className={styles.sectionHeader}>
             <h2>Client Success Stories</h2>
-            <p>Hear from businesses who've transformed with our solutions</p>
+            <p>Hear from businesses who&apos;ve transformed with our solutions</p>
           </div>
           <div className={styles.testimonialsGrid}>
             {testimonials.map((testimonial, index) => (
@@ -117,7 +117,7 @@ export default function TestimonialsPage() {
                 <div className={styles.testimonialStars}>
                   {"★".repeat(testimonial.rating)}
                 </div>
-                <p>"{testimonial.quote}"</p>
+                <p>&quot;{testimonial.quote}&quot;</p>
                 <div className={styles.testimonialMeta}>
                   <span className={styles.testimonialProject}>{testimonial.project}</span>
                 </div>
@@ -140,7 +140,7 @@ export default function TestimonialsPage() {
       <section className={styles.cta}>
         <div className="container">
           <h2>Ready to Become Our Next Success Story?</h2>
-          <p>Let's discuss your project and create something amazing together</p>
+          <p>Let&apos;s discuss your project and create something amazing together</p>
           <Link href="/contact" className="btn btn-accent btn-bubble">
             Get Free Consultation
           </Link>

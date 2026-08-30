@@ -69,6 +69,20 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     dateModified: new Date(post.date).toISOString(),
     author: post.author,
   });
+  // FAQPage markup is what AI overviews and answer engines extract from, so it
+  // is emitted only when the page really carries a question-and-answer block.
+  const faqSchema = post.faq?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: { "@type": "Answer", text: item.answer },
+        })),
+      }
+    : null;
+
   const breadcrumbItems = [
     { label: "Home", href: "/" },
     { label: "Blogs", href: "/blog" },
@@ -79,6 +93,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     <div className={styles.page}>
       <Header />
       <StructuredData data={articleSchema} />
+      {faqSchema && <StructuredData data={faqSchema} />}
       <Breadcrumb items={breadcrumbItems} />
 
       <section className={styles.hero}>
@@ -140,6 +155,21 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                   </section>
                 ))}
               </div>
+
+              {post.faq && post.faq.length > 0 && (
+                <section className={styles.faqBlock}>
+                  <h2>Frequently asked questions</h2>
+                  {post.faq.map((item) => (
+                    <details key={item.question} className={styles.faqItem}>
+                      <summary>
+                        {item.question}
+                        <span aria-hidden="true">+</span>
+                      </summary>
+                      <p>{item.answer}</p>
+                    </details>
+                  ))}
+                </section>
+              )}
             </article>
 
             <aside className={styles.sidebar}>

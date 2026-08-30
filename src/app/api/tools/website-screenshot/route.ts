@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const SCREENSHOT_KEY = "050410";
+const SCREENSHOT_KEY = process.env.SCREENSHOTMACHINE_KEY || "";
 
 function normalizeTargetUrl(input: string) {
   const trimmed = input.trim();

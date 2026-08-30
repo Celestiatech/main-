@@ -291,7 +291,7 @@ export default function Pricing() {
                 </div>
 
                 <div className={styles.pricingFeatures}>
-                  <h4>What's Included:</h4>
+                  <h4>What&apos;s Included:</h4>
                   <ul>
                     {model.inclusions.map((feature, index) => (
                       <li key={index}>✓ {feature}</li>
@@ -471,7 +471,7 @@ export default function Pricing() {
           <div className={styles.testimonialsGrid}>
             {testimonials.map((testimonial, index) => (
               <div key={index} className={styles.testimonialCard}>
-                <div className={styles.testimonialQuote}>"{testimonial.quote}"</div>
+                <div className={styles.testimonialQuote}>&quot;{testimonial.quote}&quot;</div>
                 <div className={styles.testimonialAuthor}>
                   <div className={styles.testimonialAvatar}>
                     {testimonial.author.charAt(0)}
